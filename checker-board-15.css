@@ -229,21 +229,23 @@ margin:0px;
 
 
 
-#line0 {    background-position: -0px -0px;}  /* -8 */
-#line1 {    background-position: -0px -1px;}  /* -10 */
-#line2 {    background-position: -4px -2px;}  /* -12 */
-#line3 {    background-position: -0px -3px;}  /* -16 */
-#line4 {    background-position: -8px -4px;}  /* -16 */
-#line5 {    background-position: -4px -5px;}  /* -16 */
-#line6 {    background-position: -6px -6px;} /* -28 */
-#line7 {    background-position: -0px -7px;} /* -28 */
-#line8 {    background-position: -10px -8px;} /* -36 */
-#line9 {    background-position: -8px -9px;} /* -36 */
 
-#line10 {    background-position: -16px -10px;}  /* -28 */
-#line11 {    background-position: -16px -11px;} /* -38 */
-#line12 {    background-position: -8px -12px;} /* -44 */
-#line13 {    background-position: -20px -13px;} /* -46 */
+
+#line0 {    background-position: -0px -0px; display:none}  /* -8 */
+#line1 {    background-position: -0px -1px; display:none}  /* -10 */
+#line2 {    background-position: -4px -2px; display:none}  /* -12 */
+#line3 {    background-position: -0px -3px; display:none}  /* -16 */
+#line4 {    background-position: -8px -4px; display:none}  /* -16 */
+#line5 {    background-position: -4px -5px; display:none}  /* -16 */
+#line6 {    background-position: -6px -6px; display:none} /* -28 */
+#line7 {    background-position: -0px -7px; display:none} /* -28 */
+#line8 {    background-position: -10px -8px; display:none} /* -36 */
+#line9 {    background-position: -8px -9px; display:none} /* -36 */
+
+#line10 {    background-position: -16px -10px; display:none}  /* -28 */
+#line11 {    background-position: -16px -11px; display:none} /* -38 */
+#line12 {    background-position: -8px -12px; display:none} /* -44 */
+#line13 {    background-position: -20px -13px; display:none} /* -46 */
 #line14 {    background-position: -28px -14px;} /* -44 */
 #line15 {    background-position: -0px -15px;}  /* -38 */
 #line16 {    background-position: -32px -16px;} /* -64 */

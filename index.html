@@ -42,22 +42,34 @@
     // +510 is on centerline
     // +404 is in square DOES NOT WORK
 
-    let sprite_1 = { id: "cube-1", spin: 0, x: area_width_half - 2100, y: 500 };
-    let sprite_2 = { id: "cube-2", spin: 50, x: area_width_half - 1800, y: 500 };
-    let sprite_3 = { id: "cube-3", spin: 10, x: area_width_half - 1500, y: 500 };
-    let sprite_4 = { id: "cube-4", spin: 15, x: area_width_half - 1200, y: 500 };
-    let sprite_5 = { id: "cube-5", spin: 20, x: area_width_half - 900, y: 500 };
-    let sprite_6 = { id: "cube-6", spin: 25, x: area_width_half - 600, y: 500 };
-    let sprite_7 = { id: "cube-7", spin: 30, x: area_width_half - 300, y: 500 };
-    let sprite_8 = { id: "cube-8", spin: 35, x: area_width_half + 0, y: 500 };
-    let sprite_9 = { id: "cube-9", spin: 40, x: area_width_half + 300, y: 500 };
-    let sprite_10 = { id: "cube-10", spin: 45, x: area_width_half + 600, y: 500 };
-    let sprite_11 = { id: "cube-11", spin: 50, x: area_width_half + 900, y: 500 };
-    let sprite_12 = { id: "cube-12", spin: 55, x: area_width_half + 1200, y: 500 };
-    let sprite_13 = { id: "cube-13", spin: 60, x: area_width_half + 1500, y: 500 };
-    let sprite_14 = { id: "cube-14", spin: 65, x: area_width_half + 1800, y: 500 };
-    let sprite_15 = { id: "cube-15", spin: 70, x: area_width_half + 2100, y: 500 };
-    let sprite_16 = { id: "cube-16", spin: 75, x: area_width_half + 2400, y: 500 };
+    // disappears
+    // at y=1048, left    
+    //      -243px       area_width_half - 694
+    //      +1011px      area_width_half + 692
+
+    // at y=512 
+    //    -144px     area_width_half - 4108
+    //    +912px     area_width_half + 4090;
+
+
+    disappear_left = area_width_half - 4108;  // so 256px wide leaves visual at -243px
+
+    let sprite_1 = { id: "cube-1", spin: 0, x: disappear_left, y: 512 };
+    let sprite_2 = { id: "cube-2", spin: 50, x: area_width_half - 331800, y: 500 };
+    let sprite_3 = { id: "cube-3", spin: 10, x: area_width_half - 331500, y: 500 };
+    let sprite_4 = { id: "cube-4", spin: 15, x: area_width_half - 331200, y: 500 };
+    let sprite_5 = { id: "cube-5", spin: 20, x: area_width_half - 33900, y: 500 };
+    let sprite_6 = { id: "cube-6", spin: 25, x: area_width_half - 33600, y: 500 };
+    let sprite_7 = { id: "cube-7", spin: 30, x: area_width_half - 33300, y: 500 };
+    let sprite_8 = { id: "cube-8", spin: 35, x: area_width_half + 33330, y: 500 };
+    let sprite_9 = { id: "cube-9", spin: 40, x: area_width_half + 33300, y: 500 };
+    let sprite_10 = { id: "cube-10", spin: 45, x: area_width_half + 33600, y: 500 };
+    let sprite_11 = { id: "cube-11", spin: 50, x: area_width_half + 33900, y: 500 };
+    let sprite_12 = { id: "cube-12", spin: 55, x: area_width_half + 331200, y: 500 };
+    let sprite_13 = { id: "cube-13", spin: 60, x: area_width_half + 331500, y: 500 };
+    let sprite_14 = { id: "cube-14", spin: 65, x: area_width_half + 331800, y: 500 };
+    let sprite_15 = { id: "cube-15", spin: 70, x: area_width_half + 332100, y: 500 };
+    let sprite_16 = { id: "cube-16", spin: 75, x: area_width_half + 332400, y: 500 };
 
     // let sprite_1 = { id: "cube-1", spin: 200, x: 16256 + 510, y: 1020 };  /// -200 +512 = 312
     // let sprite_2 = { id: "cube-2", spin: 21, x: area_width_half - 299, y: -150 + 512 };  /// -200 +512 = 312
@@ -129,8 +141,8 @@
 
       //the_sprite.y++;
       // the_sprite.y++;
-      the_sprite.y++;
-      the_sprite.x++;
+      // the_sprite.y++;
+      // the_sprite.x++;
 
       let sprite_left_edge = sprite_x - sprite_half_x + 1;
       //console.log("sprite_left_edge", sprite_left_edge);
@@ -153,22 +165,22 @@
 
     function doLeftRight(timestamp) {
       if (keep_running) {
-        moveObject(sprite_1, player_x, player_y);
-        moveObject(sprite_2, player_x, player_y);
-        moveObject(sprite_3, player_x, player_y);
-        moveObject(sprite_4, player_x, player_y);
-        moveObject(sprite_5, player_x, player_y);
-        moveObject(sprite_6, player_x, player_y);
-        moveObject(sprite_7, player_x, player_y);
-        moveObject(sprite_8, player_x, player_y);
-        moveObject(sprite_9, player_x, player_y);
-        moveObject(sprite_10, player_x, player_y);
-        moveObject(sprite_11, player_x, player_y);
-        moveObject(sprite_12, player_x, player_y);
-        moveObject(sprite_13, player_x, player_y);
-        moveObject(sprite_14, player_x, player_y);
-        moveObject(sprite_15, player_x, player_y);
-        moveObject(sprite_16, player_x, player_y);
+        // moveObject(sprite_1, player_x, player_y);
+        // moveObject(sprite_2, player_x, player_y);
+        // moveObject(sprite_3, player_x, player_y);
+        // moveObject(sprite_4, player_x, player_y);
+        // moveObject(sprite_5, player_x, player_y);
+        // moveObject(sprite_6, player_x, player_y);
+        // moveObject(sprite_7, player_x, player_y);
+        // moveObject(sprite_8, player_x, player_y);
+        // moveObject(sprite_9, player_x, player_y);
+        // moveObject(sprite_10, player_x, player_y);
+        // moveObject(sprite_11, player_x, player_y);
+        // moveObject(sprite_12, player_x, player_y);
+        // moveObject(sprite_13, player_x, player_y);
+        // moveObject(sprite_14, player_x, player_y);
+        // moveObject(sprite_15, player_x, player_y);
+        // moveObject(sprite_16, player_x, player_y);
 
         // moveObject(sprite_1, player_x, player_y);
         // moveObject(sprite_2, player_x, player_y);
@@ -213,9 +225,9 @@
         // cube_1.style.left = `${viewport_x}px`;
 
         //moveBack();
-        moveForward();
-        //moveForward();
         // moveForward();
+        //moveForward();
+        moveForward();
         // moveForward();
         // moveLeft();
         // moveLeft();
@@ -224,10 +236,10 @@
         //moveLeft();
         // moveLeft();
 
-        //  moveLeft();
-        // moveLeft();
-        // moveLeft();
         moveLeft();
+        // moveLeft();
+        // moveLeft();
+        // moveLeft();
 
         //moveRight();
         // moveRight();
@@ -273,7 +285,7 @@
       return new_sum;
     }
     function resetLeft() {
-      for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+      for (let cur_line = 14; cur_line < num_lines; cur_line++) {
         let [index, _start, reset_left, _flip] = start_stop_flip[cur_line];
         x_shift_list[cur_line] = reset_left;
         overflow_accums[cur_line] = num_lines - 1;
@@ -285,7 +297,7 @@
       if (left_bot_count == -1) {
         resetLeft();
       } else {
-        for (let left_line = 0; left_line < num_lines; left_line++) {
+        for (let left_line = 14; left_line < num_lines; left_line++) {
           let old_left = overflow_accums[left_line];
           let left_sum = old_left - left_line - 1;
           let adjust_left = overflowLeft(left_line, left_sum);
@@ -295,7 +307,7 @@
     }
     //////////////////
     function resetRight() {
-      for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+      for (let cur_line = 14; cur_line < num_lines; cur_line++) {
         let [index, reset_right, _stop, _flip] = start_stop_flip[cur_line];
         x_shift_list[cur_line] = reset_right;
         overflow_accums[cur_line] = 0;
@@ -308,7 +320,7 @@
       if (right_bot_count == end_offset + 1) {
         resetRight();
       } else {
-        for (let right_line = 0; right_line < num_lines; right_line++) {
+        for (let right_line = 14; right_line < num_lines; right_line++) {
           let old_right = overflow_accums[right_line];
           let right_sum = old_right + right_line + 1;
           let adjust_right = overflowRight(right_line, right_sum);
@@ -349,7 +361,7 @@
     function affixLeftRight() {
       const y_counter = Math.floor(y_flip_count);
       const invert_lines = y_invert_lines[y_counter];
-      for (let affix_line = 0; affix_line < num_lines; affix_line++) {
+      for (let affix_line = 14; affix_line < num_lines; affix_line++) {
         const inverted_x = invert_lines[affix_line];
         let affix_shift = x_shift_list[affix_line];
         if (inverted_x == 0) {
@@ -998,6 +1010,7 @@
 
 
 ">512 w</div>
+
 <div style="
 
     position: absolute;
@@ -1979,7 +1992,7 @@
       let flip_count = 0;
       let is_flip = false;
 
-      for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+      for (let cur_line = 14; cur_line < num_lines; cur_line++) {
         const reverse_vertical = num_lines - cur_line - 1;
         const ne_element = document.getElementById(`ne${reverse_vertical}`);
         const se_element = document.getElementById(`se${cur_line}`);
