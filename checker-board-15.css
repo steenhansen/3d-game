@@ -4,6 +4,45 @@ body {
 margin:0px;
 }
 
+
+  #bullet-1 {
+    background-image: url('bullet.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+
+ }
+
+
+  #ball-1 {
+    background-image: url('colored-ball.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+
+ }
+
+
+  #octa-1 {
+    background-image: url('octa.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+
+ }
+
   #cube-1 {
     background-image: url('cubes.png');
     width: 256px;
@@ -12,7 +51,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+
  }
 
  
@@ -24,7 +64,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -36,7 +77,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -48,7 +90,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1);
+        display: none; 
  }
 
  
@@ -60,7 +103,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -72,7 +116,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -84,7 +129,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -96,7 +142,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -108,7 +155,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -120,7 +168,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -132,7 +181,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -144,7 +194,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -156,7 +207,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -168,7 +220,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -180,7 +233,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
  
@@ -192,7 +246,8 @@ margin:0px;
     z-index: 999;
     top:36px;
      transform-origin: top  ;
-    transform: scale(1) 
+    transform: scale(1) ;
+        display: none;
  }
 
 

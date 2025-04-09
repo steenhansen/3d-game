@@ -54,10 +54,10 @@
 
     disappear_left = area_width_half - 4108;  // so 256px wide leaves visual at -243px
 
-    let sprite_1 = { id: "cube-1", spin: 0, x: disappear_left, y: 512 };
-    let sprite_2 = { id: "cube-2", spin: 50, x: area_width_half - 331800, y: 500 };
-    let sprite_3 = { id: "cube-3", spin: 10, x: area_width_half - 331500, y: 500 };
-    let sprite_4 = { id: "cube-4", spin: 15, x: area_width_half - 331200, y: 500 };
+    //let sprite_1 = { id: "cube-1", spin: 0, x: disappear_left, y: 512 };
+    //let sprite_2 = { id: "cube-2", spin: 50, x: area_width_half - 331800, y: 500 };
+    // let sprite_3 = { id: "cube-3", spin: 10, x: area_width_half - 331500, y: 500 };
+    //let sprite_4 = { id: "cube-4", spin: 15, x: area_width_half - 331200, y: 500 };
     let sprite_5 = { id: "cube-5", spin: 20, x: area_width_half - 33900, y: 500 };
     let sprite_6 = { id: "cube-6", spin: 25, x: area_width_half - 33600, y: 500 };
     let sprite_7 = { id: "cube-7", spin: 30, x: area_width_half - 33300, y: 500 };
@@ -71,9 +71,10 @@
     let sprite_15 = { id: "cube-15", spin: 70, x: area_width_half + 332100, y: 500 };
     let sprite_16 = { id: "cube-16", spin: 75, x: area_width_half + 332400, y: 500 };
 
-    // let sprite_1 = { id: "cube-1", spin: 200, x: 16256 + 510, y: 1020 };  /// -200 +512 = 312
-    // let sprite_2 = { id: "cube-2", spin: 21, x: area_width_half - 299, y: -150 + 512 };  /// -200 +512 = 312
-    // let sprite_3 = { id: "cube-3", spin: 31, x: area_width_half - 399, y: -100 + 512 };  /// -200 +512 = 312
+    let sprite_1 = { id: "cube-1", spin: 200, x: 16256 + 627, y: 1006 };  /// -200 +512 = 312
+    let sprite_2 = { id: "octa-1", spin: 21, x: 16256 + 406, y: 1020 };  /// -200 +512 = 312
+    let sprite_3 = { id: "ball-1", spin: 21, x: 16256 + 206, y: 1020 };  /// -200 +512 = 312
+    let sprite_4 = { id: "bullet-1", spin: 31, x: 16256 + 900, y: 1006 };  /// -200 +512 = 312
     // let sprite_4 = { id: "cube-4", spin: 41, x: area_width_half - 499, y: -50 + 512 };  /// -200 +512 = 312
     // let sprite_5 = { id: "cube-5", spin: 51, x: area_width_half - 599, y: 0 + 512 };  /// -200 +512 = 312
     // let sprite_6 = { id: "cube-6", spin: 61, x: area_width_half - 699, y: 50 + 512 };  /// -200 +512 = 312
@@ -116,6 +117,8 @@
 
     // moveObject(the_sprite, 123,546)
     function moveObject(the_sprite, player_x, player_y) {
+      //  console.log("the_sprite", the_sprite.x, the_sprite.y);
+      console.log("player", player_x, player_y);
       const sprite_element = document.getElementById(the_sprite.id);
       let the_spin = the_sprite.spin;
       the_spin = the_spin + 1; // 1/ 4;
@@ -139,10 +142,10 @@
       //  console.log("sprite_sizes[delta_y]", sprite_sizes[delta_y]);
       sprite_element.style.transform = `scale(${the_scale})`;
 
-      //the_sprite.y++;
       // the_sprite.y++;
       // the_sprite.y++;
-      // the_sprite.x++;
+      // the_sprite.y++;
+      //the_sprite.x++;
 
       let sprite_left_edge = sprite_x - sprite_half_x + 1;
       //console.log("sprite_left_edge", sprite_left_edge);
@@ -160,13 +163,114 @@
 
     }
 
+    var the_key = "";
 
     //    let sprite_1 = { x: area_width_half + 380, y: 512 };  /// 512 + 512=1024
+    document.addEventListener('keydown', function (event) {
+      console.log("EE", event.keyCode); // 38 up   40 down
+      if (event.keyCode == 38) {
+        the_key = 1;
+        //   moveBack();
+        // moveBack();
+        // alert('up   as pressed');
+      }
+      else if (event.keyCode == 39) {
+        the_key = 2;
+        // moveRight();
+        // moveRight();
+        // alert('Right was pressed');
+      }
+      else if (event.keyCode == 40) {
+        the_key = 3;
+        // moveForward();
+        // moveForward();
+        // alert('Down was pressed');
+      }
+      else if (event.keyCode == 37) {
+        the_key = 4;
+        //moveLeft();
+        //moveLeft();
+        // alert('Left was pressed');
+      }
+    });
 
     function doLeftRight(timestamp) {
+      console.log("doLeftRight", player_x, player_y);
+      if (the_key == 1) {
+        player_y++;
+        player_y++;
+        moveBack();
+        moveBack();
+        sprite_1.y--;
+        sprite_1.y--;
+
+        sprite_2.y--;
+        sprite_2.y--;
+
+        sprite_3.y--;
+        sprite_3.y--;
+
+        sprite_4.y--;
+        sprite_4.y--;
+      }
+      else if (the_key == 2) {
+        player_x++;
+        player_x++;
+        moveRight();
+        moveRight();
+
+        sprite_1.x--;
+        sprite_1.x--;
+        sprite_2.x--;
+        sprite_2.x--;
+        sprite_3.x--;
+        sprite_3.x--;
+
+        sprite_4.x--;
+        sprite_4.x--;
+
+      }
+      else if (the_key == 3) {
+        player_y--;
+        player_y--;
+        moveForward();
+        moveForward();
+        sprite_1.y++;
+        sprite_1.y++;
+        sprite_2.y++;
+        sprite_2.y++;
+        sprite_3.y++;
+        sprite_3.y++;
+        sprite_4.y++;
+        sprite_4.y++;
+      }
+      else if (the_key == 4) {
+        player_x--;
+        player_x--;
+        moveLeft();
+        moveLeft();
+        sprite_1.x++;
+        sprite_1.x++;
+        sprite_2.x++;
+        sprite_2.x++;
+        sprite_3.x++;
+        sprite_3.x++;
+        sprite_4.x++;
+        sprite_4.x++;
+      }
+
+
       if (keep_running) {
-        // moveObject(sprite_1, player_x, player_y);
-        // moveObject(sprite_2, player_x, player_y);
+        //  player_y--;
+        //   console.log("bollard", sprite_1, player_x, player_y);
+
+        moveObject(sprite_1, player_x, player_y);
+        moveObject(sprite_2, player_x, player_y);
+        moveObject(sprite_3, player_x, player_y);
+        moveObject(sprite_4, player_x, player_y);
+
+        //   console.log("octa", sprite_2, player_x, player_y);
+        // keep_running = false;
         // moveObject(sprite_3, player_x, player_y);
         // moveObject(sprite_4, player_x, player_y);
         // moveObject(sprite_5, player_x, player_y);
@@ -224,10 +328,12 @@
         // }
         // cube_1.style.left = `${viewport_x}px`;
 
-        //moveBack();
+
+
+        // moveBack();
         // moveForward();
         //moveForward();
-        moveForward();
+        //  moveForward();
         // moveForward();
         // moveLeft();
         // moveLeft();
@@ -236,7 +342,7 @@
         //moveLeft();
         // moveLeft();
 
-        moveLeft();
+        // moveLeft();
         // moveLeft();
         // moveLeft();
         // moveLeft();
@@ -1012,7 +1118,7 @@
 ">512 w</div>
 
 <div style="
-
+display: none;
     position: absolute;
    z-index: 1000;
      left:1024px;
@@ -1021,6 +1127,11 @@
     background-color: green;
 
 ">hider</div>
+
+<div id="bullet-1">1</div>
+<div id="ball-1">1</div>
+
+<div id="octa-1">1</div>
 
 <div id="cube-1">1</div>
 <div id="cube-2">2</div>
