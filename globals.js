@@ -1,0 +1,12 @@
+
+let HALF_VIEW_WIDTH = 512;
+let BOTTOM_CHECKERBOARD = 512;
+
+let BACK_VANISH_POINT = [511, 256];
+let player_point = { x: 512, y: 1024 };
+
+let PYLON_WIDTH = 256;
+let HALF_PYLON_WIDTH = PYLON_WIDTH / 2;      // 128
+
+let PYLON_DEPTH = 96;
+let HALF_PYLON_DEPTH = PYLON_DEPTH / 2;   //48

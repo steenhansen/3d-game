@@ -1,0 +1,440 @@
+
+#the-checkerboard{
+  top:356px;
+  left:64px;
+   width:1024px;
+   height:256px;
+     /* position: absolute; */
+         z-index: 9;
+         /* display:none; */
+}
+
+#the-draw{
+  top:0px;
+  left:0px;
+   /* width:1024px;
+   height:512px; */
+     position: absolute;
+         z-index: 9999;
+}
+
+
+
+#cube-x {
+  background-image: url('colored-ball.png');
+  width: 256px;
+  height: 256px;
+   position: absolute;
+  z-index: 999;
+  top:0px;
+  left:0px;
+       transform-origin: center center; 
+  transform: scale(1) ;
+  display: xnone;
+  margin-left:0px;
+  margin-top:0px;
+}
+
+#cube-y {
+  background-image: url('colored-ball.png');
+  width: 256px;
+  height: 256px;
+  position: absolute;
+  z-index: 999;
+  top:111px;
+  left:222px;
+   transform-origin: top  ;
+  transform: scale(1) ;
+  display: none
+}
+
+
+#a-pylon{
+    top:100px;
+  left:64px;
+   width:1024px;
+   height:512px;
+     position: absolute;
+display:none;
+ z-index:1000; 
+ 
+}
+
+
+
+
+.a-pylon {
+  width: 256px;
+    height: 512px; 
+    position: absolute;
+    z-index: 999;
+    top:186px;
+     transform-origin: top  ;
+ /* background: rgba(210, 210, 210, 0.3); */
+}
+
+ 
+
+
+
+#default-example {
+  position: absolute;
+  left:192px;
+  top:137px;
+  z-index: 1999;
+
+ /* transform-style: preserve-3d; */
+  perspective: 252px; 
+  perspective-origin: 100% 35%;
+        display: none
+}
+
+.right {
+  width: 274px;
+  height: 100px;
+
+  background: rgba(210, 0, 0, 0.7);
+
+  rotate: y 106deg;
+  /* transform: rotateY(106deg); */
+}
+
+
+
+
+
+
+body {
+  /* background-color: green; */
+margin:0px;
+}
+
+  #square-right {
+
+    /* transform: scaleX(0.5) scaleY(1) skewY(-45deg) translateX(90px) translateY(-50px) */
+perspective-origin: center top;
+transform-style: preserve-3d;
+perspective:250px;
+
+
+//    background-image: url('right-square.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+    // transform-origin: top  ;
+  //  transform: scale(1) ;
+    opacity: 0.5;
+    left:-1000px;
+    top:-4000px;
+    background: rgba(90, 90, 90, 0.7);
+          display: none
+ }
+
+  #square-front {
+    background-image: url('a-square.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+    opacity: 0.5;
+          display: none
+ }
+
+
+  #square-back {
+    background-image: url('a-square.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+    opacity: 0.5;
+          display: none
+ }
+
+
+  #bullet-1 {
+    background-image: url('bullet.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+      display: none
+
+ }
+
+
+  #ball-1 {
+    background-image: url('colored-ball.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+    display: none
+ }
+
+
+  #octa-1 {
+    background-image: url('octa.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+    display: none
+ }
+
+  #cube-1 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:333px;
+    left:100px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+    display: none
+ }
+
+ 
+  #cube-2 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-3 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-4 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1);
+        display: none; 
+ }
+
+ 
+  #cube-5 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-6 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-7 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-8 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-9 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-10 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-11 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-12 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-13 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-14 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-15 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+ 
+  #cube-16 {
+    background-image: url('cubes.png');
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    z-index: 999;
+    top:36px;
+     transform-origin: top  ;
+    transform: scale(1) ;
+        display: none;
+ }
+
+
+  #block-right{
+     z-index: 1000;
+     left:1024px;
+      width: 256px;
+    height: 256px;
+  }
+
+.a_line {
+   background-image: url('checker-board.png');
+  width: 1024px;
+  position: relative;
+  height: 1px;
+}
+
+.west_line {
+  background-image: url('checker-board.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+  transform: scaleX(-1);
+}
+
+.east_line {
+  background-image: url('checker-board.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+}
