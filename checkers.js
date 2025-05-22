@@ -1,295 +1,337 @@
 
-document.getElementById('the-checkerboard').innerHTML = `
-
- <div class="a_line" id="line0"></div>
-  <div class="a_line" id="line1"></div>
-  <div class="a_line" id="line2"></div>
-  <div class="a_line" id="line3"></div>
-  <div class="a_line" id="line4"></div>
-  <div class="a_line" id="line5"></div>
-  <div class="a_line" id="line6"></div>
-  <div class="a_line" id="line7"></div>
-  <div class="a_line" id="line8"></div>
-  <div class="a_line" id="line9"></div>
-
-  <div class="a_line" id="line10"></div>
-  <div class="a_line" id="line11"></div>
-  <div class="a_line" id="line12"></div>
-  <div class="a_line" id="line13"></div>
-  <div class="a_line" id="line14"></div>
-  <div class="a_line" id="line15"></div>
-  <div class="a_line" id="line16"></div>
-  <div class="a_line" id="line17"></div>
-  <div class="a_line" id="line18"></div>
-  <div class="a_line" id="line19"></div>
-
-  <div class="a_line" id="line20"></div>
-  <div class="a_line" id="line21"></div>
-  <div class="a_line" id="line22"></div>
-  <div class="a_line" id="line23"></div>
-  <div class="a_line" id="line24"></div>
-  <div class="a_line" id="line25"></div>
-  <div class="a_line" id="line26"></div>
-  <div class="a_line" id="line27"></div>
-  <div class="a_line" id="line28"></div>
-  <div class="a_line" id="line29"></div>
-
-  <div class="a_line" id="line30"></div>
-  <div class="a_line" id="line31"></div>
-  <div class="a_line" id="line32"></div>
-  <div class="a_line" id="line33"></div>
-  <div class="a_line" id="line34"></div>
-  <div class="a_line" id="line35"></div>
-  <div class="a_line" id="line36"></div>
-  <div class="a_line" id="line37"></div>
-  <div class="a_line" id="line38"></div>
-  <div class="a_line" id="line39"></div>
-
-  <div class="a_line" id="line40"></div>
-  <div class="a_line" id="line41"></div>
-  <div class="a_line" id="line42"></div>
-  <div class="a_line" id="line43"></div>
-  <div class="a_line" id="line44"></div>
-  <div class="a_line" id="line45"></div>
-  <div class="a_line" id="line46"></div>
-  <div class="a_line" id="line47"></div>
-  <div class="a_line" id="line48"></div>
-  <div class="a_line" id="line49"></div>
-
-  <div class="a_line" id="line50"></div>
-  <div class="a_line" id="line51"></div>
-  <div class="a_line" id="line52"></div>
-  <div class="a_line" id="line53"></div>
-  <div class="a_line" id="line54"></div>
-  <div class="a_line" id="line55"></div>
-  <div class="a_line" id="line56"></div>
-  <div class="a_line" id="line57"></div>
-  <div class="a_line" id="line58"></div>
-  <div class="a_line" id="line59"></div>
-
-  <div class="a_line" id="line60"></div>
-  <div class="a_line" id="line61"></div>
-  <div class="a_line" id="line62"></div>
-  <div class="a_line" id="line63"></div>
-  <div class="a_line" id="line64"></div>
-  <div class="a_line" id="line65"></div>
-  <div class="a_line" id="line66"></div>
-  <div class="a_line" id="line67"></div>
-  <div class="a_line" id="line68"></div>
-  <div class="a_line" id="line69"></div>
-
-  <div class="a_line" id="line70"></div>
-  <div class="a_line" id="line71"></div>
-  <div class="a_line" id="line72"></div>
-  <div class="a_line" id="line73"></div>
-  <div class="a_line" id="line74"></div>
-  <div class="a_line" id="line75"></div>
-  <div class="a_line" id="line76"></div>
-  <div class="a_line" id="line77"></div>
-  <div class="a_line" id="line78"></div>
-  <div class="a_line" id="line79"></div>
-
-  <div class="a_line" id="line80"></div>
-  <div class="a_line" id="line81"></div>
-  <div class="a_line" id="line82"></div>
-  <div class="a_line" id="line83"></div>
-  <div class="a_line" id="line84"></div>
-  <div class="a_line" id="line85"></div>
-  <div class="a_line" id="line86"></div>
-  <div class="a_line" id="line87"></div>
-  <div class="a_line" id="line88"></div>
-  <div class="a_line" id="line89"></div>
-
-  <div class="a_line" id="line90"></div>
-  <div class="a_line" id="line91"></div>
-  <div class="a_line" id="line92"></div>
-  <div class="a_line" id="line93"></div>
-  <div class="a_line" id="line94"></div>
-  <div class="a_line" id="line95"></div>
-  <div class="a_line" id="line96"></div>
-  <div class="a_line" id="line97"></div>
-  <div class="a_line" id="line98"></div>
-  <div class="a_line" id="line99"></div>
 
 
-  <div class="a_line" id="line100"></div>
-  <div class="a_line" id="line101"></div>
-  <div class="a_line" id="line102"></div>
-  <div class="a_line" id="line103"></div>
-  <div class="a_line" id="line104"></div>
-  <div class="a_line" id="line105"></div>
-  <div class="a_line" id="line106"></div>
-  <div class="a_line" id="line107"></div>
-  <div class="a_line" id="line108"></div>
-  <div class="a_line" id="line109"></div>
 
-  <div class="a_line" id="line110"></div>
-  <div class="a_line" id="line111"></div>
-  <div class="a_line" id="line112"></div>
-  <div class="a_line" id="line113"></div>
-  <div class="a_line" id="line114"></div>
-  <div class="a_line" id="line115"></div>
-  <div class="a_line" id="line116"></div>
-  <div class="a_line" id="line117"></div>
-  <div class="a_line" id="line118"></div>
-  <div class="a_line" id="line119"></div>
+//let do_console = 8 * 3;
 
-  <div class="a_line" id="line120"></div>
-  <div class="a_line" id="line121"></div>
-  <div class="a_line" id="line122"></div>
-  <div class="a_line" id="line123"></div>
-  <div class="a_line" id="line124"></div>
-  <div class="a_line" id="line125"></div>
-  <div class="a_line" id="line126"></div>
-  <div class="a_line" id="line127"></div>
-  <div class="a_line" id="line128"></div>
-  <div class="a_line" id="line129"></div>
+// function cc(title, mess) {
+//   do_console--;
+//   if (the_key != MOVING_NOT) {
+//     //  if (do_console >= 0) {
+//     console.log(title, mess);
+//   }
+// }
+const MOVING_NOT = 0;
+
+const MOVING_BACKWARDS = 1;
+const MOVING_RIGHT = 2;
+const MOVING_FORWARD = 3;
+const MOVING_LEFT = 4;
+
+
+let sprite_half_x = 128;
+const area_width_half = 16 * 1048;               //16768
+let player_x = area_width_half;
+let player_y = 512 + 512;           // 512+512=1048
+var the_key = 0;
+
+const numDrawings = 90;
+
+
+const area_width = 2 * area_width_half;          // 33536
+const viewport_middle_x = area_width_half - 512; // 16256
+
+const area_height_half = 512;
+const area_height = 1024;
+const viewport_middle_y = 512;
 
 
 
 
-  <div class="a_line" id="line130"></div>
-  <div class="a_line" id="line131"></div>
-  <div class="a_line" id="line132"></div>
-  <div class="a_line" id="line133"></div>
-  <div class="a_line" id="line134"></div>
-  <div class="a_line" id="line135"></div>
-  <div class="a_line" id="line136"></div>
-  <div class="a_line" id="line137"></div>
-  <div class="a_line" id="line138"></div>
-  <div class="a_line" id="line139"></div>
+
+// let overflow_accums = [];     // overflow_accums.fill(0)
+// let x_shift_list = [];// overflow_accums.fill(0)
 
 
-  <div class="a_line" id="line140"></div>
-  <div class="a_line" id="line141"></div>
-  <div class="a_line" id="line142"></div>
-  <div class="a_line" id="line143"></div>
-  <div class="a_line" id="line144"></div>
-  <div class="a_line" id="line145"></div>
-  <div class="a_line" id="line146"></div>
-  <div class="a_line" id="line147"></div>
-  <div class="a_line" id="line148"></div>
-  <div class="a_line" id="line149"></div>
 
 
-  <div class="a_line" id="line150"></div>
-  <div class="a_line" id="line151"></div>
-  <div class="a_line" id="line152"></div>
-  <div class="a_line" id="line153"></div>
-  <div class="a_line" id="line154"></div>
-  <div class="a_line" id="line155"></div>
-  <div class="a_line" id="line156"></div>
-  <div class="a_line" id="line157"></div>
-  <div class="a_line" id="line158"></div>
-  <div class="a_line" id="line159"></div>
+
+//////////////////////
+let number_lines = start_stop_flip.length;
+let closest_width_index = number_lines - 1;
+function initLeftRight() {
+  let [index, i_start, i_stop, _flip] = start_stop_flip[closest_width_index];
+  right_stop = i_stop + 1;
+  left_stop = i_start;
+  initCounters();
+  moveForward();
+  moveForward();
+  moveForward();
+  moveForward();
+  for (let left_line = 0; left_line < 128; left_line++) {
+    moveLeft();
+  }
+  requestAnimationFrame(doLeftRight);
+}
+
+function initCounters() {
+  resetLeft();
+  for (let left_line = 0; left_line < 256; left_line++) {
+    moveLeft();
+  }
+}
 
 
-  <div class="a_line" id="line160"></div>
-  <div class="a_line" id="line161"></div>
-  <div class="a_line" id="line162"></div>
-  <div class="a_line" id="line163"></div>
-  <div class="a_line" id="line164"></div>
-  <div class="a_line" id="line165"></div>
-  <div class="a_line" id="line166"></div>
-  <div class="a_line" id="line167"></div>
-  <div class="a_line" id="line168"></div>
-  <div class="a_line" id="line169"></div>
+//function leftRightStart(number_lines) {
+let right_stop;
+let left_stop;
+let overflow_accums = [];
+let x_shift_list = [];
+
+let keep_running = true;
+let num_lines = number_lines;
+let y_flip_count = 4;
+let dist_count = 0;
+let spin_count = 0;
+let slow_count = 0;
+
+let closest_depth_index = y_invert_lines.length - 1;
+let LAST_SPIN_INDEX = 255;
 
 
-  <div class="a_line" id="line170"></div>
-  <div class="a_line" id="line171"></div>
-  <div class="a_line" id="line172"></div>
-  <div class="a_line" id="line173"></div>
-  <div class="a_line" id="line174"></div>
-  <div class="a_line" id="line175"></div>
-  <div class="a_line" id="line176"></div>
-  <div class="a_line" id="line177"></div>
-  <div class="a_line" id="line178"></div>
-  <div class="a_line" id="line179"></div>
-
-  <div class="a_line" id="line180"></div>
-  <div class="a_line" id="line181"></div>
-  <div class="a_line" id="line182"></div>
-  <div class="a_line" id="line183"></div>
-  <div class="a_line" id="line184"></div>
-  <div class="a_line" id="line185"></div>
-  <div class="a_line" id="line186"></div>
-  <div class="a_line" id="line187"></div>
-  <div class="a_line" id="line188"></div>
-  <div class="a_line" id="line189"></div>
-
-  <div class="a_line" id="line190"></div>
-  <div class="a_line" id="line191"></div>
-  <div class="a_line" id="line192"></div>
-  <div class="a_line" id="line193"></div>
-  <div class="a_line" id="line194"></div>
-  <div class="a_line" id="line195"></div>
-  <div class="a_line" id="line196"></div>
-  <div class="a_line" id="line197"></div>
-  <div class="a_line" id="line198"></div>
-  <div class="a_line" id="line199"></div>
 
 
-  <div class="a_line" id="line200"></div>
-  <div class="a_line" id="line201"></div>
-  <div class="a_line" id="line202"></div>
-  <div class="a_line" id="line203"></div>
-  <div class="a_line" id="line204"></div>
-  <div class="a_line" id="line205"></div>
-  <div class="a_line" id="line206"></div>
-  <div class="a_line" id="line207"></div>
-  <div class="a_line" id="line208"></div>
-  <div class="a_line" id="line209"></div>
 
-  <div class="a_line" id="line210"></div>
-  <div class="a_line" id="line211"></div>
-  <div class="a_line" id="line212"></div>
-  <div class="a_line" id="line213"></div>
-  <div class="a_line" id="line214"></div>
-  <div class="a_line" id="line215"></div>
-  <div class="a_line" id="line216"></div>
-  <div class="a_line" id="line217"></div>
-  <div class="a_line" id="line218"></div>
-  <div class="a_line" id="line219"></div>
+let wait_sprite = 0;
+let sprite_offset = 0;
+let sprite_width = 256;
 
-  <div class="a_line" id="line220"></div>
-  <div class="a_line" id="line221"></div>
-  <div class="a_line" id="line222"></div>
-  <div class="a_line" id="line223"></div>
-  <div class="a_line" id="line224"></div>
-  <div class="a_line" id="line225"></div>
-  <div class="a_line" id="line226"></div>
-  <div class="a_line" id="line227"></div>
-  <div class="a_line" id="line228"></div>
-  <div class="a_line" id="line229"></div>
+let sprite_parallaxed_x;
+let viewport_x;
 
-  <div class="a_line" id="line230"></div>
-  <div class="a_line" id="line231"></div>
-  <div class="a_line" id="line232"></div>
-  <div class="a_line" id="line233"></div>
-  <div class="a_line" id="line234"></div>
-  <div class="a_line" id="line235"></div>
-  <div class="a_line" id="line236"></div>
-  <div class="a_line" id="line237"></div>
-  <div class="a_line" id="line238"></div>
-  <div class="a_line" id="line239"></div>
 
-  <div class="a_line" id="line240"></div>
-  <div class="a_line" id="line241"></div>
-  <div class="a_line" id="line242"></div>
-  <div class="a_line" id="line243"></div>
-  <div class="a_line" id="line244"></div>
-  <div class="a_line" id="line245"></div>
-  <div class="a_line" id="line246"></div>
-  <div class="a_line" id="line247"></div>
-  <div class="a_line" id="line248"></div>
-  <div class="a_line" id="line249"></div>
+//initLeftRight();
 
-  <div class="a_line" id="line250"></div>
-  <div class="a_line" id="line251"></div>
-  <div class="a_line" id="line252"></div>
-  <div class="a_line" id="line253"></div>
-  <div class="a_line" id="line254"></div>
-  <div class="a_line" id="line255"></div>
 
-`;
+
+// +510 is on centerline
+// +404 is in square DOES NOT WORK
+
+// disappears
+// at y=1048, left    
+//      -243px       area_width_half - 694
+//      +1011px      area_width_half + 692
+
+// at y=512 
+//    -144px     area_width_half - 4108
+//    +912px     area_width_half + 4090;
+
+
+disappear_left = area_width_half - 4108;  // so 256px wide leaves visual at -243px
+
+document.addEventListener('keydown', function (event) {
+  if (event.keyCode == 38) {
+    the_key = MOVING_BACKWARDS;
+  }
+  else if (event.keyCode == 39) {
+    the_key = MOVING_RIGHT;
+  }
+  else if (event.keyCode == 40) {
+    the_key = MOVING_FORWARD;
+  }
+  else if (event.keyCode == 37) {
+    the_key = MOVING_LEFT;
+  } else {
+    the_key = MOVING_NOT;
+  }
+});
+
+function doLeftRight(timestamp) {
+
+  //   moveLeft();
+  //moveLeft();
+
+
+  //console.log("mmm");
+  //   move_pylon1();
+  // pylonHtml();
+
+  //  the_pylon = pylonHtml(830, 329, 1);
+
+  // console.log(the_pylon);
+  // targetDiv = document.getElementById('the_pylons');
+  // targetDiv.innerHTML = a_pylon;
+  // // moveLeft();
+
+
+  // console.log("doLeftRight", player_x, player_y);
+  if (the_key == MOVING_FORWARD) { /// MOVING_BACKWARDS) {
+    player_point.y += 2;
+    cube_x.y -= 2;
+    //player_y++;
+    moveBack();
+    moveBack();
+    //    moveBack();
+    //  sprite_5.y--;
+  }
+  else if (the_key == MOVING_RIGHT) {
+    player_point.x += 6;
+
+    //cube_x.x -= 9; no move
+    cube_x.x -= 18;
+
+    moveRight();
+    moveRight();
+    moveRight();
+    moveRight();
+    moveRight();
+    moveRight();
+    //   sprite_5.x--;
+  }
+  else if (the_key == MOVING_BACKWARDS) { ///MOVING_FORWARD) {
+    //player_y--;
+    player_point.y -= 2;
+    cube_x.y += 2;
+    moveForward();
+    moveForward();
+    //moveForward();
+    // sprite_5.y++;
+  }
+  else if (the_key == MOVING_LEFT) {
+    player_point.x -= 6;
+
+    //cube_x.x += 9;  // no move
+    cube_x.x += 18;
+
+    //player_x--;
+    moveLeft();
+    moveLeft();
+    moveLeft();
+    moveLeft();
+    moveLeft();
+    moveLeft();
+    //     sprite_5.x++;
+  }
+
+  setPolygon(pylon_point_1, 'the_pylons_1');
+
+
+
+  spriteSvg(cube_x, { x: player_x, y: player_y });
+
+
+
+
+
+  if (keep_running) {
+    //    (sprite_right, player_x, player_y);
+    //   moveObject(cube_1, player_x, player_y);
+    //moveObject(sprite_back, player_x, player_y);
+    affixLeftRight();
+    requestAnimationFrame(doLeftRight);
+  } else {
+  }
+}
+
+
+
+
+function overflowLeft(cur_line, new_sum) {
+  if (new_sum < 0) {
+    new_sum += num_lines;
+    x_shift_list[cur_line]++;
+    let [index, overflow_l_start, overflow_l_stop, _flip] = start_stop_flip[cur_line];
+    if (x_shift_list[cur_line] == overflow_l_start) {
+      x_shift_list[cur_line] = overflow_l_stop;
+    }
+  }
+  return new_sum;
+}
+function resetLeft() {
+  //      for (let cur_line = 14; cur_line < num_lines; cur_line++) {
+  for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+    let [index, _start, reset_left, _flip] = start_stop_flip[cur_line];
+    x_shift_list[cur_line] = reset_left;
+    overflow_accums[cur_line] = num_lines - 1;
+  }
+}
+
+function moveLeft() {
+  let left_bot_count = x_shift_list[num_lines - 1];
+  if (left_bot_count == -1) {
+    resetLeft();
+  } else {
+    //        for (let left_line = 14; left_line < num_lines; left_line++) {
+    for (let left_line = 0; left_line < num_lines; left_line++) {
+      let old_left = overflow_accums[left_line];
+      let left_sum = old_left - left_line - 1;
+      let adjust_left = overflowLeft(left_line, left_sum);
+      overflow_accums[left_line] = adjust_left;
+    }
+  }
+}
+//////////////////
+function resetRight() {
+  //      for (let cur_line = 14; cur_line < num_lines; cur_line++) {
+  for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+    let [index, reset_right, _stop, _flip] = start_stop_flip[cur_line];
+    x_shift_list[cur_line] = reset_right;
+    overflow_accums[cur_line] = 0;
+  }
+}
+
+function moveRight() {
+  let right_bot_count = x_shift_list[closest_width_index];
+  let [_index, _start, end_offset, _flip_offset] = start_stop_flip[closest_width_index];
+  if (right_bot_count == end_offset + 1) {
+    resetRight();
+  } else {
+    //        for (let right_line = 14; right_line < num_lines; right_line++) {
+    for (let right_line = 0; right_line < num_lines; right_line++) {
+      let old_right = overflow_accums[right_line];
+      let right_sum = old_right + right_line + 1;
+      let adjust_right = overflowRight(right_line, right_sum);
+      overflow_accums[right_line] = adjust_right;
+    }
+  }
+}
+
+function overflowRight(cur_line, new_sum) {
+  if (new_sum > num_lines) {
+    new_sum -= num_lines;
+    x_shift_list[cur_line]--;
+    let [index, overflow_r_start, overflow_r_stop, _flip] = start_stop_flip[cur_line];
+    if (x_shift_list[cur_line] == overflow_r_stop) {
+      x_shift_list[cur_line] = overflow_r_start;
+    }
+  }
+  return new_sum;
+}
+
+function moveBack() {
+  y_flip_count += 1;
+  if (y_flip_count > closest_depth_index) {
+    y_flip_count = 0;
+  }
+}
+
+function moveForward() {
+  if (y_flip_count == 0) {
+    y_flip_count = closest_depth_index;
+  } else {
+    y_flip_count -= 1;
+  }
+}
+
+
+
+function affixLeftRight() {
+  const y_counter = Math.floor(y_flip_count);
+  const invert_lines = y_invert_lines[y_counter];
+  //      for (let affix_line = 14; affix_line < num_lines; affix_line++) {
+  for (let affix_line = 0; affix_line < num_lines; affix_line++) {
+    const inverted_x = invert_lines[affix_line];
+    let affix_shift = x_shift_list[affix_line];
+    if (inverted_x == 0) {
+      let [_index, _start, _stop, invert_flip] = start_stop_flip[affix_line];
+      affix_shift -= invert_flip;
+    }
+    const line_element = document.getElementById(`line${affix_line}`);
+    line_element.style = `background-position-x: ${affix_shift}px `;
+  }
+}
+
+
+
+
+

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="check.css" />
+<link rel="stylesheet" href="the-css.css" />
 <link rel="stylesheet" href="checkers.css" />
-
+<link rel="stylesheet" href="pylons.css" />
+<link rel="stylesheet" href="crash.css" />
 
 <div id="the-holder" style="position: relative; background-color: rgb(23,23,23,0.92); margin-left:64px;">
 
@@ -13,6 +14,7 @@
 
   <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
 
+  <div id='pylon-svg' style="height:0px; display:noXne"> </div>
   <div id='pylon-html' style="height:0px; display:noXne"> </div>
   <div id="cube-x" style="background-color: rgb(23,23,23,0)"></div>
 
@@ -21,26 +23,44 @@
 </div>
 
 
-
+<script type="text/javascript" src="vanish.js"></script>
 <script type="text/javascript" src="data.js"></script>
 
-<script type="text/javascript" src="start.js"></script>
+
 
 
 <script type="text/javascript" src="globals.js"></script>
 
+<script type="text/javascript" src="checkers_html.js"></script>
+<script type="text/javascript" src="checkers.js"></script>
 
 <div id="the-sprites" style="background-color: rgba(218, 20, 225, 0)"></div>
 <script type="text/javascript" src="sprites.js"></script>
 
-<div id="the-crash"></div>
+<div id="the-crash">
+  <div id="crash_nw"></div>
+  <div id="crash_ne"></div>
+  <div id="crash_sw"></div>
+  <div id="crash_se"></div>
+
+</div>
+
+
+<script type="text/javascript" src="crash_nw_html.js"></script>
+<script type="text/javascript" src="crash_ne_html.js"></script>
+<script type="text/javascript" src="crash_sw_html.js"></script>
+<script type="text/javascript" src="crash_se_html.js"></script>
 <script type="text/javascript" src="crash.js"></script>
 
 
+<script type="text/javascript" src="pylons_svg.js"></script>
+<script type="text/javascript" src="pylons_data.js"></script>
+<script type="text/javascript" src="pylons_html.js"></script>
 <script type="text/javascript" src="pylons.js"></script>
 
 
-<script type="text/javascript" src="checkers.js"></script>
+
+<script type="text/javascript" src="start.js"></script>
 <script>
   initLeftRight();
 </script>

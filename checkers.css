@@ -1,6 +1,24 @@
 
 
 
+#the-checkerboard{
+  top:356px;
+  left:64px;
+   width:1024px;
+   height:256px;
+     /* position: absolute; */
+         z-index: 9;
+         /* display:none; */
+}
+
+
+.a_line {
+  background-image: url('checkers.png');
+ width: 1024px;
+ position: relative;
+ height: 1px;
+}
+
 #line0 {    background-position: -0px -0px; display:nxone}  /* -8 */
 #line1 {    background-position: -0px -1px; display:nxone}  /* -10 */
 #line2 {    background-position: -4px -2px; display:nxone}  /* -12 */

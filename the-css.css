@@ -1,13 +1,4 @@
 
-#the-checkerboard{
-  top:356px;
-  left:64px;
-   width:1024px;
-   height:256px;
-     /* position: absolute; */
-         z-index: 9;
-         /* display:none; */
-}
 
 #the-draw{
   top:0px;
@@ -415,26 +406,4 @@ perspective:250px;
     height: 256px;
   }
 
-.a_line {
-   background-image: url('checker-board.png');
-  width: 1024px;
-  position: relative;
-  height: 1px;
-}
 
-.west_line {
-  background-image: url('checker-board.png');
-  width: 512px;
-  position: relative;
-  left: 0px;
-  height: 1px;
-  transform: scaleX(-1);
-}
-
-.east_line {
-  background-image: url('checker-board.png');
-  width: 512px;
-  position: relative;
-  left: 0px;
-  height: 1px;
-}

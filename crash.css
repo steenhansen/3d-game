@@ -1,0 +1,43 @@
+
+
+
+#the-crash {
+   float:left; 
+  display:nXone;
+  margin-left:64px; 
+  margin-top:64px;
+}
+
+#crash_nw {
+  float:left; 
+}
+
+#crash_ne {
+  float:left; 
+}
+#crash_sw {
+  float:left; 
+}
+#crash_se {
+  float:left; 
+}
+
+ 
+.west_line {
+  background-image: url('checkers.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+  transform: scaleX(-1);
+}
+
+.east_line {
+  background-image: url('checkers.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+}
+
+

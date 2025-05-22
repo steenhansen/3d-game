@@ -29,22 +29,6 @@ function drawLine(point_1, point_2, the_color) {
 
 
 
-// let HALF_VIEW_WIDTH = 512;
-// let BOTTOM_CHECKERBOARD = 512;
-
-// let BACK_VANISH_POINT = [511, 256];
-// let player_point = { x: 512, y: 1024 };
-
-// let PYLON_WIDTH = 256;
-// let HALF_PYLON_WIDTH = PYLON_WIDTH / 2;      // 128
-
-// let PYLON_DEPTH = 96;
-// let HALF_PYLON_DEPTH = PYLON_DEPTH / 2;   //48
-
-
-// let SQUISH_DEPTH_START = 320;
-// let SQUISH_FAR = 0.20;
-
 document.getElementById('the-sprites').innerHTML = `
 <div id="square-right">2</div>
 
@@ -136,7 +120,7 @@ function spriteMiddle(sprite_point, player_point, difference_y) {
        thus 902-864=38
   */
   cheat_sprite_y = difference_y - 49;           // 40 bad              50 good
-  console.log("ccccccc", cheat_sprite_y);
+  // console.log("ccccccc", cheat_sprite_y);
   z_index = zIndex(difference_x, cheat_sprite_y);
 
 
@@ -149,20 +133,23 @@ function spriteMiddle(sprite_point, player_point, difference_y) {
 
 
 
-function distancedPoint(distance_in_256, front_point) {
-  shrink_size = sprite_sizes[distance_in_256];
-  let [x_1, y_1] = BACK_VANISH_POINT;
-  let [x_2, y_2] = front_point;
-  x_3 = shrink_size * x_2 + (1 - shrink_size) * x_1;
-  y_3 = shrink_size * y_2 + (1 - shrink_size) * y_1;
-  return [x_3, y_3];
+function spinObject(the_sprite) {
+  // console.log("sdfasdf", the_sprite.id);
+  const sprite_element = document.getElementById(the_sprite.id);
+  // console.log("sprite_element", sprite_element);
+  let the_spin = the_sprite.spin;
+  the_spin = the_spin + 1;
+  if (the_spin > numDrawings) {
+    the_spin = 0;
+  }
+  the_sprite.spin = the_spin;
+  let int_spin = Math.floor(the_spin);
+  //console.log('sprite_element.style', sprite_element.style.backgroundPositionX);
+  sprite_element.style.backgroundPositionX = int_spin * 256 + "px";
 }
 
-function zIndex(difference_x, difference_y) {
-  let y_index = 1000 - difference_y;
-  let x_index = 1000 - difference_x;
-  let z_index = y_index * 1000 + x_index; // so that stuff same y distance favors middle stuff
-  return z_index;
-}
+
+
+
 
 
