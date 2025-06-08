@@ -1,5 +1,19 @@
 
 
+
+
+
+#the-holder {
+position: relative; background-color: rgb(23,23,23,0.92); margin-left:64px; overflow:hidden}
+
+
+
+
+
+
+
+
+
 #the-draw{
   top:0px;
   left:0px;
@@ -11,20 +25,6 @@
 
 
 
-#cube-x {
-  background-image: url('colored-ball.png');
-  width: 256px;
-  height: 256px;
-   position: absolute;
-  z-index: 999;
-  top:0px;
-  left:0px;
-       transform-origin: center center; 
-  transform: scale(1) ;
-  display: xnone;
-  margin-left:0px;
-  margin-top:0px;
-}
 
 #cube-y {
   background-image: url('colored-ball.png');
@@ -40,7 +40,7 @@
 }
 
 
-#a-pylon{
+#a-column{
     top:100px;
   left:64px;
    width:1024px;
@@ -54,7 +54,7 @@ display:none;
 
 
 
-.a-pylon {
+.a-column {
   width: 256px;
     height: 512px; 
     position: absolute;

@@ -294,8 +294,7 @@ document.getElementById('crash_ne').innerHTML = `
     <div class="east_line" id="ne252"></div>
     <div class="east_line" id="ne253"></div>
     <div class="east_line" id="ne254"></div>
-    <div class="east_line" id="ne255"></div>
-    <div class="east_line" id="ne256"></div>
+
 
 
 

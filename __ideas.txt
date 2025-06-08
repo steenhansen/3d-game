@@ -1,0 +1,61 @@
+
+
+sun
+moon
+stars
+
+have grid map where
+
+ OOO                       o
+ O O                      o o
+ 0o0                     ooooo
+         X  Oblack             
+   o                      ooo
+   o                     o   O
+oooooo                    ooo
+   O
+   O
+
+
+   /*      left           right          imagine-Left
+          |              |   \    column |       /          |
+          |              |     \        |     /            |
+          |              |       \      |   /              |
+          |              |         \    | /                |
+          |              |           \  /                  |
+          |              |             P|                  |      
+          0            32000          64000               72000     */
+
+
+               /*      left           right          imagine-Left
+          | column        |   \          | COLUMN /          |
+          |              |     \        |     /            |
+          |              |       \      |   /              |
+          |              |         \    | /                |
+          |              |           \  /                  |
+          |              |             P|                  |        
+          0            32000          64000               72000     */
+
+              /*   imagine-Right       left            Right   
+          |             \   | column     /   |            |
+          |               \ |          /    |            |
+          |                 \         /     |            |
+          |                 | \      /      |            |
+          |                 |   \   /       |            |
+          |                 |     P         |            |          
+        -32000              0             32000           64000               */
+
+
+
+            /*   imagine-Right     left       Right
+       |         \  COLUMN |          /|      column |
+       |           \      |        /  |            |
+       |             \    |      /    |            |
+       |               \  |    /      |            |
+       |                 \|  /        |            |
+       |                  |P          |            |           
+      -32000              0         32000        64000               */
+
+
+
+      

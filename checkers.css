@@ -2,12 +2,12 @@
 
 
 #the-checkerboard{
-  top:356px;
-  left:64px;
+  /* top:356px;
+  left:64px; */
    width:1024px;
    height:256px;
-     /* position: absolute; */
-         z-index: 9;
+      position: relative;
+         z-index: 955;
          /* display:none; */
 }
 

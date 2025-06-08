@@ -290,8 +290,7 @@ document.getElementById('crash_sw').innerHTML = `
     <div class="west_line" id="sw252"></div>
     <div class="west_line" id="sw253"></div>
     <div class="west_line" id="sw254"></div>
-    <div class="west_line" id="sw255"></div>
-    <div class="west_line" id="sw256"></div>
+
 
 
 

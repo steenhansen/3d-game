@@ -6,7 +6,7 @@ const fs = require("fs");
 
 
 /*
-<div id="svg-1" class="a-pylon" style=" left:384px;  transform: scale(1) ;">
+<div id="svg-1" class="a-column" style=" left:384px;  transform: scale(1) ;">
   <svg viewBox="0 0 255 511" style=" left:384px;  transform: scale(1) ;">
     <polygon points="85,0 170,0 170,511 85,511 	" fill="url(#red-grad)" />
     <polygon style="fill:rgba(210, 210, 0, 0.5);" points="85,0   85,511    	          85,480    85,24" />
@@ -14,7 +14,7 @@ const fs = require("fs");
 </div>
 ---- 512 diff in x , and a 55 pixel corner change
 ---- 55/512 = 0.107421875
-<div id="svg-2" class="a-pylon" style=" left:896px;  transform: scale(1) ;">
+<div id="svg-2" class="a-column" style=" left:896px;  transform: scale(1) ;">
   <svg viewBox="0 0 255 511">
     <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
     <polygon fill="url(#blue-grad)" points="85,0   85,511                            30,480   30,24 	" />
@@ -49,13 +49,6 @@ fs.writeFile("svgs-right.txt", the_svgs, err => {
   console.log('File successfully written to disk');
 });
 
-
-// var Stream = require('stream');
-
-//const out = fs.createWriteStream('svgs-right.txt');
-//const stream = canvas.createPNGStream();
-//stream.pipe(out);
-//out.on('finish', () => console.log(sprite_name, 'was created.'));
 
 
 

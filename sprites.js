@@ -1,10 +1,10 @@
 
 
 /*
-    256 is the width of the square, and pylon
+    256 is the width of the square, and column
 
-PYLON_WIDTH = 256
-HALF_PYLON_WIDTH=PYLON_WIDTH/2
+COLUMN_WIDTH = 256
+HALF_COLUMN_WIDTH=COLUMN_WIDTH/2
 
     128 == PX_FROM_CENTER
 
@@ -65,43 +65,62 @@ document.getElementById('the-sprites').innerHTML = `
 `;
 
 
-let cube_x = { id: "cube-x", spin: 31, x: area_width_half, y: 854 };
+let the_bullet = {
+  id: "the-bullet", spin: 31,
+  x: area_width_half + 260, y: 854,
+  //  x_move: +1, y_move: -1,
+  x_move: 0, y_move: 0,
+  x_steps: 6, y_steps: 2,
+};
 
 
-function spriteSvg(the_sprite, player_point) {
-  let is_visible = (player_point.y >= the_sprite.y);
+let cube_x = {
+  id: "cube-x", spin: 31,
+  x: area_width_half, y: 854,
+  //  x_move: +1, y_move: -1,
+  x_move: 0, y_move: 0,
+  x_steps: 6, y_steps: 2,
+};
+
+
+
+
+
+function spriteSvg(the_sprite, the_player) {
+  let is_visible = (the_player.y >= the_sprite.y);
   if (is_visible) {
-    difference_y = player_point.y - the_sprite.y;
-    player_start_left = player_point.x - HALF_PYLON_WIDTH;
-    player_start_right = player_point.x + HALF_PYLON_WIDTH;
+    difference_y = the_player.y - the_sprite.y;
+    player_start_left = the_player.x - HALF_COLUMN_WIDTH;
+    player_start_right = the_player.x + HALF_COLUMN_WIDTH;
 
 
-    //console.log("DDDDD", player_point.x, player_start_left);
-    if (player_point.x > player_start_left) {
+    //console.log("DDDDD", the_player.x, player_start_left);
+    if (the_player.x > player_start_left) {
       //console.log("MMMMMMM");
-      let middle_pylon = spriteMiddle(the_sprite, player_point, difference_y);
-      return middle_pylon;
+      let middle_column = spriteMiddle(the_sprite, the_player, difference_y);
+      return middle_column;
 
-      //let left_pylon = pylonLeft(the_sprite, player_point, difference_y);
-      //return left_pylon;
+      //let left_column = columnLeft(the_sprite, the_player, difference_y);
+      //return left_column;
     } else if (player_x > player_start_right) {
-      let right_pylon = pylonRight(the_sprite, player_point, difference_y);
-      return right_pylon;
+      let right_column = columnRight(the_sprite, the_player, difference_y);
+      return right_column;
     } else {
       //    console.log("MMMMMMM");
-      let middle_pylon = spriteMiddle(the_sprite, player_point, difference_y);
-      return middle_pylon;
+      let middle_column = spriteMiddle(the_sprite, the_player, difference_y);
+      return middle_column;
     }
   }
 }
 
-function spriteMiddle(sprite_point, player_point, difference_y) {
+function spriteMiddle(sprite_point, the_player, difference_y) {
   spinObject(sprite_point);
-  difference_x = player_point.x - sprite_point.x;
+  difference_x = the_player.x - sprite_point.x;
 
   x_offset = HALF_VIEW_WIDTH - difference_x;
 
   front_left_bot_vanish_point_XXXX = [x_offset, BOTTOM_CHECKERBOARD];
+  // console.log("ffffffff");
   left_front_bot = distancedPoint(difference_y, front_left_bot_vanish_point_XXXX);
 
   let [x, y] = left_front_bot;
@@ -110,13 +129,13 @@ function spriteMiddle(sprite_point, player_point, difference_y) {
   the_scale = sprite_sizes[difference_y];
 
 
-  x = left_front_bot[0] - HALF_PYLON_WIDTH;
-  y = y - HALF_PYLON_WIDTH;
+  x = left_front_bot[0] - HALF_COLUMN_WIDTH;
+  y = y - HALF_COLUMN_WIDTH;
 
   sprite_element.style.transform = `scale(${the_scale})`;
 
   /*
-       ball at 864 == pylon at 902
+       ball at 864 == column at 902
        thus 902-864=38
   */
   cheat_sprite_y = difference_y - 49;           // 40 bad              50 good
@@ -130,11 +149,22 @@ function spriteMiddle(sprite_point, player_point, difference_y) {
   sprite_element.style.zIndex = z_index;
 }
 
-
-
-
 function spinObject(the_sprite) {
-  // console.log("sdfasdf", the_sprite.id);
+  // 
+  if (the_sprite.x_move == 1) {
+    the_sprite.x += the_sprite.x_steps;
+  } else if (the_sprite.x_move == -1) {
+    the_sprite.x -= the_sprite.x_steps;
+  } else if (the_sprite.y_move == 1) {
+    the_sprite.y += the_sprite.y_steps;
+  } else if (the_sprite.y_move == -1) {
+    the_sprite.y -= the_sprite.y_steps;
+  }
+
+
+  // the_sprite.x += the_sprite.x_move;
+  // the_sprite.y += the_sprite.y_move;
+
   const sprite_element = document.getElementById(the_sprite.id);
   // console.log("sprite_element", sprite_element);
   let the_spin = the_sprite.spin;

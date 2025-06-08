@@ -3,9 +3,9 @@
 
 #the-crash {
    float:left; 
-  display:nXone;
+  display:none;
   margin-left:64px; 
-  margin-top:64px;
+  margin-top:4px;
 }
 
 #crash_nw {
@@ -16,6 +16,7 @@
   float:left; 
 }
 #crash_sw {
+  clear:left;
   float:left; 
 }
 #crash_se {

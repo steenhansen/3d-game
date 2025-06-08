@@ -290,8 +290,7 @@ document.getElementById('crash_se').innerHTML = `
     <div class="east_line" id="se252"></div>
     <div class="east_line" id="se253"></div>
     <div class="east_line" id="se254"></div>
-    <div class="east_line" id="se255"></div>
-    <div class="east_line" id="se256"></div>
+
 
 
 
