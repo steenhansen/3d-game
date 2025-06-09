@@ -1,15 +1,15 @@
-function startCrash(num_lines, crash_speed) {
+function startLand(num_lines, land_speed) {
   let first_time;
 
-  requestAnimationFrame(firstCrash);
+  requestAnimationFrame(firstLand);
 
-  function firstCrash(timestamp) {
+  function firstLand(timestamp) {
     first_time = timestamp;
-    restCrash(timestamp);
+    restLand(timestamp);
   }
 
-  function restCrash(timestamp) {
-    const frame_count = (timestamp - first_time) / crash_speed; // duration 10 fast, 100 slow
+  function restLand(timestamp) {
+    const frame_count = (timestamp - first_time) / land_speed; // duration 10 fast, 100 slow
     let the_count = Math.floor(frame_count);
 
     let normal_line = `background-position: -${the_count + 2}px -${the_count}px`;
@@ -48,10 +48,10 @@ function startCrash(num_lines, crash_speed) {
     }
 
     if (frame_count < num_lines) {
-      requestAnimationFrame(restCrash);
+      requestAnimationFrame(restLand);
     }
   }
 }
 
-startCrash(255, 25);
+startLand(255, 25);
 

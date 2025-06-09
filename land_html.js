@@ -1,7 +1,7 @@
 
 
 
-document.getElementById('the-crash').innerHTML = `
+document.getElementById('the-land').innerHTML = `
   <div style="float:left; display:xSnone ">
     <div class="west_line" id="nw0"></div>
     <div class="west_line" id="nw1"></div>

@@ -1,5 +1,5 @@
 
-/*
+/*          this is wrong !!!!!!!!!!!
                 |-----------------------------SCENE_MIDDLE_X-------------------------------|
                 |----------LEFT_X_LOW----------------|------RIGHT_X_HIGH-------------------|
 |---UNDERFLOW---|---ZERO_QUARTER---|---ONE_QUARTER---|---TWO_QUARTER---|---THREE_QUARTER---|---OVERFLOW---|
@@ -18,17 +18,3 @@ function objectSide(the_object) {
 }
 
 
-
-// function objectInOverflow(the_object) {
-//   if (the_object.x > THREE_QUARTER) {
-//     return true;
-//   }
-//   return false;
-// }
-
-// function objectInUnderflow(the_object) {
-//   if (the_object.x < ONE_QUARTER) {
-//     return true;
-//   }
-//   return false;
-// }

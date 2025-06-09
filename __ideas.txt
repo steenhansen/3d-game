@@ -1,5 +1,16 @@
 
 
+
+
+q== up and left
+
+
+have a ring of columns, and have colors rotate
+
+
+
+
+
 sun
 moon
 stars

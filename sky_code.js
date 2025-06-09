@@ -5,7 +5,7 @@ let sky_y = 0;
 
 
 function moveSky(travel_speed, sky_direction) {
-  const elem = document.getElementById("msky");
+  const elem = document.getElementById("the-sky");
   if (sky_direction == 'right') {
     sky_x -= travel_speed / 2;
     if (sky_x <= 0) sky_x = 256;

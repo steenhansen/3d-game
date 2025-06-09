@@ -3,15 +3,27 @@
 
 
 
-#the-holder {
+#the-layers {
 position: relative; background-color: rgb(23,23,23,0.92); margin-left:64px; overflow:hidden}
 
 
 
+#the-missiles{
+  background-color: rgba(218, 20, 225, 0)
+}
 
 
+#column-svg {
+  height:0px;
+}
 
+#column-html{
+  height:0px; 
+}
 
+#the-bullet{
+  background-color: rgb(23,23,23,0);
+}
 
 
 #the-draw{

@@ -1,31 +1,31 @@
 
 
 
-#the-crash {
+#the-land {
    float:left; 
   display:none;
   margin-left:64px; 
   margin-top:4px;
 }
 
-#crash_nw {
+#land_nw {
   float:left; 
 }
 
-#crash_ne {
+#land_ne {
   float:left; 
 }
-#crash_sw {
+#land_sw {
   clear:left;
   float:left; 
 }
-#crash_se {
+#land_se {
   float:left; 
 }
 
  
 .west_line {
-  background-image: url('checkers.png');
+  background-image: url('field.png');
   width: 512px;
   position: relative;
   left: 0px;
@@ -34,7 +34,7 @@
 }
 
 .east_line {
-  background-image: url('checkers.png');
+  background-image: url('field.png');
   width: 512px;
   position: relative;
   left: 0px;

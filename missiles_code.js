@@ -11,7 +11,6 @@ HALF_COLUMN_WIDTH=COLUMN_WIDTH/2
 */
 
 function drawLine(point_1, point_2, the_color) {
-  // console.log("P1", point_1);
   const canvas = document.getElementById("the-draw");
   const ctx = canvas.getContext("2d");
 
@@ -29,7 +28,7 @@ function drawLine(point_1, point_2, the_color) {
 
 
 
-document.getElementById('the-sprites').innerHTML = `
+document.getElementById('the-missiles').innerHTML = `
 <div id="square-right">2</div>
 
 <div id="square-front">1</div>
@@ -86,27 +85,20 @@ let cube_x = {
 
 
 
-function spriteSvg(the_sprite, the_player) {
+function missilesvg(the_sprite, the_player) {
   let is_visible = (the_player.y >= the_sprite.y);
   if (is_visible) {
     difference_y = the_player.y - the_sprite.y;
     player_start_left = the_player.x - HALF_COLUMN_WIDTH;
     player_start_right = the_player.x + HALF_COLUMN_WIDTH;
-
-
-    //console.log("DDDDD", the_player.x, player_start_left);
     if (the_player.x > player_start_left) {
-      //console.log("MMMMMMM");
       let middle_column = spriteMiddle(the_sprite, the_player, difference_y);
       return middle_column;
 
-      //let left_column = columnLeft(the_sprite, the_player, difference_y);
-      //return left_column;
     } else if (player_x > player_start_right) {
       let right_column = columnRight(the_sprite, the_player, difference_y);
       return right_column;
     } else {
-      //    console.log("MMMMMMM");
       let middle_column = spriteMiddle(the_sprite, the_player, difference_y);
       return middle_column;
     }
@@ -119,8 +111,7 @@ function spriteMiddle(sprite_point, the_player, difference_y) {
 
   x_offset = HALF_VIEW_WIDTH - difference_x;
 
-  front_left_bot_vanish_point_XXXX = [x_offset, BOTTOM_CHECKERBOARD];
-  // console.log("ffffffff");
+  front_left_bot_vanish_point_XXXX = [x_offset, BOTTOM_FIELD];
   left_front_bot = distancedPoint(difference_y, front_left_bot_vanish_point_XXXX);
 
   let [x, y] = left_front_bot;
@@ -134,15 +125,8 @@ function spriteMiddle(sprite_point, the_player, difference_y) {
 
   sprite_element.style.transform = `scale(${the_scale})`;
 
-  /*
-       ball at 864 == column at 902
-       thus 902-864=38
-  */
   cheat_sprite_y = difference_y - 49;           // 40 bad              50 good
-  // console.log("ccccccc", cheat_sprite_y);
   z_index = zIndex(difference_x, cheat_sprite_y);
-
-
 
   sprite_element.style.marginLeft = `${x}px`;
   sprite_element.style.marginTop = `${y}px`;
@@ -162,11 +146,7 @@ function spinObject(the_sprite) {
   }
 
 
-  // the_sprite.x += the_sprite.x_move;
-  // the_sprite.y += the_sprite.y_move;
-
   const sprite_element = document.getElementById(the_sprite.id);
-  // console.log("sprite_element", sprite_element);
   let the_spin = the_sprite.spin;
   the_spin = the_spin + 1;
   if (the_spin > numDrawings) {
@@ -174,7 +154,6 @@ function spinObject(the_sprite) {
   }
   the_sprite.spin = the_spin;
   let int_spin = Math.floor(the_spin);
-  //console.log('sprite_element.style', sprite_element.style.backgroundPositionX);
   sprite_element.style.backgroundPositionX = int_spin * 256 + "px";
 }
 

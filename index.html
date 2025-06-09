@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="the-css.css" />
-<link rel="stylesheet" href="checkers.css" />
+<link rel="stylesheet" href="layout.css" />
+<link rel="stylesheet" href="field.css" />
 <link rel="stylesheet" href="columns.css" />
-<link rel="stylesheet" href="crash.css" />
-<link rel="stylesheet" href="sprites.css" />
+<link rel="stylesheet" href="land.css" />
+<link rel="stylesheet" href="missiles.css" />
 <link rel="stylesheet" href="sky.css" />
 
-
-<script type="text/javascript" src="globals.js"></script>
+<script type="text/javascript" src="the_globals.js"></script>
 <script type="text/javascript" src="overflow.js"></script>
 <script type="text/javascript" src="player_data.js"></script>
-<script type="text/javascript" src="player.js"></script>
-<script type="text/javascript" src="sky.js"></script>
-<script type="text/javascript" src="keyboard.js"></script>
-<script rel="text/javascript" src="checkers_test.js"></script>
+<script type="text/javascript" src="player_code.js"></script>
+<script type="text/javascript" src="sky_code.js"></script>
+<script type="text/javascript" src="the_keyboard.js"></script>
+<script rel="text/javascript" src="field_test.js"></script>
+<script type="text/javascript" src="vanish_point.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="field_code.js"></script>
+<script type="text/javascript" src="scene_3d.js"></script>
 
-<div id="the-holder">
-
-
+<div id="the-layers">
   <div id="the-sun"></div>
-
   <div class="sky-aperture">
-
-    <div class="the-sky sky-anim" id="msky"></div>
-
+    <div id="the-sky"></div>
   </div>
+  <div id="the-field"> </div>
 
-
-  <div id="the-checkerboard"> </div>
+  <script type="text/javascript" src="field_html.js"></script>
 
   <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
-
-  <div id='column-svg' style="height:0px; display:noXne"> </div>
-  <div id='column-html' style="height:0px; display:noXne"> </div>
-
+  <div id='column-svg'> </div>
+  <div id='column-html'> </div>
   <div id="cube-x" style="background-color: rgb(23,23,23,0)"></div>
-
-  <div id="the-bullet" style="background-color: rgb(23,23,23,0)"></div>
-
-
+  <div id="the-bullet"></div>
 </div>
 
+<div id="the-missiles"></div>
+<script type="text/javascript" src="missiles_code.js"></script>
 
-<script type="text/javascript" src="vanish.js"></script>
-<script type="text/javascript" src="data.js"></script>
-
-
-
-<script type="text/javascript" src="checkers.js"></script>
-<script type="text/javascript" src="scene.js"></script>
-
-<script type="text/javascript" src="checkers_html.js"></script>
-
-
-
-<div id="the-sprites" style="background-color: rgba(218, 20, 225, 0)"></div>
-<script type="text/javascript" src="sprites.js"></script>
-
-<div id="the-crash">
-  <div id="crash_nw"></div>
-  <div id="crash_ne"></div>
-  <div id="crash_sw"></div>
-  <div id="crash_se"></div>
-
+<div id="the-land">
+  <div id="land_nw"></div>
+  <div id="land_ne"></div>
+  <div id="land_sw"></div>
+  <div id="land_se"></div>
 </div>
-
-
-<script type="text/javascript" src="crash_nw_html.js"></script>
-<script type="text/javascript" src="crash_ne_html.js"></script>
-<script type="text/javascript" src="crash_sw_html.js"></script>
-<script type="text/javascript" src="crash_se_html.js"></script>
-<script type="text/javascript" src="crash.js"></script>
+<script type="text/javascript" src="land_nw_html.js"></script>
+<script type="text/javascript" src="land_ne_html.js"></script>
+<script type="text/javascript" src="land_sw_html.js"></script>
+<script type="text/javascript" src="land_se_html.js"></script>
+<script type="text/javascript" src="land_code.js"></script>
 
 
 <script type="text/javascript" src="columns_svg.js"></script>
@@ -85,24 +62,3 @@
 <script>
   initLeftRight();
 </script>
-<!-- 
-
-https://stackoverflow.com/questions/1934210/finding-a-point-on-a-line
-
-<div style="
-    width: 512px;
-     top: 17px; 
-    position: absolute;
-    z-index: 5;
-    background-color: pink;
-">512 w</div>
-
-<div style="
-display: none;
-    position: absolute;
-   z-index: 1000;
-     left:1024px;
-      width: 5256px;
-    height: 256px;
-    background-color: green;
-">hider</div> -->

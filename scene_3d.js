@@ -86,25 +86,25 @@ turnOnKeys();
 
 function sceneRight(travel_speed) {
   playerRight(travel_speed);
-  checkersRight(travel_speed);
+  fieldRight(travel_speed);
   moveSky(travel_speed, 'right');
 }
 
 function sceneLeft(travel_speed) {
   playerLeft(travel_speed);
-  checkersLeft(travel_speed);
+  fieldLeft(travel_speed);
   moveSky(travel_speed, 'left');
 }
 
 function sceneForward(travel_speed) {
   playerForward(travel_speed);
-  checkersForwards(travel_speed);
+  fieldForwards(travel_speed);
   moveSky(travel_speed, 'forward');
 }
 
 function sceneBackward(travel_speed) {
   playerBackward(travel_speed);
-  checkersBackwards(travel_speed);
+  fieldBackwards(travel_speed);
   moveSky(travel_speed, 'backward');
 }
 
@@ -114,10 +114,8 @@ function sceneStop() {
 
 
 function animateScene(timestamp) {
-  //console.log("X asd player.x", the_player.x);
   if (TEST_SCENE) {
     the_move = getTestMove();
-    //console.log("the_move", the_move);
   } else {
     the_move = the_key;
   }
@@ -132,8 +130,8 @@ function animateScene(timestamp) {
     sceneLeft(travel_speed);
   } else {
     // console.log("no input is go right");
-    sceneRight(travel_speed);
-    the_move = MOVING_RIGHT;
+    //sceneRight(travel_speed);
+    //the_move = MOVING_RIGHT;
   }
 
   if (the_move != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
@@ -146,6 +144,12 @@ function animateScene(timestamp) {
     setPolygon(column_point_5, 'the_columns_5');
     setPolygon(column_point_6, 'the_columns_6');
     setPolygon(column_point_7, 'the_columns_7');
+
+    // setPolygon(column_point_8, 'the_columns_8');
+    // setPolygon(column_point_9, 'the_columns_9');
+    // setPolygon(column_point_10, 'the_columns_10');
+    // setPolygon(column_point_11, 'the_columns_11');
+
 
     DRAW_AT_LEAST_ONCE = false;
   }
@@ -173,8 +177,8 @@ function animateScene(timestamp) {
 
 
 
-  // spriteSvg(cube_x, { x: player_x, y: player_y });
-  // spriteSvg(the_bullet, { x: player_x, y: player_y });
+  // missilesvg(cube_x, { x: player_x, y: player_y });
+  // missilesvg(the_bullet, { x: player_x, y: player_y });
 
   if (keep_running) {
     affixLeftRight();

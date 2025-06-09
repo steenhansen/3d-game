@@ -1,7 +1,7 @@
 
 
 
-document.getElementById('the-sprites').innerHTML = `
+document.getElementById('the-missiles').innerHTML = `
 <div id="square-right">2</div>
 
 <div id="square-front">1</div>

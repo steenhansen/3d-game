@@ -1,5 +1,5 @@
 
-document.getElementById('the-checkerboard').innerHTML = `
+document.getElementById('the-field').innerHTML = `
 
  <div class="a_line" id="line0"></div>
   <div class="a_line" id="line1"></div>

@@ -1,7 +1,7 @@
 
 
 
-document.getElementById('crash_ne').innerHTML = `
+document.getElementById('land_ne').innerHTML = `
  
 
 
