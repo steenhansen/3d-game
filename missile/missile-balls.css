@@ -1,0 +1,53 @@
+
+
+
+/* #planets2 {
+position:absolute;
+left:var(--my-missile-x);
+top:var(--my-missile-y);
+
+z-index:  var(--my-missile-z);
+height:  var(--my-missile-height);
+width: var(--my-missile-width);
+} */
+
+
+
+#missile-100 { 
+  display:var(--missile-display-100); 
+  fill:var(--missile-fill-100); 
+}
+
+#missile-101 { 
+  display:var(--missile-display-101); 
+  fill:var(--missile-fill-101); 
+}
+
+
+
+
+
+#missile-200 {
+   display:var(--missile-display-200);
+   fill:var(--missile-fill-200); 
+   }
+   #missile-300 {
+    display:var(--missile-display-300);
+    fill:var(--missile-fill-300); 
+    }
+    #missile-400 {
+      display:var(--missile-display-400);
+      fill:var(--missile-fill-400); 
+      }
+    
+      #missile-500 {
+        display:var(--missile-display-500);
+        fill:var(--missile-fill-500); 
+        }
+    
+        
+        #missile-600 {
+          display:var(--missile-display-600);
+          fill:var(--missile-fill-600); 
+          }
+        

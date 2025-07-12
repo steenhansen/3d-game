@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="layout.css" />
-<link rel="stylesheet" href="field.css" />
-<link rel="stylesheet" href="columns.css" />
-<link rel="stylesheet" href="land.css" />
-<link rel="stylesheet" href="missiles.css" />
-<link rel="stylesheet" href="sky.css" />
+<link rel="stylesheet" href="variables/variables.css" />
+<link rel="stylesheet" href="scene/layout.css" />
+<link rel="stylesheet" href="field/field.css" />
+<link rel="stylesheet" href="columns/columns.css" />
+<link rel="stylesheet" href="land/land.css" />
+<link rel="stylesheet" href="enemy/enemy.css" />
+<link rel="stylesheet" href="missile/missile.css" />
+<link rel="stylesheet" href="sky/sky.css" />
 
-<script type="text/javascript" src="the_globals.js"></script>
-<script type="text/javascript" src="overflow.js"></script>
-<script type="text/javascript" src="player_data.js"></script>
-<script type="text/javascript" src="player_code.js"></script>
-<script type="text/javascript" src="sky_code.js"></script>
-<script type="text/javascript" src="the_keyboard.js"></script>
-<script rel="text/javascript" src="field_test.js"></script>
-<script type="text/javascript" src="vanish_point.js"></script>
-<script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" src="field_code.js"></script>
-<script type="text/javascript" src="scene_3d.js"></script>
+<script type="text/javascript" src="data/colors.js"></script>
+<script type="text/javascript" src="variables/the_globals.js"></script>
+<script type="text/javascript" src="things/objects.js"></script>
+<script type="text/javascript" src="svg-rect/svg-into-rect.js"></script>
+
+<script type="text/javascript" src="scene/overflow.js"></script>
+<script type="text/javascript" src="player/player_data.js"></script>
+<script type="text/javascript" src="player/player_code.js"></script>
+<script type="text/javascript" src="things/panel.js"></script>
+<script type="text/javascript" src="sky/sky_code.js"></script>
+<script type="text/javascript" src="data/the_keyboard.js"></script>
+<script rel="text/javascript" src="field/field_test.js"></script>
+<script type="text/javascript" src="scene/vanish_point.js"></script>
+<script type="text/javascript" src="data/data.js"></script>
+<script type="text/javascript" src="field/field_code.js"></script>
+<script type="text/javascript" src="scene/scene_3d.js"></script>
+
+
 
 <div id="the-layers">
   <div id="the-sun"></div>
   <div class="sky-aperture">
     <div id="the-sky"></div>
   </div>
+
+
+  <div id="enemy-planets" style="height:0px;"> </div>
+  <!-- door way to see -->
+
+  <div id="missle-planets" style="height:0px;"> </div>
+
+
+
+
+
+  <script type="text/javascript" src="enemy/enemy_html.js"></script>
+  <script type="text/javascript" src="missile/missile_html.js"></script>
+
+  <div id="enemy-area"></div>
+
+  <div id="missile-area"></div>
+
+
+
   <div id="the-field"> </div>
 
-  <script type="text/javascript" src="field_html.js"></script>
+  <script type="text/javascript" src="field/field_html.js"></script>
 
   <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
+
   <div id='column-svg'> </div>
   <div id='column-html'> </div>
-  <div id="cube-x" style="background-color: rgb(23,23,23,0)"></div>
-  <div id="the-bullet"></div>
+
 </div>
 
-<div id="the-missiles"></div>
-<script type="text/javascript" src="missiles_code.js"></script>
+
+<script type="text/javascript" src="enemy/enemy_code.js"></script>
+<script type="text/javascript" src="missile/missile_code.js"></script>
+
+
+
 
 <div id="the-land">
   <div id="land_nw"></div>
@@ -44,21 +77,21 @@
   <div id="land_sw"></div>
   <div id="land_se"></div>
 </div>
-<script type="text/javascript" src="land_nw_html.js"></script>
-<script type="text/javascript" src="land_ne_html.js"></script>
-<script type="text/javascript" src="land_sw_html.js"></script>
-<script type="text/javascript" src="land_se_html.js"></script>
-<script type="text/javascript" src="land_code.js"></script>
+<script type="text/javascript" src="land/land_nw_html.js"></script>
+<script type="text/javascript" src="land/land_ne_html.js"></script>
+<script type="text/javascript" src="land/land_sw_html.js"></script>
+<script type="text/javascript" src="land/land_se_html.js"></script>
+<script type="text/javascript" src="land/land_code.js"></script>
 
 
-<script type="text/javascript" src="columns_svg.js"></script>
-<script type="text/javascript" src="columns_data.js"></script>
-<script type="text/javascript" src="columns_html.js"></script>
-<script type="text/javascript" src="columns_code.js"></script>
+<script type="text/javascript" src="columns/columns_svg.js"></script>
+<script type="text/javascript" src="columns/columns_data.js"></script>
+<script type="text/javascript" src="columns/columns_html.js"></script>
+<script type="text/javascript" src="columns/columns_code.js"></script>
 
 
 
-<script type="text/javascript" src="start.js"></script>
+<script type="text/javascript" src="data/start.js"></script>
 <script>
   initLeftRight();
 </script>

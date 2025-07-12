@@ -1,0 +1,342 @@
+<html>
+<script type="text/javascript">
+
+  /*
+  
+   x12345 vertical or hor lines but no overlap
+    12345
+     2345
+      345
+       45
+        5
+  
+  
+  x11111111111111111
+   2222222222222222212121212121212
+    33333333333333333123123123123123123123213
+  
+  
+  
+  
+  */
+
+
+
+
+  function drawLines2(x_from, y_from, x_to, y_to, the_color) {
+    console.log("d2", x_from, y_from, x_to, y_to, the_color);
+
+    // ctx.beginPath();
+    ctx.moveTo(x_from, y_from);
+    ctx.lineTo(x_to, y_to);
+    ctx.strokeStyle = the_color;
+    ctx.lineWidth = 1;
+    //  ctx.stroke();
+    //  ctx.closePath();
+  }
+
+  function nw_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    y_step = y_diff / x_diff;
+    y_accum = y_end;
+    for (x_point = x_end; x_point <= x_start; x_point++) {
+      y_point = Math.round(y_accum);
+      console.log(x_vertex, y_vertex, x_point, y_point);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      y_accum += y_step;
+    }
+  }
+
+  function nw_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    x_step = x_diff / y_diff;
+    x_accum = x_end;
+    for (y_point = y_end; y_point <= y_start; y_point++) {
+      x_point = Math.round(x_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      x_accum += x_step;
+    }
+  }
+
+  function ne_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    y_step = y_diff / x_diff;
+    y_accum = y_start;
+    for (x_point = x_start; x_point <= x_end; x_point++) {
+      y_point = Math.round(y_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      y_accum -= y_step;
+    }
+  }
+
+  function ne_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    x_step = x_diff / y_diff;
+    x_accum = x_end;
+    for (y_point = y_end; y_point <= y_start; y_point++) {
+      x_point = Math.round(x_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      x_accum -= x_step;
+    }
+  }
+
+  function drawVertex(vertex, start, end, color) {
+    [x_vertex, y_vertex] = vertex;
+    [x_start, y_start] = start;
+    [x_end, y_end] = end;
+    if (x_start < x_end) {
+      if (y_start > y_end) {
+        x_diff = x_end - x_start;
+        y_diff = y_start - y_end;
+        console.log(x_diff, y_diff);
+        if (x_diff > y_diff) {
+          ne_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        } else {
+          ne_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        }
+      } else {
+        x_diff = x_end - x_start;
+        y_diff = y_end - y_start;
+        if (x_diff > y_diff) {
+          se_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        } else {
+          se_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        }
+      }
+
+    } else {
+
+      if (y_start > y_end) {
+        x_diff = x_start - x_end;
+        y_diff = y_start - y_end;
+        console.log(x_diff, y_diff);
+        if (x_diff < y_diff) {
+          nw_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        } else {
+          nw_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        }
+      } else {
+        x_diff = x_start - x_end;
+        y_diff = y_end - y_start;
+        console.log(x_diff, y_diff);
+        if (x_diff < y_diff) {
+          sw_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        } else {
+          sw_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color);
+        }
+      }
+    }
+  }
+
+  function se_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    y_step = y_diff / x_diff;
+    y_accum = y_start;
+    for (x_point = x_start; x_point <= x_end; x_point++) {
+      y_point = Math.round(y_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      y_accum += y_step;
+    }
+  }
+
+  function se_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    x_step = x_diff / y_diff;
+    x_accum = x_start;
+    for (y_point = y_start; y_point <= y_end; y_point++) {
+      x_point = Math.round(x_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      x_accum += x_step;
+    }
+  }
+
+  function sw_hor(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    y_step = y_diff / x_diff;
+    y_accum = y_end;
+    for (x_point = x_end; x_point <= x_start; x_point++) {
+      y_point = Math.round(y_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      y_accum -= y_step;
+    }
+  }
+
+  function sw_ver(x_vertex, y_vertex, x_diff, y_diff, x_start, y_start, x_end, y_end, color) {
+    x_step = x_diff / y_diff;
+    x_accum = x_start;
+    for (y_point = y_start; y_point <= y_end; y_point++) {
+      x_point = Math.round(x_accum);
+      drawLines2(x_vertex, y_vertex, x_point, y_point, color);
+      x_accum -= x_step;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ////////////////////////////////////////////
+  ////////////////////////////////////////////
+  ////////////////////////////////////////////
+
+
+  var canvas, ctx;
+
+  object_width = 200;
+  object_height = 300;
+
+  numInitDrawings = 360;
+  numWinnowedDrawings = 90;  // 360/4
+
+  line_width = 3;
+
+  var distance_slow = 0;
+
+  var distance_size = 0;
+  var deg_0_360 = 0;
+
+
+  //////////////////////////////
+
+  orange_color = `rgb(255,165,0)`;
+  purple_color = `rgb(157,0,255)`;
+  green_color = `rgb(0,255,0)`;
+  grey_color = `rgb(128,128,128)`;
+  red_color = `rgb(255,0,0)`;
+
+  function getTetrahedron(radius, center_x, top_center_y, height_diff, degree_360) {
+    //console.log("degree_360 *************************", degree_360);
+    radius = 64;//radius;
+    flatten = 1 / 4;
+    a_deg = degree_360;
+    b_deg = degree_360 + 90;
+    c_deg = degree_360 + 180;
+    d_deg = degree_360 + 270;
+
+    bot_center_y = top_center_y + height_diff;
+
+    frame_step = degree_360 * 256;
+
+    top_x_1 = Math.round(center_x + radius * Math.cos(2 * Math.PI * a_deg / 360));
+    top_y_1 = Math.round(top_center_y + radius * Math.sin(2 * Math.PI * a_deg / 360) * flatten);
+
+    top_x_2 = Math.round(center_x + radius * Math.cos(2 * Math.PI * c_deg / 360));
+    top_y_2 = Math.round(top_center_y + radius * Math.sin(2 * Math.PI * c_deg / 360) * flatten);
+
+    bot_x_1 = Math.round(center_x + radius * Math.cos(2 * Math.PI * b_deg / 360));
+    bot_y_1 = Math.round(top_center_y + radius * Math.sin(2 * Math.PI * b_deg / 360) * flatten);
+
+    bot_x_2 = Math.round(center_x + radius * Math.cos(2 * Math.PI * d_deg / 360));
+    bot_y_2 = Math.round(top_center_y + radius * Math.sin(2 * Math.PI * d_deg / 360) * flatten);
+
+    pink_color = `rgb(255,16,240)`;
+    purp_left_bot = bot_y_1 + height_diff;
+    purp_right_bot = bot_y_2 + height_diff;
+
+    purp_x_dist_bot = Math.abs(bot_x_1 - bot_x_2);
+    purp_y_dist_bot = Math.abs(purp_left_bot - purp_right_bot);
+    purp_slope = purp_y_dist_bot / purp_x_dist_bot;
+    p_x = bot_x_1;
+    p_y = purp_left_bot;
+
+    drawLines2(top_x_1 + frame_step, top_y_1, top_x_2 + frame_step, top_y_2, red_color);
+
+    drawLines2(top_x_1 + frame_step, top_y_1, bot_x_1 + frame_step, bot_y_1 + height_diff, orange_color);
+    drawLines2(top_x_1 + frame_step, top_y_1, bot_x_2 + frame_step, bot_y_2 + height_diff, orange_color);
+
+    drawLines2(bot_x_1 + frame_step, purp_left_bot, bot_x_2 + frame_step, purp_right_bot, green_color);
+
+    drawLines2(top_x_2 + frame_step, top_y_2, bot_x_1 + frame_step, purp_left_bot, purple_color);
+    drawLines2(top_x_2 + frame_step, top_y_2, bot_x_2 + frame_step, purp_right_bot, purple_color);
+
+    top_vertex_a = [top_x_2 + frame_step, top_y_2];
+    bot_vertex_a = [bot_x_1 + frame_step, purp_left_bot];
+    bot_vertex_b = [bot_x_2 + frame_step, purp_right_bot];
+
+
+    see_thru_red = `rgb(128,120,120,12)`;
+
+
+    drawVertex(top_vertex_a, bot_vertex_a, bot_vertex_b, see_thru_red);
+
+  }
+
+
+
+  function makeTetrahedrons() {
+
+    //      for (var the_degrees = 0; the_degrees < numInitDrawings; the_degrees++) {
+    for (var the_degrees = 0; the_degrees < 1; the_degrees++) {
+      sized_cubes = getTetrahedron(13, 100, 100, 100, the_degrees);
+
+    }
+
+
+
+  }
+
+
+  function rotateDeg() {
+    distance_slow += 1;
+    if (distance_slow == 2) {
+      distance_size += 1;
+      if (distance_size == 64) {
+        distance_size = 0;
+      }
+      distance_slow = 0;
+    }
+
+
+    deg_0_360 = deg_0_360 + 1;
+    if (deg_0_360 == numWinnowedDrawings) {
+      deg_0_360 = 0;
+      finished = true;
+    } else {
+      finished = false;
+    }
+    return finished;
+  }
+
+  ///////////////////////////////////////////
+
+  function drawCube0_360() {
+    //   console.log("drawCube0_360");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+    rotateDeg();
+
+    //  requestAnimationFrame(drawCube0_360);
+  }
+
+
+  function init() {
+    canvas = document.getElementById('can');
+    ctx = canvas.getContext("2d");
+    ctx.globalAlpha = 0.1;
+
+
+    ctx.beginPath();
+    makeTetrahedrons();
+    ctx.stroke();
+    // ctx.closePath();
+
+
+    //requestAnimationFrame(drawCube0_360);
+  };
+
+
+
+
+
+</script>
+
+<body onload="init()">
+  <canvas id="can" width="200" height="300" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+
+</body>
+
+</html>

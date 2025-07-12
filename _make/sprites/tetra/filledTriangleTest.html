@@ -1,0 +1,276 @@
+<html>
+<script type="text/javascript">
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //
+  //  canvas = document.getElementById('can');
+  //  global_ctx = canvas.getContext("2d");
+  //  filledTriangle([[355, 393], [439, 485], [387, 515]], `rgb(0,0,255,0.5)`);
+
+  var global_ctx;
+
+  function filledTriangle(three_points, the_color, id_number) {
+    outline_triangle = true;
+    black_color = `rgb(0,0,0)`;
+
+    if (outline_triangle) {
+      drawTriangle(three_points);
+    }
+
+    [[point_a, point_b], point_apex] = longestOppositeApex(three_points);
+
+    let [long_a_x, long_a_y] = point_a;
+    let [long_b_x, long_b_y] = point_b;
+    let [apex_x, apex_y] = point_apex;
+
+    apex_left_both_longs = apex_x <= long_a_x && apex_x <= long_b_x;
+    apex_right_both_longs = long_a_x <= apex_x && long_b_x <= apex_x;
+    apex_below_both_longs = long_a_y <= apex_y && long_b_y <= apex_y;
+    apex_above_both_longs = apex_y <= long_a_y && apex_y <= long_b_y;
+
+    if (apex_above_both_longs) {
+      apexSouth2North(the_color, three_points);
+    } else if (apex_right_both_longs) {
+      apexWest2East(the_color, three_points);
+    } else if (apex_below_both_longs) {
+      apexSouth2North(the_color, three_points);
+    } else if (apex_left_both_longs) {
+      apexWest2East(the_color, three_points);
+    }
+
+    function lineLength(point_a, point_b) {
+      [a_x, a_y] = point_a;
+      [b_x, b_y] = point_b;
+      x_diff = Math.abs(a_x - b_x);
+      y_diff = Math.abs(a_y - b_y);
+      the_hyp = x_diff * x_diff + y_diff * y_diff;
+      the_length = Math.sqrt(the_hyp);
+      return the_length;
+    }
+
+    function longestOppositeApex(three_points) {
+      [point_a, point_b, point_c] = three_points;
+      a_b_len = lineLength(point_a, point_b);
+      b_c_len = lineLength(point_b, point_c);
+      c_a_len = lineLength(point_c, point_a);
+      if (a_b_len > b_c_len) {
+        if (a_b_len > c_a_len) {
+          return [[point_a, point_b], point_c];
+        } else {
+          return [[point_c, point_a], point_b];
+        }
+      } else {
+        if (b_c_len > c_a_len) {
+          return [[point_b, point_c], point_a];
+        } else {
+          return [[point_c, point_a], point_b];
+        }
+      }
+    }
+
+    function drawTriangle(three_points) {
+      uft_lines = longestLineFirst(three_points);
+      [[a_x, a_y], [b_x, b_y]] = uft_lines[0][0];
+      global_ctx.beginPath();
+      global_ctx.moveTo(a_x, a_y);
+      global_ctx.lineTo(b_x, b_y);
+      global_ctx.strokeStyle = black_color;
+      global_ctx.lineWidth = 1;
+      global_ctx.stroke();
+      global_ctx.closePath();
+
+      [[c_x, c_y], [d_x, d_y]] = uft_lines[0][1];
+      global_ctx.beginPath();
+      global_ctx.moveTo(c_x, c_y);
+      global_ctx.lineTo(d_x, d_y);
+      global_ctx.strokeStyle = black_color;
+      global_ctx.lineWidth = 1;
+      global_ctx.stroke();
+      global_ctx.closePath();
+
+      [[e_x, e_y], [f_x, f_y]] = uft_lines[1][1];
+      global_ctx.beginPath();
+      global_ctx.moveTo(e_x, e_y);
+      global_ctx.lineTo(f_x, f_y);
+      global_ctx.strokeStyle = black_color;
+      global_ctx.lineWidth = 1;
+      global_ctx.stroke();
+      global_ctx.closePath();
+    }
+
+    function longestLineFirst(three_points) {
+      [point_a, point_b, point_c] = three_points;
+      a_b_len = lineLength(point_a, point_b);
+      b_c_len = lineLength(point_b, point_c);
+      c_a_len = lineLength(point_c, point_a);
+      if (a_b_len > b_c_len) {
+        if (a_b_len > c_a_len) {
+          return [[[point_a, point_b], [point_a, point_c]], [[point_b, point_a], [point_b, point_c]]];
+        } else {
+          return [[[point_c, point_a], [point_c, point_b]], [[point_a, point_c], [point_a, point_b]]];
+        }
+      } else {
+        if (b_c_len > c_a_len) {
+          return [[[point_b, point_c], [point_b, point_a]], [[point_c, point_b], [point_c, point_a]]];
+        } else {
+          return [[[point_c, point_a], [point_c, point_b]], [[point_a, point_c], [point_a, point_b]]];
+        }
+      }
+    }
+
+    function getSlope(a_line) {
+      [[begin_x, begin_y], [end_x, end_y]] = a_line;
+      diff_x = end_x - begin_x;
+      diff_y = end_y - begin_y;
+      let the_slope;
+      if (diff_y > diff_x) {
+        if (diff_x == 0) {
+          the_slope = 0;
+        } else {
+          the_slope = diff_y / diff_x;
+        }
+      } else {
+        if (diff_y == 0) {
+          the_slope = 0;
+        } else {
+          the_slope = diff_y / diff_x;
+        }
+      }
+      return the_slope;
+    }
+
+    function drawLine(from_to, the_color) {
+      [[a_x, a_y], [b_x, b_y]] = from_to;
+      global_ctx.beginPath();
+      global_ctx.moveTo(a_x, a_y);
+      global_ctx.lineTo(b_x, b_y);
+      global_ctx.strokeStyle = the_color;
+      global_ctx.lineWidth = 2;
+      global_ctx.stroke();
+      global_ctx.closePath();
+    }
+
+    function fillSouthNorth(longest_line, minor_line, the_color, stop_twice) {
+      exit_loop = 0;
+      [[l_begin_x, l_begin_y], [l_end_x, l_end_y]] = longest_line;
+      [[m_begin_x, m_begin_y], [m_end_x, m_end_y]] = minor_line;
+      l_slope = getSlope(longest_line);
+      m_slope = getSlope(minor_line);
+      [l_sweep_x, l_sweep_y] = longest_line[0];
+      [m_sweep_x, m_sweep_y] = minor_line[0];
+      if (l_begin_x < l_end_x) {
+        for (i = m_begin_x; i <= m_end_x; i++) {
+          if (stop_twice && i == m_end_x) break;
+          if (--exit_loop == 0) break;
+          drawLine([[l_sweep_x, l_sweep_y], [m_sweep_x, m_sweep_y]], the_color,);
+          l_sweep_x++;
+          m_sweep_x++;
+          l_sweep_y += l_slope;
+          m_sweep_y += m_slope;
+        }
+      } else {
+        for (i = m_begin_x; i >= m_end_x; i--) {
+          if (stop_twice && i == m_end_x) break;
+          if (--exit_loop == 0) break;
+          drawLine([[l_sweep_x, l_sweep_y], [m_sweep_x, m_sweep_y]], the_color,);
+          l_sweep_x--;
+          m_sweep_x--;
+          l_sweep_y -= l_slope;
+          m_sweep_y -= m_slope;
+        }
+      }
+    }
+
+    function fillWestEast(longest_line, minor_line, the_color, stop_twice) {
+      exit_loop = 0;
+      [[l_begin_x, l_begin_y], [l_end_x, l_end_y]] = longest_line;
+      [[m_begin_x, m_begin_y], [m_end_x, m_end_y]] = minor_line;
+      l_slope = getSlope(longest_line);
+      if (l_slope != 0) {
+        l_slope = 1 / l_slope;
+      }
+      m_slope = getSlope(minor_line);
+      if (m_slope != 0) {
+        m_slope = 1 / m_slope;
+      }
+      [l_sweep_x, l_sweep_y] = longest_line[0];
+      [m_sweep_x, m_sweep_y] = minor_line[0];
+      if (l_begin_y < l_end_y) {
+        for (i = m_begin_y; i <= m_end_y && i <= l_end_y; i++) {
+          if (stop_twice && i == m_end_y) break;
+          if (--exit_loop == 0) break;
+          drawLine([[l_sweep_x, l_sweep_y], [m_sweep_x, m_sweep_y]], the_color,);
+          l_sweep_y++;
+          m_sweep_y++;
+          l_sweep_x += l_slope;
+          m_sweep_x += m_slope;
+        }
+      } else {
+        for (i = m_begin_y; i >= m_end_y; i--) {
+          if (stop_twice && i == m_end_y) break;
+          if (--exit_loop == 0) break;
+          drawLine([[l_sweep_x, l_sweep_y], [m_sweep_x, m_sweep_y]], the_color,);
+          l_sweep_y--;
+          m_sweep_y--;
+          l_sweep_x -= l_slope;
+          m_sweep_x -= m_slope;
+        }
+      }
+    }
+
+    function apexSouth2North(the_color, three_points) {
+      [vertex_1, vertex_2] = longestLineFirst(three_points);
+      [longest_line, minor_line] = vertex_1;
+      fillSouthNorth(longest_line, minor_line, the_color, false);
+      [longest_line_2, minor_line_2] = vertex_2;
+      fillSouthNorth(longest_line_2, minor_line_2, the_color, true);
+    }
+
+    function apexWest2East(the_color, three_points) {
+      [vertex_1, vertex_2] = longestLineFirst(three_points);
+      [longest_line, minor_line] = vertex_1;
+      fillWestEast(longest_line, minor_line, the_color, false);
+      [longest_line_2, minor_line_2] = vertex_2;
+      fillWestEast(longest_line_2, minor_line_2, the_color, true);
+    }
+
+  }  // end filledTriangle()
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  UPHILL_FLAT_TOP_1 = [[5, 200], [400, 50], [99, 5]];
+  DOWNHILL_FLAT_TOP_2 = [[5, 300], [300, 200], [400, 400]];
+  UPHILL_FLAT_BOTTOM_3 = [[500, 100], [800, 120], [1000, 5]];
+  DOWNHILL_FLAT_BOTTOM_4 = [[500, 100], [700, 300], [999, 200]];
+  UPHILL_STEEP_LEFT_5 = [[850, 900], [1100, 410], [755, 700]];
+  DOWNHILL_STEEP_RIGHT_6 = [[500, 250], [750, 400], [750, 600]];
+  UPHILL_STEEP_RIGHT_7 = [[340, 600], [210, 710], [250, 350]];
+  DOWNHILL_STEEP_LEFT_8 = [[200, 900], [140, 410], [100, 700]];
+
+  function init() {
+    canvas = document.getElementById('can');
+    global_ctx = canvas.getContext("2d");
+
+    filledTriangle([[455, 493], [539, 585], [487, 615]], `rgb(0,0,255,0.5)`);
+    filledTriangle([[355, 392], [442, 486], [382, 514]], `rgb(255,0,0,0.5)`);
+
+    filledTriangle(UPHILL_FLAT_TOP_1, `rgb(255,0,0,0.5)`);
+    filledTriangle(DOWNHILL_FLAT_TOP_2, `rgb(0,255,0,0.5)`);
+    filledTriangle(UPHILL_FLAT_BOTTOM_3, `rgb(0,0,255,0.5)`);
+    filledTriangle(DOWNHILL_FLAT_BOTTOM_4, `rgb(255,165,0,0.5)`);
+
+    filledTriangle(UPHILL_STEEP_LEFT_5, `rgb(255,0,165,0.5)`);
+    filledTriangle(DOWNHILL_STEEP_RIGHT_6, `rgb(0,255,165,0.5)`);
+    filledTriangle(UPHILL_STEEP_RIGHT_7, `rgb(165,255,0,0.5)`);
+    filledTriangle(DOWNHILL_STEEP_LEFT_8, `rgb(165,0,255,0.5)`);
+  }
+
+
+</script>
+
+<body onload="init()">
+  <canvas id="can" width="1270" height="866" style="position:absolute;top:2px;left:2px;border:2px solid;"></canvas>
+
+</body>
+
+</html>

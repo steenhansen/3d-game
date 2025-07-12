@@ -1,0 +1,25 @@
+
+
+
+ #planets2 {
+position:absolute;
+left:var(--my-missile-x);
+top:var(--my-missile-y);
+
+z-index:  var(--my-missile-z);
+height:  var(--my-missile-height);
+width: var(--my-missile-width);
+} 
+
+
+/* 
+#missile-001 { 
+  display:var(--missile-display-001); 
+  fill:var(--missile-fill-001); 
+}
+#missile-002 {
+   display:var(--missile-display-002);
+   fill:var(--missile-fill-002); 
+   } */
+
+    

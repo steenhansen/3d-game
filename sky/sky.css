@@ -1,0 +1,63 @@
+
+
+#the-sun {
+  background-image: url('the-sun.png');
+  width: 1024px;
+  height: 512px;
+  z-index: 44;
+  position: absolute;
+  opacity: 0.4;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+  animation-name: sun-keyframes;
+ }
+
+ @keyframes sun-keyframes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+#the-sky {
+  display:nXone;
+  position: relative;
+  margin-top:-1000px;
+  margin-left:-575px;
+  width: 2048px;
+  height:2400px;
+  background-size: 256px 256px;
+   background-image: radial-gradient(#ffffff, #0000ff 75%); 
+ 
+  transform: perspective(1536px) rotateX(-85deg);
+}
+
+
+@keyframes sky-keyframes {
+  0% {
+    transform: perspective(1536px) rotateX(-85deg)
+               translateX(var(--my-x-start)) translateY(var(--my-y-start));
+  }
+  100% {
+    transform: perspective(1536px) rotateX(-85deg) 
+               translateX(var(--my-x-end)) translateY(var(--my-y-end));
+  }
+}
+
+
+
+
+.sky-aperture {
+  width: 1024px;
+  height: 256px;
+  z-index: 1;
+  background-color: red;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

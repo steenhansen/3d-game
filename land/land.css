@@ -1,0 +1,44 @@
+
+
+
+#the-land {
+   float:left; 
+  display:none;
+  margin-left:64px; 
+  margin-top:4px;
+}
+
+#land_nw {
+  float:left; 
+}
+
+#land_ne {
+  float:left; 
+}
+#land_sw {
+  clear:left;
+  float:left; 
+}
+#land_se {
+  float:left; 
+}
+
+ 
+.west_line {
+  background-image: url('field.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+  transform: scaleX(-1);
+}
+
+.east_line {
+  background-image: url('field.png');
+  width: 512px;
+  position: relative;
+  left: 0px;
+  height: 1px;
+}
+
+

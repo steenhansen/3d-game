@@ -1,0 +1,3585 @@
+
+<svg id="svg-right-0" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            165,487   165,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            85,487   85,24 	" />
+  </svg>
+<svg id="svg-right-1" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            165,487   165,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            85,487   85,24 	" />
+  </svg>
+<svg id="svg-right-2" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            165,487   165,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            85,487   85,24 	" />
+  </svg>
+<svg id="svg-right-3" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            165,487   165,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            85,487   85,24 	" />
+  </svg>
+<svg id="svg-right-4" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            165,487   165,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            85,487   85,24 	" />
+  </svg>
+<svg id="svg-right-5" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-6" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-7" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-8" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-9" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-10" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-11" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-12" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-13" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            164,487   164,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            84,487   84,24 	" />
+  </svg>
+<svg id="svg-right-14" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-15" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-16" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-17" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-18" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-19" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-20" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-21" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-22" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-23" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            163,487   163,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            83,487   83,24 	" />
+  </svg>
+<svg id="svg-right-24" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-25" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-26" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-27" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-28" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-29" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-30" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-31" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-32" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            162,487   162,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            82,487   82,24 	" />
+  </svg>
+<svg id="svg-right-33" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-34" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-35" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-36" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-37" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-38" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-39" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-40" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-41" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            161,487   161,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            81,487   81,24 	" />
+  </svg>
+<svg id="svg-right-42" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-43" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-44" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-45" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-46" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-47" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-48" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-49" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-50" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-51" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            160,487   160,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            80,487   80,24 	" />
+  </svg>
+<svg id="svg-right-52" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-53" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-54" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-55" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-56" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-57" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-58" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-59" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-60" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            159,487   159,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            79,487   79,24 	" />
+  </svg>
+<svg id="svg-right-61" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-62" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-63" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-64" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-65" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-66" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-67" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-68" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-69" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            158,487   158,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            78,487   78,24 	" />
+  </svg>
+<svg id="svg-right-70" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-71" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-72" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-73" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-74" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-75" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-76" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-77" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-78" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-79" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            157,487   157,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            77,487   77,24 	" />
+  </svg>
+<svg id="svg-right-80" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-81" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-82" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-83" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-84" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-85" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-86" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-87" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-88" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            156,487   156,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            76,487   76,24 	" />
+  </svg>
+<svg id="svg-right-89" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-90" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-91" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-92" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-93" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-94" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-95" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-96" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-97" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            155,487   155,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            75,487   75,24 	" />
+  </svg>
+<svg id="svg-right-98" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-99" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-100" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-101" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-102" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-103" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-104" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-105" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-106" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-107" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            154,487   154,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            74,487   74,24 	" />
+  </svg>
+<svg id="svg-right-108" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-109" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-110" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-111" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-112" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-113" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-114" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-115" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-116" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            153,487   153,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            73,487   73,24 	" />
+  </svg>
+<svg id="svg-right-117" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-118" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-119" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-120" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-121" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-122" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-123" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-124" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-125" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            152,487   152,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            72,487   72,24 	" />
+  </svg>
+<svg id="svg-right-126" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-127" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-128" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-129" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-130" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-131" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-132" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-133" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-134" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            151,487   151,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            71,487   71,24 	" />
+  </svg>
+<svg id="svg-right-135" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-136" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-137" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-138" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-139" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-140" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-141" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-142" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-143" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-144" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            150,487   150,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            70,487   70,24 	" />
+  </svg>
+<svg id="svg-right-145" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-146" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-147" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-148" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-149" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-150" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-151" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-152" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-153" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            149,487   149,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            69,487   69,24 	" />
+  </svg>
+<svg id="svg-right-154" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-155" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-156" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-157" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-158" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-159" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-160" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-161" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-162" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            148,487   148,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            68,487   68,24 	" />
+  </svg>
+<svg id="svg-right-163" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-164" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-165" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-166" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-167" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-168" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-169" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-170" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-171" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-172" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            147,487   147,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            67,487   67,24 	" />
+  </svg>
+<svg id="svg-right-173" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-174" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-175" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-176" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-177" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-178" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-179" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-180" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-181" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            146,487   146,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            66,487   66,24 	" />
+  </svg>
+<svg id="svg-right-182" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-183" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-184" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-185" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-186" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-187" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-188" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-189" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-190" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            145,487   145,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            65,487   65,24 	" />
+  </svg>
+<svg id="svg-right-191" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-192" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-193" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-194" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-195" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-196" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-197" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-198" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-199" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-200" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            144,487   144,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            64,487   64,24 	" />
+  </svg>
+<svg id="svg-right-201" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-202" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-203" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-204" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-205" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-206" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-207" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-208" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-209" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            143,487   143,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            63,487   63,24 	" />
+  </svg>
+<svg id="svg-right-210" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-211" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-212" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-213" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-214" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-215" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-216" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-217" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-218" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            142,487   142,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            62,487   62,24 	" />
+  </svg>
+<svg id="svg-right-219" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-220" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-221" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-222" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-223" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-224" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-225" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-226" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-227" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-228" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            141,487   141,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            61,487   61,24 	" />
+  </svg>
+<svg id="svg-right-229" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-230" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-231" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-232" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-233" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-234" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-235" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-236" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-237" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            140,487   140,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            60,487   60,24 	" />
+  </svg>
+<svg id="svg-right-238" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-239" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-240" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-241" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-242" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-243" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-244" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-245" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-246" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            139,487   139,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            59,487   59,24 	" />
+  </svg>
+<svg id="svg-right-247" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-248" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-249" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-250" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-251" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-252" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-253" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-254" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-255" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            138,487   138,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            58,487   58,24 	" />
+  </svg>
+<svg id="svg-right-256" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-257" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-258" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-259" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-260" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-261" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-262" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-263" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-264" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-265" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            137,487   137,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            57,487   57,24 	" />
+  </svg>
+<svg id="svg-right-266" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-267" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-268" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-269" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-270" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-271" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-272" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-273" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-274" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            136,487   136,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            56,487   56,24 	" />
+  </svg>
+<svg id="svg-right-275" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-276" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-277" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-278" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-279" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-280" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-281" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-282" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-283" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            135,487   135,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            55,487   55,24 	" />
+  </svg>
+<svg id="svg-right-284" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-285" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-286" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-287" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-288" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-289" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-290" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-291" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-292" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-293" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            134,487   134,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            54,487   54,24 	" />
+  </svg>
+<svg id="svg-right-294" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-295" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-296" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-297" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-298" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-299" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-300" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-301" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-302" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            133,487   133,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            53,487   53,24 	" />
+  </svg>
+<svg id="svg-right-303" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-304" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-305" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-306" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-307" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-308" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-309" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-310" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-311" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            132,487   132,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            52,487   52,24 	" />
+  </svg>
+<svg id="svg-right-312" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-313" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-314" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-315" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-316" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-317" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-318" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-319" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-320" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-321" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            131,487   131,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            51,487   51,24 	" />
+  </svg>
+<svg id="svg-right-322" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-323" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-324" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-325" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-326" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-327" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-328" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-329" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-330" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            130,487   130,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            50,487   50,24 	" />
+  </svg>
+<svg id="svg-right-331" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-332" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-333" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-334" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-335" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-336" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-337" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-338" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-339" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            129,487   129,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            49,487   49,24 	" />
+  </svg>
+<svg id="svg-right-340" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-341" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-342" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-343" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-344" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-345" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-346" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-347" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-348" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-349" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            128,487   128,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            48,487   48,24 	" />
+  </svg>
+<svg id="svg-right-350" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-351" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-352" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-353" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-354" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-355" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-356" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-357" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-358" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            127,487   127,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            47,487   47,24 	" />
+  </svg>
+<svg id="svg-right-359" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-360" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-361" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-362" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-363" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-364" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-365" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-366" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-367" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            126,487   126,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            46,487   46,24 	" />
+  </svg>
+<svg id="svg-right-368" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-369" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-370" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-371" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-372" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-373" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-374" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-375" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-376" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-377" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            125,487   125,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            45,487   45,24 	" />
+  </svg>
+<svg id="svg-right-378" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-379" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-380" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-381" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-382" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-383" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-384" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-385" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-386" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            124,487   124,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            44,487   44,24 	" />
+  </svg>
+<svg id="svg-right-387" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-388" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-389" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-390" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-391" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-392" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-393" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-394" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-395" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            123,487   123,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            43,487   43,24 	" />
+  </svg>
+<svg id="svg-right-396" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-397" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-398" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-399" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-400" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-401" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-402" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-403" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-404" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            122,487   122,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            42,487   42,24 	" />
+  </svg>
+<svg id="svg-right-405" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-406" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-407" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-408" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-409" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-410" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-411" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-412" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-413" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-414" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            121,487   121,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            41,487   41,24 	" />
+  </svg>
+<svg id="svg-right-415" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-416" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-417" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-418" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-419" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-420" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-421" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-422" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-423" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            120,487   120,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            40,487   40,24 	" />
+  </svg>
+<svg id="svg-right-424" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-425" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-426" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-427" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-428" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-429" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-430" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-431" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-432" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            119,487   119,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            39,487   39,24 	" />
+  </svg>
+<svg id="svg-right-433" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-434" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-435" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-436" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-437" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-438" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-439" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-440" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-441" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-442" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            118,487   118,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            38,487   38,24 	" />
+  </svg>
+<svg id="svg-right-443" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-444" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-445" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-446" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-447" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-448" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-449" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-450" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-451" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            117,487   117,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            37,487   37,24 	" />
+  </svg>
+<svg id="svg-right-452" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-453" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-454" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-455" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-456" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-457" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-458" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-459" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-460" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            116,487   116,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            36,487   36,24 	" />
+  </svg>
+<svg id="svg-right-461" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-462" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-463" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-464" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-465" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-466" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-467" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-468" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-469" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-470" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            115,487   115,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            35,487   35,24 	" />
+  </svg>
+<svg id="svg-right-471" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-472" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-473" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-474" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-475" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-476" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-477" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-478" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-479" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            114,487   114,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            34,487   34,24 	" />
+  </svg>
+<svg id="svg-right-480" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-481" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-482" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-483" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-484" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-485" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-486" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-487" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-488" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            113,487   113,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            33,487   33,24 	" />
+  </svg>
+<svg id="svg-right-489" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-490" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-491" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-492" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-493" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-494" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-495" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-496" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-497" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-498" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            112,487   112,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            32,487   32,24 	" />
+  </svg>
+<svg id="svg-right-499" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-500" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-501" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-502" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-503" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-504" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-505" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-506" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-507" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            111,487   111,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            31,487   31,24 	" />
+  </svg>
+<svg id="svg-right-508" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            110,487   110,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            30,487   30,24 	" />
+  </svg>
+<svg id="svg-right-509" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            110,487   110,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            30,487   30,24 	" />
+  </svg>
+<svg id="svg-right-510" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            110,487   110,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            30,487   30,24 	" />
+  </svg>
+<svg id="svg-right-511" viewBox="0 0 255 511">
+       <polygon fill="url(#green-grad)"
+      points="170,0   170,511                            110,487   110,24 	" />
+    <polygon fill="url(#red-grad)" points="85,0 170,0 170,511 85,511 	" />
+    <polygon fill="url(#blue-grad)"
+      points="85,0   85,511                            30,487   30,24 	" />
+  </svg>
