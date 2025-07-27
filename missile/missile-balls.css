@@ -1,15 +1,126 @@
 
+:root {
+  
+--missile-display-100: block; /* none or block */
+--missile-display-101: block; 
+--missile-display-102: block; 
+--missile-display-103: block;
+--missile-display-104: block; 
+--missile-display-105: block;
+--missile-display-106: block; 
+--missile-display-107: block; 
+--missile-display-108: block;
+--missile-display-109: block; 
+
+--missile-display-110: block;
+--missile-display-111: block; 
+--missile-display-112: block; 
+--missile-display-113: block;
+--missile-display-114: block; 
+--missile-display-115: block;
+--missile-display-116: block; 
+--missile-display-117: block; 
+--missile-display-118: block;
+--missile-display-119: block; 
+
+--missile-display-120: block; 
+--missile-display-121: block; 
+--missile-display-122: block; 
+--missile-display-123: block;
+--missile-display-124: block; 
+--missile-display-125: block;
+--missile-display-126: block; 
+--missile-display-127: block; 
+--missile-display-128: block;
+--missile-display-129: block; 
+
+--missile-display-130: block; 
+--missile-display-131: block; 
 
 
-/* #planets2 {
-position:absolute;
-left:var(--my-missile-x);
-top:var(--my-missile-y);
 
-z-index:  var(--my-missile-z);
-height:  var(--my-missile-height);
-width: var(--my-missile-width);
-} */
+
+--missile-display-200: block;
+--missile-display-201: block;
+--missile-display-202: block;
+--missile-display-203: block;
+--missile-display-204: block;
+--missile-display-205: block;
+--missile-display-206: block;
+--missile-display-207: block;
+--missile-display-208: block;
+--missile-display-209: block;
+--missile-display-210: block;
+--missile-display-211: block;
+--missile-display-212: block;
+--missile-display-213: block;
+--missile-display-214: block;
+--missile-display-215: block;
+
+--missile-display-300: block;
+--missile-display-400: block;
+--missile-display-500: block;
+--missile-display-600: block;
+
+--missile-fill-100: rgb(255,0,0);
+--missile-fill-101: rgb(255,16,16);
+--missile-fill-102: rgb(255,32,32);
+--missile-fill-103: rgb(255,48,48);
+--missile-fill-104: rgb(255,64,64);
+--missile-fill-105: rgb(255,80,80);
+--missile-fill-106: rgb(255,96,96);
+--missile-fill-107: rgb(255,112,112);
+--missile-fill-108: rgb(255,128,128);
+--missile-fill-109: rgb(255,144,144);
+--missile-fill-110: rgb(255,160,160);
+--missile-fill-111: rgb(255,176,176);
+--missile-fill-112: rgb(255,192,192);
+--missile-fill-113: rgb(255,208,208);
+--missile-fill-114: rgb(255,224,224);
+--missile-fill-115: rgb(255,240,240);
+--missile-fill-116: rgb(255,255,255);
+--missile-fill-117: rgb(255,255,0);
+--missile-fill-118: rgb(255,255,16);
+--missile-fill-119: rgb(255,100,20);
+--missile-fill-120: rgb(255,100,20);
+--missile-fill-121: rgb(255,100,20);
+--missile-fill-122: rgb(255,100,20);
+--missile-fill-123: rgb(255,100,20);
+--missile-fill-124: rgb(255,100,20);
+--missile-fill-125: rgb(255,100,20);
+--missile-fill-126: rgb(255,100,20);
+--missile-fill-127: rgb(255,100,20);
+--missile-fill-128: rgb(255,100,20);
+--missile-fill-129: rgb(255,100,20);
+--missile-fill-130: rgb(255,100,20);
+--missile-fill-131: rgb(255,100,20);
+
+
+
+--missile-fill-200: blue;
+--missile-fill-201: blue;
+--missile-fill-202: blue;
+--missile-fill-203: blue;
+--missile-fill-204: blue;
+--missile-fill-205: blue;
+--missile-fill-206: blue;
+--missile-fill-207: blue;
+--missile-fill-208: blue;
+--missile-fill-209: blue;
+--missile-fill-210: blue;
+--missile-fill-211: blue;
+--missile-fill-212: blue;
+--missile-fill-213: blue;
+--missile-fill-214: blue;
+--missile-fill-215: blue;
+
+--missile-fill-300: green;
+--missile-fill-400: yellow;
+--missile-fill-500: purple;
+--missile-fill-600: cyan;
+
+}
+
 
 
 
@@ -17,11 +128,165 @@ width: var(--my-missile-width);
   display:var(--missile-display-100); 
   fill:var(--missile-fill-100); 
 }
-
 #missile-101 { 
   display:var(--missile-display-101); 
   fill:var(--missile-fill-101); 
 }
+#missile-102 { 
+  display:var(--missile-display-102); 
+  fill:var(--missile-fill-102); 
+}
+#missile-103 { 
+  display:var(--missile-display-103); 
+  fill:var(--missile-fill-103); 
+}
+#missile-104 { 
+  display:var(--missile-display-104); 
+  fill:var(--missile-fill-104); 
+}
+#missile-105 { 
+  display:var(--missile-display-105); 
+  fill:var(--missile-fill-105); 
+}
+#missile-106 { 
+  display:var(--missile-display-106); 
+  fill:var(--missile-fill-106); 
+}
+#missile-107 { 
+  display:var(--missile-display-107); 
+  fill:var(--missile-fill-107); 
+}
+#missile-108 { 
+  display:var(--missile-display-108); 
+  fill:var(--missile-fill-108); 
+}
+#missile-109 { 
+  display:var(--missile-display-109); 
+  fill:var(--missile-fill-109); 
+}
+
+#missile-110 { 
+  display:var(--missile-display-110); 
+  fill:var(--missile-fill-110); 
+}
+#missile-111 { 
+  display:var(--missile-display-111); 
+  fill:var(--missile-fill-111); 
+}
+#missile-112 { 
+  display:var(--missile-display-112); 
+  fill:var(--missile-fill-112); 
+}
+#missile-113 { 
+  display:var(--missile-display-113); 
+  fill:var(--missile-fill-113); 
+}
+#missile-114 { 
+  display:var(--missile-display-114); 
+  fill:var(--missile-fill-114); 
+}
+#missile-115 { 
+  display:var(--missile-display-115); 
+  fill:var(--missile-fill-115); 
+}
+#missile-116 { 
+  display:var(--missile-display-116); 
+  fill:var(--missile-fill-116); 
+}
+#missile-117 { 
+  display:var(--missile-display-117); 
+  fill:var(--missile-fill-117); 
+}
+#missile-118 { 
+  display:var(--missile-display-118); 
+  fill:var(--missile-fill-118); 
+}
+#missile-119 { 
+  display:var(--missile-display-119); 
+  fill:var(--missile-fill-119); 
+}
+
+
+
+#missile-120 { 
+  display:var(--missile-display-120); 
+  fill:var(--missile-fill-120); 
+}
+#missile-121 { 
+  display:var(--missile-display-121); 
+  fill:var(--missile-fill-121); 
+}
+#missile-122 { 
+  display:var(--missile-display-122); 
+  fill:var(--missile-fill-122); 
+}
+#missile-123 { 
+  display:var(--missile-display-123); 
+  fill:var(--missile-fill-123); 
+}
+#missile-124 { 
+  display:var(--missile-display-124); 
+  fill:var(--missile-fill-124); 
+}
+#missile-125 { 
+  display:var(--missile-display-125); 
+  fill:var(--missile-fill-125); 
+}
+#missile-126 { 
+  display:var(--missile-display-126); 
+  fill:var(--missile-fill-126); 
+}
+#missile-127 { 
+  display:var(--missile-display-127); 
+  fill:var(--missile-fill-127); 
+}
+#missile-128 { 
+  display:var(--missile-display-128); 
+  fill:var(--missile-fill-128); 
+}
+#missile-129 { 
+  display:var(--missile-display-129); 
+  fill:var(--missile-fill-129); 
+}
+
+
+#missile-130 { 
+  display:var(--missile-display-130); 
+  fill:var(--missile-fill-130); 
+}
+
+#missile-131 { 
+  display:var(--missile-display-131); 
+  fill:var(--missile-fill-131); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,10 +296,119 @@ width: var(--my-missile-width);
    display:var(--missile-display-200);
    fill:var(--missile-fill-200); 
    }
+
+   #missile-201 {
+    display:var(--missile-display-201);
+    fill:var(--missile-fill-201); 
+    }
+    #missile-202 {
+      display:var(--missile-display-203);
+      fill:var(--missile-fill-202); 
+      }
+      #missile-203 {
+        display:var(--missile-display-203);
+        fill:var(--missile-fill-203); 
+        }
+        #missile-204 {
+          display:var(--missile-display-204);
+          fill:var(--missile-fill-204); 
+          }
+          #missile-205 {
+            display:var(--missile-display-205);
+            fill:var(--missile-fill-205); 
+            }
+            #missile-206 {
+              display:var(--missile-display-206);
+              fill:var(--missile-fill-206); 
+              }
+              #missile-207 {
+                display:var(--missile-display-207);
+                fill:var(--missile-fill-207); 
+                }
+                                                 
+                #missile-208 {
+                  display:var(--missile-display-208);
+                  fill:var(--missile-fill-208); 
+                  }
+                          
+                  #missile-209 {
+                    display:var(--missile-display-209);
+                    fill:var(--missile-fill-209); 
+                    }
+
+                    
+                    #missile-210 {
+                      display:var(--missile-display-210);
+                      fill:var(--missile-fill-210); 
+                      }
+                      #missile-211 {
+                        display:var(--missile-display-211);
+                        fill:var(--missile-fill-211); 
+                        }
+                        #missile-212 {
+                          display:var(--missile-display-212);
+                          fill:var(--missile-fill-212); 
+                          }
+                          #missile-213 {
+                            display:var(--missile-display-213);
+                            fill:var(--missile-fill-213); 
+                            }
+                            #missile-214 {
+                              display:var(--missile-display-214);
+                              fill:var(--missile-fill-214); 
+                              }
+                              #missile-215 {
+                                display:var(--missile-display-215);
+                                fill:var(--missile-fill-215); 
+                                }
+                                     
+
+
+
+
    #missile-300 {
     display:var(--missile-display-300);
     fill:var(--missile-fill-300); 
     }
+    #missile-301 {
+      display:var(--missile-display-301);
+      fill:var(--missile-fill-301); 
+      }
+      #missile-302 {
+        display:var(--missile-display-302);
+        fill:var(--missile-fill-302); 
+        }
+        #missile-303 {
+          display:var(--missile-display-303);
+          fill:var(--missile-fill-303); 
+          }
+          #missile-304 {
+            display:var(--missile-display-304);
+            fill:var(--missile-fill-304); 
+            }
+            #missile-305 {
+              display:var(--missile-display-305);
+              fill:var(--missile-fill-305); 
+              }
+              #missile-306 {
+                display:var(--missile-display-306);
+                fill:var(--missile-fill-306); 
+                }
+                #missile-307 {
+                  display:var(--missile-display-307);
+                  fill:var(--missile-fill-307); 
+                  }
+                                                        
+
+
+
+
+
+
+
+
+
+
     #missile-400 {
       display:var(--missile-display-400);
       fill:var(--missile-fill-400); 

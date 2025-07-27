@@ -4,7 +4,7 @@
 
 // 778 can just see first red
 let the_player = {
-  x: 50800, y: 778
+  x: 49500, y: 400 // 778
 };
 
 

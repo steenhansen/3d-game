@@ -27,4 +27,4 @@ COL_BSB = { column_left: "blue-grad", column_front: "silver-grad", column_right:
 COL_OSO = { column_left: "orange-grad", column_front: "silver-grad", column_right: "orange-grad" };
 
 
-COL_EMENY = { column_left: "test-grad", column_front: "test-grad", column_right: "test-grad" };
+COL_EMENY = { column_left: "", column_front: "", column_right: "" };

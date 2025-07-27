@@ -1,6 +1,3 @@
-
-
-
 function missileLR(a_missile, the_player) {
   if (a_missile.x < the_player.x) {
     return MISSILE_TO_LEFT;
@@ -12,38 +9,71 @@ function missileLR(a_missile, the_player) {
 
 
 
-function playerRight(travel_speed) {
-  the_player.x += 3 * travel_speed;
-  if (the_player.x > SCENE_X_MAX) {
-    the_player.x = SCENE_X_MIN;
+
+
+
+
+
+
+
+
+
+function rightOnBoard(x_pos, right_steps) {
+  x_pos += right_steps;
+  if (x_pos > SCENE_X_MAX) {
+    x_pos -= SCENE_X_MAX;
   }
+  return x_pos;
+}
+
+function playerRight(travel_speed) {
+  the_player.x = rightOnBoard(the_player.x, travel_speed * 3);
+}
+
+
+
+
+
+function leftOnBoard(x_pos, left_steps) {
+  x_pos -= left_steps;
+  if (x_pos < SCENE_X_MIN) {
+    x_pos += SCENE_X_MAX;
+  }
+  return x_pos;
 }
 
 function playerLeft(travel_speed) {
-  the_player.x -= 3 * travel_speed;
-  if (the_player.x < SCENE_X_MIN) {
-    the_player.x = SCENE_X_MAX;
-  }
+  the_player.x = leftOnBoard(the_player.x, travel_speed * 3);
 }
 
-// 784
-
-// 49* 16 = 784
 
 
 
 function playerForward(travel_speed) {
-  the_player.y += 1 * travel_speed;
-  if (the_player.y > 778) {
-    the_player.y = 0;
+  the_player.y = forwardOnBoard(the_player.y, travel_speed);
+}
+function forwardOnBoard(y_pos, backward_steps) {
+  y_pos += backward_steps;
+  if (y_pos > SCENE_Y_MAX) {
+    y_pos -= SCENE_Y_MAX;
   }
+  return y_pos;
 }
 
-function playerBackward(travel_speed) {
-  the_player.y -= 1 * travel_speed;
-  if (the_player.y < 0) {
-    the_player.y = 778;
+
+
+
+function backwardOnBoard(y_pos, forward_steps) {
+  y_pos -= forward_steps;
+  if (y_pos < SCENE_Y_MIN) {
+    y_pos += SCENE_Y_MAX;
   }
+  return y_pos;
+}
+
+
+function playerBackward(travel_speed) {
+  the_player.y = backwardOnBoard(the_player.y, travel_speed);
 }
 
 

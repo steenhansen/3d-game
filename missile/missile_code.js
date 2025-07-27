@@ -1,3 +1,43 @@
+function getRandomColor(missile_id) {
+  //let gg = Math.floor(Math.random() * 6);
+  let gg = Math.floor(Math.random() * 16);
+  if (gg == 0) {
+    let r = Math.floor(Math.random() * 128) + 128;
+    let g = 0;  //Math.floor(Math.random() * 256);
+    let b = 0;  //Math.floor(Math.random() * 256);
+    let missile_fill = "--missile-fill-" + missile_id;
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    document.documentElement.style.setProperty(missile_fill, rgb);
+  }
+}
+
+function getRandomFill(missile_id) {
+  let missile_display = "--missile-display-" + missile_id;
+  let gg = Math.floor(Math.random() * 3);
+  if (gg == 0) {
+    display_none_block = `none`;
+  } else {
+    display_none_block = `block`;
+  }
+  document.documentElement.style.setProperty(missile_display, display_none_block);
+}
+
+function getRandoms() {
+  for (let i = 100; i < 132; i++) {
+    getRandomColor(i);
+    getRandomFill(i);
+  }
+  for (let i = 200; i < 216; i++) {
+    getRandomColor(i);
+    getRandomFill(i);
+  }
+  for (let i = 300; i < 308; i++) {
+    getRandomColor(i);
+    getRandomFill(i);
+  }
+}
+
+
 function missileSet(the_sprite, html_id) {
   missile_box = missileDraw(the_sprite, the_player);
   targetDiv = document.getElementById(html_id);
@@ -9,6 +49,8 @@ function missileSet(the_sprite, html_id) {
   document.documentElement.style.setProperty("--my-missile-y", y_px);
   document.documentElement.style.setProperty("--my-missile-width", w_px);
   document.documentElement.style.setProperty("--my-missile-height", h_px);
+
+  getRandoms();
 
 }
 
@@ -44,12 +86,11 @@ function missileArea(z_index, front_column) {
 document.getElementById('missile-area').innerHTML = `<div id="missile-id" ></div>`;
 
 let the_missile = {
-  id: "missle-planets", spin: 31,
+  id: "missile-flames", spin: 31,
   //  x: area_width_half + 260, y: 854,
   x: 49000, y: 333,
-  //  x_move: +1, y_move: -1,
-  x_move: 0, y_move: 0,
-  x_steps: 6, y_steps: 2,
+
+  x_move: 0, y_move: -1,    // always away
   column_colors: COL_EMENY
 };
 

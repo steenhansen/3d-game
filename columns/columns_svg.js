@@ -66,6 +66,14 @@ document.getElementById('column-svg').innerHTML = `
       <stop offset="0" stop-color="rgb(255,0,255,0.3)" />
       <stop offset="1" stop-color="rgb(125,0,125,0.1)" stop-opacity="0.9993" />
     </linearGradient>
+
+
+
+    <linearGradient id="none-grad" x1="0%" y1="0%" x2="0%" y2="0%">
+  </linearGradient>
+
+
+
   </defs>
 </svg>
 

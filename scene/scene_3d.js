@@ -13,8 +13,8 @@ const MOVING_STOP = 5;
 let sprite_half_x = 128;
 const area_width_half = 16 * 1048;               //16768
 let player_x = area_width_half;
-let player_y = 512 + 512;           // 512+512=1048
-var the_key = 0;
+let player_y = 512; //+ 512;           // 512+512=1048
+var the_key = MOVING_BACKWARDS;
 
 const numDrawings = 90;
 
@@ -119,6 +119,13 @@ function animateScene(timestamp) {
   } else {
     the_move = the_key;
   }
+  enemyMove(the_enemy);
+  enemySet(the_enemy, 'enemy-id');
+
+  enemyMove(the_missile);
+  missileSet(the_missile, 'missile-id');  // need constant js code to cause blinks
+
+
   travel_speed = TRAVEL_SPEED;
   if (the_move == MOVING_FORWARD) {
     sceneForward(travel_speed);
@@ -134,6 +141,8 @@ function animateScene(timestamp) {
     //the_move = MOVING_RIGHT;
   }
 
+
+
   if (the_move != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
     columnSet(column_point_0, 'the_columns_0');
     columnSet(column_point_1, 'the_columns_1');
@@ -145,14 +154,13 @@ function animateScene(timestamp) {
     columnSet(column_point_6, 'the_columns_6');
     columnSet(column_point_7, 'the_columns_7');
 
-    enemySet(the_enemy, 'enemy-id');
 
-    missileSet(the_missile, 'missile-id');
+
 
     DRAW_AT_LEAST_ONCE = false;
   }
 
-
+  // missileSet(the_missile, 'missile-id');  // need constant js code to cause blinks
 
 
 

@@ -6,11 +6,6 @@
   --my-y-start: 256px;
   --my-y-end: 0px;
 
-  --my-planet-x: -1000px;
-  --my-planet-y: -1000px;
-  --my-planet-width: 100;
-  --my-planet-height: 100;
-  --my-planet-z: 12345;
 
   --my-missile-x: -1000px;
   --my-missile-y: -1000px;
@@ -24,20 +19,5 @@
   --my-shot-height: 100;
 
 
---missile-display-100: block; /* none or block */
---missile-display-101: block; 
---missile-display-200: block;
---missile-display-300: block;
---missile-display-400: block;
---missile-display-500: block;
---missile-display-600: block;
-
---missile-fill-100: red;
---missile-fill-101: yellow;
---missile-fill-200: blue;
---missile-fill-300: green;
---missile-fill-400: yellow;
---missile-fill-500: purple;
---missile-fill-600: cyan;
 
 }
