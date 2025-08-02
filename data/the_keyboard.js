@@ -1,61 +1,31 @@
 
 function turnOnKeys() {
-  document.addEventListener('keydown', function (event) {
-    if (event.key == "ArrowUp") {
-      the_key = MOVING_BACKWARDS;
-    }
-    else if (event.key == "ArrowRight") {
-      the_key = MOVING_RIGHT;
-    }
-    else if (event.key == "ArrowDown") {
-      the_key = MOVING_FORWARD;
-    }
-    else if (event.key == "ArrowLeft") {
-      the_key = MOVING_LEFT;
+
+  function readKeys(event) {
+    const the_key = event.key;
+    console.log("ddd", the_key);
+    if (['Q', 'q', "Home", '7'].includes(the_key)) {
+      g_move_direction = MOVINGx_NW;
+    } else if (['W', 'w', "ArrowUp", '8'].includes(the_key)) {
+      g_move_direction = MOVINGx_N;
+    } else if (['E', 'e', "PageUp", '9'].includes(the_key)) {
+      g_move_direction = MOVINGx_NE;
+    } else if (['D', 'd', "ArrowRight", '6'].includes(the_key)) {
+      g_move_direction = MOVINGx_E;
+    } else if (['C', 'c', "PageDown", '3'].includes(the_key)) {
+      g_move_direction = MOVINGx_SE;
+    } else if (['X', 'x', "ArrowDown", '2'].includes(the_key)) {
+      g_move_direction = MOVINGx_S;
+    } else if (['Z', 'z', "End", '1'].includes(the_key)) {
+      g_move_direction = MOVINGx_SW;
+    } else if (['A', 'a', "ArrowLeft", '4'].includes(the_key)) {
+      g_move_direction = MOVINGx_W;
+    } else if (the_key == '`') {
+      g_move_direction = MOVINGx_NOT;
     } else {
-      the_key = MOVING_NOT;
+      //  MOVING_NOT;
     }
-  });
-  /////////////////////////
+  }
 
-
-  // window.addEventListener(
-  //   "keydown",
-  //   (event) => {
-  //     if (event.defaultPrevented) {
-  //       return; // Do nothing if the event was already processed
-  //     }
-
-  //     switch (event.key) {
-  //       case "ArrowDown":
-  //         // Do something for "down arrow" key press.
-  //         break;
-  //       case "ArrowUp":
-  //         // Do something for "up arrow" key press.
-  //         break;
-  //       case "ArrowLeft":
-  //         // Do something for "left arrow" key press.
-  //         break;
-  //       case "ArrowRight":
-  //         // Do something for "right arrow" key press.
-  //         break;
-  //       case "Enter":
-  //         // Do something for "enter" or "return" key press.
-  //         break;
-  //       case " ":
-  //         // Do something for "space" key press.
-  //         break;
-  //       case "Escape":
-  //         // Do something for "esc" key press.
-  //         break;
-  //       default:
-  //         return; // Quit when this doesn't handle the key event.
-  //     }
-
-  //     // Cancel the default action to avoid it being handled twice
-  //     event.preventDefault();
-  //   },
-  //   true,
-  // );
-
+  document.addEventListener('keydown', readKeys);
 }

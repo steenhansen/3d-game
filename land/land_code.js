@@ -1,18 +1,41 @@
+
+
+function doLanding(show_intro) {
+  if (show_intro) {
+    startLand(255, 25);
+  } else {
+    skipLand();
+  }
+}
+
+
+
+function skipLand() {
+  setLandingScroll(0);
+  readyInputArrows();
+}
+
+function setLandingScroll(the_pixels) {
+  const playing_game = document.getElementById(`playing-game`);
+  playing_game.style = `margin-top:${the_pixels}px`;
+}
+
 function startLand(num_lines, land_speed) {
   let first_time;
 
-  requestAnimationFrame(firstLand);
+  requestAnimationFrame(startLanding);
 
-  function firstLand(timestamp) {
+  function startLanding(timestamp) {
     first_time = timestamp;
-    restLand(timestamp);
+    continueLanding(timestamp);
   }
 
-  function restLand(timestamp) {
+  function continueLanding(timestamp) {
     const frame_count = (timestamp - first_time) / land_speed; // duration 10 fast, 100 slow
     let the_count = Math.floor(frame_count);
 
-    let normal_line = `background-position: -${the_count + 2}px -${the_count}px`;
+
+    let normal_line = `background-position: -${the_count + 1}px -${the_count}px`;
     let flip_line = `background-position: 0px                 -${the_count}px`;
 
     let flip_count = 0;
@@ -46,12 +69,68 @@ function startLand(num_lines, land_speed) {
       }
 
     }
-
     if (frame_count < num_lines) {
-      requestAnimationFrame(restLand);
+      requestAnimationFrame(continueLanding);
+    } else {
+      requestAnimationFrame(scrollLandUp);
+    }
+
+  }
+
+  m_top_playing_game = -512;
+  m_top_the_land = 0;
+
+
+  function scrollLandUp(timestamp) {
+    m_top_playing_game += 2;;
+    m_top_the_land += 2;
+    setLandingScroll(m_top_playing_game);
+
+
+    flashScrollingArrow('arrow-nw');
+    flashScrollingArrow('arrow-n');
+    flashScrollingArrow('arrow-ne');
+    flashScrollingArrow('arrow-e');
+    flashScrollingArrow('arrow-se');
+    flashScrollingArrow('arrow-s');
+    flashScrollingArrow('arrow-sw');
+    flashScrollingArrow('arrow-w');
+
+    if (m_top_playing_game < 0) {
+      requestAnimationFrame(scrollLandUp);
+    } else {
+      readyInputArrows();
     }
   }
 }
 
-startLand(255, 25);
+function flashScrollingArrow(arrow_id) {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  const an_arrow = document.getElementById(arrow_id);
+  let rgb = `rgb(${r}, ${g}, ${b})`;
+  let flash_grey = `fill: ${rgb}; opacity:100%`;
+  an_arrow.style = flash_grey;
+}
 
+
+
+function readyInputArrows() {
+
+
+  stopFlashArrow('arrow-nw');
+  stopFlashArrow('arrow-n');
+  stopFlashArrow('arrow-ne');
+  stopFlashArrow('arrow-e');
+  stopFlashArrow('arrow-se');
+  stopFlashArrow('arrow-s');
+  stopFlashArrow('arrow-sw');
+  stopFlashArrow('arrow-w');
+}
+
+function stopFlashArrow(arrow_id) {
+  const stop_arrow = document.getElementById(arrow_id);
+  let flash_none = `fill: rgb(0 ,0 , 0)`;
+  stop_arrow.style = flash_none;
+}

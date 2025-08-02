@@ -57,3 +57,88 @@ let cube_1 = { id: "cube-1", spin: 31, x: area_width_half - 384, y: 333 };
 //   //console.log('sprite_element.style', sprite_element.style.backgroundPositionX);
 //   sprite_element.style.backgroundPositionX = int_spin * 256 + "px";
 // }
+
+
+
+/*
+
+
+                |
+           \ forward /
+            \   |   /
+             \  |  /
+  left        \ | /        right
+               \|/
+--------------------------------------
+   quadrant 4   |  quadrant 3
+
+
+
+*/
+
+const el = document.getElementById("the-layers");
+//el.addEventListener("touchstart", handleStart);
+
+left_right_width = el.clientWidth;
+up_down_height = el.clientHeight;
+left_right_middle = el.clientWidth / 2;
+up_down_middle = el.clientHeight / 2;
+
+
+function handleStart(evt) {
+        evt.preventDefault();
+        let the_touch = evt.touches[0];
+        touch_x = the_touch.clientX;
+        touch_y = the_touch.clientY;
+        //        console.log("touchstart.", the_touch.clientX, the_touch.clientY);
+        //        console.log("the box", el.clientHeight, el.clientWidth);
+        if (touch_x < left_right_middle) {
+                on_left_side = true;
+        } else {
+                on_left_side = false;
+        }
+        if (touch_y < up_down_middle) {
+                on_top_side = true;
+        } else {
+                on_top_side = false;
+        }
+        x_larger_than_y = touch_x >= touch_y;
+        x_plus_y = touch_x + touch_y;
+
+        if (on_left_side && on_top_side) {
+                the_quadrant = 1;
+        } else if (!on_left_side && on_top_side) {
+                the_quadrant = 2;
+        } else if (!on_left_side && !on_top_side) {
+                the_quadrant = 3;
+        } else {
+                the_quadrant = 4;
+        }
+        if (the_quadrant == 1) {
+                //   console.log("11111");
+                if (x_larger_than_y) {
+                        touch_type = "up";
+                } else {
+                        touch_type = "left";
+                }
+        } else if (the_quadrant == 2) {
+                if (x_plus_y > left_right_width) {
+                        touch_type = "right";
+                } else {
+                        touch_type = "up";
+                }
+        } else if (the_quadrant == 3) {
+                if (x_larger_than_y) {
+                        touch_type = "right";
+                } else {
+                        touch_type = "down";
+                }
+        } else {
+                if (x_plus_y > up_down_height) {
+                        touch_type = "down";
+                } else {
+                        touch_type = "left";
+                }
+        }
+        console.log(touch_type);
+}

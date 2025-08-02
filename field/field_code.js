@@ -69,7 +69,8 @@ function initLeftRight() {
   moveForward();
   moveForward();
   moveForward();
-  for (let left_line = 0; left_line < 128; left_line++) {
+  //  for (let left_line = 0; left_line < 256; left_line++) {  // go right fail
+  for (let left_line = 0; left_line < 128; left_line++) {      // go right ok?
     moveLeft();
   }
   requestAnimationFrame(animateScene);

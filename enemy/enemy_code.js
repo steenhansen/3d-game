@@ -15,7 +15,7 @@ function enemyMove(the_enemy) {
     the_enemy.y = forwardOnBoard(the_enemy.y, y_move * 4);
 
   }
-  console.log(the_enemy.x, the_enemy.y);
+  // console.log(the_enemy.x, the_enemy.y);
 
 }
 

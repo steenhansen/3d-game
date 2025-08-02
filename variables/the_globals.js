@@ -1,6 +1,11 @@
 
+
+let g_move_direction = "west";
+
+
 let HALF_VIEW_WIDTH = 512;
 let BOTTOM_FIELD = 512;
+
 
 let BACK_VANISH_POINT = [511, 256];
 

@@ -1,0 +1,166 @@
+
+/* Asuz Zenbook + Ipad Air are the problems */
+
+
+#input-shoot{
+  width:684px;
+  height:270px;
+  left:170px;
+  top:120px;
+}
+
+
+#input-n{
+  width:684px;
+  height:120px;
+  left:170px;
+  top:0px;
+}
+
+
+#input-s{
+  width:684px;
+  height:120px;
+
+  left:170px;
+  top:392px;
+}
+
+
+
+.an-input{
+  width:170px;
+  height:170px;
+  opacity:99%;
+  position: absolute;
+  background-color: none;
+    border:none;
+    borderX:thin solid white;
+  z-index:2147483600;
+}
+
+#input-nw{
+  left:0px;
+  top:0px;
+}
+
+
+#input-sw{
+  left:0px;
+  top:342px;
+}
+
+#arrow-sw{
+  transform:rotate(225deg);  
+  left:0px;
+  top:488px;
+}
+
+/* have 394 to work with
+394/3=131
+
+
+
+*/
+
+
+
+
+
+
+#arrow-nw{
+  transform:rotate(-45deg); 
+  left:0px;
+  top:0px;
+
+}
+
+
+
+
+
+
+
+
+#input-w{
+  left:0px;
+  top:171px;
+}
+
+
+#input-ne{
+  left:854px;
+  top:0px;
+
+}
+
+#input-e{
+  left:854px;
+  top:171px;
+}
+
+#input-se{
+  left:854px;
+  top:342px;
+}
+
+
+
+
+
+
+
+
+.an-arrow{
+  width:24px;
+  height:24px;
+  opacity:40%;
+  position: absolute;
+  /* z-index:2_147_483_647; */
+  /* z-index:2147483647; */
+  z-index:2147483555;
+}
+
+
+
+/* 1024/2= 512   24/2=12
+   512-12 =500*/
+#arrow-n{
+  left:500px;
+  top:0px;
+}
+
+
+#arrow-ne{
+  transform:rotate(45deg); 
+  left:1000px;
+  top:0px;
+}
+
+#arrow-e{
+  transform:rotate(90deg);  
+  left:1000px;
+  top:244px;
+}
+
+#arrow-se{
+  transform:rotate(135deg);  
+  left:1000px;
+  top:488px;
+}
+
+
+#arrow-s{
+   transform:rotate(180deg);  
+   left:500px;
+   top:488px;
+}
+
+
+/* 256-12=244 */
+#arrow-w{
+  transform:rotate(270deg);  
+  left:0px;
+  top:244px;
+}
+
