@@ -3,7 +3,7 @@
 
 //   https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/  
 
-// qbert arrow below
+
 /*
 <g id="the-arrow">
       <path     d="M 24,10 12,0 0,10 z M 6,12 v 16 h 12 v -16 z"
@@ -27,7 +27,7 @@ document.getElementById('column-svg').innerHTML = `
 
     <linearGradient id="green-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(0,255,0)" />
-      <stop offset="1" stop-color="rgb(0,64,0)" stop-opacity="0.99993" />
+      <stop offset="1" stop-color="rgb(0,32,0)" stop-opacity="0.99993" />
     </linearGradient>
 
     <linearGradient id="blue-grad" x1="0%" y1="0%" x2="0%" y2="100%">

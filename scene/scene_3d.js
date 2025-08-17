@@ -135,69 +135,14 @@ function sceneStop() {
   moveSky('stop');
 }
 
-
-function animateScene(timestamp) {
-  enemyMove(the_enemy);
-  enemySet(the_enemy, 'enemy-id');
-
-  enemyMove(the_missile);
-  missileSet(the_missile, 'missile-id');  // need constant js code to cause blinks
-
-  /*
-    if (TEST_SCENE) {
-      the_move = getTestMove();
-    } else {
-      the_move = the_key;
-    }
-
-  
-  
-    travel_speed = TRAVEL_SPEED;
-    if (the_move == MOVING_FORWARD) {
-      sceneForward(travel_speed);
-    } else if (the_move == MOVING_RIGHT) {
-      sceneRight(travel_speed);
-    } else if (the_move == MOVING_BACKWARDS) {
-      sceneBackward(travel_speed);
-    } else if (the_move == MOVING_LEFT) {
-      sceneLeft(travel_speed);
-    } else {
-      // console.log("no input is go right");
-      //sceneRight(travel_speed);
-      //the_move = MOVING_RIGHT;
-    }
-  
-  
-  
-    if (the_move != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
-      columnSet(column_point_0, 'the_columns_0');
-      columnSet(column_point_1, 'the_columns_1');
-      columnSet(column_point_2, 'the_columns_2');
-      columnSet(column_point_3, 'the_columns_3');
-  
-      columnSet(column_point_4, 'the_columns_4');
-      columnSet(column_point_5, 'the_columns_5');
-      columnSet(column_point_6, 'the_columns_6');
-      columnSet(column_point_7, 'the_columns_7');
-  
-  
-  
-  
-      DRAW_AT_LEAST_ONCE = false;
-    }
-  
-    // missileSet(the_missile, 'missile-id');  // need constant js code to cause blinks
-  
-  */
+function sceneMove() {
   travel_speed = TRAVEL_SPEED;
   if (g_move_direction == MOVINGx_NW) {
     sceneLeft(travel_speed);
     sceneBackward(travel_speed);
-    //  sceneForward(travel_speed);
   } else if (g_move_direction == MOVINGx_N) {
     sceneBackward(travel_speed);
-    //  sceneRight(travel_speed);
-  } else if (g_move_direction == MOVINGx_NE) { //MOVING_BACKWARDS) {
+  } else if (g_move_direction == MOVINGx_NE) {
     sceneRight(travel_speed);
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_E) {
@@ -214,29 +159,82 @@ function animateScene(timestamp) {
     sceneLeft(travel_speed);
   } else {
     // console.log("no input is go right");
-    //sceneRight(travel_speed);
-    //the_move = MOVING_RIGHT;
   }
+}
+
+function setColumns() {
   if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
     columnSet(column_point_0, 'the_columns_0');
-    columnSet(column_point_1, 'the_columns_1');
-    columnSet(column_point_2, 'the_columns_2');
-    columnSet(column_point_3, 'the_columns_3');
-
-    columnSet(column_point_4, 'the_columns_4');
-    columnSet(column_point_5, 'the_columns_5');
-    columnSet(column_point_6, 'the_columns_6');
-    columnSet(column_point_7, 'the_columns_7');
-
-
-
-
+    // columnSet(column_point_1, 'the_columns_1');
     DRAW_AT_LEAST_ONCE = false;
   }
+}
+
+function checkCollisions() {
+  collision_2 = hasCollided(column_point_0, g_player, COLLISION_SIZES);
+  if (collision_2 && g_move_continue == 0) {
+    g_move_continue = 24;
+    new_direction = objectBounced(g_move_direction);
+    g_move_direction = new_direction;
+  }
+}
+
+function doBounce() {
+  if (g_move_continue > 1) {
+    g_move_continue--;
+  } else if (g_move_continue == 1) {
+    g_move_continue--;
+    g_move_direction = MOVINGx_NOT;
+  } else {
+  }
+}
+
+function animateScene(timestamp) {
+
+
+
+
+
+  /////////////
+
+  // let playing_game = document.getElementById('playing-game');
+
+  // let a_var = getComputedStyle(playing_game).getPropertyValue("--a-var");
+  // console.log("before_ 34089 aver", a_var);
+
+
+  // playing_game.style.setProperty("--a-var", "kap");
+
+  //////////////////////
+
+  doBounce();
+  sceneMove();
+  setColumns();
+  checkCollisions();
+
+
+  missileSet('missile-1', the_missile_1, g_player, 'missile', 'da_missile-1');
+  missileSet('missile-2', the_missile_2, g_player, 'missile', 'da_missile-2');
+
+
+  enemySet('enemy-1', the_enemy_1, g_player, 'enemy', 'da_enemy-1');
+  // console.log("---------------");
+  // console.log("A enemy_1", the_enemy_1);
+  the_enemy_1 = spriteStep(the_enemy_1);
+  // console.log("Z enemy_1", the_enemy_1);
+  // console.log("---------------");
+
+
+  enemySet('enemy-2', the_enemy_2, g_player, 'enemy', 'da_enemy-2');
+
+
+
+
+  //objectMomentum(the_enemy);
+  //console.log("ee", the_enemy.x, the_enemy.y);
 
   if (keep_running) {
     affixLeftRight();
     requestAnimationFrame(animateScene);
-  } else {
   }
 }

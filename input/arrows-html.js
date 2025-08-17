@@ -71,7 +71,7 @@ function arrowInputClick(the_event, direction_name) {
 
 function addInputEvent(direction_name, clickHandler) {
   const the_input = document.getElementById("input-" + direction_name);
-  the_input.addEventListener("touchstart", clickHandler);
+  the_input.addEventListener("touchstart", clickHandler, { passive: false });
 }
 
 

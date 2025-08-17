@@ -1,17 +1,15 @@
 
+
+#playing-game {
+
+
+  --a-var: 12;
+}
+
 :root {
-  --my-x-start: 0px;
-  --my-x-end: 256px;
-
-  --my-y-start: 256px;
-  --my-y-end: 0px;
 
 
-  --my-missile-x: -1000px;
-  --my-missile-y: -1000px;
-  --my-missile-width: 100;
-  --my-missile-height: 100;
-  --my-missile-z: 54321;
+
 
   --my-shot-x: -1000px;
   --my-shot-y: -1000px;

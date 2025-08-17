@@ -1,33 +1,39 @@
 <!DOCTYPE html>
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
-<link rel="stylesheet" href="variables/variables.css" />
-<link rel="stylesheet" href="scene/layout.css" />
-<link rel="stylesheet" href="field/field.css" />
-<link rel="stylesheet" href="columns/columns.css" />
-<link rel="stylesheet" href="land/land.css" />
-<link rel="stylesheet" href="enemy/enemy.css" />
-<link rel="stylesheet" href="missile/missile.css" />
-<link rel="stylesheet" href="sky/sky.css" />
-<link rel="stylesheet" href="missile/missile-balls.css" />
-<link rel="stylesheet" href="input/arrows.css" />
+<div id="css">
+  <link rel="stylesheet" href="variables/variables.css" />
+  <link rel="stylesheet" href="scene/layout.css" />
+  <link rel="stylesheet" href="field/field.css" />
+  <link rel="stylesheet" href="columns/columns.css" />
+  <link rel="stylesheet" href="land/land.css" />
+  <link rel="stylesheet" href="enemy/enemy.css" />
+  <link rel="stylesheet" href="missile/missile.css" />
+  <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="missile/missile-balls.css" />
+  <link rel="stylesheet" href="input/arrows.css" />
+  <link rel="stylesheet" href="input/directions.css" />
+</div>
 
-<script type="text/javascript" src="data/colors.js"></script>
-<script type="text/javascript" src="variables/the_constants.js"></script>
-<script type="text/javascript" src="variables/the_globals.js"></script>
-<script type="text/javascript" src="things/objects.js"></script>
-<script type="text/javascript" src="svg-rect/svg-into-rect.js"></script>
-
-<script type="text/javascript" src="scene/overflow.js"></script>
-<script type="text/javascript" src="player/player_data.js"></script>
-<script type="text/javascript" src="player/player_code.js"></script>
-<script type="text/javascript" src="things/panel.js"></script>
-<script type="text/javascript" src="sky/sky_code.js"></script>
-<script type="text/javascript" src="data/the_keyboard.js"></script>
-<script rel="text/javascript" src="field/field_test.js"></script>
-<script type="text/javascript" src="scene/vanish_point.js"></script>
-<script type="text/javascript" src="data/data.js"></script>
-<script type="text/javascript" src="field/field_code.js"></script>
-<script type="text/javascript" src="scene/scene_3d.js"></script>
+<div id="js-before">
+  <script type="text/javascript" src="data/colors.js"></script>
+  <script type="text/javascript" src="variables/the_constants.js"></script>
+  <script type="text/javascript" src="variables/the_globals.js"></script>
+  <script type="text/javascript" src="things/objects.js"></script>
+  <script type="text/javascript" src="svg-rect/svg-into-rect.js"></script>
+  <script type="text/javascript" src="scene/overflow.js"></script>
+  <script type="text/javascript" src="player/player_data.js"></script>
+  <script type="text/javascript" src="player/player_code.js"></script>
+  <script type="text/javascript" src="things/panel.js"></script>
+  <script type="text/javascript" src="things/collisions.js"></script>
+  <script type="text/javascript" src="sky/sky_code.js"></script>
+  <script type="text/javascript" src="data/the_keyboard.js"></script>
+  <script rel="text/javascript" src="field/field_test.js"></script>
+  <script type="text/javascript" src="scene/vanish_point.js"></script>
+  <script type="text/javascript" src="data/data.js"></script>
+  <script type="text/javascript" src="field/field_code.js"></script>
+  <script type="text/javascript" src="scene/scene_3d.js"></script>
+</div>
 
 <div id="the-svgs">
   <div id='column-svg'> </div>
@@ -35,11 +41,9 @@
 </div>
 
 
-<div id="the-layers" style="height:512px; width:1024px">
+<div id="the-scene" style="height:512px; width:1024px">
 
   <div id="playing-game" style="height:512px; margin-top:-512px">
-
-
     <div id='html-arrows' style="position:relative"></div>
 
     <div id="the-sun"></div>
@@ -52,16 +56,13 @@
 
     <div id="enemy-area"></div>
     <div id="missile-area"></div>
-
     <div id="the-field"> </div>
 
     <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
-
     <div id='column-html'> </div>
-
   </div>
 
-  <div id="the-land" style="height:512px; margin-top:0px">
+  <div id="the-landing" style="height:512px; margin-top:0px">
     <div id="land_nw"></div>
     <div id="land_ne"></div>
     <div id="land_sw"></div>
@@ -72,97 +73,46 @@
 </div>
 
 
+<div id="desktop-dir"></div>
+
+
+
+
+<div id="js-after">
+
+  <script type="text/javascript" src="enemy/enemy_html.js"></script>
+  <script type="text/javascript" src="missile/missile_html.js"></script>
+  <script type="text/javascript" src="field/field_html.js"></script>
+  <script type="text/javascript" src="enemy/enemy_code.js"></script>
+  <script type="text/javascript" src="missile/missile_code.js"></script>
+
+
+  <script type="text/javascript" src="land/land_nw_html.js"></script>
+  <script type="text/javascript" src="land/land_ne_html.js"></script>
+  <script type="text/javascript" src="land/land_sw_html.js"></script>
+  <script type="text/javascript" src="land/land_se_html.js"></script>
+  <script type="text/javascript" src="land/land_code.js"></script>
 
 
 
 
 
-
-
-<script type="text/javascript" src="enemy/enemy_html.js"></script>
-<script type="text/javascript" src="missile/missile_html.js"></script>
-<script type="text/javascript" src="field/field_html.js"></script>
-<script type="text/javascript" src="enemy/enemy_code.js"></script>
-<script type="text/javascript" src="missile/missile_code.js"></script>
-
-
-<script type="text/javascript" src="land/land_nw_html.js"></script>
-<script type="text/javascript" src="land/land_ne_html.js"></script>
-<script type="text/javascript" src="land/land_sw_html.js"></script>
-<script type="text/javascript" src="land/land_se_html.js"></script>
-<script type="text/javascript" src="land/land_code.js"></script>
+  <script type="text/javascript" src="input/arrows-svg.js"></script>
+  <script type="text/javascript" src="input/fullscreen-touch.js"></script>
+  <script type="text/javascript" src="input/arrows-html.js"></script>
 
 
 
 
-
-<script type="text/javascript" src="input/arrows-svg.js"></script>
-
-<script type="text/javascript" src="input/arrows-html.js"></script>
-
-
-
-
-<script type="text/javascript" src="columns/columns_svg.js"></script>
-<script type="text/javascript" src="columns/columns_data.js"></script>
-<script type="text/javascript" src="columns/columns_html.js"></script>
-<script type="text/javascript" src="columns/columns_code.js"></script>
-
-
-
-<script type="text/javascript" src="data/start.js"></script>
-<script>
-
-  doLanding(false);
-
-  var touchDevice = ('ontouchstart' in document.documentElement);
-  console.log("ccc", touchDevice);
-  if (!touchDevice) {
-
-    var d1 = document.getElementById('the-layers');
-    d1.insertAdjacentHTML('afterend', `
-   <style>
-    .box > * {
-        border: 1px solid rgb(96 139 168);
-        width: 90px;
-    }
-
-.box {
-
-  width: 300px;
-  display: flex;
-  flex-flow: row wrap;
-
-}
-
-    </style>
-        
-  <div style="width:1024px">
-        <div class="box" style="margin: 0 auto;">
-            <div>&#x2196; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q or 7</div>
-            <div style="text-align:center">&#x2191; <br> W or 8</div>
-            <div style="text-align:right">&#x2197; <br> E or 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
-              <div style="line-height: 40px;">&#x2190;&nbsp;&nbsp;A or 4</div>
-            <div style="text-align:center;">Shoot with space bar</div>
-            <div style="text-align:right; line-height: 40px;">D or 6&nbsp;&nbsp;&#x2192;</div>
-
-
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z or 1<br>&#x2199; </div>
-            <div style="text-align:center">X or 2<br>&#x2193; </div>
-            <div style="text-align:right">C or 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> &#x2198; </div>
-       </div>
+  <script type="text/javascript" src="columns/columns_svg.js"></script>
+  <script type="text/javascript" src="columns/columns_data.js"></script>
+  <script type="text/javascript" src="columns/columns_html.js"></script>
+  <script type="text/javascript" src="columns/columns_code.js"></script>
+  <script type="text/javascript" src="data/start.js"></script>
 </div>
-        
-        `);
 
 
-  }
-
-
+<script>
+  doLanding(false);
   initLeftRight();
-
-  //  https://www.unicode.org/charts/nameslist/n_2190.html
-
-
 </script>

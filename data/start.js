@@ -76,7 +76,7 @@ let cube_1 = { id: "cube-1", spin: 31, x: area_width_half - 384, y: 333 };
 
 */
 
-const el = document.getElementById("the-layers");
+const el = document.getElementById("the-scene");
 //el.addEventListener("touchstart", handleStart);
 
 left_right_width = el.clientWidth;

@@ -12,6 +12,7 @@ function distancedBackColumnPoint(shrink_depth, front_right_bot_column_point) {
 }
 
 function distancedPoint(distance_in_256, field_front_point) {
+  // console.log("qbert", "seems to use shrinkage here matching feild");
   shrink_size = sprite_sizes[distance_in_256];
   let [x_1, y_1] = BACK_VANISH_POINT;
   let [x_2, y_2] = field_front_point;

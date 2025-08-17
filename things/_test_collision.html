@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+tests are shown in the console
+
+<script type="text/javascript" src="collisions.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+  function _test_collisions() {
+    const field_width = 1000;
+    const room_width = 100;
+    const field_depth = 1000;
+    const room_depth = 100;
+    let collision_sizes = [field_width, room_width, field_depth, room_depth];
+
+    test_results = [];
+
+    test_results.push(_try_collision(1, { x: 500, y: 500 }, { x: 500, y: 500 }, true, collision_sizes));
+
+    test_results.push(_try_collision(2, { x: 500, y: 500 }, { x: 400, y: 400 }, true, collision_sizes));
+    test_results.push(_try_collision(3, { x: 500, y: 500 }, { x: 399, y: 400 }, false, collision_sizes));
+    test_results.push(_try_collision(4, { x: 500, y: 500 }, { x: 400, y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(5, { x: 500, y: 500 }, { x: 399, y: 399 }, false, collision_sizes));
+
+    test_results.push(_try_collision(6, { x: 500, y: 500 }, { x: 600, y: 400 }, true, collision_sizes));
+    test_results.push(_try_collision(7, { x: 500, y: 500 }, { x: 601, y: 400 }, false, collision_sizes));
+    test_results.push(_try_collision(8, { x: 500, y: 500 }, { x: 600, y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(9, { x: 500, y: 500 }, { x: 601, y: 399 }, false, collision_sizes));
+
+    test_results.push(_try_collision(10, { x: 500, y: 500 }, { x: 600, y: 600 }, true, collision_sizes));
+    test_results.push(_try_collision(11, { x: 500, y: 500 }, { x: 601, y: 600 }, false, collision_sizes));
+    test_results.push(_try_collision(12, { x: 500, y: 500 }, { x: 600, y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(13, { x: 500, y: 500 }, { x: 601, y: 601 }, false, collision_sizes));
+
+    test_results.push(_try_collision(14, { x: 500, y: 500 }, { x: 400, y: 600 }, true, collision_sizes));
+    test_results.push(_try_collision(15, { x: 500, y: 500 }, { x: 399, y: 600 }, false, collision_sizes));
+    test_results.push(_try_collision(16, { x: 500, y: 500 }, { x: 400, y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(17, { x: 500, y: 500 }, { x: 399, y: 601 }, false, collision_sizes));
+
+    test_results.push(_try_collision(18, { x: 0, y: 0 }, { x: 900, y: 900 }, true, collision_sizes));
+    test_results.push(_try_collision(19, { x: 0, y: 0 }, { x: 899, y: 900 }, false, collision_sizes));
+    test_results.push(_try_collision(20, { x: 0, y: 0 }, { x: 900, y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(21, { x: 0, y: 0 }, { x: 899, y: 899 }, false, collision_sizes));
+
+    test_results.push(_try_collision(22, { x: 999, y: 0 }, { x: 99, y: 900 }, true, collision_sizes));
+    test_results.push(_try_collision(23, { x: 999, y: 0 }, { x: 100, y: 900 }, false, collision_sizes));
+    test_results.push(_try_collision(24, { x: 999, y: 0 }, { x: 100, y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(25, { x: 999, y: 0 }, { x: 100, y: 899 }, false, collision_sizes));
+
+    test_results.push(_try_collision(26, { x: 999, y: 999 }, { x: 99, y: 99 }, true, collision_sizes));
+    test_results.push(_try_collision(27, { x: 999, y: 999 }, { x: 100, y: 99 }, false, collision_sizes));
+    test_results.push(_try_collision(28, { x: 999, y: 999 }, { x: 99, y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(29, { x: 999, y: 999 }, { x: 100, y: 100 }, false, collision_sizes));
+
+    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 900, y: 99 }, true, collision_sizes));
+    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 899, y: 99 }, false, collision_sizes));
+    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 900, y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 899, y: 100 }, false, collision_sizes));
+
+    the_results = '';
+    for (a_result of test_results) {
+      the_results += a_result;
+    }
+    console.log("_test_collisions results: ", the_results);
+  }
+
+  function _try_collision(test_num, a_thing, an_object, does_collide, collision_sizes) {
+    a_collision = hasCollided(a_thing, an_object, collision_sizes);
+    if (a_collision !== does_collide) {
+      if (does_collide) {
+        return "\n" + test_num + ' error should collide ' + JSON.stringify(a_thing) + JSON.stringify(an_object) +
+          ' ' + a_collision + '<>' + does_collide;
+      } else {
+        return "\n" + test_num + ' error should NOT collide ' + JSON.stringify(a_thing) + JSON.stringify(an_object) +
+          ' ' + a_collision + '<>' + does_collide;
+      }
+    }
+    return "  " + test_num + 'ok';
+  }
+
+  _test_collisions();
+</script>

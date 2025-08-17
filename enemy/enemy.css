@@ -1,19 +1,17 @@
 
 
 :root {
-  --my-enemy-x: 10px;
-  --my-enemy-y: 10px;
-  --my-enemy-width: 600px;
-  --my-enemy-height: 600px;
-  --my-enemy-z: 12345; 
   --solar-time: 15s;
-
   /* away toward left right */
   --my-enemy-movement: 'left';
 }
 
-
-
+  #enemy-1-scaled {
+    transform-origin: center;
+}
+  #enemy-2-scaled {
+    transform-origin: center;
+}
 
 .ellipse-path {
   fill: none;

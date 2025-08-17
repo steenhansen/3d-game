@@ -1,7 +1,7 @@
 
-:root {
-  
---missile-display-100: block; /* none or block */
+#missile-area{
+
+--missile-display-100: block; 
 --missile-display-101: block; 
 --missile-display-102: block; 
 --missile-display-103: block;
@@ -13,7 +13,7 @@
 --missile-display-109: block; 
 
 --missile-display-110: block;
---missile-display-111: block; 
+ --missile-display-111: block;  
 --missile-display-112: block; 
 --missile-display-113: block;
 --missile-display-114: block; 
@@ -73,7 +73,7 @@
 --missile-fill-108: rgb(255,128,128);
 --missile-fill-109: rgb(255,144,144);
 --missile-fill-110: rgb(255,160,160);
---missile-fill-111: rgb(255,176,176);
+ --missile-fill-111: rgb(255,176,176); 
 --missile-fill-112: rgb(255,192,192);
 --missile-fill-113: rgb(255,208,208);
 --missile-fill-114: rgb(255,224,224);
@@ -108,7 +108,7 @@
 --missile-size-108: rgb(255,128,128);
 --missile-size-109: rgb(255,144,144);
 --missile-size-110: rgb(255,160,160);
---missile-size-111: rgb(255,176,176);
+ --missile-size-111: rgb(255,176,176); 
 --missile-size-112: rgb(255,192,192);
 --missile-size-113: rgb(255,208,208);
 --missile-size-114: rgb(255,224,224);
@@ -154,7 +154,6 @@
 --missile-fill-500: purple;
 --missile-fill-600: cyan;
 
-}
 
 
 

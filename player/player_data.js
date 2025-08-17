@@ -3,8 +3,9 @@
 // 784 cannot see first RED
 
 // 778 can just see first red
-let the_player = {
-  x: 49500, y: 400 // 778
+let g_player = {
+  x: PLAYER_START_X, y: PLAYER_START_Y
+  //x: 49500, y: 400 // 778
   //x: 49000, y: 400 // 778
 };
 

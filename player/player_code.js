@@ -1,5 +1,5 @@
-function missileLR(a_missile, the_player) {
-  if (a_missile.x < the_player.x) {
+function missileLR(a_missile, g_player) {
+  if (a_missile.x < g_player.x) {
     return MISSILE_TO_LEFT;
   } else {
     return MISSILE_TO_RIGHT;
@@ -27,7 +27,7 @@ function rightOnBoard(x_pos, right_steps) {
 }
 
 function playerRight(travel_speed) {
-  the_player.x = rightOnBoard(the_player.x, travel_speed * 3);
+  g_player.x = rightOnBoard(g_player.x, travel_speed * 3);
 }
 
 
@@ -43,14 +43,14 @@ function leftOnBoard(x_pos, left_steps) {
 }
 
 function playerLeft(travel_speed) {
-  the_player.x = leftOnBoard(the_player.x, travel_speed * 3);
+  g_player.x = leftOnBoard(g_player.x, travel_speed * 3);
 }
 
 
 
 
 function playerForward(travel_speed) {
-  the_player.y = forwardOnBoard(the_player.y, travel_speed);
+  g_player.y = forwardOnBoard(g_player.y, travel_speed);
 }
 function forwardOnBoard(y_pos, backward_steps) {
   y_pos += backward_steps;
@@ -73,35 +73,65 @@ function backwardOnBoard(y_pos, forward_steps) {
 
 
 function playerBackward(travel_speed) {
-  the_player.y = backwardOnBoard(the_player.y, travel_speed);
+  g_player.y = backwardOnBoard(g_player.y, travel_speed);
 }
 
 
 
-function thingRelationToPlayer(extended_x, the_player, things_position) {
-  player_x = the_player.x;
+function thingRelationToPlayer(adjusted_x, g_player, things_position) {
+  player_x = g_player.x;
   if (things_position == LEFT_OF_PLAYER) {
-    difference_x = player_x - extended_x;
-    x_center_offset = HALF_VIEW_WIDTH - difference_x;
-  } else if (things_position == RIGHT_OF_PLAYER) {
-    difference_x = extended_x - player_x;
-    x_center_offset = HALF_VIEW_WIDTH + difference_x;
+    x_center_offset = HALF_VIEW_WIDTH - adjusted_x;
   } else {
-    difference_x = player_x - extended_x;
-    x_center_offset = HALF_VIEW_WIDTH - difference_x;
+    x_center_offset = HALF_VIEW_WIDTH + adjusted_x;
   }
-  return [difference_x, x_center_offset];
+  return x_center_offset;
 }
 
 
-function relativeToPlayer(a_thing, the_player) {
-  player_start_left = the_player.x - HALF_COLUMN_WIDTH;
-  player_start_right = the_player.x + HALF_COLUMN_WIDTH;
-  if (a_thing.x < player_start_left) {
-    return LEFT_OF_PLAYER;
-  } else if (a_thing.x > player_start_right) {
-    return RIGHT_OF_PLAYER;
+// function relativeToPlayer(thing_x, player_x) {
+//   player_start_left = player_x - HALF_TILE_WIDTH;
+//   player_start_right = player_x + HALF_TILE_WIDTH;
+//   if (thing_x < player_start_left) {
+//     return LEFT_OF_PLAYER;
+//   } else if (thing_x > player_start_right) {
+//     return RIGHT_OF_PLAYER;
+//   } else {
+//     return MIDDLE_OF_PLAYER;
+//   }
+// }
+
+
+// function hitPlayer(a_thing, the_player) {
+//   let { thing_x, thing_y } = a_thing;
+//   let { x: player_x, player_y } = the_player;
+
+//   // if column is at 0,0 then 
+
+// }
+
+
+function objectBounced(move_direction) {
+  if (move_direction == MOVINGx_NW) {
+    new_direction = MOVINGx_SE;
+  } else if (move_direction == MOVINGx_N) {
+    new_direction = MOVINGx_S;
+    //console.log(move_direction, new_direction);
+  } else if (move_direction == MOVINGx_NE) {
+    new_direction = MOVINGx_SW;
+  } else if (move_direction == MOVINGx_E) {
+    new_direction = MOVINGx_W;
+  } else if (move_direction == MOVINGx_SE) {
+    new_direction = MOVINGx_NW;
+  } else if (move_direction == MOVINGx_S) {
+    new_direction = MOVINGx_N;
+  } else if (move_direction == MOVINGx_SW) {
+    new_direction = MOVINGx_NE;
+  } else if (move_direction == MOVINGx_W) {
+    new_direction = MOVINGx_E;
   } else {
-    return MIDDLE_OF_PLAYER;
+    new_direction = move_direction;
   }
+  return new_direction;
+
 }

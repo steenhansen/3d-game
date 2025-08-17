@@ -1,5 +1,37 @@
 
 // sprite_data.js
+
+
+
+// determines the depth of field squares
+// let  SQUARE_DEPTH_PERC_BY_DIST
+// LET SQUARE_DEPTHS_ON_VANISH_POINT_LINE
+// LET  square_depth_perc_by_dist
+/*
+
+          BACK_VANISH_POINT  of objects column/enemy/missile
+              [511, 256]
+------------------/------------------------- MIDDLE OF SCREEN
+                 /
+                /   [256] 4% of vanish line from back if far away from player 
+               /
+              /   
+         ____/   [128] 58.2% of vanish line from back if middle
+            /
+           /
+          /
+     ____/   [0] 100% of vanish line if very close to player
+--------X------------------------------------- BOTTOM OF SCREEN
+
+
+LET VANISH_LINE_PERCENT_BY_DEPTH
+
+
+
+
+
+*/
+
 let sprite_sizes = [
   1, 0.99609375, 0.9921875, 0.98828125, 0.984375, 0.98046875, 0.9765625, 0.97265625, 0.96875, 0.96484375,
   0.9609375, 0.95703125, 0.953125, 0.94921875, 0.9453125, 0.94140625, 0.9375, 0.93359375, 0.9296875, 0.92578125,

@@ -39,19 +39,6 @@
 }
 
 
-@keyframes sky-keyframes {
-  0% {
-    transform: perspective(1536px) rotateX(-85deg)
-               translateX(var(--my-x-start)) translateY(var(--my-y-start));
-  }
-  100% {
-    transform: perspective(1536px) rotateX(-85deg) 
-               translateX(var(--my-x-end)) translateY(var(--my-y-end));
-  }
-}
-
-
-
 
 .sky-aperture {
   width: 1024px;

@@ -1,4 +1,25 @@
 
+let COLUMN_0_START_X = 0;
+let COLUMN_0_START_Y = 0;
+
+let PLAYER_START_X = 10;  // gone6143   there6144
+let PLAYER_START_Y = 700;
+
+//let SCENE_WIDTH = 16384;
+let SCENE_WIDTH = 8192;   //10240; // 8192;
+
+
+// zero_quart_start
+let ZERO_QUARTER = SCENE_WIDTH / 4 * 0;
+let ONE_QUARTER = SCENE_WIDTH / 4 * 1; //2048 if 8192
+let TWO_QUARTER = SCENE_WIDTH / 4 * 2;
+let THREE_QUARTER = SCENE_WIDTH / 4 * 3;
+// four_quart_start
+
+
+
+let SCENE_Y_MAX = 768;
+
 
 const MOVINGx_NOT = 0;
 
@@ -11,4 +32,51 @@ const MOVINGx_S = 6;
 const MOVINGx_SW = 7;
 const MOVINGx_W = 8;
 
+let TILE_WIDTH = 256;
+let HEAD_ON_X_DIFF = TILE_WIDTH / 2;
+let HALF_TILE_WIDTH = TILE_WIDTH / 2;
 
+const field_width = SCENE_WIDTH;
+const room_width = TILE_WIDTH;
+
+const field_depth = SCENE_Y_MAX;
+const room_depth = 16;
+
+
+let COLLISION_SIZES = [field_width, room_width, field_depth, room_depth];
+
+ZERO_10 = [+0, +0, +0, +0, +0, +0, +0, +0, +0, +0];
+LEFT_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+RGHT_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+AWAY_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+NEAR_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+
+LEFT_100 = [LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10].flat();
+
+
+
+RGHT_100 = [RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10].flat();
+
+
+
+
+AWAY_100 = [AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10].flat();
+
+
+NEAR_100 = [NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10].flat();
+
+
+
+ZERO_100 = [ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10].flat();
+
+
+
+
+AWAY_500 = [AWAY_100, AWAY_100, AWAY_100, AWAY_100, AWAY_100].flat();
+
+
+NEAR_500 = [NEAR_100, NEAR_100, NEAR_100, NEAR_100, NEAR_100].flat();
+
+
+
+ZERO_500 = [ZERO_100, ZERO_100, ZERO_100, ZERO_100, ZERO_100].flat();

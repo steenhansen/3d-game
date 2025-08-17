@@ -3,7 +3,7 @@
 
 //   https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/  
 
-// qbert arrow below
+
 
 document.getElementById('svg-arrows').innerHTML = `
 <svg >

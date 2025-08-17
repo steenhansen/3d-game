@@ -3,12 +3,24 @@
 
  #planets2 {
 position:absolute;
-left:var(--my-missile-x);
-top:var(--my-missile-y);
 
-z-index:  var(--my-missile-z);
-height:  var(--my-missile-height);
-width: var(--my-missile-width);
 } 
 
 
+#da_missile {
+
+  background-color:blue;
+}
+
+
+  #missile-1-scaled {
+    transform-origin: center;
+
+}
+
+
+
+  #missile-2-scaled {
+    transform-origin: center;
+
+}
