@@ -7,7 +7,7 @@ function spriteStep(the_sprite) {
   } else {
     the_sprite.move_index = 0; // reset to start
   }
-  console.log("B the_sprite.move_index", the_sprite.move_index);
+  //console.log("B the_sprite.move_index", the_sprite.move_index);
   x_move = the_sprite.x_moves[the_sprite.move_index];
   y_move = the_sprite.y_moves[the_sprite.move_index];
 
@@ -26,7 +26,7 @@ function spriteStep(the_sprite) {
   // console.log("C x_move", x_move);
   // the_sprite.x += x_move;
   // the_sprite.y += y_move;
-  console.log("X enemy_1", the_sprite);
+  //  console.log("X enemy_1", the_sprite);
 
   return the_sprite;
 
@@ -69,7 +69,6 @@ function enemyMissileDraw(real_id, the_sprite, g_player, the_name, the_id) {
 function enemyMissilePosition(real_id, z_index, the_stats) {
   let [center_x, center_y, the_scale] = the_stats;
 
-  console.log("asdflkjasdfl", real_id);
   missile_div = document.getElementById(real_id + '-div');
   missile_div.style.zIndex = z_index;
 

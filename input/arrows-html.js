@@ -134,6 +134,11 @@ addInputEvent("w", handleW);
 
 function handleShoot(evt) {
   evt.preventDefault();
-  console.log("bang");
+  if (!document.fullscreenElement) {
+    the_scene = document.getElementById('playing-game');
+    the_scene.requestFullscreen();
+  } else {
+    document.exitFullscreen?.();
+  }
 }
 addInputEvent("shoot", handleShoot);

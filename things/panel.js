@@ -141,7 +141,7 @@ function addSidewaysDepth(difference_x) {
   else if (difference_x > 1100) shrink_depth = 86;
   else if (difference_x > 1000) shrink_depth = 85;
   else shrink_depth = Math.floor(0.007 * difference_x + 77);
-  console.log("sdfasdf", difference_x, shrink_depth);
+
 
   return shrink_depth;
 }
