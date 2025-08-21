@@ -3,7 +3,8 @@
 
 #the-landing {
    float:left; 
-  display:block;
+  /* display:block; */
+  display:none;
   margin-left:0px; 
   margin-top:0px;
 }

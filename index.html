@@ -41,10 +41,107 @@
 </div>
 
 
-<div id="the-scene" style="height:512px; width:1024px">
 
-  <div id="playing-game" style="height:512px; margin-top:-512px">
-    <div id='html-arrows' style="position:relative"></div>
+
+<!-- this should be css vars !!!!!!!!!!!! -->
+<div id="the-scene">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id='start-mobile' style="position:absolute;
+  
+    z-index: 99999999;
+  
+     display:none;
+       left:50%;
+      top:50%;
+    ">
+    start game
+  </div>
+
+
+  <div class="wrapper_input">
+    <div id="input-nw" class="input-box"></div>
+    <div id="input-n" class="input-box"></div>
+    <div id="input-ne" class="input-box"></div>
+
+    <div id="input-w" class="input-box"></div>
+    <div id="the-input" class="input-box"></div>
+    <div id="input-e" class="input-box"></div>
+
+    <div id="input-sw" class="input-box"></div>
+    <div id="input-s" class="input-box"></div>
+    <div id="input-se" class="input-box"></div>
+  </div>
+
+
+  <div class="wrapper-arrows">
+    <svg id="arrow-nw" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-n" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-ne" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-w" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="blank-middle-arrow">
+
+    </svg>
+    <svg id="arrow-e" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-sw" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-s" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+    <svg id="arrow-se" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+  </div>
+
+
+
+  <div id="playing-game">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="the-sun"></div>
     <div class="sky-aperture">
@@ -56,10 +153,33 @@
 
     <div id="enemy-area"></div>
     <div id="missile-area"></div>
+
+
+
+
+
     <div id="the-field"> </div>
 
-    <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
+
     <div id='column-html'> </div>
+
+
+
+
+
+
+
+
+    <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
+
+
+
+
+
+
+
+
+
   </div>
 
   <div id="the-landing" style="height:512px; margin-top:0px">

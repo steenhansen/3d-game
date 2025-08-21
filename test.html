@@ -1,0 +1,92 @@
+<svg>
+  <defs>
+    <g id="the-arrow">
+      <path d="M 24,10 12,0 0,10 z M 6,11 v 13 h 11 v -13 z" />
+    </g>
+  </defs>
+</svg>
+
+<style>
+  .an-arrow {
+    width: 24px;
+    height: 24px;
+    opacity: 99%;
+    position: relative;
+    z-index: 2147483555;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 30% 40% 30%;
+    gap: 1px;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 12345678;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: -64px
+  }
+
+  #arrow-nw {
+    transform: rotate(-45deg);
+  }
+
+  #input-nw {
+    /* background-color:red; */
+    /* opacity:0.4; */
+  }
+
+
+  .an-input {
+    width: 170px;
+    height: 170px;
+    opacity: 99%;
+    position: absolute;
+    background-color: none;
+    border: none;
+    borderX: thin solid white;
+    z-index: 2147483600;
+  }
+
+  #nw_arrows {
+    background-color: red;
+  }
+</style>
+
+<div>
+  asdflkj<br>
+  asdflkjasdf<br>
+  sadf<br>
+  asdflkjasdf
+</div>
+<div class="wrapper">
+  <div id="input-nw">
+    <svg id="arrow-nw" class="an-arrow" style="fill:red">
+      <use href="#the-arrow" />
+    </svg>
+  </div>
+
+  <div id="input-n">
+    <svg id="arrow-n" class="an-arrow">
+      <use href=" #the-arrow" />
+    </svg>
+
+  </div>
+
+  <div id="input-ne"><svg id="arrow-ne" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg></div>
+
+  <div id="w_arrows">
+    <svg id="arrow-w" class="an-arrow">
+      <use href="#the-arrow" />
+    </svg>
+
+  </div>
+  <div id="middle__arrows">Five</div>
+  <div id="e_arrows">Six</div>
+  <div id="sw_arrows">Seven</div>
+  <div id="s_arrows">Eight</div>
+  <div id="sw_arrows">Nine</div>
+</div>

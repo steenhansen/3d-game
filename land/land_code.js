@@ -16,8 +16,8 @@ function skipLand() {
 }
 
 function setLandingScroll(the_pixels) {
-  const playing_game = document.getElementById(`playing-game`);
-  playing_game.style = `margin-top:${the_pixels}px`;
+  //  const playing_game = document.getElementById(`playing-game`);
+  //playing_game.style = `margin-top:${the_pixels}px`;
 }
 
 function startLand(num_lines, land_speed) {
@@ -130,7 +130,7 @@ function readyInputArrows() {
 }
 
 function stopFlashArrow(arrow_id) {
-  const stop_arrow = document.getElementById(arrow_id);
-  let flash_none = `fill: rgb(0 ,0 , 0)`;
-  stop_arrow.style = flash_none;
+  // const stop_arrow = document.getElementById(arrow_id);
+  // let flash_none = `fill: rgb(0 ,0 , 0)`;
+  // stop_arrow.style = flash_none;
 }

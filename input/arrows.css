@@ -1,108 +1,92 @@
 
+
+
 /* Asuz Zenbook + Ipad Air are the problems */
+:root {
+ --input-nw-left:17px;
+--input-nw-top:177px;
+ --input-nw-width:17px;
+
+  --input-n-left:17px;
+ --input-n-width:17px;
 
 
-#input-shoot{
-  width:684px;
-  height:270px;
-  left:170px;
-  top:120px;
-}
+ --input-padding-hor: 0px;
+ --input-padding-ver: 0px;
 
-
-#input-n{
-  width:684px;
-  height:120px;
-  left:170px;
-  top:0px;
-}
-
-
-#input-s{
-  width:684px;
-  height:120px;
-
-  left:170px;
-  top:392px;
-}
-
-
-
-.an-input{
-  width:170px;
-  height:170px;
-  opacity:99%;
-  position: absolute;
-  background-color: none;
-    border:none;
-    borderX:thin solid white;
-  z-index:2147483600;
-}
-
-#input-nw{
-  left:0px;
-  top:0px;
-}
-
-
-#input-sw{
-  left:0px;
-  top:342px;
-}
-
-#arrow-sw{
-  transform:rotate(225deg);  
-  left:0px;
-  top:488px;
-}
-
-/* have 394 to work with
-394/3=131
-
-
-
-*/
-
-
-
-
-
-
-#arrow-nw{
-  transform:rotate(-45deg); 
-  left:0px;
-  top:0px;
+ --arrow-margin-vert:0px;
+  --arrow-margin-hor:0px;
 
 }
 
 
 
+.wrapper_input {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 30% 40% 30%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1234566;
+}
 
+.input-box{
+    opacity:0.3; 
+}
 
+#input-nw{ 
+   /* background-color:red;  */
+ 
+     /* padding-top:var(--input-padding-ver);
+    padding-left:var(--input-padding-hor);  */
 
-
-
-#input-w{
-  left:0px;
-  top:171px;
+   /* margin-top:var(--arrow-margin-vert);
+    margin-left:var(--arrow-margin-hor); */
+/* width:66px;
+    height:33px;
+     */
+   }
+#input-n{ /* background-color:red; */ }
+#input-ne{ 
+  /* background-color:green;   */
 }
 
 
-#input-ne{
-  left:854px;
-  top:0px;
 
-}
 
-#input-e{
-  left:854px;
-  top:171px;
-}
+#input-w{ 
+   /* background-color:green;   */
+  }
+#input-shoot{}
+#input-e{}
+#input-se{}
+#input-sw{}
+#input-s{}
 
-#input-se{
-  left:854px;
-  top:342px;
-}
+
+
+
+
+
+            .wrapper-arrows {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 30% 40% 30%;
+        width: 100%;
+        height: 100%;
+        z-index: 12222;
+        position: absolute;
+
+
+      }
+
+
+
+
+
+
+
 
 
 
@@ -114,53 +98,70 @@
 .an-arrow{
   width:24px;
   height:24px;
-  opacity:40%;
-  position: absolute;
-  /* z-index:2_147_483_647; */
-  /* z-index:2147483647; */
+   opacity:0.4;
+  position: relative;
   z-index:2147483555;
+  margin-top:3px;
 }
 
 
 
-/* 1024/2= 512   24/2=12
-   512-12 =500*/
+
+#arrow-nw{
+  transform:rotate(-45deg); 
+  /* margin-top:var(--arrow-margin-vert);
+    margin-left:var(--arrow-margin-hor); */
+}
+
 #arrow-n{
-  left:500px;
-  top:0px;
+  left: 50%;
+    /* margin-top:var(--arrow-margin-vert); */
 }
-
 
 #arrow-ne{
+    /* margin-right:var(--arrow-margin-hor);
+  margin-top:var(--arrow-margin-vert); */
   transform:rotate(45deg); 
-  left:1000px;
-  top:0px;
+  margin-left:auto;
+}
+
+
+#arrow-w{
+   /* margin-left:var(--arrow-margin-hor); */
+  transform:rotate(270deg);  
+  left:0px;
+  top:35%
 }
 
 #arrow-e{
+     /* margin-right:var(--arrow-margin-hor); */
   transform:rotate(90deg);  
-  left:1000px;
-  top:244px;
+  margin-left:auto;
+  top:35%
 }
 
-#arrow-se{
-  transform:rotate(135deg);  
-  left:1000px;
-  top:488px;
-}
 
+
+
+#arrow-sw{
+    /* margin-left:var(--arrow-margin-hor); */
+  transform:rotate(225deg);  
+  margin-top:auto;
+}
 
 #arrow-s{
+    left: 50%;
    transform:rotate(180deg);  
-   left:500px;
-   top:488px;
+   margin-top:auto;
 }
 
 
-/* 256-12=244 */
-#arrow-w{
-  transform:rotate(270deg);  
-  left:0px;
-  top:244px;
+#arrow-se{
+     /* margin-right:var(--arrow-margin-hor); */
+  transform:rotate(135deg);  
+    margin-left:auto;
+  margin-top:auto;
 }
+
+
 

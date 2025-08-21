@@ -1,24 +1,27 @@
+let SCENE_Y_MAX = 768;
+let SCENE_WIDTH = 8192;
+
+
 
 let COLUMN_0_START_X = 0;
 let COLUMN_0_START_Y = 0;
 
-let PLAYER_START_X = 10;  // gone6143   there6144
-let PLAYER_START_Y = 700;
-
-//let SCENE_WIDTH = 16384;
-let SCENE_WIDTH = 8192;   //10240; // 8192;
+let PLAYER_START_X = 10;
+let PLAYER_START_Y = 100;
 
 
-// zero_quart_start
-let ZERO_QUARTER = SCENE_WIDTH / 4 * 0;
-let ONE_QUARTER = SCENE_WIDTH / 4 * 1; //2048 if 8192
-let TWO_QUARTER = SCENE_WIDTH / 4 * 2;
-let THREE_QUARTER = SCENE_WIDTH / 4 * 3;
-// four_quart_start
+let TILE_WIDTH = 256;
+
+
+let HALF_VIEW_WIDTH = 512;
+let BOTTOM_FIELD = 512;
+
+
+let BACK_VANISH_POINT = [511, 256];
 
 
 
-let SCENE_Y_MAX = 768;
+
 
 
 const MOVINGx_NOT = 0;
@@ -32,7 +35,7 @@ const MOVINGx_S = 6;
 const MOVINGx_SW = 7;
 const MOVINGx_W = 8;
 
-let TILE_WIDTH = 256;
+
 let HEAD_ON_X_DIFF = TILE_WIDTH / 2;
 let HALF_TILE_WIDTH = TILE_WIDTH / 2;
 

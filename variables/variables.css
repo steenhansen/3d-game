@@ -1,21 +1,37 @@
 
 
-#playing-game {
-
-
-  --a-var: 12;
-}
-
 :root {
-
-
-
+  --scene-width: 1024px;
+  --scene-height: 512px;
 
   --my-shot-x: -1000px;
   --my-shot-y: -1000px;
   --my-shot-width: 100;
   --my-shot-height: 100;
 
-
-
+  --playing-width: 1024px;  
+  --playing-height: 512px;
+  --playing-margin-left: -178px;
+  --playing-margin-top: 0px;
 }
+
+#the-scene {
+  width:var(--scene-width);
+  height:var(--scene-height);
+  position: relative;
+  background-color: rgb(23,23,23,0.92);
+  overflow:hidden;
+}
+
+
+#playing-game {
+  width:var(--playing-width);
+  height:var(--playing-height);
+  margin-left:var(--playing-margin-left);
+  margin-top:var(--playing-margin-top);
+
+  position: absolute;
+  background-color: rgb(23,23,23,0.92);
+  overflow:hidden;
+}
+

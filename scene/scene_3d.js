@@ -203,7 +203,7 @@ function animateScene(timestamp) {
   // console.log("before_ 34089 aver", a_var);
 
 
-  // playing_game.style.setProperty("--a-var", "kap");
+  // document_style.setProperty("--a-var", "kap");
 
   //////////////////////
 
@@ -236,5 +236,158 @@ function animateScene(timestamp) {
   if (keep_running) {
     affixLeftRight();
     requestAnimationFrame(animateScene);
+  }
+
+  fixMobile();
+
+}
+
+var supportsOrientationChange = "onorientationchange" in window,
+  orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+window.addEventListener(orientationEvent, function () {
+  //alert('HOLY ROTATING SCREENS BATMAN:' + screen.width);
+
+
+  // console.log("  document.exitFullscreen() ----");
+  fixMobile();
+}, false);
+
+
+//       document.documentElement.style.setProperty(missile_fill, rgb);
+
+
+function handleStartMobile(evt) {
+  setTimeout(() => {
+    start_mobile = document.getElementById('start-mobile');
+    start_mobile.style.display = "none";
+    waiting_for_start = false;
+    console.log("Delayed for 1 second.");
+  }, "1000");
+
+  //   evt.preventDefault();
+  the_scene = document.getElementById('the-scene');
+  try {
+    the_scene.requestFullscreen();
+  } catch {
+    console.log("FILA");
+  }
+}
+
+let waiting_for_start = false;
+
+
+function fixMobile() {
+  if (waiting_for_start) {
+    return;
+  }
+  document_style = document.documentElement.style;
+  if (!isMobile()) {
+    document_style.setProperty("--scene-width", "1024px");
+    document_style.setProperty("--scene-height", "512px");
+    document_style.setProperty("--playing-margin-left", "0px");
+    document_style.setProperty("--playing-margin-top", "0px");
+    if (document.fullscreenElement != null) {
+      document.exitFullscreen();
+    }
+  } else {
+    if (!document.fullscreenElement) {
+      start_mobile = document.getElementById('start-mobile');
+      start_mobile.style.display = "block";
+      waiting_for_start = true;
+      //start_mobile.addEventListener("touchstart", handleStartMobile, { passive: false });
+      start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
+      //start_mobile.addEventListener("touchcancel", handleStartMobile, { passive: false });
+      //start_mobile.addEventListener("touchmove", handleStartMobile, { passive: false });
+      return;
+    }
+    start_mobile = document.getElementById('start-mobile');
+    start_mobile.style.display = "none";
+
+    screen_width = window.screen.width;
+    screen_height = window.screen.height;
+    screen_width_px = screen_width + "px";
+    screen_height_px = screen_height + "px";
+    document_style.setProperty("--scene-width", screen_width_px);
+    document_style.setProperty("--scene-height", screen_height_px);
+
+
+
+    margin_top = 512 - screen_height;
+    margin_top_px = "-" + margin_top + "px";
+    document_style.setProperty("--playing-margin-top", margin_top_px);
+
+    arrow_margin_vert = margin_top + "px";
+    document_style.setProperty("--arrow-margin-vert", arrow_margin_vert);
+
+
+
+
+
+    margin_left = (1024 - screen_width) / 2;
+    margin_left_px = "-" + margin_left + "px";
+    document_style.setProperty("--playing-margin-left", margin_left_px);
+
+    arrow_margin_hor = margin_left + "px";
+    document_style.setProperty("--arrow-margin-hor", arrow_margin_hor);
+
+    input_margin_hor = 2 * margin_left + "px";
+    document_style.setProperty("--input-padding-hor", input_margin_hor);
+
+
+
+    input_margin_ver = 2 * margin_top + "px";
+    document_style.setProperty("--input-padding-ver", input_margin_ver);
+
+    // const nw_arrow = document.getElementById("input-nw");
+    // nw_arrow_style = nw_arrow.style;
+    // const nw_width = window.getComputedStyle(nw_arrow).getPropertyValue("width");
+    // console.log("1111111", nw_width);
+    // var currentValue = parseInt(nw_width);
+    // console.log("22222", currentValue);
+    // nw_arrow_style.width = currentValue + arrow_margin_hor + "px";
+
+
+
+    // var left_on_mobile = (1024 - window.screen.width) / 2;
+    // var left_mobile_px = (left_on_mobile + 1) + "px";
+    // document_style.setProperty("--input-nw-left", left_mobile_px);
+
+
+    // var top_mobile = 512 - window.screen.height;
+    // var top_mobile_px = (top_mobile + 1) + "px";
+    // document_style.setProperty("--input-nw-top", top_mobile_px);
+
+
+
+
+
+
+    //
+    // playing_game.marginTop=-136px
+    // playing_game.marginRight = -178px
+
+
+    /*
+      var left_on_mobile = (512 - window.screen.width) / 2;
+      var left_mobile_px = left_on_mobile + "px";
+    
+  
+    
+      var input_nw_left = left_on_mobile * -1 + "px";
+      document_style.setProperty("--input-nw-left", input_nw_left);
+    
+      var actual_width = window.screen.width + left_on_mobile;
+    
+      var input_nw_width = actual_width / 4 + "px";
+      document_style.setProperty("--input-nw-width", input_nw_width);
+    
+      var input_n_width = actual_width / 2 + "px";
+      document_style.setProperty("--input-n-width", input_n_width);
+    
+      var input_n_left = left_on_mobile + actual_width / 4 + "px";
+      document_style.setProperty("--input-n-left", input_n_left);
+    
+    */
   }
 }

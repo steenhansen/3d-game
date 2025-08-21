@@ -1,14 +1,36 @@
 
-window.addEventListener("load", function () {
-  // https://davidwalsh.name/hide-address-bar
-  setTimeout(function () {
-    // Hide the address bar!   
-    window.scrollTo(0, 1);
-  }, 0);
-});
+function isMobile() {
 
-var touchDevice = ('ontouchstart' in document.documentElement);
-if (!touchDevice) {
+  //  console.log("111111111111", 'ontouchstart' in window || navigator.maxTouchPoints > 0);
+  // console.log("222222222", !window.matchMedia('(hover: hover)').matches);
+  // console.log("333333333", window.matchMedia("(pointer:coarse)").matches);
+
+  // const on_touch = ('ontouchstart' in document.documentElement);
+
+  const is_mobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  //  console.log("is_mobile", is_mobile);
+  if (!is_mobile) {
+    //  console.log("is_mobile FFF");
+    return false;
+  }
+  //console.log("is_mobile TTT");
+  return true;
+}
+
+// window.addEventListener("load", function () {
+//   // https://davidwalsh.name/hide-address-bar
+//   setTimeout(function () {
+//     // Hide the address bar!   
+//     window.scrollTo(0, 1);
+//   }, 0);
+// });
+
+//var touchDevice = ('ontouchstart' in document.documentElement);
+//if (!touchDevice) {
+const is_touch = isMobile();
+//console.log("on_touch22", on_touch);
+if (!is_touch) {
   var d1 = document.getElementById('desktop-dir');
   d1.innerHTML = `
  
