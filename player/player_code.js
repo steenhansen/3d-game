@@ -1,5 +1,5 @@
 function missileLR(a_missile, g_player) {
-  if (a_missile.x < g_player.x) {
+  if (a_missile.m_x < g_player.m_x) {
     return MISSILE_TO_LEFT;
   } else {
     return MISSILE_TO_RIGHT;
@@ -27,7 +27,7 @@ function rightOnBoard(x_pos, right_steps) {
 }
 
 function playerRight(travel_speed) {
-  g_player.x = rightOnBoard(g_player.x, travel_speed * 3);
+  g_player.m_x = rightOnBoard(g_player.m_x, travel_speed * 3);
 }
 
 
@@ -43,14 +43,14 @@ function leftOnBoard(x_pos, left_steps) {
 }
 
 function playerLeft(travel_speed) {
-  g_player.x = leftOnBoard(g_player.x, travel_speed * 3);
+  g_player.m_x = leftOnBoard(g_player.m_x, travel_speed * 3);
 }
 
 
 
 
 function playerForward(travel_speed) {
-  g_player.y = forwardOnBoard(g_player.y, travel_speed);
+  g_player.m_y = forwardOnBoard(g_player.m_y, travel_speed);
 }
 function forwardOnBoard(y_pos, backward_steps) {
   y_pos += backward_steps;
@@ -73,13 +73,13 @@ function backwardOnBoard(y_pos, forward_steps) {
 
 
 function playerBackward(travel_speed) {
-  g_player.y = backwardOnBoard(g_player.y, travel_speed);
+  g_player.m_y = backwardOnBoard(g_player.m_y, travel_speed);
 }
 
 
 
 function thingRelationToPlayer(adjusted_x, g_player, things_position) {
-  player_x = g_player.x;
+  player_x = g_player.m_x;
   if (things_position == LEFT_OF_PLAYER) {
     x_center_offset = HALF_VIEW_WIDTH - adjusted_x;
   } else {
@@ -104,7 +104,7 @@ function thingRelationToPlayer(adjusted_x, g_player, things_position) {
 
 // function hitPlayer(a_thing, the_player) {
 //   let { thing_x, thing_y } = a_thing;
-//   let { x: player_x, player_y } = the_player;
+//   let { m_x: player_x, player_y } = the_player;
 
 //   // if column is at 0,0 then 
 

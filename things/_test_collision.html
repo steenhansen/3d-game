@@ -25,47 +25,47 @@ tests are shown in the console
 
     test_results = [];
 
-    test_results.push(_try_collision(1, { x: 500, y: 500 }, { x: 500, y: 500 }, true, collision_sizes));
+    test_results.push(_try_collision(1, { m_x: 500, m_y: 500 }, { m_x: 500, m_y: 500 }, true, collision_sizes));
 
-    test_results.push(_try_collision(2, { x: 500, y: 500 }, { x: 400, y: 400 }, true, collision_sizes));
-    test_results.push(_try_collision(3, { x: 500, y: 500 }, { x: 399, y: 400 }, false, collision_sizes));
-    test_results.push(_try_collision(4, { x: 500, y: 500 }, { x: 400, y: 399 }, false, collision_sizes));
-    test_results.push(_try_collision(5, { x: 500, y: 500 }, { x: 399, y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(2, { m_x: 500, m_y: 500 }, { m_x: 400, m_y: 400 }, true, collision_sizes));
+    test_results.push(_try_collision(3, { m_x: 500, m_y: 500 }, { m_x: 399, m_y: 400 }, false, collision_sizes));
+    test_results.push(_try_collision(4, { m_x: 500, m_y: 500 }, { m_x: 400, m_y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(5, { m_x: 500, m_y: 500 }, { m_x: 399, m_y: 399 }, false, collision_sizes));
 
-    test_results.push(_try_collision(6, { x: 500, y: 500 }, { x: 600, y: 400 }, true, collision_sizes));
-    test_results.push(_try_collision(7, { x: 500, y: 500 }, { x: 601, y: 400 }, false, collision_sizes));
-    test_results.push(_try_collision(8, { x: 500, y: 500 }, { x: 600, y: 399 }, false, collision_sizes));
-    test_results.push(_try_collision(9, { x: 500, y: 500 }, { x: 601, y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(6, { m_x: 500, m_y: 500 }, { m_x: 600, m_y: 400 }, true, collision_sizes));
+    test_results.push(_try_collision(7, { m_x: 500, m_y: 500 }, { m_x: 601, m_y: 400 }, false, collision_sizes));
+    test_results.push(_try_collision(8, { m_x: 500, m_y: 500 }, { m_x: 600, m_y: 399 }, false, collision_sizes));
+    test_results.push(_try_collision(9, { m_x: 500, m_y: 500 }, { m_x: 601, m_y: 399 }, false, collision_sizes));
 
-    test_results.push(_try_collision(10, { x: 500, y: 500 }, { x: 600, y: 600 }, true, collision_sizes));
-    test_results.push(_try_collision(11, { x: 500, y: 500 }, { x: 601, y: 600 }, false, collision_sizes));
-    test_results.push(_try_collision(12, { x: 500, y: 500 }, { x: 600, y: 601 }, false, collision_sizes));
-    test_results.push(_try_collision(13, { x: 500, y: 500 }, { x: 601, y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(10, { m_x: 500, m_y: 500 }, { m_x: 600, m_y: 600 }, true, collision_sizes));
+    test_results.push(_try_collision(11, { m_x: 500, m_y: 500 }, { m_x: 601, m_y: 600 }, false, collision_sizes));
+    test_results.push(_try_collision(12, { m_x: 500, m_y: 500 }, { m_x: 600, m_y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(13, { m_x: 500, m_y: 500 }, { m_x: 601, m_y: 601 }, false, collision_sizes));
 
-    test_results.push(_try_collision(14, { x: 500, y: 500 }, { x: 400, y: 600 }, true, collision_sizes));
-    test_results.push(_try_collision(15, { x: 500, y: 500 }, { x: 399, y: 600 }, false, collision_sizes));
-    test_results.push(_try_collision(16, { x: 500, y: 500 }, { x: 400, y: 601 }, false, collision_sizes));
-    test_results.push(_try_collision(17, { x: 500, y: 500 }, { x: 399, y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(14, { m_x: 500, m_y: 500 }, { m_x: 400, m_y: 600 }, true, collision_sizes));
+    test_results.push(_try_collision(15, { m_x: 500, m_y: 500 }, { m_x: 399, m_y: 600 }, false, collision_sizes));
+    test_results.push(_try_collision(16, { m_x: 500, m_y: 500 }, { m_x: 400, m_y: 601 }, false, collision_sizes));
+    test_results.push(_try_collision(17, { m_x: 500, m_y: 500 }, { m_x: 399, m_y: 601 }, false, collision_sizes));
 
-    test_results.push(_try_collision(18, { x: 0, y: 0 }, { x: 900, y: 900 }, true, collision_sizes));
-    test_results.push(_try_collision(19, { x: 0, y: 0 }, { x: 899, y: 900 }, false, collision_sizes));
-    test_results.push(_try_collision(20, { x: 0, y: 0 }, { x: 900, y: 899 }, false, collision_sizes));
-    test_results.push(_try_collision(21, { x: 0, y: 0 }, { x: 899, y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(18, { m_x: 0, m_y: 0 }, { m_x: 900, m_y: 900 }, true, collision_sizes));
+    test_results.push(_try_collision(19, { m_x: 0, m_y: 0 }, { m_x: 899, m_y: 900 }, false, collision_sizes));
+    test_results.push(_try_collision(20, { m_x: 0, m_y: 0 }, { m_x: 900, m_y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(21, { m_x: 0, m_y: 0 }, { m_x: 899, m_y: 899 }, false, collision_sizes));
 
-    test_results.push(_try_collision(22, { x: 999, y: 0 }, { x: 99, y: 900 }, true, collision_sizes));
-    test_results.push(_try_collision(23, { x: 999, y: 0 }, { x: 100, y: 900 }, false, collision_sizes));
-    test_results.push(_try_collision(24, { x: 999, y: 0 }, { x: 100, y: 899 }, false, collision_sizes));
-    test_results.push(_try_collision(25, { x: 999, y: 0 }, { x: 100, y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(22, { m_x: 999, m_y: 0 }, { m_x: 99, m_y: 900 }, true, collision_sizes));
+    test_results.push(_try_collision(23, { m_x: 999, m_y: 0 }, { m_x: 100, m_y: 900 }, false, collision_sizes));
+    test_results.push(_try_collision(24, { m_x: 999, m_y: 0 }, { m_x: 100, m_y: 899 }, false, collision_sizes));
+    test_results.push(_try_collision(25, { m_x: 999, m_y: 0 }, { m_x: 100, m_y: 899 }, false, collision_sizes));
 
-    test_results.push(_try_collision(26, { x: 999, y: 999 }, { x: 99, y: 99 }, true, collision_sizes));
-    test_results.push(_try_collision(27, { x: 999, y: 999 }, { x: 100, y: 99 }, false, collision_sizes));
-    test_results.push(_try_collision(28, { x: 999, y: 999 }, { x: 99, y: 100 }, false, collision_sizes));
-    test_results.push(_try_collision(29, { x: 999, y: 999 }, { x: 100, y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(26, { m_x: 999, m_y: 999 }, { m_x: 99, m_y: 99 }, true, collision_sizes));
+    test_results.push(_try_collision(27, { m_x: 999, m_y: 999 }, { m_x: 100, m_y: 99 }, false, collision_sizes));
+    test_results.push(_try_collision(28, { m_x: 999, m_y: 999 }, { m_x: 99, m_y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(29, { m_x: 999, m_y: 999 }, { m_x: 100, m_y: 100 }, false, collision_sizes));
 
-    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 900, y: 99 }, true, collision_sizes));
-    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 899, y: 99 }, false, collision_sizes));
-    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 900, y: 100 }, false, collision_sizes));
-    test_results.push(_try_collision(30, { x: 0, y: 999 }, { x: 899, y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(30, { m_x: 0, m_y: 999 }, { m_x: 900, m_y: 99 }, true, collision_sizes));
+    test_results.push(_try_collision(30, { m_x: 0, m_y: 999 }, { m_x: 899, m_y: 99 }, false, collision_sizes));
+    test_results.push(_try_collision(30, { m_x: 0, m_y: 999 }, { m_x: 900, m_y: 100 }, false, collision_sizes));
+    test_results.push(_try_collision(30, { m_x: 0, m_y: 999 }, { m_x: 899, m_y: 100 }, false, collision_sizes));
 
     the_results = '';
     for (a_result of test_results) {

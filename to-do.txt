@@ -1,4 +1,27 @@
 
+ grey - green - grey    grey - BLACK - grey
+
+    -------------------------------------
+    | X      X                    x      |
+    |   X  x                      x      |
+    |     X                   x x x x x  |  18
+    |   X  X                      x      |
+    |  X     X                    x      |
+    -------------------------------------
+
+
+10 dead enemies, turn color black
+
+middle red/white/blue post columns
+
+
+
+
+
+
+
+
+
 
 
 

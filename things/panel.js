@@ -1,50 +1,33 @@
 
-function panelFront2(column_vlines, gradient_front, front_panel_id) {
+function panelFront2(column_vlines) {
   let [left_vline, middle_vline, _right_vline] = column_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
 
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  let front_column = panelPolygon2(left_right_tops_bots, gradient_front, front_panel_id);
+  let front_column = panelPolygon2(left_right_tops_bots);
   return front_column;
 }
 
 
-function panelPolygon2(a_polygon, the_gradient, front_panel_id) {
-  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
-  let [top_left_x, top_left_y] = left_front_top;
-  let [top_right_x, top_right_y] = right_front_top;
-  let [bot_left_x, bot_left_y] = left_front_bot;
-  let [bot_right_x, bot_right_y] = right_front_bot;
-  let svg_polygon = `<polygon fill="url(#${the_gradient})"  id="${front_panel_id}"
-                      points="${top_left_x},${top_left_y}
-                              ${top_right_x},${top_right_y}
-                              ${bot_right_x},${bot_right_y}
-                              ${bot_left_x},${bot_left_y}      " />`;
-  let center_x = (top_left_x + top_right_x) / 2 - 128;
-
-
-  //  let center_y = (top_left_y + bot_left_y) / 2;
-  //console.log("xxx,", top_left_y, bot_left_y, center_y);
-
-  let center_y = 128;;
-  //console.log("xxx,", top_left_y, bot_left_y, center_y);
-
+function panelPolygon2(a_polygon) {
+  let [left_front_top, right_front_top, _left_front_bot, _right_front_bot] = a_polygon;
+  let [top_left_x, _top_left_y] = left_front_top;
+  let [top_right_x, _top_right_y] = right_front_top;
+  let float_center_x = (top_left_x + top_right_x) / 2 - 128;
+  let center_x = Math.round(float_center_x);
+  let center_y = 128;
   let the_width = Math.abs(top_left_x - top_right_x);
   let the_scale = the_width / 256;
-
-
   return [center_x, center_y, the_scale];
 }
 
 
-////
 
 function panelFront(column_vlines, gradient_front, front_panel_id) {
   let [left_vline, middle_vline, _right_vline] = column_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
-
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   let front_column = panelPolygon(left_right_tops_bots, gradient_front, front_panel_id);
   return front_column;
@@ -69,8 +52,8 @@ function panelPolygon(a_polygon, the_gradient, front_panel_id) {
 
 
 function panelDiffY(a_thing, g_player) {
-  let player_y = g_player.y;
-  let thing_y = a_thing.y;
+  let player_y = g_player.m_y;
+  let thing_y = a_thing.m_y;
 
   if (player_y > thing_y) {
     difference_y = player_y - thing_y;
@@ -83,8 +66,8 @@ function panelDiffY(a_thing, g_player) {
 
 ///////////////   thing_relative  relative_to_player 
 function panelPlaceX(a_thing, g_player) {
-  let { x: player_x } = g_player;
-  let { x: thing_x } = a_thing;
+  let { m_x: player_x } = g_player;
+  let { m_x: thing_x } = a_thing;
   if (player_x > thing_x) {
     left_x_dist = player_x - thing_x;
     right_x_dist = SCENE_WIDTH - player_x + thing_x;
@@ -125,10 +108,6 @@ function panelPlaceX(a_thing, g_player) {
 
 
 function addSidewaysDepth(difference_x) {
-  // if (difference_x > 8000) shrink_depth = 98;
-  // else if (difference_x > 6000) shrink_depth = 97;
-  // else if (difference_x > 5000) shrink_depth = 96;
-  // else
   if (difference_x > 4000) shrink_depth = 95;
   else if (difference_x > 3500) shrink_depth = 94;
   else if (difference_x > 3000) shrink_depth = 93;
@@ -141,16 +120,22 @@ function addSidewaysDepth(difference_x) {
   else if (difference_x > 1100) shrink_depth = 86;
   else if (difference_x > 1000) shrink_depth = 85;
   else shrink_depth = Math.floor(0.007 * difference_x + 77);
-
-
   return shrink_depth;
+}
+
+function farAdjustment(difference_y, sideways_depth_add) {
+  if (difference_y < 256) {
+    shrink_perc = 0.75;
+  } else {
+    shrink_perc = sideways_depth_add / 100;
+  }
+  return shrink_perc;
 }
 
 function panels3BackLeft(x_center_offset, difference_x, difference_y) {
   let sideways_depth_add = addSidewaysDepth(difference_x);
-  // console.log("panels3BackLeft, ", difference_y, sideways_depth_add);
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = sideways_depth_add / 100;
+  shrink_perc = farAdjustment(difference_y, sideways_depth_add);
   back_left_bot = distancedBackColumnPoint(shrink_perc, left_front_bot);
   right_bottom_3 = [left_front_bot, right_front_bot, back_left_bot];
   return right_bottom_3;
@@ -169,9 +154,8 @@ function panelsTops(left_front_bot, right_front_bot, left_or_right_back_bot) {
 
 function panels3BackRight(x_center_offset, difference_x, difference_y) {
   let sideways_depth_add = addSidewaysDepth(difference_x);
-  // console.log("panels3BackRight, ", difference_y, sideways_depth_add);
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = sideways_depth_add / 100;
+  shrink_perc = farAdjustment(difference_y, sideways_depth_add);
   back_right_bot = distancedBackColumnPoint(shrink_perc, right_front_bot);
   left_bottom_3 = [left_front_bot, right_front_bot, back_right_bot];
   return left_bottom_3;
@@ -185,7 +169,6 @@ function panels3BackRight(x_center_offset, difference_x, difference_y) {
 function panelBotLeftRight(x_offset, difference_y) {
   right_front_bot_vanish_point = [x_offset + HALF_TILE_WIDTH, BOTTOM_FIELD];
   right_front_bot = distancedPoint(difference_y, right_front_bot_vanish_point);
-
   left_front_bot_vanish_point = [x_offset - HALF_TILE_WIDTH, BOTTOM_FIELD];
   left_front_bot = distancedPoint(difference_y, left_front_bot_vanish_point);
   return [left_front_bot, right_front_bot];

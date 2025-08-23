@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<meta name="apple-mobile-web-app-capable" content="yes" />
 
-<div id="css">
+
+<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+
+
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+<div id="the-css">
   <link rel="stylesheet" href="variables/variables.css" />
   <link rel="stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
@@ -43,88 +48,10 @@
 
 
 
-<!-- this should be css vars !!!!!!!!!!!! -->
 <div id="the-scene">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div id='start-mobile' style="position:absolute;
-  
-    z-index: 99999999;
-  
-     display:none;
-       left:50%;
-      top:50%;
-    ">
-    start game
-  </div>
-
-
-  <div class="wrapper_input">
-    <div id="input-nw" class="input-box"></div>
-    <div id="input-n" class="input-box"></div>
-    <div id="input-ne" class="input-box"></div>
-
-    <div id="input-w" class="input-box"></div>
-    <div id="the-input" class="input-box"></div>
-    <div id="input-e" class="input-box"></div>
-
-    <div id="input-sw" class="input-box"></div>
-    <div id="input-s" class="input-box"></div>
-    <div id="input-se" class="input-box"></div>
-  </div>
-
-
-  <div class="wrapper-arrows">
-    <svg id="arrow-nw" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-n" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-ne" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-w" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="blank-middle-arrow">
-
-    </svg>
-    <svg id="arrow-e" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-sw" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-s" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-se" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-  </div>
-
-
+  <div id='start-mobile'>Touch<br>to start</div>
+  <div id="touch-boxes"></div>
+  <div id="touch-arrows"></div>
 
   <div id="playing-game">
 
@@ -145,11 +72,13 @@
 
     <div id="the-sun"></div>
     <div class="sky-aperture">
-      <div id="the-sky"></div>
+
+      <div id="the-sky">
+
+      </div>
+      <div id="the-pyramids"></div>
     </div>
 
-    <div id="enemy-planets" style="height:0px;"> </div>
-    <div id="missile-flames" style="height:0px;"> </div>
 
     <div id="enemy-area"></div>
     <div id="missile-area"></div>
@@ -216,7 +145,7 @@
 
 
 
-
+  <script type="text/javascript" src="input/touch-arrows.js"></script>
   <script type="text/javascript" src="input/arrows-svg.js"></script>
   <script type="text/javascript" src="input/fullscreen-touch.js"></script>
   <script type="text/javascript" src="input/arrows-html.js"></script>
@@ -227,6 +156,10 @@
   <script type="text/javascript" src="columns/columns_svg.js"></script>
   <script type="text/javascript" src="columns/columns_data.js"></script>
   <script type="text/javascript" src="columns/columns_html.js"></script>
+
+
+
+
   <script type="text/javascript" src="columns/columns_code.js"></script>
   <script type="text/javascript" src="data/start.js"></script>
 </div>

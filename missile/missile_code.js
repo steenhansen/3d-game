@@ -1,10 +1,9 @@
 function getRandomColor(missile_id) {
-  //let gg = Math.floor(Math.random() * 6);
   let gg = Math.floor(Math.random() * 16);
   if (gg == 0) {
     let r = Math.floor(Math.random() * 128) + 128;
-    let g = 0;  //Math.floor(Math.random() * 256);
-    let b = 0;  //Math.floor(Math.random() * 256);
+    let g = 0;
+    let b = 0;
     let missile_fill = "--missile-fill-" + missile_id;
     let rgb = `rgb(${r}, ${g}, ${b})`;
     document.documentElement.style.setProperty(missile_fill, rgb);
@@ -19,8 +18,7 @@ function getRandomSize2(missile_id, start_size15, max_rand10) {
     let circle_size = `${r}px`;
 
     missile_area = document.getElementById('missile-area');
-    missile_area.style.setProperty(missile_fill, circle_size);
-
+    document.documentElement.style.setProperty(missile_fill, circle_size);
   }
 
 }
@@ -38,45 +36,38 @@ function getRandomSize(missile_id) {
 
 
 function getRandomColorDark(missile_id) {
-  let gg = Math.floor(Math.random() * 16);
+  let gg = Math.floor(Math.random() * 8);
   if (gg == 0) {
     let r = Math.floor(Math.random() * 32) + 224;
-    let g = 0;  //Math.floor(Math.random() * 256);
-    let b = 0;  //Math.floor(Math.random() * 256);
+    let g = 0;
+    let b = 0;
     let missile_fill = "--missile-fill-" + missile_id;
     let rgb = `rgb(${r}, ${g}, ${b})`;
-
-    missile_area = document.getElementById('missile-area');
-    missile_area.style.setProperty(missile_fill, rgb);
+    document.documentElement.style.setProperty(missile_fill, rgb);
   }
 }
 
 function getRandomColorMedium(missile_id) {
-  let gg = Math.floor(Math.random() * 16);
+  let gg = Math.floor(Math.random() * 8);
   if (gg == 0) {
     let r = Math.floor(Math.random() * 32) + 224;
-    let g = Math.floor(Math.random() * 32) + 150;
-    let b = 0;  //Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 32) + 100;
+    let b = Math.floor(Math.random() * 32) + 100;
     let missile_fill = "--missile-fill-" + missile_id;
     let rgb = `rgb(${r}, ${g}, ${b})`;
-
-
-    missile_area = document.getElementById('missile-area');
-    missile_area.style.setProperty(missile_fill, rgb);
-
+    document.documentElement.style.setProperty(missile_fill, rgb);
   }
 }
 
 function getRandomColorBright(missile_id) {
-  let gg = Math.floor(Math.random() * 16);
+  let gg = Math.floor(Math.random() * 8);
   if (gg == 0) {
     let r = Math.floor(Math.random() * 32) + 224;
-    let g = Math.floor(Math.random() * 32) + 224;
-    let b = 0;  //Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 32) + 175;
+    let b = Math.floor(Math.random() * 32) + 175;
     let missile_fill = "--missile-fill-" + missile_id;
     let rgb = `rgb(${r}, ${g}, ${b})`;
-    missile_area = document.getElementById('missile-area');
-    missile_area.style.setProperty(missile_fill, rgb);
+    document.documentElement.style.setProperty(missile_fill, rgb);
   }
 }
 
@@ -88,9 +79,7 @@ function getRandomFill(missile_id) {
   } else {
     display_none_block = `block`;
   }
-  missile_area = document.getElementById('missile-area');
-  missile_area.style.setProperty(missile_display, display_none_block);
-
+  document.documentElement.style.setProperty(missile_display, display_none_block);
 }
 
 function getRandoms() {
@@ -111,11 +100,9 @@ function getRandoms() {
   }
 }
 
-// copy
 
-function missileSet(real_id, the_sprite, the_type, da_name) {
-  //  enemyMissileDraw('missile-1', the_sprite, g_player, 'missile', 'da_missile');
-  enemyMissileDraw(real_id, the_sprite, g_player, the_type, da_name);
+function missileSet(real_id, the_sprite, g_player) {
+  spriteDraw(real_id, the_sprite, g_player);
   getRandoms();
 }
 
@@ -127,24 +114,28 @@ document.getElementById('missile-area').innerHTML = `
 <div id="the-missile-2" >${html_missile_2}</div>`;
 
 let the_missile_1 = {
-  is_a: "is-missile",
-  id: "missile-flames", spin: 31,
-  //  x: area_width_half + 260, y: 854,
-  //  x: 49000, y: 333,
-  x: 400, y: 310,
+  s_isa: "is-missile",
+  s_id: "missile-1",
+  m_x: 400, m_y: 310,
 
-  x_move: 0, y_move: 0,    // always away
-  column_colors: COL_EMENY
+
+  m_x_dir: 1, m_y_dir: 1,
+  // ALT gives an angle shot m_x_dir =-1, m_y_dir_dir=-1(always)
+
+  // m_dead: false,
+  // m_index: 0,
+
+  // s_moves_x: [1],
+  // s_moves_y: [1],
+
+
+
 };
 
 
 let the_missile_2 = {
-  is_a: "is-missile",
-  id: "missile-flames", spin: 31,
-  //  x: area_width_half + 260, y: 854,
-  //  x: 49000, y: 333,
-  x: 100, y: 210,
-
-  x_move: 0, y_move: 0,    // always away
-  column_colors: COL_EMENY
+  s_isa: "is-missile",
+  s_id: "missile-2",
+  m_x: 100, m_y: 210,
+  m_x_dir: -1, m_y_dir: -1
 };

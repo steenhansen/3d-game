@@ -10,7 +10,7 @@
 
 
 .a_line {
-  background-image: url('field.png');
+  background-image: url('../images/checker-board.png');
  width: 1024px;
  position: relative;
  height: 1px;

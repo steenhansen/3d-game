@@ -36,28 +36,3 @@ width: var(--my-enemy-width);
 
 
 
-
-
-
-
-@keyframes star-rotate {
-  0% {
-
-    transform:  rotate(0deg);
-  }
-  
-
-  100% {
-    transform:  rotate(360deg);
-  }
-}
-
-
-#star-spin {
-  transform-origin: center;
-  transform-box: fill-box;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-name: star-rotate;
-}

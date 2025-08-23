@@ -4,7 +4,7 @@ let SCENE_WIDTH = 8192;
 
 
 let COLUMN_0_START_X = 0;
-let COLUMN_0_START_Y = 0;
+let COLUMN_0_START_Y = 250;
 
 let PLAYER_START_X = 10;
 let PLAYER_START_Y = 100;

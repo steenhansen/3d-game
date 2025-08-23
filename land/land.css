@@ -26,7 +26,7 @@
 
  
 .west_line {
-  background-image: url('../field/field.png');
+  background-image: url('../images/checker-board.png');
   width: 512px;
   position: relative;
   left: 0px;
@@ -35,7 +35,7 @@
 }
 
 .east_line {
-  background-image: url('../field/field.png');
+  background-image: url('../images/checker-board.png');
   width: 512px;
   position: relative;
   left: 0px;

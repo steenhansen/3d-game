@@ -1,23 +1,49 @@
 
-function inputClick(the_event, direction_name) {
-  the_event.preventDefault();
-  fullMobile();
 
+function flashBox(direction_name) {
+  const the_input = document.getElementById("input-" + direction_name);
+  input_style = the_input.style;
+  input_style.border = 'thin solid white';
+  setTimeout(() => {
+    input_style.border = 'none';
+  }, "200");
+}
+
+function flashArrow(direction_name) {
   const the_arrow = document.getElementById("arrow-" + direction_name);
   the_arrow_style = the_arrow.style;
   const original_opacity = window.getComputedStyle(the_arrow).getPropertyValue("opacity");
 
   the_arrow_style.opacity = '100%';
-  the_arrow_style.fill = 'white';
+  //the_arrow_style.fill = 'white';
 
-  const the_input = document.getElementById("input-" + direction_name);
-  input_style = the_input.style;
-  input_style.border = 'thin solid white';
   setTimeout(() => {
     the_arrow_style.opacity = original_opacity;
-    the_arrow_style.fill = 'black';
-    input_style.border = 'none';
+    // the_arrow_style.fill = 'black';
   }, "200");
+}
+
+
+function inputClick(the_event, direction_name) {
+  the_event.preventDefault();
+  fullMobile();
+  flashArrow(direction_name);
+  flashBox(direction_name);
+  // const the_arrow = document.getElementById("arrow-" + direction_name);
+  // the_arrow_style = the_arrow.style;
+  // const original_opacity = window.getComputedStyle(the_arrow).getPropertyValue("opacity");
+
+  // the_arrow_style.opacity = '100%';
+  // the_arrow_style.fill = 'white';
+
+  // const the_input = document.getElementById("input-" + direction_name);
+  // input_style = the_input.style;
+  // input_style.border = 'thin solid white';
+  // setTimeout(() => {
+  //   the_arrow_style.opacity = original_opacity;
+  //   the_arrow_style.fill = 'black';
+  //   input_style.border = 'none';
+  // }, "200");
 }
 
 function addInputEvent(direction_name, clickHandler) {

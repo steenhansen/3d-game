@@ -30,7 +30,7 @@ TEST_ENDED = false;
 
 
 TEST_SCENE_MOVES_s = [            // with 64 Rights, x_shift_list[255]==0 and all bad
-  R, R, R, R, R, R, R, R,       // column_point_1 = { x: -2048, y: 512, 
+  R, R, R, R, R, R, R, R,       // column_point_1 = { m_x: -2048, m_y: 512, 
 
   R, R,
   R, R, R, R, R, R, R, R, R, R,

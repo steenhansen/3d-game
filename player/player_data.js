@@ -4,9 +4,9 @@
 
 // 778 can just see first red
 let g_player = {
-  x: PLAYER_START_X, y: PLAYER_START_Y
-  //x: 49500, y: 400 // 778
-  //x: 49000, y: 400 // 778
+  m_x: PLAYER_START_X, m_y: PLAYER_START_Y
+  //x: 49500, m_y: 400 // 778
+  //x: 49000, m_y: 400 // 778
 };
 
 

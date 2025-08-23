@@ -48,22 +48,29 @@ function columnSet(a_column, html_id) {
 }
 
 function columnDraw(a_column, g_player) {
-  //let front_column, side_column;
   [the_z_index, difference_y, column_relative, x_center_offset, difference_x, head_on_view] = objectPlacement(a_column, g_player);
-  //  console.log("relative 2345", x_offsets, difference_y);
   if (column_relative == LEFT_OF_PLAYER) {
-
     [corner_points, side_column] = columnOnLeft(a_column, x_center_offset, difference_x, difference_y, head_on_view);
-  } else { //if (column_relative == RIGHT_OF_PLAYER) {
+
+    //console.log("corner_points", corner_points[0][1][0][0], corner_points[0][1][1][0]);
+    corner_points[0][1][0][0] += 1;    // for some reason
+    corner_points[0][1][1][0] += 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
+    //console.log("corner_points", corner_points);
+    // console.log("++++++++++++++++++++++++++");
+
+  } else {
     [corner_points, side_column] = columnOnRight(a_column, x_center_offset, difference_x, difference_y, head_on_view);
-    // } else {
-    //   [corner_points, side_column] = columnOnMiddle(a_column, x_center_offset, difference_x, difference_y);
+    corner_points[0][1][0][0] -= 1;    // for some reason
+    corner_points[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   }
   [left_mid_right_vlines, _gradient_left_or_right, gradient_front] = corner_points;
-  //console.log("corner_points", corner_points);
   column_id = "panel-front-column-" + a_column.column_name;
+
+
+
+
+
   front_column = panelFront(left_mid_right_vlines, gradient_front, column_id);
-  // console.log("columnDraw ", gradient_front, front_column);
   column_svg = columnToSvg(the_z_index, front_column, side_column);
   return column_svg;
 }

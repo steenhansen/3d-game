@@ -10,8 +10,8 @@
 
 
 //  column_left=>col_left: "silver-grad",          column_front=>col_front: "red-grad",          column_right=>col_right
-COL_SRS = { column_left: "silver-grad", column_front: "red-grad", column_right: "blue-grad" };
-COL_SGS = { column_left: "silver-grad", column_front: "green-grad", column_right: "silver-grad" };
+COL_SRS = { column_left: "black-up2-white", column_front: "white-up2-black", column_right: "black-up2-white" };
+COL_SGS = { column_left: "silver-up2-grey", column_front: "grey-up2-silver", column_right: "silver-up2-grey" };
 COL_SBS = { column_left: "silver-grad", column_front: "blue-grad", column_right: "silver-grad" };
 COL_SOS = { column_left: "silver-grad", column_front: "orange-grad", column_right: "silver-grad" };
 COL_SYS = { column_left: "silver-grad", column_front: "yellow-grad", column_right: "silver-grad" };

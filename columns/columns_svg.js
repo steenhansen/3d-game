@@ -91,6 +91,42 @@ document.getElementById('column-svg').innerHTML = `
 
 
 
+
+
+
+        <linearGradient id="grey-orange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(255, 165, 0)" />
+      <stop offset="1" stop-color="rgb(160,160,160)" stop-opacity="1" />
+    </linearGradient>
+
+        <linearGradient id="grey-purple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(165, 0,255)" />
+      <stop offset="1" stop-color="rgb(160,160,160)" stop-opacity="1" />
+    </linearGradient>
+
+
+      <linearGradient id="grey-up2-silver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(160,160,160)" />
+      <stop offset="1" stop-color="rgb(64,64,64)" stop-opacity="1" />
+    </linearGradient>
+
+
+     <linearGradient id="silver-up2-grey" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(64,64,64)" />
+      <stop offset="1" stop-color="rgb(160,160,160)" stop-opacity="1" />
+    </linearGradient>
+
+         <linearGradient id="white-up2-black" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(0,0,0)" />
+      <stop offset="1" stop-color="rgb(255,255,255)" stop-opacity="1" />
+    </linearGradient>
+
+
+         <linearGradient id="black-up2-white" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="rgb(255,255,255)" />
+      <stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1" />
+    </linearGradient>
+
   </defs>
 </svg>
 

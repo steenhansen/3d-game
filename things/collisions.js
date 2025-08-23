@@ -15,8 +15,8 @@
 
 function hasCollided(a_thing, an_object, COLLISION_SIZES) {
   let [field_width, room_width, field_depth, room_depth] = COLLISION_SIZES;
-  let { x: thing_x, y: thing_y } = a_thing;
-  let { x: object_x, y: object_y } = an_object;
+  let { m_x: thing_x, m_y: thing_y } = a_thing;
+  let { m_x: object_x, m_y: object_y } = an_object;
   x_collided = collideOverflow(thing_x, object_x, field_width, room_width);
   y_collided = collideOverflow(thing_y, object_y, field_depth, room_depth);
   if (x_collided && y_collided) {

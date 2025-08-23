@@ -39,7 +39,14 @@ const area_height_half = 512;
 const area_height = 1024;
 const viewport_middle_y = 512;
 
+
+//let x_shift_list = new Float32Array(256);  // slower
 let x_shift_list = Array(256).fill(0);
+
+
+//let overflow_accums = new Float32Array(256);  // slower
+let overflow_accums = [];
+
 
 //////////////////////
 let number_lines = start_stop_flip.length;
@@ -51,7 +58,7 @@ let closest_width_index = number_lines - 1;
 
 let right_stop;
 let left_stop;
-let overflow_accums = [];
+
 
 
 let keep_running = true;
@@ -165,7 +172,7 @@ function sceneMove() {
 function setColumns() {
   if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
     columnSet(column_point_0, 'the_columns_0');
-    // columnSet(column_point_1, 'the_columns_1');
+    columnSet(column_point_1, 'the_columns_1');
     DRAW_AT_LEAST_ONCE = false;
   }
 }
@@ -213,25 +220,27 @@ function animateScene(timestamp) {
   checkCollisions();
 
 
-  missileSet('missile-1', the_missile_1, g_player, 'missile', 'da_missile-1');
-  missileSet('missile-2', the_missile_2, g_player, 'missile', 'da_missile-2');
+  missileSet('missile-1', the_missile_1, g_player);
+  missileSet('missile-2', the_missile_2, g_player);
+  the_missile_1 = missileAdvance(the_missile_1);
+  the_missile_2 = missileAdvance(the_missile_2);
 
+  enemySet('enemy-1', the_enemy_1, g_player);
+  the_enemy_1 = enemyStep(the_enemy_1);
 
-  enemySet('enemy-1', the_enemy_1, g_player, 'enemy', 'da_enemy-1');
-  // console.log("---------------");
-  // console.log("A enemy_1", the_enemy_1);
-  the_enemy_1 = spriteStep(the_enemy_1);
-  // console.log("Z enemy_1", the_enemy_1);
-  // console.log("---------------");
+  enemySet('enemy-2', the_enemy_2, g_player);
 
-
-  enemySet('enemy-2', the_enemy_2, g_player, 'enemy', 'da_enemy-2');
-
-
+  the_enemy_2 = enemyStep(the_enemy_2);
 
 
   //objectMomentum(the_enemy);
-  //console.log("ee", the_enemy.x, the_enemy.y);
+  if (!the_enemy_1.m_dead) {
+
+
+    the_enemy_1 = killEnemy(the_enemy_1);
+  }
+
+  //console.log("ee", the_enemy.m_x, the_enemy.m_y);
 
   if (keep_running) {
     affixLeftRight();
@@ -391,3 +400,4 @@ function fixMobile() {
     */
   }
 }
+

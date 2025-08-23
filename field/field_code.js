@@ -126,6 +126,7 @@ function resetRight() {
 }
 
 function moveRight() {
+
   let right_bot_count = x_shift_list[closest_width_index];
   let [_index, _start, end_offset, _flip_offset] = start_stop_flip[closest_width_index];
   if (right_bot_count == end_offset + 1) {
@@ -138,6 +139,7 @@ function moveRight() {
       overflow_accums[right_line] = adjust_right;
     }
   }
+
 }
 
 function overflowRight(cur_line, new_sum) {
