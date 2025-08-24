@@ -13,14 +13,23 @@
 
 //column_point_0 = { s_isa: "is-column", m_x: 1, m_y: 0, column_colors: COL_SRS, column_name: "p0" };
 //console.log(COLUMN_0_START_X, COLUMN_0_START_Y);
+
 column_point_0 = {
   s_isa: "is-column",
-  //x: COLUMN_0_START_X, m_y: COLUMN_0_START_Y,
-  //  m_x: 1024, m_y: 300,
+  column_name: "p0",
   m_x: COLUMN_0_START_X, m_y: COLUMN_0_START_Y,
-  column_colors: COL_SRS, column_name: "p0"
+  column_colors: COL_SRS,
+  m_side_twirl: 0,
+  m_front_twirl: 150
 };
-column_point_1 = { s_isa: "is-column", m_x: 500, m_y: 250, column_colors: COL_SGS, column_name: "p1" };
+column_point_1 = {
+  s_isa: "is-column",
+  column_name: "p1",
+  m_x: 500, m_y: 250,
+  column_colors: COL_SGS,
+  m_side_twirl: 0,
+  m_front_twirl: 300
+};
 
 
 

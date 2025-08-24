@@ -118,7 +118,8 @@ let the_missile_1 = {
   s_id: "missile-1",
   m_x: 400, m_y: 310,
 
-
+  m_lifetime: 256,
+  m_expired: false,
   m_x_dir: 1, m_y_dir: 1,
   // ALT gives an angle shot m_x_dir =-1, m_y_dir_dir=-1(always)
 
@@ -137,5 +138,7 @@ let the_missile_2 = {
   s_isa: "is-missile",
   s_id: "missile-2",
   m_x: 100, m_y: 210,
+  m_lifetime: 256,
+  m_expired: false,
   m_x_dir: -1, m_y_dir: -1
 };

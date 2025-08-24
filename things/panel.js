@@ -34,13 +34,14 @@ function panelFront(column_vlines, gradient_front, front_panel_id) {
 }
 
 
-function panelPolygon(a_polygon, the_gradient, front_panel_id) {
+
+function panelPolygon(a_polygon, twirl_gradient, front_panel_id) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  let svg_polygon = `<polygon fill="url(#${the_gradient})"  id="${front_panel_id}"
+  let svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${front_panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}

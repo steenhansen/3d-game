@@ -5,19 +5,17 @@
 
 
 function missileAdvance(the_missile) {
-  // if (the_missile.m_dead) {
-  //   return the_missile;
-  // }
-  // the_missile.m_x += the_missile.m_x_dir;
-  // the_missile.m_y += the_missile.m_y_dir;
+  if (the_missile.m_expired) {
+    return the_missile;
+  }
 
-  // if (the_missile.m_index < the_missile.s_moves_x.length) {
-  //   the_missile.m_index++;
-  // } else {
-  //   the_missile.m_index = 0; // reset to start
-  // }
-  // m_x_dir = the_missile.s_moves_x[the_missile.m_index];
-  // m_y_dir = the_missile.s_moves_y[the_missile.m_index];
+
+  if (the_missile.m_lifetime > 0) {
+    the_missile.m_lifetime--;
+  } else {
+    the_missile.m_expired = true;
+
+  }
 
   let { m_x_dir, m_y_dir } = the_missile;
   if (m_x_dir < 0) {
@@ -98,11 +96,10 @@ function spriteDraw(real_id, the_sprite, g_player) {
   real_id = the_sprite.s_id;
   [the_z_index, difference_y, missile_relative, x_center_offset, difference_x, head_on_view] = objectPlacement(the_sprite, g_player);
   if (missile_relative == LEFT_OF_PLAYER) {
-    the_data = objectLeftSide(the_sprite, x_center_offset, difference_x, difference_y);
+    left_mid_right_vlines = objectLeftSide(the_sprite, x_center_offset, difference_x, difference_y);
   } else {
-    the_data = objectRightSide(the_sprite, x_center_offset, difference_x, difference_y);
+    left_mid_right_vlines = objectRightSide(the_sprite, x_center_offset, difference_x, difference_y);
   }
-  let [left_mid_right_vlines, _gradient_right, gradient_front] = the_data;
   gradient_front = 'clear-grad';
   the_stats = panelFront2(left_mid_right_vlines);
   spritePosition(real_id, the_z_index, the_stats);
@@ -119,10 +116,7 @@ function spritePosition(real_id, z_index, the_stats) {
   missile_x_y.setAttribute("y", center_y);
 
   missile_scaled = document.getElementById(real_id + '-scaled');
-  //console.log("xx324", the_scale, missile_scaled.style.transform);
   missile_scaled.style.transform = `scale(${the_scale})`;
-  //console.log("xx324", the_scale, missile_scaled.style.transform);
-  //console.log("-----------------------------");
 }
 
 function objectPlacement(an_object, g_player) {
@@ -150,10 +144,8 @@ function objectLeftSide(a_column, x_center_offset, difference_x, difference_y) {
     gradient_front = "clear-grad";
   }
 
-
   left_mid_right_vlines = [left_vline, middle_vline, right_vline];
-  the_data = [left_mid_right_vlines, gradient_left, gradient_front];
-  return the_data;
+  return left_mid_right_vlines;
 }
 
 
@@ -173,10 +165,8 @@ function objectRightSide(a_column, x_center_offset, difference_x, difference_y) 
     gradient_front = "clear-grad";
   }
 
-
   left_mid_right_vlines = [left_vline, middle_vline, right_vline];
-  the_data = [left_mid_right_vlines, gradient_right, gradient_front];
-  return the_data;
+  return left_mid_right_vlines;
 }
 
 function objectMiddleRegion(a_column, x_center_offset, difference_x, difference_y) {
@@ -187,7 +177,6 @@ function objectMiddleRegion(a_column, x_center_offset, difference_x, difference_
   let middle_vline = [right_front_top, right_front_bot];
   let right_vline = [back_right_top, back_right_bot];
 
-
   if (a_column.column_colors) {
     gradient_right = a_column.column_colors.column_right;
     gradient_front = a_column.column_colors.column_front;
@@ -195,10 +184,6 @@ function objectMiddleRegion(a_column, x_center_offset, difference_x, difference_
     gradient_right = "clear-grad";
     gradient_front = "clear-grad";
   }
-
-
-
   left_mid_right_vlines = [left_vline, middle_vline, right_vline];
-  the_data = [left_mid_right_vlines, gradient_right, gradient_front];
-  return the_data;
+  return left_mid_right_vlines;
 }

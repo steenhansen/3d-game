@@ -49,7 +49,11 @@ function inputClick(the_event, direction_name) {
 function addInputEvent(direction_name, clickHandler) {
   const div_name = "input-" + direction_name;
   const the_input = document.getElementById(div_name);
+
+  //id (isMobile)
+
   the_input.addEventListener("touchstart", clickHandler, { passive: false });
+  the_input.addEventListener("click", clickHandler, { passive: false });
 }
 
 
@@ -119,8 +123,10 @@ addInputEvent("se", handleSe);
 
 
 function fullMobile() {
-  if (!document.fullscreenElement) {
-    the_scene = document.getElementById('the-scene');
-    the_scene.requestFullscreen();
+  if (isMobile()) {
+    if (!document.fullscreenElement) {
+      the_scene = document.getElementById('the-scene');
+      the_scene.requestFullscreen();
+    }
   }
 }

@@ -170,11 +170,11 @@ function sceneMove() {
 }
 
 function setColumns() {
-  if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
-    columnSet(column_point_0, 'the_columns_0');
-    columnSet(column_point_1, 'the_columns_1');
-    DRAW_AT_LEAST_ONCE = false;
-  }
+  //  if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
+  columnSet(column_point_0, 'the_columns_0');
+  columnSet(column_point_1, 'the_columns_1');
+  //  DRAW_AT_LEAST_ONCE = false;
+  //}
 }
 
 function checkCollisions() {
@@ -219,17 +219,19 @@ function animateScene(timestamp) {
   setColumns();
   checkCollisions();
 
-
+  //if (!the_missile_1.m_expired) {
   missileSet('missile-1', the_missile_1, g_player);
   missileSet('missile-2', the_missile_2, g_player);
   the_missile_1 = missileAdvance(the_missile_1);
   the_missile_2 = missileAdvance(the_missile_2);
+  //}
+
+
+
 
   enemySet('enemy-1', the_enemy_1, g_player);
   the_enemy_1 = enemyStep(the_enemy_1);
-
   enemySet('enemy-2', the_enemy_2, g_player);
-
   the_enemy_2 = enemyStep(the_enemy_2);
 
 
