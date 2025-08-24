@@ -89,34 +89,11 @@ function thingRelationToPlayer(adjusted_x, g_player, things_position) {
 }
 
 
-// function relativeToPlayer(thing_x, player_x) {
-//   player_start_left = player_x - HALF_TILE_WIDTH;
-//   player_start_right = player_x + HALF_TILE_WIDTH;
-//   if (thing_x < player_start_left) {
-//     return LEFT_OF_PLAYER;
-//   } else if (thing_x > player_start_right) {
-//     return RIGHT_OF_PLAYER;
-//   } else {
-//     return MIDDLE_OF_PLAYER;
-//   }
-// }
-
-
-// function hitPlayer(a_thing, the_player) {
-//   let { thing_x, thing_y } = a_thing;
-//   let { m_x: player_x, player_y } = the_player;
-
-//   // if column is at 0,0 then 
-
-// }
-
-
 function objectBounced(move_direction) {
   if (move_direction == MOVINGx_NW) {
     new_direction = MOVINGx_SE;
   } else if (move_direction == MOVINGx_N) {
     new_direction = MOVINGx_S;
-    //console.log(move_direction, new_direction);
   } else if (move_direction == MOVINGx_NE) {
     new_direction = MOVINGx_SW;
   } else if (move_direction == MOVINGx_E) {

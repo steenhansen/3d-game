@@ -1,13 +1,46 @@
 let SCENE_Y_MAX = 768;
 let SCENE_WIDTH = 8192;
 
+/*
+ 0 1
+ 2 3
+*/
+
+let COLUMN_0_START_X = 4000;
+let COLUMN_0_START_Y = 400;
+
+let COLUMN_1_START_X = 5000;
+let COLUMN_1_START_Y = 400;
+
+let COLUMN_2_START_X = 3900;
+let COLUMN_2_START_Y = 600;
+
+let COLUMN_3_START_X = 5100;
+let COLUMN_3_START_Y = 600;
 
 
-let COLUMN_0_START_X = 0;
-let COLUMN_0_START_Y = 250;
+/*
+   0
+  3 1
+   2
+*/
+let PLUS_0_START_X = 1000;
+let PLUS_0_START_Y = 200;
 
-let PLAYER_START_X = 10;
-let PLAYER_START_Y = 100;
+let PLUS_1_START_X = 1500;
+let PLUS_1_START_Y = 400;
+
+let PLUS_2_START_X = 1000;
+let PLUS_2_START_Y = 600;
+
+let PLUS_3_START_X = 500;
+let PLUS_3_START_Y = 400;
+
+
+
+
+let PLAYER_START_X = 4500;
+let PLAYER_START_Y = 700;
 
 
 let TILE_WIDTH = 256;

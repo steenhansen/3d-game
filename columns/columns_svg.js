@@ -1,80 +1,68 @@
 
 
 
-//   https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/  
-
-
-/*
-<g id="the-arrow">
-      <path     d="M 24,10 12,0 0,10 z M 6,12 v 16 h 12 v -16 z"
-
-
- />
-    </g>
-
-*/
-
 // 0-399 
-function twirledGradient(gradient_index) {
-  the_gradient = "bwx" + Math.floor(gradient_index);
+function twirledGradient(gradient_index, column_colors) {
+  let [first_color, second_color] = column_colors;
+  the_gradient = "column-gradient" + first_color + second_color + Math.floor(gradient_index);
   return the_gradient;
 }
 
-
 // 0-100
-function wDownWest2bUpEast(gradient_index, west_y, east_y) {
-  gradient_id = twirledGradient(gradient_index);
+function wDownWest2bUpEast(gradient_index, west_y, east_y, first_color, second_color) {
+  gradient_id = twirledGradient(gradient_index, [first_color, second_color]);
   the_bw = `
       <linearGradient id="${gradient_id}" x1="0%" y1="${west_y}%" x2="100%" y2="${east_y}%">
-          <stop offset="0" stop-color="rgb(255,255,255)" />
-          <stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1" />
+          <stop offset="0" stop-color="${first_color}" />
+          <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
   return the_bw;
 }
 
 // 100 - 200
-function wRightSouth2bLeftNorth(gradient_index, south_x, north_x) {
-  gradient_id = twirledGradient(gradient_index);
+function wRightSouth2bLeftNorth(gradient_index, south_x, north_x, first_color, second_color) {
+  gradient_id = twirledGradient(gradient_index, [first_color, second_color]);
   the_bw = `
       <linearGradient id="${gradient_id}" x1="${south_x}%" y1="100%" x2="${north_x}%" y2="0%">
-          <stop offset="0" stop-color="rgb(255,255,255)" />
-          <stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1" />
+          <stop offset="0" stop-color="${first_color}" />
+          <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
   return the_bw;
 }
 
 // 200-300
-function wUpEast2bDownWest(gradient_index, east_y, west_y) {
-  gradient_id = twirledGradient(gradient_index);
+function wUpEast2bDownWest(gradient_index, east_y, west_y, first_color, second_color) {
+  gradient_id = twirledGradient(gradient_index, [first_color, second_color]);
   the_bw = `
       <linearGradient id="${gradient_id}" x1="100%" y1="${east_y}%" x2="0%" y2="${west_y}%">
-          <stop offset="0" stop-color="rgb(255,255,255)" />
-          <stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1" />
+          <stop offset="0" stop-color="${first_color}" />
+          <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
   return the_bw;
 }
 
 
 // 300 - 400
-function wLeftNorth2bRightSouth(gradient_index, north_x, south_x) {
-  gradient_id = twirledGradient(gradient_index);
+function wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, second_color) {
+  gradient_id = twirledGradient(gradient_index, [first_color, second_color]);
   the_bw = `
       <linearGradient id="${gradient_id}" x1="${north_x}%" y1="0%" x2="${south_x}%" y2="100%">
-          <stop offset="0" stop-color="rgb(255,255,255)" />
-          <stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1" />
+          <stop offset="0" stop-color="${first_color}" />
+          <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
   return the_bw;
 
 }
 
 
-function myBws() {
+function makeGradients(column_colors) {
+  let [first_color, second_color] = column_colors;
   the_res = '';
   west_y = 0;
   for (let gradient_index = 0; gradient_index < 100; gradient_index++) {
     west_y++;
     east_y = 100 - west_y;
-    west_2_east_gradient = wDownWest2bUpEast(gradient_index, west_y, east_y);
+    west_2_east_gradient = wDownWest2bUpEast(gradient_index, west_y, east_y, first_color, second_color);
     the_res += west_2_east_gradient;
   }
 
@@ -82,14 +70,14 @@ function myBws() {
   for (let gradient_index = 100; gradient_index < 200; gradient_index++) {
     south_x++;
     north_x = 100 - south_x;
-    south_2_north_gradient = wRightSouth2bLeftNorth(gradient_index, south_x, north_x);
+    south_2_north_gradient = wRightSouth2bLeftNorth(gradient_index, south_x, north_x, first_color, second_color);
     the_res += south_2_north_gradient;
   }
   east_y = 100;
   for (let gradient_index = 200; gradient_index < 300; gradient_index++) {
     east_y--;
     west_y = 100 - east_y;
-    east_2_west_gradient = wUpEast2bDownWest(gradient_index, east_y, west_y);
+    east_2_west_gradient = wUpEast2bDownWest(gradient_index, east_y, west_y, first_color, second_color);
     the_res += east_2_west_gradient;
   }
 
@@ -97,7 +85,7 @@ function myBws() {
   for (let gradient_index = 300; gradient_index < 400; gradient_index++) {
     north_x--;
     south_x = 100 - north_x;
-    north_2_south_gradient = wLeftNorth2bRightSouth(gradient_index, north_x, south_x);
+    north_2_south_gradient = wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, second_color);
     the_res += north_2_south_gradient;
   }
 
@@ -105,16 +93,17 @@ function myBws() {
 
 }
 
+white_black_gradients = makeGradients(["white", "black"]);
 
-
-my_bws = myBws();
+red_green_gradients = makeGradients(["red", "green"]);
 
 
 document.getElementById('column-svg').innerHTML = `
 <svg>
   <defs>
 
-    ${my_bws}
+    ${white_black_gradients}
+    ${red_green_gradients}
 
     <linearGradient id="red-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(255,0,0)" />

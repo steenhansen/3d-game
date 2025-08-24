@@ -172,7 +172,17 @@ function sceneMove() {
 function setColumns() {
   //  if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
   columnSet(column_point_0, 'the_columns_0');
-  columnSet(column_point_1, 'the_columns_1');
+  // columnSet(column_point_1, 'the_columns_1');
+  // columnSet(column_point_2, 'the_columns_2');
+  // columnSet(column_point_3, 'the_columns_3');
+
+
+  columnSet(column_point_4, 'the_columns_4');
+  // columnSet(column_point_5, 'the_columns_5');
+  // columnSet(column_point_6, 'the_columns_6');
+  // columnSet(column_point_7, 'the_columns_7');
+
+
   //  DRAW_AT_LEAST_ONCE = false;
   //}
 }
@@ -202,17 +212,6 @@ function animateScene(timestamp) {
 
 
 
-  /////////////
-
-  // let playing_game = document.getElementById('playing-game');
-
-  // let a_var = getComputedStyle(playing_game).getPropertyValue("--a-var");
-  // console.log("before_ 34089 aver", a_var);
-
-
-  // document_style.setProperty("--a-var", "kap");
-
-  //////////////////////
 
   doBounce();
   sceneMove();
@@ -242,7 +241,7 @@ function animateScene(timestamp) {
     the_enemy_1 = killEnemy(the_enemy_1);
   }
 
-  //console.log("ee", the_enemy.m_x, the_enemy.m_y);
+
 
   if (keep_running) {
     affixLeftRight();
@@ -257,15 +256,11 @@ var supportsOrientationChange = "onorientationchange" in window,
   orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
 window.addEventListener(orientationEvent, function () {
-  //alert('HOLY ROTATING SCREENS BATMAN:' + screen.width);
-
-
-  // console.log("  document.exitFullscreen() ----");
   fixMobile();
 }, false);
 
 
-//       document.documentElement.style.setProperty(missile_fill, rgb);
+
 
 
 function handleStartMobile(evt) {
@@ -276,7 +271,6 @@ function handleStartMobile(evt) {
     console.log("Delayed for 1 second.");
   }, "1000");
 
-  //   evt.preventDefault();
   the_scene = document.getElementById('the-scene');
   try {
     the_scene.requestFullscreen();
@@ -306,10 +300,7 @@ function fixMobile() {
       start_mobile = document.getElementById('start-mobile');
       start_mobile.style.display = "block";
       waiting_for_start = true;
-      //start_mobile.addEventListener("touchstart", handleStartMobile, { passive: false });
       start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
-      //start_mobile.addEventListener("touchcancel", handleStartMobile, { passive: false });
-      //start_mobile.addEventListener("touchmove", handleStartMobile, { passive: false });
       return;
     }
     start_mobile = document.getElementById('start-mobile');
@@ -350,56 +341,7 @@ function fixMobile() {
     input_margin_ver = 2 * margin_top + "px";
     document_style.setProperty("--input-padding-ver", input_margin_ver);
 
-    // const nw_arrow = document.getElementById("input-nw");
-    // nw_arrow_style = nw_arrow.style;
-    // const nw_width = window.getComputedStyle(nw_arrow).getPropertyValue("width");
-    // console.log("1111111", nw_width);
-    // var currentValue = parseInt(nw_width);
-    // console.log("22222", currentValue);
-    // nw_arrow_style.width = currentValue + arrow_margin_hor + "px";
 
-
-
-    // var left_on_mobile = (1024 - window.screen.width) / 2;
-    // var left_mobile_px = (left_on_mobile + 1) + "px";
-    // document_style.setProperty("--input-nw-left", left_mobile_px);
-
-
-    // var top_mobile = 512 - window.screen.height;
-    // var top_mobile_px = (top_mobile + 1) + "px";
-    // document_style.setProperty("--input-nw-top", top_mobile_px);
-
-
-
-
-
-
-    //
-    // playing_game.marginTop=-136px
-    // playing_game.marginRight = -178px
-
-
-    /*
-      var left_on_mobile = (512 - window.screen.width) / 2;
-      var left_mobile_px = left_on_mobile + "px";
-    
-  
-    
-      var input_nw_left = left_on_mobile * -1 + "px";
-      document_style.setProperty("--input-nw-left", input_nw_left);
-    
-      var actual_width = window.screen.width + left_on_mobile;
-    
-      var input_nw_width = actual_width / 4 + "px";
-      document_style.setProperty("--input-nw-width", input_nw_width);
-    
-      var input_n_width = actual_width / 2 + "px";
-      document_style.setProperty("--input-n-width", input_n_width);
-    
-      var input_n_left = left_on_mobile + actual_width / 4 + "px";
-      document_style.setProperty("--input-n-left", input_n_left);
-    
-    */
   }
 }
 

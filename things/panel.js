@@ -105,7 +105,7 @@ function panelPlaceX(a_thing, g_player) {
   }
   return [difference_x, relative_to_playerN, head_on_view];
 };
-///////////////////
+
 
 
 function addSidewaysDepth(difference_x) {

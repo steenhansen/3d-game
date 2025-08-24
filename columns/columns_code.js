@@ -36,7 +36,7 @@ function columnOnLeft(a_column, x_center_offset, difference_x, difference_yy, he
     return columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy);
   } else {
     left_mid_right_vlines = objectLeftSide(a_column, x_center_offset, difference_x, difference_yy);
-    gradient_left = twirledGradient(a_column.m_side_twirl);
+    gradient_left = twirledGradient(a_column.m_side_twirl, a_column.column_colors);
     side_column = columnSidePanel(left_mid_right_vlines, gradient_left);
     return [left_mid_right_vlines, side_column];
   }
@@ -47,7 +47,7 @@ function columnOnRight(a_column, x_center_offset, difference_x, difference_yy, h
     return columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy);
   } else {
     left_mid_right_vlines = objectRightSide(a_column, x_center_offset, difference_x, difference_yy);
-    gradient_right = twirledGradient(a_column.m_side_twirl);
+    gradient_right = twirledGradient(a_column.m_side_twirl, a_column.column_colors);
     side_column = columnSidePanel(left_mid_right_vlines, gradient_right);
     return [left_mid_right_vlines, side_column];
   }
@@ -78,7 +78,7 @@ function columnDraw(a_column, g_player) {
     left_mid_right_vlines[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   }
   column_id = "panel-front-column-" + a_column.column_name;
-  gradient_front = twirledGradient(a_column.m_front_twirl);
+  gradient_front = twirledGradient(a_column.m_front_twirl, a_column.column_colors);
   front_column = panelFront(left_mid_right_vlines, gradient_front, column_id);
   column_svg = columnToSvg(the_z_index, front_column, side_column);
   return column_svg;

@@ -19,10 +19,6 @@ function enemySet(real_id, the_sprite, g_player) {
   spriteDraw(real_id, the_sprite, g_player);
 }
 
-// console.log(`
-// <div id="the-enemy-1" >${html_enemy_1}</div>
-// <div id="the-enemy-2" >${html_enemy_2}</div>
-// `);
 
 let the_enemy_1 = {
   s_isa: "is-enemy",

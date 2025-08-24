@@ -2,9 +2,7 @@
 function turnOnKeys() {
 
   function readKeys(event) {
-
     const the_key = event.key;
-    // console.log("ddd 23432", the_key);
     if (g_move_continue == 0) {
       if (['Q', 'q', "Home", '7'].includes(the_key)) {
         g_move_direction = MOVINGx_NW;

@@ -1,7 +1,4 @@
 
-// function findRelativeRect2Player() {
-
-// }
 
 
 function svgIntoRect(the_sprite, html_id, elem_id) {
