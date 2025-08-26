@@ -1,42 +1,43 @@
 let SCENE_Y_MAX = 768;
 let SCENE_WIDTH = 8192;
 
-/*
- 0 1
- 2 3
-*/
 
-let COLUMN_0_START_X = 4000;
-let COLUMN_0_START_Y = 400;
+let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
+let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
 
-let COLUMN_1_START_X = 5000;
-let COLUMN_1_START_Y = 400;
-
-let COLUMN_2_START_X = 3900;
-let COLUMN_2_START_Y = 600;
-
-let COLUMN_3_START_X = 5100;
-let COLUMN_3_START_Y = 600;
 
 
 /*
-   0
-  3 1
-   2
+    ----------------6827           
+        |-2731-|      |
+    ---------4096     |
+               |      |
+    1/6 X  1/3 X  1/3 X  1/6
+        |
+      1365
+   
 */
-let PLUS_0_START_X = 1000;
-let PLUS_0_START_Y = 200;
-
-let PLUS_1_START_X = 1500;
-let PLUS_1_START_Y = 400;
-
-let PLUS_2_START_X = 1000;
-let PLUS_2_START_Y = 600;
-
-let PLUS_3_START_X = 500;
-let PLUS_3_START_Y = 400;
 
 
+
+let COLUMN_3A_START_X = 1365 - 512;
+let COLUMN_3A_START_Y = 400;
+let COLUMN_3B_START_X = 1365;
+let COLUMN_3B_START_Y = 400;
+let COLUMN_3C_START_X = 1365 + 512;
+let COLUMN_3C_START_Y = 400;
+
+let COLUMN_2A_START_X = 4096 - 256;
+let COLUMN_2A_START_Y = 400;
+let COLUMN_2B_START_X = 4096 + 256;
+let COLUMN_2B_START_Y = 400;
+
+let COLUMN_1A_START_X = 6827;
+let COLUMN_1A_START_Y = 400;
+
+
+
+let NUMBER_TWIRLS = 400;
 
 
 let PLAYER_START_X = 4500;

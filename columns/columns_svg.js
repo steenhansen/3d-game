@@ -1,6 +1,8 @@
 
 
 
+///////////////////////////////////////
+
 // 0-399 
 function twirledGradient(gradient_index, column_colors) {
   let [first_color, second_color] = column_colors;
@@ -8,9 +10,10 @@ function twirledGradient(gradient_index, column_colors) {
   return the_gradient;
 }
 
-// 0-100
+// 0-100       
 function wDownWest2bUpEast(gradient_index, west_y, east_y, first_color, second_color) {
   gradient_id = twirledGradient(gradient_index, [first_color, second_color]);
+
   the_bw = `
       <linearGradient id="${gradient_id}" x1="0%" y1="${west_y}%" x2="100%" y2="${east_y}%">
           <stop offset="0" stop-color="${first_color}" />
@@ -51,7 +54,6 @@ function wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, s
           <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
   return the_bw;
-
 }
 
 
@@ -93,9 +95,11 @@ function makeGradients(column_colors) {
 
 }
 
-white_black_gradients = makeGradients(["white", "black"]);
 
-red_green_gradients = makeGradients(["red", "green"]);
+
+white_black_gradients = makeGradients(WHITE_BLACK_GRADIENT);
+
+lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA_GRADIENT);
 
 
 document.getElementById('column-svg').innerHTML = `
@@ -103,7 +107,9 @@ document.getElementById('column-svg').innerHTML = `
   <defs>
 
     ${white_black_gradients}
-    ${red_green_gradients}
+    ${lime_fuchsia_gradients}
+ 
+
 
     <linearGradient id="red-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(255,0,0)" />

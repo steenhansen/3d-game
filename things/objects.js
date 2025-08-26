@@ -101,7 +101,7 @@ function spriteDraw(real_id, the_sprite, g_player) {
     left_mid_right_vlines = objectRightSide(the_sprite, x_center_offset, difference_x, difference_y);
   }
   gradient_front = 'clear-grad';
-  the_stats = panelFront2(left_mid_right_vlines);
+  the_stats = spriteFront(left_mid_right_vlines);
   spritePosition(real_id, the_z_index, the_stats);
 }
 

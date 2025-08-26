@@ -9,103 +9,79 @@
 // cyan-grad      Cyan rgb(0, 255, 255) 
 // silver-grad  Silver rgb(160,160,160)
 
-
-column_point_0 = {
+//  COLUMN_3A
+column_3a = {
   s_isa: "is-column",
-  column_name: "p0",
-  m_x: COLUMN_0_START_X, m_y: COLUMN_0_START_Y,
-  column_colors: ["white", "black"],
+  column_name: "a3-column",
+  m_x: COLUMN_3A_START_X, m_y: COLUMN_3A_START_Y,
+  column_colors: WHITE_BLACK_GRADIENT,
   m_side_twirl: 0,
-  m_front_twirl: 150
+  m_front_twirl: 100,
+  c_outline: false
 };
 
-column_point_1 = {
+column_3b = {
   s_isa: "is-column",
-  column_name: "p1",
-  m_x: COLUMN_1_START_X, m_y: COLUMN_1_START_Y,
-  column_colors: ["white", "black"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
+  column_name: "b3-column",
+  m_x: COLUMN_3B_START_X, m_y: COLUMN_3B_START_Y,
+  column_colors: WHITE_BLACK_GRADIENT,
+  m_side_twirl: 100,
+  m_front_twirl: 200,
+  c_outline: false
 };
 
 
 
-column_point_2 = {
+column_3c = {
   s_isa: "is-column",
-  column_name: "p2",
-  m_x: COLUMN_2_START_X, m_y: COLUMN_2_START_Y,
-  column_colors: ["white", "black"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
+  column_name: "c3-column",
+  m_x: COLUMN_3C_START_X, m_y: COLUMN_3C_START_Y,
+  column_colors: WHITE_BLACK_GRADIENT,
+  m_side_twirl: 200,
+  m_front_twirl: 300,
+  c_outline: false
 };
 
 
-column_point_3 = {
+
+
+column_2a = {
   s_isa: "is-column",
-  column_name: "p3",
-  m_x: COLUMN_3_START_X, m_y: COLUMN_3_START_Y,
-  column_colors: ["white", "black"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
+  column_name: "a2-column",
+  m_x: COLUMN_2A_START_X, m_y: COLUMN_2A_START_Y,
+  column_colors: WHITE_BLACK_GRADIENT,
+  m_side_twirl: 150,
+  m_front_twirl: 350,
+  c_outline: true
 };
 
-
-
-
-
-
-column_point_4 = {
+column_2b = {
   s_isa: "is-column",
-  column_name: "p4",
-  m_x: PLUS_0_START_X, m_y: PLUS_0_START_Y,
-  column_colors: ["red", "green"],
-  m_side_twirl: 0,
-  m_front_twirl: 150
+  column_name: "b2-column",
+  m_x: COLUMN_2B_START_X, m_y: COLUMN_2B_START_Y,
+  column_colors: WHITE_BLACK_GRADIENT,
+  m_side_twirl: 50,
+  m_front_twirl: 300,
+  c_outline: true
 };
 
-column_point_5 = {
+
+
+
+
+
+
+
+
+column_1a = {
   s_isa: "is-column",
-  column_name: "p5",
-  m_x: PLUS_1_START_X, m_y: PLUS_1_START_Y,
-  column_colors: ["red", "green"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
+  column_name: "a1-column",
+  m_x: COLUMN_1A_START_X, m_y: COLUMN_1A_START_Y,
+  column_colors: LIME_FUCHSIA_GRADIENT,
+  m_side_twirl: 75,
+  m_front_twirl: 95,
+  c_outline: true
 };
 
 
 
-column_point_6 = {
-  s_isa: "is-column",
-  column_name: "p6",
-  m_x: PLUS_2_START_X, m_y: PLUS_2_START_Y,
-  column_colors: ["red", "green"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
-};
-
-
-column_point_7 = {
-  s_isa: "is-column",
-  column_name: "p7",
-  m_x: PLUS_3_START_X, m_y: PLUS_3_START_Y,
-  column_colors: ["red", "green"],
-  m_side_twirl: 0,
-  m_front_twirl: 300
-};
-
-
-
-group_square = {
-  group_position: { m_x: 100, m_y: 100 },
-  the_columns: [
-    { m_x: 0, m_y: 0, column_colors: COL_SRS },
-    // { m_x: 100, m_y: 0, column_colors: COL_SGS },
-    // { m_x: 200, m_y: 0, column_colors: COL_SBS },
-    // { m_x: 200, m_y: 100, column_colors: COL_SCS },
-    // { m_x: 200, m_y: 200, column_colors: COL_SRS },
-    // { m_x: 100, m_y: 200, column_colors: COL_SGS },
-    // { m_x: 0, m_y: 200, column_colors: COL_SBS },
-    // { m_x: 0, m_y: 100, column_colors: COL_SCS },
-  ]
-
-};

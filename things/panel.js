@@ -1,16 +1,34 @@
 
-function panelFront2(column_vlines) {
+
+function spriteFront(column_vlines) {
   let [left_vline, middle_vline, _right_vline] = column_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
-
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  let front_column = panelPolygon2(left_right_tops_bots);
+
+  let front_column = spriteCenterXy(left_right_tops_bots);
+  return front_column;
+}
+
+function columnFront(column_vlines, gradient_front, front_panel_id, do_outlines) {
+  let [left_vline, middle_vline, _right_vline] = column_vlines;
+  let [left_front_top, left_front_bot] = left_vline;
+  let [right_front_top, right_front_bot] = middle_vline;
+  left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
+
+  let front_column = columnPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines);
   return front_column;
 }
 
 
-function panelPolygon2(a_polygon) {
+
+
+
+
+
+
+
+function spriteCenterXy(a_polygon) {
   let [left_front_top, right_front_top, _left_front_bot, _right_front_bot] = a_polygon;
   let [top_left_x, _top_left_y] = left_front_top;
   let [top_right_x, _top_right_y] = right_front_top;
@@ -21,33 +39,38 @@ function panelPolygon2(a_polygon) {
   let the_scale = the_width / 256;
   return [center_x, center_y, the_scale];
 }
-
-
-
-function panelFront(column_vlines, gradient_front, front_panel_id) {
-  let [left_vline, middle_vline, _right_vline] = column_vlines;
-  let [left_front_top, left_front_bot] = left_vline;
-  let [right_front_top, right_front_bot] = middle_vline;
-  left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  let front_column = panelPolygon(left_right_tops_bots, gradient_front, front_panel_id);
-  return front_column;
-}
-
-
-
-function panelPolygon(a_polygon, twirl_gradient, front_panel_id) {
+function columnPolygon(a_polygon, twirl_gradient, panel_id, do_outlines) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  let svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${front_panel_id}"
+
+
+  let svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
+  if (do_outlines) {
+    svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="black"
+                      points="${top_left_x},${top_left_y}
+                              ${top_right_x},${top_right_y}
+                              ${bot_right_x},${bot_right_y}
+                              ${bot_left_x},${bot_left_y}      " />`;
+
+  }
+
+
+
+
   return svg_polygon;
 }
+
+
+
+
+
 
 
 

@@ -10,7 +10,7 @@ function getRandomColor(missile_id) {
   }
 }
 
-function getRandomSize2(missile_id, start_size15, max_rand10) {
+function getRandomSize(missile_id, start_size15, max_rand10) {
   let gg = Math.floor(Math.random() * 7);
   if (gg == 0) {
     let r = Math.floor(Math.random() * max_rand10) + start_size15;
@@ -23,16 +23,6 @@ function getRandomSize2(missile_id, start_size15, max_rand10) {
 
 }
 
-
-function getRandomSize(missile_id) {
-  let gg = Math.floor(Math.random() * 7);
-  if (gg == 0) {
-    let r = Math.floor(Math.random() * 10) + 15;
-    let missile_fill = "--missile-size-" + missile_id;
-    let circle_size = `${r}px`;
-    document.documentElement.style.setProperty(missile_fill, circle_size);
-  }
-}
 
 
 function getRandomColorDark(missile_id) {
@@ -85,17 +75,17 @@ function getRandomFill(missile_id) {
 function getRandoms() {
   for (let i = 100; i < 132; i++) {
     getRandomColorDark(i);
-    getRandomSize2(i, 15, 10);
+    getRandomSize(i, 15, 10);
     getRandomFill(i);
   }
   for (let i = 200; i < 216; i++) {
     getRandomColorMedium(i);
-    getRandomSize2(i, 20, 10);
+    getRandomSize(i, 20, 10);
     getRandomFill(i);
   }
   for (let i = 300; i < 308; i++) {
     getRandomColorBright(i);
-    getRandomSize2(i, 20, 10);
+    getRandomSize(i, 20, 10);
     getRandomFill(i);
   }
 }
