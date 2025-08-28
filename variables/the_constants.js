@@ -1,6 +1,23 @@
+
+const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+
+
+const MISSILE_LIFETIME = 96;
+
+
 let SCENE_Y_MAX = 768;
 let SCENE_WIDTH = 8192;
 
+const MOVINGx_NOT = 0;
+
+const MOVINGx_NW = 1;
+const MOVINGx_N = 2;
+const MOVINGx_NE = 3;
+const MOVINGx_E = 4;
+const MOVINGx_SE = 5;
+const MOVINGx_S = 6;
+const MOVINGx_SW = 7;
+const MOVINGx_W = 8;
 
 let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
 let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
@@ -32,16 +49,22 @@ let COLUMN_2A_START_Y = 400;
 let COLUMN_2B_START_X = 4096 + 256;
 let COLUMN_2B_START_Y = 400;
 
-let COLUMN_1A_START_X = 6827;
+let COLUMN_1A_START_X = 6827; // 6827;
 let COLUMN_1A_START_Y = 400;
 
 
 
 let NUMBER_TWIRLS = 400;
 
+let PLAYER_START_DIR = MOVINGx_NOT;
+let PLAYER_START_X = 400; // 3960 hit on right side
+let PLAYER_START_Y = 188;   //700;
 
-let PLAYER_START_X = 4500;
-let PLAYER_START_Y = 700;
+
+let MISSILE_START_X = 400;
+let MISSILE_START_Y = 168;
+
+
 
 
 let TILE_WIDTH = 256;
@@ -58,16 +81,7 @@ let BACK_VANISH_POINT = [511, 256];
 
 
 
-const MOVINGx_NOT = 0;
 
-const MOVINGx_NW = 1;
-const MOVINGx_N = 2;
-const MOVINGx_NE = 3;
-const MOVINGx_E = 4;
-const MOVINGx_SE = 5;
-const MOVINGx_S = 6;
-const MOVINGx_SW = 7;
-const MOVINGx_W = 8;
 
 
 let HEAD_ON_X_DIFF = TILE_WIDTH / 2;

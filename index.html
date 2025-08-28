@@ -20,10 +20,19 @@
   <link rel="stylesheet" href="input/directions.css" />
 </div>
 
-<div id="js-before">
-  <script type="text/javascript" src="data/colors.js"></script>
+<div id="js-constants">
   <script type="text/javascript" src="variables/the_constants.js"></script>
+  <script type="text/javascript" src="columns/columns_data.js"></script>
+  <script type="text/javascript" src="data/colors.js"></script>
+  <script type="text/javascript" src="data/data.js"></script>
+</div>
+
+
+<div id="js-before">
   <script type="text/javascript" src="variables/the_globals.js"></script>
+
+  <script type="text/javascript" src="devices/orientation.js"></script>
+
   <script type="text/javascript" src="things/objects.js"></script>
   <script type="text/javascript" src="svg-rect/svg-into-rect.js"></script>
   <script type="text/javascript" src="scene/overflow.js"></script>
@@ -32,13 +41,17 @@
   <script type="text/javascript" src="things/panel.js"></script>
   <script type="text/javascript" src="things/collisions.js"></script>
   <script type="text/javascript" src="sky/sky_code.js"></script>
-  <script type="text/javascript" src="data/the_keyboard.js"></script>
-  <script rel="text/javascript" src="field/field_test.js"></script>
+  <script type="text/javascript" src="input/the_keyboard.js"></script>
   <script type="text/javascript" src="scene/vanish_point.js"></script>
-  <script type="text/javascript" src="data/data.js"></script>
   <script type="text/javascript" src="field/field_code.js"></script>
   <script type="text/javascript" src="columns/columns_code.js"></script>
   <script type="text/javascript" src="scene/scene_3d.js"></script>
+
+  <script rel="text/javascript" src="field/field_test.js"></script>
+
+
+  <script type="text/javascript" src="external/hammer.js"></script>
+
 </div>
 
 <div id="the-svgs">
@@ -50,7 +63,15 @@
 
 
 <div id="the-scene">
-  <div id='start-mobile'>Touch to start,<br>press to stop,<br> back to quit</div>
+  <div id='start-mobile'>
+    <ul style="margin-top:16px; margin-left:32px">
+      <li>Touch to start</li>
+      <li>Tap white arrows to steer</li>
+      <li>Double tap to shoot</li>
+      <li>Press to stop moving</li>
+      <li>Swipe to quit</li>
+    </ul>
+  </div>
   <div id="touch-boxes"></div>
   <div id="touch-arrows"></div>
 
@@ -126,6 +147,10 @@
 <div id="desktop-dir"></div>
 
 
+<div id="js-inject-html">
+  <script type="text/javascript" src="columns/columns_html.js"></script>
+</div>
+
 
 
 <div id="js-after">
@@ -150,13 +175,14 @@
   <script type="text/javascript" src="input/arrows-svg.js"></script>
   <script type="text/javascript" src="input/fullscreen-touch.js"></script>
   <script type="text/javascript" src="input/arrows-html.js"></script>
+  <script type="text/javascript" src="input/hammer-touch.js"></script>
 
 
 
 
   <script type="text/javascript" src="columns/columns_svg.js"></script>
-  <script type="text/javascript" src="columns/columns_data.js"></script>
-  <script type="text/javascript" src="columns/columns_html.js"></script>
+
+
 
 
 

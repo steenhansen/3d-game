@@ -10,7 +10,7 @@
 // silver-grad  Silver rgb(160,160,160)
 
 //  COLUMN_3A
-column_3a = {
+let column_3a = {
   s_isa: "is-column",
   column_name: "a3-column",
   m_x: COLUMN_3A_START_X, m_y: COLUMN_3A_START_Y,
@@ -19,6 +19,8 @@ column_3a = {
   m_front_twirl: 100,
   c_outline: false
 };
+
+//console.log(" after columns DATA live");
 
 column_3b = {
   s_isa: "is-column",

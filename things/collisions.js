@@ -26,6 +26,7 @@ function hasCollided(a_thing, an_object, COLLISION_SIZES) {
 }
 
 function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
+
   //console.log("xxxxxxxxxxxxxxxxxxxxxxxxx", thing_pos, object_pos);
   diff_1 = thing_pos - object_pos;
   if (diff_1 < 0) {
@@ -52,7 +53,7 @@ function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
       return true;
     }
   }
-  //console.log("NO", diff_1, diff_2);
+  //  console.log("NO", diff_1, diff_2);
   return false;
 }
 

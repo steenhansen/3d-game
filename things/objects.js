@@ -4,36 +4,6 @@
 
 
 
-function missileAdvance(the_missile) {
-  if (the_missile.m_expired) {
-    return the_missile;
-  }
-
-
-  if (the_missile.m_lifetime > 0) {
-    the_missile.m_lifetime--;
-  } else {
-    the_missile.m_expired = true;
-
-  }
-
-  let { m_x_dir, m_y_dir } = the_missile;
-  if (m_x_dir < 0) {
-    the_missile.m_x = leftOnBoard(the_missile.m_x, m_x_dir * -1 * 3 * 2);
-  } else if (m_x_dir > 0) {
-    the_missile.m_x = rightOnBoard(the_missile.m_x, m_x_dir * 1 * 3 * 2);
-  }
-
-  if (m_y_dir < 0) {
-    the_missile.m_y = backwardOnBoard(the_missile.m_y, m_y_dir * -1 * 2);
-  } else if (m_y_dir > 0) {
-    the_missile.m_y = forwardOnBoard(the_missile.m_y, m_y_dir * 1 * 2);
-  }
-  return the_missile;
-}
-
-
-
 
 function killEnemy(the_enemy) {
   // let { s_isa, s_id,
@@ -112,6 +82,7 @@ function spritePosition(real_id, z_index, the_stats) {
   missile_div.style.zIndex = z_index;
 
   missile_x_y = document.getElementById(real_id + '-x-y');
+  //  console.log("center_x, ", center_x, real_id);
   missile_x_y.setAttribute("x", center_x);
   missile_x_y.setAttribute("y", center_y);
 

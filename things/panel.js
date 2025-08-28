@@ -147,19 +147,15 @@ function addSidewaysDepth(difference_x) {
   return shrink_depth;
 }
 
-function farAdjustment(difference_y, sideways_depth_add) {
-  if (difference_y < 256) {
-    shrink_perc = 0.75;
-  } else {
-    shrink_perc = sideways_depth_add / 100;
-  }
+function farAdjustment(sideways_depth_add) {
+  shrink_perc = sideways_depth_add / 100;
   return shrink_perc;
 }
 
 function panels3BackLeft(x_center_offset, difference_x, difference_y) {
   let sideways_depth_add = addSidewaysDepth(difference_x);
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = farAdjustment(difference_y, sideways_depth_add);
+  shrink_perc = farAdjustment(sideways_depth_add);
   back_left_bot = distancedBackColumnPoint(shrink_perc, left_front_bot);
   right_bottom_3 = [left_front_bot, right_front_bot, back_left_bot];
   return right_bottom_3;
@@ -179,7 +175,7 @@ function panelsTops(left_front_bot, right_front_bot, left_or_right_back_bot) {
 function panels3BackRight(x_center_offset, difference_x, difference_y) {
   let sideways_depth_add = addSidewaysDepth(difference_x);
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = farAdjustment(difference_y, sideways_depth_add);
+  shrink_perc = farAdjustment(sideways_depth_add);
   back_right_bot = distancedBackColumnPoint(shrink_perc, right_front_bot);
   left_bottom_3 = [left_front_bot, right_front_bot, back_right_bot];
   return left_bottom_3;

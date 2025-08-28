@@ -1,4 +1,20 @@
 
+Tap screen to start,
+double tap to stop,
+triple tap to quit.
+
+
+https://codepen.io/choskim/pen/vezzwZ?__cf_chl_tk=JPhq82kAltSrMJ1WmK..dF8BMHc3Gv40.yvUnq96h9o-1756168559-1.0.1.1-WJEiSbRtPWUaUYWsCK7hFk2dVyLs_Jtltpg.TcsHArc
+
+triple means quit
+double means stop
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+
+https://github.com/hammerjs/hammer.js?tab=readme-ov-file
+
+
+
  grey - green - grey    grey - BLACK - grey
 
     -------------------------------------

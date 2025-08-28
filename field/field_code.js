@@ -73,6 +73,7 @@ function initLeftRight() {
   for (let left_line = 0; left_line < 128; left_line++) {      // go right ok?
     moveLeft();
   }
+  //setColumns();
   requestAnimationFrame(animateScene);
 }
 

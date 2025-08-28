@@ -58,9 +58,13 @@
 --missile-display-215: block;
 
 --missile-display-300: block;
---missile-display-400: block;
---missile-display-500: block;
---missile-display-600: block;
+--missile-display-301: block;
+--missile-display-302: block;
+--missile-display-303: block;
+--missile-display-304: block;
+--missile-display-305: block;
+--missile-display-306: block;
+--missile-display-307: block;
 
 --missile-fill-100: rgb(255,0,0);
 --missile-fill-101: rgb(255,16,16);
@@ -132,7 +136,7 @@
 
 
 
---missile-fill-200: blue;
+--missile-fill-200: rgb(224,100,100);
 --missile-fill-201: blue;
 --missile-fill-202: blue;
 --missile-fill-203: blue;
@@ -149,10 +153,21 @@
 --missile-fill-214: blue;
 --missile-fill-215: blue;
 
---missile-fill-300: green;
+
+--missile-fill-200: rgb(224,175,175);
+--missile-fill-201: blue;
+--missile-fill-202: blue;
+--missile-fill-203: blue;
+--missile-fill-204: blue;
+--missile-fill-205: blue;
+--missile-fill-206: blue;
+--missile-fill-207: blue;
+--missile-fill-208: blue;
+
+/* --missile-fill-300: green;
 --missile-fill-400: yellow;
 --missile-fill-500: purple;
---missile-fill-600: cyan;
+--missile-fill-600: cyan; */
 
 
 

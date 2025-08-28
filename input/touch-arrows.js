@@ -1,13 +1,13 @@
 
 
-
+// <div id="the-input" class="input-box"></div>
 document.getElementById('touch-boxes').innerHTML = `
   <div id="input-nw" class="input-box"></div>
     <div id="input-n" class="input-box"></div>
     <div id="input-ne" class="input-box"></div>
 
     <div id="input-w" class="input-box"></div>
-    <div id="the-input" class="input-box"></div>
+   <div id="the-input" class="input-box"></div>
     <div id="input-e" class="input-box"></div>
 
     <div id="input-sw" class="input-box"></div>

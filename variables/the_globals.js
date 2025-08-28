@@ -1,6 +1,6 @@
 
 
-let g_move_direction = "west";
+let g_move_direction = PLAYER_START_DIR;  //MOVINGx_NE;
 
 let g_move_continue = 0;    // if like 10 then cannot change it
 
@@ -12,7 +12,7 @@ TEST_SCENE = false;
 TESTING_STOPPED = false;
 
 
-const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+
 
 
 

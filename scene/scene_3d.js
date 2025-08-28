@@ -190,28 +190,6 @@ function sceneMove() {
   }
 }
 
-function setColumns() {
-  //  if (g_move_direction != MOVING_NOT || DRAW_AT_LEAST_ONCE) {
-  columnSet(column_3a, 'column-3a');
-  columnSet(column_3b, 'column-3b');
-  columnSet(column_3c, 'column-3c');
-  // columnSet(column_3c, 'the_columns_2');
-  // columnSet(column_point_3, 'the_columns_3');
-
-
-  columnSet(column_2a, 'column-2a');
-  columnSet(column_2b, 'column-2b');
-
-  columnSet(column_1a, 'column-1a');
-  // columnSet(column_point_5, 'the_columns_5');
-  // columnSet(column_point_6, 'the_columns_6');
-  // columnSet(column_point_7, 'the_columns_7');
-
-
-  //  DRAW_AT_LEAST_ONCE = false;
-  //}
-}
-
 function checkCollisions() {
   collision_2 = hasCollided(column_3a, g_player, COLLISION_SIZES);
   if (collision_2 && g_move_continue == 0) {
@@ -232,14 +210,6 @@ function doBounce() {
 }
 
 
-var supportsOrientationChange = "onorientationchange" in window,
-  orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-window.addEventListener(orientationEvent, function () {
-  fixMobile();
-}, false);
-
-
 
 
 
@@ -247,6 +217,10 @@ function handleStartMobile(evt) {
   setTimeout(() => {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";
+
+
+    turnOnHammerGestures('the-scene');
+
     waiting_for_start = false;
     console.log("Delayed for 1 second.");
   }, "1000");
@@ -261,72 +235,19 @@ function handleStartMobile(evt) {
 
 let waiting_for_start = false;
 
-
-function fixMobile() {
-  if (waiting_for_start) {
-    return;
-  }
-  document_style = document.documentElement.style;
-  if (!isMobile()) {
-    document_style.setProperty("--scene-width", "1024px");
-    document_style.setProperty("--scene-height", "512px");
-    document_style.setProperty("--playing-margin-left", "0px");
-    document_style.setProperty("--playing-margin-top", "0px");
-    if (document.fullscreenElement != null) {
-      document.exitFullscreen();
-    }
-  } else {
-    if (!document.fullscreenElement) {
-      start_mobile = document.getElementById('start-mobile');
-      start_mobile.style.display = "block";
-      waiting_for_start = true;
-      start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
-      return;
-    }
-    start_mobile = document.getElementById('start-mobile');
-    start_mobile.style.display = "none";
-
-    screen_width = window.screen.width;
-    screen_height = window.screen.height;
-    screen_width_px = screen_width + "px";
-    screen_height_px = screen_height + "px";
-    document_style.setProperty("--scene-width", screen_width_px);
-    document_style.setProperty("--scene-height", screen_height_px);
-
-
-
-    margin_top = 512 - screen_height;
-    margin_top_px = "-" + margin_top + "px";
-    document_style.setProperty("--playing-margin-top", margin_top_px);
-
-    arrow_margin_vert = margin_top + "px";
-    document_style.setProperty("--arrow-margin-vert", arrow_margin_vert);
-
-
-
-
-
-    margin_left = (1024 - screen_width) / 2;
-    margin_left_px = "-" + margin_left + "px";
-    document_style.setProperty("--playing-margin-left", margin_left_px);
-
-    arrow_margin_hor = margin_left + "px";
-    document_style.setProperty("--arrow-margin-hor", arrow_margin_hor);
-
-    input_margin_hor = 2 * margin_left + "px";
-    document_style.setProperty("--input-padding-hor", input_margin_hor);
-
-
-
-    input_margin_ver = 2 * margin_top + "px";
-    document_style.setProperty("--input-padding-ver", input_margin_ver);
-
-
-  }
+function rightClick(the_event) {
+  the_event.preventDefault();
+  console.log('rightClick - shoot');
+  return false;
 }
 
 
-
+function wheelScroll(the_event) {
+  the_event.preventDefault();
+  g_move_direction = MOVINGx_NOT;
+  console.log('wheelScroll - stop');
+  return false;
+}
 
 
 
@@ -339,15 +260,18 @@ function animateScene(timestamp) {
 
   //if (!the_missile_1.m_expired) {
   missileSet('missile-1', the_missile_1, g_player);
-  missileSet('missile-2', the_missile_2, g_player);
   the_missile_1 = missileAdvance(the_missile_1);
-  the_missile_2 = missileAdvance(the_missile_2);
   //}
 
   enemySet('enemy-1', the_enemy_1, g_player);
   the_enemy_1 = enemyStep(the_enemy_1);
   enemySet('enemy-2', the_enemy_2, g_player);
   the_enemy_2 = enemyStep(the_enemy_2);
+
+
+
+
+
   //objectMomentum(the_enemy);
   if (!the_enemy_1.m_dead) {
     the_enemy_1 = killEnemy(the_enemy_1);
@@ -356,7 +280,9 @@ function animateScene(timestamp) {
     affixLeftRight();
     //  requestAnimationFrame(animateScene);
   }
-  fixMobile();
+  fixDevice();
 }
+
+orientPhone();
 
 limitLoop(animateScene, 60);  // for mobile

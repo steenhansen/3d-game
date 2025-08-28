@@ -66,8 +66,12 @@ function columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy) 
 }
 
 function columnSet(a_column, html_id) {
+  //console.log("id", html_id);
   svg_column = columnDraw(a_column, g_player);
   targetDiv = document.getElementById(html_id);
+  if (svg_column == null) {
+    console.log("crash", html_id);
+  }
   targetDiv.innerHTML = svg_column;
 }
 
