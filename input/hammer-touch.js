@@ -8,7 +8,7 @@ const TOUCH_TRIPLE_TAP = 'e-triple-tap';
 function hammerSingleTap(e) {
   direction_id = e.srcEvent.target.id;
   //  console.log('e-single-tap1', e, e.srcEvent, e.srcEvent.target);
-  console.log('e-single-tap2', e.srcEvent.target.id);
+  //console.log('e-single-tap2', e.srcEvent.target.id);
   if (g_move_continue == 0) {
     if (direction_id == "input-nw") {
       g_move_direction = MOVINGx_NW;
@@ -30,9 +30,11 @@ function hammerSingleTap(e) {
       direction_name = 's';
     } else if (direction_id == 'input-sw') {
       g_move_direction = MOVINGx_SW;
+      //flashArrowBox('sw');
       direction_name = 'sw';
     } else if (direction_id == 'input-w') {
       g_move_direction = MOVINGx_W;
+      //flashArrowBox('w');
       direction_name = 'w';
     } else {
       direction_name = 'unknown-tap-dir';
@@ -45,21 +47,22 @@ function hammerSingleTap(e) {
 }
 
 function hammerDoubleTap(e) {
-  console.log('e-double-tap SHOOT');
+  the_missile_1 = launchMissile(the_missile_1);
+  //console.log('e-double-tap SHOOT');
 }
 
 function hammerTripleTap(e) {
-  console.log('e-Triple-tap something');
+  //console.log('e-Triple-tap something');
 }
 
 
 function hammerPress(e) {
-  console.log('pressHammer');
+  //console.log('pressHammer');
   stopMoving();
 }
 
 function hammerSwipe(e) {
-  console.log('swipeHammer');
+  //console.log('swipeHammer');
   // var swipe_direction = e.offsetDirection;
   document.exitFullscreen();
 }
