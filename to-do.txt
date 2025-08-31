@@ -1,3 +1,95 @@
+to get field error just start and go back behind the columns to the right,
+
+then quickly go to the right.
+
+
+
+
+
+
+
+
+
+sky-aperature
+    height: 256 -> 356
+                   456 
+
+
+the-sky
+    margin-top: -1000 -> -1100
+                         -1200
+    height:2400 ->2800
+                 ->3200                         
+
+column-html
+    top:100px
+        200
+
+enemy-area
+    top:100px
+        200
+
+the-sun
+    top:100px
+        200
+
+missile-area
+    top:100px
+        200
+
+
+
+
+
+
+https://www.canva.com/colors/color-wheel/
+
+ 1 #a0d91f #1FD9B5 #581FD9 #D91F43
+ 2 #b5d226 #26D299 #4326D2 #D2265F
+ 3 #cbca2b #2BCB7A #2B2CCB #CB2B7C
+ 4 #daba2f #2FDA64 #2F4FDA #DA2FA4
+ 5 #e3a827 #27E34A #2762E3 #E327C0 
+ 6 #e8901f #1FE82C #1F77E8 #E81FDB 
+ 7 #e77629 #3BE729 #299AE7 #D529E7
+ 8 #e95b2c #5BE92C #2CBAE9 #BA2CE9
+ 9 #ed3f27 #72ED27 #27D5ED #A227ED
+10 #f61e18 #81F618 #18F0F6 #8D18F6
+
+
+https://www.canva.com/colors/color-wheel/
+
+
+                    *     *     *
+                     \    |    /
+                      \  \|/  /
+      [][][]      *--->  [ ] <--- *          [][]
+
+                    and they explode out
+
+
+https://www.rapidtables.com/web/color/color-wheel.html
+
+https://pinetools.com/square-color-scheme
+       red Pink, Purple, Yellow, and Green Color  
+       green
+       blue
+       white
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Tap screen to start,
 double tap to stop,

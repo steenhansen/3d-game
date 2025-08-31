@@ -140,26 +140,27 @@ function getRandoms() {
 }
 
 
-function missileSet(real_id, the_sprite, g_player) {
-  collision_1a = hasCollided(column_1a, the_sprite, COLLISION_SIZES);
-  collision_2a = hasCollided(column_2a, the_sprite, COLLISION_SIZES);
-  collision_2b = hasCollided(column_2b, the_sprite, COLLISION_SIZES);
-  collision_3a = hasCollided(column_3a, the_sprite, COLLISION_SIZES);
-  collision_3b = hasCollided(column_3b, the_sprite, COLLISION_SIZES);
-  collision_3c = hasCollided(column_3c, the_sprite, COLLISION_SIZES);
+function missileSet(real_id, the_missile, g_player) {
+  collision_1a = hasCollided(column_1a, the_missile, COLLISION_SIZES);
+  collision_2a = hasCollided(column_2a, the_missile, COLLISION_SIZES);
+  collision_2b = hasCollided(column_2b, the_missile, COLLISION_SIZES);
+  collision_3a = hasCollided(column_3a, the_missile, COLLISION_SIZES);
+  collision_3b = hasCollided(column_3b, the_missile, COLLISION_SIZES);
+  collision_3c = hasCollided(column_3c, the_missile, COLLISION_SIZES);
+
+  //collision_3c = hasCollided(column_3c, the_missile, COLLISION_SIZES);
 
   has_collided = collision_1a || collision_2a || collision_2b || collision_3a || collision_3b || collision_3c;
   if (has_collided) {
-    the_sprite.m_expired = true;
+    the_missile.m_expired = true;
   }
 
-  if (the_sprite.m_expired) {
+  if (the_missile.m_expired) {
     setFillNone();
   } else {
-
     getRandoms();
   }
-  spriteDraw(real_id, the_sprite, g_player);
+  spriteDraw(real_id, the_missile, g_player);
 }
 
 
@@ -175,7 +176,7 @@ let the_missile_1 = {
   m_x: MISSILE_START_X, m_y: MISSILE_START_Y,
 
   m_lifetime: MISSILE_LIFETIME,
-  m_expired: false,
+  m_expired: true,
   m_x_dir: 0, m_y_dir: -1,   // ALWAYS THIS
 };
 

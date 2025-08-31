@@ -7,7 +7,7 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
 <div id="the-css">
-  <link rel="stylesheet" href="variables/variables.css" />
+  <link rel="stylesheet" href="values/variables.css" />
   <link rel="stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="columns/columns.css" />
@@ -21,7 +21,8 @@
 </div>
 
 <div id="js-constants">
-  <script type="text/javascript" src="variables/the_constants.js"></script>
+  <script type="text/javascript" src="values/states.js"></script>
+  <script type="text/javascript" src="values/the_constants.js"></script>
   <script type="text/javascript" src="columns/columns_data.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="data/data.js"></script>
@@ -29,7 +30,7 @@
 
 
 <div id="js-before">
-  <script type="text/javascript" src="variables/the_globals.js"></script>
+  <script type="text/javascript" src="values/the_globals.js"></script>
 
   <script type="text/javascript" src="devices/orientation.js"></script>
 
@@ -56,7 +57,7 @@
 
 <div id="the-svgs">
   <div id='column-svg'> </div>
-  <div id='svg-arrows' style="display:none"> </div>
+  <div id='svg-arrows'> </div>
 </div>
 
 
@@ -64,7 +65,7 @@
 
 <div id="the-scene">
   <div id='start-mobile'>
-    <ul style="margin-top:16px; margin-left:32px">
+    <ul id='mobile-list'>
       <li>Touch to start</li>
       <li>Tap white arrows to steer</li>
       <li>Double tap to shoot</li>
@@ -93,11 +94,9 @@
 
 
     <div id="the-sun"></div>
-    <div class="sky-aperture">
+    <div id="sky-aperature">
 
-      <div id="the-sky">
-
-      </div>
+      <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
     </div>
 
@@ -133,7 +132,7 @@
 
   </div>
 
-  <div id="the-landing" style="height:512px; margin-top:0px">
+  <div id="the-landing">
     <div id="land_nw"></div>
     <div id="land_ne"></div>
     <div id="land_sw"></div>
@@ -193,6 +192,24 @@
 
 
 <script>
-  doLanding(false);
+  startLand(false);
+
+  // start_mobile = document.getElementById('the-landing');
+  // start_mobile.style.display = "none";
+
+
+  if (window.AudioContext) {
+    audio_context = new window.AudioContext();
+  } else {
+    audio_context = new window.webkitAudioContext();
+  }
+  /*
+  let oscillator = audio_context.createOscillator();
+    oscillator.connect(audio_context.destination);
+    oscillator.type = 'square';
+    oscillator.start();
+    oscillator.stop(audio_context.currentTime + 0.05);
+*/
+
   initLeftRight();
 </script>

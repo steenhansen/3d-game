@@ -8,21 +8,22 @@
 function killEnemy(the_enemy) {
   // let { s_isa, s_id,
   //   m_x, m_y,
-  //   m_index,
+  //   m_moves,
   //   s_moves_x, s_moves_y,
   //   m_dead, m_colors
   // } = the_enemy;
 
-  let { s_id, m_x, m_y } = the_enemy;
+  let { s_id, m_x, m_y, m_colors } = the_enemy;
 
   let killed_enemy = {
     s_isa: "is-enemy",
     s_id: s_id,
     m_x: m_x, m_y: m_y,
-    m_index: -1,
+    m_moves: -1,
     s_moves_x: [], s_moves_y: [],
     m_dead: true,
-    m_colors: ['black', 'black', 'black', 'black'],
+    m_colors: m_colors,
+    // m_colors: ['green', 'red', 'blue', 'orange'],
   };
   html_killed = makeEnemy(killed_enemy, true);
 
@@ -36,28 +37,36 @@ function killEnemy(the_enemy) {
 
 
 function enemyStep(the_enemy) {
+  //console.log("enemyStep", the_enemy);
   if (the_enemy.m_dead) {
     return the_enemy;
   }
-  if (the_enemy.m_index < the_enemy.s_moves_x.length) {
-    the_enemy.m_index++;
-  } else {
-    the_enemy.m_index = 0; // reset to start
-  }
-  x_dir = the_enemy.s_moves_x[the_enemy.m_index];
-  y_dir = the_enemy.s_moves_y[the_enemy.m_index];
+  ////////////////
+  // if (the_enemy.m_begins >= 0) {
+  //   the_enemy = birthPhase(the_enemy);
+  // } else {
+  huntPhase(the_enemy);
+  //////////////////
+  // if (the_enemy.m_moves < the_enemy.s_moves_x.length) {
+  //   the_enemy.m_moves++;
+  // } else {
+  //   the_enemy.m_moves = 0; // reset to start
+  // }
+  // x_dir = the_enemy.s_moves_x[the_enemy.m_moves];
+  // y_dir = the_enemy.s_moves_y[the_enemy.m_moves];
 
-  if (x_dir < 0) {
-    the_enemy.m_x = leftOnBoard(the_enemy.m_x, x_dir * -1 * 3);
-  } else if (x_dir > 0) {
-    the_enemy.m_x = rightOnBoard(the_enemy.m_x, x_dir * 1 * 3);
-  }
+  // if (x_dir < 0) {
+  //   the_enemy.m_x = leftOnBoard(the_enemy.m_x, x_dir * -1 * 3);
+  // } else if (x_dir > 0) {
+  //   the_enemy = rightOnBoard(the_enemy, x_dir * 1 * 3);
+  // }
 
-  if (y_dir < 0) {
-    the_enemy.m_y = backwardOnBoard(the_enemy.m_y, y_dir * -1);
-  } else if (y_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(the_enemy.m_y, y_dir * 1);
-  }
+  // if (y_dir < 0) {
+  //   the_enemy.m_y = backwardOnBoard(the_enemy.m_y, y_dir * -1);
+  // } else if (y_dir > 0) {
+  //   the_enemy.m_y = forwardOnBoard(the_enemy.m_y, y_dir * 1);
+  // }
+  // }
   return the_enemy;
 }
 

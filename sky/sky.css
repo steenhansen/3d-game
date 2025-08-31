@@ -13,6 +13,7 @@
 
 
 #the-sun {
+  top:0px;
   background-image: url('../images/the-sun.png');
   width: 1024px;
   height: 512px;
@@ -41,7 +42,7 @@
   display:nXone;
   position: relative;
   margin-top:-1000px;
-  margin-left:-575px;
+  margin-left:-555px;
   width: 2048px;
   height:2400px;
   background-size: 256px 256px;
@@ -52,7 +53,7 @@
 
 
 
-.sky-aperture {
+#sky-aperature {
   width: 1024px;
   height: 256px;
   z-index: 1;

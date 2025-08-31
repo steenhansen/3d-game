@@ -1,11 +1,28 @@
 
+function takeOff(lift_amount) {
+  const sky_aperature = document.getElementById('sky-aperature');
+  sky_height = 256 + lift_amount;
+  sky_aperature.style.height = `${sky_height}px`;
 
-function doLanding(show_intro) {
-  if (show_intro) {
-    startLand(255, 25);
-  } else {
-    skipLand();
-  }
+  const the_sky = document.getElementById('the-sky');
+  margin_top = -1000 - lift_amount;
+  the_sky.marginTop = `${margin_top}px`;
+  height_sky = 2400 + 4 * lift_amount;
+  the_sky.style.height = `${height_sky}px`;
+
+  const column_html = document.getElementById('column-html');
+  column_html.style.top = `${lift_amount}px`;
+
+
+  const enemy_area = document.getElementById('enemy-area');
+  enemy_area.style.top = `${lift_amount}px`;
+
+  const the_sun = document.getElementById('the-sun');
+  the_sun.style.top = `${lift_amount}px`;
+
+  const missile_area = document.getElementById('missile-area');
+  missile_area.style.top = `${lift_amount}px`;
+  console.log('in take off !!!!!!!!!!!!!! ', lift_amount);
 }
 
 
@@ -15,93 +32,123 @@ function skipLand() {
   readyInputArrows();
 }
 
-function setLandingScroll(the_pixels) {
-  //  const playing_game = document.getElementById(`playing-game`);
-  //playing_game.style = `margin-top:${the_pixels}px`;
+let new_count = 0;
+num_lines = 255;
+
+function expandCheckerboard(the_count) {
+  let normal_line = `background-position: -${the_count + 1}px -${the_count}px`;
+  let flip_line = `background-position: 0px                 -${the_count}px`;
+  let flip_count = 0;
+  let is_flip = false;
+  for (let cur_line = 0; cur_line < num_lines; cur_line++) {
+    const reverse_vertical = num_lines - cur_line - 1;
+    const ne_element = document.getElementById(`ne${reverse_vertical}`);
+    const se_element = document.getElementById(`se${cur_line}`);
+    const sw_element = document.getElementById(`sw${cur_line}`);
+    const nw_element = document.getElementById(`nw${reverse_vertical}`);
+    if (is_flip) {
+      ne_element.style = flip_line;
+      se_element.style = normal_line;
+      sw_element.style = flip_line;
+      nw_element.style = normal_line;
+    } else {
+      ne_element.style = normal_line;
+      se_element.style = flip_line;
+      sw_element.style = normal_line;
+      nw_element.style = flip_line;
+    }
+    flip_count++;
+    if (flip_count == the_count) {
+      flip_count = 0;
+      is_flip = !is_flip;
+    }
+  }
 }
 
-function startLand(num_lines, land_speed) {
-  let first_time;
 
-  requestAnimationFrame(startLanding);
+function continueLanding(timestamp) {
+  new_count++;
+  //    console.log("sadfasd new_count < num_lines", new_count, num_lines);
+  if (new_count <= num_lines) {
+    expandCheckerboard(new_count);
+    requestAnimationFrame(continueLanding);
+  } else {
+    requestAnimationFrame(scrollLandUp);
+  }
+}
 
-  function startLanding(timestamp) {
-    first_time = timestamp;
-    continueLanding(timestamp);
+
+
+function setLandingScroll(the_pixels) {
+  //const playing_game = document.getElementById(`playing-game`);
+  const playing_game = document.getElementById(`the-landing`);
+  playing_game.style = `top:${the_pixels}px`;
+}
+
+// function doLanding(show_intro) {
+//   if (show_intro) {
+//     startLand(true);
+//   } else {
+//     skipLand();
+//   }
+// }
+function scrollLandUp(timestamp) {
+  //console.log("scrroll up");
+  m_top_playing_game -= 2;;
+
+  const playing_game = document.getElementById(`playing-game`);
+  playing_game.style = `bottom:${m_top_playing_game}px`;
+
+  m_top_the_land += 2;
+  //setLandingScroll(m_top_the_land);
+  const the_landing = document.getElementById(`the-landing`);
+  the_landing.style = `top:${m_top_the_land}px`;
+
+  flashScrollingArrow('arrow-nw');
+  flashScrollingArrow('arrow-n');
+  flashScrollingArrow('arrow-ne');
+  flashScrollingArrow('arrow-e');
+  flashScrollingArrow('arrow-se');
+  flashScrollingArrow('arrow-s');
+  flashScrollingArrow('arrow-sw');
+  flashScrollingArrow('arrow-w');
+  //console.log("m-top", m_top_the_land);
+  if (m_top_the_land < 512) {  ////512
+    requestAnimationFrame(scrollLandUp);
+  } else {
+    INTRO_FINISHED = true;
+    turnOnKeys();
+
+    console.log("land_code INTRO FINISHED YES");
+    readyInputArrows();
+  }
+}
+
+function startLand(skip_intro) {
+  if (skip_intro) {
+
+    //    console.log("sadfasd new_count < num_lines", new_count, num_lines);
+    // while (new_count <= num_lines) {
+    //   expandCheckerboard(new_count);
+    //   new_count++;
+    // }
+
+
+  } else {
+
+    let first_time;
+
+    requestAnimationFrame(startLanding);
+
+    function startLanding(timestamp) {
+      first_time = timestamp;
+      continueLanding(timestamp);
+    }
   }
 
-  function continueLanding(timestamp) {
-    const frame_count = (timestamp - first_time) / land_speed; // duration 10 fast, 100 slow
-    let the_count = Math.floor(frame_count);
-
-
-    let normal_line = `background-position: -${the_count + 1}px -${the_count}px`;
-    let flip_line = `background-position: 0px                 -${the_count}px`;
-
-    let flip_count = 0;
-    let is_flip = false;
-
-
-    for (let cur_line = 0; cur_line < num_lines; cur_line++) {
-      const reverse_vertical = num_lines - cur_line - 1;
-      const ne_element = document.getElementById(`ne${reverse_vertical}`);
-      const se_element = document.getElementById(`se${cur_line}`);
-      const sw_element = document.getElementById(`sw${cur_line}`);
-      const nw_element = document.getElementById(`nw${reverse_vertical}`);
-
-
-
-      if (is_flip) {
-        ne_element.style = flip_line;
-        se_element.style = normal_line;
-        sw_element.style = flip_line;
-        nw_element.style = normal_line;
-      } else {
-        ne_element.style = normal_line;
-        se_element.style = flip_line;
-        sw_element.style = normal_line;
-        nw_element.style = flip_line;
-      }
-      flip_count++;
-      if (flip_count == the_count) {
-        flip_count = 0;
-        is_flip = !is_flip;
-      }
-
-    }
-    if (frame_count < num_lines) {
-      requestAnimationFrame(continueLanding);
-    } else {
-      requestAnimationFrame(scrollLandUp);
-    }
-
-  }
-
-  m_top_playing_game = -512;
+  m_top_playing_game = 512;
   m_top_the_land = 0;
 
-
-  function scrollLandUp(timestamp) {
-    m_top_playing_game += 2;;
-    m_top_the_land += 2;
-    setLandingScroll(m_top_playing_game);
-
-
-    flashScrollingArrow('arrow-nw');
-    flashScrollingArrow('arrow-n');
-    flashScrollingArrow('arrow-ne');
-    flashScrollingArrow('arrow-e');
-    flashScrollingArrow('arrow-se');
-    flashScrollingArrow('arrow-s');
-    flashScrollingArrow('arrow-sw');
-    flashScrollingArrow('arrow-w');
-
-    if (m_top_playing_game < 0) {
-      requestAnimationFrame(scrollLandUp);
-    } else {
-      readyInputArrows();
-    }
-  }
 }
 
 function flashScrollingArrow(arrow_id) {

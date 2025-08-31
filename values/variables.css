@@ -12,10 +12,11 @@
   --playing-width: 1024px;  
   --playing-height: 512px;
   --playing-margin-left: -178px;
-  --playing-margin-top: 0px;
+  --playing-margin-top: -512px;
 }
 
 #the-scene {
+  margin: 0 auto;
   width:var(--scene-width);
   height:var(--scene-height);
   position: relative;
@@ -23,13 +24,16 @@
   overflow:hidden;
 }
 
-
+#desktop-dir {
+  margin: 0 auto;
+}
 #playing-game {
+   /* display:none;  */
   width:var(--playing-width);
   height:var(--playing-height);
-  margin-left:var(--playing-margin-left);
-  margin-top:var(--playing-margin-top);
-
+  margin-left:var(--playing-margin-left);    /* remove */
+  /* margin-top:var(--playing-margin-top); */
+bottom:512px; 
   position: absolute;
   background-color: rgb(23,23,23,0.92);
   overflow:hidden;

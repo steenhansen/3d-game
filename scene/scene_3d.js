@@ -72,6 +72,7 @@ let overflow_accums = [];
 //////////////////////
 let number_lines = start_stop_flip.length;
 let closest_width_index = number_lines - 1;
+let = number_lines - 1;
 
 
 
@@ -123,7 +124,8 @@ let viewport_x;
 
 disappear_left = area_width_half - 4108;  // so 256px wide leaves visual at -243px
 
-turnOnKeys();
+console.log("scene3d INTRO FINISHED", INTRO_FINISHED);
+//turnOnKeys();
 
 
 
@@ -136,6 +138,10 @@ turnOnKeys();
 
 
 function sceneRight(travel_speed) {
+  //takeOff(g_lift_amount);
+
+
+
   playerRight(travel_speed);
   fieldRight(travel_speed);
   moveSky(travel_speed, 'right');
@@ -171,11 +177,13 @@ function sceneMove() {
   } else if (g_move_direction == MOVINGx_N) {
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_NE) {
+    g_taking_off = true;
     sceneRight(travel_speed);
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_E) {
     sceneRight(travel_speed);
   } else if (g_move_direction == MOVINGx_SE) {
+
     sceneRight(travel_speed);
     sceneForward(travel_speed);
   } else if (g_move_direction == MOVINGx_S) {
@@ -251,7 +259,7 @@ function wheelScroll(the_event) {
 
 
 
-
+// gameLoop
 function animateScene(timestamp) {
   doBounce();
   sceneMove();
@@ -263,19 +271,32 @@ function animateScene(timestamp) {
   the_missile_1 = missileAdvance(the_missile_1);
   //}
 
-  enemySet('enemy-1', the_enemy_1, g_player);
-  the_enemy_1 = enemyStep(the_enemy_1);
-  enemySet('enemy-2', the_enemy_2, g_player);
-  the_enemy_2 = enemyStep(the_enemy_2);
+  enemy_1 = enemySet('enemy-1', enemy_1, g_player);
+  enemy_1 = enemyStep(enemy_1);
+
+  enemy_2 = enemySet('enemy-2', enemy_2, g_player);
+  enemy_2 = enemyStep(enemy_2);
 
 
+  // if taking_off then no bounce hitting works
+  if (g_taking_off) {
+    g_lift_amount++;
+    if (g_lift_amount < 490) {  // 450 ok  475 ok
+      takeOff(g_lift_amount);
+    } else {
+      keep_running = false;
+
+    }
+  }
 
 
 
   //objectMomentum(the_enemy);
-  if (!the_enemy_1.m_dead) {
-    the_enemy_1 = killEnemy(the_enemy_1);
-  }
+  // if (!enemy_1.m_dead) {
+  //   enemy_1 = killEnemy(enemy_1);
+  // }
+
+
   if (keep_running) {
     affixLeftRight();
     //  requestAnimationFrame(animateScene);

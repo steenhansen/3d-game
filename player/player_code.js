@@ -18,16 +18,31 @@ function missileLR(a_missile, g_player) {
 
 
 
-function rightOnBoard(x_pos, right_steps) {
-  x_pos += right_steps;
-  if (x_pos > SCENE_X_MAX) {
-    x_pos -= SCENE_X_MAX;
+function rightOnBoard(moving_object, right_steps) {
+  m_x = moving_object.m_x;
+  m_x += right_steps;
+
+  // console.log("m_x", m_x);
+  if (m_x > SCENE_X_MAX) {
+
+    m_x -= SCENE_X_MAX;
+
+
+
+    // if (moving_object.s_isa == "is-player") {
+    //   let oscillator = audio_context.createOscillator();
+    //   oscillator.connect(audio_context.destination);
+    //   oscillator.type = 'square';
+    //   oscillator.start();
+    //   oscillator.stop(audio_context.currentTime + 0.05);
+    // }
   }
-  return x_pos;
+  moving_object.m_x = m_x;
+  return moving_object;
 }
 
 function playerRight(travel_speed) {
-  g_player.m_x = rightOnBoard(g_player.m_x, travel_speed * 3);
+  g_player = rightOnBoard(g_player, travel_speed * 3);
 }
 
 
@@ -38,6 +53,9 @@ function leftOnBoard(x_pos, left_steps) {
   x_pos -= left_steps;
   if (x_pos < SCENE_X_MIN) {
     x_pos += SCENE_X_MAX;
+
+
+
   }
   return x_pos;
 }

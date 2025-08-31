@@ -25,9 +25,17 @@ function makeBall(front_or_all, ball_color, is_dead) {
     ball_id = "cyan-all-path";
     ball_points = "M20 128 A 25 91 270 0 0 236 128 M236 128 A 25 91 270 0 0 20 128";
   }
+  if (is_dead) {
+    fill_opacity = "0.4";
+  } else {
+    fill_opacity = "1";
+  }
   make_ball = `
           <path id="${ball_id}" d="${ball_points} " stroke="${ball_color}" stroke-width="0.0" fill-opacity="0" />
-          <circle cx=0 cy = 0 r = "20" fill = "${ball_color}" >
+          <circle cx=0 cy = 0 r = "20"
+                    fill-opacity="${fill_opacity}"
+            stroke-width="0" stroke="#000"
+          fill = "${ball_color}" >
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" begin="${ball_start}">
                   <mpath href="#${ball_id}" />
               </animateMotion>
@@ -47,9 +55,17 @@ function makeSquare(front_or_all, square_color, is_dead) {
     square_id = "blue-all-path";
     square_points = "M30 30 A 25 91 315 0 1 226 226 M226 226 A 25 91 315 0 1 30 30 ";
   }
+  if (is_dead) {
+    fill_opacity = "0.4";
+  } else {
+    fill_opacity = "1";
+  }
   make_square = `
           <path id="${square_id}" d="${square_points} " stroke="${square_color}" stroke-width="0.0" fill-opacity="0" />
-         <rect width="30" height="30" x=-15 y=-15  fill="${square_color}" >
+         <rect width="30" height="30" x=-15 y=-15
+          fill-opacity="${fill_opacity}"
+         stroke-width="0" stroke="#000"
+         fill="${square_color}" >
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" begin="${square_start}">
                   <mpath href="#${square_id}" />
               </animateMotion>
@@ -68,10 +84,18 @@ function makeTriangle(front_or_all, triangle_color, is_dead) {
     triangle_id = "green-all-path";
     triangle_points = "M30 226 A 25 91 45 0 1 226 30 M226 30 A 25 91 45 0 1 30 226 ";
   }
+  if (is_dead) {
+    fill_opacity = "0.4";
+  } else {
+    fill_opacity = "1";
+  }
 
   make_triangle = `
           <path id="${triangle_id}" d="${triangle_points} " stroke="${triangle_color}" stroke-width="0.0" fill-opacity="0" />
-          <polygon transform="translate( -25 -30) scale( 0.45 )"    points="0,100         100,100            50,13.397 " fill="${triangle_color}">
+          <polygon transform="translate( -25 -30) scale( 0.45 )"    points="0,100         100,100            50,13.397 "
+           fill-opacity="${fill_opacity}"
+          stroke-width="0" stroke="#000"
+          fill="${triangle_color}">
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" begin="${triangle_start}">
                   <mpath href="#${triangle_id}" />
               </animateMotion>
@@ -85,9 +109,11 @@ function makeTriangle(front_or_all, triangle_color, is_dead) {
 function rotatingStar(star_color, is_dead) {
   ani_duration = aniDuration(is_dead);
   if (is_dead) {
+    fill_opacity = "0.4";
     rotate_from = 0;
     rotate_to = 360;
   } else {
+    fill_opacity = "1";
     rotate_from = 360;
     rotate_to = 0;
   }
@@ -109,7 +135,10 @@ function rotatingStar(star_color, is_dead) {
       repeatCount="indefinite" />
 
       
-              <path fill="${star_color}" stroke="#000" stroke-width="0" transform="translate( 24 24) scale( 0.2 )"
+              <path fill="${star_color}" 
+              fill-opacity="${fill_opacity}"
+              stroke="#000" stroke-width="0"
+               transform="translate( 24 24) scale( 0.2 )"
                   d="M512 85.9l110.8 318.7 337.2 6.8-268.8 203.8 97.7 322.9L512 745.4 235.1 938.1l97.7-322.9L64 411.4l337.2-6.8z"/>
           </g>
 
@@ -122,19 +151,11 @@ function rotatingStar(star_color, is_dead) {
 
 function makeEnemy(the_enemy, is_dead) {
   the_enemy.m_dead = is_dead;
-
   enemy_id = the_enemy.s_id;
-  if (is_dead) {
-    star_color = "black";
-    ball_color = "#505050";
-    square_color = "#505050";
-    triangle_color = "#505050";
-  } else {
-    star_color = the_enemy.m_colors[0];
-    ball_color = the_enemy.m_colors[1];
-    square_color = the_enemy.m_colors[2];
-    triangle_color = the_enemy.m_colors[3];
-  }
+  star_color = the_enemy.m_colors[0];
+  ball_color = the_enemy.m_colors[1];
+  square_color = the_enemy.m_colors[2];
+  triangle_color = the_enemy.m_colors[3];
 
   rotating_star = rotatingStar(star_color, is_dead);
   ball_all = makeBall('all', ball_color, is_dead);
@@ -156,7 +177,7 @@ function makeEnemy(the_enemy, is_dead) {
                         ${rotating_star}
                     ${ball_front}
                     ${square_front}
-                    ${triangle_front}
+                    ${triangle_front} 
                 </svg>
             </svg>
         </svg>

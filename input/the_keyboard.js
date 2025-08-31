@@ -3,8 +3,10 @@ const CHECK_LEFT_KEYS = ['A', 'a', "ArrowLeft", '4'];
 const CHECK_STOP_KEYS = ['S', 's', 'Clear', '5'];
 
 function turnOnKeys() {
-
+  console.log("turnOnKeys INTRO FINISHED", INTRO_FINISHED);
   function readKeys(event) {
+
+
     const the_key = event.key;
     if (g_move_continue == 0) {
       if (['Q', 'q', "Home", '7'].includes(the_key)) {

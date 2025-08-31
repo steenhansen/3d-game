@@ -1,4 +1,6 @@
-
+#svg-arrows {
+  display:none;
+}
 
 #start-mobile {
 position:absolute;
@@ -12,15 +14,23 @@ position:absolute;
       background-color:rgb(128,128,128,0.8);
 }
 
+#mobile-list {
+    margin-top:16px;
+    margin-left:32px;  
+}
+
+
 
 #enemy-area{
-  /* position: relative; */
+  position: absolute;
+  top:0px;
   height:0px; 
   background-color: rgba(218, 20, 225, 0)
 }
 
 #missile-area{
-  /* position: relative; */
+  position: absolute;
+  top:0px;
   height:0px; 
   /* background-color: rgba(218, 20, 225, 0) */
 }
@@ -43,6 +53,8 @@ position:absolute;
 }
 
 #column-html{
+   top:0px;
+  position: absolute;
   height:0px; 
 }
 

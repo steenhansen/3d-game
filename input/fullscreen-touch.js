@@ -15,7 +15,7 @@ if (!is_touch) {
   d1.innerHTML = `
  
         
-  <div style="width:1024px">
+  <div>
         <div class="box" style="margin: 0 auto;">
             <div>&#x2196; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q or 7</div>
             <div style="text-align:center">&#x2191; <br> W or 8</div>

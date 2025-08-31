@@ -22,6 +22,15 @@ function hasCollided(a_thing, an_object, COLLISION_SIZES) {
   if (x_collided && y_collided) {
     return true;
   }
+  if (a_thing.s_isa == 'is-missile' && an_object.s_isa == 'is-enemy' && an_object.s_id == 'enemy-1') {
+
+
+    // console.log("yyyy", a_thing, "******", an_object);
+
+  } else {
+    //console.log("nnnn", a_thing, "&&&&&", an_object);
+  }
+
   return false;
 }
 

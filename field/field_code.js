@@ -60,6 +60,10 @@ function fieldLeft(travel_speed) {
 }
 
 
+/*
+  aug-2 copy(0)
+*/
+
 function initLeftRight() {
   let [index, i_start, i_stop, _flip] = start_stop_flip[closest_width_index];
   right_stop = i_stop + 1;
@@ -70,7 +74,8 @@ function initLeftRight() {
   moveForward();
   moveForward();
   //  for (let left_line = 0; left_line < 256; left_line++) {  // go right fail
-  for (let left_line = 0; left_line < 128; left_line++) {      // go right ok?
+  //  for (let left_line = 0; left_line < 128; left_line++) {      // go right ok?
+  for (let left_line = 0; left_line < 256; left_line++) {      // go right ok?
     moveLeft();
   }
   //setColumns();
@@ -96,6 +101,7 @@ function overflowLeft(cur_line, new_sum) {
   return new_sum;
 }
 function resetLeft() {
+  // console.log("DD");
   for (let cur_line = 0; cur_line < num_lines; cur_line++) {
     let [_index, _start, reset_left, _flip] = start_stop_flip[cur_line];
     x_shift_list[cur_line] = reset_left;
@@ -104,16 +110,57 @@ function resetLeft() {
 }
 
 function moveLeft() {
+  // if (x_shift_list[num_lines - 1] == -1) {
+  //   console.log("ttttttttttttttttttttttt", x_shift_list[num_lines - 1]);
+  //   let oscillator = audio_context.createOscillator();
+  //   oscillator.connect(audio_context.destination);
+  //   oscillator.type = 'square';
+  //   oscillator.frequency.setValueAtTime(1000, audio_context.currentTime); // value
+  //   oscillator.start();
+  //   oscillator.stop(audio_context.currentTime + 0.0001);
+  // }
+
   let left_bot_count = x_shift_list[num_lines - 1];
+  //  console.log("moveLeft()", left_bot_count);
   if (left_bot_count == 0) {
-    resetLeft();
-  }
-  else {
+    //  console.log("moveLeft() never called ???");
+    resetLeft();               // NB this is never called
+  } else {
     for (let left_line = 0; left_line < num_lines; left_line++) {
       let old_left = overflow_accums[left_line];
       let left_sum = old_left - left_line - 1;
       let adjust_left = overflowLeft(left_line, left_sum);
       overflow_accums[left_line] = adjust_left;
+    }
+  }
+}
+
+/*
+  [0, 0, -2, 2],
+
+  [254, -508, -1018, 256],
+  [255, 0, -512, 257],
+  */
+
+function moveRight() {
+  let right_bot_count = x_shift_list[closest_width_index];
+  //console.log("moveRight()", right_bot_count);
+  let [_index, _start, end_offset, _flip_offset] = start_stop_flip[closest_width_index];
+  if (right_bot_count == end_offset + 1) {
+    // let oscillator = audio_context.createOscillator();
+    // oscillator.connect(audio_context.destination);
+    // oscillator.type = 'square';
+    // oscillator.frequency.setValueAtTime(1000, audio_context.currentTime); // value
+    // oscillator.start();
+    // oscillator.stop(audio_context.currentTime + 0.0001);
+    //console.log("moveRight()");
+    resetRight();
+  } else {
+    for (let right_line = 0; right_line < num_lines; right_line++) {
+      let old_right = overflow_accums[right_line];
+      let right_sum = old_right + right_line + 1;
+      let adjust_right = overflowRight(right_line, right_sum);
+      overflow_accums[right_line] = adjust_right;
     }
   }
 }
@@ -126,22 +173,6 @@ function resetRight() {
   }
 }
 
-function moveRight() {
-
-  let right_bot_count = x_shift_list[closest_width_index];
-  let [_index, _start, end_offset, _flip_offset] = start_stop_flip[closest_width_index];
-  if (right_bot_count == end_offset + 1) {
-    resetRight();
-  } else {
-    for (let right_line = 0; right_line < num_lines; right_line++) {
-      let old_right = overflow_accums[right_line];
-      let right_sum = old_right + right_line + 1;
-      let adjust_right = overflowRight(right_line, right_sum);
-      overflow_accums[right_line] = adjust_right;
-    }
-  }
-
-}
 
 function overflowRight(cur_line, new_sum) {
   if (new_sum > num_lines) {
@@ -158,6 +189,15 @@ function overflowRight(cur_line, new_sum) {
 function moveBack() {
   y_flip_count += 1;
   if (y_flip_count > closest_depth_index) {
+
+
+    // let oscillator = audio_context.createOscillator();
+    // oscillator.connect(audio_context.destination);
+    // oscillator.type = 'sine';
+    // oscillator.frequency.setValueAtTime(1000, audio_context.currentTime); // value 
+    // oscillator.start();
+    // oscillator.stop(audio_context.currentTime + 0.0001);
+
     y_flip_count = 0;
   }
 }
@@ -165,6 +205,18 @@ function moveBack() {
 function moveForward() {
   if (y_flip_count == 0) {
     y_flip_count = closest_depth_index;
+
+
+
+    // let oscillator = audio_context.createOscillator();
+    // oscillator.connect(audio_context.destination);
+    // oscillator.type = 'square';
+    // oscillator.frequency.setValueAtTime(1000, audio_context.currentTime); // value 
+    // oscillator.start();
+    // oscillator.stop(audio_context.currentTime + 0.0001);
+
+
+
   } else {
     y_flip_count -= 1;
   }

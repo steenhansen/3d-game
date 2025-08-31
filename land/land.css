@@ -2,9 +2,11 @@
 
 
 #the-landing {
+  height:512px;
    float:left; 
-  /* display:block; */
-  display:none;
+   display:block; 
+  position:absolute;
+  z-index:99999999;
   margin-left:0px; 
   margin-top:0px;
 }

@@ -70,7 +70,10 @@
 
 
             #touch-arrows {
-        display: grid;
+ 
+         display: grid; 
+
+
         grid-template-columns: 25% 50% 25%;
         grid-template-rows: 30% 40% 30%;
         width: 100%;
