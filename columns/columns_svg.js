@@ -4,11 +4,14 @@
 ///////////////////////////////////////
 
 // 0-399 
+
 function twirledGradient(gradient_index, column_colors) {
   let [first_color, second_color] = column_colors;
   the_gradient = "column-gradient" + first_color + second_color + Math.floor(gradient_index);
   return the_gradient;
 }
+
+
 
 // 0-100       
 function wDownWest2bUpEast(gradient_index, west_y, east_y, first_color, second_color) {

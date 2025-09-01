@@ -2,10 +2,23 @@
   display:none;
 }
 
+#click-to-begin{
+  text-align:center;
+    background: url('../images/begin-background.png') no-repeat center;
+    height:166px;
+}
+
+#begin-3d{
+  margin-top:46px;
+}
+
+
 #start-mobile {
+  z-index:1234567;
 position:absolute;
+display: none;
    line-height: 100%;
-    z-index: 99999999;
+    z-index: 5555;
   font-size: 400%;
      display:none;
   font-family: sans-serif;
@@ -49,6 +62,9 @@ position:absolute;
 }
 
 #column-svg {
+  position:absolute;
+  left:-333px;
+  z-index:1;
   height:0px;
 }
 

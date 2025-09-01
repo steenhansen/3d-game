@@ -13,7 +13,7 @@ TESTING_STOPPED = false;
 
 // let g_state_taking_off
 // let g_taking_off = false;
-let g_lift_amount = 0;
+//let g_lift_amount = 0;
 
 //let g_game_end = false;
 

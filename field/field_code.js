@@ -79,7 +79,7 @@ function initLeftRight() {
     moveLeft();
   }
   //setColumns();
-  requestAnimationFrame(animateScene);
+  //  requestAnimationFrame(animateScene);
 }
 
 function initCounters() {
@@ -101,7 +101,7 @@ function overflowLeft(cur_line, new_sum) {
   return new_sum;
 }
 function resetLeft() {
-  // console.log("DD");
+  console.log("resetLeft             4444444444444");
   for (let cur_line = 0; cur_line < num_lines; cur_line++) {
     let [_index, _start, reset_left, _flip] = start_stop_flip[cur_line];
     x_shift_list[cur_line] = reset_left;
@@ -166,6 +166,7 @@ function moveRight() {
 }
 
 function resetRight() {
+  console.log("resetRight             555555555555");
   for (let cur_line = 0; cur_line < num_lines; cur_line++) {
     let [index, reset_right, _stop, _flip] = start_stop_flip[cur_line];
     x_shift_list[cur_line] = reset_right;

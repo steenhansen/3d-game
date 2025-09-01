@@ -26,8 +26,14 @@
   <script type="text/javascript" src="columns/columns_data.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="data/data.js"></script>
+
+
 </div>
 
+<div id="the-svgs">
+  <div id='column-svg'> </div>
+  <div id='svg-arrows'> </div>
+</div>
 
 <div id="js-before">
   <script type="text/javascript" src="values/the_globals.js"></script>
@@ -45,7 +51,12 @@
   <script type="text/javascript" src="input/the_keyboard.js"></script>
   <script type="text/javascript" src="scene/vanish_point.js"></script>
   <script type="text/javascript" src="field/field_code.js"></script>
+
+
+  <script type="text/javascript" src="columns/columns_svg.js"></script>
+
   <script type="text/javascript" src="columns/columns_code.js"></script>
+
   <script type="text/javascript" src="scene/scene_3d.js"></script>
 
   <script rel="text/javascript" src="field/field_test.js"></script>
@@ -55,15 +66,18 @@
 
 </div>
 
-<div id="the-svgs">
-  <div id='column-svg'> </div>
-  <div id='svg-arrows'> </div>
+
+
+<div id='click-to-begin'>
+  <br>
+  <button id="begin-3d" type="button" onclick=" ani_sec = 'ani-after-begin';">Begin 3-D Game</button>
+  <br>
 </div>
 
 
-
-
 <div id="the-scene">
+
+  <!--      wait-for- mobile-touch  -->
   <div id='start-mobile'>
     <ul id='mobile-list'>
       <li>Touch to start</li>
@@ -77,59 +91,16 @@
   <div id="touch-arrows"></div>
 
   <div id="playing-game">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div id="the-sun"></div>
     <div id="sky-aperature">
-
       <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
     </div>
-
-
     <div id="enemy-area"></div>
     <div id="missile-area"></div>
-
-
-
-
-
     <div id="the-field"> </div>
-
-
     <div id='column-html'> </div>
-
-
-
-
-
-
-
-
-    <canvas id="the-draw" style="z-index: 333;" width=" 1024" height="512"></canvas>
-
-
-
-
-
-
-
-
-
+    <canvas id="the-draw" width=" 1024" height="512"></canvas>
   </div>
 
   <div id="the-landing">
@@ -179,7 +150,7 @@
 
 
 
-  <script type="text/javascript" src="columns/columns_svg.js"></script>
+
 
 
 
@@ -191,12 +162,50 @@
 </div>
 
 
+
+
+
+
 <script>
-  startLand(false);
 
-  // start_mobile = document.getElementById('the-landing');
-  // start_mobile.style.display = "none";
 
+
+  let fast_init = 'fast-init';
+  var ani_sec = 'ani-begin';
+
+  function gameLoop(_time_stamp) {
+    if (ani_sec == 'ani-begin') {
+      animateStart();
+    } else if (ani_sec == 'ani-after-begin') {
+      initLanding();
+      ani_sec = 'ani-landing';
+    } else if (ani_sec == 'ani-landing') {
+      ani_sec = animateLanding();
+    } else if (ani_sec == 'ani-after-landing') {
+      initElevator();
+      ani_sec = 'ani-elevator';
+    } else if (ani_sec == 'ani-elevator') {
+      ani_sec = animateElevator();
+    } else if (ani_sec == 'ani-after-elevator') {
+      initPlay();
+      ani_sec = 'ani-play';
+    } else if (ani_sec == 'ani-play') {
+      ani_sec = animateScene();
+    } else if (ani_sec == 'ani-fly') {
+      ani_sec = animateFly();
+    } else if (ani_sec == 'ani-done') {
+      resetSections();
+      ani_sec = 'ani-begin';
+      if (document.fullscreenElement != null) {
+        document.exitFullscreen();
+      }
+    } else {
+      console.log("error ani", ani_sec);
+    }
+    requestAnimationFrame(gameLoop);
+  }
+
+  gameLoop('start-ani-frames');
 
   if (window.AudioContext) {
     audio_context = new window.AudioContext();
@@ -205,11 +214,15 @@
   }
   /*
   let oscillator = audio_context.createOscillator();
-    oscillator.connect(audio_context.destination);
-    oscillator.type = 'square';
-    oscillator.start();
-    oscillator.stop(audio_context.currentTime + 0.05);
-*/
-
+  oscillator.connect(audio_context.destination);
+  oscillator.type = 'square';
+  oscillator.start();
+  oscillator.stop(audio_context.currentTime + 0.05);
+  */
+  //console.log("initLeftRight initLeftRight");
   initLeftRight();
+
+
+
+
 </script>

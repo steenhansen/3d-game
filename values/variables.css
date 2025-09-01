@@ -15,7 +15,13 @@
   --playing-margin-top: -512px;
 }
 
+#the-draw{
+ z-index: 333; 
+}
+
+
 #the-scene {
+  display:none;
   margin: 0 auto;
   width:var(--scene-width);
   height:var(--scene-height);
@@ -26,6 +32,7 @@
 
 #desktop-dir {
   margin: 0 auto;
+  display:none;
 }
 #playing-game {
    /* display:none;  */

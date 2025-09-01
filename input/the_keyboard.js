@@ -3,7 +3,7 @@ const CHECK_LEFT_KEYS = ['A', 'a', "ArrowLeft", '4'];
 const CHECK_STOP_KEYS = ['S', 's', 'Clear', '5'];
 
 function turnOnKeys() {
-  console.log("turnOnKeys INTRO FINISHED", INTRO_FINISHED);
+  //console.log("turnOnKeys INTRO FINISHED", INTRO_FINISHED);
   function readKeys(event) {
 
 

@@ -39,6 +39,7 @@ function fixMobile() {
   if (!document.fullscreenElement) {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "block";
+    start_mobile.style.zIndex = "1234567";
     waiting_for_start = true;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     return;

@@ -1,38 +1,96 @@
+function resetSections() {
+  hideDiv('the-scene');
+  hideDiv('desktop-dir');
+  unHideDiv('click-to-begin');
 
-function takeOff(lift_amount) {
+
+  //hideDiv('start-mobile');
+
+
+
+  doFlying(0);
+  g_taking_off = false;
+  g_move_direction = MOVINGx_NOT;
+
+
+
+  landingInit();
+  initElevator();
+  flyingInit();
+
+}
+
+
+
+var lift_amount_f = 0;
+function flyingInit() {
+  lift_amount_f = 0;
+}
+
+
+
+
+function animateFly() {
+  if (fast_init == 'fast-init') {
+    lift_amount_f = 489;
+  }
+  lift_amount_f++;
+  // if taking_off then no bounce hitting works
+  // console.log('fly', lift_amount_f);
+  if (lift_amount_f == 490) {
+    return 'ani-done';
+  }
+  doFlying(lift_amount_f);
+  return 'ani-fly';
+}
+
+
+function doFlying(lift_amount_x) {
   const sky_aperature = document.getElementById('sky-aperature');
-  sky_height = 256 + lift_amount;
+  sky_height = 256 + lift_amount_x;
   sky_aperature.style.height = `${sky_height}px`;
 
   const the_sky = document.getElementById('the-sky');
-  margin_top = -1000 - lift_amount;
+  margin_top = -1000 - lift_amount_x;
   the_sky.marginTop = `${margin_top}px`;
-  height_sky = 2400 + 4 * lift_amount;
+  height_sky = 2400 + 4 * lift_amount_x;
   the_sky.style.height = `${height_sky}px`;
 
   const column_html = document.getElementById('column-html');
-  column_html.style.top = `${lift_amount}px`;
+  column_html.style.top = `${lift_amount_x}px`;
 
 
   const enemy_area = document.getElementById('enemy-area');
-  enemy_area.style.top = `${lift_amount}px`;
+  enemy_area.style.top = `${lift_amount_x}px`;
 
   const the_sun = document.getElementById('the-sun');
-  the_sun.style.top = `${lift_amount}px`;
+  the_sun.style.top = `${lift_amount_x}px`;
 
   const missile_area = document.getElementById('missile-area');
-  missile_area.style.top = `${lift_amount}px`;
-  console.log('in take off !!!!!!!!!!!!!! ', lift_amount);
+  missile_area.style.top = `${lift_amount_x}px`;
+
 }
 
 
 
-function skipLand() {
-  setLandingScroll(0);
-  readyInputArrows();
-}
 
-let new_count = 0;
+
+
+
+
+
+
+
+
+
+
+
+// function skipLand() {
+//   setLandingScroll(0);
+//   readyInputArrows();
+// }
+
+
 num_lines = 255;
 
 function expandCheckerboard(the_count) {
@@ -65,45 +123,20 @@ function expandCheckerboard(the_count) {
   }
 }
 
-
-function continueLanding(timestamp) {
-  new_count++;
-  //    console.log("sadfasd new_count < num_lines", new_count, num_lines);
-  if (new_count <= num_lines) {
-    expandCheckerboard(new_count);
-    requestAnimationFrame(continueLanding);
-  } else {
-    requestAnimationFrame(scrollLandUp);
-  }
-}
-
-
-
 function setLandingScroll(the_pixels) {
-  //const playing_game = document.getElementById(`playing-game`);
   const playing_game = document.getElementById(`the-landing`);
   playing_game.style = `top:${the_pixels}px`;
 }
 
-// function doLanding(show_intro) {
-//   if (show_intro) {
-//     startLand(true);
-//   } else {
-//     skipLand();
-//   }
-// }
-function scrollLandUp(timestamp) {
-  //console.log("scrroll up");
-  m_top_playing_game -= 2;;
+
+
+function moveCheckerboardOnce(top_playing_game, top_the_land) {
 
   const playing_game = document.getElementById(`playing-game`);
-  playing_game.style = `bottom:${m_top_playing_game}px`;
-
-  m_top_the_land += 2;
-  //setLandingScroll(m_top_the_land);
+  playing_game.style = `bottom:${top_playing_game}px`;
+  //  m_top_the_land += 2;
   const the_landing = document.getElementById(`the-landing`);
-  the_landing.style = `top:${m_top_the_land}px`;
-
+  the_landing.style = `top:${top_the_land}px`;
   flashScrollingArrow('arrow-nw');
   flashScrollingArrow('arrow-n');
   flashScrollingArrow('arrow-ne');
@@ -112,44 +145,11 @@ function scrollLandUp(timestamp) {
   flashScrollingArrow('arrow-s');
   flashScrollingArrow('arrow-sw');
   flashScrollingArrow('arrow-w');
-  //console.log("m-top", m_top_the_land);
-  if (m_top_the_land < 512) {  ////512
-    requestAnimationFrame(scrollLandUp);
-  } else {
-    INTRO_FINISHED = true;
-    turnOnKeys();
-
-    console.log("land_code INTRO FINISHED YES");
-    readyInputArrows();
-  }
 }
 
-function startLand(skip_intro) {
-  if (skip_intro) {
-
-    //    console.log("sadfasd new_count < num_lines", new_count, num_lines);
-    // while (new_count <= num_lines) {
-    //   expandCheckerboard(new_count);
-    //   new_count++;
-    // }
 
 
-  } else {
 
-    let first_time;
-
-    requestAnimationFrame(startLanding);
-
-    function startLanding(timestamp) {
-      first_time = timestamp;
-      continueLanding(timestamp);
-    }
-  }
-
-  m_top_playing_game = 512;
-  m_top_the_land = 0;
-
-}
 
 function flashScrollingArrow(arrow_id) {
   let r = Math.floor(Math.random() * 255);
@@ -181,3 +181,145 @@ function stopFlashArrow(arrow_id) {
   // let flash_none = `fill: rgb(0 ,0 , 0)`;
   // stop_arrow.style = flash_none;
 }
+
+
+
+
+//
+//  https://javascript.info/async-await
+//
+
+// async function doLanding(skip_intro) {
+//   if (skip_intro) {
+//   } else {
+//     // let first_time;
+//     g_landing = true;
+//     //    requestAnimationFrame(startLanding);
+//     requestAnimationFrame(continueLanding);
+//     // function startLanding(timestamp) {
+//     //   first_time = timestamp;
+//     //   g_landing = true;
+//     //   continueLanding(timestamp);
+//     // }
+//   }
+//   m_top_playing_game = 512;
+//   m_top_the_land = 0;
+// }
+
+
+
+
+
+function oneLanding(time_stamp) {
+  if (landing_count == 0)
+
+    requestAnimationFrame(continueLanding);
+  // console.log("doLanding", landing_count);
+  // landing_count++;
+  landing_count++;
+  if (landing_count <= num_lines) {
+    expandCheckerboard(landing_count);
+    requestAnimationFrame(continueLanding);
+  } else {
+    g_program_state = 'state-elevator';
+    // requestAnimationFrame(scrollLandUp);
+  }
+  return;
+}
+
+
+function hideDiv(hide_id) {
+  let hide_div = document.getElementById(hide_id);
+  hide_div.style.display = 'none';
+}
+
+function unHideDiv(unhide_id) {
+  let hide_div = document.getElementById(unhide_id);
+  hide_div.style.display = 'block';
+}
+
+function initLanding() {
+  hideDiv('click-to-begin');
+  hideDiv('start-mobile');
+  unHideDiv('the-scene');
+}
+
+var landing_count = 0;
+
+function landingInit() {
+  landing_count = 0;
+  setLandingScroll(0);
+}
+
+function animateLanding() {
+  // hideDiv('click-to-begin');
+  // unHideDiv('the-scene');
+  if (fast_init == 'fast-init') {
+    landing_count = num_lines;
+  } else {
+    landing_count++;
+  }
+  //console.log("ani-landing", landing_count, num_lines);
+  if (landing_count == num_lines) {
+    return 'ani-after-landing';
+  } else {
+    expandCheckerboard(landing_count);
+    return 'ani-landing';
+  }
+}
+
+function initPlay() {
+  unHideDiv('desktop-dir');
+  // unHideDiv('start-mobile');
+  if (isMobile()) {
+    fixMobile();
+  } else {
+    fixDesktop();
+  }
+  //fixMobile();
+}
+
+
+function animateStart() {
+  //console.log("ani-begin");
+}
+
+//m_top_playing_game = 512;
+//m_top_the_land = 0;
+
+// no leading n
+// maybe p_top_playing_game  for procedure
+m_top_playing_game = 512;
+m_top_the_land = 0;
+
+function initElevator() {
+  m_top_playing_game = 512;
+  m_top_the_land = 0;
+}
+
+function animateElevator() {
+  //console.log("asdf 1111111", m_top_playing_game, m_top_the_land, landing_speed);
+  if (fast_init == 'fast-init') {
+    m_top_the_land = 510;
+    m_top_playing_game = 2;
+  }
+  //console.log("asdf 2222222222222", m_top_playing_game, m_top_the_land);
+  m_top_playing_game -= 2;
+  m_top_the_land += 2;
+  //console.log("asdf 33333333333", m_top_playing_game, m_top_the_land);
+
+  //console.log("asdf fdd", m_top_playing_game, m_top_the_land);
+  moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+  if (m_top_the_land == 512) {
+    INTRO_FINISHED = true;
+    g_landing = false;
+    g_playing = true;
+    turnOnKeys();
+    //console.log("land_code INTRO FINISHED YES");
+    readyInputArrows();
+    return 'ani-after-elevator';
+  } else {
+    return 'ani-elevator';
+  }
+}
+
