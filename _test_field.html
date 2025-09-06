@@ -28,7 +28,6 @@
   <script type="text/javascript" src="field/field-bounds.js"></script>
   <script type="text/javascript" src="field/field-invert.js"></script>
   <script type="text/javascript" src="field/field-constants.js"></script>
-
   <script type="text/javascript" src="sprites/sprite-sizes.js"></script>
 
 </div>
@@ -58,8 +57,6 @@
   <script type="text/javascript" src="field/field-depth.js"></script>
   <script type="text/javascript" src="field/field-left.js"></script>
   <script type="text/javascript" src="field/field-right.js"></script>
-
-
 
   <script type="text/javascript" src="pylons/pylons-svg.js"></script>
 
@@ -176,6 +173,124 @@
 
 
 <script>
-  gameLoop('start-ani-frames');
-  initLeftRight();
+  console.log("Errors will be printed to console");
+
+  console.log("start_stop_flip = [line#, ]", start_stop_flip[g_record_line_dbg]);
+
+
+  //initLeftRight();
+  initIncrementers();
+
+  overflow = overUnder_accums[g_record_line_dbg];
+  shift = x_shift_list[g_record_line_dbg];
+  console.log("after resetLeft  overflow:", overflow, "  _ x_shift_list:", shift);
+
+  resetSections();
+  animateStart();
+  initLanding();
+  animateLanding();
+  initElevator();
+  animateElevator();
+  initPlay();
+  animateScene();
+
+  var an_error = false;
+
+
+
+  /*       255  no move?
+     [126, -250,         -504,       128],
+     [250, -492,         -994,       252],
+    index, start offset, end offset, flip offset
+  
+  */
+  // console.log("x_shift_list", x_shift_list);
+
+  rightThenLefts1025_a();
+  rightLeftsSteps_b();
+
+  function rightThenLefts1025_a() {
+    an_error = false;
+    let j = 0;
+    for (let r = 0; r < 1025; r++) {
+      initIncrementers();
+      incrementRight();
+      an_error = printAnyBoundBreaks_dbg(['a1-onRight', r]);
+      if (an_error) { break; }
+      for (let l = 0; l < 1025; l++) {
+        incrementLeft();
+        j++;
+        an_error = printAnyBoundBreaks_dbg(['a2-onLeft', r, l]);
+        if (an_error) { break; }
+      }
+    }
+    for (let l = 0; l < 1025; l++) {
+      initIncrementers();
+      incrementLeft();
+      an_error = printAnyBoundBreaks_dbg(['a3', l]);
+      if (an_error) { break; }
+      for (let r = 0; r < 1025; r++) {
+        incrementRight();
+        j++;
+        an_error = printAnyBoundBreaks_dbg(['a4-onRight', l, r]);
+        if (an_error) { break; }
+      }
+    }
+    console.log("Number rightThenLefts1025 tests", j);
+  }
+
+
+
+  function rightLeftsSteps_b() {
+    an_error = false;
+    let j = 0;
+    let r = 0;
+
+    let debug_line = [];
+    for (let x = 0; x < 1025; x++) {
+      initIncrementers();
+      init_record = overUnder_accums[g_record_line_dbg];
+      debug_line = [];
+      for (r = 0; r < x; r++) {
+        g_line_history_dbg = {};
+        incrementRight();
+        if (g_line_history_dbg.length !== 0) {
+          debug_line.push(g_line_history_dbg);
+        }
+        an_error = printAnyBoundBreaks_dbg(['b1-onRight', x, r]);
+        if (an_error) {
+          break;
+        }
+        j++;
+      }
+      if (an_error) {
+        break;
+      }
+
+
+      for (let l = 0; l < x; l++) {
+        g_line_history_dbg = {};
+        incrementLeft();
+        if (g_line_history_dbg.length !== 0) {
+          debug_line.push(g_line_history_dbg);
+        }
+        an_error = printAnyBoundBreaks_dbg(['b2-onLeft', x, r, l]);
+        if (an_error) {
+          break;
+        }
+        j++;
+      }
+      if (an_error) {
+        break;
+      }
+    }
+
+    if (an_error) {
+      console.log("line history for line 0 shifts", g_record_line_dbg, debug_line);
+    }
+
+
+    console.log("Number rightLeftsSteps tests", j);
+  }
+
 </script>

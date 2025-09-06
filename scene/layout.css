@@ -2,6 +2,16 @@
   display:none;
 }
 
+#saturn-space {
+      background: url('../images/saturn_22.jpg') no-repeat center;
+      width:1024px;
+      height:512px;
+      position:absolute;
+      z-index:1234566;
+      opacity:0;
+}
+
+
 #click-to-begin{
   text-align:center;
     background: url('../images/begin-background.png') no-repeat center;
@@ -61,7 +71,7 @@ display: none;
   /* background-color: rgba(218, 20, 225, 0) */
 }
 
-#column-svg {
+#pylons-svg {
   position:absolute;
   left:-333px;
   z-index:1;

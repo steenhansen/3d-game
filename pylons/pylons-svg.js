@@ -105,7 +105,7 @@ white_black_gradients = makeGradients(WHITE_BLACK_GRADIENT);
 lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA_GRADIENT);
 
 
-document.getElementById('column-svg').innerHTML = `
+document.getElementById('pylons-svg').innerHTML = `
 <svg>
   <defs>
 

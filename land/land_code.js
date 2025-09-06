@@ -1,3 +1,12 @@
+
+function animateStart() {
+  const saturn_space = document.getElementById('saturn-space');
+  saturn_space.style.opacity = 0;
+
+  //console.log("ani-begin");
+}
+
+
 function resetSections() {
   hideDiv('the-scene');
   hideDiv('desktop-dir');
@@ -31,7 +40,7 @@ function flyingInit() {
 
 
 function animateFly() {
-  if (fast_init == 'fast-init') {
+  if (fast_init_fly == 'fast-init-fly') {
     lift_amount_f = 489;
   }
   lift_amount_f++;
@@ -59,7 +68,6 @@ function doFlying(lift_amount_x) {
   const column_html = document.getElementById('column-html');
   column_html.style.top = `${lift_amount_x}px`;
 
-
   const enemy_area = document.getElementById('enemy-area');
   enemy_area.style.top = `${lift_amount_x}px`;
 
@@ -68,6 +76,18 @@ function doFlying(lift_amount_x) {
 
   const missile_area = document.getElementById('missile-area');
   missile_area.style.top = `${lift_amount_x}px`;
+
+
+  //  if (lift_amount_x > 289) {
+  if (lift_amount_x > 350) {
+    const saturn_space = document.getElementById('saturn-space');
+    // doStyle('saturn-space', opacity, `${lift_amount_x}px`); 
+    saturn_opacity = (lift_amount_x - 350) / 300;
+    console.log("saturn_opacity", saturn_opacity);
+    saturn_space.style.opacity = saturn_opacity;
+  }
+
+
 
 }
 
@@ -254,7 +274,7 @@ function landingInit() {
 function animateLanding() {
   // hideDiv('click-to-begin');
   // unHideDiv('the-scene');
-  if (fast_init == 'fast-init') {
+  if (fast_init_land == 'fast-init-land') {
     landing_count = num_lines;
   } else {
     landing_count++;
@@ -280,9 +300,6 @@ function initPlay() {
 }
 
 
-function animateStart() {
-  //console.log("ani-begin");
-}
 
 //m_top_playing_game = 512;
 //m_top_the_land = 0;
@@ -299,7 +316,7 @@ function initElevator() {
 
 function animateElevator() {
   //console.log("asdf 1111111", m_top_playing_game, m_top_the_land, landing_speed);
-  if (fast_init == 'fast-init') {
+  if (fast_init_elevator == 'fast-init-elevator') {
     m_top_the_land = 510;
     m_top_playing_game = 2;
   }

@@ -13,7 +13,14 @@
   --playing-height: 512px;
   --playing-margin-left: -178px;
   --playing-margin-top: -512px;
+
+
+  --test-red:33;
+  --test-green:128;
+  --test-blue:128;
 }
+
+
 
 #the-draw{
  z-index: 333; 

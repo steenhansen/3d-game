@@ -1,10 +1,10 @@
 
 function objectMomentum(the_enemy) {
-  m_x_dir = the_enemy.m_m_x_dir;
+  m_x_dir = the_enemy.m_x_dir;
   if (m_x_dir < 0) {
     the_enemy.m_x = leftOnBoard(the_enemy.m_x, m_x_dir * -4 * 3);
   } else if (m_x_dir > 0) {
-    the_enemy = rightOnBoard(the_enemy, m_x_dir * 4 * 3);
+    the_enemy.m_x = rightOnBoard(the_enemy.m_x, m_x_dir * 4 * 3);
   }
 
   m_y_dir = the_enemy.m_y_dir;

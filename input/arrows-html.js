@@ -35,6 +35,8 @@ function inputClick(the_event, direction_name) {
   the_event.preventDefault();
   fullMobile();
   flashArrowBox(direction_name);
+  g_is_drifting = false;
+  console.log("inputClick false", g_is_drifting);
 }
 
 function addClickEvent(direction_name, clickHandler) {
@@ -45,6 +47,7 @@ function addClickEvent(direction_name, clickHandler) {
 
 function stopMoving(evt) {
   g_move_direction = MOVINGx_NOT;
+  g_drift_countdown = 177;
 }
 
 function handleNw(evt) {

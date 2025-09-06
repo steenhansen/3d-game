@@ -66,11 +66,11 @@ let ENEMY_BIRTH_Y = 100;
 
 
 let COLUMN_3A_START_X = 1365 - 512;
-let COLUMN_3A_START_Y = 192;           //    400;
+let COLUMN_3A_START_Y = 449;           //    192 400;
 let COLUMN_3B_START_X = 1365;
-let COLUMN_3B_START_Y = 192;              //400;
+let COLUMN_3B_START_Y = 449;              // 192 400;
 let COLUMN_3C_START_X = 1365 + 512;
-let COLUMN_3C_START_Y = 192;              //400;
+let COLUMN_3C_START_Y = 449;              // 192 400;
 
 let COLUMN_2A_START_X = 4096 - 256;
 let COLUMN_2A_START_Y = 384;                //400;

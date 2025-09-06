@@ -29,6 +29,16 @@ function missileAdvance(the_missile) {
 
   }
   let { m_x_dir, m_y_dir } = the_missile;
+
+
+  if (m_x_dir < 0) {
+    the_missile.m_x = leftOnBoard(the_missile.m_x, m_x_dir * -4 * 3);
+  } else if (m_x_dir > 0) {
+    the_missile.m_x = rightOnBoard(the_missile.m_x, m_x_dir * 4 * 3);
+  }
+
+
+
   the_missile.m_y = backwardOnBoard(the_missile.m_y, m_y_dir * -1 * TRAVEL_SPEED * 2);
   return the_missile;
 }
@@ -152,10 +162,15 @@ function missileSet(real_id, the_missile, g_player) {
 
   has_collided = collision_1a || collision_2a || collision_2b || collision_3a || collision_3b || collision_3c;
   if (has_collided) {
-    the_missile.m_expired = true;
+    //the_missile.m_expired = true;
+    the_missile.m_x_dir = -1;
+    the_missile.m_y_dir = 0;
+    //console.log("the_missile asdfsdf343", the_missile);
   }
 
   if (the_missile.m_expired) {
+    the_missile.m_x_dir = 0;
+    the_missile.m_y_dir = -1;
     setFillNone();
   } else {
     getRandoms();

@@ -9,7 +9,15 @@ function turnOnKeys() {
 
     const the_key = event.key;
     if (g_move_continue == 0) {
-      if (['Q', 'q', "Home", '7'].includes(the_key)) {
+
+      g_is_drifting = false;
+      console.log("turnOnKeys false", g_is_drifting);
+
+      if (['=', '+'].includes(the_key)) {
+        g_taking_off = true;
+        // g_move_direction = MOVINGx_NW;
+        // flashArrowBox('nw');
+      } else if (['Q', 'q', "Home", '7'].includes(the_key)) {
         g_move_direction = MOVINGx_NW;
         flashArrowBox('nw');
       } else if (['W', 'w', "ArrowUp", '8'].includes(the_key)) {

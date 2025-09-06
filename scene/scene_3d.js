@@ -61,25 +61,25 @@ const area_height = 1024;
 const viewport_middle_y = 512;
 
 
-//let x_shift_list = new Float32Array(256);  // slower
+// new Float32Array(256);  // slower
 let x_shift_list = Array(256).fill(0);
 
 
-//let overflow_accums = new Float32Array(256);  // slower
-let overflow_accums = [];
+// new Float32Array(256);  // slower
+let overUnder_accums = Array(256).fill(0);;
 
 
 //////////////////////
 let number_lines = start_stop_flip.length;
+
+
 let closest_width_index = number_lines - 1;
-let = number_lines - 1;
 
 
 
 
 
-let right_stop;
-let left_stop;
+
 
 
 
@@ -138,28 +138,36 @@ disappear_left = area_width_half - 4108;  // so 256px wide leaves visual at -243
 
 
 function sceneRight(travel_speed) {
-  //takeOff(g_lift_amount);
-
-
-
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
   playerRight(travel_speed);
   fieldRight(travel_speed);
   moveSky(travel_speed, 'right');
 }
 
 function sceneLeft(travel_speed) {
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
   playerLeft(travel_speed);
   fieldLeft(travel_speed);
   moveSky(travel_speed, 'left');
 }
 
 function sceneForward(travel_speed) {
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
   playerForward(travel_speed);
   fieldForwards(travel_speed);
   moveSky(travel_speed, 'forward');
 }
 
 function sceneBackward(travel_speed) {
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
   playerBackward(travel_speed);
   fieldBackwards(travel_speed);
   moveSky(travel_speed, 'backward');
@@ -169,7 +177,59 @@ function sceneStop() {
   moveSky('stop');
 }
 
+
+
+function randomDirection() {
+  let rand_dir = Math.floor(Math.random() * 8);
+  if (rand_dir == 0) {
+    rand_direction = MOVINGx_NW;
+  } else if (rand_dir == 1) {
+    rand_direction = MOVINGx_N;
+  } else if (rand_dir == 2) {
+    rand_direction = MOVINGx_NE;
+  } else if (rand_dir == 3) {
+    rand_direction = MOVINGx_E;
+  } else if (rand_dir == 4) {
+    rand_direction = MOVINGx_SE;
+  } else if (rand_dir == 5) {
+    rand_direction = MOVINGx_S;
+  } else if (rand_dir == 6) {
+    rand_direction = MOVINGx_SW;
+  } else if (rand_dir == 7) {
+    rand_direction = MOVINGx_W;
+  }
+  return rand_direction;
+}
+
+
+function startDrift() {
+  //console.log("startDrift TOP", g_is_drifting);
+
+  if (g_is_drifting) {
+    let rand_dir = Math.floor(Math.random() * 1024);
+    console.log("ddd", rand_dir);
+    if (rand_dir == 1) {
+      g_drift_direction = randomDirection();
+    }
+  } else {
+    g_drift_countdown--;
+    //console.log("startDrift g_drift_countdown", g_drift_countdown);
+    if (g_drift_countdown < 0) {
+      g_drift_direction = randomDirection();   // random
+      g_is_drifting = true;
+      g_drift_countdown = 177;
+      //  console.log("startDrift true", g_is_drifting);
+    }
+  }
+}
+
+
 function sceneMove() {
+  if (g_is_drifting) {
+    g_move_direction = g_drift_direction;
+    startDrift();
+  }
+  // console.log("the_scene_move");
   travel_speed = TRAVEL_SPEED;
   if (g_move_direction == MOVINGx_NW) {
     sceneLeft(travel_speed);
@@ -177,7 +237,7 @@ function sceneMove() {
   } else if (g_move_direction == MOVINGx_N) {
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_NE) {
-    g_taking_off = true;
+
     sceneRight(travel_speed);
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_E) {
@@ -194,6 +254,7 @@ function sceneMove() {
   } else if (g_move_direction == MOVINGx_W) {
     sceneLeft(travel_speed);
   } else {
+    startDrift();
     // console.log("no input is go right");
   }
 }
@@ -281,8 +342,10 @@ function animateScene(timestamp) {
     //  requestAnimationFrame(animateScene);
   }
   fixDevice();
+
+  // wrong place ? should be in index
   if (g_taking_off) {
-    return 'ani-fly';
+    return 'ani-after-play';
   } else {
     return 'ani-play';
   }
