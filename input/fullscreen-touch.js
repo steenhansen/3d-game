@@ -2,10 +2,10 @@
 function isMobile() {
   const is_mobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (!is_mobile) {
-    return false;
+  if (is_mobile) {
+    return true;
   }
-  return true;
+  return false;
 }
 
 const is_touch = isMobile();

@@ -2,6 +2,11 @@
 const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 
 
+
+const DEVICE_UNKNOWN = 0;
+const DEVICE_DESKTOP = 1;
+const DEVICE_MOBILE = 2;
+
 const MISSILE_LIFETIME = 96;
 
 

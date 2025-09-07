@@ -1,6 +1,13 @@
 
 
 
+let g_device_type = DEVICE_UNKNOWN;
+
+let g_touch_id_start = "";
+let g_touch_x_start = 0;
+let g_touch_y_start = 0;
+
+
 let g_record_line_dbg = 128;
 
 

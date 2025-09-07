@@ -1,4 +1,9 @@
 
+:root {
+  --sky-blue: #0000ff;
+}
+
+
 #the-pyramids {
  background-image: url('../images/black-pyramids.png');
   width: 1024px;
@@ -65,7 +70,3 @@
   position:relative;
 }
 
-
-:root {
-  --sky-blue: #0000ff;
-}

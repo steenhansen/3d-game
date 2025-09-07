@@ -14,8 +14,6 @@
  --input-padding-hor: 0px;
  --input-padding-ver: 0px;
 
- --arrow-margin-vert:0px;
-  --arrow-margin-hor:0px;
 
 }
 
@@ -23,48 +21,132 @@
 
 #touch-boxes {
         display: grid;
-        grid-template-columns: 25% 50% 25%;
-        grid-template-rows: 30% 40% 30%;
+
+       grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+
+        grid-template-rows:  12.5% 12.5%  12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+        
+
         position: absolute;
         width: 100%;
         height: 100%;
-        z-index: 1234566;
+        z-index: 1234567;
 }
 
 .input-box{
-    opacity:0.3; 
+    opacity:0.2; 
 }
 
-#input-nw{ 
-   /* background-color:red;  */
- 
-     /* padding-top:var(--input-padding-ver);
-    padding-left:var(--input-padding-hor);  */
-
-   /* margin-top:var(--arrow-margin-vert);
-    margin-left:var(--arrow-margin-hor); */
-/* width:66px;
-    height:33px;
-     */
+#nw-1{ 
+    background-color:black;  
    }
-#input-n{ /* background-color:red; */ }
-#input-ne{ 
-  /* background-color:green;   */
+#nw-2{ 
+   background-color:black;  
+   margin-right:4px;
+  }
+#nw-3{ 
+   background-color:black;
+   margin-bottom:4px;
+}
+#nw-4{ 
+    background: url('../images/the-curve-nw.png') no-repeat top left;
+
+}
+
+#n-1{ 
+    background-color:black
+  }
+#n-2{background-color:black;}
+#n-3{background-color:black;}
+
+#n-4{ background-color:black;  }
+
+#ne-1{ 
+    background-color:black;
+     margin-left:4px;
+   }
+#ne-2{ 
+   background-color:black;  
+  }
+#ne-3{ 
+
+      background: url('../images/the-curve-ne.png') no-repeat top right;
+
+  }
+#ne-4{ 
+   background-color:black;
+   margin-bottom:4px;
+}
+
+
+
+#w-1{background-color:black; }
+#w-2{   background-color:black;}
+#w-3{   background-color:black;}
+#w-4{   background-color:black;}
+
+#e-1{background-color:black; }
+#e-2{   background-color:black;}
+#e-3{   background-color:black;}
+#e-4{   background-color:black;}
+
+
+
+
+
+
+
+#sw-1{ 
+    background-color:black;  
+        margin-top:4px;
+   }
+#sw-2{ 
+
+     background: url('../images/the-curve-sw.png') no-repeat bottom left;
+  }
+#sw-3{ 
+   background-color:black;
+}
+#sw-4{ 
+   background-color:black;
+           margin-right:4px;
+}
+
+#s-1{ 
+       background-color:black;
+
+  }
+#s-2{background-color:black;}
+#s-3{background-color:black;}
+
+#s-4{ background-color:black;  }
+
+#se-1{ 
+
+     background: url('../images/the-curve-se.png') no-repeat bottom right;
+   }
+#se-2{ 
+   background-color:black;  
+        margin-top:4px;
+        
+  }
+#se-3{ 
+   background-color:black;
+       margin-left:4px;
+}
+#se-4{ 
+   background-color:black;
 }
 
 
 
 
-#input-w{ 
-   /* background-color:green;   */
-  }
-#input-shoot{}
-#input-e{}
-#input-se{}
-#input-sw{}
-#input-s{}
+/*
+https://www.w-3schools.com/cssref/tryit.php?filename=trycss_grid-area
 
 
+
+*/
 
 
 
@@ -73,9 +155,9 @@
  
          display: grid; 
 
-
-        grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 25% 50% 25%;
         grid-template-rows: 30% 40% 30%;
+        
         width: 100%;
         height: 100%;
         z-index: 12222;
@@ -104,7 +186,9 @@
    opacity:0.4;
   position: relative;
   z-index:2147483555;
-  margin-top:6px;
+  /* margin-top:6px; */
+
+      --arrow-marginXX: 16px;
 }
 
 
@@ -112,38 +196,34 @@
 
 #arrow-nw{
   transform:rotate(-45deg); 
-  /* margin-top:var(--arrow-margin-vert);
-    margin-left:var(--arrow-margin-hor); */
-    margin-left:6px;
+    margin-left:var(--arrow-marginXX); 
+    margin-top:var(--arrow-marginXX); 
 }
 
 #arrow-n{
   left: 50%;
-    /* margin-top:var(--arrow-margin-vert); */
+      margin-top:var(--arrow-marginXX); 
 }
 
 #arrow-ne{
-    /* margin-right:var(--arrow-margin-hor);
-  margin-top:var(--arrow-margin-vert); */
   transform:rotate(45deg); 
    margin-left:auto; 
-  margin-right:6px;
+  margin-right:var(--arrow-marginXX); 
+  margin-top:var(--arrow-marginXX);
 }
 
 
 #arrow-w{
-   /* margin-left:var(--arrow-margin-hor); */
   transform:rotate(270deg);  
   left:0px;
   top:35%;
-     margin-left:6px;
+     margin-left:var(--arrow-marginXX); 
 }
 
 #arrow-e{
-     /* margin-right:var(--arrow-margin-hor); */
   transform:rotate(90deg);  
   margin-left:auto;
-    margin-right:6px;
+    margin-right:var(--arrow-marginXX); 
   top:35%
 }
 
@@ -151,29 +231,26 @@
 
 
 #arrow-sw{
-    /* margin-left:var(--arrow-margin-hor); */
   transform:rotate(225deg);  
   margin-top:auto;
-   margin-left:6px;
-      margin-bottom:6px;
+   margin-left:var(--arrow-marginXX); 
+      margin-bottom:var(--arrow-marginXX); 
 }
 
 #arrow-s{
     left: 50%;
    transform:rotate(180deg);  
    margin-top:auto;
-   margin-bottom:6px;
+    margin-bottom:var(--arrow-marginXX); 
 }
 
 
 #arrow-se{
-     /* margin-right:var(--arrow-margin-hor); */
   transform:rotate(135deg);  
     margin-left:auto;
   margin-top:auto;
-   margin-bottom:6px;
-
-  margin-right:6px;
+     margin-bottom:var(--arrow-marginXX); 
+  margin-right:var(--arrow-marginXX); 
 }
 
 

@@ -207,7 +207,7 @@ function startDrift() {
 
   if (g_is_drifting) {
     let rand_dir = Math.floor(Math.random() * 1024);
-    console.log("ddd", rand_dir);
+    //   console.log("ddd", rand_dir);
     if (rand_dir == 1) {
       g_drift_direction = randomDirection();
     }
@@ -283,14 +283,12 @@ function doBounce() {
 
 
 function handleStartMobile(evt) {
+  console.log("hadleStartMobile");
   setTimeout(() => {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";
-
-
-    turnOnHammerGestures('the-scene');
-
     waiting_for_start = false;
+    fixMobile2();
     console.log("Delayed for 1 second.");
   }, "1000");
 

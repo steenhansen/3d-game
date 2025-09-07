@@ -15,7 +15,8 @@ function gameLoop(_time_stamp) {
 
   if (ani_sec == 'ani-begin') {
     animateStart();
-
+    flyingInit();
+    g_taking_off = false;
   } else if (ani_sec == 'ani-after-begin') {
     initLanding();
     ani_sec = 'ani-landing';
