@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 
-
-<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
-
-
+<base href="../">
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
 <div id="the-css">
@@ -18,7 +15,7 @@
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
   <link rel="stylesheet" href="sky/sky.css" />
-  <link rel="stylesheet" href="missile/missile-vars.css" />
+
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
   <link rel="stylesheet" href="input/desktop-directions.css" />
@@ -70,7 +67,6 @@
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
 
   <script type="text/javascript" src="scene/scene_3d.js"></script>
-  <script type="text/javascript" src="scene/scene-init.js"></script>
 
   <script rel="text/javascript" src="field/field_test.js"></script>
 
@@ -79,91 +75,12 @@
 </div>
 
 
-
-<div id='click-to-begin' class="begin-mobile-desktop">
-  <br>
-  <button id="begin-desktop" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin desktop 3D game</button>
-  <button id="begin-mobile" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin mobile 3D game</button>
-  <br>
-</div>
-
-
-<div id="the-scene">
-
-  <!--      wait-for- mobile-touch 
-        smallest Galaxy Z Fold 5  882x344 -->
-  <div id='start-mobile'>
-    <ul id='mobile-list'>
-      <li>Touch to start</li>
-      <li>Tap white arrows to steer</li>
-      <li>Tap in middle to shoot</li>
-      <li>Swipe down to stop</li>
-      <li>Swipe up quit</li>
-    </ul>
-  </div>
-  <div id="touch-boxes"></div>
-  <div id="arrows-html"></div>
-
-  <div id="playing-game">
-    <div id="star-space">
-      <div id="saturn-space"></div>
-    </div>
-    <div id="the-sun"></div>
-    <div id="sky-aperature" class="pyramids-skies">
-      <div id="the-sky"> </div>
-      <div id="the-pyramids"></div>
-    </div>
-    <div id="enemy-area"></div>
-    <div id="missile-area" class="missile-class"></div>
-    <div id="checkerboard-field"> </div>
-    <div id='column-html'> </div>
-    <canvas id="the-draw" width=" 1024" height="512"></canvas>
-  </div>
-
-  <div id="the-landing">
-    <div id="land_nw"></div>
-    <div id="land_ne"></div>
-    <div id="land_sw"></div>
-    <div id="land_se"></div>
-  </div>
-
-
-</div>
-
-
-<div id="desktop-dir" class="key-directions"></div>
-
-
 <div id="js-inject-html">
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
 </div>
 
 
 
-<div id="js-after">
-
-  <script type="text/javascript" src="enemy/enemy_html.js"></script>
-  <script type="text/javascript" src="missile/missile_html.js"></script>
-  <script type="text/javascript" src="field/field_html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_code.js"></script>
-  <script type="text/javascript" src="missile/missile_code.js"></script>
-
-
-  <script type="text/javascript" src="land/land_nw_html.js"></script>
-  <script type="text/javascript" src="land/land_ne_html.js"></script>
-  <script type="text/javascript" src="land/land_sw_html.js"></script>
-  <script type="text/javascript" src="land/land_se_html.js"></script>
-  <script type="text/javascript" src="land/land_code.js"></script>
-
-
-
-
-  <script type="text/javascript" src="input/arrows-html.js"></script>
-  <script type="text/javascript" src="input/boxes-html.js"></script>
-  <script type="text/javascript" src="input/arrows-svg.js"></script>
-  <script type="text/javascript" src="input/desktop-directions.js"></script>
-  <script type="text/javascript" src="input/arrows-click.js"></script>
-  <script type="text/javascript" src="input/boxes-touch.js"></script>
 
 
 
@@ -172,20 +89,24 @@
 
 
 
-
-
-
-
-</div>
-
+<script type="text/javascript">
 
 
 
 
 
-<script>
-  gameInit();
-  sceneInit();
-  gameLoop('start-time_stamp');
-  // initLeftRight();
+  function animateMissile() {
+
+    the_missile_1 = launchMissile(the_missile_1);
+    ////  missileSet(the_missile, 'missile-id');
+    missileSet('missile-1', the_missile_1, g_player);
+    //missileSet('missile-2', the_missile_2, g_player);
+
+    getRandoms();
+
+    requestAnimationFrame(animateMissile);
+  }
+
+  requestAnimationFrame(animateMissile);
+
 </script>

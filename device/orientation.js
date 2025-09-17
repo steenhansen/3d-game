@@ -1,45 +1,75 @@
 
-function orientPhone() {
-  var supportsOrientationChange = "onorientationchange" in window,
-    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-  window.addEventListener(orientationEvent, function () {
-    fixDevice();
-  }, false);
-
-}
-
-function touchBoxes(the_event) {
-
-  if (the_event.target.id == "") {
-    the_event.preventDefault();
-    fullMobile();
-    console.log("boxes !", the_event.target.id);
-    g_is_drifting = false;
-    the_missile_1 = launchMissile(the_missile_1);
+function isMobile() {
+  const mobile_screen = getCssVar("--mobile-screen");
+  if (mobile_screen == "is-mobile") {
+    //  console.log("MOBILE ", mobile_screen);
+    return true;
   }
+  //  console.log(" seems this is amiss Deisktop ", mobile_screen);
+  return false;
 }
 
-function touchMoveHandler(the_event) {
-  console.log("in touchMoveHandler");
-}
+
+
+// window.addEventListener("orientationchange", function (event) {
+//   console.log("New orientation: " + event);
+// });
+
+
+
+// now at screenSizeIntoCss();
+// function orientPhone() {
+//   var supportsOrientationChange = "onorientationchange" in window,
+//     orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+//   window.addEventListener(orientationEvent, function () {
+//     console.log("oreintPhone");
+//     fixDevice();
+
+//     screen_width = window.screen.width;
+//     screen_height = window.screen.height;
+//     screen_width_px = screen_width + "px";
+//     screen_height_px = screen_height + "px";
+//     // document_style.setProperty("--scene-width", screen_width_px);
+//     // document_style.setProperty("--scene-height", screen_height_px);
+
+//     console.log("start rejigger");
+//     setCssVar("--scene-width", screen_width_px);
+//     setCssVar("--scene-height", screen_height_px);
+//     qq = (1024 - screen_width) / 2;
+//     marL = `-${qq}px`;
+//     setCssVar("--margin-left_px", marL);
+
+//   }, false);
+
+// }
+
+
+
+
+
+
+
+
+
 
 function fixDesktop() {
-  ////  console.log("fixDesktop 1111111111111111111111111111");
-  document_style = document.documentElement.style;
+  start_mobile = document.getElementById('start-mobile');
+  start_mobile.style.display = "none";
 
 
-  document_style.setProperty("--scene-width", "1024px");
-  document_style.setProperty("--scene-height", "512px");
-  document_style.setProperty("--playing-margin-left", "0px");
-  document_style.setProperty("--playing-margin-top", "0px");
+
+  setCssVar("--scene-width", "1024px");
+  setCssVar("--scene-height", "512px");
+
+  // document_style = document.documentElement.style;
+  // document_style.setProperty("--scene-width", "1024px");
+  // document_style.setProperty("--scene-height", "512px");
+
+
 
   addClickEvent("touch-boxes", touchBoxes);
-
-  // console.log("before");
-  // touch_boxes = document.getElementById('touch-boxes');
-  // touch_boxes.addEventListener("touchmove", touchMoveHandler, { passive: false });
-  // console.log("after");
 
   addClickEvent("nw-1", handleNw);
   addClickEvent("nw-2", handleNw);
@@ -91,31 +121,66 @@ function fixDesktop() {
 
 }
 
+
+
+
+function fullMobile() {
+  console.log("fullMobile ");
+  if (isMobile()) {
+    if (!document.fullscreenElement) {
+      the_scene = document.getElementById('the-scene');
+      console.log("fullMobile  requestFullscreen");
+      //the_scene.requestFullscreen();
+    }
+  }
+}
+
+function touchBoxes(the_event) {
+  if (the_event.target.id == "") {
+    the_event.preventDefault();
+    fullMobile();
+    console.log("boxes !", the_event.target.id);
+    g_is_drifting = false;
+    the_missile_1 = launchMissile(the_missile_1);
+  }
+}
+
+function touchMoveHandler(the_event) {
+  console.log("in touchMoveHandler");
+}
+
+
 function touchMove(the_event) {
 
 }
 
 
 function fixDevice() {
-  if (waiting_for_start) {
-    return;
-  }
+  // if (waiting_for_start) {
+  //   console.log("wating");
+  //   return;
+  // }
 
+  // console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
+  //  console.log("aaaaaaaaaaaaa", isMobile());
+  //const is_touch = isMobile();
+  console.log("fixDevice ");
   if (isMobile()) {
-
-
-    if (g_device_type != DEVICE_MOBILE) {
-      //   console.log("AAAAAAAAAAAAAAA");
-      fixMobile();
-      g_device_type = DEVICE_MOBILE;
-    }
+    // if (g_device_type != DEVICE_MOBILE) {
+    //    console.log("bbbbbbbbbb MOBILE", isMobile(), is_touch);
+    fixMobile();
+    g_device_type = DEVICE_MOBILE;
+    //}
   } else {
-    if (g_device_type != DEVICE_DESKTOP) {
-      // console.log("bbbbbbbbbbbbbbbbb");
-      fixDesktop();
-      g_device_type = DEVICE_DESKTOP;
-    }
+    // if (g_device_type != DEVICE_DESKTOP) {
+    //  console.log("ccccccccccccccc DESKTOP", isMobile(), is_touch);
+    fixDesktop();
+    g_device_type = DEVICE_DESKTOP;
+    //}
   }
+
+
+
 }
 
 
@@ -124,8 +189,8 @@ function fixDevice() {
 
 
 function fixMobile() {
-  console.log("fixMobile 11111111111");
-  document_style = document.documentElement.style;
+  //  console.log("fixMobile 11111111111");
+  //document_style = document.documentElement.style;
   if (!document.fullscreenElement) {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "block";
@@ -139,8 +204,8 @@ function fixMobile() {
 
 
 function fixMobile2() {
-  console.log("fixMobile 222222222222222222222");
-  document_style = document.documentElement.style;
+  //console.log("fixMobile 222222222222222222222");
+  //  document_style = document.documentElement.style;
 
   console.log('witch');
   addTouchEvent("nw-1", touchNw);
@@ -170,28 +235,25 @@ function fixMobile2() {
     g_touch_x_start = evt.changedTouches[0].clientX;
     g_touch_y_start = evt.changedTouches[0].clientY;
     //    console.log("touchSTAERT", evt.target.id);
-    //  console.log("touchSTAERT", evt.changedTouches[0]);
+    console.log("touchSTAERT", evt.changedTouches[0]);
   }
 
   function touchEnd(evt) {
     touch_id_end = evt.target.id;
+    console.log("touchEnd", touch_id_end,);
 
     if (g_touch_id_start == "" || touch_id_end == "") {
-
+      console.log("touchEnd OK");
       touch_x_end = evt.changedTouches[0].clientX;
       touch_y_end = evt.changedTouches[0].clientY;
-
-      //   console.log("touchEND", evt.target.id);
       dif_x = Math.abs(g_touch_x_start - touch_x_end);
       dif_y = Math.abs(g_touch_y_start - touch_y_end);
-
-      if (dif_x < 10 && dif_y < 10) {
+      if (dif_x < 10 && dif_y < 10) {                           // constants
         console.log("NO too 2 small asdf345347234", dif_x, dif_y);
+        the_missile_1 = launchMissile(the_missile_1);
       } else {
-
         if (dif_x > dif_y) {
-          console.log("left right");
-
+          //console.log("left right");
           // if (g_touch_x_start > touch_x_end) {
           //   g_taking_off = true;
           // } else {
@@ -199,11 +261,7 @@ function fixMobile2() {
           //   g_is_drifting = false;
           //   stopMoving();
           // }
-
-
         } else {
-
-
           if (g_touch_y_start > touch_y_end) {
             g_taking_off = true;
           } else {
@@ -211,15 +269,8 @@ function fixMobile2() {
             g_is_drifting = false;
             stopMoving();
           }
-
-
-
-
         }
-
-
       }
-
     } else {
       console.log("NO neither blanks 3290487234", g_touch_id_start, touch_id_end);
     }
@@ -249,10 +300,6 @@ function fixMobile2() {
   addTouchEvent("se-3", touchSe);
   addTouchEvent("se-4", touchSe);
 
-  //console.log("before");
-  // touch_boxes = document.getElementById('touch-boxes');
-  // touch_boxes.addEventListener("touchmove", touchMoveHandler, { passive: false });
-  // //console.log("after");
 
 
   start_mobile = document.getElementById('start-mobile');
@@ -262,35 +309,11 @@ function fixMobile2() {
   screen_height = window.screen.height;
   screen_width_px = screen_width + "px";
   screen_height_px = screen_height + "px";
-  document_style.setProperty("--scene-width", screen_width_px);
-  document_style.setProperty("--scene-height", screen_height_px);
+  // document_style.setProperty("--scene-width", screen_width_px);
+  // document_style.setProperty("--scene-height", screen_height_px);
 
 
-
-  margin_top = 512 - screen_height;
-  margin_top_px = "-" + margin_top + "px";
-  document_style.setProperty("--playing-margin-top", margin_top_px);
-
-  arrow_margin_vert = margin_top + "px";
-  document_style.setProperty("--arrow-margin-vert", arrow_margin_vert);
-
-
-
-
-
-  margin_left = (1024 - screen_width) / 2;
-  margin_left_px = "-" + margin_left + "px";
-  document_style.setProperty("--playing-margin-left", margin_left_px);
-
-  arrow_margin_hor = margin_left + "px";
-  document_style.setProperty("--arrow-margin-hor", arrow_margin_hor);
-
-  input_margin_hor = 2 * margin_left + "px";
-  document_style.setProperty("--input-padding-hor", input_margin_hor);
-
-
-
-  input_margin_ver = 2 * margin_top + "px";
-  document_style.setProperty("--input-padding-ver", input_margin_ver);
+  setCssVar("--scene-width", screen_width_px);
+  setCssVar("--scene-height", screen_height_px);
 
 }

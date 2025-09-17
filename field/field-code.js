@@ -91,6 +91,7 @@ function initLeftRight() {
 
 function affixLeftRight() {
   const y_counter = Math.floor(y_flip_count);
+  //  console.log("y_counter", y_counter);
   const invert_lines = y_invert_lines[y_counter];
   for (let affix_line = 0; affix_line <= num_lines; affix_line++) {
     const inverted_x = invert_lines[affix_line];

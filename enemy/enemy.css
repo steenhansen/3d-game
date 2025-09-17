@@ -1,11 +1,5 @@
 
 
-:root {
-  --solar-time: 15s;
-  /* away toward left right */
-  --my-enemy-movement: 'left';
-}
-
   #enemy-1-scaled {
     transform-origin: center;
 }

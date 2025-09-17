@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 
-<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+<!--        !!!!!!!!!!!!                   -->
+<base href="../">
+<!--        !!!!!!!!!!!!                   -->
 
 
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
@@ -18,13 +20,19 @@
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
   <link rel="stylesheet" href="sky/sky.css" />
+
+
+
   <link rel="stylesheet" href="missile/missile-vars.css" />
+
+
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
   <link rel="stylesheet" href="input/desktop-directions.css" />
 </div>
 
 <div id="js-constants">
+  <script type="text/javascript" src="values/debug-settings.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/the_constants.js"></script>
   <script type="text/javascript" src="pylons/pylons-data.js"></script>
@@ -70,7 +78,6 @@
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
 
   <script type="text/javascript" src="scene/scene_3d.js"></script>
-  <script type="text/javascript" src="scene/scene-init.js"></script>
 
   <script rel="text/javascript" src="field/field_test.js"></script>
 
@@ -80,7 +87,7 @@
 
 
 
-<div id='click-to-begin' class="begin-mobile-desktop">
+<div id='click-to-begin'>
   <br>
   <button id="begin-desktop" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin desktop 3D game</button>
   <button id="begin-mobile" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin mobile 3D game</button>
@@ -109,12 +116,12 @@
       <div id="saturn-space"></div>
     </div>
     <div id="the-sun"></div>
-    <div id="sky-aperature" class="pyramids-skies">
+    <div id="sky-aperature">
       <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
     </div>
     <div id="enemy-area"></div>
-    <div id="missile-area" class="missile-class"></div>
+    <div id="missile-area"></div>
     <div id="checkerboard-field"> </div>
     <div id='column-html'> </div>
     <canvas id="the-draw" width=" 1024" height="512"></canvas>
@@ -131,7 +138,7 @@
 </div>
 
 
-<div id="desktop-dir" class="key-directions"></div>
+<div id="desktop-dir"></div>
 
 
 <div id="js-inject-html">
@@ -184,8 +191,38 @@
 
 
 <script>
-  gameInit();
-  sceneInit();
+
+  SPEED_LAND = FAST_LAND;
+  SPEED_ELEVATOR = FAST_ELEVATOR;
+  SPEED_FLY = FAST_FLY;
+
+  console.log("g_player", g_player);
+
   gameLoop('start-time_stamp');
-  // initLeftRight();
+  initLeftRight();
+  g_loop_state = LOOP_1_AFTER_BEGIN;
+  // loopAfterElevator();
+  // g_loop_state = LOOP_6_PLAY;
+  // function animateMissile() {
+
+  the_missile_1 = launchMissile(the_missile_1);
+
+  the_missile_1.m_y = the_missile_1.m_y - 10;
+
+  missileSet('missile-1', the_missile_1, g_player);
+
+
+  //g_loop_state = LOOP_DEBUG_STOP;
+
+  //  getRandoms();
+  console.log("the_missile_1", the_missile_1);
+  //   missileSet('missile-1', the_missile_1, g_player);
+  //   //missileSet('missile-2', the_missile_2, g_player);
+
+  //   getRandoms();
+
+  //   requestAnimationFrame(animateMissile);
+  // }
+
+  // requestAnimationFrame(animateMissile);
 </script>

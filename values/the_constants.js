@@ -1,6 +1,24 @@
 
 const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 
+const DRIFT_CYCLES = 256 * 3;       //1024;
+
+const PYLON_PIXEL_DEPTH = 30;
+
+
+
+const LOOP_0_BEGIN = 'ani-begin';
+const LOOP_1_AFTER_BEGIN = 'ani-after-begin';
+const LOOP_2_LANDING = 'ani-landing';
+const LOOP_3_AFTER_LANDING = 'ani-after-landing';
+const LOOP_4_ELEVATOR = 'ani-elevator';
+const LOOP_5_AFTER_ELEVATOR = 'ani-after-elevator';
+const LOOP_6_PLAY = 'ani-play';
+const LOOP_7_AFTER_PLAY = 'ani-after-play';
+const LOOP_8_FLY = 'ani-fly';
+const LOOP_9_DONE = 'ani-done';
+
+const LOOP_DEBUG_STOP = 'ani-none-debugging';
 
 
 const DEVICE_UNKNOWN = 0;
@@ -9,6 +27,7 @@ const DEVICE_MOBILE = 2;
 
 const MISSILE_LIFETIME = 96;
 
+const INIT_Y_FLIP_COUNT = 4;
 
 let SCENE_Y_MAX = 768;
 let SCENE_WIDTH = 8192;
@@ -51,6 +70,7 @@ const SUN_SYSTEM_COLS = [
 
 let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
 let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
+let BLUE_YELLOW_GRADIENT = ["Blue", "Yellow"];  //  00??ff00,   FF00FF
 
 
 // f e d c b a 9

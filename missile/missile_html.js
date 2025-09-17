@@ -155,7 +155,6 @@ function makeMissile(missile_id) {
   middle_centers = centers_middle(false);
   centers_outside = centersOutside(false);
 
-
   outside_circles = `<circle id="missile-100" cx=20 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-101" cx=22 cy=108 r=20 fill-opacity="1.0" />
   <circle id="missile-102" cx=28 cy=88 r=20 fill-opacity="1.0" />
@@ -188,6 +187,9 @@ function makeMissile(missile_id) {
   <circle id="missile-129" cx=38 cy=188 r=20 fill-opacity="1.0" />
   <circle id="missile-130" cx=28 cy=170 r=20 fill-opacity="1.0" />
   <circle id="missile-131" cx=22 cy=150 r=20 fill-opacity="1.0" />`;
+  //  outside_circles = '';
+
+
 
   middle_circles = `  <circle id="missile-200" cx=60 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-201" cx=65 cy=104 r=20 fill-opacity="1.0" />
@@ -205,15 +207,48 @@ function makeMissile(missile_id) {
   <circle id="missile-213" cx=102 cy=192 r=20 fill-opacity="1.0" />
   <circle id="missile-214" cx=80 cy=176 r=20 fill-opacity="1.0" />
   <circle id="missile-215" cx=65 cy=154 r=20 fill-opacity="1.0" />`;
+  //middle_circles = '';
 
-  inside_circles = `  <circle id="missile-300" cx=100 cy=128 r=20 fill-opacity="0.0" />
+
+  //   <g id="diamond-1" transform="translate(80 107) scale(0.5)">
+  //      <polygon  id="missile-diamond-300" points="0 40,40 80,80 40,40 0" style=" fill: blue;"/>
+  //   </g> 
+
+
+  inside_circles = `
+   <circle id="missile-300" cx=100 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-301" cx=108 cy=108 r=20 fill-opacity="1.0" />
   <circle id="missile-302" cx=128 cy=101 r=20 fill-opacity="1.0" />
   <circle id="missile-303" cx=148 cy=108 r=20 fill-opacity="1.0" />
   <circle id="missile-304" cx=156 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-305" cx=148 cy=148 r=20 fill-opacity="1.0" />
   <circle id="missile-306" cx=128 cy=155 r=20 fill-opacity="1.0" />
-  <circle id="missile-307" cx=108 cy=148 r=20 fill-opacity="1.0" /> `;
+  <circle id="missile-307" cx=108 cy=148 r=20 fill-opacity="1.0" />
+ `;
+
+  diamond_width = 20;
+  half_diamond = diamond_width / 2;
+
+  /*
+   make diamonds by a rotation from a square, have circles with static r, and
+   like diamonds/squares grow/shrink with scale the circles. 
+
+                       
+
+  */
+
+  d_0_xy = [90, 118];
+  d_0_off = [d_0_xy[0] + half_diamond, d_0_xy[1] + half_diamond];
+
+  inside_circlesX = `  
+    <rect class="a-diamond" id="diamond-300"  x="${d_0_xy[0]}" y="${d_0_xy[1]}" 
+       style="transform-origin:${d_0_off[0]}px   ${d_0_off[1]}px;      " />
+  <circle id="missile-301" cx=108 cy=108 r=10 fill-opacity="1.0" />
+   `;
+
+  //   <g id="diamond-1" transform="translate(80 107) scale(0.5)">
+  //      <polygon  id="missile-diamond-300" points="0 40,40 80,80 40,40 0" style=" fill: blue;"/>
+  //   </g> 
 
   let a_missile = `
   <div class="show-column" style="z-index:933601" id="${missile_id}-div">

@@ -1,11 +1,81 @@
 
+
+
+
+
+
+
+shots simpler slower? 
+
+slower shots - have a screen_counter
+
+
+g_missile_states[g_missile_iteration] must be RANDOM!!!
+
+getRandoms(screen_counter++);
+
+function getRandoms(_screen_counter){
+  if (desktop) {
+    all_changes = this_tick.length
+    for (let j = 0; j < all_changes; j++) {
+      ...
+  } else {
+    half_changes = this_tick.length/2;
+    for (let j = 0; j < half_changes; j++) {
+      ...
+  } 
+
+SINCE changing fill and size most likely the same as just fill
+
+
+
+
+
+
+
+
+have drifting on/off switch
+
+
+flipping screen does not center the sun??s
+
+
+
+fix back pylon issues  qubert-X
+
+
+
+grid showing what where
+
+
+
+cracks drawn on glass on canvas
+-https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createPattern
+ cracks as arcs
+
+
+
+
+drift only at 45%
+
+typeCzech
+
+if get shot crack screen, and die   or if hit pylon then slowly crack and die
+
+
+
+use css to mobile/desktop hide show directoins
+
+
+
+
 on tests- say open console to see tests
 
 
 svg-rect ==> svgs
 
 
-https://www.canva.com/colors/color-wheel/
+https://www.canva.com/colors/color-wheel/aas
 
  1 #a0d91f #1FD9B5 #581FD9 #D91F43
  2 #b5d226 #26D299 #4326D2 #D2265F

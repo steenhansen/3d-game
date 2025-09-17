@@ -7,6 +7,113 @@ const NUM_OUTSIDE_BALLS = 32;
 const NUM_MIDDLE_BALLS = 16;
 const NUM_CENTER_BALLS = 8;
 
+const NUM_TOTAL_BALLS = NUM_OUTSIDE_BALLS + NUM_MIDDLE_BALLS + NUM_CENTER_BALLS;  // 56
+
+
+
+function randomMissileSize(start_size, max_rand) {
+  let gg = Math.floor(Math.random() * 7);
+  let circle_size = '';
+  if (gg == 0) {
+    let r = Math.floor(Math.random() * max_rand) + start_size;
+    circle_size = `${r}px`;
+  }
+  return circle_size;
+}
+
+
+//function randomMissileColor([32, 0, 0], [244, 0, 0]) {
+function randomMissileColor(rgb_ranges, rgb_bases) {
+  let [red_range, green_range, blue_range] = rgb_ranges;
+  let [red_base, green_base, blue_base] = rgb_bases;
+  let non_zero_change = Math.floor(Math.random() * 8);
+  if (non_zero_change == 0) {
+    return '';
+  } else {
+    let none_zero_hide = Math.floor(Math.random() * 3);
+    if (none_zero_hide == 0) {
+      return `rgb(1,2,3,0)`;
+    }
+    r = Math.floor(Math.random() * red_range) + red_base;
+    //   console.log(" r", r);
+    g = Math.floor(Math.random() * green_range) + green_base;
+    b = Math.floor(Math.random() * blue_range) + blue_base;
+    rgba = `rgb(${r}, ${g}, ${b}, 1)`;
+    return rgba;
+  }
+}
+
+function makeList() {
+  let out_arr = [];
+  for (let i = 0; i < 360; i++) {   // 6 sec == 60fps * 6  
+    let in_arr = [];
+    for (let j = 0; j < NUM_OUTSIDE_BALLS; j++) {
+      outside_missile_id = OUTSIDE_ID_START + j;
+      m_size = randomMissileSize(10, 15);
+      //      m_color = randomMissileColor([32, 0, 0], [223, 0, 0]);
+      m_color = randomMissileColor([128, 0, 0], [255 - 128, 0, 0]);
+      if (m_size !== '' || m_color !== '') {
+        // console.log(" m_color", m_color);
+        t_arr = [outside_missile_id, m_size, m_color];
+        in_arr.push(t_arr);
+      }
+    }
+    for (let j = 0; j < NUM_MIDDLE_BALLS; j++) {
+      outside_missile_id = MIDDLE_ID_START + j;
+      m_size = randomMissileSize(10, 20);
+      m_color = randomMissileColor([32, 32, 32], [223, 100, 100]);
+      if (m_size !== '' || m_color !== '') {
+        t_arr = [outside_missile_id, m_size, m_color];
+        in_arr.push(t_arr);
+      }
+    }
+    for (let j = 0; j < NUM_CENTER_BALLS; j++) {
+      outside_missile_id = CENTER_ID_START + j;
+      m_size = randomMissileSize(15, 20);
+      m_color = randomMissileColor([32, 32, 32], [223, 175, 175]);
+      if (m_size !== '' || m_color !== '') {
+        t_arr = [outside_missile_id, m_size, m_color];
+        in_arr.push(t_arr);
+      }
+    }
+    out_arr.push(in_arr);
+  }
+  return out_arr;
+}
+
+function getRandoms() {
+  //out_arr = makeList();
+  missile_area = document.querySelector('.missile-class');
+  let this_tick = g_missile_states[g_missile_iteration];
+  for (let j = 0; j < this_tick.length; j++) {
+    let [the_id, the_size, the_color] = this_tick[j];
+    if (the_size !== '') {
+      let missile_size = "--missile-size-" + the_id;
+      missile_area.style.setProperty(missile_size, the_size);
+    }
+    if (the_color !== '') {
+      let missile_fill = "--missile-fill-" + the_id;
+      missile_area.style.setProperty(missile_fill, the_color);
+      // if (the_id == 131) {
+      //   console.log(" ----", missile_fill, the_color);
+      // }
+    }
+  }
+
+  g_missile_iteration++;
+  if (g_missile_iteration == 360) {
+    g_missile_iteration = 0;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 function launchMissile(the_missile) {
   let { m_x, m_y } = g_player;
@@ -14,11 +121,13 @@ function launchMissile(the_missile) {
   the_missile.m_y = m_y;
   the_missile.m_lifetime = MISSILE_LIFETIME;
   the_missile.m_expired = false;
-  //console.log("dfsa", the_missile);
   return the_missile;
 }
 
 function missileAdvance(the_missile) {
+  if (typeof DBG_MISSILE_ADVANCE == 'string') {
+    return the_missile;
+  }
   if (the_missile.m_expired) {
     return the_missile;
   }
@@ -46,72 +155,12 @@ function missileAdvance(the_missile) {
 
 
 
-function getRandomSize(missile_id, start_size15, max_rand10) {
-  let gg = Math.floor(Math.random() * 7);
-  if (gg == 0) {
-    let r = Math.floor(Math.random() * max_rand10) + start_size15;
-    let missile_fill = "--missile-size-" + missile_id;
-    let circle_size = `${r}px`;
-
-    missile_area = document.getElementById('missile-area');
-    document.documentElement.style.setProperty(missile_fill, circle_size);
-  }
-
-}
-
-
-
-function getRandomColorDark(missile_id) {
-  let gg = Math.floor(Math.random() * 8);
-  if (gg == 0) {
-    let r = Math.floor(Math.random() * 32) + 224;
-    let g = 0;
-    let b = 0;
-    let missile_fill = "--missile-fill-" + missile_id;
-    let rgb = `rgb(${r}, ${g}, ${b})`;
-    document.documentElement.style.setProperty(missile_fill, rgb);
-  }
-}
-
-function getRandomColorMedium(missile_id) {
-  let gg = Math.floor(Math.random() * 8);
-  if (gg == 0) {
-    let r = Math.floor(Math.random() * 32) + 224;
-    let g = Math.floor(Math.random() * 32) + 100;
-    let b = Math.floor(Math.random() * 32) + 100;
-    let missile_fill = "--missile-fill-" + missile_id;
-    let rgb = `rgb(${r}, ${g}, ${b})`;
-    document.documentElement.style.setProperty(missile_fill, rgb);
-  }
-}
-
-function getRandomColorBright(missile_id) {
-  let gg = Math.floor(Math.random() * 8);
-  if (gg == 0) {
-    let r = Math.floor(Math.random() * 32) + 224;
-    let g = Math.floor(Math.random() * 32) + 175;
-    let b = Math.floor(Math.random() * 32) + 175;
-    let missile_fill = "--missile-fill-" + missile_id;
-    let rgb = `rgb(${r}, ${g}, ${b})`;
-    document.documentElement.style.setProperty(missile_fill, rgb);
-  }
-}
-
-function getRandomFill(missile_id) {
-  let missile_display = "--missile-display-" + missile_id;
-  let gg = Math.floor(Math.random() * 3);
-  if (gg == 0) {
-    display_none_block = `none`;
-  } else {
-    display_none_block = `block`;
-  }
-  document.documentElement.style.setProperty(missile_display, display_none_block);
-}
-
+// stupid way to do this!!!!!!!
 function hideMissileBalls(missile_id) {
-  let missile_display = "--missile-display-" + missile_id;
-  display_none_block = `none`;
-  document.documentElement.style.setProperty(missile_display, display_none_block);
+  let missile_fill = "--missile-fill-" + missile_id;
+  rgba = `rgb(1,2,3,0)`;
+  missile_area = document.querySelector('.missile-class');
+  missile_area.style.setProperty(missile_fill, rgba);
 }
 
 function setFillNone() {
@@ -128,26 +177,14 @@ function setFillNone() {
 
 
 
-function getRandoms() {
-  for (let i = 0; i < NUM_OUTSIDE_BALLS; i++) {
-    outside_missile = OUTSIDE_ID_START + i;
-    getRandomColorDark(outside_missile);
-    getRandomSize(outside_missile, 15, 10);
-    getRandomFill(outside_missile);
-  }
-  for (let i = 0; i < NUM_MIDDLE_BALLS; i++) {
-    middle_missile = MIDDLE_ID_START + i;
-    getRandomColorMedium(middle_missile);
-    getRandomSize(middle_missile, 20, 10);
-    getRandomFill(middle_missile);
-  }
-  for (let i = 0; i < NUM_CENTER_BALLS; i++) {
-    center_missile = CENTER_ID_START + i;
-    getRandomColorBright(center_missile);
-    getRandomSize(center_missile, 20, 10);
-    getRandomFill(center_missile);
-  }
-}
+// 56 [ color, size, display] ==56*3=168 for each instance
+
+
+// 60 frames a seconds  60*168=10080 numbers a second
+
+
+
+
 
 
 function missileSet(real_id, the_missile, g_player) {
@@ -158,7 +195,7 @@ function missileSet(real_id, the_missile, g_player) {
   collision_3b = hasCollided(column_3b, the_missile, COLLISION_SIZES);
   collision_3c = hasCollided(column_3c, the_missile, COLLISION_SIZES);
 
-  //collision_3c = hasCollided(column_3c, the_missile, COLLISION_SIZES);
+
 
   has_collided = collision_1a || collision_2a || collision_2b || collision_3a || collision_3b || collision_3c;
   if (has_collided) {
@@ -173,7 +210,10 @@ function missileSet(real_id, the_missile, g_player) {
     the_missile.m_y_dir = -1;
     setFillNone();
   } else {
-    getRandoms();
+    if (typeof DBG_FREEZE_MISSILE != 'string') {
+      getRandoms();
+    }
+
   }
   spriteDraw(real_id, the_missile, g_player);
 }

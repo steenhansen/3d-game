@@ -10,13 +10,13 @@ function spriteFront(column_vlines) {
   return front_column;
 }
 
-function columnFront(column_vlines, gradient_front, front_panel_id, do_outlines) {
+function columnFront(column_vlines, gradient_front, front_panel_id, do_outlines, front_color) {
   let [left_vline, middle_vline, _right_vline] = column_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
 
-  let front_column = columnPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines);
+  let front_column = columnPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines, front_color);
   return front_column;
 }
 
@@ -39,27 +39,44 @@ function spriteCenterXy(a_polygon) {
   let the_scale = the_width / 256;
   return [center_x, center_y, the_scale];
 }
-function columnPolygon(a_polygon, twirl_gradient, panel_id, do_outlines) {
+
+
+
+function columnPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_color) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-
-
-  let svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${panel_id}"
+  if (isMobile()) {
+    svg_polygon = `<polygon fill="${solid_color}"  id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
-  if (do_outlines) {
-    svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="black"
+  } else {
+    console.log("twirl_gradient: " + twirl_gradient);
+    svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
+
+
+    if (do_outlines) {
+      console.log("OUTLINES for: ", twirl_gradient);
+      svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="black"
+                      points="${top_left_x},${top_left_y}
+                              ${top_right_x},${top_right_y}
+                              ${bot_right_x},${bot_right_y}
+                              ${bot_left_x},${bot_left_y}      " />`;
+
+    }
+
 
   }
+
+
 
 
 
@@ -74,19 +91,6 @@ function columnPolygon(a_polygon, twirl_gradient, panel_id, do_outlines) {
 
 
 
-
-function panelDiffY(a_thing, g_player) {
-  let player_y = g_player.m_y;
-  let thing_y = a_thing.m_y;
-
-  if (player_y > thing_y) {
-    difference_y = player_y - thing_y;
-  } else {
-    dist_column_to_zero = SCENE_Y_MAX - thing_y;
-    difference_y = player_y + dist_column_to_zero;
-  }
-  return difference_y;
-}
 
 ///////////////   thing_relative  relative_to_player 
 function panelPlaceX(a_thing, g_player) {
@@ -131,35 +135,6 @@ function panelPlaceX(a_thing, g_player) {
 
 
 
-function addSidewaysDepth(difference_x) {
-  if (difference_x > 4000) shrink_depth = 95;
-  else if (difference_x > 3500) shrink_depth = 94;
-  else if (difference_x > 3000) shrink_depth = 93;
-  else if (difference_x > 2666) shrink_depth = 92;
-  else if (difference_x > 2333) shrink_depth = 91;
-  else if (difference_x > 2000) shrink_depth = 90;
-  else if (difference_x > 1666) shrink_depth = 89;
-  else if (difference_x > 1333) shrink_depth = 88;
-  else if (difference_x > 1200) shrink_depth = 87;
-  else if (difference_x > 1100) shrink_depth = 86;
-  else if (difference_x > 1000) shrink_depth = 85;
-  else shrink_depth = Math.floor(0.007 * difference_x + 77);
-  return shrink_depth;
-}
-
-function farAdjustment(sideways_depth_add) {
-  shrink_perc = sideways_depth_add / 100;
-  return shrink_perc;
-}
-
-function panels3BackLeft(x_center_offset, difference_x, difference_y) {
-  let sideways_depth_add = addSidewaysDepth(difference_x);
-  let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = farAdjustment(sideways_depth_add);
-  back_left_bot = distancedBackColumnPoint(shrink_perc, left_front_bot);
-  right_bottom_3 = [left_front_bot, right_front_bot, back_left_bot];
-  return right_bottom_3;
-}
 
 function panelsTops(left_front_bot, right_front_bot, left_or_right_back_bot) {
   left_front_top_y = HALF_VIEW_WIDTH - left_front_bot[1];
@@ -172,11 +147,16 @@ function panelsTops(left_front_bot, right_front_bot, left_or_right_back_bot) {
   return column_tops;
 }
 
-function panels3BackRight(x_center_offset, difference_x, difference_y) {
-  let sideways_depth_add = addSidewaysDepth(difference_x);
+function panels3BackRight(x_center_offset, pylon_player_ys) {
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_y = player_y - pylon_y;
+  } else {
+    dist_column_to_zero = SCENE_Y_MAX - pylon_y;
+    difference_y = player_y + dist_column_to_zero;
+  }
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
-  shrink_perc = farAdjustment(sideways_depth_add);
-  back_right_bot = distancedBackColumnPoint(shrink_perc, right_front_bot);
+  back_right_bot = distancedPoint(PYLON_PIXEL_DEPTH, right_front_bot);
   left_bottom_3 = [left_front_bot, right_front_bot, back_right_bot];
   return left_bottom_3;
 }
@@ -185,6 +165,46 @@ function panels3BackRight(x_center_offset, difference_x, difference_y) {
 
 
 
+
+
+
+function panelDiffY(a_thing, g_player) {
+  let player_y = g_player.m_y;
+  let thing_y = a_thing.m_y;
+
+  if (player_y > thing_y) {
+    difference_y = player_y - thing_y;
+  } else {
+    dist_column_to_zero = SCENE_Y_MAX - thing_y;
+    difference_y = player_y + dist_column_to_zero;
+  }
+  return difference_y;
+}
+
+
+// qubert-X
+/*
+                    |   
+                    |   |
+      back_left_bot \   |
+                     \  |                  |
+                      \ |                  | 
+                       \|                  | 
+         left_front_bot \-------------------right_front_bot
+*/
+function panels3BackLeft(x_center_offset, pylon_player_ys) {
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_y = player_y - pylon_y;
+  } else {
+    dist_column_to_zero = SCENE_Y_MAX - pylon_y;
+    difference_y = player_y + dist_column_to_zero;
+  }
+  let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
+  back_left_bot = distancedPoint(PYLON_PIXEL_DEPTH, left_front_bot);
+  right_bottom_3 = [left_front_bot, right_front_bot, back_left_bot];
+  return right_bottom_3;
+}
 
 function panelBotLeftRight(x_offset, difference_y) {
   right_front_bot_vanish_point = [x_offset + HALF_TILE_WIDTH, BOTTOM_FIELD];

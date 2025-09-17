@@ -1,0 +1,58 @@
+
+:root{
+
+
+--diamond-display-300: block;
+--diamond-display-301: block;
+
+--diamond-size-300: 0.1;
+--diamond-size-301: 0.8;
+
+--diamond-fill-300: green;
+--diamond-fill-301: blue;
+
+.a-diamond{
+  width:20px;
+  height:20px; 
+}
+
+/*
+
+BAD IDEA SINCE ONLY DISPLAY BLOCK/NONE IS SAME
+  display,  c_fill,  d_fill    circle_size,  diamond_size
+[ "block", "red",   "blue",   "22px",       "1.1"]
+
+
+
+DIAMOND  display, fill,   diamond_size
+[        "block", "blue", "1.1"]
+
+circle  display, fill,  circle_size
+[       "block", "red", "22px"]
+
+
+
+ transform: scale(var(--diamond-size-300)) rotate(45deg);
+
+  d_0_xy = [90, 118];
+  d_0_off = [d_0_xy[0] + half_diamond, d_0_xy[1] + half_diamond];
+
+ <rect class="a-diamond" id="diamond-300"  x="${d_0_xy[0]}" y="${d_0_xy[1]}" 
+       style="transform-origin:${d_0_off[0]}px   ${d_0_off[1]}px;      " />
+
+    */
+
+#diamond-300 { 
+   display:var(--diamond-display-300); 
+   fill:var(--diamond-fill-300); 
+   transform: scale(var(--diamond-size-300)) rotate(45deg);
+}
+
+#diamond-301 { 
+  opacity:0.5;
+  display:var(--diamond-display-301); 
+  fill:var(--diamond-fill-301); 
+ transform: scale(var(--diamond-size-301)) ;
+}
+
+}

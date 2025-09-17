@@ -8,6 +8,7 @@
 function twirledGradient(gradient_index, column_colors) {
   let [first_color, second_color] = column_colors;
   the_gradient = "column-gradient" + first_color + second_color + Math.floor(gradient_index);
+  //  console.log("the_gradient", the_gradient);
   return the_gradient;
 }
 
@@ -105,6 +106,11 @@ white_black_gradients = makeGradients(WHITE_BLACK_GRADIENT);
 lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA_GRADIENT);
 
 
+blue_yellow_gradients = makeGradients(BLUE_YELLOW_GRADIENT);
+
+//console.log("white_black_gradients", white_black_gradients);
+
+
 document.getElementById('pylons-svg').innerHTML = `
 <svg>
   <defs>
@@ -112,7 +118,7 @@ document.getElementById('pylons-svg').innerHTML = `
     ${white_black_gradients}
     ${lime_fuchsia_gradients}
  
-
+    ${blue_yellow_gradients}
 
     <linearGradient id="red-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(255,0,0)" />

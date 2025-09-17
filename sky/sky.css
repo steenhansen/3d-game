@@ -1,7 +1,4 @@
 
-:root {
-  --sky-blue: #0000ff;
-}
 
 
 #the-pyramids {
@@ -16,8 +13,29 @@
 
 
 
+.pyramids-skies {
+    --sky-color: #0000ff;
+    --ani-key-frame: sun-keyframes;
+    --cloud-image: radial-gradient(#ffffff, var(--sky-color) 75%); 
+    --cloud-skew: perspective(1536px) rotateX(-85deg);
+}
+
+
+@media (max-width:1023px) {
+  .pyramids-skies {
+     --sky-color: #0000ff;
+    --ani-key-frame: none;
+        --cloud-image: none; 
+    --cloud-skew: none;
+  }
+} 
+
 
 #the-sun {
+   /* margin-left: calc( (1024 - var(--scene-width) / 2)+px );  */
+
+
+      margin-left: var(--margin-left_px) ; 
   top:0px;
   background-image: url('../images/the-sun.png');
   width: 1024px;
@@ -28,7 +46,10 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 16s;
-  animation-name: sun-keyframes;
+
+
+    animation-name: var(--ani-key-frame); 
+   /* animation-name: sun-keyframes;  */
  }
 
  @keyframes sun-keyframes {
@@ -41,8 +62,6 @@
 }
 
 
-
-
 #the-sky {
   display:nXone;
   position: relative;
@@ -51,20 +70,18 @@
   width: 2048px;
   height:2400px;
   background-size: 256px 256px;
-   /* background-image: radial-gradient(#ffffff, #0000ff 75%);  */
- background-image: radial-gradient(#ffffff, var(--sky-blue) 75%); 
-  transform: perspective(1536px) rotateX(-85deg);
+  background-image: var(--cloud-image); 
+  transform: var(--cloud-skew); 
+
+   /* background-image: radial-gradient(#ffffff, var(--sky-color) 75%); 
+  transform: perspective(1536px) rotateX(-85deg); */
 }
-
-
 
 #sky-aperature {
   width: 1024px;
   height: 256px;
   z-index: 1;
-  /* background-color: red;    this was the red sometimes flash*/
-  /* background-color: #0000ff;     */
-  background-color: var(--sky-blue); 
+  background-color: var(--sky-color); 
   overflow-x: hidden;
   overflow-y: hidden;
   position:relative;

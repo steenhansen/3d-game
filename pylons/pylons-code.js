@@ -1,6 +1,12 @@
 
 
+
+
 function twirlSides(a_column) {
+
+  // if mobile then just return a_column
+  //  return a_column;
+
   let { m_side_twirl: side_twirl, m_front_twirl: front_twirl } = a_column;
 
   side_twirl += 0.25;
@@ -15,58 +21,69 @@ function twirlSides(a_column) {
 
   a_column.m_side_twirl = side_twirl;
   a_column.m_front_twirl = front_twirl;
-
-
-  //console.log("ddd", side_twirl, front_twirl);
   return a_column;
 }
 
 
-function columnSidePanel(a_column, column_vlines, gradient_side) {
-  //console.log("ddsf", a_column.column_name);
+function columnSidePanel(a_column, column_vlines, gradient_side, side_color) {
   let [_left_vline, middle_vline, right_vline] = column_vlines;
   let [right_front_top, right_front_bot] = middle_vline;
   let [back_right_top, back_right_bot] = right_vline;
   right_top_bot = [right_front_top, back_right_top, right_front_bot, back_right_bot];
   let side_column_name = 'panel-side-column-' + a_column.column_name;
   let do_outlines = a_column.c_outline;
-  let side_column = columnPolygon(right_top_bot, gradient_side, side_column_name, do_outlines);
+  let side_column = columnPolygon(right_top_bot, gradient_side, side_column_name, do_outlines, side_color);
   return side_column;
 }
 
-
-
-function columnOnLeft(a_column, x_center_offset, difference_x, difference_yy, head_on_view) {
+function columnOnLeft(a_column, x_center_offset, pylon_player_ys, head_on_view, side_color) {
   if (head_on_view) {
-    return columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy);
+    [pylon_y, player_y] = pylon_player_ys;
+    if (player_y > pylon_y) {
+      difference_yy = player_y - pylon_y;
+    } else {
+      dist_column_to_zero = SCENE_Y_MAX - pylon_y;
+      difference_yy = player_y + dist_column_to_zero;
+    }
+
+    return columnOnMiddle(a_column, x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectLeftSide(a_column, x_center_offset, difference_x, difference_yy);
+    left_mid_right_vlines = objectLeftSide(a_column, x_center_offset, pylon_player_ys);
     gradient_left = twirledGradient(a_column.m_side_twirl, a_column.column_colors);
-    side_column = columnSidePanel(a_column, left_mid_right_vlines, gradient_left);
+    side_column = columnSidePanel(a_column, left_mid_right_vlines, gradient_left, side_color);
     return [left_mid_right_vlines, side_column];
   }
 }
 
-function columnOnRight(a_column, x_center_offset, difference_x, difference_yy, head_on_view) {
+function columnOnRight(a_column, x_center_offset, pylon_player_ys, head_on_view, side_color) {
   if (head_on_view) {
-    return columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy);
+
+    [pylon_y, player_y] = pylon_player_ys;
+    if (player_y > pylon_y) {
+      difference_yy = player_y - pylon_y;
+    } else {
+      dist_column_to_zero = SCENE_Y_MAX - pylon_y;
+      difference_yy = player_y + dist_column_to_zero;
+    }
+
+
+    return columnOnMiddle(a_column, x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectRightSide(a_column, x_center_offset, difference_x, difference_yy);
+    left_mid_right_vlines = objectRightSide(a_column, x_center_offset, pylon_player_ys);
 
     gradient_right = twirledGradient(a_column.m_side_twirl, a_column.column_colors);
-    side_column = columnSidePanel(a_column, left_mid_right_vlines, gradient_right);
+    side_column = columnSidePanel(a_column, left_mid_right_vlines, gradient_right, side_color);
     return [left_mid_right_vlines, side_column];
   }
 }
 
-function columnOnMiddle(a_column, x_center_offset, difference_x, difference_yy) {
-  left_mid_right_vlines = objectMiddleRegion(a_column, x_center_offset, difference_x, difference_yy);
+function columnOnMiddle(a_column, x_center_offset, difference_yy) {
+  left_mid_right_vlines = objectMiddleRegion(a_column, x_center_offset, difference_yy);
   side_column = '';
   return [left_mid_right_vlines, side_column];
 }
 
 function columnSet(a_column, html_id) {
-  //console.log("id", html_id);
   svg_column = columnDraw(a_column, g_player);
   targetDiv = document.getElementById(html_id);
   if (svg_column == null) {
@@ -76,14 +93,20 @@ function columnSet(a_column, html_id) {
 }
 
 function columnDraw(a_column, g_player) {
+  column_colors = a_column.column_colors;
+  front_color = a_column.column_colors[0];
+  side_color = a_column.column_colors[1];
+
   a_column = twirlSides(a_column);
-  [the_z_index, difference_y, column_relative, x_center_offset, difference_x, head_on_view] = objectPlacement(a_column, g_player);
+  [the_z_index, difference_y, column_relative, x_center_offset, head_on_view] = objectPlacement(a_column, g_player);
+  pylon_player_ys = [a_column.m_y, g_player.m_y];
+
   if (column_relative == LEFT_OF_PLAYER) {
-    [left_mid_right_vlines, side_column] = columnOnLeft(a_column, x_center_offset, difference_x, difference_y, head_on_view);
+    [left_mid_right_vlines, side_column] = columnOnLeft(a_column, x_center_offset, pylon_player_ys, head_on_view, side_color);
     left_mid_right_vlines[0][1][0][0] += 1;    // for some reason
     left_mid_right_vlines[0][1][1][0] += 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   } else {
-    [left_mid_right_vlines, side_column] = columnOnRight(a_column, x_center_offset, difference_x, difference_y, head_on_view);
+    [left_mid_right_vlines, side_column] = columnOnRight(a_column, x_center_offset, pylon_player_ys, head_on_view, side_color);
     left_mid_right_vlines[0][1][0][0] -= 1;    // for some reason
     left_mid_right_vlines[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   }
@@ -93,7 +116,7 @@ function columnDraw(a_column, g_player) {
 
   let do_outlines = a_column.c_outline;
 
-  front_column = columnFront(left_mid_right_vlines, gradient_front, column_id, do_outlines);
+  front_column = columnFront(left_mid_right_vlines, gradient_front, column_id, do_outlines, front_color);
   column_svg = columnToSvg(the_z_index, front_column, side_column);
   return column_svg;
 }

@@ -1,257 +1,107 @@
-
-
-
 /* Asuz Zenbook + Ipad Air are the problems */
-:root {
- --input-nw-left:17px;
---input-nw-top:177px;
- --input-nw-width:17px;
 
-  --input-n-left:17px;
- --input-n-width:17px;
 
 
- --input-padding-hor: 0px;
- --input-padding-ver: 0px;
 
 
-}
 
 
+.an-arrow {
+  --arrow-margin: 16px;
 
-#touch-boxes {
-        display: grid;
-
-       grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-
-        grid-template-rows:  12.5% 12.5%  12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-        
-
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 1234567;
-}
-
-.input-box{
-    opacity:0.2; 
-}
-
-#nw-1{ 
-    background-color:black;  
-   }
-#nw-2{ 
-   background-color:black;  
-   margin-right:4px;
-  }
-#nw-3{ 
-   background-color:black;
-   margin-bottom:4px;
-}
-#nw-4{ 
-    background: url('../images/the-curve-nw.png') no-repeat top left;
-
-}
-
-#n-1{ 
-    background-color:black
-  }
-#n-2{background-color:black;}
-#n-3{background-color:black;}
-
-#n-4{ background-color:black;  }
-
-#ne-1{ 
-    background-color:black;
-     margin-left:4px;
-   }
-#ne-2{ 
-   background-color:black;  
-  }
-#ne-3{ 
-
-      background: url('../images/the-curve-ne.png') no-repeat top right;
-
-  }
-#ne-4{ 
-   background-color:black;
-   margin-bottom:4px;
-}
-
-
-
-#w-1{background-color:black; }
-#w-2{   background-color:black;}
-#w-3{   background-color:black;}
-#w-4{   background-color:black;}
-
-#e-1{background-color:black; }
-#e-2{   background-color:black;}
-#e-3{   background-color:black;}
-#e-4{   background-color:black;}
-
-
-
-
-
-
-
-#sw-1{ 
-    background-color:black;  
-        margin-top:4px;
-   }
-#sw-2{ 
-
-     background: url('../images/the-curve-sw.png') no-repeat bottom left;
-  }
-#sw-3{ 
-   background-color:black;
-}
-#sw-4{ 
-   background-color:black;
-           margin-right:4px;
-}
-
-#s-1{ 
-       background-color:black;
-
-  }
-#s-2{background-color:black;}
-#s-3{background-color:black;}
-
-#s-4{ background-color:black;  }
-
-#se-1{ 
-
-     background: url('../images/the-curve-se.png') no-repeat bottom right;
-   }
-#se-2{ 
-   background-color:black;  
-        margin-top:4px;
-        
-  }
-#se-3{ 
-   background-color:black;
-       margin-left:4px;
-}
-#se-4{ 
-   background-color:black;
-}
-
-
-
-
-/*
-https://www.w-3schools.com/cssref/tryit.php?filename=trycss_grid-area
-
-
-
-*/
-
-
-
-
-            #touch-arrows {
- 
-         display: grid; 
-
-    grid-template-columns: 25% 50% 25%;
-        grid-template-rows: 30% 40% 30%;
-        
-        width: 100%;
-        height: 100%;
-        z-index: 12222;
-        position: absolute;
-
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.an-arrow{
-  width:24px;
-  height:24px;
-   opacity:0.4;
+  width: 24px;
+  height: 24px;
+  opacity: 0.4;
   position: relative;
-  z-index:2147483555;
-  /* margin-top:6px; */
-
-      --arrow-marginXX: 16px;
+  z-index: 2147483555;
 }
 
 
 
 
-#arrow-nw{
-  transform:rotate(-45deg); 
-    margin-left:var(--arrow-marginXX); 
-    margin-top:var(--arrow-marginXX); 
+#arrows-html {
+  display: grid;
+
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 30% 40% 30%;
+
+  width: 100%;
+  height: 100%;
+  z-index: 12222;
+  position: absolute;
+
+
 }
 
-#arrow-n{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#arrow-nw {
+  transform: rotate(-45deg);
+  margin-left: var(--arrow-margin);
+  margin-top: var(--arrow-margin);
+}
+
+#arrow-n {
   left: 50%;
-      margin-top:var(--arrow-marginXX); 
+  margin-top: var(--arrow-margin);
 }
 
-#arrow-ne{
-  transform:rotate(45deg); 
-   margin-left:auto; 
-  margin-right:var(--arrow-marginXX); 
-  margin-top:var(--arrow-marginXX);
-}
-
-
-#arrow-w{
-  transform:rotate(270deg);  
-  left:0px;
-  top:35%;
-     margin-left:var(--arrow-marginXX); 
-}
-
-#arrow-e{
-  transform:rotate(90deg);  
-  margin-left:auto;
-    margin-right:var(--arrow-marginXX); 
-  top:35%
+#arrow-ne {
+  transform: rotate(45deg);
+  margin-left: auto;
+  margin-right: var(--arrow-margin);
+  margin-top: var(--arrow-margin);
 }
 
 
-
-
-#arrow-sw{
-  transform:rotate(225deg);  
-  margin-top:auto;
-   margin-left:var(--arrow-marginXX); 
-      margin-bottom:var(--arrow-marginXX); 
+#arrow-w {
+  transform: rotate(270deg);
+  left: 0px;
+  top: 35%;
+  margin-left: var(--arrow-margin);
 }
 
-#arrow-s{
-    left: 50%;
-   transform:rotate(180deg);  
-   margin-top:auto;
-    margin-bottom:var(--arrow-marginXX); 
-}
-
-
-#arrow-se{
-  transform:rotate(135deg);  
-    margin-left:auto;
-  margin-top:auto;
-     margin-bottom:var(--arrow-marginXX); 
-  margin-right:var(--arrow-marginXX); 
+#arrow-e {
+  transform: rotate(90deg);
+  margin-left: auto;
+  margin-right: var(--arrow-margin);
+  top: 35%
 }
 
 
 
+
+#arrow-sw {
+  transform: rotate(225deg);
+  margin-top: auto;
+  margin-left: var(--arrow-margin);
+  margin-bottom: var(--arrow-margin);
+}
+
+#arrow-s {
+  left: 50%;
+  transform: rotate(180deg);
+  margin-top: auto;
+  margin-bottom: var(--arrow-margin);
+}
+
+
+#arrow-se {
+  transform: rotate(135deg);
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: var(--arrow-margin);
+  margin-right: var(--arrow-margin);
+}

@@ -1,22 +1,10 @@
 
-function isMobile() {
-  const is_mobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (is_mobile) {
-    return true;
-  }
-  return false;
-}
-
-const is_touch = isMobile();
-
-if (!is_touch) {
-  var d1 = document.getElementById('desktop-dir');
-  d1.innerHTML = `
- 
-        
+var d1 = document.getElementById('desktop-dir');
+d1.innerHTML = `
+       
   <div>
-        <div class="box" style="margin: 0 auto;">
+        <div class="dir-box" style="margin: 0 auto;">
             <div>&#x2196; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q or 7</div>
             <div style="text-align:center">&#x2191; <br> W or 8</div>
             <div style="text-align:right">&#x2197; <br> E or 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -40,4 +28,3 @@ if (!is_touch) {
         `;
 
 
-}

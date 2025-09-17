@@ -70,19 +70,6 @@ function enemyStep(the_enemy) {
   return the_enemy;
 }
 
-function spriteDraw(real_id, the_sprite, g_player) {
-
-  real_id = the_sprite.s_id;
-  [the_z_index, difference_y, missile_relative, x_center_offset, difference_x, head_on_view] = objectPlacement(the_sprite, g_player);
-  if (missile_relative == LEFT_OF_PLAYER) {
-    left_mid_right_vlines = objectLeftSide(the_sprite, x_center_offset, difference_x, difference_y);
-  } else {
-    left_mid_right_vlines = objectRightSide(the_sprite, x_center_offset, difference_x, difference_y);
-  }
-  gradient_front = 'clear-grad';
-  the_stats = spriteFront(left_mid_right_vlines);
-  spritePosition(real_id, the_z_index, the_stats);
-}
 
 
 function spritePosition(real_id, z_index, the_stats) {
@@ -91,7 +78,6 @@ function spritePosition(real_id, z_index, the_stats) {
   missile_div.style.zIndex = z_index;
 
   missile_x_y = document.getElementById(real_id + '-x-y');
-  //  console.log("center_x, ", center_x, real_id);
   missile_x_y.setAttribute("x", center_x);
   missile_x_y.setAttribute("y", center_y);
 
@@ -105,12 +91,12 @@ function objectPlacement(an_object, g_player) {
   x_center_offset = thingRelationToPlayer(difference_x, g_player, relative_to_player);
 
   let the_z_index = zIndex(difference_x, difference_y);
-  return [the_z_index, difference_y, relative_to_player, x_center_offset, difference_x, head_on_view];
+  return [the_z_index, difference_y, relative_to_player, x_center_offset, head_on_view];
 }
 
-function objectLeftSide(a_column, x_center_offset, difference_x, difference_y) {
+function objectLeftSide(a_column, x_center_offset, pylon_player_ys) {
 
-  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackRight(x_center_offset, difference_x, difference_y);
+  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackRight(x_center_offset, pylon_player_ys);
   let [left_front_top, right_front_top, back_right_top] = panelsTops(left_front_bot, right_front_bot, back_right_bot);
   let left_vline = [left_front_top, left_front_bot];
   let middle_vline = [right_front_top, right_front_bot];
@@ -130,8 +116,33 @@ function objectLeftSide(a_column, x_center_offset, difference_x, difference_y) {
 
 
 
-function objectRightSide(a_column, x_center_offset, difference_x, difference_y) {
-  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackLeft(x_center_offset, difference_x, difference_y);
+
+
+
+
+
+function spriteDraw(real_id, the_sprite, g_player) {
+
+  pylon_player_ys = [the_sprite.m_y, g_player.m_y];
+
+  real_id = the_sprite.s_id;
+  [the_z_index, difference_y, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, g_player);
+  if (missile_relative == LEFT_OF_PLAYER) {
+
+
+
+    left_mid_right_vlines = objectLeftSide(the_sprite, x_center_offset, pylon_player_ys);
+  } else {
+    left_mid_right_vlines = objectRightSide(the_sprite, x_center_offset, pylon_player_ys);
+  }
+  gradient_front = 'clear-grad';
+  the_stats = spriteFront(left_mid_right_vlines);
+  spritePosition(real_id, the_z_index, the_stats);
+}
+
+// qubert-X
+function objectRightSide(a_column, x_center_offset, pylon_player_ys) {
+  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackLeft(x_center_offset, pylon_player_ys);
   let [left_front_top, right_front_top, back_right_top] = panelsTops(left_front_bot, right_front_bot, back_right_bot);
   let middle_vline = [left_front_top, left_front_bot];
   let left_vline = [right_front_top, right_front_bot];
@@ -149,8 +160,8 @@ function objectRightSide(a_column, x_center_offset, difference_x, difference_y) 
   return left_mid_right_vlines;
 }
 
-function objectMiddleRegion(a_column, x_center_offset, difference_x, difference_y) {
-  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackRight(x_center_offset, difference_x, difference_y);
+function objectMiddleRegion(a_column, x_center_offset, difference_yy) {
+  let [left_front_bot, right_front_bot, back_right_bot] = panels3BackRight22(x_center_offset, difference_yy);
   let [left_front_top, right_front_top, back_right_top] = panelsTops(left_front_bot, right_front_bot, back_right_bot);
 
   let left_vline = [left_front_top, left_front_bot];
@@ -166,4 +177,11 @@ function objectMiddleRegion(a_column, x_center_offset, difference_x, difference_
   }
   left_mid_right_vlines = [left_vline, middle_vline, right_vline];
   return left_mid_right_vlines;
+}
+
+
+function panels3BackRight22(x_center_offset, difference_yy) {
+  let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_yy);
+  left_bottom_3 = [left_front_bot, right_front_bot, 17];
+  return left_bottom_3;
 }

@@ -1,0 +1,10 @@
+:root {
+ --mobile-screen: is-desktop; 
+}
+@media (max-width:1023px) {
+  :root {
+    --mobile-screen: is-mobile;
+  }
+} 
+
+

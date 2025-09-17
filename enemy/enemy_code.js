@@ -78,7 +78,7 @@ let enemy_2 = {
 };
 
 
-
+// qbert-sX
 html_enemy1 = makeEnemy(enemy_1, false);
 html_enemy2 = makeEnemy(enemy_2, false);
 

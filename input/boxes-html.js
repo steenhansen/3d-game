@@ -1,6 +1,4 @@
 
-
-// <div id="the-input" class="input-box"></div>
 document.getElementById('touch-boxes').innerHTML = `
   <div id="nw-1" class="input-box"></div>   <div id="nw-2" class="input-box"></div>
              <div id="n-1" class="input-box"></div> <div id="n-2" class="input-box"></div>
@@ -51,34 +49,4 @@ document.getElementById('touch-boxes').innerHTML = `
     <div id="se-3" class="input-box"></div>    <div id="se-4" class="input-box"></div>
 
 
-`;
-
-document.getElementById('touch-arrows').innerHTML = `
- <svg id="arrow-nw" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-n" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-ne" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-w" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="blank-middle-arrow">
-
-    </svg>
-    <svg id="arrow-e" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-sw" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-s" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
-    <svg id="arrow-se" class="an-arrow">
-      <use href="#the-arrow" />
-    </svg>
 `;

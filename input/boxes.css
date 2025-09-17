@@ -1,0 +1,168 @@
+#touch-boxes {
+  display: grid;
+
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+
+  grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1234567;
+}
+
+.input-box {
+  opacity: 0.2;
+}
+
+#nw-1 {
+  background-color: black;
+}
+
+#nw-2 {
+  background-color: black;
+  margin-right: 4px;
+}
+
+#nw-3 {
+  background-color: black;
+  margin-bottom: 4px;
+}
+
+#nw-4 {
+  background: url('../images/the-curve-nw.png') no-repeat top left;
+
+}
+
+#n-1 {
+  background-color: black
+}
+
+#n-2 {
+  background-color: black;
+}
+
+#n-3 {
+  background-color: black;
+}
+
+#n-4 {
+  background-color: black;
+}
+
+#ne-1 {
+  background-color: black;
+  margin-left: 4px;
+}
+
+#ne-2 {
+  background-color: black;
+}
+
+#ne-3 {
+
+  background: url('../images/the-curve-ne.png') no-repeat top right;
+
+}
+
+#ne-4 {
+  background-color: black;
+  margin-bottom: 4px;
+}
+
+
+
+#w-1 {
+  background-color: black;
+}
+
+#w-2 {
+  background-color: black;
+}
+
+#w-3 {
+  background-color: black;
+}
+
+#w-4 {
+  background-color: black;
+}
+
+#e-1 {
+  background-color: black;
+}
+
+#e-2 {
+  background-color: black;
+}
+
+#e-3 {
+  background-color: black;
+}
+
+#e-4 {
+  background-color: black;
+}
+
+
+
+
+
+
+
+#sw-1 {
+  background-color: black;
+  margin-top: 4px;
+}
+
+#sw-2 {
+
+  background: url('../images/the-curve-sw.png') no-repeat bottom left;
+}
+
+#sw-3 {
+  background-color: black;
+}
+
+#sw-4 {
+  background-color: black;
+  margin-right: 4px;
+}
+
+#s-1 {
+  background-color: black;
+
+}
+
+#s-2 {
+  background-color: black;
+}
+
+#s-3 {
+  background-color: black;
+}
+
+#s-4 {
+  background-color: black;
+}
+
+#se-1 {
+
+  background: url('../images/the-curve-se.png') no-repeat bottom right;
+}
+
+#se-2 {
+  background-color: black;
+  margin-top: 4px;
+
+}
+
+#se-3 {
+  background-color: black;
+  margin-left: 4px;
+}
+
+#se-4 {
+  background-color: black;
+}

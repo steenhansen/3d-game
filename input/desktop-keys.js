@@ -18,12 +18,13 @@ const S_KEYS = ['X', 'x', "ArrowDown", '2'];
 const SW_KEYS = ['Z', 'z', "End", '1'];
 const W_KEYS = ['A', 'a', "ArrowLeft", '4'];
 
-const FLY_KEYS = ['=', '+'];
+const FLY_KEYS = ['Escape'];
 const SHOOT_KEYS = [' '];
 const STOP_KEYS = ['S', 's', 'Clear', '5'];
 
 function readKeys(event) {
   const the_key = event.key;
+  // console.log("DDDDDDDDDDDDDDDdd", the_key);
   if (g_move_continue == 0) {
     g_is_drifting = false;
     if (FLY_KEYS.includes(the_key)) {

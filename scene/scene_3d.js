@@ -1,22 +1,36 @@
+function handleStartMobile(evt) {
+  console.log("hadleStartMobile");
+  setTimeout(() => {
+    start_mobile = document.getElementById('start-mobile');
+    start_mobile.style.display = "none";
+    waiting_for_start = false;
+    fixMobile2();
+    console.log("Delayed for 1 second.");
+  }, "1000");
 
-// https://gist.github.com/addyosmani/5434533
-
-var limitLoop = function (fn, fps) {
-  var then = Date.now();
-  // custom fps, otherwise fallback to 60
-  fps = fps || 60;
-  var interval = 1000 / fps;
-
-  return (function loop(_time) {
-    requestAnimationFrame(loop);
-    var now = Date.now();
-    var delta = now - then;
-    if (delta > interval) {
-      then = now - (delta % interval);
-      fn();
-    }
-  }(0));
-};
+  the_scene = document.getElementById('the-scene');
+  try {
+    console.log("handleStartMobile  requestFullscreen");
+    the_scene.requestFullscreen();
+    // console.log("start rejigger");
+    // screen_width = window.screen.width;
+    // neg = (1024 - screen_width) / 2;
+    // marL = `-${neg}px`;
+    // start_mobile = document.getElementById('checkerboard-field');
+    // // start_mobile.style.marginLeft = marL;
+    // the_sun = document.getElementById('the-sun');
+    // //the_sun.style.marginLeft = marL;
+    // column_html = document.getElementById('column-html');
+    // //column_html.style.marginLeft = marL;
+    // missile_area = document.getElementById('missile-area');
+    // // missile_area.style.marginLeft = marL;
+    // enemy_area = document.getElementById('enemy-area');
+    // // enemy_area.style.marginLeft = marL;
+    // console.log("end rejigger");
+  } catch {
+    console.log("FILA");
+  }
+}
 
 
 function match_landing_to_checkerboard() {
@@ -81,11 +95,11 @@ let closest_width_index = number_lines - 1;
 
 
 
-
+// const INIT_Y_FLIP_COUNT = 4;
 
 let keep_running = true;
 let num_lines = number_lines;
-let y_flip_count = 4;
+let y_flip_count = INIT_Y_FLIP_COUNT;
 let dist_count = 0;
 let spin_count = 0;
 let slow_count = 0;
@@ -180,6 +194,7 @@ function sceneStop() {
 
 
 function randomDirection() {
+  //  console.log("just did a random");
   let rand_dir = Math.floor(Math.random() * 8);
   if (rand_dir == 0) {
     rand_direction = MOVINGx_NW;
@@ -203,21 +218,32 @@ function randomDirection() {
 
 
 function startDrift() {
-  //console.log("startDrift TOP", g_is_drifting);
+  if (typeof DBG_DRIFTING == 'string') {
+    return;
+  }
 
   if (g_is_drifting) {
     let rand_dir = Math.floor(Math.random() * 1024);
     //   console.log("ddd", rand_dir);
     if (rand_dir == 1) {
+      //console.log(" Ramdom Dir start drifet 1111111111");
       g_drift_direction = randomDirection();
     }
   } else {
     g_drift_countdown--;
     //console.log("startDrift g_drift_countdown", g_drift_countdown);
     if (g_drift_countdown < 0) {
+      console.log(" Ramdom Dir start drifet 2222222");
       g_drift_direction = randomDirection();   // random
-      g_is_drifting = true;
-      g_drift_countdown = 177;
+
+
+      // qbert-X
+      //g_is_drifting = true;
+
+
+
+
+      g_drift_countdown = DRIFT_CYCLES;       //177;
       //  console.log("startDrift true", g_is_drifting);
     }
   }
@@ -259,11 +285,33 @@ function sceneMove() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+function collisionShake() {
+  askew_deg = getCssVar("--collide-shake-angle");
+  askew_int = parseInt(askew_deg);
+  if (askew_int != 0) {
+    askew_int = askew_int - 5;
+    askew_deg2 = `${askew_int}deg`;
+    setCssVar("--collide-shake-angle", askew_deg2);
+  }
+}
+
 function checkCollisions() {
   collision_2 = hasCollided(column_3a, g_player, COLLISION_SIZES);
   if (collision_2 && g_move_continue == 0) {
     g_move_continue = 24;
     new_direction = objectBounced(g_move_direction);
+    document_style.setProperty("--collide-shake-angle", "45deg");
     g_move_direction = new_direction;
   }
 }
@@ -282,23 +330,6 @@ function doBounce() {
 
 
 
-function handleStartMobile(evt) {
-  console.log("hadleStartMobile");
-  setTimeout(() => {
-    start_mobile = document.getElementById('start-mobile');
-    start_mobile.style.display = "none";
-    waiting_for_start = false;
-    fixMobile2();
-    console.log("Delayed for 1 second.");
-  }, "1000");
-
-  the_scene = document.getElementById('the-scene');
-  try {
-    the_scene.requestFullscreen();
-  } catch {
-    console.log("FILA");
-  }
-}
 
 let waiting_for_start = false;
 
@@ -319,6 +350,10 @@ function wheelScroll(the_event) {
 
 
 function animateScene(timestamp) {
+  //console.log("animateScene");
+  if (typeof DBG_FREEZE_MISSILE == 'string') {
+    return LOOP_6_PLAY;
+  }
   doBounce();
   sceneMove();
   setColumns();
@@ -327,10 +362,20 @@ function animateScene(timestamp) {
   missileSet('missile-1', the_missile_1, g_player);
   the_missile_1 = missileAdvance(the_missile_1);
   //}
+
+  if (typeof DBG_FREEZE_MISSILE == 'string') {
+    return LOOP_6_PLAY;
+  }
+
+  // qbert-X
   enemy_1 = enemySet('enemy-1', enemy_1, g_player);
   enemy_1 = enemyStep(enemy_1);
   enemy_2 = enemySet('enemy-2', enemy_2, g_player);
   enemy_2 = enemyStep(enemy_2);
+
+
+
+
   //objectMomentum(the_enemy);
   // if (!enemy_1.m_dead) {
   //   enemy_1 = killEnemy(enemy_1);
@@ -339,16 +384,18 @@ function animateScene(timestamp) {
     affixLeftRight();
     //  requestAnimationFrame(animateScene);
   }
-  fixDevice();
+  //  console.log("animateScene");
+  //  fixDevice();
 
   // wrong place ? should be in index
   if (g_taking_off) {
-    return 'ani-after-play';
+    return LOOP_7_AFTER_PLAY;
   } else {
-    return 'ani-play';
+    return LOOP_6_PLAY;
   }
 }
 
-orientPhone();
+//console.log("arrdvarrk - killed orientPhone on global?");
+//orientPhone();
 
-limitLoop(animateScene, 60);  // for mobile
+//limitLoop(animateScene, 60);  // for mobile
