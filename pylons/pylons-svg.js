@@ -5,10 +5,9 @@
 
 // 0-399 
 
-function twirledGradient(gradient_index, column_colors) {
-  let [first_color, second_color] = column_colors;
-  the_gradient = "column-gradient" + first_color + second_color + Math.floor(gradient_index);
-  //  console.log("the_gradient", the_gradient);
+function twirledGradient(gradient_index, pylon_colors) {
+  let [first_color, second_color] = pylon_colors;
+  the_gradient = "pylon-gradient" + first_color + second_color + Math.floor(gradient_index);
   return the_gradient;
 }
 
@@ -61,8 +60,8 @@ function wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, s
 }
 
 
-function makeGradients(column_colors) {
-  let [first_color, second_color] = column_colors;
+function makeGradients(pylon_colors) {
+  let [first_color, second_color] = pylon_colors;
   the_res = '';
   west_y = 0;
   for (let gradient_index = 0; gradient_index < 100; gradient_index++) {
@@ -106,9 +105,9 @@ white_black_gradients = makeGradients(WHITE_BLACK_GRADIENT);
 lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA_GRADIENT);
 
 
-blue_yellow_gradients = makeGradients(BLUE_YELLOW_GRADIENT);
+grey_yellow_gradients = makeGradients(GREY_YELLOW_GRADIENT);
 
-//console.log("white_black_gradients", white_black_gradients);
+
 
 
 document.getElementById('pylons-svg').innerHTML = `
@@ -118,7 +117,7 @@ document.getElementById('pylons-svg').innerHTML = `
     ${white_black_gradients}
     ${lime_fuchsia_gradients}
  
-    ${blue_yellow_gradients}
+    ${grey_yellow_gradients}
 
     <linearGradient id="red-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(255,0,0)" />

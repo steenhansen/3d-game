@@ -13,13 +13,14 @@
   height: 24px;
   opacity: 0.4;
   position: relative;
-  z-index: 2147483555;
+  z-index:  var(--z-an-arrow);
 }
 
 
 
 
 #arrows-html {
+   z-index: var(--z-arrows-html);
   display: grid;
 
   grid-template-columns: 25% 50% 25%;
@@ -27,7 +28,7 @@
 
   width: 100%;
   height: 100%;
-  z-index: 12222;
+
   position: absolute;
 
 
@@ -54,7 +55,7 @@
 }
 
 #arrow-n {
-  left: 50%;
+  left: 46.5%;
   margin-top: var(--arrow-margin);
 }
 
@@ -91,7 +92,7 @@
 }
 
 #arrow-s {
-  left: 50%;
+  left: 46.5%;
   transform: rotate(180deg);
   margin-top: auto;
   margin-bottom: var(--arrow-margin);

@@ -1,6 +1,7 @@
     .dir-box > * {
         border: 1px solid rgb(96 139 168);
         width: 90px;
+        text-align:center;
     }
 
 .dir-box {
@@ -17,13 +18,13 @@
 
 
 
-.key-directions{
+.direction-vars{
  --show-directions: block;
 }
 
 
  @media (max-width:1023px) {
- .key-directions{
+ .direction-vars{
    --show-directions: none;
   }
 } 

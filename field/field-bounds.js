@@ -9,7 +9,7 @@
 // LET  square_depth_perc_by_dist
 /*
 
-          BACK_VANISH_POINT  of objects column/enemy/missile
+          BACK_VANISH_POINT  of objects pylon/enemy/missile
               [511, 256]
 ------------------/------------------------- MIDDLE OF SCREEN
                  /

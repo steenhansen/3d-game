@@ -1,9 +1,24 @@
 
+
+
+
+
+
+
+
+
+
+
+
 function loopBegin() {
   divVisHidden('desktop-dir');
   animateStart();
   flyingInit();
   g_taking_off = false;
+
+  initDebugVars();
+  debugClear();
+  dbg_report = true;
 }
 
 
@@ -24,20 +39,24 @@ function loopAfterLanding() {
 }
 
 function loopElevator() {
-  //console.log("go north");
-  initPlay();
-  g_drift_direction = MOVINGx_N;
+
+  // initPlay();
+  // g_drift_direction = MOVINGx_N;
   g_loop_state = animateElevator();
 }
 
 function loopAfterElevator() {
+  initPlay();
+  g_drift_direction = MOVINGx_N;
   turnOnKeys();
   readyInputArrows();
 
 
-  g_is_drifting = true;
-  //g_is_drifting = false;
-
+  if (isDebugging()) {
+    g_is_drifting = false;
+  } else {
+    g_is_drifting = true;
+  }
   // hide landing from really tall phones    iPhone SE 375 x 667
   const playing_game = document.getElementById(`the-landing`);
   playing_game.style = `display:none`;
@@ -73,8 +92,24 @@ function loopDone() {
   }
 }
 
+function initGame() {
+  beginButtonInit();
+  debugInit();
+  gameInit();
+  sceneInit();
+}
+
+function runGame() {
+  initGame();
+  gameLoop('start-time_stamp');
+}
+
+
 function gameLoop(_time_stamp) {
-  //console.log("g_loop_state", g_loop_state);
+  debugFrameTime();
+  //  debugInit();
+
+
   if (g_loop_state == LOOP_0_BEGIN) {
     loopBegin();
   } else if (g_loop_state == LOOP_1_AFTER_BEGIN) {
@@ -84,26 +119,32 @@ function gameLoop(_time_stamp) {
   } else if (g_loop_state == LOOP_3_AFTER_LANDING) {
     loopAfterLanding();
   } else if (g_loop_state == LOOP_4_ELEVATOR) {
-    // console.log('in elv');
+
     loopElevator();
   } else if (g_loop_state == LOOP_5_AFTER_ELEVATOR) {
-    //console.log('in after elv');
+    // initPlay();
+    // g_drift_direction = MOVINGx_N;
+
     loopAfterElevator();
-    //console.log("after elv ", g_loop_state);
   } else if (g_loop_state == LOOP_6_PLAY) {
     loopPlay();
   } else if (g_loop_state == LOOP_7_AFTER_PLAY) {
     loopAfterPlay();
   } else if (g_loop_state == LOOP_8_FLY) {
-    console.log("8888");
+
     loopFly();
   } else if (g_loop_state == LOOP_9_DONE) {
-    console.log("99999");
+    dbg_report = false;
+    //  initDebugVars();
+    //debugInit();
     loopDone();
   } else {
     console.log("error ani", g_loop_state);
   }
   requestAnimationFrame(gameLoop);
+
+
+  debugAnimation();
 }
 
 

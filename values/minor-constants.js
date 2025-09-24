@@ -1,4 +1,7 @@
 
+
+
+
 const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 
 const DRIFT_CYCLES = 256 * 3;       //1024;
@@ -29,8 +32,6 @@ const MISSILE_LIFETIME = 96;
 
 const INIT_Y_FLIP_COUNT = 4;
 
-let SCENE_Y_MAX = 768;
-let SCENE_WIDTH = 8192;
 
 const MOVINGx_NOT = 0;
 
@@ -42,26 +43,26 @@ const MOVINGx_SE = 5;
 const MOVINGx_S = 6;
 const MOVINGx_SW = 7;
 const MOVINGx_W = 8;
-
+let PLAYER_START_DIR = MOVINGx_NOT;
 
 const SUN_SYSTEM_COLS = [
-    //   star         ball         sqaure       triangle
-    ['#a0d91f', '#1FD9B5', '#581FD9', '#D91F43'],                 //0
-    // too similar ['#b5d226', '#26D299', '#4326D2', '#D2265F'],
-    ['#cbca2b', '#2BCB7A', '#2B2CCB', '#CB2B7C'],                 //1
-    // too similar ['#daba2f', '#2FDA64', '#2F4FDA', '#DA2FA4'],
-    ['#e3a827', '#27E34A', '#2762E3', '#E327C0'],                 //2
-    //  too similar['#e8901f', '#1FE82C', '#1F77E8', '#E81FDB'],
-    ['#e77629', '#3BE729', '#299AE7', '#D529E7'],                 //3
-    // too similar ['#e95b2c', '#5BE92C', '#2CBAE9', '#BA2CE9'],
-    ['#ed3f27', '#72ED27', '#27D5ED', '#A227ED'],                 //4
-    // too similar ['#f61e18', '#81F618', '#18F0F6', '#8D18F6']
-    ['#ffff00', '#000000', '#808080', '#ffffff'],                 //5
-    ['#ffff00', '#aa0000', '#00ff00', '#0000ff'],                 //6
-    ['#FF6A00', '#808080', '#ffffff', '#000000'],                 //7
-    ['#FF6A00', '#00ff00', '#0000aa', '#ff0000'],                 //8
-    ['#FF006A', '#ffffff', '#000000', '#808080'],                 //9
-    ['#FF006A', '#0000ff', '#ff0000', '#00aa00'],                 //10
+  //   star         ball         sqaure       triangle
+  ['#a0d91f', '#1FD9B5', '#581FD9', '#D91F43'],                 //0
+  // too similar ['#b5d226', '#26D299', '#4326D2', '#D2265F'],
+  ['#cbca2b', '#2BCB7A', '#2B2CCB', '#CB2B7C'],                 //1
+  // too similar ['#daba2f', '#2FDA64', '#2F4FDA', '#DA2FA4'],
+  ['#e3a827', '#27E34A', '#2762E3', '#E327C0'],                 //2
+  //  too similar['#e8901f', '#1FE82C', '#1F77E8', '#E81FDB'],
+  ['#e77629', '#3BE729', '#299AE7', '#D529E7'],                 //3
+  // too similar ['#e95b2c', '#5BE92C', '#2CBAE9', '#BA2CE9'],
+  ['#ed3f27', '#72ED27', '#27D5ED', '#A227ED'],                 //4
+  // too similar ['#f61e18', '#81F618', '#18F0F6', '#8D18F6']
+  ['#ffff00', '#000000', '#808080', '#ffffff'],                 //5
+  ['#ffff00', '#aa0000', '#00ff00', '#0000ff'],                 //6
+  ['#FF6A00', '#808080', '#ffffff', '#000000'],                 //7
+  ['#FF6A00', '#00ff00', '#0000aa', '#ff0000'],                 //8
+  ['#FF006A', '#ffffff', '#000000', '#808080'],                 //9
+  ['#FF006A', '#0000ff', '#ff0000', '#00aa00'],                 //10
 ];
 
 
@@ -70,7 +71,7 @@ const SUN_SYSTEM_COLS = [
 
 let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
 let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
-let BLUE_YELLOW_GRADIENT = ["Blue", "Yellow"];  //  00??ff00,   FF00FF
+let GREY_YELLOW_GRADIENT = ["Grey", "Yellow"];  //  00??ff00,   FF00FF
 
 
 // f e d c b a 9
@@ -85,34 +86,23 @@ let BLUE_YELLOW_GRADIENT = ["Blue", "Yellow"];  //  00??ff00,   FF00FF
    
 */
 
-let ENEMY_BIRTH_X = 400;
-let ENEMY_BIRTH_Y = 100;
 
+let pylon_3A_START_X = 1365 - 512;
+let pylon_3A_START_Y = 449;           //    192 400;
+let pylon_3B_START_X = 1365;
+let pylon_3B_START_Y = 449;              // 192 400;
+let pylon_3C_START_X = 1365 + 512;
+let pylon_3C_START_Y = 449;              // 192 400;
 
+let pylon_2A_START_X = 4096 - 256;
+let pylon_2A_START_Y = 384;                //400;
+let pylon_2B_START_X = 4096 + 256;
+let pylon_2B_START_Y = 384;                    //400;
 
-let COLUMN_3A_START_X = 1365 - 512;
-let COLUMN_3A_START_Y = 449;           //    192 400;
-let COLUMN_3B_START_X = 1365;
-let COLUMN_3B_START_Y = 449;              // 192 400;
-let COLUMN_3C_START_X = 1365 + 512;
-let COLUMN_3C_START_Y = 449;              // 192 400;
-
-let COLUMN_2A_START_X = 4096 - 256;
-let COLUMN_2A_START_Y = 384;                //400;
-let COLUMN_2B_START_X = 4096 + 256;
-let COLUMN_2B_START_Y = 384;                    //400;
-
-let COLUMN_1A_START_X = 6827; // 6827;
-let COLUMN_1A_START_Y = 576;           //400;
 
 
 
 let NUMBER_TWIRLS = 400;
-
-let PLAYER_START_DIR = MOVINGx_NOT;
-let PLAYER_START_X = 400; // 3960 hit on right side
-
-let PLAYER_START_Y = 222;  // NB qubert   goto right for errors
 
 
 let MISSILE_START_X = 400;

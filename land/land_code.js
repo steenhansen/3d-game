@@ -76,8 +76,8 @@ function doFlying(lift_amount_x) {
   height_sky = 2400 + 4 * lift_amount_x;
   the_sky.style.height = `${height_sky}px`;
 
-  const column_html = document.getElementById('column-html');
-  column_html.style.top = `${lift_amount_x}px`;
+  const pylon_html = document.getElementById('pylon-html');
+  pylon_html.style.top = `${lift_amount_x}px`;
 
   const enemy_area = document.getElementById('enemy-area');
   enemy_area.style.top = `${lift_amount_x}px`;
@@ -103,7 +103,7 @@ function doFlying(lift_amount_x) {
     const saturn_space = document.getElementById('star-space');
     // doStyle('star-space', opacity, `${lift_amount_x}px`); 
     saturn_opacity = (lift_amount_x - 350) / 300;
-    //console.log("saturn_opacity", saturn_opacity);
+
     saturn_space.style.opacity = saturn_opacity;
   }
 
@@ -275,7 +275,7 @@ function animateLanding() {
 function initPlay() {
   divVisVisible('desktop-dir');
   // unHideDiv('start-mobile');
-  //console.log("initPlay ");
+
   if (isMobile()) {
     fixMobile();
   } else {
@@ -299,28 +299,6 @@ function initElevator() {
   m_top_the_land = 0;
 }
 
-// function animateElevatorOLD() {
-//   //console.log("animateElevator");
-//   if (SPEED_ELEVATOR == FAST_ELEVATOR) {
-//     m_top_the_land = 510;
-//     m_top_playing_game = -2;
-//   }
-//   console.log("before animateElevator", m_top_playing_game);
-//   m_top_playing_game += 2;
-//   m_top_the_land += 2;
-//   moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-//   console.log("after animateElevator", m_top_playing_game);
-//   if (m_top_playing_game == 0) {
-
-
-//     turnOnKeys();
-//     readyInputArrows();
-//     console.log("fter animateElevator");
-//     return LOOP_5_AFTER_ELEVATOR;
-//   } else {
-//     return LOOP_4_ELEVATOR;
-//   }
-// }
 
 
 function animateElevator() {
@@ -353,8 +331,39 @@ function animateElevator() {
 }
 
 
+function elevatorInOneStep() {
+  while (m_top_playing_game !== 0) {
+    m_top_playing_game += 2;
+    m_top_the_land += 2;
+    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+  }
+}
 
 
+function animateElevator() {
+  if (SPEED_ELEVATOR == FAST_ELEVATOR) {
+    elevatorInOneStep();
+    return LOOP_5_AFTER_ELEVATOR;
+  } else if (SPEED_ELEVATOR == SLOW_ELEVATOR) {
+    m_top_playing_game += 0.5;
+    m_top_the_land += 0.5;
+    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+    if (m_top_playing_game == 0) {
+      return LOOP_5_AFTER_ELEVATOR;
+    } else {
+      return LOOP_4_ELEVATOR;
+    }
+  } else {
+    m_top_playing_game += 2;
+    m_top_the_land += 2;
+    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+    if (m_top_playing_game == 0) {
+      return LOOP_5_AFTER_ELEVATOR;
+    } else {
+      return LOOP_4_ELEVATOR;
+    }
+  }
+}
 
 
 
@@ -367,7 +376,7 @@ function setLandingScroll(the_pixels) {
 }
 
 function moveCheckerboardOnce(top_playing_game, top_the_land) {
-  //console.log("moveCheckerboardOnce", top_playing_game);
+
   const playing_game = document.getElementById(`playing-game`);
   playing_game.style = `top:${top_playing_game}px`;
   //  m_top_the_land += 2;

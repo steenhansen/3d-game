@@ -2,55 +2,17 @@
 
 
 #the-pyramids {
+   z-index: var(--z-the-pyramids);
  background-image: url('../images/black-pyramids.png');
   width: 1024px;
   height: 18px;
   position:absolute;
   bottom:0;
-  z-index:444444;
+
     opacity: 0.5;
 }
 
 
-
-.pyramids-skies {
-    --sky-color: #0000ff;
-    --ani-key-frame: sun-keyframes;
-    --cloud-image: radial-gradient(#ffffff, var(--sky-color) 75%); 
-    --cloud-skew: perspective(1536px) rotateX(-85deg);
-}
-
-
-@media (max-width:1023px) {
-  .pyramids-skies {
-     --sky-color: #0000ff;
-    --ani-key-frame: none;
-        --cloud-image: none; 
-    --cloud-skew: none;
-  }
-} 
-
-
-#the-sun {
-   /* margin-left: calc( (1024 - var(--scene-width) / 2)+px );  */
-
-
-      margin-left: var(--margin-left_px) ; 
-  top:0px;
-  background-image: url('../images/the-sun.png');
-  width: 1024px;
-  height: 512px;
-  z-index: 44;
-  position: absolute;
-  opacity: 0.4;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 16s;
-
-
-    animation-name: var(--ani-key-frame); 
-   /* animation-name: sun-keyframes;  */
- }
 
  @keyframes sun-keyframes {
   0% {
@@ -60,6 +22,53 @@
     transform: rotate(360deg);
   }
 }
+
+.sun-vars {
+ --ani-key-frame: sun-keyframes;
+}
+@media (max-width:1023px) {
+  .sun-vars {
+    --ani-key-frame: none;
+  }
+} 
+
+.sky-vars {
+    --sky-color: #0000ff;
+   
+    --cloud-image: radial-gradient(#ffffff, var(--sky-color) 75%); 
+    --cloud-skew: perspective(1536px) rotateX(-85deg);
+}
+
+
+@media (max-width:1023px) {
+  .sky-vars {
+     --sky-color: #0000ff;
+
+        --cloud-image: none; 
+    --cloud-skew: none;
+  }
+} 
+
+
+#the-sun {
+
+ z-index: var(--z-the-sun);
+
+      margin-left: var(--margin-left_px) ; 
+  top:0px;
+  background-image: url('../images/the-sun.png');
+  width: 1024px;
+  height: 512px;
+
+  position: absolute;
+  opacity: 0.4;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+    animation-name: var(--ani-key-frame); 
+   /* animation-name: sun-keyframes;  */
+ }
+
 
 
 #the-sky {
@@ -78,9 +87,9 @@
 }
 
 #sky-aperature {
+    z-index: var(--z-sky-aperature);
   width: 1024px;
   height: 256px;
-  z-index: 1;
   background-color: var(--sky-color); 
   overflow-x: hidden;
   overflow-y: hidden;

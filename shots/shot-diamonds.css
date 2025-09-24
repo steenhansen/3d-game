@@ -10,6 +10,8 @@
 
 --diamond-fill-300: green;
 --diamond-fill-301: blue;
+}
+
 
 .a-diamond{
   width:20px;
@@ -55,4 +57,3 @@ circle  display, fill,  circle_size
  transform: scale(var(--diamond-size-301)) ;
 }
 
-}

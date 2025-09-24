@@ -22,7 +22,7 @@ function rightOnBoard(moving_object, right_steps) {
   m_x = moving_object.m_x;
   m_x += right_steps;
 
-  // console.log("m_x", m_x);
+
   if (m_x > SCENE_X_MAX) {
 
     m_x -= SCENE_X_MAX;

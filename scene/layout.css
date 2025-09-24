@@ -1,32 +1,90 @@
+
+
+
+
+#the-draw{
+  z-index: var(--z-the-draw);
+  opacity:0.50;
+  margin-left: var(--margin-left_px);
+  top:0px;
+  left:0px;
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#playing-game {
+
+  width: var(--scene-width);
+  height: var(--scene-height);
+
+  bottom: 512px;
+  position: absolute;
+  background-color: rgb(23, 23, 23, 0.92);
+  overflow: hidden;
+}
+
+
+
+
+
+
+#the-scene {
+  display: none;
+  margin: 0 auto;  
+  width: var(--scene-width);
+  height: var(--scene-height);
+  position: relative;
+  background-color: rgb(23, 23, 23, 0.92);
+  overflow: hidden;
+  transform: rotate(var(--collide-shake-angle));
+}
+
 #svg-arrows {
   display:none;
 }
 
 #star-space {
+   z-index: var(--z-star-space);
       background: url('../images/plain-stars.png') no-repeat center;
       width:1024px;
       height:512px;
       position:absolute;
-      z-index:1234566;
       opacity:0;
 }
 #saturn-space {
+    z-index: var(--z-saturn-space);
       background: url('../images/plain-saturn.png') no-repeat center;
       width:1024px;
       height:512px;
       left:0px;
       position:absolute;
-      z-index:1234567;
       opacity:1;
 }
 
 
-.begin-mobile-desktop{
+.begin-vars{
    --desktop-begin: inline;
  --mobile-begin: none;
 }
 @media (max-width:1023px) {
-  .begin-mobile-desktop {
+  .begin-vars {
     --desktop-begin: none;
     --mobile-begin: inline;
   }
@@ -51,12 +109,13 @@
 
 
 #start-mobile {
-  z-index:1234567;
+   z-index: var(--z-start-mobile);
+
 position:absolute;
 display: none;
    line-height: 100%;
-    z-index: 5555;
-  font-size: 400%;
+
+  font-size: 300%;
      display:none;
   font-family: sans-serif;
       width:100%;
@@ -70,6 +129,11 @@ display: none;
 }
 
 
+li:not(:last-of-type) {
+  margin-bottom: 0.5em;
+}
+
+
 
 #enemy-area{
   position: absolute;
@@ -79,7 +143,14 @@ display: none;
   background-color: rgba(218, 20, 225, 0)
 }
 
-#column-html{
+#pylon-html{
+  /* z-index: var(--z-pylon-html); 
+  
+  this caused the enemy star to always be in front of pylons !!
+  
+  
+  */  
+
    top:0px;
   position: absolute;
   height:0px; 
@@ -111,406 +182,15 @@ display: none;
 #pylons-svg {
   position:absolute;
   left:-333px;
-  z-index:1;
   height:0px;
 }
 
 
-#the-bullet{
-  background-color: rgb(23,23,23,0);
-}
-
-
-#the-draw{
-  top:0px;
-  left:0px;
-   /* width:1024px;
-   height:512px; */
-     position: absolute;
-         z-index: 9999;
-}
-
-
-
-
-#cube-y {
-  background-image: url('colored-ball.png');
-  width: 256px;
-  height: 256px;
-  position: absolute;
-  z-index: 999;
-  top:111px;
-  left:222px;
-   transform-origin: top  ;
-  transform: scale(1) ;
-  display: none
-}
-
-
-#a-column{
-    top:100px;
-  left:64px;
-   width:1024px;
-   height:512px;
-     position: absolute;
-display:none;
- z-index:1000; 
- 
-}
-
-
-
-
-.a-column {
-  width: 256px;
-    height: 512px; 
-    position: absolute;
-    z-index: 999;
-    top:186px;
-     transform-origin: top  ;
- /* background: rgba(210, 210, 210, 0.3); */
-}
 
  
-
-
-
-#default-example {
-  position: absolute;
-  left:192px;
-  top:137px;
-  z-index: 1999;
-
- /* transform-style: preserve-3d; */
-  perspective: 252px; 
-  perspective-origin: 100% 35%;
-        display: none
-}
-
-.right {
-  width: 274px;
-  height: 100px;
-
-  background: rgba(210, 0, 0, 0.7);
-
-  rotate: y 106deg;
-  /* transform: rotateY(106deg); */
-}
-
-
-
-
 
 
 body {
   /* background-color: green; */
 margin:0px;
 }
-
-  #square-right {
-
-    /* transform: scaleX(0.5) scaleY(1) skewY(-45deg) translateX(90px) translateY(-50px) */
-perspective-origin: center top;
-transform-style: preserve-3d;
-perspective:250px;
-
-
-//    background-image: url('right-square.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-    // transform-origin: top  ;
-  //  transform: scale(1) ;
-    opacity: 0.5;
-    left:-1000px;
-    top:-4000px;
-    background: rgba(90, 90, 90, 0.7);
-          display: none
- }
-
-  #square-front {
-    background-image: url('a-square.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-    opacity: 0.5;
-          display: none
- }
-
-
-  #square-back {
-    background-image: url('a-square.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-    opacity: 0.5;
-          display: none
- }
-
-
-  #bullet-1 {
-    /* background-image: url('bullet.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ; */
-      display: none
-
- }
-
-
-  #ball-1 {
-    background-image: url('colored-ball.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-    display: none
- }
-
-
-  #octa-1 {
-    background-image: url('octa.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-    display: none
- }
-
-  #cube-1 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:333px;
-    left:100px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-    display: none
- }
-
- 
-  #cube-2 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-3 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-4 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1);
-        display: none; 
- }
-
- 
-  #cube-5 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-6 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-7 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-8 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-9 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-10 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-11 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-12 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-13 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-14 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-15 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
- 
-  #cube-16 {
-    background-image: url('cubes.png');
-    width: 256px;
-    height: 256px;
-    position: absolute;
-    z-index: 999;
-    top:36px;
-     transform-origin: top  ;
-    transform: scale(1) ;
-        display: none;
- }
-
-
-  #block-right{
-     z-index: 1000;
-     left:1024px;
-      width: 256px;
-    height: 256px;
-  }
-
-

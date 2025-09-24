@@ -1,7 +1,12 @@
 
 
 
-.show-column {
+.show-pylon {
+
+   /* z-index:  var(--z-an-arrow);  */
+
+
+
   width: 1024px;
     height: 512px; 
     position: absolute;

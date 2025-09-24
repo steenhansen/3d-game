@@ -1,34 +1,17 @@
 function handleStartMobile(evt) {
-  console.log("hadleStartMobile");
   setTimeout(() => {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";
     waiting_for_start = false;
     fixMobile2();
-    console.log("Delayed for 1 second.");
   }, "1000");
 
   the_scene = document.getElementById('the-scene');
   try {
-    console.log("handleStartMobile  requestFullscreen");
     the_scene.requestFullscreen();
-    // console.log("start rejigger");
-    // screen_width = window.screen.width;
-    // neg = (1024 - screen_width) / 2;
-    // marL = `-${neg}px`;
-    // start_mobile = document.getElementById('checkerboard-field');
-    // // start_mobile.style.marginLeft = marL;
-    // the_sun = document.getElementById('the-sun');
-    // //the_sun.style.marginLeft = marL;
-    // column_html = document.getElementById('column-html');
-    // //column_html.style.marginLeft = marL;
-    // missile_area = document.getElementById('missile-area');
-    // // missile_area.style.marginLeft = marL;
-    // enemy_area = document.getElementById('enemy-area');
-    // // enemy_area.style.marginLeft = marL;
-    // console.log("end rejigger");
+    g_touch_id_start = 'start full screen click 779823432';
   } catch {
-    console.log("FILA");
+    //
   }
 }
 
@@ -194,57 +177,40 @@ function sceneStop() {
 
 
 function randomDirection() {
-  //  console.log("just did a random");
-  let rand_dir = Math.floor(Math.random() * 8);
+  let rand_dir = Math.floor(Math.random() * 4);
+
   if (rand_dir == 0) {
     rand_direction = MOVINGx_NW;
   } else if (rand_dir == 1) {
-    rand_direction = MOVINGx_N;
-  } else if (rand_dir == 2) {
     rand_direction = MOVINGx_NE;
-  } else if (rand_dir == 3) {
-    rand_direction = MOVINGx_E;
-  } else if (rand_dir == 4) {
+  } else if (rand_dir == 2) {
     rand_direction = MOVINGx_SE;
-  } else if (rand_dir == 5) {
-    rand_direction = MOVINGx_S;
-  } else if (rand_dir == 6) {
+  } else {
     rand_direction = MOVINGx_SW;
-  } else if (rand_dir == 7) {
-    rand_direction = MOVINGx_W;
   }
   return rand_direction;
 }
 
 
 function startDrift() {
-  if (typeof DBG_DRIFTING == 'string') {
+  if (isDebugging()) {
     return;
   }
+  // if (typeof DBG_DRIFTING == 'string') {
+  //   return;
+  // }
 
   if (g_is_drifting) {
     let rand_dir = Math.floor(Math.random() * 1024);
-    //   console.log("ddd", rand_dir);
     if (rand_dir == 1) {
-      //console.log(" Ramdom Dir start drifet 1111111111");
       g_drift_direction = randomDirection();
     }
   } else {
     g_drift_countdown--;
-    //console.log("startDrift g_drift_countdown", g_drift_countdown);
     if (g_drift_countdown < 0) {
-      console.log(" Ramdom Dir start drifet 2222222");
       g_drift_direction = randomDirection();   // random
-
-
-      // qbert-X
-      //g_is_drifting = true;
-
-
-
-
+      g_is_drifting = true;
       g_drift_countdown = DRIFT_CYCLES;       //177;
-      //  console.log("startDrift true", g_is_drifting);
     }
   }
 }
@@ -255,7 +221,7 @@ function sceneMove() {
     g_move_direction = g_drift_direction;
     startDrift();
   }
-  // console.log("the_scene_move");
+
   travel_speed = TRAVEL_SPEED;
   if (g_move_direction == MOVINGx_NW) {
     sceneLeft(travel_speed);
@@ -281,7 +247,7 @@ function sceneMove() {
     sceneLeft(travel_speed);
   } else {
     startDrift();
-    // console.log("no input is go right");
+
   }
 }
 
@@ -307,7 +273,7 @@ function collisionShake() {
 }
 
 function checkCollisions() {
-  collision_2 = hasCollided(column_3a, g_player, COLLISION_SIZES);
+  collision_2 = hasCollided(pylon_3a, g_player, COLLISION_SIZES);
   if (collision_2 && g_move_continue == 0) {
     g_move_continue = 24;
     new_direction = objectBounced(g_move_direction);
@@ -350,13 +316,13 @@ function wheelScroll(the_event) {
 
 
 function animateScene(timestamp) {
-  //console.log("animateScene");
+
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_6_PLAY;
   }
   doBounce();
   sceneMove();
-  setColumns();
+  setPylons();
   checkCollisions();
   //if (!the_missile_1.m_expired) {
   missileSet('missile-1', the_missile_1, g_player);
@@ -367,11 +333,13 @@ function animateScene(timestamp) {
     return LOOP_6_PLAY;
   }
 
-  // qbert-X
+
   enemy_1 = enemySet('enemy-1', enemy_1, g_player);
   enemy_1 = enemyStep(enemy_1);
-  enemy_2 = enemySet('enemy-2', enemy_2, g_player);
-  enemy_2 = enemyStep(enemy_2);
+
+
+  // enemy_2 = enemySet('enemy-2', enemy_2, g_player);
+  // enemy_2 = enemyStep(enemy_2);
 
 
 
@@ -384,7 +352,7 @@ function animateScene(timestamp) {
     affixLeftRight();
     //  requestAnimationFrame(animateScene);
   }
-  //  console.log("animateScene");
+
   //  fixDevice();
 
   // wrong place ? should be in index
@@ -394,8 +362,3 @@ function animateScene(timestamp) {
     return LOOP_6_PLAY;
   }
 }
-
-//console.log("arrdvarrk - killed orientPhone on global?");
-//orientPhone();
-
-//limitLoop(animateScene, 60);  // for mobile

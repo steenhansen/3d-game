@@ -43,7 +43,7 @@ function touchSe(evt) {
 }
 
 function boxTouch(the_event, direction_name) {
-  console.log("boxTouch", the_event.targetTouches);
+
   flashArrow(direction_name);
   g_is_drifting = false;
 }

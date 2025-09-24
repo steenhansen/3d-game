@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 1023 511"
+   preserveAspectRatio="xMinYMin slice"
+   version="1.1"
+   id="svg202"
+   sodipodi:docname="ellipse-paths-around-star.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+   <metadata
+      id="metadata208">
+      <rdf:RDF>
+         <cc:Work
+            rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type
+               rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title></dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <defs
+      id="defs206" />
+   <sodipodi:namedview
+      pagecolor="#ffffff"
+      bordercolor="#666666"
+      borderopacity="1"
+      objecttolerance="10"
+      gridtolerance="10"
+      guidetolerance="10"
+      inkscape:pageopacity="0"
+      inkscape:pageshadow="2"
+      inkscape:window-width="1920"
+      inkscape:window-height="1027"
+      id="namedview204"
+      showgrid="false"
+      inkscape:zoom="0.66245342"
+      inkscape:cx="723.99076"
+      inkscape:cy="532.24963"
+      inkscape:window-x="1272"
+      inkscape:window-y="-8"
+      inkscape:window-maximized="1"
+      inkscape:current-layer="star-spin"
+      inkscape:document-rotation="0"
+      showguides="true"
+      inkscape:guide-bbox="true">
+      <sodipodi:guide
+         position="366.77849,860.08303"
+         orientation="1,0"
+         id="guide240" />
+      <sodipodi:guide
+         position="504.68603,597.94171"
+         orientation="1,0"
+         id="guide267" />
+      <sodipodi:guide
+         position="170.70263,-3.2284101"
+         orientation="0,-1"
+         id="guide269" />
+      <sodipodi:guide
+         position="403.04721,-112.44006"
+         orientation="0.70710678,-0.70710678"
+         id="guide1197" />
+      <sodipodi:guide
+         position="437.76663,76.252452"
+         orientation="-0.70710678,-0.70710678"
+         id="guide1201" />
+      <sodipodi:guide
+         position="508.71501,64.176131"
+         orientation="1,0"
+         id="guide294" />
+   </sodipodi:namedview>
+   <g
+      id="star-spin">
+      <rect
+         width="1024"
+         height="1024"
+         fill-opacity="0.33"
+         fill="#000000"
+         id="rect195"
+         x="0"
+         y="0" />
+      <circle
+         style="fill:#ff7f2a;fill-opacity:0.361446;stroke-width:1.10736"
+         id="path271"
+         cx="511"
+         cy="511"
+         r="317" />
+      <path
+         fill="#112233"
+         fill-opacity="0"
+         stroke="#888888"
+         stroke-width="1"
+         d="m 508.91671,195.11768 74.84818,215.28983 227.78704,4.59357 L 629.9708,552.67309 695.9696,770.80013 508.91671,640.62645 321.86383,770.80013 387.86262,552.67309 206.28149,415.00108 434.06854,410.40751 Z"
+         id="the-star" />
+      <path
+         fill-opacity="0"
+         stroke="#aa0000"
+         stroke-width="3.09652"
+         d="m 941.29771,511.00632 c -0.4174,65.1159 -192.8997,119.13442 -429.9211,120.65392 -113.8217,0.7296 -222.902,-10.9924 -303.2444,-32.5875 -80.3423,-21.59492 -125.3656,-56.79672 -125.1651,-88.06642 m 1985.62999,-1.6843 c -0.4174,65.1158 -199.1141,113.63182 -436.1355,115.15132 -113.8218,0.7296 -222.902,-10.9924 -303.2444,-32.5874 -80.3423,-21.59512 -125.3656,-51.29422 -125.1652,-82.56392"
+         id="ellipse-w-e-bottom--ball"
+         sodipodi:nodetypes="cssccssc" />
+      <path
+         fill-opacity="0"
+         stroke="#ff0000"
+         stroke-width="3.09652"
+         d="m 1210.2657,511.00632 c 0.4174,-65.1159 192.8997,-119.13441 429.9211,-120.65391 113.8217,-0.7296 222.902,10.9924 303.2444,32.58749 80.3423,21.59492 125.3656,56.79672 125.1651,88.06642 m -1985.629895,1.6843 c 0.4173,-65.1158 199.113995,-113.63181 436.135395,-115.15131 113.8218,-0.7296 222.902,10.9924 303.2444,32.58739 80.3423,21.59512 119.15191,49.60992 118.95151,80.87962"
+         id="ellipse-w-e-top--ball"
+         sodipodi:nodetypes="cssccssc" />
+      <path
+         fill-opacity="0"
+         stroke="#00aa00"
+         stroke-width="3.45971"
+         d="m 1139.3495,-101.94918 c -45.6061,-46.34415 86.4142,-254.644 294.8753,-465.2509 100.1067,-101.1369 204.8132,-189.29082 291.0855,-245.06864 86.2721,-55.77788 150.9283,-70.72554 172.829,-48.47026 M 143.97261,895.80631 c -45.606236,-46.344 95.79289,-256.2527 304.25396,-466.8593 100.10671,-101.1371 204.8132,-189.291 291.08537,-245.0689 86.27227,-55.7778 140.36098,-70.3068 162.26185,-48.0515"
+         id="ellipse-sw-ne-bottom--triangle"
+         sodipodi:nodetypes="cssccssc" />
+      <path
+         fill-opacity="0"
+         stroke="#00ff00"
+         stroke-width="3.45971"
+         d="m 901.57379,135.82661 c 45.60618,46.34413 -86.4141,254.64402 -294.87531,465.25085 -100.1067,101.13693 -204.8132,189.2908 -291.0855,245.0686 -86.2721,55.7779 -150.9283,70.7256 -172.829,48.4704 M 1896.9508,-861.92876 c 45.6061,46.344 -95.7929,256.25259 -304.2541,466.85929 -100.1067,101.1371 -204.8132,189.29091 -291.0854,245.0688 -86.2722,55.777705 -140.3609,70.306715 -162.2618,48.05161"
+         id="ellipse-sw-ne-top--triangle"
+         sodipodi:nodetypes="cssccssc" />
+      <path
+         fill-opacity="0"
+         stroke="#0000aa"
+         stroke-width="3.45971"
+         d="m 894.08344,907.19733 c -46.34415,45.60609 -254.644,-86.4142 -465.2509,-294.87531 -101.1369,-100.1067 -189.29082,-204.8132 -245.06864,-291.0855 -55.77788,-86.2721 -70.72554,-150.9283 -48.47026,-172.829 M 1891.8389,1902.5742 c -46.344,45.6062 -256.2527,-95.7929 -466.8593,-304.2539 -101.1371,-100.1068 -189.291,-204.8132 -245.0689,-291.0854 -55.7778,-86.2723 -70.3068,-140.361 -48.0515,-162.2619"
+         id="ellipse-nw-se-bottom--square"
+         sodipodi:nodetypes="cssccssc" />
+      <path
+         fill-opacity="0"
+         stroke="#0000ff"
+         stroke-width="3.45971"
+         d="m 135.29364,148.40752 c 46.3441,-45.6061 254.644,86.4141 465.2509,294.8754 101.1369,100.1067 189.2908,204.8132 245.0686,291.0855 55.7779,86.2721 70.7256,150.9283 48.4704,172.829 M -862.46172,-846.96945 c 46.344,-45.6061 256.25259,95.7929 466.85929,304.2541 101.1371,100.1067 189.29091,204.8132 245.0688,291.0854 55.7777,86.27219 70.30671,140.36089 48.05161,162.2618"
+         id="ellipse-nw-se-top--square"
+         sodipodi:nodetypes="cssccssc" />
+   </g>
+</svg>

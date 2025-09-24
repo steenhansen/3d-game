@@ -5,43 +5,47 @@
 
 
 
-shots simpler slower? 
-
-slower shots - have a screen_counter
-
-
-g_missile_states[g_missile_iteration] must be RANDOM!!!
-
-getRandoms(screen_counter++);
-
-function getRandoms(_screen_counter){
-  if (desktop) {
-    all_changes = this_tick.length
-    for (let j = 0; j < all_changes; j++) {
-      ...
-  } else {
-    half_changes = this_tick.length/2;
-    for (let j = 0; j < half_changes; j++) {
-      ...
-  } 
-
-SINCE changing fill and size most likely the same as just fill
 
 
 
+
+
+
+
+dead enemies float up
+
+
+
+
+
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3d-a/index.html?debug=true&res=high
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3d-a/index.html?debug=true&res=low
+
+
+
+res = low        otherwise screen size
+res = high
+
+
+
+
+
+
+
+
+
+
+arrows still overlap the corners
 
 
 
 
 
 have drifting on/off switch
-
-
-flipping screen does not center the sun??s
-
-
-
-fix back pylon issues  qubert-X
 
 
 
@@ -55,9 +59,6 @@ cracks drawn on glass on canvas
 
 
 
-
-drift only at 45%
-
 typeCzech
 
 if get shot crack screen, and die   or if hit pylon then slowly crack and die
@@ -70,35 +71,6 @@ use css to mobile/desktop hide show directoins
 
 
 on tests- say open console to see tests
-
-
-svg-rect ==> svgs
-
-
-https://www.canva.com/colors/color-wheel/aas
-
- 1 #a0d91f #1FD9B5 #581FD9 #D91F43
- 2 #b5d226 #26D299 #4326D2 #D2265F
- 3 #cbca2b #2BCB7A #2B2CCB #CB2B7C
- 4 #daba2f #2FDA64 #2F4FDA #DA2FA4
- 5 #e3a827 #27E34A #2762E3 #E327C0 
- 6 #e8901f #1FE82C #1F77E8 #E81FDB 
- 7 #e77629 #3BE729 #299AE7 #D529E7
- 8 #e95b2c #5BE92C #2CBAE9 #BA2CE9
- 9 #ed3f27 #72ED27 #27D5ED #A227ED
-10 #f61e18 #81F618 #18F0F6 #8D18F6
-
-
-https://www.canva.com/colors/color-wheel/
-
-
-
-
-
-
-
-
-
 
 
 

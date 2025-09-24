@@ -191,28 +191,30 @@ function makeMissile(missile_id) {
 
 
 
-  middle_circles = `  <circle id="missile-200" cx=60 cy=128 r=20 fill-opacity="1.0" />
-  <circle id="missile-201" cx=65 cy=104 r=20 fill-opacity="1.0" />
-  <circle id="missile-202" cx=80 cy=80 r=20 fill-opacity="1.0" />
-  <circle id="missile-203" cx=102 cy=66 r=20 fill-opacity="1.0" />
-  <circle id="missile-204" cx=128 cy=60 r=20 fill-opacity="1.0" />
-  <circle id="missile-205" cx=154 cy=66 r=20 fill-opacity="1.0" />
-  <circle id="missile-206" cx=176 cy=80 r=20 fill-opacity="1.0" />
-  <circle id="missile-207" cx=192 cy=104 r=20 fill-opacity="1.0" />
-  <circle id="missile-208" cx=197 cy=128 r=20 fill-opacity="1.0" />
-  <circle id="missile-209" cx=192 cy=154 r=20 fill-opacity="1.0" />
-  <circle id="missile-210" cx=176 cy=176 r=20 fill-opacity="1.0" />
-  <circle id="missile-211" cx=154 cy=192 r=20 fill-opacity="1.0" />
-  <circle id="missile-212" cx=128 cy=196 r=20 fill-opacity="1.0" />
-  <circle id="missile-213" cx=102 cy=192 r=20 fill-opacity="1.0" />
-  <circle id="missile-214" cx=80 cy=176 r=20 fill-opacity="1.0" />
-  <circle id="missile-215" cx=65 cy=154 r=20 fill-opacity="1.0" />`;
-  //middle_circles = '';
 
 
-  //   <g id="diamond-1" transform="translate(80 107) scale(0.5)">
-  //      <polygon  id="missile-diamond-300" points="0 40,40 80,80 40,40 0" style=" fill: blue;"/>
-  //   </g> 
+  middle_diamonds = ` 
+        <rect  id="missile-diamond-200" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-201" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-202" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-203" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-204" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-205" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-206" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-207" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-208" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-209" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-210" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-211" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-212" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-213" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-214" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-215" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+
+
+      
+
+  `;
 
 
   inside_circles = `
@@ -225,18 +227,14 @@ function makeMissile(missile_id) {
   <circle id="missile-306" cx=128 cy=155 r=20 fill-opacity="1.0" />
   <circle id="missile-307" cx=108 cy=148 r=20 fill-opacity="1.0" />
  `;
-
-  diamond_width = 20;
-  half_diamond = diamond_width / 2;
-
+  _inside_circles = ``;
   /*
    make diamonds by a rotation from a square, have circles with static r, and
    like diamonds/squares grow/shrink with scale the circles. 
-
-                       
-
   */
 
+  diamond_width = 20;
+  half_diamond = diamond_width / 2;
   d_0_xy = [90, 118];
   d_0_off = [d_0_xy[0] + half_diamond, d_0_xy[1] + half_diamond];
 
@@ -251,15 +249,15 @@ function makeMissile(missile_id) {
   //   </g> 
 
   let a_missile = `
-  <div class="show-column" style="z-index:933601" id="${missile_id}-div">
-      <svg viewBox="0 0 1023 511" preserveAspectRatio="xMinYMin slice">
+  <div class="show-pylon" id="${missile_id}-div">
+      <svg viewBox="0 0 1023 511">
           <svg id="${missile_id}-x-y" x="333" y="128" width="256" height="256"  class="svg-box">
-              <svg id="${missile_id}-scaled" style="transform: scale(0.73)">
+              <svg id="${missile_id}-scaled" style="transform: scale(0.9973)">
                   ${all_lines}
                   ${all_rings}
                       ${outside_circles}
                       ${centers_outside}
-                          ${middle_circles}
+                          ${middle_diamonds}
                           ${middle_centers}
                               ${inside_circles}
                               ${inside_centers}

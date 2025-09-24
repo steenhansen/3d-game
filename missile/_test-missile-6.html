@@ -5,6 +5,27 @@
 <base href="../">
 <!--        !!!!!!!!!!!!                   -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
 <div id="the-css">
@@ -12,6 +33,8 @@
 
 
   <link rel="stylesheet" href="values/variables.css" />
+  <link rel="stylesheet" href="values/z-indexes.css" />
+
   <link rel=" stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
@@ -26,9 +49,12 @@
 </div>
 
 <div id="js-constants">
-  <script type="text/javascript" src="values/debug-settings.js"></script>
+  <script type="text/javascript" src="values/const-sprites.js"></script>
+  <script type="text/javascript" src="values/debugging.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
-  <script type="text/javascript" src="values/the_constants.js"></script>
+
+  <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="values/minor-constants.js"></script>
   <script type="text/javascript" src="pylons/pylons-data.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
@@ -45,8 +71,10 @@
 </div>
 
 <div id="js-before">
-  <script type="text/javascript" src="values/the_globals.js"></script>
+  <script type="text/javascript" src="values/major-globals.js"></script>
+  <script type="text/javascript" src="values/minor-globals.js"></script>
   <script type="text/javascript" src="values/css-vars.js"></script>
+  <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
   <script type="text/javascript" src="things/objects.js"></script>
@@ -72,7 +100,6 @@
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
 
   <script type="text/javascript" src="scene/scene_3d.js"></script>
-  <script type="text/javascript" src="scene/scene-init.js"></script>
 
   <script rel="text/javascript" src="field/field_test.js"></script>
 
@@ -82,18 +109,16 @@
 
 
 
-<div id='click-to-begin'>
+<div id='click-to-begin' class="begin-vars">
   <br>
-  <button id="begin-desktop" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin desktop 3D game</button>
-  <button id="begin-mobile" type="button" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;">Begin mobile 3D game</button>
+  <button id="begin-desktop" type="button">Begin desktop 3D game</button>
+  <button id="begin-mobile" type="button">Begin mobile 3D game</button>
   <br>
 </div>
 
 
 <div id="the-scene">
-
-  <!--      wait-for- mobile-touch 
-        smallest Galaxy Z Fold 5  882x344 -->
+  <canvas id="the-draw" width=" 1024" height="512"></canvas>
   <div id='start-mobile'>
     <ul id='mobile-list'>
       <li>Touch to start</li>
@@ -110,16 +135,15 @@
     <div id="star-space">
       <div id="saturn-space"></div>
     </div>
-    <div id="the-sun"></div>
-    <div id="sky-aperature">
+    <div id="the-sun" class="sun-vars"></div>
+    <div id="sky-aperature" class="sky-vars">
       <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
     </div>
     <div id="enemy-area"></div>
-    <div id="missile-area" class="missile-class"></div>
+    <div id="missile-area" class="missile-vars"></div>
     <div id="checkerboard-field"> </div>
-    <div id='column-html'> </div>
-    <canvas id="the-draw" width=" 1024" height="512"></canvas>
+    <div id='pylon-html'> </div>
   </div>
 
   <div id="the-landing">
@@ -129,35 +153,29 @@
     <div id="land_se"></div>
   </div>
 
-
 </div>
 
 
-<div id="desktop-dir"></div>
+<div id="desktop-dir" class="direction-vars"></div>
 
 
-<div id="js-inject-html">
-  <script type="text/javascript" src="pylons/pylons-html.js"></script>
-</div>
+
 
 
 
 <div id="js-after">
-
+  <script type="text/javascript" src="pylons/pylons-html.js"></script>
   <script type="text/javascript" src="enemy/enemy_html.js"></script>
   <script type="text/javascript" src="missile/missile_html.js"></script>
   <script type="text/javascript" src="field/field_html.js"></script>
   <script type="text/javascript" src="enemy/enemy_code.js"></script>
   <script type="text/javascript" src="missile/missile_code.js"></script>
 
-
   <script type="text/javascript" src="land/land_nw_html.js"></script>
   <script type="text/javascript" src="land/land_ne_html.js"></script>
   <script type="text/javascript" src="land/land_sw_html.js"></script>
   <script type="text/javascript" src="land/land_se_html.js"></script>
   <script type="text/javascript" src="land/land_code.js"></script>
-
-
 
 
   <script type="text/javascript" src="input/arrows-html.js"></script>
@@ -170,15 +188,35 @@
 
 
 
+  <script type="text/javascript" src="debug/debug-vars.js"></script>
+  <script type="text/javascript" src="debug/debug-settings.js"></script>
 
 
-
-
-
-
-
-
+  <script type="text/javascript" src="scene/scene-init.js"></script>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- above is the same as index.html but with added <base href="../">   -->
@@ -187,60 +225,24 @@
 
 
 <script>
+  // file:///c%3A/Users/16043/Documents/GitHub/3d/missile/_test-missile-6.html?debug=true
 
+  testToField("test_missile");
 
+  g_player.m_x = 400;
+  g_player.m_y = 444;
 
-
-  SPEED_LAND = FAST_LAND;
-  SPEED_ELEVATOR = FAST_ELEVATOR;
-  SPEED_FLY = FAST_FLY;
-
-  console.log("g_player", g_player);
-
-  // sceneInit()
-
-  g_missile_states = makeList();
-  g_missile_iteration = 0;
-  console.log("g_missile_states", g_missile_states);
-
-
-
-
-  gameLoop('start-time_stamp');
-  initLeftRight();
-  g_loop_state = LOOP_1_AFTER_BEGIN;
-  // loopAfterElevator();
-  enemy_1.m_dead = true;
-  enemy_2.m_dead = true;
-
-
-  // g_loop_state = LOOP_6_PLAY;
-  // function animateMissile() {
+  the_missile_1.m_x = 400;
+  the_missile_1.m_y = 444;
 
   the_missile_1 = launchMissile(the_missile_1);
-
-  the_missile_1.m_y = the_missile_1.m_y - 10;
-
   missileSet('missile-1', the_missile_1, g_player);
 
 
-  getRandoms();
-
-  //g_loop_state = LOOP_DEBUG_STOP;
-
   setInterval(() => {
-    enemy_1.m_y = 0;
-    enemy_1.m_x = 2600;
-    enemy_1.m_dead = true;
+    g_is_drifting = false;
+    loopPlay();
 
-    enemy_2.m_y = 0;
-    enemy_2.m_x = 2600;
-    enemy_2.m_dead = true;
-
-    enemy_1 = enemySet('enemy-1', enemy_1, g_player);
-    enemy_1 = enemyStep(enemy_1);
-    enemy_2 = enemySet('enemy-2', enemy_2, g_player);
-    enemy_2 = enemyStep(enemy_2);
 
     getRandoms();
 
@@ -248,15 +250,4 @@
 
 
 
-  //  getRandoms();
-  console.log("the_missile_1", the_missile_1);
-  //   missileSet('missile-1', the_missile_1, g_player);
-  //   //missileSet('missile-2', the_missile_2, g_player);
-
-  //   getRandoms();
-
-  //   requestAnimationFrame(animateMissile);
-  // }
-
-  // requestAnimationFrame(animateMissile);
 </script>

@@ -1,5 +1,6 @@
 
 
+
 let g_missile_states;
 let g_missile_iteration;
 
@@ -14,9 +15,7 @@ let g_record_line_dbg = 128;
 
 
 
-let g_move_direction = PLAYER_START_DIR;  //MOVINGx_NE;
-let g_is_drifting = false;
-let g_drift_direction = MOVINGx_NE;
+
 let g_drift_countdown = DRIFT_CYCLES; //177;
 
 
@@ -80,8 +79,8 @@ let SPEED_ELEVATOR = FAST_ELEVATOR;
 let SPEED_FLY = NORMAL_FLY;
 
 
-/*  
-the-landing == 1024x512 
+/*
+the-landing == 1024x512
       740 auto x512
 
 g_drift_direction =MOVINGx_N;
@@ -101,4 +100,4 @@ if (window.AudioContext) {
 
 
 // var g_loop_state = LOOP_1_BEGIN;
-var g_loop_state = LOOP_0_BEGIN;
+// var g_loop_state = LOOP_0_BEGIN;

@@ -5,7 +5,8 @@
    width:1024px;
    height:256px;
       position: relative;
-         z-index: 955;
+      z-index: var(--z-checkerboard-field);
+  
          /* margin: 0 auto; */
          margin-left: var(--margin-left_px);
 }

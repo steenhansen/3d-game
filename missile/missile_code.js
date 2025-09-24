@@ -16,7 +16,8 @@ function randomMissileSize(start_size, max_rand) {
   let circle_size = '';
   if (gg == 0) {
     let r = Math.floor(Math.random() * max_rand) + start_size;
-    circle_size = `${r}px`;
+    //   circle_size = `${r}px`;
+    circle_size = r;
   }
   return circle_size;
 }
@@ -35,12 +36,20 @@ function randomMissileColor(rgb_ranges, rgb_bases) {
       return `rgb(1,2,3,0)`;
     }
     r = Math.floor(Math.random() * red_range) + red_base;
-    //   console.log(" r", r);
+
     g = Math.floor(Math.random() * green_range) + green_base;
     b = Math.floor(Math.random() * blue_range) + blue_base;
     rgba = `rgb(${r}, ${g}, ${b}, 1)`;
     return rgba;
   }
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function makeList() {
@@ -50,53 +59,73 @@ function makeList() {
     for (let j = 0; j < NUM_OUTSIDE_BALLS; j++) {
       outside_missile_id = OUTSIDE_ID_START + j;
       m_size = randomMissileSize(10, 15);
+      if (m_size != '') {
+        m_size += 'px';
+      }
       //      m_color = randomMissileColor([32, 0, 0], [223, 0, 0]);
       m_color = randomMissileColor([128, 0, 0], [255 - 128, 0, 0]);
       if (m_size !== '' || m_color !== '') {
-        // console.log(" m_color", m_color);
+
         t_arr = [outside_missile_id, m_size, m_color];
         in_arr.push(t_arr);
       }
     }
+
+    // these are diamonds, !!!
     for (let j = 0; j < NUM_MIDDLE_BALLS; j++) {
       outside_missile_id = MIDDLE_ID_START + j;
-      m_size = randomMissileSize(10, 20);
-      m_color = randomMissileColor([32, 32, 32], [223, 100, 100]);
+      m_size = randomMissileSize(11, 33);
+      m_size2 = "";
+      if (m_size != '') {
+        m_size2 = m_size / 2;
+        m_size += 'px';
+      }
+      m_color = randomMissileColor([32, 32, 32], [100, 223, 100]);
       if (m_size !== '' || m_color !== '') {
-        t_arr = [outside_missile_id, m_size, m_color];
+        t_arr = [outside_missile_id, m_size, m_color, m_size2];
         in_arr.push(t_arr);
       }
     }
     for (let j = 0; j < NUM_CENTER_BALLS; j++) {
       outside_missile_id = CENTER_ID_START + j;
-      m_size = randomMissileSize(15, 20);
-      m_color = randomMissileColor([32, 32, 32], [223, 175, 175]);
+      m_size = randomMissileSize(15, 15);
+      if (m_size != '') {
+        m_size += 'px';
+      }
+      m_color = randomMissileColor([128, 128, 0], [255 - 128, 255 - 128, 0]);
       if (m_size !== '' || m_color !== '') {
         t_arr = [outside_missile_id, m_size, m_color];
         in_arr.push(t_arr);
       }
     }
+    in_arr = shuffleArray(in_arr);
     out_arr.push(in_arr);
   }
   return out_arr;
 }
 
 function getRandoms() {
-  //out_arr = makeList();
-  missile_area = document.querySelector('.missile-class');
+  missile_area = document.querySelector('.missile-vars');
   let this_tick = g_missile_states[g_missile_iteration];
-  for (let j = 0; j < this_tick.length; j++) {
-    let [the_id, the_size, the_color] = this_tick[j];
+  if (isMobile()) {
+    number_replaced = this_tick.length / 4;
+  } else {
+    number_replaced = this_tick.length;
+  }
+  for (let j = 0; j < number_replaced; j++) {
+    let [the_id, the_size, the_color, m_size2] = this_tick[j];
     if (the_size !== '') {
       let missile_size = "--missile-size-" + the_id;
       missile_area.style.setProperty(missile_size, the_size);
+
+      let missile_half_offset = "--missile-half-offset-" + the_id;
+      missile_area.style.setProperty(missile_half_offset, m_size2);
+
+
     }
     if (the_color !== '') {
       let missile_fill = "--missile-fill-" + the_id;
       missile_area.style.setProperty(missile_fill, the_color);
-      // if (the_id == 131) {
-      //   console.log(" ----", missile_fill, the_color);
-      // }
     }
   }
 
@@ -159,7 +188,7 @@ function missileAdvance(the_missile) {
 function hideMissileBalls(missile_id) {
   let missile_fill = "--missile-fill-" + missile_id;
   rgba = `rgb(1,2,3,0)`;
-  missile_area = document.querySelector('.missile-class');
+  missile_area = document.querySelector('.missile-vars');
   missile_area.style.setProperty(missile_fill, rgba);
 }
 
@@ -188,12 +217,12 @@ function setFillNone() {
 
 
 function missileSet(real_id, the_missile, g_player) {
-  collision_1a = hasCollided(column_1a, the_missile, COLLISION_SIZES);
-  collision_2a = hasCollided(column_2a, the_missile, COLLISION_SIZES);
-  collision_2b = hasCollided(column_2b, the_missile, COLLISION_SIZES);
-  collision_3a = hasCollided(column_3a, the_missile, COLLISION_SIZES);
-  collision_3b = hasCollided(column_3b, the_missile, COLLISION_SIZES);
-  collision_3c = hasCollided(column_3c, the_missile, COLLISION_SIZES);
+  collision_1a = hasCollided(pylon_1a, the_missile, COLLISION_SIZES);
+  collision_2a = hasCollided(pylon_2a, the_missile, COLLISION_SIZES);
+  collision_2b = hasCollided(pylon_2b, the_missile, COLLISION_SIZES);
+  collision_3a = hasCollided(pylon_3a, the_missile, COLLISION_SIZES);
+  collision_3b = hasCollided(pylon_3b, the_missile, COLLISION_SIZES);
+  collision_3c = hasCollided(pylon_3c, the_missile, COLLISION_SIZES);
 
 
 
@@ -202,7 +231,7 @@ function missileSet(real_id, the_missile, g_player) {
     //the_missile.m_expired = true;
     the_missile.m_x_dir = -1;
     the_missile.m_y_dir = 0;
-    //console.log("the_missile asdfsdf343", the_missile);
+
   }
 
   if (the_missile.m_expired) {

@@ -22,7 +22,8 @@
 
 <div id="js-constants">
   <script type="text/javascript" src="values/states.js"></script>
-  <script type="text/javascript" src="values/the_constants.js"></script>
+  <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="values/minor-constants.js"></script>
   <script type="text/javascript" src="pylons/pylons-data.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
@@ -38,7 +39,8 @@
 </div>
 
 <div id="js-before">
-  <script type="text/javascript" src="values/the_globals.js"></script>
+  <script type="text/javascript" src="values/major-globals.js"></script>
+  <script type="text/javascript" src="values/minor-globals.js"></script>
   <script type="text/javascript" src="values/css-vars.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
@@ -105,7 +107,7 @@
     <div id="enemy-area"></div>
     <div id="missile-area"></div>
     <div id="checkerboard-field"> </div>
-    <div id='column-html'> </div>
+    <div id='pylon-html'> </div>
     <canvas id="the-draw" width=" 1024" height="512"></canvas>
   </div>
 
@@ -206,7 +208,7 @@
     index, start offset, end offset, flip offset
   
   */
-  // console.log("x_shift_list", x_shift_list);
+
 
   rightThenLefts1025_a();
   rightLeftsSteps_b();

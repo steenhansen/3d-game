@@ -8,7 +8,7 @@
   const room_depth = 16;
 
   let COLLISION_SIZES = [field_width, room_width, field_depth, room_depth];
-  collision_2 = hasCollided(a_column, the_player, COLLISION_SIZES);
+  collision_2 = hasCollided(a_pylon, the_player, COLLISION_SIZES);
 
 */
 
@@ -25,10 +25,9 @@ function hasCollided(a_thing, an_object, COLLISION_SIZES) {
   if (a_thing.s_isa == 'is-missile' && an_object.s_isa == 'is-enemy' && an_object.s_id == 'enemy-1') {
 
 
-    // console.log("yyyy", a_thing, "******", an_object);
 
   } else {
-    //console.log("nnnn", a_thing, "&&&&&", an_object);
+    //
   }
 
   return false;
@@ -36,7 +35,7 @@ function hasCollided(a_thing, an_object, COLLISION_SIZES) {
 
 function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
 
-  //console.log("xxxxxxxxxxxxxxxxxxxxxxxxx", thing_pos, object_pos);
+
   diff_1 = thing_pos - object_pos;
   if (diff_1 < 0) {
     diff_1 += overflow_size;
@@ -46,23 +45,14 @@ function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
     diff_2 += overflow_size;
   }
   if (diff_1 < diff_2) {
-    //  console.log("A diff_1 ", diff_1);
-    //  console.log("A diff_2 ", diff_2);
-    //  console.log("A min_space ", min_space);
     if (diff_1 <= min_space) {
-      //   console.log("A diff_1 YES");
       return true;
     }
   } else {
-    //  console.log("B diff_1 ", diff_1);
-    //  console.log("B diff_2 ", diff_2);
-    //  console.log("B min_space ", min_space);
     if (diff_2 <= min_space) {
-      //  console.log("B diff_2 YES");
       return true;
     }
   }
-  //  console.log("NO", diff_1, diff_2);
   return false;
 }
 
