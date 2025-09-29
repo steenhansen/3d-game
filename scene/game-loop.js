@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 function loopBegin() {
   divVisHidden('desktop-dir');
   animateStart();
@@ -19,8 +11,9 @@ function loopBegin() {
   initDebugVars();
   debugClear();
   dbg_report = true;
+  g_player.m_enemy_collision = false;
+  setCssVar("--cracked-glass-display", "none");
 }
-
 
 function loopAfterBegin() {
   fixDevice();
@@ -29,8 +22,8 @@ function loopAfterBegin() {
   g_loop_state = LOOP_2_LANDING;
 }
 
-function loopLanding() {
-  g_loop_state = animateLanding();
+function loopLanding(land_speed) {
+  g_loop_state = animateLanding(land_speed);
 }
 
 function loopAfterLanding() {
@@ -38,11 +31,8 @@ function loopAfterLanding() {
   g_loop_state = LOOP_4_ELEVATOR;
 }
 
-function loopElevator() {
-
-  // initPlay();
-  // g_drift_direction = MOVINGx_N;
-  g_loop_state = animateElevator();
+function loopElevator(elevator_speed) {
+  g_loop_state = animateElevator(elevator_speed);
 }
 
 function loopAfterElevator() {
@@ -50,8 +40,6 @@ function loopAfterElevator() {
   g_drift_direction = MOVINGx_N;
   turnOnKeys();
   readyInputArrows();
-
-
   if (isDebugging()) {
     g_is_drifting = false;
   } else {
@@ -60,16 +48,18 @@ function loopAfterElevator() {
   // hide landing from really tall phones    iPhone SE 375 x 667
   const playing_game = document.getElementById(`the-landing`);
   playing_game.style = `display:none`;
-
-
-  // initPlay();
   g_loop_state = LOOP_6_PLAY;
 }
 
-function loopPlay() {
-  //initPlay();
-  g_loop_state = animateScene();
+function loopPlay(enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list);
+  if (g_taking_off) {
+    g_loop_state = LOOP_7_AFTER_PLAY;
+  } else {
+    g_loop_state = LOOP_6_PLAY;
+  }
   collisionShake();
+  return [enemy_list, pylon_list];
 }
 
 function loopAfterPlay() {
@@ -77,9 +67,10 @@ function loopAfterPlay() {
   g_loop_state = LOOP_8_FLY;
 }
 
-function loopFly() {
-  animateScene();
-  g_loop_state = animateFly();
+function loopFly(fly_speed, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list);
+  g_loop_state = animateFly(fly_speed);
+  return [enemy_list, pylon_list];
 }
 
 function loopDone() {
@@ -99,70 +90,44 @@ function initGame() {
   sceneInit();
 }
 
-function runGame() {
+
+function runGame(land_speed, elevator_speed, fly_speed) {
   initGame();
-  gameLoop('start-time_stamp');
-}
+  gameLoop();
 
-
-function gameLoop(_time_stamp) {
-  debugFrameTime();
-  //  debugInit();
-
-
-  if (g_loop_state == LOOP_0_BEGIN) {
-    loopBegin();
-  } else if (g_loop_state == LOOP_1_AFTER_BEGIN) {
-    loopAfterBegin();
-  } else if (g_loop_state == LOOP_2_LANDING) {
-    loopLanding();
-  } else if (g_loop_state == LOOP_3_AFTER_LANDING) {
-    loopAfterLanding();
-  } else if (g_loop_state == LOOP_4_ELEVATOR) {
-
-    loopElevator();
-  } else if (g_loop_state == LOOP_5_AFTER_ELEVATOR) {
-    // initPlay();
-    // g_drift_direction = MOVINGx_N;
-
-    loopAfterElevator();
-  } else if (g_loop_state == LOOP_6_PLAY) {
-    loopPlay();
-  } else if (g_loop_state == LOOP_7_AFTER_PLAY) {
-    loopAfterPlay();
-  } else if (g_loop_state == LOOP_8_FLY) {
-
-    loopFly();
-  } else if (g_loop_state == LOOP_9_DONE) {
-    dbg_report = false;
-    //  initDebugVars();
-    //debugInit();
-    loopDone();
-  } else {
-    console.log("error ani", g_loop_state);
+  function gameLoop() {
+    debugFrameTime();
+    if (g_loop_state == LOOP_0_BEGIN) {
+      loopBegin();
+    } else if (g_loop_state == LOOP_1_AFTER_BEGIN) {
+      loopAfterBegin();
+    } else if (g_loop_state == LOOP_2_LANDING) {
+      loopLanding(land_speed);
+    } else if (g_loop_state == LOOP_3_AFTER_LANDING) {
+      loopAfterLanding();
+    } else if (g_loop_state == LOOP_4_ELEVATOR) {
+      loopElevator(elevator_speed);
+    } else if (g_loop_state == LOOP_5_AFTER_ELEVATOR) {
+      loopAfterElevator();
+    } else if (g_loop_state == LOOP_6_PLAY) {
+      [g_enemy_list, g_pylon_list] = loopPlay(g_enemy_list, g_pylon_list);
+    } else if (g_loop_state == LOOP_7_AFTER_PLAY) {
+      loopAfterPlay();
+    } else if (g_loop_state == LOOP_8_FLY) {
+      [g_enemy_list, g_pylon_list] = loopFly(fly_speed, g_enemy_list, g_pylon_list);
+    } else if (g_loop_state == LOOP_9_DONE) {
+      dbg_report = false;
+      loopDone();
+    } else {
+      console.log("error ani", g_loop_state);
+    }
+    requestAnimationFrame(gameLoop);
+    debugAnimation();
   }
-  requestAnimationFrame(gameLoop);
 
 
-  debugAnimation();
 }
 
 
 
 
-
-
-
-
-
-
-
-function objectSide(the_object) {
-  let the_side;
-  if (the_object.m_x < SCENE_MIDDLE_X) {
-    the_side = LEFT_X_LOW;
-  } else {
-    the_side = RIGHT_X_HIGH;
-  }
-  return the_side;
-}

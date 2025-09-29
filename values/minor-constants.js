@@ -10,18 +10,6 @@ const PYLON_PIXEL_DEPTH = 30;
 
 
 
-const LOOP_0_BEGIN = 'ani-begin';
-const LOOP_1_AFTER_BEGIN = 'ani-after-begin';
-const LOOP_2_LANDING = 'ani-landing';
-const LOOP_3_AFTER_LANDING = 'ani-after-landing';
-const LOOP_4_ELEVATOR = 'ani-elevator';
-const LOOP_5_AFTER_ELEVATOR = 'ani-after-elevator';
-const LOOP_6_PLAY = 'ani-play';
-const LOOP_7_AFTER_PLAY = 'ani-after-play';
-const LOOP_8_FLY = 'ani-fly';
-const LOOP_9_DONE = 'ani-done';
-
-const LOOP_DEBUG_STOP = 'ani-none-debugging';
 
 
 const DEVICE_UNKNOWN = 0;
@@ -124,6 +112,7 @@ let BACK_VANISH_POINT = [511, 256];
 
 
 
+let LEFT_RIGHT_BOUNCE_X_INVERSION = -1;
 
 
 
@@ -175,3 +164,56 @@ NEAR_500 = [NEAR_100, NEAR_100, NEAR_100, NEAR_100, NEAR_100].flat();
 
 
 ZERO_500 = [ZERO_100, ZERO_100, ZERO_100, ZERO_100, ZERO_100].flat();
+
+
+
+
+
+
+let FAST_LAND = 'fast-land';
+let FAST_ELEVATOR = 'fast-elevator';
+let FAST_FLY = 'fast-fly';
+
+let NORMAL_LAND = 'normal-land';
+let NORMAL_ELEVATOR = 'normal-elevator';
+let NORMAL_FLY = 'normal-fly';
+
+
+let SLOW_LAND = 'slow-land';
+let SLOW_ELEVATOR = 'slow-elevator';
+let SLOW_FLY = 'slow-fly';
+
+
+
+
+
+
+
+TEST_SCENE = false;
+
+TESTING_STOPPED = false;
+
+
+// this is a constant
+let SCENE_MIDDLE_X = SCENE_WIDTH / 2;
+
+
+
+let SCENE_X_MIN = 0;
+let SCENE_X_MAX = SCENE_WIDTH;
+
+let SCENE_Y_MIN = 0;
+
+
+
+
+
+
+
+
+let LEFT_X_LOW = 'LEFT_X_LOW';
+let RIGHT_X_HIGH = 'RIGHT_X_HIGH';
+
+let DRAW_AT_LEAST_ONCE = true;
+
+

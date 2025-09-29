@@ -9,9 +9,20 @@
   position:absolute;
   bottom:0;
 
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
+
+#fuzzy-saturn {
+   z-index: var(--z-the-saturn);
+ background-image: url('../images/cloudy-saturn3.png');
+  width: 1024px;
+   height: 44px;
+  position:absolute;
+  bottom:64px;
+
+    opacity: 0.3;
+}
 
 
  @keyframes sun-keyframes {
@@ -48,6 +59,22 @@
     --cloud-skew: none;
   }
 } 
+
+
+#cracked-screen {
+ display: var(--cracked-glass-display);
+  z-index: var(--z-cracked-screen);
+    margin-left: var(--margin-left_px) ; 
+  top:0px;
+  background-image: url('../images/cracked_8.png');
+  width: 1024px;
+  height: 512px;
+ 
+  position: absolute;
+  opacity: 0.994;
+ 
+ }
+
 
 
 #the-sun {

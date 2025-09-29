@@ -1,8 +1,8 @@
 
 const DEAD_LOOP = "16s";
-const LIVE_LOOP = "4s";
+const LIVE_LOOP = "2s";
 
-ball_start = "-2s";
+ball_start = "-2s";   //"-2s";
 triangle_start = "-1s";
 square_start = "-6s";
 
@@ -21,6 +21,7 @@ function makeBall(front_or_all, ball_color, is_dead) {
   } else {
     fill_opacity = "1";
   }
+  ball_color = 'cyan';
   make_ball = `
   
           <path id="${ball_id}" d="${ball_points} " stroke="${ball_color}" stroke-width="1.0" fill-opacity="0" />
@@ -57,6 +58,7 @@ function makeSquare(front_or_all, square_color, is_dead) {
   } else {
     fill_opacity = "1";
   }
+  square_color = "none";
   make_square = `
           <path id="${square_id}" d="${square_points} " stroke="${square_color}" stroke-width="1.0" fill-opacity="0" />
          <rect width="80" height="80" 
@@ -91,7 +93,7 @@ function makeTriangle(front_or_all, triangle_color, is_dead) {
   //   <polygon  points="-30,0         70,0            20,-87 "
   //           <polygon  points="0,0         100,0            50,-87 "
   //     <polygon  points="0,30         100,30            50,-57 "
-
+  triangle_color = "none";
   make_triangle = `
           <path id="${triangle_id}" d="${triangle_points} " stroke="${triangle_color}" stroke-width="1.0" fill-opacity="0" />
 
@@ -114,44 +116,56 @@ function makeTriangle(front_or_all, triangle_color, is_dead) {
 }
 
 
-function rotatingStar(star_color, is_dead) {
+function rotatingStar(star_color, is_dead, s_number) {
   ani_duration = aniDuration(is_dead);
-  if (is_dead) {
-    fill_opacity = "0.4";
-    rotate_from = 0;
-    rotate_to = 360;
-  } else {
-    fill_opacity = "1";
-    rotate_from = 360;
-    rotate_to = 0;
-  }
+  // if (is_dead) {
+  // fill_opacity = "0.4";
+  rotate_from = 0;
+  rotate_to = 359;
+  //} else {
+  fill_opacity = "1";
+  //rotate_from = 360;
+  // rotate_to = 0;
+  //}
+  ani_duration = "4s";
+
+  css_var_name = '--enemy-star-color-' + s_number;
+
+
+  //  <path fill="${star_color}" 
+  star_color = '#aaaa00';
   rotating_star = `
-            <circle cx="512" cy="512" id="sun:circle" r="322" stroke="${star_color}" stroke-width="1.0"  fill-opacity="0" />
+            <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="1.0"  fill-opacity="0" />
 
 
           <g id="star-spin"  >
 
           
-          <animateTransform
-      attributeName="transform"
-      attributeType="XML"
-      type="rotate"
-   from="${rotate_from} 512 512"
-    to="${rotate_to} 512 512" 
-   additive="sum"
-      dur="${ani_duration}"
-      repeatCount="indefinite" />
+  <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 512 512"
+                      to="360 512 512"
+                      dur="1s"
+                      repeatCount="indefinite"/>
 
       
-              <path fill="${star_color}" 
+              <path fill="var(${css_var_name})" 
               fill-opacity="${fill_opacity}"
               stroke="#000" stroke-width="0"
          
-                  d="m 508.91671,195.11768 74.84818,215.28983 227.78704,4.59357 L 629.9708,552.67309 695.9696,770.80013 508.91671,640.62645 321.86383,770.80013 387.86262,552.67309 206.28149,415.00108 434.06854,410.40751 Z"/>
+                  d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z"/>
+
+
+
+
+
+
           </g>
 
              <circle cx="128" cy="128" id="sun:circle" r="2" stroke="${star_color}" stroke-width="0.0"  fill-opacity="0" />
 `;
+  // console.log("RS", rotating_star);
   return rotating_star;
 }
 
@@ -164,48 +178,54 @@ function aniDuration(is_dead) {
   return ani_duration;
 }
 
-function makeEnemy(the_enemy, is_dead) {
-  the_enemy.m_dead = is_dead;
-  if (is_dead) {
-    the_enemy.m_hover_up++;
-  }
+function makeEnemy(the_enemy) {
+  is_dead = the_enemy.m_dead;
   enemy_id = the_enemy.s_id;
   star_color = the_enemy.m_colors[0];
   ball_color = the_enemy.m_colors[1];
   square_color = the_enemy.m_colors[2];
   triangle_color = the_enemy.m_colors[3];
 
-  rotating_star = rotatingStar(star_color, is_dead);
+  rotating_star = rotatingStar(star_color, is_dead, the_enemy.s_number);
   ball_all = makeBall('all', ball_color, is_dead);
   ball_front = makeBall('front', ball_color, is_dead);
 
-  square_all = makeSquare('all', square_color, is_dead);
-  square_front = makeSquare('front', square_color, is_dead);
+  // square_all = makeSquare('all', square_color, is_dead);
+  // square_front = makeSquare('front', square_color, is_dead);
 
-  triangle_all = makeTriangle('all', triangle_color, is_dead);
-  triangle_front = makeTriangle('front', triangle_color, is_dead);
+  // triangle_all = makeTriangle('all', triangle_color, is_dead);
+  // triangle_front = makeTriangle('front', triangle_color, is_dead);
 
-  the_y = 128 - the_enemy.m_hover_up;
+  the_y = 128 - the_enemy.m_hover_up; // always overwritten
 
-  sprite_background = ` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;
-  the_y = 128;
-  let a_missile = `
+  //console.log("the_en", the_enemy);
+  sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;
+  the_y = 28;
+  let an_enemy = `
     <div class="show-pylon" id="${enemy_id}-div"  style="overflow:clip">
         <svg viewBox="0 0 1023 1023" >
-            <svg id="${enemy_id}-x-y" x="0" y="128" width="1024" height="1024" class="svg-box">
+            <svg id="${enemy_id}-x-y" x="0" y="${the_y}" width="1024" height="1024" class="svg-box">
                 <svg id="${enemy_id}-scaled" style="transform: scale(0.5);">
                       ${sprite_background}
-                    ${triangle_all}
-                    ${square_all}
                     ${ball_all}
                         ${rotating_star}
                     ${ball_front}
-                    ${square_front}
-                    ${triangle_front} 
                 </svg>
             </svg>
         </svg>
     </div>
     `;
-  return a_missile;
+
+
+  // let an_enemy = `
+  //   <div class="show-pylon" id="${enemy_id}-div"  >
+  //       <svg viewBox="0 0 1023 1023" >
+
+  //                       ${rotating_star}
+  //       </svg>
+  //   </div>
+  //   `;
+
+
+  return an_enemy;
 }

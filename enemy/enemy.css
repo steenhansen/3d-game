@@ -1,4 +1,13 @@
 
+/* :root  */
+
+.enemy-vars{
+
+  --enemy-star-color-1 : yellow;
+
+--enemy-star-color-2 : yellow;
+}
+
 
   #enemy-1-scaled {
     transform-origin: center;

@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="values/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
-
+  <link rel=" stylesheet" href="player/player.css" />
   <link rel=" stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
@@ -55,7 +55,7 @@
   <script type="text/javascript" src="field/field-constants.js"></script>
 
   <script type="text/javascript" src="sprites/sprite-sizes.js"></script>
-
+  <script type="text/javascript" src="missile/missile-data.js"></script>
 </div>
 
 <div id="the-svgs">
@@ -64,18 +64,22 @@
 </div>
 
 <div id="js-before">
-  <script type="text/javascript" src="values/major-globals.js"></script>
-  <script type="text/javascript" src="values/minor-globals.js"></script>
+
+  <script type="text/javascript" src="enemy/enemy_html.js"></script>
+
+  <script type="text/javascript" src="variables/major-globals.js"></script>
+  <script type="text/javascript" src="variables/minor-globals.js"></script>
   <script type="text/javascript" src="values/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
   <script type="text/javascript" src="things/objects.js"></script>
 
-  <script type="text/javascript" src="scene/game-loop.js"></script>
+
   <script type="text/javascript" src="player/player_data.js"></script>
   <script type="text/javascript" src="player/player_code.js"></script>
-  <script type="text/javascript" src="things/panel.js"></script>
+  <script type="text/javascript" src="sprites/sprites-stuff.js"></script>
+  <script type="text/javascript" src="sprites/sprite-lines.js"></script>
   <script type="text/javascript" src="things/collisions.js"></script>
   <script type="text/javascript" src="sky/sky_code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
@@ -92,11 +96,12 @@
 
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
 
+  <script type="text/javascript" src="collisions/player-recoil.js"></script>
   <script type="text/javascript" src="scene/scene_3d.js"></script>
 
   <script rel="text/javascript" src="field/field_test.js"></script>
 
-
+  <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
 
 </div>
 
@@ -111,6 +116,7 @@
 
 
 <div id="the-scene">
+
   <canvas id="the-draw" width=" 1024" height="512"></canvas>
   <div id='start-mobile'>
     <ul id='mobile-list'>
@@ -128,12 +134,14 @@
     <div id="star-space">
       <div id="saturn-space"></div>
     </div>
+    <div id="cracked-screen"></div>
     <div id="the-sun" class="sun-vars"></div>
     <div id="sky-aperature" class="sky-vars">
       <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
+      <div id="fuzzy-saturn"></div>
     </div>
-    <div id="enemy-area"></div>
+    <div id="enemy-area" class="enemy-vars"></div>
     <div id="missile-area" class="missile-vars"></div>
     <div id="checkerboard-field"> </div>
     <div id='pylon-html'> </div>
@@ -157,12 +165,21 @@
 
 
 <div id="js-after">
-  <script type="text/javascript" src="pylons/pylons-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_html.js"></script>
   <script type="text/javascript" src="missile/missile_html.js"></script>
-  <script type="text/javascript" src="field/field_html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_code.js"></script>
   <script type="text/javascript" src="missile/missile_code.js"></script>
+  <script type="text/javascript" src="pylons/pylons-html.js"></script>
+  <script type="text/javascript" src="enemy/enemy_code.js"></script>
+
+  <script type="text/javascript" src="variables/global-objects.js"></script>
+
+  <script type="text/javascript" src="scene/game-loop.js"></script>
+
+
+
+
+
+  <script type="text/javascript" src="field/field_html.js"></script>
+
 
   <script type="text/javascript" src="land/land_nw_html.js"></script>
   <script type="text/javascript" src="land/land_ne_html.js"></script>
@@ -224,5 +241,11 @@
 
 <script>
   beginButtonInit();
-  runGame();
+
+  //  runGame(NORMAL_LAND, NORMAL_ELEVATOR, NORMAL_FLY);
+
+  runGame(FAST_LAND, FAST_ELEVATOR, FAST_FLY);
+
+  //  runGame(SLOW_LAND, SLOW_ELEVATOR, SLOW_FLY);
+
 </script>

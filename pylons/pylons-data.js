@@ -12,36 +12,39 @@
 //  pylon_3A
 let pylon_3a = {
   s_isa: "is-pylon",
-  pylon_name: "a3-pylon",
+  s_pylon_name: "pylon-3a",
   m_x: pylon_3A_START_X, m_y: pylon_3A_START_Y,
-  pylon_colors: ["red", "cyan"],
+  s_pylon_colors: GREY_YELLOW_GRADIENT, //["red", "cyan"],
   m_side_twirl: 0,
   m_front_twirl: 200,
-  c_outline: false
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 
 
 pylon_3b = {
   s_isa: "is-pylon",
-  pylon_name: "b3-pylon",
+  s_pylon_name: "pylon-3b",
   m_x: pylon_3B_START_X, m_y: pylon_3B_START_Y,
-  pylon_colors: GREY_YELLOW_GRADIENT,      //["grey", "yellow"],
+  s_pylon_colors: GREY_YELLOW_GRADIENT,      //["grey", "yellow"],
   m_side_twirl: 100,
   m_front_twirl: 300,
-  c_outline: false
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 
 
 pylon_3c = {
   s_isa: "is-pylon",
-  pylon_name: "c3-pylon",
+  s_pylon_name: "pylon-3c",
   m_x: pylon_3C_START_X, m_y: pylon_3C_START_Y,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 188,
   m_front_twirl: 388,
-  c_outline: false
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 
@@ -49,33 +52,36 @@ pylon_3c = {
 
 pylon_2a = {
   s_isa: "is-pylon",
-  pylon_name: "a2-pylon",
-  m_x: pylon_2A_START_X, m_y: pylon_2A_START_Y,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_name: "pylon-2a",
+  m_x: pylon_1A_START_X + 256, m_y: pylon_1A_START_Y - 30,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 150,
   m_front_twirl: 350,
-  c_outline: true
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 pylon_2b = {
   s_isa: "is-pylon",
-  pylon_name: "b2-pylon",
-  m_x: pylon_2B_START_X, m_y: pylon_2B_START_Y,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_name: "pylon-2b",
+  m_x: pylon_1A_START_X + 256, m_y: pylon_1A_START_Y,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 50,
   m_front_twirl: 250,
-  c_outline: true
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 
 pylon_1a = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "pylon-1a",
   m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: false,
+  m_hit_flash: 0
 };
 
 
@@ -91,82 +97,82 @@ pylon_1a = {
 
 pylon_4_1 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 100, m_y: 100,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_2 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 200, m_y: 200,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_3 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 300, m_y: 300,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_4 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 400, m_y: 400,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_5 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 500, m_y: 500,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_6 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 600, m_y: 600,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_7 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 700, m_y: 700,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 pylon_4_8 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 800, m_y: 600,
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };
 
 
@@ -179,10 +185,10 @@ let SCENE_WIDTH = 8192;
 */
 pylon_4_9 = {
   s_isa: "is-pylon",
-  pylon_name: "a1-pylon",
+  s_pylon_name: "a1-pylon",
   m_x: 900, m_y: 600,                          /// must be within 8192 and 768
-  pylon_colors: LIME_FUCHSIA_GRADIENT,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  c_outline: true
+  s_outline: true
 };

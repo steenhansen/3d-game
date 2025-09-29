@@ -71,18 +71,25 @@ function makeList() {
       }
     }
 
+
+
+
     // these are diamonds, !!!
     for (let j = 0; j < NUM_MIDDLE_BALLS; j++) {
       outside_missile_id = MIDDLE_ID_START + j;
       m_size = randomMissileSize(11, 33);
       m_size2 = "";
       if (m_size != '') {
-        m_size2 = m_size / 2;
+        m_size2 = Math.floor(m_size / 2);
+        //console.log("ms", m_size2);
         m_size += 'px';
       }
       m_color = randomMissileColor([32, 32, 32], [100, 223, 100]);
       if (m_size !== '' || m_color !== '') {
-        t_arr = [outside_missile_id, m_size, m_color, m_size2];
+        a_diamond = the_diamonds[j];
+        x_adjust = (a_diamond[0] - m_size2) + "px";
+        y_adjust = (a_diamond[1] - m_size2) + "px";
+        t_arr = [outside_missile_id, m_size, m_color, x_adjust, y_adjust];
         in_arr.push(t_arr);
       }
     }
@@ -99,6 +106,7 @@ function makeList() {
       }
     }
     in_arr = shuffleArray(in_arr);
+
     out_arr.push(in_arr);
   }
   return out_arr;
@@ -113,14 +121,17 @@ function getRandoms() {
     number_replaced = this_tick.length;
   }
   for (let j = 0; j < number_replaced; j++) {
-    let [the_id, the_size, the_color, m_size2] = this_tick[j];
+    let [the_id, the_size, the_color, x_adjust, y_adjust] = this_tick[j];
+
     if (the_size !== '') {
       let missile_size = "--missile-size-" + the_id;
       missile_area.style.setProperty(missile_size, the_size);
 
-      let missile_half_offset = "--missile-half-offset-" + the_id;
-      missile_area.style.setProperty(missile_half_offset, m_size2);
+      let missile_offset_x = "--missile-offset-x-" + the_id;
+      missile_area.style.setProperty(missile_offset_x, x_adjust);
 
+      let missile_offset_y = "--missile-offset-y-" + the_id;
+      missile_area.style.setProperty(missile_offset_y, y_adjust);
 
     }
     if (the_color !== '') {
@@ -150,6 +161,7 @@ function launchMissile(the_missile) {
   the_missile.m_y = m_y;
   the_missile.m_lifetime = MISSILE_LIFETIME;
   the_missile.m_expired = false;
+  the_missile.m_caromed = false;
   return the_missile;
 }
 
@@ -171,8 +183,10 @@ function missileAdvance(the_missile) {
 
   if (m_x_dir < 0) {
     the_missile.m_x = leftOnBoard(the_missile.m_x, m_x_dir * -4 * 3);
+    //    console.log("11111", the_missile.m_x);
   } else if (m_x_dir > 0) {
-    the_missile.m_x = rightOnBoard(the_missile.m_x, m_x_dir * 4 * 3);
+    // qbert 49 - these two handle stuff differently, return x  OR return changed object
+    the_missile = rightOnBoard(the_missile, m_x_dir * 4 * 3);
   }
 
 
@@ -213,27 +227,10 @@ function setFillNone() {
 
 
 
-
-
+function carom() {
+}
 
 function missileSet(real_id, the_missile, g_player) {
-  collision_1a = hasCollided(pylon_1a, the_missile, COLLISION_SIZES);
-  collision_2a = hasCollided(pylon_2a, the_missile, COLLISION_SIZES);
-  collision_2b = hasCollided(pylon_2b, the_missile, COLLISION_SIZES);
-  collision_3a = hasCollided(pylon_3a, the_missile, COLLISION_SIZES);
-  collision_3b = hasCollided(pylon_3b, the_missile, COLLISION_SIZES);
-  collision_3c = hasCollided(pylon_3c, the_missile, COLLISION_SIZES);
-
-
-
-  has_collided = collision_1a || collision_2a || collision_2b || collision_3a || collision_3b || collision_3c;
-  if (has_collided) {
-    //the_missile.m_expired = true;
-    the_missile.m_x_dir = -1;
-    the_missile.m_y_dir = 0;
-
-  }
-
   if (the_missile.m_expired) {
     the_missile.m_x_dir = 0;
     the_missile.m_y_dir = -1;
@@ -244,7 +241,7 @@ function missileSet(real_id, the_missile, g_player) {
     }
 
   }
-  spriteDraw(real_id, the_missile, g_player);
+  missileDraw(real_id, the_missile, g_player);
 }
 
 
@@ -259,8 +256,57 @@ let the_missile_1 = {
   s_id: "missile-1",
   m_x: MISSILE_START_X, m_y: MISSILE_START_Y,
 
+  m_caromed: false,
   m_lifetime: MISSILE_LIFETIME,
   m_expired: true,
   m_x_dir: 0, m_y_dir: -1,   // ALWAYS THIS
 };
 
+
+/////////////
+
+
+
+function missilePosition(real_id, z_index, the_stats) {
+  let [center_x, center_y, the_scale] = the_stats;
+  missile_div = document.getElementById(real_id + '-div');
+  missile_div.style.zIndex = z_index;
+  missile_x_y = document.getElementById(real_id + '-x-y');
+  missile_x_y.setAttribute("x", center_x + 256 + 128);           // get shot centered horizontally
+  //missile_x_y.setAttribute("x", center_x);
+  //  if enemy then - ENEMY_TO_HORIZON_LIFT
+  //  missile_x_y.setAttribute("y", center_y - ENEMY_TO_HORIZON_LIFT);
+  missile_x_y.setAttribute("y", center_y + 256 + 64);
+  missile_scaled = document.getElementById(real_id + '-scaled');
+  missile_scaled.style.transform = `scale(${the_scale})`;
+}
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+
+
+function missileDraw(real_id, the_sprite, g_player) {
+
+  pylon_player_ys = [the_sprite.m_y, g_player.m_y];
+
+  real_id = the_sprite.s_id;
+  [the_z_index, difference_y, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, g_player);
+  if (missile_relative == LEFT_OF_PLAYER) {
+
+
+
+    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys);
+  } else {
+    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys);
+  }
+  gradient_front = 'clear-grad';
+  the_stats = spriteFront(left_mid_right_vlines);
+  //console.log("sprite THE_STATS", real_id, the_stats);
+
+  missilePosition(real_id, the_z_index, the_stats);
+}

@@ -40,11 +40,11 @@ function flyingInit() {
 
 
 
-function animateFly() {
-  if (SPEED_FLY == FAST_FLY) {
+function animateFly(fly_speed) {
+  if (fly_speed == FAST_FLY) {
     doFlying(STOP_FLY_COUNT - 1);
     return LOOP_9_DONE;
-  } else if (SPEED_FLY == SLOW_FLY) {
+  } else if (fly_speed == SLOW_FLY) {
 
     lift_amount_f += 0.5;
     if (lift_amount_f == STOP_FLY_COUNT) {
@@ -236,7 +236,9 @@ function initLanding() {
   hideDiv('start-mobile');
   unHideDiv('the-scene');
 }
-animateLanding;
+
+//animateLanding;
+
 var landing_count = 0;
 
 function landingInit() {
@@ -246,11 +248,11 @@ function landingInit() {
 
 
 
-function animateLanding() {
-  if (SPEED_LAND == FAST_LAND) {
+function animateLanding(land_speed) {
+  if (land_speed == FAST_LAND) {
     expandCheckerboard(255);
     return LOOP_3_AFTER_LANDING;
-  } else if (SPEED_LAND == SLOW_LAND) {
+  } else if (land_speed == SLOW_LAND) {
     landing_count += 0.25;
     if (landing_count == num_lines) {
       return LOOP_3_AFTER_LANDING;
@@ -301,35 +303,6 @@ function initElevator() {
 
 
 
-function animateElevator() {
-  if (SPEED_ELEVATOR == FAST_ELEVATOR) {
-    while (m_top_playing_game !== 0) {
-      m_top_playing_game += 2;
-      m_top_the_land += 2;
-      moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    }
-    return LOOP_5_AFTER_ELEVATOR;
-  } else if (SPEED_ELEVATOR == SLOW_ELEVATOR) {
-    m_top_playing_game += 0.5;
-    m_top_the_land += 0.5;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return LOOP_5_AFTER_ELEVATOR;
-    } else {
-      return LOOP_4_ELEVATOR;
-    }
-  } else {
-    m_top_playing_game += 2;
-    m_top_the_land += 2;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return LOOP_5_AFTER_ELEVATOR;
-    } else {
-      return LOOP_4_ELEVATOR;
-    }
-  }
-}
-
 
 function elevatorInOneStep() {
   while (m_top_playing_game !== 0) {
@@ -340,11 +313,11 @@ function elevatorInOneStep() {
 }
 
 
-function animateElevator() {
-  if (SPEED_ELEVATOR == FAST_ELEVATOR) {
+function animateElevator(elevator_speed) {
+  if (elevator_speed == FAST_ELEVATOR) {
     elevatorInOneStep();
     return LOOP_5_AFTER_ELEVATOR;
-  } else if (SPEED_ELEVATOR == SLOW_ELEVATOR) {
+  } else if (elevator_speed == SLOW_ELEVATOR) {
     m_top_playing_game += 0.5;
     m_top_the_land += 0.5;
     moveCheckerboardOnce(m_top_playing_game, m_top_the_land);

@@ -5,8 +5,8 @@
 
 // 0-399 
 
-function twirledGradient(gradient_index, pylon_colors) {
-  let [first_color, second_color] = pylon_colors;
+function twirledGradient(gradient_index, s_pylon_colors) {
+  let [first_color, second_color] = s_pylon_colors;
   the_gradient = "pylon-gradient" + first_color + second_color + Math.floor(gradient_index);
   return the_gradient;
 }
@@ -60,8 +60,8 @@ function wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, s
 }
 
 
-function makeGradients(pylon_colors) {
-  let [first_color, second_color] = pylon_colors;
+function makeGradients(s_pylon_colors) {
+  let [first_color, second_color] = s_pylon_colors;
   the_res = '';
   west_y = 0;
   for (let gradient_index = 0; gradient_index < 100; gradient_index++) {

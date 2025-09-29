@@ -1,8 +1,59 @@
+Green for collisions:
+   pylon green edge, turn off if hit, on if shoot
+   enemy green flash if hit, missile green flash
+   
+
+
+
+pylons === pink green but no move
+   shoot ==> moving
+
+   hit with player go solid
 
 
 
 
 
+
+
+
+
+
+
+carom
+
+
+
+/*
+steps_left = x_dir * -1 * TRAVEL_SPEED * 3;   // matches the player
+steps_left = x_dir * -1 * TRAVEL_SPEED * 6;   // twice matches the player
+
+
+travel_speed = 1;
+
+ travel_speed=  TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+  sceneRight(travel_speed);
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
+    g_player = rightOnBoard(g_player, travel_speed * 3);
+// drift =3 , normal = 12 have
+// drift=1, normal = 12 want
+
+*/
+
+
+
+
+
+
+
+  
+
+pylons use 
+distancedPoint()
+
+what do enemies use for depth?
 
 
 

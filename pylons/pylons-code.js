@@ -30,9 +30,20 @@ function pylonSidePanel(a_pylon, pylon_vlines, gradient_side, side_color) {
   let [right_front_top, right_front_bot] = middle_vline;
   let [back_right_top, back_right_bot] = right_vline;
   right_top_bot = [right_front_top, back_right_top, right_front_bot, back_right_bot];
-  let side_pylon_name = 'panel-side-pylon-' + a_pylon.pylon_name;
-  let do_outlines = a_pylon.c_outline;
-  let side_pylon = pylonPolygon(right_top_bot, gradient_side, side_pylon_name, do_outlines, side_color);
+  let side_s_pylon_name = 'panel-side-pylon-' + a_pylon.s_pylon_name;
+  let do_outlines = a_pylon.s_outline;
+
+
+  if (a_pylon.m_hit_flash > 0) {
+    //   a_pylon.m_hit_flash--;
+    do_flash = true;
+  } else {
+    do_flash = false;
+  }
+
+
+
+  let side_pylon = pylonPolygon(right_top_bot, gradient_side, side_s_pylon_name, do_outlines, side_color, do_flash);
   return side_pylon;
 }
 
@@ -46,10 +57,10 @@ function pylonOnLeft(a_pylon, x_center_offset, pylon_player_ys, head_on_view, si
       difference_yy = player_y + dist_pylon_to_zero;
     }
 
-    return pylonOnMiddle(a_pylon, x_center_offset, difference_yy);
+    return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectLeftSide(a_pylon, x_center_offset, pylon_player_ys);
-    gradient_left = twirledGradient(a_pylon.m_side_twirl, a_pylon.pylon_colors);
+    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys);
+    gradient_left = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
     side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_left, side_color);
     return [left_mid_right_vlines, side_pylon];
   }
@@ -67,35 +78,32 @@ function pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view, s
     }
 
 
-    return pylonOnMiddle(a_pylon, x_center_offset, difference_yy);
+    return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectRightSide(a_pylon, x_center_offset, pylon_player_ys);
+    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys);
 
-    gradient_right = twirledGradient(a_pylon.m_side_twirl, a_pylon.pylon_colors);
+    gradient_right = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
     side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_right, side_color);
     return [left_mid_right_vlines, side_pylon];
   }
 }
 
-function pylonOnMiddle(a_pylon, x_center_offset, difference_yy) {
-  left_mid_right_vlines = objectMiddleRegion(a_pylon, x_center_offset, difference_yy);
-  side_pylon = '';
-  return [left_mid_right_vlines, side_pylon];
-}
 
-function pylonSet(a_pylon, html_id) {
+function pylonSet(a_pylon) {
   svg_pylon = pylonDraw(a_pylon, g_player);
-  targetDiv = document.getElementById(html_id);
+  pylon_id = a_pylon.s_pylon_name;
+
+  targetDiv = document.getElementById(pylon_id);
   if (svg_pylon == null) {
-    console.log("crash", html_id);
+    console.log("crash", pylon_id);
   }
   targetDiv.innerHTML = svg_pylon;
 }
 
 function pylonDraw(a_pylon, g_player) {
-  pylon_colors = a_pylon.pylon_colors;
-  front_color = a_pylon.pylon_colors[0];
-  side_color = a_pylon.pylon_colors[1];
+  s_pylon_colors = a_pylon.s_pylon_colors;
+  front_color = a_pylon.s_pylon_colors[0];
+  side_color = a_pylon.s_pylon_colors[1];
 
   a_pylon = twirlSides(a_pylon);
   [the_z_index, difference_y, pylon_relative, x_center_offset, head_on_view] = objectPlacement(a_pylon, g_player);
@@ -110,13 +118,20 @@ function pylonDraw(a_pylon, g_player) {
     left_mid_right_vlines[0][1][0][0] -= 1;    // for some reason
     left_mid_right_vlines[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   }
-  pylon_id = "panel-front-pylon-" + a_pylon.pylon_name;
-  gradient_front = twirledGradient(a_pylon.m_front_twirl, a_pylon.pylon_colors);
+  pylon_id = "panel-front-pylon-" + a_pylon.s_pylon_name;
+  gradient_front = twirledGradient(a_pylon.m_front_twirl, a_pylon.s_pylon_colors);
 
 
-  let do_outlines = a_pylon.c_outline;
+  let do_outlines = a_pylon.s_outline;
+  //console.log("do out", do_outlines);
+  if (a_pylon.m_hit_flash > 0) {
+    a_pylon.m_hit_flash--;
+    do_flash = true;
+  } else {
+    do_flash = false;
+  }
 
-  front_pylon = pylonFront(left_mid_right_vlines, gradient_front, pylon_id, do_outlines, front_color);
+  front_pylon = pylonFront(left_mid_right_vlines, gradient_front, pylon_id, do_outlines, front_color, do_flash);
   pylon_svg = pylonToSvg(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
 }
@@ -136,3 +151,23 @@ function pylonToSvg(z_index, front_pylon, side_pylon) {
 }
 
 
+
+
+
+function pylonOnMiddle(x_center_offset, difference_yy) {
+  left_mid_right_vlines = frontPylonRegion(x_center_offset, difference_yy);
+  side_pylon = '';
+  return [left_mid_right_vlines, side_pylon];
+}
+
+
+
+function frontPylonRegion(x_center_offset, difference_yy) {
+  let [left_front_bot, right_front_bot, back_right_bot] = panels3Middle(x_center_offset, difference_yy);
+  let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, back_right_bot);
+  let left_vline = [left_front_top, left_front_bot];
+  let middle_vline = [right_front_top, right_front_bot];
+  let right_vline = [back_right_top, back_right_bot];
+  left_mid_right_vlines = [left_vline, middle_vline, right_vline];
+  return left_mid_right_vlines;
+}

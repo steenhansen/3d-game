@@ -117,15 +117,24 @@ function debugReportFrameTime() {
   debugPrint(player_pos, 530, 5);
 
 
+
+  const m_x = the_missile_1.m_x;
+  const m_y = the_missile_1.m_y;
+  const m_caromed = the_missile_1.m_caromed;
+
+  missile_pos = `Missile x${m_x}, y${m_y}   carom - ${m_caromed} `;
+  debugPrint(missile_pos, 730, 5);
+
+
   const e_x = enemy_1.m_x;
   const e_y = enemy_1.m_y;
-  player_pos = `Enemy x${e_x}, y${e_y}`;
+  player_pos = `Enemy1 x${e_x}, y${e_y}`;
   debugPrint(player_pos, 530, 25);
 
 
   const c_x = pylon_1a.m_x;
   const c_y = pylon_1a.m_y;
-  player_pos = `Pylon x${c_x}, y${c_y}`;
+  player_pos = `Pylon1a x${c_x}, y${c_y}`;
   debugPrint(player_pos, 530, 45);
 
 

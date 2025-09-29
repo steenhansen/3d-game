@@ -1,3 +1,44 @@
+
+
+
+
+
+
+
+// qbert 49 - these two handle stuff differently, return x  OR return changed object
+function leftOnBoard(x_pos, left_steps) {
+  // console.log("leftOnBoard  left_steps=", left_steps);
+  x_pos -= left_steps;
+  if (x_pos < SCENE_X_MIN) {
+    x_pos += SCENE_X_MAX;
+  }
+  return x_pos;
+}
+
+
+/*
+function rightOverflow(x){
+ if (x > SCENE_X_MAX) {
+    x -= SCENE_X_MAX;
+  }
+  return x;
+}
+
+
+*/
+
+
+function rightOnBoard(moving_object, right_steps) {
+  m_x = moving_object.m_x;
+  m_x += right_steps;
+  if (m_x > SCENE_X_MAX) {
+    m_x -= SCENE_X_MAX;
+  }
+  moving_object.m_x = m_x;
+  return moving_object;
+}
+
+
 function missileLR(a_missile, g_player) {
   if (a_missile.m_x < g_player.m_x) {
     return MISSILE_TO_LEFT;
@@ -13,34 +54,6 @@ function missileLR(a_missile, g_player) {
 
 
 
-
-
-
-
-
-function rightOnBoard(moving_object, right_steps) {
-  m_x = moving_object.m_x;
-  m_x += right_steps;
-
-
-  if (m_x > SCENE_X_MAX) {
-
-    m_x -= SCENE_X_MAX;
-
-
-
-    // if (moving_object.s_isa == "is-player") {
-    //   let oscillator = audio_context.createOscillator();
-    //   oscillator.connect(audio_context.destination);
-    //   oscillator.type = 'square';
-    //   oscillator.start();
-    //   oscillator.stop(audio_context.currentTime + 0.05);
-    // }
-  }
-  moving_object.m_x = m_x;
-  return moving_object;
-}
-
 function playerRight(travel_speed) {
   g_player = rightOnBoard(g_player, travel_speed * 3);
 }
@@ -49,17 +62,7 @@ function playerRight(travel_speed) {
 
 
 
-function leftOnBoard(x_pos, left_steps) {
-  x_pos -= left_steps;
-  if (x_pos < SCENE_X_MIN) {
-    x_pos += SCENE_X_MAX;
-
-
-
-  }
-  return x_pos;
-}
-
+// qbert player  travel_speed * 3
 function playerLeft(travel_speed) {
   g_player.m_x = leftOnBoard(g_player.m_x, travel_speed * 3);
 }
@@ -70,6 +73,7 @@ function playerLeft(travel_speed) {
 function playerForward(travel_speed) {
   g_player.m_y = forwardOnBoard(g_player.m_y, travel_speed);
 }
+
 function forwardOnBoard(y_pos, backward_steps) {
   y_pos += backward_steps;
   if (y_pos > SCENE_Y_MAX) {
