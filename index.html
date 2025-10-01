@@ -31,6 +31,7 @@
   <link rel=" stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
+  <link rel="stylesheet" href="holes/holes.css" />
   <link rel="stylesheet" href="land/land.css" />
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
@@ -48,14 +49,21 @@
 
   <script type="text/javascript" src="values/major-constants.js"></script>
   <script type="text/javascript" src="values/minor-constants.js"></script>
-  <script type="text/javascript" src="pylons/pylons-data.js"></script>
+  <script type="text/javascript" src="pylons/pylons-declare.js"></script>
+
+
+  <script type="text/javascript" src="holes/holes-declare.js"></script>
+
+  <script type="text/javascript" src="holes/holes-code.js"></script>
+
+
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
   <script type="text/javascript" src="field/field-invert.js"></script>
   <script type="text/javascript" src="field/field-constants.js"></script>
 
-  <script type="text/javascript" src="sprites/sprite-sizes.js"></script>
-  <script type="text/javascript" src="missile/missile-data.js"></script>
+  <script type="text/javascript" src="objects/sprite-sizes.js"></script>
+
 </div>
 
 <div id="the-svgs">
@@ -64,8 +72,9 @@
 </div>
 
 <div id="js-before">
+  <script type="text/javascript" src="enemy/enemy-html.js"></script>
 
-  <script type="text/javascript" src="enemy/enemy_html.js"></script>
+
 
   <script type="text/javascript" src="variables/major-globals.js"></script>
   <script type="text/javascript" src="variables/minor-globals.js"></script>
@@ -73,17 +82,17 @@
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
-  <script type="text/javascript" src="things/objects.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
 
 
-  <script type="text/javascript" src="player/player_data.js"></script>
-  <script type="text/javascript" src="player/player_code.js"></script>
-  <script type="text/javascript" src="sprites/sprites-stuff.js"></script>
-  <script type="text/javascript" src="sprites/sprite-lines.js"></script>
-  <script type="text/javascript" src="things/collisions.js"></script>
-  <script type="text/javascript" src="sky/sky_code.js"></script>
+  <script type="text/javascript" src="player/player-declare.js"></script>
+  <script type="text/javascript" src="player/player-code.js"></script>
+  <script type="text/javascript" src="objects/sprites-stuff.js"></script>
+  <script type="text/javascript" src="objects/sprite-lines.js"></script>
+  <script type="text/javascript" src="collisions/collisions.js"></script>
+  <script type="text/javascript" src="sky/sky-code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
-  <script type="text/javascript" src="scene/vanish_point.js"></script>
+  <script type="text/javascript" src="scene/vanish-point.js"></script>
 
   <script type="text/javascript" src="field/field-code.js"></script>
   <script type="text/javascript" src="field/field-depth.js"></script>
@@ -99,7 +108,7 @@
   <script type="text/javascript" src="collisions/player-recoil.js"></script>
   <script type="text/javascript" src="scene/scene_3d.js"></script>
 
-  <script rel="text/javascript" src="field/field_test.js"></script>
+  <script rel="text/javascript" src="field/field-test.js"></script>
 
   <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
 
@@ -109,8 +118,8 @@
 
 <div id='click-to-begin' class="begin-vars">
   <br>
-  <button id="begin-desktop" type="button">Begin desktop 3D game</button>
-  <button id="begin-mobile" type="button">Begin mobile 3D game</button>
+  <button id="begin-desktop" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;" type="button">Begin desktop 3D game</button>
+  <button id="begin-mobile" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;" type="button">Begin mobile 3D game</button>
   <br>
 </div>
 
@@ -145,6 +154,7 @@
     <div id="missile-area" class="missile-vars"></div>
     <div id="checkerboard-field"> </div>
     <div id='pylon-html'> </div>
+    <div id='hole-html'> </div>
   </div>
 
   <div id="the-landing">
@@ -165,10 +175,19 @@
 
 
 <div id="js-after">
-  <script type="text/javascript" src="missile/missile_html.js"></script>
-  <script type="text/javascript" src="missile/missile_code.js"></script>
+
+
+  <script type="text/javascript" src="missile/missile-html.js"></script>
+  <script type="text/javascript" src="missile/missile-declare.js"></script>
+
+
+
+
+  <script type="text/javascript" src="missile/missile-code.js"></script>
+  <script type="text/javascript" src="holes/holes-html.js"></script>
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_code.js"></script>
+  <script type="text/javascript" src="enemy/enemy-declare.js"></script>
+  <script type="text/javascript" src="enemy/enemy-code.js"></script>
 
   <script type="text/javascript" src="variables/global-objects.js"></script>
 
@@ -178,14 +197,14 @@
 
 
 
-  <script type="text/javascript" src="field/field_html.js"></script>
+  <script type="text/javascript" src="field/field-html.js"></script>
 
 
-  <script type="text/javascript" src="land/land_nw_html.js"></script>
-  <script type="text/javascript" src="land/land_ne_html.js"></script>
-  <script type="text/javascript" src="land/land_sw_html.js"></script>
-  <script type="text/javascript" src="land/land_se_html.js"></script>
-  <script type="text/javascript" src="land/land_code.js"></script>
+  <script type="text/javascript" src="land/land-nw-html.js"></script>
+  <script type="text/javascript" src="land/land-ne-html.js"></script>
+  <script type="text/javascript" src="land/land-sw-html.js"></script>
+  <script type="text/javascript" src="land/land-se-html.js"></script>
+  <script type="text/javascript" src="land/land-code.js"></script>
 
 
   <script type="text/javascript" src="input/arrows-html.js"></script>
@@ -240,12 +259,19 @@
 
 
 <script>
-  beginButtonInit();
 
-  //  runGame(NORMAL_LAND, NORMAL_ELEVATOR, NORMAL_FLY);
+  //pylon_row = rowPylons(300);
+  //console.log(pylon_row);
 
-  runGame(FAST_LAND, FAST_ELEVATOR, FAST_FLY);
+  land_fly_speeds = [FAST_LAND, FAST_ELEVATOR, FAST_FLY];
+  the_pylons = [pylon_1a]; //[pylon_1a, pylon_2a, pylon_2b, pylon_3a, pylon_3b, pylon_3c];
+  //the_pylons = pylon_row;
+  the_enemies = [enemy_1, enemy_2];
+  the_holes = [hole_1];
 
-  //  runGame(SLOW_LAND, SLOW_ELEVATOR, SLOW_FLY);
+  runGame(land_fly_speeds, the_pylons, the_enemies, the_holes);
 
+  if (isDebugging()) {
+    g_loop_state = LOOP_1_AFTER_BEGIN;
+  }
 </script>

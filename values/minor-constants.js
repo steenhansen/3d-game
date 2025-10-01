@@ -1,5 +1,19 @@
 
+let MISSILE_START_X = 400;
+let MISSILE_START_Y = 168;
 
+
+let pylon_3A_START_X = 1365 - 512;
+let pylon_3A_START_Y = 449;           //    192 400;
+let pylon_3B_START_X = 1365;
+let pylon_3B_START_Y = 449;              // 192 400;
+let pylon_3C_START_X = 1365 + 512;
+let pylon_3C_START_Y = 449;              // 192 400;
+
+let pylon_2A_START_X = 4096 - 256;
+let pylon_2A_START_Y = 384;                //400;
+let pylon_2B_START_X = 4096 + 256;
+let pylon_2B_START_Y = 384;                    //400;
 
 
 const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
@@ -7,7 +21,9 @@ const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 const DRIFT_CYCLES = 256 * 3;       //1024;
 
 const PYLON_PIXEL_DEPTH = 30;
-
+const ENEMY_PIXEL_DEPTH = 30;
+const MISSILE_PIXEL_DEPTH = 30;
+const HOLE_PIXEL_DEPTH = 60;
 
 
 
@@ -75,26 +91,12 @@ let GREY_YELLOW_GRADIENT = ["Grey", "Yellow"];  //  00??ff00,   FF00FF
 */
 
 
-let pylon_3A_START_X = 1365 - 512;
-let pylon_3A_START_Y = 449;           //    192 400;
-let pylon_3B_START_X = 1365;
-let pylon_3B_START_Y = 449;              // 192 400;
-let pylon_3C_START_X = 1365 + 512;
-let pylon_3C_START_Y = 449;              // 192 400;
-
-let pylon_2A_START_X = 4096 - 256;
-let pylon_2A_START_Y = 384;                //400;
-let pylon_2B_START_X = 4096 + 256;
-let pylon_2B_START_Y = 384;                    //400;
-
 
 
 
 let NUMBER_TWIRLS = 400;
 
 
-let MISSILE_START_X = 400;
-let MISSILE_START_Y = 168;
 
 
 

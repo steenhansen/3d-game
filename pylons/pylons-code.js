@@ -33,14 +33,7 @@ function pylonSidePanel(a_pylon, pylon_vlines, gradient_side, side_color) {
   let side_s_pylon_name = 'panel-side-pylon-' + a_pylon.s_pylon_name;
   let do_outlines = a_pylon.s_outline;
 
-
-  if (a_pylon.m_hit_flash > 0) {
-    //   a_pylon.m_hit_flash--;
-    do_flash = true;
-  } else {
-    do_flash = false;
-  }
-
+  do_flash = a_pylon.do_flash;
 
 
   let side_pylon = pylonPolygon(right_top_bot, gradient_side, side_s_pylon_name, do_outlines, side_color, do_flash);
@@ -59,7 +52,7 @@ function pylonOnLeft(a_pylon, x_center_offset, pylon_player_ys, head_on_view, si
 
     return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys);
+    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys, PYLON_PIXEL_DEPTH);
     gradient_left = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
     side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_left, side_color);
     return [left_mid_right_vlines, side_pylon];
@@ -80,7 +73,7 @@ function pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view, s
 
     return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
-    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys);
+    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys, PYLON_PIXEL_DEPTH);
 
     gradient_right = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
     side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_right, side_color);
@@ -88,8 +81,9 @@ function pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view, s
   }
 }
 
-
+///var pylon_draw_count = 0;
 function pylonSet(a_pylon) {
+  //if (pylon_draw_count == 0) {
   svg_pylon = pylonDraw(a_pylon, g_player);
   pylon_id = a_pylon.s_pylon_name;
 
@@ -98,6 +92,8 @@ function pylonSet(a_pylon) {
     console.log("crash", pylon_id);
   }
   targetDiv.innerHTML = svg_pylon;
+  //}
+  //pylon_draw_count++;
 }
 
 function pylonDraw(a_pylon, g_player) {
@@ -123,14 +119,7 @@ function pylonDraw(a_pylon, g_player) {
 
 
   let do_outlines = a_pylon.s_outline;
-  //console.log("do out", do_outlines);
-  if (a_pylon.m_hit_flash > 0) {
-    a_pylon.m_hit_flash--;
-    do_flash = true;
-  } else {
-    do_flash = false;
-  }
-
+  do_flash = a_pylon.do_flash;
   front_pylon = pylonFront(left_mid_right_vlines, gradient_front, pylon_id, do_outlines, front_color, do_flash);
   pylon_svg = pylonToSvg(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
@@ -163,11 +152,11 @@ function pylonOnMiddle(x_center_offset, difference_yy) {
 
 
 function frontPylonRegion(x_center_offset, difference_yy) {
-  let [left_front_bot, right_front_bot, back_right_bot] = panels3Middle(x_center_offset, difference_yy);
-  let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, back_right_bot);
+  let [left_front_bot, right_front_bot, _back_right_bot, _back_left_bot] = panels3Middle(x_center_offset, difference_yy, PYLON_PIXEL_DEPTH);
+  let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, _back_right_bot);
   let left_vline = [left_front_top, left_front_bot];
   let middle_vline = [right_front_top, right_front_bot];
-  let right_vline = [back_right_top, back_right_bot];
-  left_mid_right_vlines = [left_vline, middle_vline, right_vline];
+  let _right_vline = [back_right_top, _back_right_bot];
+  left_mid_right_vlines = [left_vline, middle_vline, _right_vline];
   return left_mid_right_vlines;
 }

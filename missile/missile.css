@@ -1,26 +1,9 @@
 
 
-
- #planets2 {
-position:absolute;
-
-} 
-
-
-#da_missile {
-
-  background-color:blue;
-}
-
-
-  #missile-1-scaled {
+  #the-missile-scaled {
     transform-origin: center;
 
 }
 
 
 
-  #missile-2-scaled {
-    transform-origin: center;
-
-}

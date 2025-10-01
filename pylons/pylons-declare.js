@@ -9,7 +9,31 @@
 // cyan-grad      Cyan rgb(0, 255, 255)         22222222
 // silver-grad  Silver rgb(160,160,160)
 
-//  pylon_3A
+
+function rowPylons(y_coord) {
+  pylon_row = [];
+  column_count = 0;
+  row_name = "A";
+  last_one = SCENE_WIDTH - 500;
+  for (let x = 0; x < last_one; x += 500) {
+    let a_pylon = {
+      s_isa: "is-pylon",
+      s_pylon_name: `pylon-${row_name}-${column_count}`,
+      m_x: x, m_y: y_coord,
+      s_pylon_colors: GREY_YELLOW_GRADIENT, //["red", "cyan"],
+      m_side_twirl: 0,
+      m_front_twirl: 200,
+      s_outline: false,
+      m_hit_flash: 0,
+      do_flash: false
+    };
+    column_count++;
+    pylon_row.push(a_pylon);
+  }
+  return pylon_row;
+}
+
+
 let pylon_3a = {
   s_isa: "is-pylon",
   s_pylon_name: "pylon-3a",
@@ -18,7 +42,8 @@ let pylon_3a = {
   m_side_twirl: 0,
   m_front_twirl: 200,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
 
@@ -31,7 +56,8 @@ pylon_3b = {
   m_side_twirl: 100,
   m_front_twirl: 300,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
 
@@ -44,7 +70,8 @@ pylon_3c = {
   m_side_twirl: 188,
   m_front_twirl: 388,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
 
@@ -58,7 +85,8 @@ pylon_2a = {
   m_side_twirl: 150,
   m_front_twirl: 350,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
 pylon_2b = {
@@ -69,22 +97,28 @@ pylon_2b = {
   m_side_twirl: 50,
   m_front_twirl: 250,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
 
 pylon_1a = {
   s_isa: "is-pylon",
   s_pylon_name: "pylon-1a",
-  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
+  //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
+  m_x: 1600, m_y: 600,
+
   s_pylon_colors: LIME_FUCHSIA_GRADIENT,
   m_side_twirl: 1,
   m_front_twirl: 201,
   s_outline: false,
-  m_hit_flash: 0
+  m_hit_flash: 0,
+  do_flash: false
 };
 
+function randomPylon() {
 
+}
 
 
 

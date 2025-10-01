@@ -1,37 +1,4 @@
 
-bad checkerboard error still there july 1, 2025
-
-
-
-
-
-
-
-q== up and left
-
-
-have a ring of columns, and have colors rotate
-
-
-
-
-
-sun
-moon
-stars
-
-have grid map where
-
- OOO                       o
- O O                      o o
- 0o0                     ooooo
-         X  Oblack             
-   o                      ooo
-   o                     o   O
-oooooo                    ooo
-   O
-   O
-
 
    /*      left           right          imagine-Left
           |              |   \    column |       /          |

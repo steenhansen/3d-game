@@ -1,5 +1,32 @@
 
 
+
+// document.getElementById('pylon-html').innerHTML = `
+// <div id="pylon-A-0"></div>
+// <div id="pylon-A-1"></div>
+// <div id="pylon-A-2"></div>
+// <div id="pylon-A-3"></div>
+// <div id="pylon-A-4"></div>
+// <div id="pylon-A-5"></div>
+// <div id="pylon-A-6"></div>
+// <div id="pylon-A-7"></div>
+// <div id="pylon-A-8"></div>
+// <div id="pylon-A-9"></div>
+
+// <div id="pylon-A-10"></div>
+// <div id="pylon-A-11"></div>
+// <div id="pylon-A-12"></div>
+// <div id="pylon-A-13"></div>
+// <div id="pylon-A-14"></div>
+// <div id="pylon-A-15"></div>
+// <div id="pylon-A-16"></div>
+
+
+
+// `;
+
+
+
 document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-3a"></div>
 <div id="pylon-3b"></div>
@@ -24,40 +51,21 @@ document.getElementById('pylon-html').innerHTML = `
 
 
 function drawPylons(the_pylons) {
-  //console.log("gplk 2", the_pylons);
-  // if (typeof TEST_NAME == "string" && TEST_NAME == "test_enemy") {
-  //   return;
-  // }
-  // // pylonSet(pylon_3a, 'pylon-3a');
-  // // pylonSet(pylon_3b, 'pylon-3b');
-  // // pylonSet(pylon_3c, 'pylon-3c');
-
-  // pylonSet(pylon_2a);
-  // pylonSet(pylon_2b);
-
-  // pylonSet(pylon_1a);
-
-  // pylonSet(pylon_4_1, 'pylon-4-1');
-  // pylonSet(pylon_4_2, 'pylon-4-2');
-  // pylonSet(pylon_4_3, 'pylon-4-3');
-  // pylonSet(pylon_4_4, 'pylon-4-4');
-  // pylonSet(pylon_4_5, 'pylon-4-5');
-  // pylonSet(pylon_4_6, 'pylon-4-6');
-  // pylonSet(pylon_4_7, 'pylon-4-7');
-  // pylonSet(pylon_4_8, 'pylon-4-8');
-  // pylonSet(pylon_4_9, 'pylon-4-9');
-  /////////////////////////////////////////
-  //  return;
-
-  //changed_pylons = [];
-
+  changed_pylons = [];
   number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
     pylonSet(a_pylon);
-    // changed_pylons[pylon_index] = changed_pylon;
+    if (a_pylon.m_hit_flash > 0) {
+      a_pylon.m_hit_flash--;
+      a_pylon.do_flash = true;
+    } else {
+      a_pylon.do_flash = false;
+    }
+    changed_pylons[pylon_index] = a_pylon;
+
   }
-  // return changed_pylons;
+  return changed_pylons;
 }
 
 
@@ -93,6 +101,7 @@ function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_co
                               ${bot_left_x},${bot_left_y}      " />`;
 
     if (do_flash) {
+
       svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="red"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}

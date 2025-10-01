@@ -4,7 +4,7 @@ function sceneInit() {
 
 
   g_missile_states = makeList();
-  g_missile_iteration = 0;
+
 
   initIncrementers();
   initLeftRight();
@@ -22,8 +22,6 @@ function screenSizeIntoCss(event) {
   screen_height = window.screen.height;
   screen_width_px = screen_width + "px";
   screen_height_px = screen_height + "px";
-  // document_style.setProperty("--scene-width", screen_width_px);
-  // document_style.setProperty("--scene-height", screen_height_px);
 
 
   setCssVar("--scene-width", screen_width_px);
@@ -66,20 +64,3 @@ function gameInit() {
 
 }
 
-
-function beginDesktop() {
-  g_loop_state = LOOP_1_AFTER_BEGIN;
-
-}
-
-function beginMobile() {
-  g_loop_state = LOOP_1_AFTER_BEGIN;
-  g_touch_id_start = 'begin-button 0987324';
-}
-
-function beginButtonInit() {
-  begin_desktop = document.getElementById('begin-desktop');
-  begin_desktop.addEventListener("click", beginDesktop);
-  begin_mobile = document.getElementById('begin-mobile');
-  begin_mobile.addEventListener("click", beginMobile);
-}

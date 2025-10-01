@@ -61,7 +61,7 @@
   <script type="text/javascript" src="field/field-invert.js"></script>
   <script type="text/javascript" src="field/field-constants.js"></script>
 
-  <script type="text/javascript" src="sprites/sprite-sizes.js"></script>
+  <script type="text/javascript" src="objects/sprite-sizes.js"></script>
   <script type="text/javascript" src="missile/missile-data.js"></script>
 </div>
 
@@ -77,16 +77,16 @@
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
-  <script type="text/javascript" src="things/objects.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
 
   <script type="text/javascript" src="scene/game-loop.js"></script>
   <script type="text/javascript" src="player/player_data.js"></script>
-  <script type="text/javascript" src="player/player_code.js"></script>
+  <script type="text/javascript" src="player/player-code.js"></script>
   <script type="text/javascript" src="things/panel.js"></script>
-  <script type="text/javascript" src="things/collisions.js"></script>
-  <script type="text/javascript" src="sky/sky_code.js"></script>
+  <script type="text/javascript" src="collisions/collisions.js"></script>
+  <script type="text/javascript" src="sky/sky-code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
-  <script type="text/javascript" src="scene/vanish_point.js"></script>
+  <script type="text/javascript" src="scene/vanish-point.js"></script>
 
   <script type="text/javascript" src="field/field-code.js"></script>
   <script type="text/javascript" src="field/field-depth.js"></script>
@@ -101,7 +101,7 @@
 
   <script type="text/javascript" src="scene/scene_3d.js"></script>
 
-  <script rel="text/javascript" src="field/field_test.js"></script>
+  <script rel="text/javascript" src="field/field-test.js"></script>
 
 
 
@@ -165,17 +165,17 @@
 
 <div id="js-after">
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_html.js"></script>
-  <script type="text/javascript" src="missile/missile_html.js"></script>
-  <script type="text/javascript" src="field/field_html.js"></script>
-  <script type="text/javascript" src="enemy/enemy_code.js"></script>
-  <script type="text/javascript" src="missile/missile_code.js"></script>
+  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+  <script type="text/javascript" src="missile/missile-html.js"></script>
+  <script type="text/javascript" src="field/field-html.js"></script>
+  <script type="text/javascript" src="enemy/enemy-code.js"></script>
+  <script type="text/javascript" src="missile/missile-code.js"></script>
 
-  <script type="text/javascript" src="land/land_nw_html.js"></script>
-  <script type="text/javascript" src="land/land_ne_html.js"></script>
-  <script type="text/javascript" src="land/land_sw_html.js"></script>
-  <script type="text/javascript" src="land/land_se_html.js"></script>
-  <script type="text/javascript" src="land/land_code.js"></script>
+  <script type="text/javascript" src="land/land-nw-html.js"></script>
+  <script type="text/javascript" src="land/land-ne-html.js"></script>
+  <script type="text/javascript" src="land/land-sw-html.js"></script>
+  <script type="text/javascript" src="land/land-se-html.js"></script>
+  <script type="text/javascript" src="land/land-code.js"></script>
 
 
   <script type="text/javascript" src="input/arrows-html.js"></script>
@@ -232,11 +232,11 @@
   g_player.m_x = 400;
   g_player.m_y = 444;
 
-  the_missile_1.m_x = 4;
-  the_missile_1.m_y = 4;
+  g_missile.m_x = 4;
+  g_missile.m_y = 4;
 
-  the_missile_1 = launchMissile(the_missile_1);
-  missileSet('missile-1', the_missile_1, g_player);
+  g_missile = launchMissile(g_missile);
+  missileSet('missile-1', g_missile, g_player);
 
 
   setInterval(() => {

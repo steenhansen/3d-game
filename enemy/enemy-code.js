@@ -2,16 +2,11 @@
 
 function enemyMove(the_enemy) {
   let { m_x, m_y, m_moves, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
-
-
-  //console.log("enemyMove", m_moves, s_moves_x.length);
   if (m_moves < s_moves_x.length - 1) {
     m_moves++;
   } else {
     m_moves = 0; // reset to start
   }
-  //x console.log("enemyMove22222", m_moves, s_moves_x[m_moves]);
-  // bounce off of pylons only changes
   x_dir = s_moves_x[m_moves];
 
   // not bounced
@@ -25,28 +20,20 @@ function enemyMove(the_enemy) {
   //                    +1(right) x -1(inverted)        -1
   x_adjusted_dir = x_dir * m_bounced_x_dir;
 
-
-  //console.log("x_adjusted_dir", x_adjusted_dir, x_dir, m_bounced_x_dir);
-
   y_dir = s_moves_y[m_moves];
 
   if (x_adjusted_dir < 0) {
-    //    steps_left = x_adjusted_dir * -1 * TRAVEL_SPEED * 3;   // matches the player
-    steps_left = TRAVEL_SPEED * 3;   // matches the player
-    //steps_left = x_adjusted_dir * -1 * TRAVEL_SPEED * 6;   // twice matches the player
-    the_enemy.m_x = leftOnBoard(m_x, steps_left);    //3);
-    // qbert 49 - these two handle stuff differently, return x  OR return changed object
-
+    //  steps_left = TRAVEL_SPEED * 3;   // matches the player
+    the_enemy.m_x = leftOnBoard(m_x, 11);   //   12);  steps_left);
   } else if (x_adjusted_dir > 0) {
-    //    steps_right = x_adjusted_dir * TRAVEL_SPEED * 3;
-    steps_right = TRAVEL_SPEED * 3;
-    the_enemy = rightOnBoard(the_enemy, steps_right);    //3);
+    // steps_right = TRAVEL_SPEED * 3;
+    the_enemy.m_x = rightOnBoard(m_x, 11);   //   12);  steps_left);
   }
 
   if (y_dir < 0) {
-    the_enemy.m_y = backwardOnBoard(m_y, y_dir * -1);
+    the_enemy.m_y = backwardOnBoard(m_y, 1);
   } else if (y_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(m_y, y_dir * 1);
+    the_enemy.m_y = forwardOnBoard(m_y, 1);
   }
   the_enemy.m_moves = m_moves;
   return the_enemy;
@@ -76,19 +63,12 @@ function enemyDraw(real_id, the_enemy, g_player) {
   } else if (enemy_state == ENEMY_1_BOUNCE) {
     setCssEnemyColor(the_enemy.s_number, '#ff0000');
     the_enemy = enemyMove(the_enemy);
-    // the_enemy = enemyMove(the_enemy);
-    // the_enemy = enemyMove(the_enemy);
-    // the_enemy = enemyMove(the_enemy);
-
     enemyPlace(real_id, the_enemy, g_player);
     the_enemy.m_hit_flash--;
     if (the_enemy.m_hit_flash == 0) {
       setCssEnemyColor(the_enemy.s_number, '#ffff00');
       the_enemy.m_state = ENEMY_0_FLOATING;
     }
-
-
-
   } else if (enemy_state == ENEMY_1_HIT) {
     setCssEnemyColor(the_enemy.s_number, '#ff0000');
     enemyPlace(real_id, the_enemy, g_player);
@@ -100,17 +80,14 @@ function enemyDraw(real_id, the_enemy, g_player) {
     setCssEnemyColor(the_enemy.s_number, '#aaaa00');
     enemyPlace(real_id, the_enemy, g_player);
     the_enemy.m_state = ENEMY_2_LIFTING;
-    //setCssEnemyColor(the_enemy.s_number, 'cyan');
     the_enemy.m_hover_up = the_enemy.m_hover_up + TRAVEL_SPEED;
     if (the_enemy.m_hover_up > 512) {
       the_enemy.m_state = ENEMY_3_DEAD;
     }
     enemyPlace(real_id, the_enemy, g_player);
-  } else { // ENEMY_3_DEAD
-    // console.log("ENEMY_3_DEAD", the_enemy);
+  } else {
     the_enemy.m_dead = true;
   }
-  //console.log("hov", the_enemy.m_hover_up);
   return the_enemy;
 }
 
@@ -118,74 +95,20 @@ function enemyDraw(real_id, the_enemy, g_player) {
 function objectMomentum(the_enemy) {
   m_x_dir = the_enemy.m_x_dir;
   if (m_x_dir < 0) {
-    the_enemy.m_x = leftOnBoard(the_enemy.m_x, m_x_dir * -4 * 3);
+    the_enemy.m_x = leftOnBoard(the_enemy.m_x, 4 * 3);
   } else if (m_x_dir > 0) {
-    // qbert 49 - these two handle stuff differently, return x  OR return changed object
-
-    the_enemy.m_x = rightOnBoard(the_enemy.m_x, m_x_dir * -4 * 3);
+    the_enemy.m_x = rightOnBoard(the_enemy.m_x, 4 * 3);
   }
 
   m_y_dir = the_enemy.m_y_dir;
   if (m_y_dir < 0) {
-    the_enemy.m_y = backwardOnBoard(the_enemy.m_y, m_y_dir * -4);
+    the_enemy.m_y = backwardOnBoard(the_enemy.m_y, -4);       // why neg?
   } else if (m_y_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(the_enemy.m_y, m_y_dir * 4);
+    the_enemy.m_y = forwardOnBoard(the_enemy.m_y, 4);
   }
 }
 
 
-
-let enemy_1 = {
-  s_isa: "is-enemy", s_id: "enemy-1",
-  s_number: 1, m_hit_flash: 0,
-  m_bounced_x_dir: 1,
-  m_state: ENEMY_0_FLOATING,
-  m_x: ENEMY_BIRTH_X, m_y: ENEMY_BIRTH_Y,
-  // m_x: 4344, m_y: 111,
-  m_begins: 0,
-
-
-  m_moves: 0,
-  // s_moves_x: [LEFT_100, RGHT_100, RGHT_100, LEFT_100].flat(),
-  // s_moves_y: [AWAY_100, AWAY_100, NEAR_100, NEAR_100].flat(),
-  s_moves_x: [ZERO_10].flat(),
-  s_moves_y: [ZERO_10].flat(),
-  //s_moves_x: [ZERO_10].flat(),
-  m_hover_up: 0,
-  //s_moves_y: [ZERO_10].flat(),
-  m_dead: false,
-  m_colors: SUN_SYSTEM_COLS[5],
-};
-
-let enemy_2 = {
-  s_isa: "is-enemy", s_id: "enemy-2",
-  s_number: 2, m_hit_flash: 0,
-  m_bounced_x_dir: 1,
-  m_state: ENEMY_0_FLOATING,
-  m_x: ENEMY_BIRTH_X + 2, m_y: ENEMY_BIRTH_Y + 222,
-
-  m_begins: 0,
-
-  m_moves: 0,
-  s_moves_x: [ZERO_10].flat(),
-  s_moves_y: [ZERO_10].flat(),
-
-  m_hover_up: 0,
-  m_dead: false,
-  m_colors: SUN_SYSTEM_COLS[10],
-
-};
-
-
-
-html_enemy1 = makeEnemy(enemy_1);
-html_enemy2 = makeEnemy(enemy_2);
-
-
-document.getElementById('enemy-area').innerHTML = `
-<div id="enemy-1-container" >${html_enemy1}</div>
-<div id="enemy-2-container" >${html_enemy2}</div>
-`;
 
 
 function enemyPosition(real_id, z_index, the_stats, m_hover_up, m_state) {
@@ -223,9 +146,9 @@ function enemyPlace(real_id, the_enemy, g_player) {
 
 
 
-    left_mid_right_vlines = objectLeftSide(x_center_offset, enemy_player_ys);
+    left_mid_right_vlines = objectLeftSide(x_center_offset, enemy_player_ys, ENEMY_PIXEL_DEPTH);
   } else {
-    left_mid_right_vlines = objectRightSide(x_center_offset, enemy_player_ys);
+    left_mid_right_vlines = objectRightSide(x_center_offset, enemy_player_ys, ENEMY_PIXEL_DEPTH);
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);

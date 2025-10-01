@@ -8,7 +8,7 @@ function touchBoxes(the_event) {
     the_event.preventDefault();
     fullMobile();
     g_is_drifting = false;
-    the_missile_1 = launchMissile(the_missile_1);
+    g_missile = launchMissile(g_missile);
   }
 }
 
@@ -28,7 +28,7 @@ function touchEnd(evt) {
     dif_x = Math.abs(g_touch_x_start - touch_x_end);
     dif_y = Math.abs(g_touch_y_start - touch_y_end);
     if (dif_x < 10 && dif_y < 10) {                           // constants
-      the_missile_1 = launchMissile(the_missile_1);
+      g_missile = launchMissile(g_missile);
     } else {
       if (dif_x > dif_y) {
 

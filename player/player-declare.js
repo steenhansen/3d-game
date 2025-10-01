@@ -16,6 +16,8 @@ let g_player = {
   m_taking_off: false,   //g_taking_off = true;
   //x: 49500, m_y: 400 // 778
   //x: 49000, m_y: 400 // 778
+  m_shaking: false,
+  m_screen_askew: 0
 };
 
 

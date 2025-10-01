@@ -1,13 +1,17 @@
 
 
-function collisionShake() {
-  askew_deg = getCssVar("--collide-shake-angle");
-  askew_int = parseInt(askew_deg);
-  if (askew_int != 0) {
-    askew_int = askew_int - 5;
+// should be in player
+function collisionShake(g_player) {
+  if (g_player.m_shaking) {
+    g_player.m_screen_askew--;
+    if (g_player.m_screen_askew == 0) {
+      g_player.m_shaking = false;
+    }
+    askew_int = parseInt(g_player.m_screen_askew);
     askew_deg2 = `${askew_int}deg`;
     setCssVar("--collide-shake-angle", askew_deg2);
   }
+
 }
 
 

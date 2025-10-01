@@ -118,12 +118,18 @@ function debugReportFrameTime() {
 
 
 
-  const m_x = the_missile_1.m_x;
-  const m_y = the_missile_1.m_y;
-  const m_caromed = the_missile_1.m_caromed;
+  const m_x = g_missile.m_x;
+  const m_y = g_missile.m_y;
+  const m_caromed = g_missile.m_caromed;
 
   missile_pos = `Missile x${m_x}, y${m_y}   carom - ${m_caromed} `;
   debugPrint(missile_pos, 730, 5);
+
+  const m_lifetime = g_missile.m_lifetime;
+  const m_expired = g_missile.m_expired;
+
+  missile_pos = `M liftime:${m_lifetime}   expired - ${m_expired} `;
+  debugPrint(missile_pos, 730, 25);
 
 
   const e_x = enemy_1.m_x;

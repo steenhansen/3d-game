@@ -8,7 +8,7 @@
 
 
 let g_missile_states;
-let g_missile_iteration;
+
 
 let g_device_type = DEVICE_UNKNOWN;
 

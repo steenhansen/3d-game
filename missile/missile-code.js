@@ -1,4 +1,123 @@
 
+
+function missileAdvance(the_missile, g_player) {
+
+  the_missile.m_random++;
+  if (the_missile.m_random == 360) {
+    the_missile.m_random = 0;
+  }
+
+  missileSet(the_missile, g_player);
+  if (typeof DBG_MISSILE_ADVANCE == 'string') {
+    return the_missile;
+  }
+  if (the_missile.m_expired) {
+    return the_missile;
+  }
+  if (the_missile.m_lifetime > 0) {
+    the_missile.m_lifetime--;
+  } else {
+    the_missile.m_expired = true;
+  }
+  let { m_x_dir, m_y_dir } = the_missile;
+  if (m_x_dir < 0) {
+    the_missile.m_x = leftOnBoard(the_missile.m_x, 12); // 4 * 3);
+  } else if (m_x_dir > 0) {
+    the_missile.m_x = rightOnBoard(the_missile.m_x, 12);  //4 * 3);
+  }
+  the_missile.m_y = backwardOnBoard(the_missile.m_y, 8);   //TRAVEL_SPEED * 2);
+  return the_missile;
+}
+
+
+
+function launchMissile(the_missile) {
+
+  let { m_x, m_y } = g_player;
+  the_missile.m_x = m_x;
+  the_missile.m_y = m_y;
+  the_missile.m_x_dir = 0;
+  the_missile.m_y_dir = -1;
+  the_missile.m_lifetime = MISSILE_LIFETIME;
+  the_missile.m_expired = false;
+  the_missile.m_caromed = false;
+  //console.log("launchMissile ***********", the_missile)
+  return the_missile;
+}
+
+
+
+
+
+
+
+function missileSet(the_missile, g_player) {
+  if (the_missile.m_expired) {
+    the_missile.m_x_dir = 0;
+    the_missile.m_y_dir = -1;
+    setFillNone();
+  } else {
+    if (typeof DBG_FREEZE_MISSILE != 'string') {
+      getRandoms(the_missile);
+    }
+    missileDraw(the_missile, g_player);
+  }
+}
+
+
+
+
+
+
+function getRandoms(the_missile) {
+  missile_area = document.querySelector('.missile-vars');
+  let this_tick = g_missile_states[the_missile.m_random];
+  if (isMobile()) {
+    number_replaced = this_tick.length / 4;
+  } else {
+    number_replaced = this_tick.length;
+  }
+  for (let j = 0; j < number_replaced; j++) {
+    let [the_id, the_size, the_color, x_adjust, y_adjust] = this_tick[j];
+
+    if (the_size !== '') {
+      let missile_size = "--missile-size-" + the_id;
+      missile_area.style.setProperty(missile_size, the_size);
+
+      let missile_offset_x = "--missile-offset-x-" + the_id;
+      missile_area.style.setProperty(missile_offset_x, x_adjust);
+
+      let missile_offset_y = "--missile-offset-y-" + the_id;
+      missile_area.style.setProperty(missile_offset_y, y_adjust);
+
+    }
+    if (the_color !== '') {
+      let missile_fill = "--missile-fill-" + the_id;
+      missile_area.style.setProperty(missile_fill, the_color);
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const OUTSIDE_ID_START = 100;
 const MIDDLE_ID_START = 200;
 const CENTER_ID_START = 300;
@@ -112,88 +231,11 @@ function makeList() {
   return out_arr;
 }
 
-function getRandoms() {
-  missile_area = document.querySelector('.missile-vars');
-  let this_tick = g_missile_states[g_missile_iteration];
-  if (isMobile()) {
-    number_replaced = this_tick.length / 4;
-  } else {
-    number_replaced = this_tick.length;
-  }
-  for (let j = 0; j < number_replaced; j++) {
-    let [the_id, the_size, the_color, x_adjust, y_adjust] = this_tick[j];
-
-    if (the_size !== '') {
-      let missile_size = "--missile-size-" + the_id;
-      missile_area.style.setProperty(missile_size, the_size);
-
-      let missile_offset_x = "--missile-offset-x-" + the_id;
-      missile_area.style.setProperty(missile_offset_x, x_adjust);
-
-      let missile_offset_y = "--missile-offset-y-" + the_id;
-      missile_area.style.setProperty(missile_offset_y, y_adjust);
-
-    }
-    if (the_color !== '') {
-      let missile_fill = "--missile-fill-" + the_id;
-      missile_area.style.setProperty(missile_fill, the_color);
-    }
-  }
-
-  g_missile_iteration++;
-  if (g_missile_iteration == 360) {
-    g_missile_iteration = 0;
-  }
-}
 
 
 
 
 
-
-
-
-
-
-function launchMissile(the_missile) {
-  let { m_x, m_y } = g_player;
-  the_missile.m_x = m_x;
-  the_missile.m_y = m_y;
-  the_missile.m_lifetime = MISSILE_LIFETIME;
-  the_missile.m_expired = false;
-  the_missile.m_caromed = false;
-  return the_missile;
-}
-
-function missileAdvance(the_missile) {
-  if (typeof DBG_MISSILE_ADVANCE == 'string') {
-    return the_missile;
-  }
-  if (the_missile.m_expired) {
-    return the_missile;
-  }
-  if (the_missile.m_lifetime > 0) {
-    the_missile.m_lifetime--;
-  } else {
-    the_missile.m_expired = true;
-
-  }
-  let { m_x_dir, m_y_dir } = the_missile;
-
-
-  if (m_x_dir < 0) {
-    the_missile.m_x = leftOnBoard(the_missile.m_x, m_x_dir * -4 * 3);
-    //    console.log("11111", the_missile.m_x);
-  } else if (m_x_dir > 0) {
-    // qbert 49 - these two handle stuff differently, return x  OR return changed object
-    the_missile = rightOnBoard(the_missile, m_x_dir * 4 * 3);
-  }
-
-
-
-  the_missile.m_y = backwardOnBoard(the_missile.m_y, m_y_dir * -1 * TRAVEL_SPEED * 2);
-  return the_missile;
-}
 
 
 
@@ -230,37 +272,6 @@ function setFillNone() {
 function carom() {
 }
 
-function missileSet(real_id, the_missile, g_player) {
-  if (the_missile.m_expired) {
-    the_missile.m_x_dir = 0;
-    the_missile.m_y_dir = -1;
-    setFillNone();
-  } else {
-    if (typeof DBG_FREEZE_MISSILE != 'string') {
-      getRandoms();
-    }
-
-  }
-  missileDraw(real_id, the_missile, g_player);
-}
-
-
-html_missile_1 = makeMissile('missile-1');
-
-
-document.getElementById('missile-area').innerHTML = `
-<div id="the-missile-1" >${html_missile_1}</div>`;
-
-let the_missile_1 = {
-  s_isa: "is-missile",
-  s_id: "missile-1",
-  m_x: MISSILE_START_X, m_y: MISSILE_START_Y,
-
-  m_caromed: false,
-  m_lifetime: MISSILE_LIFETIME,
-  m_expired: true,
-  m_x_dir: 0, m_y_dir: -1,   // ALWAYS THIS
-};
 
 
 /////////////
@@ -290,7 +301,7 @@ function missilePosition(real_id, z_index, the_stats) {
 ////////////////////////////////////////////////
 
 
-function missileDraw(real_id, the_sprite, g_player) {
+function missileDraw(the_sprite, g_player) {
 
   pylon_player_ys = [the_sprite.m_y, g_player.m_y];
 
@@ -300,9 +311,9 @@ function missileDraw(real_id, the_sprite, g_player) {
 
 
 
-    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys);
+    left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys, MISSILE_PIXEL_DEPTH);
   } else {
-    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys);
+    left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys, MISSILE_PIXEL_DEPTH);
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
@@ -310,3 +321,6 @@ function missileDraw(real_id, the_sprite, g_player) {
 
   missilePosition(real_id, the_z_index, the_stats);
 }
+
+
+

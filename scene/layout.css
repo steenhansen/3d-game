@@ -109,10 +109,10 @@
 
 
 #start-mobile {
-   z-index: var(--z-start-mobile);
+  z-index: var(--z-start-mobile);
+  display: none;
 
 position:absolute;
-display: none;
    line-height: 100%;
 
   font-size: 300%;
@@ -144,14 +144,14 @@ li:not(:last-of-type) {
 }
 
 #pylon-html{
-  /* z-index: var(--z-pylon-html); 
-  
-  this caused the enemy star to always be in front of pylons !!
-  
-  
-  */  
+    top:0px;
+  position: absolute;
+  height:0px; 
+     margin-left: var(--margin-left_px);
+}
 
-   top:0px;
+#hole-html{
+    top:0px;
   position: absolute;
   height:0px; 
      margin-left: var(--margin-left_px);

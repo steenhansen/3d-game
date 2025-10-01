@@ -15,8 +15,11 @@ function distancedPoint(distance_in_256, field_front_point) {
 }
 
 function deriveIndexZ(difference_x, difference_y) {
+  // console.log("111 asd ", difference_x, difference_y);
   let y_index = 1000 - difference_y;
   let x_index = 1000 - difference_x;
+  //console.log("222 asd ", x_index, y_index);
   let z_index = y_index * 1000 + x_index; // so that stuff same y distance favors middle stuff
+  //console.log("333 asd ", z_index);
   return z_index;
 }

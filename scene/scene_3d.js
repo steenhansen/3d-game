@@ -263,37 +263,6 @@ function sceneMove() {
 
 
 
-// function collisionShake() {
-//   askew_deg = getCssVar("--collide-shake-angle");
-//   askew_int = parseInt(askew_deg);
-//   if (askew_int != 0) {
-//     askew_int = askew_int - 5;
-//     askew_deg2 = `${askew_int}deg`;
-//     setCssVar("--collide-shake-angle", askew_deg2);
-//   }
-// }
-
-// function checkCollisions() {
-//   collision_2 = hasCollided(pylon_3a, g_player, COLLISION_SIZES);
-//   if (collision_2 && g_move_continue == 0) {
-//     g_move_continue = 24;
-//     new_direction = objectBounced(g_move_direction);
-//     document_style.setProperty("--collide-shake-angle", "45deg");
-//     g_move_direction = new_direction;
-//   }
-// }
-
-// function doBounce() {
-//   if (g_move_continue > 1) {
-//     g_move_continue--;
-//   } else if (g_move_continue == 1) {
-//     g_move_continue--;
-//     g_move_direction = MOVINGx_NOT;
-//   } else {
-//   }
-// }
-
-
 
 
 
@@ -316,35 +285,40 @@ function wheelScroll(the_event) {
 
 
 
-function animateScene(enemy_list, pylon_list) {
+function animateScene(enemy_list, pylon_list, hole_list) {
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_6_PLAY;
   }
   if (g_player.m_enemy_collision) {
     setCssVar("--cracked-glass-display", "block");
   }
-
   doBounce(g_player);
   sceneMove();
-  drawPylons(pylon_list);
-
-  missileSet('missile-1', the_missile_1, g_player);
-  the_missile_1 = missileAdvance(the_missile_1);
-
+  plyon_list = drawPylons(pylon_list);
+  g_missile = missileAdvance(g_missile, g_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_6_PLAY;
   }
   enemy_list = drawEnemies(enemy_list, g_player);
+
+  hole_list = drawHoles(hole_list, g_player);
+
+
   if (keep_running) {
     affixLeftRight();
   }
 
-  enemy_list = missileHitEnemies(the_missile_1, enemy_list);
+  enemy_list = missileHitEnemies(g_missile, enemy_list);
   [g_player, pylon_list] = playerHitPylons(g_player, pylon_list);
-  [the_missile_1, pylon_list] = missileHitPylons(the_missile_1, pylon_list);
+  [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
+  [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
+
 
   g_player = playerHitEnemies(g_player, enemy_list);
-  [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
+  g_player = playerHitHoles(g_player, hole_list);
+
+
+  enemy_list = enemyHitHoles(enemy_list, hole_list);
 
   return [enemy_list, pylon_list];
 }

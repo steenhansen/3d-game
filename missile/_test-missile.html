@@ -9,15 +9,15 @@
 
 <script type="text/javascript" src="../values/the_constants.js"></script>
 
-<script type="text/javascript" src="../things/collisions.js"></script>
+<script type="text/javascript" src="../collisions/collisions.js"></script>
 <div id="missile-flames"></div>
 <script type="text/javascript" src="../values/css-vars.js"></script>
 <script type="text/javascript" src="../pylons/pylons-data.js"></script>
 
-<script type="text/javascript" src="../things/objects.js"></script>
+<script type="text/javascript" src="../objects/screen-placement.js"></script>
 <script type="text/javascript" src="../things/panel.js"></script>
 
-<script type="text/javascript" src="missile_html.js"></script>
+<script type="text/javascript" src="missile-html.js"></script>
 
 
 
@@ -30,7 +30,7 @@
 <script type="text/javascript" src="../player/player_data.js"></script>
 
 
-<script type="text/javascript" src="missile_code.js"></script>
+<script type="text/javascript" src="missile-code.js"></script>
 
 <script type="text/javascript">
 
@@ -40,9 +40,9 @@
 
   function animateMissile() {
 
-    the_missile_1 = launchMissile(the_missile_1);
+    g_missile = launchMissile(g_missile);
     ////  missileSet(the_missile, 'missile-id');
-    missileSet('missile-1', the_missile_1, g_player);
+    missileSet('missile-1', g_missile, g_player);
     //missileSet('missile-2', the_missile_2, g_player);
 
     getRandoms();

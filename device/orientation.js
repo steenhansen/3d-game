@@ -122,7 +122,6 @@ function fixMobile() {
   if (!document.fullscreenElement) {
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "block";
-    start_mobile.style.zIndex = "1234570"; // CARFULL MUST MATCH THE CSS
     waiting_for_start = true;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     return;
@@ -192,8 +191,6 @@ function fixMobile2() {
   screen_height = window.screen.height;
   screen_width_px = screen_width + "px";
   screen_height_px = screen_height + "px";
-  // document_style.setProperty("--scene-width", screen_width_px);
-  // document_style.setProperty("--scene-height", screen_height_px);
 
 
   setCssVar("--scene-width", screen_width_px);

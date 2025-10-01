@@ -1,7 +1,7 @@
 :root {
-  --z-an-arrow:           250; 
-  --z-start-mobile:       240;    
-  --z-touch-boxes:        230;    
+  --z-start-mobile:       90000000;    
+  --z-touch-boxes:        10000000;    
+  --z-an-arrow:           240; 
   --z-the-draw:           220;    
   --z-the-landing:        210;    
   --z-saturn-space:       200;    

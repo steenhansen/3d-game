@@ -56,7 +56,7 @@ function readKeys(event) {
       stopMoving();
       direction_name = 'pressed-stop';
     } else if (SHOOT_KEYS.includes(the_key)) {
-      the_missile_1 = launchMissile(the_missile_1);
+      g_missile = launchMissile(g_missile);
       direction_name = 'pressed-fire';
     } else {
       direction_name = 'unknown-key-dir asd';
