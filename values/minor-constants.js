@@ -4,7 +4,7 @@ let MISSILE_START_Y = 168;
 
 
 let pylon_3A_START_X = 1365 - 512;
-let pylon_3A_START_Y = 449;           //    192 400;
+let s = 449;           //    192 400;
 let pylon_3B_START_X = 1365;
 let pylon_3B_START_Y = 449;              // 192 400;
 let pylon_3C_START_X = 1365 + 512;
@@ -23,7 +23,7 @@ const DRIFT_CYCLES = 256 * 3;       //1024;
 const PYLON_PIXEL_DEPTH = 30;
 const ENEMY_PIXEL_DEPTH = 30;
 const MISSILE_PIXEL_DEPTH = 30;
-const HOLE_PIXEL_DEPTH = 60;
+const HOLE_PIXEL_DEPTH = 50;
 
 
 
@@ -49,25 +49,25 @@ const MOVINGx_SW = 7;
 const MOVINGx_W = 8;
 let PLAYER_START_DIR = MOVINGx_NOT;
 
-const SUN_SYSTEM_COLS = [
-  //   star         ball         sqaure       triangle
-  ['#a0d91f', '#1FD9B5', '#581FD9', '#D91F43'],                 //0
-  // too similar ['#b5d226', '#26D299', '#4326D2', '#D2265F'],
-  ['#cbca2b', '#2BCB7A', '#2B2CCB', '#CB2B7C'],                 //1
-  // too similar ['#daba2f', '#2FDA64', '#2F4FDA', '#DA2FA4'],
-  ['#e3a827', '#27E34A', '#2762E3', '#E327C0'],                 //2
-  //  too similar['#e8901f', '#1FE82C', '#1F77E8', '#E81FDB'],
-  ['#e77629', '#3BE729', '#299AE7', '#D529E7'],                 //3
-  // too similar ['#e95b2c', '#5BE92C', '#2CBAE9', '#BA2CE9'],
-  ['#ed3f27', '#72ED27', '#27D5ED', '#A227ED'],                 //4
-  // too similar ['#f61e18', '#81F618', '#18F0F6', '#8D18F6']
-  ['#ffff00', '#000000', '#808080', '#ffffff'],                 //5
-  ['#ffff00', '#aa0000', '#00ff00', '#0000ff'],                 //6
-  ['#FF6A00', '#808080', '#ffffff', '#000000'],                 //7
-  ['#FF6A00', '#00ff00', '#0000aa', '#ff0000'],                 //8
-  ['#FF006A', '#ffffff', '#000000', '#808080'],                 //9
-  ['#FF006A', '#0000ff', '#ff0000', '#00aa00'],                 //10
-];
+// const SUN_SYSTEM_COLS = [
+//   //   star         ball         sqaure       triangle
+//   ['#a0d91f', '#1FD9B5', '#581FD9', '#D91F43'],                 //0
+//   // too similar ['#b5d226', '#26D299', '#4326D2', '#D2265F'],
+//   ['#cbca2b', '#2BCB7A', '#2B2CCB', '#CB2B7C'],                 //1
+//   // too similar ['#daba2f', '#2FDA64', '#2F4FDA', '#DA2FA4'],
+//   ['#e3a827', '#27E34A', '#2762E3', '#E327C0'],                 //2
+//   //  too similar['#e8901f', '#1FE82C', '#1F77E8', '#E81FDB'],
+//   ['#e77629', '#3BE729', '#299AE7', '#D529E7'],                 //3
+//   // too similar ['#e95b2c', '#5BE92C', '#2CBAE9', '#BA2CE9'],
+//   ['#ed3f27', '#72ED27', '#27D5ED', '#A227ED'],                 //4
+//   // too similar ['#f61e18', '#81F618', '#18F0F6', '#8D18F6']
+//   ['#ffff00', '#000000', '#808080', '#ffffff'],                 //5
+//   ['#ffff00', '#aa0000', '#00ff00', '#0000ff'],                 //6
+//   ['#FF6A00', '#808080', '#ffffff', '#000000'],                 //7
+//   ['#FF6A00', '#00ff00', '#0000aa', '#ff0000'],                 //8
+//   ['#FF006A', '#ffffff', '#000000', '#808080'],                 //9
+//   ['#FF006A', '#0000ff', '#ff0000', '#00aa00'],                 //10
+// ];
 
 
 //255  106  0 '#FF6A00'
@@ -75,7 +75,7 @@ const SUN_SYSTEM_COLS = [
 
 let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
 let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
-let GREY_YELLOW_GRADIENT = ["Grey", "Yellow"];  //  00??ff00,   FF00FF
+let RED_YELLOW_GRADIENT = ["Red", "Yellow"];  //  ff0000,   0000FF
 
 
 // f e d c b a 9
@@ -176,19 +176,23 @@ let FAST_LAND = 'fast-land';
 let FAST_ELEVATOR = 'fast-elevator';
 let FAST_FLY = 'fast-fly';
 
+const FAST_SEGWAYS = [FAST_LAND, FAST_ELEVATOR, FAST_FLY];
+
 let NORMAL_LAND = 'normal-land';
 let NORMAL_ELEVATOR = 'normal-elevator';
 let NORMAL_FLY = 'normal-fly';
+const NORMAL_SEGWAYS = [NORMAL_LAND, NORMAL_ELEVATOR, NORMAL_FLY];
 
 
 let SLOW_LAND = 'slow-land';
 let SLOW_ELEVATOR = 'slow-elevator';
 let SLOW_FLY = 'slow-fly';
+const SLOW_SEGWAYS = [SLOW_LAND, SLOW_ELEVATOR, SLOW_FLY];
 
 
 
 
-
+const FLY_STEP = 0.5;
 
 
 TEST_SCENE = false;

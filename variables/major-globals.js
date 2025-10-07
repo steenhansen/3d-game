@@ -16,3 +16,4 @@ var g_loop_state = LOOP_0_BEGIN;
 
 let g_taking_off = false;
 
+let g_hit_hole_last_move = false;

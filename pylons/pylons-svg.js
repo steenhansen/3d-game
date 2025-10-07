@@ -105,7 +105,7 @@ white_black_gradients = makeGradients(WHITE_BLACK_GRADIENT);
 lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA_GRADIENT);
 
 
-grey_yellow_gradients = makeGradients(GREY_YELLOW_GRADIENT);
+RED_YELLOW_GRADIENTs = makeGradients(RED_YELLOW_GRADIENT);
 
 
 
@@ -117,8 +117,9 @@ document.getElementById('pylons-svg').innerHTML = `
     ${white_black_gradients}
     ${lime_fuchsia_gradients}
  
-    ${grey_yellow_gradients}
+    ${RED_YELLOW_GRADIENTs}
 
+    <!-- below are not used -->
     <linearGradient id="red-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0" stop-color="rgb(255,0,0)" />
       <stop offset="1" stop-color="rgb(64,0,0)" stop-opacity="0.993" />

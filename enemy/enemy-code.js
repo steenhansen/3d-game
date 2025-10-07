@@ -1,13 +1,13 @@
 
 
 function enemyMove(the_enemy) {
-  let { m_x, m_y, m_moves, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
-  if (m_moves < s_moves_x.length - 1) {
-    m_moves++;
+  let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
+  if (m_move_count < s_moves_x.length - 1 && m_move_count < s_moves_y.length - 1) {
+    m_move_count++;
   } else {
-    m_moves = 0; // reset to start
+    m_move_count = 0; // reset to start
   }
-  x_dir = s_moves_x[m_moves];
+  x_dir = s_moves_x[m_move_count];
 
   // not bounced
   //   x_adjusted_dir = -1(left)  x 1(not inverted)    -1
@@ -20,7 +20,7 @@ function enemyMove(the_enemy) {
   //                    +1(right) x -1(inverted)        -1
   x_adjusted_dir = x_dir * m_bounced_x_dir;
 
-  y_dir = s_moves_y[m_moves];
+  y_dir = s_moves_y[m_move_count];
 
   if (x_adjusted_dir < 0) {
     //  steps_left = TRAVEL_SPEED * 3;   // matches the player
@@ -35,7 +35,7 @@ function enemyMove(the_enemy) {
   } else if (y_dir > 0) {
     the_enemy.m_y = forwardOnBoard(m_y, 1);
   }
-  the_enemy.m_moves = m_moves;
+  the_enemy.m_move_count = m_move_count;
   return the_enemy;
 }
 
@@ -45,6 +45,7 @@ function drawEnemies(the_enemies, g_player) {
   changed_enemies = [];
   number_enemies = the_enemies.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    //    console.log("dddlakjsdfdsf", enemy_index);
     an_enemy = the_enemies[enemy_index];
     enemy_name = an_enemy.s_id;
     changed_enemy = enemyDraw(enemy_name, an_enemy, g_player);
@@ -121,6 +122,7 @@ function enemyPosition(real_id, z_index, the_stats, m_hover_up, m_state) {
 
 
   enemy_lifting_y = center_y - ENEMY_TO_HORIZON_LIFT - m_hover_up;
+  //console.log(real_id, enemy_lifting_y, m_hover_up);
   missile_x_y.setAttribute("y", enemy_lifting_y);
 
 
@@ -137,7 +139,7 @@ function enemyPosition(real_id, z_index, the_stats, m_hover_up, m_state) {
 
 
 function enemyPlace(real_id, the_enemy, g_player) {
-
+  //console.log("enemyPlace", the_enemy);
   enemy_player_ys = [the_enemy.m_y, g_player.m_y];
 
   real_id = the_enemy.s_id;
@@ -160,10 +162,10 @@ function enemyPlace(real_id, the_enemy, g_player) {
 
 
 function killEnemy(the_enemy) {
-  console.log("kiillenemy");
+  // console.log("kiillenemy");
   // let { s_isa, s_id,
   //   m_x, m_y,
-  //   m_moves,
+  //   m_move_count,
   //   s_moves_x, s_moves_y,
   //   m_dead, m_colors
   // } = the_enemy;
@@ -175,9 +177,9 @@ function killEnemy(the_enemy) {
     m_state: ENEMY_2_LIFTING,
     s_id: s_id,
     m_x: m_x, m_y: m_y,
-    m_moves: -1,
+    m_move_count: -1,
     s_moves_x: [], s_moves_y: [],
-    m_dead: false,
+    //  m_dead: false,
     m_hover_up: 0,
     m_colors: m_colors,
     // m_colors: ['green', 'red', 'blue', 'orange'],

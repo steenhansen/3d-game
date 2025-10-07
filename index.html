@@ -3,12 +3,14 @@
 
 
 
-<!--       FOR TESTS IN DIRECTORIES
+<!--
+
+FOR TESTS IN DIRECTORIES
 
 <base href="../">
 
 
-               -->
+-->
 
 
 
@@ -49,10 +51,7 @@
 
   <script type="text/javascript" src="values/major-constants.js"></script>
   <script type="text/javascript" src="values/minor-constants.js"></script>
-  <script type="text/javascript" src="pylons/pylons-declare.js"></script>
 
-
-  <script type="text/javascript" src="holes/holes-declare.js"></script>
 
   <script type="text/javascript" src="holes/holes-code.js"></script>
 
@@ -85,7 +84,7 @@
   <script type="text/javascript" src="objects/screen-placement.js"></script>
 
 
-  <script type="text/javascript" src="player/player-declare.js"></script>
+
   <script type="text/javascript" src="player/player-code.js"></script>
   <script type="text/javascript" src="objects/sprites-stuff.js"></script>
   <script type="text/javascript" src="objects/sprite-lines.js"></script>
@@ -128,13 +127,9 @@
 
   <canvas id="the-draw" width=" 1024" height="512"></canvas>
   <div id='start-mobile'>
-    <ul id='mobile-list'>
-      <li>Touch to start</li>
-      <li>Tap white arrows to steer</li>
-      <li>Tap in middle to shoot</li>
-      <li>Swipe down to stop</li>
-      <li>Swipe up quit</li>
-    </ul>
+    <div id='mobile-list'>
+
+    </div>
   </div>
   <div id="touch-boxes"></div>
   <div id="arrows-html"></div>
@@ -178,7 +173,7 @@
 
 
   <script type="text/javascript" src="missile/missile-html.js"></script>
-  <script type="text/javascript" src="missile/missile-declare.js"></script>
+
 
 
 
@@ -186,7 +181,7 @@
   <script type="text/javascript" src="missile/missile-code.js"></script>
   <script type="text/javascript" src="holes/holes-html.js"></script>
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy-declare.js"></script>
+
   <script type="text/javascript" src="enemy/enemy-code.js"></script>
 
   <script type="text/javascript" src="variables/global-objects.js"></script>
@@ -222,6 +217,7 @@
 
 
   <script type="text/javascript" src="scene/scene-init.js"></script>
+  <script type="text/javascript" src="missile/missile-declare.js"></script>
 </div>
 
 
@@ -243,35 +239,26 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script type="text/javascript" src="pylons/pylons-declare.js"></script>
+<script type="text/javascript" src="holes/holes-declare.js"></script>
+<script type="text/javascript" src="player/player-declare.js"></script>
+<script type="text/javascript" src="enemy/enemy-declare_A_video.js"></script>
 
 
 <script>
 
-  //pylon_row = rowPylons(300);
-  //console.log(pylon_row);
 
-  land_fly_speeds = [FAST_LAND, FAST_ELEVATOR, FAST_FLY];
-  the_pylons = [pylon_1a]; //[pylon_1a, pylon_2a, pylon_2b, pylon_3a, pylon_3b, pylon_3c];
-  //the_pylons = pylon_row;
+
+  initPlayer(1000, 412, MOVINGx_E);
+  the_pylons = [pylon_1a, pylon_1b, pylon_2b, pylon_2a, pylon_3a, pylon_3b];
   the_enemies = [enemy_1, enemy_2];
-  the_holes = [hole_1];
+  the_holes = [hole_1, hole_2, hole_3, hole_4];
 
-  runGame(land_fly_speeds, the_pylons, the_enemies, the_holes);
 
-  if (isDebugging()) {
-    g_loop_state = LOOP_1_AFTER_BEGIN;
-  }
+  startItUp(FAST_SEGWAYS);
+
+
+  // if (isDebugging()) {
+  //   g_loop_state = LOOP_1_AFTER_BEGIN;
+  // }
 </script>

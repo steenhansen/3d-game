@@ -10,7 +10,8 @@ function sceneInit() {
   initLeftRight();
   affixLeftRight();
 
-
+  //g_player.m_num_cracks = 0;   //????? wrong place
+  hitCracks(0);
 }
 
 function screenSizeIntoCss(event) {
@@ -47,12 +48,12 @@ function screenSizeIntoCss(event) {
 
 
 function gameInit() {
-  var supportsOrientationChange = "onorientationchange" in window,
-    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+  // var supportsOrientationChange = "onorientationchange" in window,
+  //   orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-  window.addEventListener("orientationchange", screenSizeIntoCss, true);
+  // window.addEventListener("orientationchange", screenSizeIntoCss, true);
 
-  window.addEventListener("resize", screenSizeIntoCss, true);
+  // window.addEventListener("resize", screenSizeIntoCss, true);
 
 
 
@@ -64,3 +65,30 @@ function gameInit() {
 
 }
 
+
+function resizeOrientEvents() {
+  window.addEventListener("orientationchange", screenSizeIntoCss, true);
+
+  window.addEventListener("resize", screenSizeIntoCss, true);
+
+
+}
+
+
+function startItUp(chosen_segway) {
+  land_fly_speeds = chosen_segway;  // FAST_SEGWAYS  NORMAL_SEGWAYS  SLOW_SEGWAYS
+
+
+  addDesktopEvents();
+  addMobileEvents();
+  turnOnKeys();
+  resizeOrientEvents();
+
+
+
+  runGame(land_fly_speeds, the_pylons, the_enemies, the_holes);
+
+  if (isDebugging()) {
+    g_loop_state = LOOP_1_AFTER_BEGIN;
+  }
+}

@@ -1,3 +1,25 @@
+
+
+
+
+//  MAX_CRACKS
+function hitCracks(number_cracks) {
+  if (number_cracks == 0) {
+    setCssVar("--cracked-glass-display", "none");
+  } else {
+    if (number_cracks > MAX_CRACKS) {
+      number_cracks = MAX_CRACKS;
+    }
+    glass_opacity = number_cracks / 6;
+    cracked_image = `url('../images/cracks-${number_cracks}.png`;
+    setCssVar("--cracked-glass-display", "block");
+    setCssVar("--cracked-glass-opacity", glass_opacity);
+    setCssVar("--cracked-glass-image", cracked_image);
+
+  }
+}
+
+
 function handleStartMobile(evt) {
   setTimeout(() => {
     start_mobile = document.getElementById('start-mobile');
@@ -284,20 +306,17 @@ function wheelScroll(the_event) {
 }
 
 
-
 function animateScene(enemy_list, pylon_list, hole_list) {
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_6_PLAY;
+    return LOOP_6_PLAY_NORMAL;
   }
-  if (g_player.m_enemy_collision) {
-    setCssVar("--cracked-glass-display", "block");
-  }
+  hitCracks(g_player.m_num_cracks);
   doBounce(g_player);
   sceneMove();
   plyon_list = drawPylons(pylon_list);
   g_missile = missileAdvance(g_missile, g_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_6_PLAY;
+    return LOOP_6_PLAY_NORMAL;
   }
   enemy_list = drawEnemies(enemy_list, g_player);
 
@@ -315,9 +334,7 @@ function animateScene(enemy_list, pylon_list, hole_list) {
 
 
   g_player = playerHitEnemies(g_player, enemy_list);
-  g_player = playerHitHoles(g_player, hole_list);
-
-
+  [g_player, g_hit_hole_last_move] = playerHitHoles(g_player, hole_list);
   enemy_list = enemyHitHoles(enemy_list, hole_list);
 
   return [enemy_list, pylon_list];

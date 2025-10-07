@@ -20,7 +20,7 @@ function rowPylons(y_coord) {
       s_isa: "is-pylon",
       s_pylon_name: `pylon-${row_name}-${column_count}`,
       m_x: x, m_y: y_coord,
-      s_pylon_colors: GREY_YELLOW_GRADIENT, //["red", "cyan"],
+      s_pylon_colors: ["red", "cyan"],
       m_side_twirl: 0,
       m_front_twirl: 200,
       s_outline: false,
@@ -34,41 +34,30 @@ function rowPylons(y_coord) {
 }
 
 
-let pylon_3a = {
+
+pylon_1a = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-3a",
-  m_x: pylon_3A_START_X, m_y: pylon_3A_START_Y,
-  s_pylon_colors: GREY_YELLOW_GRADIENT, //["red", "cyan"],
-  m_side_twirl: 0,
-  m_front_twirl: 200,
+  s_pylon_name: "pylon-1a",
+  //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
+  m_x: 100, m_y: 28,
+
+  s_pylon_colors: WHITE_BLACK_GRADIENT,
+  m_twirl_on: false,
+  m_side_twirl: 1,
+  m_front_twirl: 201,
   s_outline: false,
   m_hit_flash: 0,
   do_flash: false
 };
 
-
-
-pylon_3b = {
+pylon_1b = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-3b",
-  m_x: pylon_3B_START_X, m_y: pylon_3B_START_Y,
-  s_pylon_colors: GREY_YELLOW_GRADIENT,      //["grey", "yellow"],
-  m_side_twirl: 100,
-  m_front_twirl: 300,
-  s_outline: false,
-  m_hit_flash: 0,
-  do_flash: false
-};
-
-
-
-pylon_3c = {
-  s_isa: "is-pylon",
-  s_pylon_name: "pylon-3c",
-  m_x: pylon_3C_START_X, m_y: pylon_3C_START_Y,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 188,
-  m_front_twirl: 388,
+  s_pylon_name: "pylon-2a",
+  m_x: 612, m_y: 28,
+  s_pylon_colors: WHITE_BLACK_GRADIENT,
+  m_twirl_on: true,
+  m_side_twirl: 150,
+  m_front_twirl: 350,
   s_outline: false,
   m_hit_flash: 0,
   do_flash: false
@@ -79,21 +68,10 @@ pylon_3c = {
 
 pylon_2a = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-2a",
-  m_x: pylon_1A_START_X + 256, m_y: pylon_1A_START_Y - 30,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 150,
-  m_front_twirl: 350,
-  s_outline: false,
-  m_hit_flash: 0,
-  do_flash: false
-};
-
-pylon_2b = {
-  s_isa: "is-pylon",
   s_pylon_name: "pylon-2b",
-  m_x: pylon_1A_START_X + 256, m_y: pylon_1A_START_Y,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
+  m_x: 870, m_y: 124,
+  s_pylon_colors: RED_YELLOW_GRADIENT,
+  m_twirl_on: false,
   m_side_twirl: 50,
   m_front_twirl: 250,
   s_outline: false,
@@ -102,19 +80,60 @@ pylon_2b = {
 };
 
 
-pylon_1a = {
+let pylon_2b = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-1a",
-  //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
-  m_x: 1600, m_y: 600,
-
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
+  s_pylon_name: "pylon-3a",
+  m_x: 1386, m_y: 124,
+  s_pylon_colors: RED_YELLOW_GRADIENT,
+  m_twirl_on: true,
+  m_side_twirl: 0,
+  m_front_twirl: 200,
   s_outline: false,
   m_hit_flash: 0,
   do_flash: false
 };
+
+
+
+pylon_3a = {
+  s_isa: "is-pylon",
+  s_pylon_name: "pylon-3b",
+  m_x: 1386, m_y: 316,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
+  m_twirl_on: false,
+  m_side_twirl: 100,
+  m_front_twirl: 300,
+  s_outline: false,
+  m_hit_flash: 0,
+  do_flash: false
+};
+
+
+
+pylon_3b = {
+  s_isa: "is-pylon",
+  s_pylon_name: "pylon-3c",
+  m_x: 1900, m_y: 316,
+  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
+  m_twirl_on: true,
+  m_side_twirl: 188,
+  m_front_twirl: 388,
+  s_outline: false,
+  m_hit_flash: 0,
+  do_flash: false
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 function randomPylon() {
 

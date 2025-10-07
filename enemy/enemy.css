@@ -1,20 +1,13 @@
-
 /* :root  */
 
-.enemy-vars{
 
-  --enemy-star-color-1 : yellow;
-
---enemy-star-color-2 : yellow;
+/* #enemy-1-scaledX {
+  transform-origin: center;
 }
 
-
-  #enemy-1-scaled {
-    transform-origin: center;
-}
-  #enemy-2-scaled {
-    transform-origin: center;
-}
+#enemy-2-scaledX {
+  transform-origin: center;
+} */
 
 .ellipse-path {
   fill: none;
@@ -25,24 +18,10 @@
 
 /* this should be my shot */
 #planets {
-position:absolute;
-left:var(--my-enemy-x);
-top:var(--my-enemy-y);
-z-index:  var(--my-enemy-z);
-height:  var(--my-enemy-height);
-width: var(--my-enemy-width);
+  position: absolute;
+  left: var(--my-enemy-x);
+  top: var(--my-enemy-y);
+  z-index: var(--my-enemy-z);
+  height: var(--my-enemy-height);
+  width: var(--my-enemy-width);
 }
-
-/* 
-@keyframes hideShow {
-  0% { opacity: 1; }
-  40% { opacity: 1; }
-  60% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-#bob {
-    animation-name: hideShow ;
-}
- */
-

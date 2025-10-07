@@ -19,11 +19,17 @@ const SW_KEYS = ['Z', 'z', "End", '1'];
 const W_KEYS = ['A', 'a', "ArrowLeft", '4'];
 
 const FLY_KEYS = ['Escape'];
-const SHOOT_KEYS = [' '];
+const JUMP_KEYS = [' '];
+
+
+
+
+const SHOOT_KEYS = ['Enter'];
 const STOP_KEYS = ['S', 's', 'Clear', '5'];
 
 function readKeys(event) {
   const the_key = event.key;
+  //console.log("the_key", the_key);
   if (!g_player.m_recoiling) {
     g_is_drifting = false;
     if (FLY_KEYS.includes(the_key)) {
@@ -55,12 +61,16 @@ function readKeys(event) {
     } else if (STOP_KEYS.includes(the_key)) {
       stopMoving();
       direction_name = 'pressed-stop';
+    } else if (JUMP_KEYS.includes(the_key)) {
+      g_loop_state = LOOP_6_PLAY_JUMP_UP;
+      direction_name = 'pressed-jump';
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = launchMissile(g_missile);
       direction_name = 'pressed-fire';
+
     } else {
       direction_name = 'unknown-key-dir asd';
-      console.log("unkown KEY direction 234234 aa", the_key);
+      // console.log("unknown KEY direction 234234 aa", the_key);
     }
   }
 }

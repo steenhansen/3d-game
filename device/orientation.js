@@ -1,28 +1,6 @@
 
 
-function isMobile() {
-  const mobile_screen = getCssVar("--mobile-screen");
-  if (mobile_screen == "is-mobile") {
-
-    return true;
-  }
-  return false;
-}
-
-
-
-
-function fixDesktop() {
-  start_mobile = document.getElementById('start-mobile');
-  start_mobile.style.display = "none";
-
-
-
-  setCssVar("--scene-width", "1024px");
-  setCssVar("--scene-height", "512px");
-
-
-
+function addDesktopEvents() {
   addClickEvent("touch-boxes", touchBoxes);
 
   addClickEvent("nw-1", handleNw);
@@ -68,6 +46,17 @@ function fixDesktop() {
   addClickEvent("se-2", handleSe);
   addClickEvent("se-3", handleSe);
   addClickEvent("se-4", handleSe);
+}
+
+
+
+function fixDesktop() {
+  start_mobile = document.getElementById('start-mobile');
+  start_mobile.style.display = "none";
+  setCssVar("--scene-width", "1024px");
+  setCssVar("--scene-height", "512px");
+
+
 
   if (document.fullscreenElement != null) {
     document.exitFullscreen();
@@ -129,10 +118,7 @@ function fixMobile() {
 }
 
 
-
-function fixMobile2() {
-
-  //  document_style = document.documentElement.style;
+function addMobileEvents() {
 
   addTouchEvent("nw-1", touchNw);
   addTouchEvent("nw-2", touchNw);
@@ -182,7 +168,9 @@ function fixMobile2() {
   addTouchEvent("se-3", touchSe);
   addTouchEvent("se-4", touchSe);
 
+}
 
+function fixMobile2() {
 
   start_mobile = document.getElementById('start-mobile');
   start_mobile.style.display = "none";
@@ -196,4 +184,13 @@ function fixMobile2() {
   setCssVar("--scene-width", screen_width_px);
   setCssVar("--scene-height", screen_height_px);
 
+}
+
+function isMobile() {
+  const mobile_screen = getCssVar("--mobile-screen");
+  if (mobile_screen == "is-mobile") {
+
+    return true;
+  }
+  return false;
 }

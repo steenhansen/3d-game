@@ -69,25 +69,26 @@ function drawPylons(the_pylons) {
 }
 
 
-function pylonFront(pylon_vlines, gradient_front, front_panel_id, do_outlines, front_color, do_flash) {
+function pylonFront(pylon_vlines, gradient_front, front_panel_id, do_outlines, front_color, do_flash, do_twirl) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
 
-  let front_pylon = pylonPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines, front_color, do_flash);
+  let front_pylon = pylonPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines, front_color, do_flash, do_twirl);
   return front_pylon;
 }
 
 
 
-function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_color, do_flash) {
+function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_color, do_flash, do_twirl) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  if (isMobile()) {
+  //dconsole.log("pylonPolygon", solid_color, twirl_gradient);
+  if (isMobile() || !do_twirl) {
     svg_polygon = `<polygon fill="${solid_color}"  id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}

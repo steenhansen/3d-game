@@ -3,17 +3,39 @@ var hole_draw_count = 0;
 function holeSet(a_pylon) {
   // if (hole_draw_count == 0) {
   svg_pylon = holeDraw(a_pylon, g_player);
+
   pylon_id = a_pylon.s_pylon_name;
 
   targetDiv = document.getElementById(pylon_id);
   if (svg_pylon == null) {
     console.log("crash", pylon_id);
   }
+
+  //console.log("holeSet, svg_pylon", svg_pylon);
+
   targetDiv.innerHTML = svg_pylon;
   //}
   hole_draw_count++;
 }
 
+/*
+                  </div>
+ holeSet, svg_pylon <div class="show-hole" 
+                        style="z-index:1080842; ">
+                     <svg 
+                          viewBox="0 0 1023 511" 
+                          preserveAspectRatio="xMinYMin slice">
+                       <polygon fill="black"  id="a-hole-id"
+                      points="NaN,NaN
+                              NaN,NaN
+                              NaN,NaN
+                              NaN,NaN      " /><line stroke="orange"  
+                      x1=NaN y1=NaN
+                      x2=NaN y2=NaN      " />
+                  
+                     </svg>
+                   </div>
+                  */
 
 
 
@@ -46,6 +68,16 @@ function holeDraw(a_hole, g_player) {
   [front_right_x, front_right_y] = right_front_bot;
   [back_right_x, back_right_y] = back_RIGHT_bot;
   [back_left_x, back_left_y] = back__LEFT__bot;
+
+  err1 = `${front_left_x},${front_left_y}    `;
+  err2 = `${front_right_x},${front_right_y}    `;
+  err3 = `  ${back_right_x},${back_right_y}   `;
+  err4 = ` ${back_left_x},${back_left_y}   `;
+
+  if (isNaN(front_left_x)) {
+    console.log("holeDraw", pylon_id, front_left_x);
+  }
+
   front_pylon = `<polygon fill="black"  id="a-hole-id"
                       points="${front_left_x},${front_left_y}
                               ${front_right_x},${front_right_y}
@@ -53,12 +85,12 @@ function holeDraw(a_hole, g_player) {
                               ${back_left_x},${back_left_y}      " />`;
 
   if (head_on_view || pylon_relative == RIGHT_OF_PLAYER) {
-    front_pylon += `<line stroke="orange"  
+    front_pylon += `<line stroke="grey"  
                       x1=${back_right_x} y1=${back_right_y}
                       x2=${back_right_x} y2=${front_right_y}      " />`;
   }
   if (head_on_view || pylon_relative == LEFT_OF_PLAYER) {
-    front_pylon += `<line stroke="orange"  
+    front_pylon += `<line stroke="grey"  
                       x1=${back_left_x} y1=${back_right_y}
                       x2=${back_left_x} y2=${front_right_y}      " />`;
   }

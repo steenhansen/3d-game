@@ -10,12 +10,12 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
   g_pylon_list = the_pylons;
   g_hole_list = the_holes;
 
-  // console.log("runGame 0", g_pylon_list);
   gameLoop();
 
   function gameLoop() {
     debugFrameTime();
     if (g_loop_state == LOOP_0_BEGIN) {
+      g_player = resetPlayer();
       loopBegin();
     } else if (g_loop_state == LOOP_1_AFTER_BEGIN) {
       loopAfterBegin();
@@ -27,12 +27,31 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
       loopElevator(elevator_speed);
     } else if (g_loop_state == LOOP_5_AFTER_ELEVATOR) {
       loopAfterElevator();
-    } else if (g_loop_state == LOOP_6_PLAY) {
+    } else if (g_loop_state == LOOP_6_PLAY_NORMAL) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlay(g_player, g_enemy_list, g_pylon_list);
+
+
+    } else if (g_loop_state == LOOP_6_PLAY_HOLE_A_HIT) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayHoleHit(g_player, g_enemy_list, g_pylon_list);
+    } else if (g_loop_state == LOOP_6_PLAY_HOLE_B_INSIDE) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayHoleInside(g_player, g_enemy_list, g_pylon_list);
+    } else if (g_loop_state == LOOP_6_PLAY_HOLE_C_LEAVE) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayHoleLeave(g_player, g_enemy_list, g_pylon_list);
+
+
+    } else if (g_loop_state == LOOP_6_PLAY_JUMP_UP) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayJumpUp(g_player, g_enemy_list, g_pylon_list);
+    } else if (g_loop_state == LOOP_6_PLAY_JUMP_DOWN) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayJumpDown(g_player, g_enemy_list, g_pylon_list);
+
+
+
+
     } else if (g_loop_state == LOOP_7_AFTER_PLAY) {
       loopAfterPlay();
     } else if (g_loop_state == LOOP_8_FLY) {
-      [g_enemy_list, g_pylon_list] = loopFly(fly_speed, g_enemy_list, g_pylon_list);
+      [g_player, g_enemy_list, g_pylon_list] = loopFly(g_player, fly_speed, g_enemy_list, g_pylon_list);
+
     } else if (g_loop_state == LOOP_9_DONE) {
       dbg_report = false;
       loopDone();
@@ -42,22 +61,27 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
     requestAnimationFrame(gameLoop);
     debugAnimation();
   }
-
-
 }
+
+
+function loopFly(g_player, fly_speed, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+  [g_player, new_state] = animateFly(fly_speed, g_player);
+  g_loop_state = new_state;
+  return [g_player, enemy_list, pylon_list];
+}
+
 
 
 
 function loopBegin() {
   divVisHidden('desktop-dir');
   animateStart();
-  flyingInit();
   g_taking_off = false;
 
   initDebugVars();
   debugClear();
   dbg_report = true;
-  g_player.m_enemy_collision = false;
   setCssVar("--cracked-glass-display", "none");
 }
 
@@ -83,8 +107,7 @@ function loopElevator(elevator_speed) {
 
 function loopAfterElevator() {
   initPlay();
-  g_drift_direction = MOVINGx_N;
-  turnOnKeys();
+  // g_drift_direction = MOVINGx_N;
   readyInputArrows();
   if (isDebugging()) {
     g_is_drifting = false;
@@ -94,31 +117,100 @@ function loopAfterElevator() {
   // hide landing from really tall phones    iPhone SE 375 x 667
   const playing_game = document.getElementById(`the-landing`);
   playing_game.style = `display:none`;
-  g_loop_state = LOOP_6_PLAY;
+  g_loop_state = LOOP_6_PLAY_NORMAL;
 }
 
 function loopPlay(g_player, enemy_list, g_pylon_list) {
   [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
-  if (g_taking_off) {
+  if (g_hit_hole_last_move) {
+    g_loop_state = LOOP_6_PLAY_HOLE_A_HIT;
+  } else if (g_taking_off) {
     g_loop_state = LOOP_7_AFTER_PLAY;
   } else {
-    g_loop_state = LOOP_6_PLAY;
+    g_loop_state = LOOP_6_PLAY_NORMAL;
   }
   collisionShake(g_player);
   return [g_player, enemy_list, pylon_list];
 }
 
+
+
+
+function loopPlayHoleHit(g_player, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+
+  g_player = animateHoleHit(g_player);
+  g_loop_state = LOOP_6_PLAY_HOLE_B_INSIDE;
+
+  collisionShake(g_player);
+  return [g_player, enemy_list, pylon_list];
+}
+
+// what if stop inside hole?
+function loopPlayHoleInside(g_player, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+
+  g_player = animateHoleInside(g_player);
+  if (g_hit_hole_last_move) {
+    g_loop_state = LOOP_6_PLAY_HOLE_B_INSIDE;
+  } else {
+    g_loop_state = LOOP_6_PLAY_HOLE_C_LEAVE;
+  }
+  return [g_player, enemy_list, pylon_list];
+}
+
+
+function loopPlayHoleLeave(g_player, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+
+  g_player = animateHoleLeave(g_player);
+  g_loop_state = LOOP_6_PLAY_NORMAL;
+
+  return [g_player, enemy_list, pylon_list];
+}
+
+
+
+
+function loopPlayJumpUp(g_player, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+
+  [g_player, new_state] = animateJumpUp(g_player);
+  g_loop_state = new_state;
+
+
+  collisionShake(g_player);
+  return [g_player, enemy_list, pylon_list];
+}
+
+
+
+function loopPlayJumpDown(g_player, enemy_list, g_pylon_list) {
+  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
+
+  [g_player, new_state] = animateJumpDown(g_player);
+  g_loop_state = new_state;
+
+
+  collisionShake(g_player);
+  return [g_player, enemy_list, pylon_list];
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function loopAfterPlay() {
   g_move_direction = MOVINGx_N;
   g_loop_state = LOOP_8_FLY;
 }
-
-function loopFly(fly_speed, enemy_list, g_pylon_list) {
-  [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
-  g_loop_state = animateFly(fly_speed);
-  return [enemy_list, pylon_list];
-}
-
 function loopDone() {
   g_number_lands++;
   resetSections();

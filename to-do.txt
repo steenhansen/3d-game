@@ -1,4 +1,73 @@
 
+phrajisle
+
+
+
+
+phrajile
+
+isle
+
+
+
+
+
+
+
+2. HIR PYLONS X2 RED SO CAN EASILY SEE
+
+
+side-swip == quit game on phone
+
+
+
+
+2. debug ?
+
+
+
+
+45degrees moves *1   too fasta
+
+
+
+desk
+   space bar == jump
+   shoot == enter
+
+
+mobile   
+   shoot == press
+   down swipe == stop
+   up swipe == jump
+
+   left or right swipe == quit
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+at declare maybe check x,y coords ??? so no NaN errors
+
+
 
 
 collisions/collisions.js ==> collisions/collisions.js

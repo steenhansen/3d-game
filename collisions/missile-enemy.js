@@ -1,11 +1,5 @@
 
 
-// things-collide.js
-
-
-
-// enemyHitHoles()
-
 // only from front
 function playerHitEnemies(g_player, the_enemies) {
   changed_enemies = [];
@@ -16,8 +10,10 @@ function playerHitEnemies(g_player, the_enemies) {
     if (enemy_state == ENEMY_0_FLOATING) {
       has_collided = hasCollided(g_player, an_enemy, COLLISION_SIZES);
       if (has_collided) {
-        g_taking_off = true;
-        g_player.m_enemy_collision = true;
+        g_player.m_num_cracks++;
+        if (g_player.m_num_ == MAX_CRACKS) {
+          g_taking_off = true;
+        }
       }
     }
   }
@@ -26,26 +22,33 @@ function playerHitEnemies(g_player, the_enemies) {
 
 // only from front  ????
 function playerHitHoles(g_player, the_holes) {
-  changed_enemies = [];
-  number_holes = the_holes.length;
-  for (let hole_index = 0; hole_index < number_holes; hole_index++) {
-    a_hole = the_holes[hole_index];
-    has_collided = hasCollided(g_player, a_hole, COLLISION_SIZES);
-    if (has_collided) {
-      g_taking_off = true;
-      g_player.m_enemy_collision = true;
+  hit_hole_last_move = false;
+  if (g_player.m_jump_amount == 0) {
+    changed_enemies = [];
+    number_holes = the_holes.length;
+    for (let hole_index = 0; hole_index < number_holes; hole_index++) {
+      a_hole = the_holes[hole_index];
+      has_collided = hasCollided(g_player, a_hole, COLLISION_SIZES);
+      if (has_collided) {
+        hit_hole_last_move = true;
+        if (g_player.m_num_cracks == MAX_CRACKS) {
+          g_taking_off = true;
+        }
+      }
     }
   }
-  return g_player;
+  return [g_player, hit_hole_last_move];
 }
 
 function playerHitPylons(g_player, the_pylons) {
+  hit_pylon_last_move = false;
   changed_pylons = [];
   number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
     has_collided = hasCollided(g_player, a_pylon, COLLISION_SIZES);
     if (has_collided) {
+      hit_pylon_last_move = true;
       a_pylon.m_hit_flash = 17;
       g_player.m_recoiling = true;
       g_player.m_recoil_count = RECOIL_COUNTDOWN;
@@ -54,13 +57,13 @@ function playerHitPylons(g_player, the_pylons) {
 
       g_player.m_shaking = true;
       g_player.m_screen_askew = 10;
-
       g_move_direction = new_direction;
 
     }
     changed_pylons[pylon_index] = a_pylon;
   }
   return [g_player, changed_pylons];
+  //  return [g_player, changed_pylons, hit_pylon_last_move];
 }
 
 

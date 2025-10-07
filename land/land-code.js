@@ -1,68 +1,80 @@
 
-function animateStart() {
-  const saturn_space = document.getElementById('star-space');
-  saturn_space.style.opacity = 0;
-}
-
-
-function resetSections() {
-  hideDiv('the-scene');
-  divVisHidden('desktop-dir');
-  unHideDiv('click-to-begin');
-
-
-  //hideDiv('start-mobile');
 
 
 
-  doFlying(0);
-  g_taking_off = false;
-  g_move_direction = MOVINGx_NOT;
 
+const STOP_FLY_COUNT = 700;
+const STOP_JUMP_UP_DOWN = 100;
 
-
-  landingInit();
-  initElevator();
-  flyingInit();
-
-}
-
-
-
-var lift_amount_f = 0;
-
-var STOP_FLY_COUNT = 700;
 var START_FAST_FLY_COUNT = STOP_FLY_COUNT - 1;
 
-function flyingInit() {
-  lift_amount_f = 0;
+function animateHoleHit(g_player) {
+  g_player.m_num_cracks++;
+  g_player.m_in_hole = true;
+  return g_player;
+}
+
+function animateHoleInside(g_player) {
+  return g_player;
+}
+
+function animateHoleLeave(g_player) {
+  g_player.m_in_hole = false;
+  return g_player;
+}
+
+
+// function flyingInit() {
+//   lift_amount_f = 0;
+// }
+
+
+
+const JUMP_STEP = 3;
+
+function animateJumpUp(g_player) {
+  g_player.m_jump_amount += JUMP_STEP;
+  if (g_player.m_jump_amount > STOP_JUMP_UP_DOWN) {
+    //    g_player.m_jump_amount = 0;
+    return [g_player, LOOP_6_PLAY_JUMP_DOWN];
+  }
+  doFlying(g_player.m_jump_amount);
+  return [g_player, LOOP_6_PLAY_JUMP_UP];
+}
+
+function animateJumpDown(g_player) {
+  g_player.m_jump_amount -= JUMP_STEP;
+  if (g_player.m_jump_amount < 1) {
+    g_player.m_jump_amount = 0;
+    return [g_player, LOOP_6_PLAY_NORMAL];
+  }
+  doFlying(g_player.m_jump_amount);
+  return [g_player, LOOP_6_PLAY_JUMP_DOWN];
 }
 
 
 
-function animateFly(fly_speed) {
+function animateFly(fly_speed, g_player) {
   if (fly_speed == FAST_FLY) {
     doFlying(STOP_FLY_COUNT - 1);
-    return LOOP_9_DONE;
+    return [g_player, LOOP_9_DONE];
   } else if (fly_speed == SLOW_FLY) {
-
-    lift_amount_f += 0.5;
-    if (lift_amount_f == STOP_FLY_COUNT) {
-      return LOOP_9_DONE;
+    g_player.m_fly_amount += FLY_STEP;
+    if (g_player.m_fly_amount > STOP_FLY_COUNT) {
+      return [g_player, LOOP_9_DONE];
     }
-    doFlying(lift_amount_f);
-    return LOOP_8_FLY;
-
-
+    doFlying(g_player.m_fly_amount);
+    return [g_player, LOOP_8_FLY];
   } else {
-    lift_amount_f++;
-    if (lift_amount_f == STOP_FLY_COUNT) {
-      return LOOP_9_DONE;
+    g_player.m_fly_amount += 1.5;
+    if (g_player.m_fly_amount > STOP_FLY_COUNT) {
+      return [g_player, LOOP_9_DONE];
     }
-    doFlying(lift_amount_f);
-    return LOOP_8_FLY;
+    doFlying(g_player.m_fly_amount);
+    return [g_player, LOOP_8_FLY];
   }
 }
+
 
 
 function doFlying(lift_amount_x) {
@@ -78,6 +90,9 @@ function doFlying(lift_amount_x) {
 
   const pylon_html = document.getElementById('pylon-html');
   pylon_html.style.top = `${lift_amount_x}px`;
+
+  const holes_html = document.getElementById('hole-html');
+  holes_html.style.top = `${lift_amount_x}px`;
 
   const enemy_area = document.getElementById('enemy-area');
   enemy_area.style.top = `${lift_amount_x}px`;
@@ -121,14 +136,6 @@ function doFlying(lift_amount_x) {
 
 
 
-
-
-
-
-// function skipLand() {
-//   setLandingScroll(0);
-//   readyInputArrows();
-// }
 
 
 num_lines = 255;
@@ -193,6 +200,7 @@ function readyInputArrows() {
   stopFlashArrow('arrow-w');
 }
 
+// what is this????
 function stopFlashArrow(arrow_id) {
   // const stop_arrow = document.getElementById(arrow_id);
   // let flash_none = `fill: rgb(0 ,0 , 0)`;
@@ -237,7 +245,6 @@ function initLanding() {
   unHideDiv('the-scene');
 }
 
-//animateLanding;
 
 var landing_count = 0;
 
@@ -287,12 +294,6 @@ function initPlay() {
 }
 
 
-
-//m_top_playing_game = 512;
-//m_top_the_land = 0;
-
-// no leading n
-// maybe p_top_playing_game  for procedure
 m_top_playing_game = -512;
 m_top_the_land = 0;
 
@@ -352,7 +353,6 @@ function moveCheckerboardOnce(top_playing_game, top_the_land) {
 
   const playing_game = document.getElementById(`playing-game`);
   playing_game.style = `top:${top_playing_game}px`;
-  //  m_top_the_land += 2;
   const the_landing = document.getElementById(`the-landing`);
   the_landing.style = `top:${top_the_land}px`;
   flashScrollingArrow('arrow-nw');
@@ -363,4 +363,32 @@ function moveCheckerboardOnce(top_playing_game, top_the_land) {
   flashScrollingArrow('arrow-s');
   flashScrollingArrow('arrow-sw');
   flashScrollingArrow('arrow-w');
+}
+
+function animateStart() {
+  const saturn_space = document.getElementById('star-space');
+  saturn_space.style.opacity = 0;
+}
+
+
+function resetSections() {
+  hideDiv('the-scene');
+  divVisHidden('desktop-dir');
+  unHideDiv('click-to-begin');
+
+
+  //hideDiv('start-mobile');
+
+
+
+  doFlying(0);
+  g_taking_off = false;
+  g_move_direction = MOVINGx_NOT;
+
+
+
+  landingInit();
+  initElevator();
+
+
 }
