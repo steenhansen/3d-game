@@ -11,7 +11,7 @@
 
 #fuzzy-saturn {
   z-index: var(--z-the-saturn);
-  background-image: url('../images/cloudy-saturn3.png');
+  background-image: url('../images/cloudy-saturn.png');
   width: 1024px;
   height: 44px;
   position: absolute;

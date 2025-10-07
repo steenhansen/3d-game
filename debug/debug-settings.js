@@ -166,8 +166,8 @@ function debugReportFrameTime() {
   const mobile_screen = getCssVar("--mobile-screen");
   debugPrint(mobile_screen, 340, 45);
 
-  start_point = [g_start_swipe_x, g_start_swipe_y];
-  end_point = [g_end_swipe_x, g_end_swipe_y];
+  start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
+  end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
 
   if (g_swipe_dir == SWIPE_UP) {
     debugSwipeUp(start_point, end_point);

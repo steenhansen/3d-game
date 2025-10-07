@@ -36,20 +36,20 @@ function animateJumpUp(g_player) {
   g_player.m_jump_amount += JUMP_STEP;
   if (g_player.m_jump_amount > STOP_JUMP_UP_DOWN) {
     //    g_player.m_jump_amount = 0;
-    return [g_player, LOOP_6_PLAY_JUMP_DOWN];
+    return [g_player, LOOP_7_PLAY_JUMP_DOWN];
   }
   doFlying(g_player.m_jump_amount);
-  return [g_player, LOOP_6_PLAY_JUMP_UP];
+  return [g_player, LOOP_7_PLAY_JUMP_UP];
 }
 
 function animateJumpDown(g_player) {
   g_player.m_jump_amount -= JUMP_STEP;
   if (g_player.m_jump_amount < 1) {
     g_player.m_jump_amount = 0;
-    return [g_player, LOOP_6_PLAY_NORMAL];
+    return [g_player, LOOP_7_PLAY_NORMAL];
   }
   doFlying(g_player.m_jump_amount);
-  return [g_player, LOOP_6_PLAY_JUMP_DOWN];
+  return [g_player, LOOP_7_PLAY_JUMP_DOWN];
 }
 
 
@@ -57,21 +57,21 @@ function animateJumpDown(g_player) {
 function animateFly(fly_speed, g_player) {
   if (fly_speed == FAST_FLY) {
     doFlying(STOP_FLY_COUNT - 1);
-    return [g_player, LOOP_9_DONE];
+    return [g_player, LOOP_10_DONE];
   } else if (fly_speed == SLOW_FLY) {
     g_player.m_fly_amount += FLY_STEP;
     if (g_player.m_fly_amount > STOP_FLY_COUNT) {
-      return [g_player, LOOP_9_DONE];
+      return [g_player, LOOP_10_DONE];
     }
     doFlying(g_player.m_fly_amount);
-    return [g_player, LOOP_8_FLY];
+    return [g_player, LOOP_9_FLY];
   } else {
     g_player.m_fly_amount += 1.5;
     if (g_player.m_fly_amount > STOP_FLY_COUNT) {
-      return [g_player, LOOP_9_DONE];
+      return [g_player, LOOP_10_DONE];
     }
     doFlying(g_player.m_fly_amount);
-    return [g_player, LOOP_8_FLY];
+    return [g_player, LOOP_9_FLY];
   }
 }
 
@@ -258,23 +258,23 @@ function landingInit() {
 function animateLanding(land_speed) {
   if (land_speed == FAST_LAND) {
     expandCheckerboard(255);
-    return LOOP_3_AFTER_LANDING;
+    return LOOP_4_AFTER_LANDING;
   } else if (land_speed == SLOW_LAND) {
     landing_count += 0.25;
     if (landing_count == num_lines) {
-      return LOOP_3_AFTER_LANDING;
+      return LOOP_4_AFTER_LANDING;
     } else {
       int_landing_count = Math.floor(landing_count);
       expandCheckerboard(int_landing_count);
-      return LOOP_2_LANDING;
+      return LOOP_3_LANDING;
     }
   } else {
     landing_count++;
     if (landing_count == num_lines) {
-      return LOOP_3_AFTER_LANDING;
+      return LOOP_4_AFTER_LANDING;
     } else {
       expandCheckerboard(landing_count);
-      return LOOP_2_LANDING;
+      return LOOP_3_LANDING;
     }
   }
 }
@@ -317,24 +317,24 @@ function elevatorInOneStep() {
 function animateElevator(elevator_speed) {
   if (elevator_speed == FAST_ELEVATOR) {
     elevatorInOneStep();
-    return LOOP_5_AFTER_ELEVATOR;
+    return LOOP_6_AFTER_ELEVATOR;
   } else if (elevator_speed == SLOW_ELEVATOR) {
     m_top_playing_game += 0.5;
     m_top_the_land += 0.5;
     moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
     if (m_top_playing_game == 0) {
-      return LOOP_5_AFTER_ELEVATOR;
+      return LOOP_6_AFTER_ELEVATOR;
     } else {
-      return LOOP_4_ELEVATOR;
+      return LOOP_5_ELEVATOR;
     }
   } else {
     m_top_playing_game += 2;
     m_top_the_land += 2;
     moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
     if (m_top_playing_game == 0) {
-      return LOOP_5_AFTER_ELEVATOR;
+      return LOOP_6_AFTER_ELEVATOR;
     } else {
-      return LOOP_4_ELEVATOR;
+      return LOOP_5_ELEVATOR;
     }
   }
 }

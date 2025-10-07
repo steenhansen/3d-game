@@ -1,19 +1,19 @@
 
 
-let g_start_swipe_x = 0;
-let g_start_swipe_y = 0;
-let g_end_swipe_x = 0;
-let g_end_swipe_y = 0;
+let dbg_start_swipe_x = 0;
+let dbg_start_swipe_y = 0;
+let dbg_end_swipe_x = 0;
+let dbg_end_swipe_y = 0;
 let g_swipe_dir = "no-swipe-dir";
 
 let dbg_report = true;
 
 
 function initDebugVars() {
-  g_start_swipe_x = 0;
-  g_start_swipe_y = 0;
-  g_end_swipe_x = 0;
-  g_end_swipe_y = 0;
+  dbg_start_swipe_x = 0;
+  dbg_start_swipe_y = 0;
+  dbg_end_swipe_x = 0;
+  dbg_end_swipe_y = 0;
   g_swipe_dir = "no-swipe-dir";
 }
 

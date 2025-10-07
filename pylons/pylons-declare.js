@@ -45,7 +45,7 @@ pylon_1a = {
   m_twirl_on: false,
   m_side_twirl: 1,
   m_front_twirl: 201,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };
@@ -58,7 +58,7 @@ pylon_1b = {
   m_twirl_on: true,
   m_side_twirl: 150,
   m_front_twirl: 350,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };
@@ -74,7 +74,7 @@ pylon_2a = {
   m_twirl_on: false,
   m_side_twirl: 50,
   m_front_twirl: 250,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };
@@ -88,7 +88,7 @@ let pylon_2b = {
   m_twirl_on: true,
   m_side_twirl: 0,
   m_front_twirl: 200,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };
@@ -103,7 +103,7 @@ pylon_3a = {
   m_twirl_on: false,
   m_side_twirl: 100,
   m_front_twirl: 300,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };
@@ -118,7 +118,7 @@ pylon_3b = {
   m_twirl_on: true,
   m_side_twirl: 188,
   m_front_twirl: 388,
-  s_outline: false,
+  s_outline: true,
   m_hit_flash: 0,
   do_flash: false
 };

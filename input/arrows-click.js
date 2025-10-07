@@ -1,5 +1,7 @@
 
 
+const ARROW_FLASH_TIME = 200;
+
 
 function flashArrow(direction_name) {
   const directions_4 = direction_name.split("-");
@@ -11,13 +13,10 @@ function flashArrow(direction_name) {
   } catch (e) {
     console.log("flashArrow 23456", direction_name, e);
   }
-  const original_opacity = window.getComputedStyle(the_arrow).getPropertyValue("opacity");
-
   the_arrow_style.opacity = '25%';
-
   setTimeout(() => {
-    the_arrow_style.opacity = original_opacity;
-  }, "200");
+    the_arrow_style.opacity = '100%';
+  }, ARROW_FLASH_TIME);
 }
 
 

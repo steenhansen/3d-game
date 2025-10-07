@@ -1,12 +1,17 @@
 
-const DEAD_LOOP = "16s";
-const LIVE_LOOP = "2s";
-
 ball_start = "-2s";
 
 function makeBall(front_or_all, ball_color, is_dead) {
 
   ani_duration = aniDuration(is_dead);
+
+
+  if (is_dead) {
+    ani_duration = "1s";
+    //   console.log("DDDDDDDD");
+  } else {
+    ani_duration = "2s";
+  }
   if (front_or_all === 'front') {
     ball_id = "ellipse-w-e-bottom--ball";
     ball_points = "m 941.29771,511.00632 c -0.4174,65.1159 -192.8997,119.13442 -429.9211,120.65392 -113.8217,0.7296 -222.902,-10.9924 -303.2444,-32.5875 -80.3423,-21.59492 -125.3656,-56.79672 -125.1651,-88.06642 m 1985.62999,-1.6843 c -0.4174,65.1158 -199.1141,113.63182 -436.1355,115.15132 -113.8218,0.7296 -222.902,-10.9924 -303.2444,-32.5874 -80.3423,-21.59512 -125.3656,-51.29422 -125.1652,-82.56392";
@@ -39,18 +44,26 @@ function makeBall(front_or_all, ball_color, is_dead) {
 
 
 
+const DEAD_LOOP = "16s";
+const LIVE_LOOP = "1s";
 
-function rotatingStar(star_color, is_dead, s_number) {
+
+function rotatingStar(star_color, is_dead) {
   ani_duration = aniDuration(is_dead);
   rotate_from = 0;
   rotate_to = 359;
-  fill_opacity = "1";
-  ani_duration = "4s";
+  if (is_dead) {
+    fill_opacity = "0.5";
+    //   console.log("DDDDDDDD");
+  } else {
+    fill_opacity = "1";
+  }
+  // ani_duration = "4s";
   rotating_star = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
     <g id="star-spin">
       <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512"
-        dur="1s" repeatCount="indefinite" />
+        dur="${ani_duration}" repeatCount="indefinite" />
       <path fill="${star_color}" fill-opacity="${fill_opacity}" stroke="#000" stroke-width="0"
         d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z" />
     </g>
@@ -70,13 +83,16 @@ function aniDuration(is_dead) {
 }
 
 function makeEnemy(the_enemy) {
+  console.log("make enemy", the_enemy);
+
+  // this is done once, so m_dead is checked at the start of the game, no use here at init
   is_dead = the_enemy.m_dead;
   enemy_id = the_enemy.s_id;
   star_color = the_enemy.m_colors[0];
   ball_color = the_enemy.m_colors[1];
 
 
-  rotating_star = rotatingStar(star_color, is_dead, the_enemy.s_number);
+  rotating_star = rotatingStar(star_color, is_dead);
 
 
   ball_all = makeBall('all', ball_color, is_dead);
@@ -102,9 +118,6 @@ function makeEnemy(the_enemy) {
     </div>
     `;
 
-  console.log("-------------------------------------");
-  console.log("enemy_id", an_enemy);
-  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
   return an_enemy;
 }
 

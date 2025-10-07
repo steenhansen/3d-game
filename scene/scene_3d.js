@@ -1,4 +1,28 @@
 
+function handleStartMobile(evt) {
+  setTimeout(() => {
+    g_loop_state = LOOP_1_BEGIN;
+    start_mobile = document.getElementById('start-mobile');
+    start_mobile.style.display = "none";
+    waiting_for_start = false;
+    fixMobile2();
+  }, "1000");
+
+
+  //unHideDiv('the-scene');
+  the_scene = document.getElementById('the-scene');
+  try {
+    //  hideDiv('start-mobile');
+    the_scene.requestFullscreen();
+    g_touch_id_start = 'start full screen click 779823432';
+    // g_loop_state = LOOP_1_BEGIN;
+
+
+    //startItUp(FAST_SEGWAYS);
+  } catch {
+    //
+  }
+}
 
 
 
@@ -20,22 +44,6 @@ function hitCracks(number_cracks) {
 }
 
 
-function handleStartMobile(evt) {
-  setTimeout(() => {
-    start_mobile = document.getElementById('start-mobile');
-    start_mobile.style.display = "none";
-    waiting_for_start = false;
-    fixMobile2();
-  }, "1000");
-
-  the_scene = document.getElementById('the-scene');
-  try {
-    the_scene.requestFullscreen();
-    g_touch_id_start = 'start full screen click 779823432';
-  } catch {
-    //
-  }
-}
 
 
 function match_landing_to_checkerboard() {
@@ -308,7 +316,7 @@ function wheelScroll(the_event) {
 
 function animateScene(enemy_list, pylon_list, hole_list) {
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_6_PLAY_NORMAL;
+    return LOOP_7_PLAY_NORMAL;
   }
   hitCracks(g_player.m_num_cracks);
   doBounce(g_player);
@@ -316,7 +324,7 @@ function animateScene(enemy_list, pylon_list, hole_list) {
   plyon_list = drawPylons(pylon_list);
   g_missile = missileAdvance(g_missile, g_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_6_PLAY_NORMAL;
+    return LOOP_7_PLAY_NORMAL;
   }
   enemy_list = drawEnemies(enemy_list, g_player);
 

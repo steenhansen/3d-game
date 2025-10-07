@@ -131,26 +131,6 @@ function enemiesHitPylons(the_enemies, the_pylons) {
 
 
 
-function missileHitEnemies(the_missile, the_enemies) {
-  changed_enemies = [];
-  number_enemies = the_enemies.length;
-  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
-    an_enemy = the_enemies[enemy_index];
-    enemy_state = an_enemy.m_state;
-    if (enemy_state == ENEMY_0_FLOATING) {
-      has_collided = hasCollided(the_missile, an_enemy, COLLISION_SIZES);
-      if (has_collided) {
-        an_enemy = killEnemy(an_enemy);
-        an_enemy.m_state = ENEMY_1_HIT;
-        an_enemy.m_hover_up = 0;
-        an_enemy.m_hit_flash = 10;
-      }
-    }
-    changed_enemies[enemy_index] = an_enemy;
-  }
-  return changed_enemies;
-}
-
 
 function enemyHitHoles(the_enemies, the_holes) {
   number_enemies = the_enemies.length;
@@ -180,6 +160,29 @@ function enemyHitHoles(the_enemies, the_holes) {
 }
 
 
+
+
+
+function missileHitEnemies(the_missile, the_enemies) {
+  changed_enemies = [];
+  number_enemies = the_enemies.length;
+  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    an_enemy = the_enemies[enemy_index];
+    enemy_state = an_enemy.m_state;
+    if (enemy_state == ENEMY_0_FLOATING) {
+      has_collided = hasCollided(the_missile, an_enemy, COLLISION_SIZES);
+      if (has_collided) {
+        an_enemy = killEnemy(an_enemy);
+        an_enemy.m_state = ENEMY_1_HIT;
+        an_enemy.m_hover_up = 0;
+        an_enemy.m_hit_flash = 10;
+        an_enemy.m_dead = true;
+      }
+    }
+    changed_enemies[enemy_index] = an_enemy;
+  }
+  return changed_enemies;
+}
 
 
 

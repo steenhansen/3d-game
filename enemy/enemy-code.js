@@ -179,7 +179,7 @@ function killEnemy(the_enemy) {
     m_x: m_x, m_y: m_y,
     m_move_count: -1,
     s_moves_x: [], s_moves_y: [],
-    //  m_dead: false,
+    m_dead: true,
     m_hover_up: 0,
     m_colors: m_colors,
     // m_colors: ['green', 'red', 'blue', 'orange'],

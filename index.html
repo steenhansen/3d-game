@@ -117,20 +117,23 @@ FOR TESTS IN DIRECTORIES
 
 <div id='click-to-begin' class="begin-vars">
   <br>
-  <button id="begin-desktop" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;" type="button">Begin desktop 3D game</button>
-  <button id="begin-mobile" onclick=" g_loop_state = LOOP_1_AFTER_BEGIN;" type="button">Begin mobile 3D game</button>
+  <button id="begin-desktop" onclick=" g_loop_state = LOOP_0_DESKTOP_START;" type="button">Begin desktop 3D
+    game</button>
+  <button id="begin-mobile" onclick=" g_loop_state = LOOP_0_MOBILE_START;  " type="button">Begin mobile 3D
+    game</button>
   <br>
 </div>
 
+<div id='start-mobile'>
+  <div id='mobile-list'>
+
+  </div>
+</div>
 
 <div id="the-scene">
 
   <canvas id="the-draw" width=" 1024" height="512"></canvas>
-  <div id='start-mobile'>
-    <div id='mobile-list'>
 
-    </div>
-  </div>
   <div id="touch-boxes"></div>
   <div id="arrows-html"></div>
 
@@ -254,11 +257,11 @@ FOR TESTS IN DIRECTORIES
   the_enemies = [enemy_1, enemy_2];
   the_holes = [hole_1, hole_2, hole_3, hole_4];
 
+  g_loop_state = LOOP_0_START;
 
-  startItUp(FAST_SEGWAYS);
-
+  startItUp(FAST_SEGWAYS);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
 
   // if (isDebugging()) {
-  //   g_loop_state = LOOP_1_AFTER_BEGIN;
+  //   g_loop_state = LOOP_2_AFTER_BEGIN;
   // }
 </script>

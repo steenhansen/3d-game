@@ -89,6 +89,6 @@ function startItUp(chosen_segway) {
   runGame(land_fly_speeds, the_pylons, the_enemies, the_holes);
 
   if (isDebugging()) {
-    g_loop_state = LOOP_1_AFTER_BEGIN;
+    g_loop_state = LOOP_2_AFTER_BEGIN;
   }
 }

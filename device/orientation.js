@@ -1,5 +1,15 @@
 
 
+function fixMobile() {
+  if (!document.fullscreenElement) {
+    start_mobile = document.getElementById('start-mobile');
+    waiting_for_start = true;
+    start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
+    return;
+  }
+}
+
+
 function addDesktopEvents() {
   addClickEvent("touch-boxes", touchBoxes);
 
@@ -105,17 +115,6 @@ function fixDevice() {
 
 
 
-
-
-function fixMobile() {
-  if (!document.fullscreenElement) {
-    start_mobile = document.getElementById('start-mobile');
-    start_mobile.style.display = "block";
-    waiting_for_start = true;
-    start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
-    return;
-  }
-}
 
 
 function addMobileEvents() {

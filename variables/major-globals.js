@@ -10,7 +10,7 @@ let g_is_drifting = false;
 let g_drift_direction = MOVINGx_NE;
 
 
-var g_loop_state = LOOP_0_BEGIN;
+var g_loop_state = LOOP_1_BEGIN;
 
 
 

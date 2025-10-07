@@ -102,8 +102,9 @@ function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_co
                               ${bot_left_x},${bot_left_y}      " />`;
 
     if (do_flash) {
-
-      svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="red"
+      //    stroke-width="10px" opacity="0.5"       stroke-opactiy="1"
+      svg_polygon += `<polygon fill="red"  id="${panel_id}" stroke="white"
+     opacity="0.4"    stroke-width="15px" 
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
@@ -112,6 +113,7 @@ function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_co
     } else if (do_outlines) {         // outline_color should always be black??? white??
       // console.log("do out", do_outlines);
       svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="black"
+      stroke-width="3px"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}

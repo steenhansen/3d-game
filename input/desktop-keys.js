@@ -33,39 +33,39 @@ function readKeys(event) {
   if (!g_player.m_recoiling) {
     g_is_drifting = false;
     if (FLY_KEYS.includes(the_key)) {
-      g_taking_off = true;
+      g_taking_off = true;                     /// function !!
     } else if (NW_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_NW;
+      g_move_direction = MOVINGx_NW;          /// function !!
       flashArrow('nw');
     } else if (N_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_N;
+      g_move_direction = MOVINGx_N;          /// function !!
       flashArrow('n');
     } else if (NE_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_NE;
+      g_move_direction = MOVINGx_NE;           /// function !!
       flashArrow('ne');
     } else if (E_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_E;
+      g_move_direction = MOVINGx_E;          /// function !!
       flashArrow('e');
     } else if (SE_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_SE;
+      g_move_direction = MOVINGx_SE;          /// function !!
       flashArrow('se');
     } else if (S_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_S;
+      g_move_direction = MOVINGx_S;           /// function !!
       flashArrow('s');
     } else if (SW_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_SW;
+      g_move_direction = MOVINGx_SW;             /// function !!
       flashArrow('sw');
     } else if (W_KEYS.includes(the_key)) {
-      g_move_direction = MOVINGx_W;
+      g_move_direction = MOVINGx_W;        /// function !!
       flashArrow('w');
     } else if (STOP_KEYS.includes(the_key)) {
       stopMoving();
       direction_name = 'pressed-stop';
     } else if (JUMP_KEYS.includes(the_key)) {
-      g_loop_state = LOOP_6_PLAY_JUMP_UP;
+      g_loop_state = LOOP_7_PLAY_JUMP_UP;        /// function !!
       direction_name = 'pressed-jump';
     } else if (SHOOT_KEYS.includes(the_key)) {
-      g_missile = launchMissile(g_missile);
+      g_missile = launchMissile(g_missile);           /// function !!
       direction_name = 'pressed-fire';
 
     } else {
