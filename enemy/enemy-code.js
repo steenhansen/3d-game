@@ -59,26 +59,31 @@ function drawEnemies(the_enemies, g_player) {
 function enemyDraw(real_id, the_enemy, g_player) {
   enemy_state = the_enemy.m_state;
   if (enemy_state == ENEMY_0_FLOATING) {
+    //console.log("en  ENEMY_0_FLOATING");
     enemyPlace(real_id, the_enemy, g_player);
     the_enemy = enemyMove(the_enemy);
   } else if (enemy_state == ENEMY_1_BOUNCE) {
-    setCssEnemyColor(the_enemy.s_number, '#ff0000');
+    // console.log("en  ENEMY_1_BOUNCE");
+    setCssEnemyEdge(the_enemy.s_number, '48px');   //'#ff0000');
     the_enemy = enemyMove(the_enemy);
     enemyPlace(real_id, the_enemy, g_player);
     the_enemy.m_hit_flash--;
     if (the_enemy.m_hit_flash == 0) {
-      setCssEnemyColor(the_enemy.s_number, '#ffff00');
+      setCssEnemyEdge(the_enemy.s_number, '0px');
+      //   console.log("en  ENEMY_0_FLOATING -------------------------");
+      //setCssEnemyColor(the_enemy.s_number, '0px'); //, '#ffff00');
       the_enemy.m_state = ENEMY_0_FLOATING;
     }
   } else if (enemy_state == ENEMY_1_HIT) {
-    setCssEnemyColor(the_enemy.s_number, '#ff0000');
+    setCssEnemyOpacity(the_enemy.s_number, 0.3333);
     enemyPlace(real_id, the_enemy, g_player);
+
     the_enemy.m_hit_flash--;
     if (the_enemy.m_hit_flash == 0) {
       the_enemy.m_state = ENEMY_2_LIFTING;
     }
   } else if (enemy_state == ENEMY_2_LIFTING) {
-    setCssEnemyColor(the_enemy.s_number, '#aaaa00');
+    // setCssEnemyColor(the_enemy.s_number, '#aaaa00');
     enemyPlace(real_id, the_enemy, g_player);
     the_enemy.m_state = ENEMY_2_LIFTING;
     the_enemy.m_hover_up = the_enemy.m_hover_up + TRAVEL_SPEED;

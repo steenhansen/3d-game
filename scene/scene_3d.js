@@ -165,117 +165,66 @@ travel_speed = 1;
 */
 
 
-function sceneRight(travel_speed) {
-  if (g_is_drifting) {
-    travel_speed = 1;       //one third screws everything up???
-  }
-  playerRight(travel_speed);
-  fieldRight(travel_speed);
-  moveSky(travel_speed, 'right');
-}
 
-function sceneLeft(travel_speed) {
-  if (g_is_drifting) {
-    travel_speed = 1;
-  }
-  playerLeft(travel_speed);
-  fieldLeft(travel_speed);
+
+function sceneLeft(travel_speed, diagonal_weight) {
+  playerLeft(travel_speed, diagonal_weight);
+  fieldLeft(travel_speed, diagonal_weight);
   moveSky(travel_speed, 'left');
 }
 
 function sceneForward(travel_speed) {
-  if (g_is_drifting) {
-    travel_speed = 1;
-  }
   playerForward(travel_speed);
   fieldForwards(travel_speed);
   moveSky(travel_speed, 'forward');
 }
 
 function sceneBackward(travel_speed) {
-  if (g_is_drifting) {
-    travel_speed = 1;
-  }
   playerBackward(travel_speed);
   fieldBackwards(travel_speed);
   moveSky(travel_speed, 'backward');
 }
 
-function sceneStop() {
-  moveSky('stop');
+function sceneRight(travel_speed, diagonal_weight) {
+  playerRight(travel_speed, diagonal_weight);
+  fieldRight(travel_speed, diagonal_weight);
+  moveSky(travel_speed, 'right');
 }
 
-
-
-function randomDirection() {
-  let rand_dir = Math.floor(Math.random() * 4);
-
-  if (rand_dir == 0) {
-    rand_direction = MOVINGx_NW;
-  } else if (rand_dir == 1) {
-    rand_direction = MOVINGx_NE;
-  } else if (rand_dir == 2) {
-    rand_direction = MOVINGx_SE;
-  } else {
-    rand_direction = MOVINGx_SW;
-  }
-  return rand_direction;
-}
-
-
-function startDrift() {
-  if (isDebugging()) {
-    return;
-  }
-  // if (typeof DBG_DRIFTING == 'string') {
-  //   return;
-  // }
-
-  if (g_is_drifting) {
-    let rand_dir = Math.floor(Math.random() * 1024);
-    if (rand_dir == 1) {
-      g_drift_direction = randomDirection();
-    }
-  } else {
-    g_drift_countdown--;
-    if (g_drift_countdown < 0) {
-      g_drift_direction = randomDirection();   // random
-      g_is_drifting = true;
-      g_drift_countdown = DRIFT_CYCLES;       //177;
-    }
-  }
-}
-
+const DIAGONAL_NOT = 3;     // NB cannot do square root of 2 for diagonal damping movement because all integers
+const DIAGONAL_DAMPER = 2;
 
 function sceneMove() {
   if (g_is_drifting) {
     g_move_direction = g_drift_direction;
     startDrift();
   }
-
-  travel_speed = TRAVEL_SPEED;
+  travel_speed = TRAVEL_SPEED;  //4
+  if (g_is_drifting) {
+    travel_speed = 1;
+  }
   if (g_move_direction == MOVINGx_NW) {
-    sceneLeft(travel_speed);
+    sceneLeft(travel_speed, DIAGONAL_DAMPER);
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_N) {
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_NE) {
 
-    sceneRight(travel_speed);
+    sceneRight(travel_speed, DIAGONAL_DAMPER);
     sceneBackward(travel_speed);
   } else if (g_move_direction == MOVINGx_E) {
-    sceneRight(travel_speed);
+    sceneRight(travel_speed, DIAGONAL_NOT);
   } else if (g_move_direction == MOVINGx_SE) {
 
-    sceneRight(travel_speed);
+    sceneRight(travel_speed, DIAGONAL_DAMPER);
     sceneForward(travel_speed);
   } else if (g_move_direction == MOVINGx_S) {
     sceneForward(travel_speed);
   } else if (g_move_direction == MOVINGx_SW) {
     sceneForward(travel_speed);
-    sceneLeft(travel_speed);
+    sceneLeft(travel_speed, DIAGONAL_DAMPER);
   } else if (g_move_direction == MOVINGx_W) {
-    sceneLeft(travel_speed);
+    sceneLeft(travel_speed, DIAGONAL_NOT);
   } else {
     startDrift();
 
@@ -346,4 +295,52 @@ function animateScene(enemy_list, pylon_list, hole_list) {
   enemy_list = enemyHitHoles(enemy_list, hole_list);
 
   return [enemy_list, pylon_list];
+}
+
+
+
+
+function sceneStop() {
+  moveSky('stop');
+}
+
+
+
+function randomDirection() {
+  let rand_dir = Math.floor(Math.random() * 4);
+
+  if (rand_dir == 0) {
+    rand_direction = MOVINGx_NW;
+  } else if (rand_dir == 1) {
+    rand_direction = MOVINGx_NE;
+  } else if (rand_dir == 2) {
+    rand_direction = MOVINGx_SE;
+  } else {
+    rand_direction = MOVINGx_SW;
+  }
+  return rand_direction;
+}
+
+
+function startDrift() {
+  if (isDebugging()) {
+    return;
+  }
+  // if (typeof DBG_DRIFTING == 'string') {
+  //   return;
+  // }
+
+  if (g_is_drifting) {
+    let rand_dir = Math.floor(Math.random() * 1024);
+    if (rand_dir == 1) {
+      g_drift_direction = randomDirection();
+    }
+  } else {
+    g_drift_countdown--;
+    if (g_drift_countdown < 0) {
+      g_drift_direction = randomDirection();   // random
+      g_is_drifting = true;
+      g_drift_countdown = DRIFT_CYCLES;       //177;
+    }
+  }
 }

@@ -39,6 +39,8 @@ function initPlayer(x, y, start_drift_dir) {
   player_init_x = x;
   player_init_y = y;
   g_drift_direction = start_drift_dir;
+  g_player = resetPlayer();
+  return g_player;
 }
 
 function resetPlayer() {

@@ -114,9 +114,9 @@ function enemiesHitPylons(the_enemies, the_pylons) {
       a_pylon = the_pylons[pylon_index];
       has_collided = hasCollided(an_enemy, a_pylon, COLLISION_SIZES);
       if (has_collided) {
-        a_pylon.m_hit_flash = 23;
+        a_pylon.m_hit_flash = HIT_FLASH_PYLON;  // 23;
         an_enemy.m_state = ENEMY_1_BOUNCE;
-        an_enemy.m_hit_flash = 10;
+        an_enemy.m_hit_flash = HIT_FLASH_ENEMY;
         an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
       }
       changed_pylons[pylon_index] = a_pylon;

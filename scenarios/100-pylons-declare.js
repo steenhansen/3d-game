@@ -10,17 +10,22 @@ const HIT_FLASH_PYLON = 23;
 // silver-grad  Silver rgb(160,160,160)
 
 
-function rowPylons(y_coord) {
+function rowPylons(y_coord, row_name) {
   pylon_row = [];
   column_count = 0;
-  row_name = "A";
+  // row_name = "A";
   last_one = SCENE_WIDTH - 500;
   for (let x = 0; x < last_one; x += 500) {
+    if (x == 0) {
+      the_colors = ["red", "cyan"];
+    } else {
+      the_colors = WHITE_BLACK_GRADIENT;
+    }
     let a_pylon = {
       s_isa: "is-pylon",
       s_pylon_name: `pylon-${row_name}-${column_count}`,
       m_x: x, m_y: y_coord,
-      s_pylon_colors: ["red", "cyan"],
+      s_pylon_colors: the_colors,
       m_side_twirl: 0,
       m_front_twirl: 200,
       s_outline: false,
@@ -33,6 +38,20 @@ function rowPylons(y_coord) {
   return pylon_row;
 }
 
+function phalanxPylons() {
+  row_0 = rowPylons(0, "A");
+  row_100 = rowPylons(100, "B");
+  row_200 = rowPylons(200, "C");
+  row_300 = rowPylons(300, "D");
+  row_400 = rowPylons(400, "E");
+  row_500 = rowPylons(500, "F");
+  pylon_phalanx = [row_0, row_100, row_200, row_300, row_400, row_500].flat();
+  //s_moves_x: [ZERO_10].flat(),
+  return pylon_phalanx;
+}
+
+pylon_phalanx = phalanxPylons();
+console.log("pylon_phalanx", pylon_phalanx);
 
 
 pylon_1a = {

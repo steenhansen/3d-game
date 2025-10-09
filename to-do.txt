@@ -1,17 +1,27 @@
+rich hickey, m_dead is there only if dead, never there as false
+
+if ("m_dead" in an_enemy)
+
+if ("m_in_hole" in the_player)
+
+if ("s_outline_color" in the_pylon) then draw it
 
 
 
-speed sense  square-root 2 =1.414
+
+have outline get smaller with distance
 
 
-
-
-
+/////////////////////////////////////////////////////////////////////
 
 phrajisle
 FRAGILE
 
 
+
+
+
+///////////////////////////////////////////////////////////////////
 
  g_player = resetPlayer(); // MAKE FUNCTION
 

@@ -3,14 +3,10 @@
 
 
 
-<!--
-
-FOR TESTS IN DIRECTORIES
-
 <base href="../">
 
 
--->
+
 
 
 
@@ -242,22 +238,23 @@ FOR TESTS IN DIRECTORIES
 
 
 
-<script type="text/javascript" src="pylons/pylons-declare.js"></script>
+<script type="text/javascript" src="scenarios/100-pylons-declare.js"></script>
 <script type="text/javascript" src="holes/holes-declare.js"></script>
 <script type="text/javascript" src="player/player-declare.js"></script>
-<!-- <script type="text/javascript" src="enemy/enemy-declare_A_video.js"></script> -->
 <script type="text/javascript" src="enemy/enemy-declare.js"></script>
 
 
 <script>
 
 
-  var g_player = initPlayer(2000, 612, MOVINGx_E);
+  var g_player = initPlayer(7816, 700, MOVINGx_E);
   //    var g_player = initPlayer(1000, 412, MOVINGx_E);
 
-  the_pylons = [pylon_1a, pylon_1b, pylon_2b, pylon_2a, pylon_3a, pylon_3b];
-  the_enemies = [enemy_1, enemy_2];
-  the_holes = [hole_1, hole_2, hole_3, hole_4];
+  the_pylons = pylon_phalanx;
+
+  // the_pylons = [pylon_1a, pylon_1b, pylon_2b, pylon_2a, pylon_3a, pylon_3b];
+  the_enemies = [];
+  the_holes = [];
 
   g_loop_state = LOOP_0_START;
 

@@ -239,9 +239,10 @@ function loopDone() {
 }
 
 function initGame() {
-  debugInit();
+
   gameInit();
   sceneInit();
+  debugInit();
 }
 
 

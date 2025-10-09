@@ -1,9 +1,9 @@
-function playerRight(travel_speed) {
-  g_player.m_x = rightOnBoard(g_player.m_x, travel_speed * 3);
+function playerRight(travel_speed, diagonal_weight) {
+  g_player.m_x = rightOnBoard(g_player.m_x, travel_speed * diagonal_weight);
 }
 
-function playerLeft(travel_speed) {
-  g_player.m_x = leftOnBoard(g_player.m_x, travel_speed * 3);
+function playerLeft(travel_speed, diagonal_weight) {
+  g_player.m_x = leftOnBoard(g_player.m_x, travel_speed * diagonal_weight);
 }
 
 function playerForward(travel_speed) {

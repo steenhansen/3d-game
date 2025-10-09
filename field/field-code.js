@@ -42,26 +42,22 @@ function printAnyBoundBreaks_dbg(index_arr) {
 
 
 
-function fieldRight(travel_speed) {
+function fieldRight(travel_speed, diagonal_weight) {
   for (i = 0; i < travel_speed; i++) {
-    incrementRight();
-    incrementRight();
-    incrementRight();
+    for (j = 0; j < diagonal_weight; j++) {
+      incrementRight();
+    }
   }
 }
 
-function fieldLeft(travel_speed) {
+function fieldLeft(travel_speed, diagonal_weight) {
   for (i = 0; i < travel_speed; i++) {
-    incrementLeft();
-    incrementLeft();
-    incrementLeft();
+    for (j = 0; j < diagonal_weight; j++) {
+      incrementLeft();
+    }
   }
 }
 
-
-/*
-  aug-2 copy(0)
-*/
 
 
 

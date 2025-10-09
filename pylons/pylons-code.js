@@ -25,7 +25,7 @@ function twirlSides(a_pylon) {
 }
 
 
-function pylonSidePanel(a_pylon, pylon_vlines, gradient_side, side_color, do_twirl) {
+function pylonSidePanel(a_pylon, pylon_vlines, gradient_side, side_color, do_twirl, difference_yy) {
   let [_left_vline, middle_vline, right_vline] = pylon_vlines;
   let [right_front_top, right_front_bot] = middle_vline;
   let [back_right_top, back_right_bot] = right_vline;
@@ -35,48 +35,46 @@ function pylonSidePanel(a_pylon, pylon_vlines, gradient_side, side_color, do_twi
 
   do_flash = a_pylon.do_flash;
 
-
-  let side_pylon = pylonPolygon(right_top_bot, gradient_side, side_s_pylon_name, do_outlines, side_color, do_flash, do_twirl);
+  // qbert 1
+  let side_pylon = pylonPolygon(right_top_bot, gradient_side, side_s_pylon_name, do_outlines, side_color, do_flash, do_twirl, difference_yy);
   return side_pylon;
 }
 
 function pylonOnLeft(a_pylon, x_center_offset, pylon_player_ys, head_on_view, side_color, do_twirl) {
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_yy = player_y - pylon_y;
+  } else {
+    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    difference_yy = player_y + dist_pylon_to_zero;
+  }
   if (head_on_view) {
-    [pylon_y, player_y] = pylon_player_ys;
-    if (player_y > pylon_y) {
-      difference_yy = player_y - pylon_y;
-    } else {
-      dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
-      difference_yy = player_y + dist_pylon_to_zero;
-    }
-
     return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
     left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys, PYLON_PIXEL_DEPTH);
     gradient_left = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
-    side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_left, side_color, do_twirl);
+    // qbert 2
+    side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_left, side_color, do_twirl, difference_yy);
     return [left_mid_right_vlines, side_pylon];
   }
 }
 
 function pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view, side_color, do_twirl) {
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_yy = player_y - pylon_y;
+  } else {
+    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    difference_yy = player_y + dist_pylon_to_zero;
+  }
   if (head_on_view) {
-
-    [pylon_y, player_y] = pylon_player_ys;
-    if (player_y > pylon_y) {
-      difference_yy = player_y - pylon_y;
-    } else {
-      dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
-      difference_yy = player_y + dist_pylon_to_zero;
-    }
-
-
     return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
     left_mid_right_vlines = objectRightSide(x_center_offset, pylon_player_ys, PYLON_PIXEL_DEPTH);
 
     gradient_right = twirledGradient(a_pylon.m_side_twirl, a_pylon.s_pylon_colors);
-    side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_right, side_color, do_twirl);
+    // qbert 2
+    side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, gradient_right, side_color, do_twirl, difference_yy);
     return [left_mid_right_vlines, side_pylon];
   }
 }
@@ -106,10 +104,12 @@ function pylonDraw(a_pylon, g_player) {
   pylon_player_ys = [a_pylon.m_y, g_player.m_y];
   do_twirl = a_pylon.m_twirl_on;
   if (pylon_relative == LEFT_OF_PLAYER) {
+    // qbert 4
     [left_mid_right_vlines, side_pylon] = pylonOnLeft(a_pylon, x_center_offset, pylon_player_ys, head_on_view, side_color, do_twirl);
     left_mid_right_vlines[0][1][0][0] += 1;    // for some reason
     left_mid_right_vlines[0][1][1][0] += 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   } else {
+    // qbert 3
     [left_mid_right_vlines, side_pylon] = pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view, side_color, do_twirl);
     left_mid_right_vlines[0][1][0][0] -= 1;    // for some reason
     left_mid_right_vlines[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
@@ -120,8 +120,16 @@ function pylonDraw(a_pylon, g_player) {
 
   let do_outlines = a_pylon.s_outline;
   do_flash = a_pylon.do_flash;
-
-  front_pylon = pylonFront(left_mid_right_vlines, gradient_front, pylon_id, do_outlines, front_color, do_flash, do_twirl);
+  // qbert 2
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_yy = player_y - pylon_y;
+  } else {
+    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    difference_yy = player_y + dist_pylon_to_zero;
+  }
+  //
+  front_pylon = pylonFront(left_mid_right_vlines, gradient_front, pylon_id, do_outlines, front_color, do_flash, do_twirl, difference_yy);
   pylon_svg = pylonToSvg(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
 }

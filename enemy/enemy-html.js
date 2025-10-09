@@ -45,26 +45,24 @@ function makeBall(front_or_all, ball_color, is_dead) {
 
 
 const DEAD_LOOP = "16s";
-const LIVE_LOOP = "1s";
+const LIVE_LOOP = "4s";
 
 
-function rotatingStar(star_color, is_dead) {
+function rotatingStar(star_color, is_dead, enemy_number) {
+  //  console.log("DDDDDDDD rotatingStar");
   ani_duration = aniDuration(is_dead);
   rotate_from = 0;
   rotate_to = 359;
-  if (is_dead) {
-    fill_opacity = "0.5";
-    //   console.log("DDDDDDDD");
-  } else {
-    fill_opacity = "1";
-  }
+  hit_opacity = '--enemy-star-opacity-' + enemy_number;
+  hit_edge_prop = '--enemy-star-edge-width-' + enemy_number;
   // ani_duration = "4s";
   rotating_star = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
     <g id="star-spin">
       <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512"
         dur="${ani_duration}" repeatCount="indefinite" />
-      <path fill="${star_color}" fill-opacity="${fill_opacity}" stroke="#000" stroke-width="0"
+      <path fill="${star_color}" fill-opacity="var(${hit_opacity})" 
+      stroke="white" stroke-width="var(${hit_edge_prop})"  stroke-opacity="0.4" 
         d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z" />
     </g>
     <circle cx="128" cy="128" id="sun:circle" r="2" stroke="${star_color}" stroke-width="0.0" fill-opacity="0" />
@@ -82,9 +80,11 @@ function aniDuration(is_dead) {
   return ani_duration;
 }
 
-function makeEnemy(the_enemy) {
-  console.log("make enemy", the_enemy);
 
+// createEnemy to install done once
+function makeEnemy(the_enemy) {
+  // console.log("make DDD enemy", the_enemy);
+  let enemy_number = the_enemy.s_number;
   // this is done once, so m_dead is checked at the start of the game, no use here at init
   is_dead = the_enemy.m_dead;
   enemy_id = the_enemy.s_id;
@@ -92,7 +92,7 @@ function makeEnemy(the_enemy) {
   ball_color = the_enemy.m_colors[1];
 
 
-  rotating_star = rotatingStar(star_color, is_dead);
+  rotating_star = rotatingStar(star_color, is_dead, enemy_number);
 
 
   ball_all = makeBall('all', ball_color, is_dead);

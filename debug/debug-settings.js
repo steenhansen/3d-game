@@ -101,6 +101,68 @@ function debugPrint(msg_str, x_pos, y_pos) {
 }
 
 
+
+function debugSwipeUp(start_xy, end_xy) {
+  dbg_ctx.beginPath();
+  dbg_ctx.fillStyle = "black";
+  dbg_ctx.lineWidth = 5;
+  //extra = (1024 - 896) / 2;
+
+  if (screen_width > screen_height) {
+    extra_w = (1024 - screen_width) / 2;
+  } else {
+    extra_w = (1024 - screen_width) / 2;
+  }
+
+
+
+  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
+
+  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] + 10);
+
+  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] + 10);
+
+
+  dbg_ctx.stroke();
+}
+
+function debugSwipeDown(start_xy, end_xy) {
+  //g_touch_id_start = 'debugSwipeDown79823432';
+
+  screen_width = window.screen.width;
+  screen_height = window.screen.height;
+
+  dbg_ctx.beginPath();
+  dbg_ctx.fillStyle = "black";
+  dbg_ctx.lineWidth = 5;
+
+  if (screen_width > screen_height) {
+    extra_w = (1024 - screen_width) / 2;
+  } else {
+    extra_w = (1024 - screen_width) / 2;
+  }
+
+
+
+  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
+
+  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] - 10);
+
+  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] - 10);
+
+
+  dbg_ctx.stroke();
+}
+
+
+
+
 function debugReportFrameTime() {
   // if (dbg_report) {
   const scene_width = getCssVar("--scene-width");
@@ -177,62 +239,4 @@ function debugReportFrameTime() {
   }
   //}
 
-}
-
-function debugSwipeUp(start_xy, end_xy) {
-  dbg_ctx.beginPath();
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.lineWidth = 5;
-  //extra = (1024 - 896) / 2;
-
-  if (screen_width > screen_height) {
-    extra_w = (1024 - screen_width) / 2;
-  } else {
-    extra_w = (1024 - screen_width) / 2;
-  }
-
-
-
-  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
-
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] + 10);
-
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] + 10);
-
-
-  dbg_ctx.stroke();
-}
-
-function debugSwipeDown(start_xy, end_xy) {
-  //g_touch_id_start = 'debugSwipeDown79823432';
-
-  screen_width = window.screen.width;
-  screen_height = window.screen.height;
-
-  dbg_ctx.beginPath();
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.lineWidth = 5;
-
-  if (screen_width > screen_height) {
-    extra_w = (1024 - screen_width) / 2;
-  } else {
-    extra_w = (1024 - screen_width) / 2;
-  }
-
-
-
-  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
-
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] - 10);
-
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] - 10);
-
-
-  dbg_ctx.stroke();
 }

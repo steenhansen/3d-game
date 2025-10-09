@@ -1,7 +1,14 @@
-/* :root  */
+ :root {
+
+   --enemy-star-edge-width-1: 0;
+   --enemy-star-opacity-1: 1;
 
 
-/* #enemy-1-scaledX {
+
+ }
+
+
+ /* #enemy-1-scaledX {
   transform-origin: center;
 }
 
@@ -9,19 +16,19 @@
   transform-origin: center;
 } */
 
-.ellipse-path {
-  fill: none;
-  stroke: grey;
-  stroke-width: 0
-}
+ .ellipse-path {
+   fill: none;
+   stroke: grey;
+   stroke-width: 0
+ }
 
 
-/* this should be my shot */
-#planets {
-  position: absolute;
-  left: var(--my-enemy-x);
-  top: var(--my-enemy-y);
-  z-index: var(--my-enemy-z);
-  height: var(--my-enemy-height);
-  width: var(--my-enemy-width);
-}
+ /* this should be my shot */
+ #planets {
+   position: absolute;
+   left: var(--my-enemy-x);
+   top: var(--my-enemy-y);
+   z-index: var(--my-enemy-z);
+   height: var(--my-enemy-height);
+   width: var(--my-enemy-width);
+ }
