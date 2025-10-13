@@ -15,10 +15,7 @@ function handleStartMobile(evt) {
     //  hideDiv('start-mobile');
     the_scene.requestFullscreen();
     g_touch_id_start = 'start full screen click 779823432';
-    // g_loop_state = LOOP_1_BEGIN;
 
-
-    //startItUp(FAST_SEGWAYS);
   } catch {
     //
   }
@@ -268,7 +265,7 @@ function animateScene(enemy_list, pylon_list, hole_list) {
     return LOOP_7_PLAY_NORMAL;
   }
   hitCracks(g_player.m_num_cracks);
-  doBounce(g_player);
+  doRecoil(g_player);
   sceneMove();
   plyon_list = drawPylons(pylon_list);
   g_missile = missileAdvance(g_missile, g_player);

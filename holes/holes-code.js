@@ -1,10 +1,10 @@
 var hole_draw_count = 0;
 
-function holeSet(a_pylon) {
+function holeSet(a_hole) {
   // if (hole_draw_count == 0) {
-  svg_pylon = holeDraw(a_pylon, g_player);
+  svg_pylon = holeDraw(a_hole, g_player);
 
-  pylon_id = a_pylon.s_pylon_name;
+  pylon_id = a_hole.s_pylon_name;
 
   targetDiv = document.getElementById(pylon_id);
   if (svg_pylon == null) {
@@ -44,7 +44,7 @@ function holeOnMiddle(x_center_offset, pylon_player_ys) {
   if (player_y > pylon_y) {
     difference_yy = player_y - pylon_y;
   } else {
-    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    dist_pylon_to_zero = g_checkerboard_depth - pylon_y;
     difference_yy = player_y + dist_pylon_to_zero;
   }
   let [left_front_bot, right_front_bot, _back_right_bot, back_left_bot] = panels3Middle(x_center_offset, difference_yy, HOLE_PIXEL_DEPTH);

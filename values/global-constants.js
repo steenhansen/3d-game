@@ -1,0 +1,46 @@
+
+let COLLISION_SIZES;
+
+const INIT_Y_FLIP_COUNT = 4;
+
+const DRIFT_CYCLES = 256 * 3;       //1024;
+
+const DEVICE_UNKNOWN = 0;
+const DEVICE_DESKTOP = 1;
+const DEVICE_MOBILE = 2;
+
+ZERO_10 = [+0, +0, +0, +0, +0, +0, +0, +0, +0, +0];
+LEFT_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+RGHT_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+AWAY_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+NEAR_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+
+LEFT_100 = [LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10, LEFT_10].flat();
+
+
+
+RGHT_100 = [RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10].flat();
+
+
+
+
+AWAY_100 = [AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10].flat();
+
+
+NEAR_100 = [NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10, NEAR_10].flat();
+
+
+
+ZERO_100 = [ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10].flat();
+
+
+
+
+AWAY_500 = [AWAY_100, AWAY_100, AWAY_100, AWAY_100, AWAY_100].flat();
+
+
+NEAR_500 = [NEAR_100, NEAR_100, NEAR_100, NEAR_100, NEAR_100].flat();
+
+
+
+ZERO_500 = [ZERO_100, ZERO_100, ZERO_100, ZERO_100, ZERO_100].flat();

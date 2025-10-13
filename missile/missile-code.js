@@ -11,14 +11,20 @@ function missileAdvance(the_missile, g_player) {
   if (typeof DBG_MISSILE_ADVANCE == 'string') {
     return the_missile;
   }
-  if (the_missile.m_expired) {
+
+  const missile_flying = 't_lifetime' in g_missile;
+
+  if (!missile_flying) {
     return the_missile;
-  }
-  if (the_missile.m_lifetime > 0) {
-    the_missile.m_lifetime--;
   } else {
-    the_missile.m_expired = true;
+
+    the_missile.t_lifetime--;
+    if (the_missile.t_lifetime == 0) {
+      delete the_missile.t_lifetime;
+    }
+
   }
+
   let { m_x_dir, m_y_dir } = the_missile;
   if (m_x_dir < 0) {
     the_missile.m_x = leftOnBoard(the_missile.m_x, 12); // 4 * 3);
@@ -32,16 +38,13 @@ function missileAdvance(the_missile, g_player) {
 
 
 function launchMissile(the_missile) {
-
   let { m_x, m_y } = g_player;
   the_missile.m_x = m_x;
   the_missile.m_y = m_y;
   the_missile.m_x_dir = 0;
   the_missile.m_y_dir = -1;
-  the_missile.m_lifetime = MISSILE_LIFETIME;
-  the_missile.m_expired = false;
+  the_missile.t_lifetime = MISSILE_LIFETIME;
   the_missile.m_caromed = false;
-  //console.log("launchMissile ***********", the_missile)
   return the_missile;
 }
 
@@ -52,16 +55,20 @@ function launchMissile(the_missile) {
 
 
 function missileSet(the_missile, g_player) {
-  if (the_missile.m_expired) {
-    the_missile.m_x_dir = 0;
-    the_missile.m_y_dir = -1;
-    setFillNone();
-  } else {
+
+  const missile_flying = 't_lifetime' in g_missile;
+  if (missile_flying) {
     if (typeof DBG_FREEZE_MISSILE != 'string') {
       getRandoms(the_missile);
     }
     missileDraw(the_missile, g_player);
+  } else {
+    the_missile.m_x_dir = 0;
+    the_missile.m_y_dir = -1;
+    setFillNone();
   }
+
+
 }
 
 
@@ -283,6 +290,9 @@ function missilePosition(real_id, z_index, the_stats) {
   missile_div = document.getElementById(real_id + '-div');
   missile_div.style.zIndex = z_index;
   missile_x_y = document.getElementById(real_id + '-x-y');
+  // console.log("missilePosition", missile_x_y, center_x);
+
+
   missile_x_y.setAttribute("x", center_x + 256 + 128);           // get shot centered horizontally
   //missile_x_y.setAttribute("x", center_x);
   //  if enemy then - ENEMY_TO_HORIZON_LIFT
@@ -317,7 +327,7 @@ function missileDraw(the_sprite, g_player) {
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
-  //console.log("sprite THE_STATS", real_id, the_stats);
+
 
   missilePosition(real_id, the_z_index, the_stats);
 }

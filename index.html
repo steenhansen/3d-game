@@ -1,268 +1,50 @@
 <!DOCTYPE html>
 
-
-
-
-<!--
-
-FOR TESTS IN DIRECTORIES
-
-<base href="../">
-
-
--->
-
-
-
-
-
-
-
-
-
-
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
-<div id="the-css">
-  <link rel="stylesheet" href="device/device-screens.css" />
 
+<style>
+  .begin-vars {
+    --desktop-begin: inline;
+    --mobile-begin: none;
+  }
 
-  <link rel="stylesheet" href="values/variables.css" />
-  <link rel="stylesheet" href="values/z-indexes.css" />
-  <link rel=" stylesheet" href="player/player.css" />
-  <link rel=" stylesheet" href="scene/layout.css" />
-  <link rel="stylesheet" href="field/field.css" />
-  <link rel="stylesheet" href="pylons/pylons.css" />
-  <link rel="stylesheet" href="holes/holes.css" />
-  <link rel="stylesheet" href="land/land.css" />
-  <link rel="stylesheet" href="enemy/enemy.css" />
-  <link rel="stylesheet" href="missile/missile.css" />
-  <link rel="stylesheet" href="sky/sky.css" />
-  <link rel="stylesheet" href="missile/missile-vars.css" />
-  <link rel="stylesheet" href="input/arrows.css" />
-  <link rel="stylesheet" href="input/boxes.css" />
-  <link rel="stylesheet" href="input/desktop-directions.css" />
-</div>
-
-<div id="js-constants">
-  <script type="text/javascript" src="values/const-sprites.js"></script>
-  <script type="text/javascript" src="values/debugging.js"></script>
-  <script type="text/javascript" src="values/states.js"></script>
-
-  <script type="text/javascript" src="values/major-constants.js"></script>
-  <script type="text/javascript" src="values/minor-constants.js"></script>
-
-
-  <script type="text/javascript" src="holes/holes-code.js"></script>
-
-
-  <script type="text/javascript" src="data/colors.js"></script>
-  <script type="text/javascript" src="field/field-bounds.js"></script>
-  <script type="text/javascript" src="field/field-invert.js"></script>
-  <script type="text/javascript" src="field/field-constants.js"></script>
-
-  <script type="text/javascript" src="objects/sprite-sizes.js"></script>
-
-</div>
-
-<div id="the-svgs">
-  <div id='pylons-svg'> </div>
-  <div id='svg-arrows'> </div>
-</div>
-
-<div id="js-before">
-  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+  @media (max-width:1023px) {
+    .begin-vars {
+      --desktop-begin: none;
+      --mobile-begin: inline;
+    }
+  }
 
 
 
-  <script type="text/javascript" src="variables/major-globals.js"></script>
-  <script type="text/javascript" src="variables/minor-globals.js"></script>
-  <script type="text/javascript" src="values/css-vars.js"></script>
-  <script type="text/javascript" src="input/swipe.js"></script>
-  <script type="text/javascript" src="device/orientation.js"></script>
+  #click-to-begin {
+    text-align: center;
+    background: url('video/git-size.webp') no-repeat center;
+    height: 166px;
+  }
 
-  <script type="text/javascript" src="objects/screen-placement.js"></script>
+  #begin-desktop {
+    margin-top: 46px;
+    display: var(--desktop-begin);
+  }
 
-
-
-  <script type="text/javascript" src="player/player-code.js"></script>
-  <script type="text/javascript" src="objects/sprites-stuff.js"></script>
-  <script type="text/javascript" src="objects/sprite-lines.js"></script>
-  <script type="text/javascript" src="collisions/collisions.js"></script>
-  <script type="text/javascript" src="sky/sky-code.js"></script>
-  <script type="text/javascript" src="input/desktop-keys.js"></script>
-  <script type="text/javascript" src="scene/vanish-point.js"></script>
-
-  <script type="text/javascript" src="field/field-code.js"></script>
-  <script type="text/javascript" src="field/field-depth.js"></script>
-  <script type="text/javascript" src="field/field-left.js"></script>
-  <script type="text/javascript" src="field/field-right.js"></script>
-
-
-
-  <script type="text/javascript" src="pylons/pylons-svg.js"></script>
-
-  <script type="text/javascript" src="pylons/pylons-code.js"></script>
-
-  <script type="text/javascript" src="collisions/player-recoil.js"></script>
-  <script type="text/javascript" src="scene/scene_3d.js"></script>
-
-  <script rel="text/javascript" src="field/field-test.js"></script>
-
-  <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
-
-</div>
+  #begin-mobile {
+    margin-top: 46px;
+    display: var(--mobile-begin);
+  }
+</style>
 
 
 
 <div id='click-to-begin' class="begin-vars">
   <br>
-  <button id="begin-desktop" onclick=" g_loop_state = LOOP_0_DESKTOP_START;" type="button">Begin desktop 3D
+  <button id="begin-desktop" onclick="  window.location.href = 'part-1/part-1.html?g_loop_state=LOOP_0_DESKTOP_START' "
+    type="button">Begin
+    desktop 3D
     game</button>
-  <button id="begin-mobile" onclick=" g_loop_state = LOOP_0_MOBILE_START;  " type="button">Begin mobile 3D
+  <button id="begin-mobile" onclick=" window.location.href = 'part-1/part-1.html?g_loop_state=LOOP_0_MOBILE_START'   "
+    type="button">Begin mobile 3D
     game</button>
   <br>
 </div>
-
-<div id='start-mobile'>
-  <div id='mobile-list'>
-
-  </div>
-</div>
-
-<div id="the-scene">
-
-  <canvas id="the-draw" width=" 1024" height="512"></canvas>
-
-  <div id="touch-boxes"></div>
-  <div id="arrows-html"></div>
-
-  <div id="playing-game">
-    <div id="star-space">
-      <div id="saturn-space"></div>
-    </div>
-    <div id="cracked-screen"></div>
-    <div id="the-sun" class="sun-vars"></div>
-    <div id="sky-aperature" class="sky-vars">
-      <div id="the-sky"> </div>
-      <div id="the-pyramids"></div>
-      <div id="fuzzy-saturn"></div>
-    </div>
-    <div id="enemy-area" class="enemy-vars"></div>
-    <div id="missile-area" class="missile-vars"></div>
-    <div id="checkerboard-field"> </div>
-    <div id='pylon-html'> </div>
-    <div id='hole-html'> </div>
-  </div>
-
-  <div id="the-landing">
-    <div id="land_nw"></div>
-    <div id="land_ne"></div>
-    <div id="land_sw"></div>
-    <div id="land_se"></div>
-  </div>
-
-</div>
-
-
-<div id="desktop-dir" class="direction-vars"></div>
-
-
-
-
-
-
-<div id="js-after">
-
-
-  <script type="text/javascript" src="missile/missile-html.js"></script>
-
-
-
-
-
-  <script type="text/javascript" src="missile/missile-code.js"></script>
-  <script type="text/javascript" src="holes/holes-html.js"></script>
-  <script type="text/javascript" src="pylons/pylons-html.js"></script>
-
-  <script type="text/javascript" src="enemy/enemy-code.js"></script>
-
-  <script type="text/javascript" src="variables/global-objects.js"></script>
-
-  <script type="text/javascript" src="scene/game-loop.js"></script>
-
-
-
-
-
-  <script type="text/javascript" src="field/field-html.js"></script>
-
-
-  <script type="text/javascript" src="land/land-nw-html.js"></script>
-  <script type="text/javascript" src="land/land-ne-html.js"></script>
-  <script type="text/javascript" src="land/land-sw-html.js"></script>
-  <script type="text/javascript" src="land/land-se-html.js"></script>
-  <script type="text/javascript" src="land/land-code.js"></script>
-
-
-  <script type="text/javascript" src="input/arrows-html.js"></script>
-  <script type="text/javascript" src="input/boxes-html.js"></script>
-  <script type="text/javascript" src="input/arrows-svg.js"></script>
-  <script type="text/javascript" src="input/desktop-directions.js"></script>
-  <script type="text/javascript" src="input/arrows-click.js"></script>
-  <script type="text/javascript" src="input/boxes-touch.js"></script>
-
-
-
-
-  <script type="text/javascript" src="debug/debug-vars.js"></script>
-  <script type="text/javascript" src="debug/debug-settings.js"></script>
-
-
-  <script type="text/javascript" src="scene/scene-init.js"></script>
-  <script type="text/javascript" src="missile/missile-declare.js"></script>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" src="pylons/pylons-declare.js"></script>
-<script type="text/javascript" src="holes/holes-declare.js"></script>
-<script type="text/javascript" src="player/player-declare.js"></script>
-<!-- <script type="text/javascript" src="enemy/enemy-declare_A_video.js"></script> -->
-<script type="text/javascript" src="enemy/enemy-declare.js"></script>
-
-
-<script>
-
-
-  var g_player = initPlayer(2000, 612, MOVINGx_E);
-  //    var g_player = initPlayer(1000, 412, MOVINGx_E);
-
-  the_pylons = [pylon_1a, pylon_1b, pylon_2b, pylon_2a, pylon_3a, pylon_3b];
-  the_enemies = [enemy_1, enemy_2];
-  the_holes = [hole_1, hole_2, hole_3, hole_4];
-
-  g_loop_state = LOOP_0_START;
-
-  startItUp(FAST_SEGWAYS);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
-  // if (isDebugging()) {
-  //   g_loop_state = LOOP_2_AFTER_BEGIN;
-  // }
-</script>

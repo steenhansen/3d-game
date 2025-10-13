@@ -30,11 +30,17 @@ document.getElementById('missile-area').innerHTML = `
 let g_missile = {
   s_isa: "is-missile",
   s_id: "the-missile",
-  m_x: MISSILE_START_X, m_y: MISSILE_START_Y,
+  m_x: "x-set-at-fire", m_y: "y-set-at-fire",
   m_random: 0,
+
+
   m_caromed: false,
-  m_lifetime: MISSILE_LIFETIME,
-  m_expired: true,
-  m_x_dir: 0, m_y_dir: -1,   // ALWAYS THIS
+
+
+  //t_lifetime: "t_lifetime-set-at-fire",
+
+
+  m_x_dir: 0,
+  m_y_dir: -1,   // ALWAYS starts THIS way, but might change left or right on a collision
 };
 

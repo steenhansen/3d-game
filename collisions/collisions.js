@@ -1,10 +1,10 @@
 
 /*
 
-  const field_width = SCENE_WIDTH;
+  const field_width = g_checkerboard_width;
   const room_width = TILE_WIDTH;
 
-  const field_depth = SCENE_Y_MAX;
+  const field_depth = g_checkerboard_depth;
   const room_depth = 16;
 
   let COLLISION_SIZES = [field_width, room_width, field_depth, room_depth];

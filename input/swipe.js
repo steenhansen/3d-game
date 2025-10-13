@@ -56,7 +56,7 @@ function touchEnd(evt) {
 
 
 function swipeUpJump() {
-  g_loop_state = LOOP_7_PLAY_JUMP_UP;
+  g_loop_state = LOOP_7_PLAY_A_JUMP_START;
   g_swipe_dir = SWIPE_UP;
 }
 

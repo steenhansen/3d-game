@@ -5,25 +5,22 @@ const MAX_CRACKS = 3;
 
 // 778 can just see first red
 let a_player = {
-  s_isa: "is-player",
-  //m_enemy_collision: false,
 
-  m_recoiling: false,
-  m_recoil_count: 0,
+
+  // t_recoil_count: 0, 
 
   m_x: PLAYER_START_X,
   m_y: PLAYER_START_Y,
-  m_taking_off: false,   //g_taking_off = true;
+
   //x: 49500, m_y: 400 // 778
   //x: 49000, m_y: 400 // 778
-  m_shaking: false,
-  m_screen_askew: 0,
 
-  m_fly_amount: 0,
-  m_jump_amount: 0,
-  m_in_hole: false,
+  // t_screen_askew: 0,  
 
-  m_num_cracks: 0
+  //t_fly_amount: 0,  
+  // t_jump_amount: 23;
+
+  m_num_cracks: 0   // t_num_cracks = 0;
 };
 
 
@@ -35,9 +32,16 @@ let MIDDLE_OF_PLAYER = 'MIDDLE_OF_PLAYER';
 var player_init_x = 0;
 var player_init_y = 0;
 
-function initPlayer(x, y, start_drift_dir) {
+function initPlayer(x, y, start_move_dir, start_drift_dir) {
+  if (x < 0 || x > g_checkerboard_width) {
+    console.log("initPlayer X out of range " + x);
+  }
+  if (y < 0 || y > g_checkerboard_depth) {
+    console.log("initPlayer Y out of range " + y);
+  }
   player_init_x = x;
   player_init_y = y;
+  g_move_direction = start_move_dir;
   g_drift_direction = start_drift_dir;
   g_player = resetPlayer();
   return g_player;

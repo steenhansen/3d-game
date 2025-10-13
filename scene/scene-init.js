@@ -76,6 +76,8 @@ function resizeOrientEvents() {
 
 
 function startItUp(chosen_segway) {
+
+  g_loop_state = LOOP_0_START;
   land_fly_speeds = chosen_segway;  // FAST_SEGWAYS  NORMAL_SEGWAYS  SLOW_SEGWAYS
 
 

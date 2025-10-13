@@ -2,12 +2,12 @@
 
 // should be in player
 function collisionShake(g_player) {
-  if (g_player.m_shaking) {
-    g_player.m_screen_askew--;
-    if (g_player.m_screen_askew == 0) {
-      g_player.m_shaking = false;
+  if ('t_screen_askew' in g_player) {
+    g_player.t_screen_askew--;
+    if (g_player.t_screen_askew == 0) {
+      delete g_player.t_screen_askew;
     }
-    askew_int = parseInt(g_player.m_screen_askew);
+    askew_int = parseInt(g_player.t_screen_askew);
     askew_deg2 = `${askew_int}deg`;
     setCssVar("--collide-shake-angle", askew_deg2);
   }
@@ -16,11 +16,11 @@ function collisionShake(g_player) {
 
 
 
-function doBounce(g_player) {
-  if (g_player.m_recoiling) {
-    g_player.m_recoil_count--;
-    if (g_player.m_recoil_count == 0) {
-      g_player.m_recoiling = false;
+function doRecoil(g_player) {
+  if ('t_recoil_count' in g_player) {
+    g_player.t_recoil_count--;
+    if (g_player.t_recoil_count == 0) {
+      delete g_player.t_recoil_count;
       g_move_direction = MOVINGx_NOT;
     }
   }

@@ -14,18 +14,17 @@ function rowPylons(y_coord) {
   pylon_row = [];
   column_count = 0;
   row_name = "A";
-  last_one = SCENE_WIDTH - 500;
+  last_one = g_checkerboard_width - 500;
   for (let x = 0; x < last_one; x += 500) {
     let a_pylon = {
       s_isa: "is-pylon",
       s_pylon_name: `pylon-${row_name}-${column_count}`,
       m_x: x, m_y: y_coord,
-      s_pylon_colors: ["red", "cyan"],
-      m_side_twirl: 0,
-      m_front_twirl: 200,
-      s_outline: false,
-      m_hit_flash: 0,
-      do_flash: false
+      m_b_side_twirl: 0,
+      m_b_front_twirl: 200,
+      //o_outline_color: false,
+      t_pylon_hit_flash: 0,
+
     };
     column_count++;
     pylon_row.push(a_pylon);
@@ -35,32 +34,44 @@ function rowPylons(y_coord) {
 
 
 
-pylon_1a = {
+pylon_a_1 = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-1a",
-  //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
-  m_x: 100, m_y: 28,
+  s_pylon_name: "pylon-A-1",
 
-  s_pylon_colors: WHITE_BLACK_GRADIENT,
-  m_twirl_on: false,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+
+
+
+  o_outline_color: 'white',
+
+
+  //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
+  m_x: 500, m_y: 28,
+
+  m_a_front_color: 'red',
+  m_a_left_color: 'white',
+  m_a_right_color: 'blue',
+
+  //t_pylon_hit_flash: 0,
+
 };
 
-pylon_1b = {
+pylon_a_2 = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-2a",
-  m_x: 612, m_y: 28,
-  s_pylon_colors: WHITE_BLACK_GRADIENT,
-  m_twirl_on: true,
-  m_side_twirl: 150,
-  m_front_twirl: 350,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+  s_pylon_name: "pylon-A-2",
+
+  m_x: 1500, m_y: 28,
+
+  m_b_front_grad_from: 'Lime',
+  m_b_front_grad_to: 'Fuchsia',
+  m_b_left_grad_from: 'white',
+  m_b_left_grad_to: 'black',
+  m_b_right_grad_from: 'Red',
+  m_b_right_grad_to: 'Yellow',
+  m_b_side_twirl: 150,
+  m_b_front_twirl: 350,
+
+  // t_pylon_hit_flash: 0,
+
 };
 
 
@@ -68,59 +79,51 @@ pylon_1b = {
 
 pylon_2a = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-2b",
+  s_pylon_name: "pylon-B-2",
   m_x: 870, m_y: 124,
-  s_pylon_colors: RED_YELLOW_GRADIENT,
-  m_twirl_on: false,
-  m_side_twirl: 50,
-  m_front_twirl: 250,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+  m_b_side_twirl: 50,
+  m_b_front_twirl: 250,
+  o_outline_color: 'white',
+  t_pylon_hit_flash: 0,
+
 };
 
 
 let pylon_2b = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-3a",
+  s_pylon_name: "pylon-A-3",
   m_x: 1386, m_y: 124,
-  s_pylon_colors: RED_YELLOW_GRADIENT,
-  m_twirl_on: true,
-  m_side_twirl: 0,
-  m_front_twirl: 200,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+  m_b_side_twirl: 0,
+  m_b_front_twirl: 200,
+  o_outline_color: 'white',
+  t_pylon_hit_flash: 0,
+
 };
 
 
 
 pylon_3a = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-3b",
+  s_pylon_name: "pylon-B-3",
   m_x: 1386, m_y: 316,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_twirl_on: false,
-  m_side_twirl: 100,
-  m_front_twirl: 300,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+  m_b_side_twirl: 100,
+  m_b_front_twirl: 300,
+  o_outline_color: 'white',
+  t_pylon_hit_flash: 0,
+
 };
 
 
 
 pylon_3b = {
   s_isa: "is-pylon",
-  s_pylon_name: "pylon-3c",
+  s_pylon_name: "pylon-C-3",
   m_x: 2700, m_y: 316,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_twirl_on: true,
-  m_side_twirl: 188,
-  m_front_twirl: 388,
-  s_outline: true,
-  m_hit_flash: 0,
-  do_flash: false
+  m_b_side_twirl: 188,
+  m_b_front_twirl: 388,
+  o_outline_color: 'white',
+  t_pylon_hit_flash: 0,
+
 };
 
 
@@ -144,104 +147,88 @@ function randomPylon() {
 
 /*
   for no twirlling , below looks good
-  m_side_twirl: 1,aww
-  m_front_twirl: 201,
+  m_b_side_twirl: 1,aww
+  m_b_front_twirl: 201,
 */
 
 pylon_4_1 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
-  m_x: 100, m_y: 100,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_2 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 200, m_y: 200,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_3 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 300, m_y: 300,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_4 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 400, m_y: 400,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_5 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 500, m_y: 500,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_6 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 600, m_y: 600,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_7 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 700, m_y: 700,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 pylon_4_8 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 800, m_y: 600,
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };
 
 
-/*
 
-
-let SCENE_Y_MAX = 768;
-let SCENE_WIDTH = 8192;
-
-*/
 pylon_4_9 = {
   s_isa: "is-pylon",
   s_pylon_name: "a1-pylon",
   m_x: 900, m_y: 600,                          /// must be within 8192 and 768
-  s_pylon_colors: LIME_FUCHSIA_GRADIENT,
-  m_side_twirl: 1,
-  m_front_twirl: 201,
-  s_outline: true
+  m_b_side_twirl: 1,
+  m_b_front_twirl: 201,
+  o_outline_color: 'white'
 };

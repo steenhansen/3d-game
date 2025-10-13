@@ -30,7 +30,7 @@ const STOP_KEYS = ['S', 's', 'Clear', '5'];
 function readKeys(event) {
   const the_key = event.key;
   //console.log("the_key", the_key);
-  if (!g_player.m_recoiling) {
+  if (!('t_recoil_count' in g_player)) {
     g_is_drifting = false;
     if (FLY_KEYS.includes(the_key)) {
       g_taking_off = true;                     /// function !!
@@ -62,7 +62,8 @@ function readKeys(event) {
       stopMoving();
       direction_name = 'pressed-stop';
     } else if (JUMP_KEYS.includes(the_key)) {
-      g_loop_state = LOOP_7_PLAY_JUMP_UP;        /// function !!
+      console.log("JUMP_KEYS the_key", the_key);
+      g_loop_state = LOOP_7_PLAY_A_JUMP_START;        /// function !!
       direction_name = 'pressed-jump';
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = launchMissile(g_missile);           /// function !!

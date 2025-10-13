@@ -35,7 +35,7 @@ function panels3BackRight(x_center_offset, pylon_player_ys, pixel_depth) {
   if (player_y > pylon_y) {
     difference_y = player_y - pylon_y;
   } else {
-    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    dist_pylon_to_zero = g_checkerboard_depth - pylon_y;
     difference_y = player_y + dist_pylon_to_zero;
   }
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);
@@ -59,7 +59,7 @@ function panels3BackLeft(x_center_offset, pylon_player_ys, pixel_depth) {
   if (player_y > pylon_y) {
     difference_y = player_y - pylon_y;
   } else {
-    dist_pylon_to_zero = SCENE_Y_MAX - pylon_y;
+    dist_pylon_to_zero = g_checkerboard_depth - pylon_y;
     difference_y = player_y + dist_pylon_to_zero;
   }
   let [left_front_bot, right_front_bot] = panelBotLeftRight(x_center_offset, difference_y);

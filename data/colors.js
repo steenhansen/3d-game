@@ -20,7 +20,7 @@ COL_SCS = { pylon_left: "silver-grad", pylon_front: "cyan-grad", pylon_right: "s
 
 COL_RGB = { pylon_left: "red-grad", pylon_front: "green-grad", pylon_right: "blue-grad" };
 
-// s_pylon_colors=>col_colors     s_pylon_name=>col_name
+
 COL_RSR = { pylon_left: "red-grad", pylon_front: "silver-grad", pylon_right: "blue-grad" };
 COL_GSG = { pylon_left: "green-grad", pylon_front: "silver-grad", pylon_right: "green-grad" };
 COL_BSB = { pylon_left: "blue-grad", pylon_front: "silver-grad", pylon_right: "blue-grad" };

@@ -1,9 +1,9 @@
-#click-to-begin {
+/* #click-to-begin {
   text-align: center;
   background: url('../video/git-size.webp') no-repeat center;
   height: 166px;
 }
-
+ */
 
 
 #start-mobile {
@@ -95,31 +95,6 @@
   position: absolute;
   opacity: 1;
 }
-
-
-.begin-vars {
-  --desktop-begin: inline;
-  --mobile-begin: none;
-}
-
-@media (max-width:1023px) {
-  .begin-vars {
-    --desktop-begin: none;
-    --mobile-begin: inline;
-  }
-}
-
-#begin-desktop {
-  margin-top: 46px;
-  display: var(--desktop-begin);
-}
-
-#begin-mobile {
-  margin-top: 46px;
-  display: var(--mobile-begin);
-}
-
-
 
 
 

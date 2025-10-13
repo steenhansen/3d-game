@@ -188,7 +188,6 @@ function fixMobile2() {
 function isMobile() {
   const mobile_screen = getCssVar("--mobile-screen");
   if (mobile_screen == "is-mobile") {
-
     return true;
   }
   return false;

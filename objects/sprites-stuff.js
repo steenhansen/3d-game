@@ -7,7 +7,7 @@ function spriteDiffY(a_thing, g_player) {
   if (player_y > thing_y) {
     difference_y = player_y - thing_y;
   } else {
-    dist_pylon_to_zero = SCENE_Y_MAX - thing_y;
+    dist_pylon_to_zero = g_checkerboard_depth - thing_y;
     difference_y = player_y + dist_pylon_to_zero;
   }
   return difference_y;
@@ -58,7 +58,7 @@ function spritePlace(a_thing, g_player) {
   let { m_x: thing_x } = a_thing;
   if (player_x > thing_x) {
     left_x_dist = player_x - thing_x;
-    right_x_dist = SCENE_WIDTH - player_x + thing_x;
+    right_x_dist = g_checkerboard_width - player_x + thing_x;
     if (left_x_dist > right_x_dist) {
       /*    |-------------------------|
             t0                    p1023    */
@@ -72,7 +72,7 @@ function spritePlace(a_thing, g_player) {
     }
   } else {
     left_x_dist = thing_x - player_x;
-    right_x_dist = SCENE_WIDTH - thing_x + player_x;
+    right_x_dist = g_checkerboard_width - thing_x + player_x;
     if (left_x_dist > right_x_dist) {
       /*    |-------------------------|
             p0                    t1023    */

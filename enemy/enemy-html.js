@@ -59,7 +59,7 @@ function rotatingStar(star_color, is_dead, enemy_number) {
   rotating_star = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
     <g id="star-spin">
-      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512"
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512" 
         dur="${ani_duration}" repeatCount="indefinite" />
       <path fill="${star_color}" fill-opacity="var(${hit_opacity})" 
       stroke="white" stroke-width="var(${hit_edge_prop})"  stroke-opacity="0.4" 
@@ -84,12 +84,12 @@ function aniDuration(is_dead) {
 // createEnemy to install done once
 function makeEnemy(the_enemy) {
   // console.log("make DDD enemy", the_enemy);
-  let enemy_number = the_enemy.s_number;
+  let enemy_number = the_enemy.s_enemy_number;
   // this is done once, so m_dead is checked at the start of the game, no use here at init
   is_dead = the_enemy.m_dead;
   enemy_id = the_enemy.s_id;
-  star_color = the_enemy.m_colors[0];
-  ball_color = the_enemy.m_colors[1];
+  star_color = the_enemy.s_colors[0];
+  ball_color = the_enemy.s_colors[1];
 
 
   rotating_star = rotatingStar(star_color, is_dead, enemy_number);
@@ -99,7 +99,7 @@ function makeEnemy(the_enemy) {
   ball_front = makeBall('front', ball_color, is_dead);
 
 
-  the_y = 128 - the_enemy.m_hover_up; // always overwritten
+  the_y = 128 - the_enemy.t_hover_up; // always overwritten
 
   sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;
   the_y = 28;

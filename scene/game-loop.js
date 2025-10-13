@@ -9,12 +9,17 @@ function loopDesktopStart() {
 }
 
 function loopMobileStart() {
-  hideDiv('click-to-begin');
+  // hideDiv('click-to-begin');
   unHideDiv('start-mobile');
   fixMobile();
 }
 
 function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
+
+
+
+
+
   initGame();
   [land_speed, elevator_speed, fly_speed] = land_fly_speeds;
   g_enemy_list = the_enemies;
@@ -54,9 +59,14 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlayHoleLeave(g_player, g_enemy_list, g_pylon_list);
 
 
-    } else if (g_loop_state == LOOP_7_PLAY_JUMP_UP) {
+    } else if (g_loop_state == LOOP_7_PLAY_A_JUMP_START) {
+      [g_player, g_enemy_list, g_pylon_list] = loopPlayJumpStart(g_player, g_enemy_list, g_pylon_list);
+
+
+
+    } else if (g_loop_state == LOOP_7_PLAY_B_JUMP_UP) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlayJumpUp(g_player, g_enemy_list, g_pylon_list);
-    } else if (g_loop_state == LOOP_7_PLAY_JUMP_DOWN) {
+    } else if (g_loop_state == LOOP_7_PLAY_C_JUMP_DOWN) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlayJumpDown(g_player, g_enemy_list, g_pylon_list);
 
 
@@ -66,7 +76,7 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
       loopAfterPlay();
     } else if (g_loop_state == LOOP_9_FLY) {
       [g_player, g_enemy_list, g_pylon_list] = loopFly(g_player, fly_speed, g_enemy_list, g_pylon_list);
-
+      console.log("LOOP_9_FLY");
     } else if (g_loop_state == LOOP_10_DONE) {
       dbg_report = false;
       loopDone();
@@ -187,15 +197,18 @@ function loopPlayHoleLeave(g_player, enemy_list, g_pylon_list) {
 }
 
 
+function loopPlayJumpStart(g_player, enemy_list, g_pylon_list) {
+  g_player.t_jump_amount = 0;
+  g_loop_state = LOOP_7_PLAY_B_JUMP_UP;
+  return loopPlayJumpUp(g_player, enemy_list, g_pylon_list);
+}
+
 
 
 function loopPlayJumpUp(g_player, enemy_list, g_pylon_list) {
   [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
-
   [g_player, new_state] = animateJumpUp(g_player);
   g_loop_state = new_state;
-
-
   collisionShake(g_player);
   return [g_player, enemy_list, pylon_list];
 }
@@ -204,11 +217,8 @@ function loopPlayJumpUp(g_player, enemy_list, g_pylon_list) {
 
 function loopPlayJumpDown(g_player, enemy_list, g_pylon_list) {
   [enemy_list, pylon_list] = animateScene(enemy_list, g_pylon_list, g_hole_list);
-
   [g_player, new_state] = animateJumpDown(g_player);
   g_loop_state = new_state;
-
-
   collisionShake(g_player);
   return [g_player, enemy_list, pylon_list];
 }
@@ -227,15 +237,18 @@ function loopPlayJumpDown(g_player, enemy_list, g_pylon_list) {
 function loopAfterPlay() {
   g_move_direction = MOVINGx_N;
   g_loop_state = LOOP_9_FLY;
+  g_player.t_fly_amount = 0;
 }
 function loopDone() {
   g_number_lands++;
   resetSections();
   g_loop_state = LOOP_0_START;
+  console.log("loopDone");
   sceneInit();
   if (document.fullscreenElement != null) {
     document.exitFullscreen();
   }
+  window.location.href = 'index.html';   // make a file for all these jumps  jump-table.js
 }
 
 function initGame() {

@@ -27,15 +27,15 @@ function playerBackward(travel_speed) {
 function backwardOnBoard(y_pos, backward_steps) {
   y_pos -= backward_steps;
   if (y_pos < SCENE_Y_MIN) {
-    y_pos += SCENE_Y_MAX;
+    y_pos += g_checkerboard_depth;
   }
   return y_pos;
 }
 
 function forwardOnBoard(y_pos, forward_steps) {
   y_pos += forward_steps;
-  if (y_pos > SCENE_Y_MAX) {
-    y_pos -= SCENE_Y_MAX;
+  if (y_pos > g_checkerboard_depth) {
+    y_pos -= g_checkerboard_depth;
   }
   return y_pos;
 }
@@ -50,15 +50,15 @@ function forwardOnBoard(y_pos, forward_steps) {
 function leftOnBoard(x_pos, left_steps) {
   x_pos -= left_steps;
   if (x_pos < SCENE_X_MIN) {
-    x_pos += SCENE_X_MAX;
+    x_pos += g_checkerboard_width;         //SCENE_X_MAX;
   }
   return x_pos;
 }
 
 function rightOnBoard(x_pos, right_steps) {
   x_pos += right_steps;
-  if (x_pos > SCENE_X_MAX) {
-    x_pos -= SCENE_X_MAX;
+  if (x_pos > g_checkerboard_width) {    //} SCENE_X_MAX) {
+    x_pos -= g_checkerboard_width;             //SCENE_X_MAX;
   }
   return x_pos;
 }

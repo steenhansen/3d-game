@@ -3,9 +3,7 @@
 
 
 
-
 <base href="../">
-
 
 
 
@@ -20,17 +18,16 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
 <div id="the-css">
-
-
   <link rel="stylesheet" href="device/device-screens.css" />
 
 
   <link rel="stylesheet" href="values/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
-
+  <link rel=" stylesheet" href="player/player.css" />
   <link rel=" stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
+  <link rel="stylesheet" href="holes/holes.css" />
   <link rel="stylesheet" href="land/land.css" />
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
@@ -42,15 +39,20 @@
 </div>
 
 <div id="js-constants">
+  <script type="text/javascript" src="values/global-constants.js"></script>
+
+
   <script type="text/javascript" src="values/const-sprites.js"></script>
-
-
   <script type="text/javascript" src="values/debugging.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
 
   <script type="text/javascript" src="values/major-constants.js"></script>
-  <script type="text/javascript" src="values/minor-constants.js"></script>
-  <script type="text/javascript" src="pylons/pylons-data.js"></script>
+
+
+
+  <script type="text/javascript" src="holes/holes-code.js"></script>
+
+
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
   <script type="text/javascript" src="field/field-invert.js"></script>
@@ -66,18 +68,23 @@
 </div>
 
 <div id="js-before">
-  <script type="text/javascript" src="values/major-globals.js"></script>
-  <script type="text/javascript" src="values/minor-globals.js"></script>
+  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+
+
+
+  <script type="text/javascript" src="variables/major-globals.js"></script>
+
   <script type="text/javascript" src="values/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
 
   <script type="text/javascript" src="objects/screen-placement.js"></script>
 
-  <script type="text/javascript" src="scene/game-loop.js"></script>
-  <script type="text/javascript" src="player/player_data.js"></script>
+
+
   <script type="text/javascript" src="player/player-code.js"></script>
-  <script type="text/javascript" src="things/panel.js"></script>
+  <script type="text/javascript" src="objects/sprites-stuff.js"></script>
+  <script type="text/javascript" src="objects/sprite-lines.js"></script>
   <script type="text/javascript" src="collisions/collisions.js"></script>
   <script type="text/javascript" src="sky/sky-code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
@@ -92,40 +99,42 @@
 
   <script type="text/javascript" src="pylons/pylons-svg.js"></script>
 
+
+
+
+
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
+
+  <script type="text/javascript" src="collisions/player-recoil.js"></script>
+
+
+
+
 
   <script type="text/javascript" src="scene/scene_3d.js"></script>
 
+
+
+
+
   <script rel="text/javascript" src="field/field-test.js"></script>
 
-
+  <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
 
 </div>
 
 
 
-<div id='click-to-begin' class="begin-vars">
-  <br>
-  <button id="begin-desktop" type="button" onclick=" g_loop_state = LOOP_2_AFTER_BEGIN;">Begin desktop 3D game</button>
-  <button id="begin-mobile" type="button" onclick="
-   g_loop_state = LOOP_2_AFTER_BEGIN;
-   g_touch_id_start = 'begin-button 0987324';
-  ">Begin mobile 3D game</button>
-  <br>
-</div>
+<div id='start-mobile'>
+  <div id='mobile-list'>
 
+  </div>
+</div>
 
 <div id="the-scene">
+
   <canvas id="the-draw" width=" 1024" height="512"></canvas>
-  <div id='start-mobile'>
-    <ul id='mobile-list'>
-      <li>Touch to start</li>
-      <li>Tap white arrows to steer</li>
-      <li>Tap in middle to shoot</li>
-      <li>Swipe down to stop</li>
-      <li>Swipe up quit</li>
-    </ul>
-  </div>
+
   <div id="touch-boxes"></div>
   <div id="arrows-html"></div>
 
@@ -133,15 +142,18 @@
     <div id="star-space">
       <div id="saturn-space"></div>
     </div>
+    <div id="cracked-screen"></div>
     <div id="the-sun" class="sun-vars"></div>
     <div id="sky-aperature" class="sky-vars">
       <div id="the-sky"> </div>
       <div id="the-pyramids"></div>
+      <div id="fuzzy-saturn"></div>
     </div>
-    <div id="enemy-area"></div>
+    <div id="enemy-area" class="enemy-vars"></div>
     <div id="missile-area" class="missile-vars"></div>
     <div id="checkerboard-field"> </div>
     <div id='pylon-html'> </div>
+    <div id='hole-html'> </div>
   </div>
 
   <div id="the-landing">
@@ -160,13 +172,32 @@
 
 
 
+
 <div id="js-after">
-  <script type="text/javascript" src="pylons/pylons-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+
+
   <script type="text/javascript" src="missile/missile-html.js"></script>
-  <script type="text/javascript" src="field/field-html.js"></script>
-  <script type="text/javascript" src="enemy/enemy-code.js"></script>
+
+
+
+
+
   <script type="text/javascript" src="missile/missile-code.js"></script>
+  <script type="text/javascript" src="holes/holes-html.js"></script>
+  <script type="text/javascript" src="pylons/pylons-html.js"></script>
+
+  <script type="text/javascript" src="enemy/enemy-code.js"></script>
+
+  <script type="text/javascript" src="variables/global-objects.js"></script>
+
+  <script type="text/javascript" src="scene/game-loop.js"></script>
+
+
+
+
+
+  <script type="text/javascript" src="field/field-html.js"></script>
+
 
   <script type="text/javascript" src="land/land-nw-html.js"></script>
   <script type="text/javascript" src="land/land-ne-html.js"></script>
@@ -184,12 +215,14 @@
 
 
 
+  <script type="text/javascript" src="values/url-params.js"></script>
 
   <script type="text/javascript" src="debug/debug-vars.js"></script>
   <script type="text/javascript" src="debug/debug-settings.js"></script>
 
 
   <script type="text/javascript" src="scene/scene-init.js"></script>
+  <script type="text/javascript" src="missile/missile-declare.js"></script>
 </div>
 
 
@@ -217,39 +250,48 @@
 
 
 
+<script type="text/javascript" src="player/player-declare.js"></script>
+
+<script type="text/javascript" src="init/checkerboard-field.js"></script>
+
+<script type="text/javascript" src="variables/minor-globals.js"></script>
+<script type="text/javascript" src="values/minor-constants.js"></script>
 
 
-<div id="an-enemy">asdflkj</div>
+<!-- start part section -->
 
+<style>
+  :root {
+    --checkerboard-image: url('../part-1/checker-board.png');
+  }
+</style>
 
-
-
-
-
+<script type="text/javascript" src="part-1/pylons-declare.js"></script>
+<script type="text/javascript" src="part-1/enemy-declare.js"></script>
+<script type="text/javascript" src="part-1/holes-declare.js"></script>
 <script>
+  urlParams();
 
-  let enemy_x = {
-    s_isa: "is-enemy", s_id: "enemy-1",
-    m_x: ENEMY_BIRTH_X, m_y: ENEMY_BIRTH_Y,
+  //initCheckerboardField(2000, 300);
+  initCheckerboardField(8192, 768);
 
+  var g_player = initPlayer(1000, 288, MOVINGx_E, MOVINGx_E);
 
-
-    m_move_count: 0,
-    s_moves_x: [LEFT_100, RGHT_100, RGHT_100, LEFT_100].flat(),
-    s_moves_y: [AWAY_100, AWAY_100, NEAR_100, NEAR_100].flat(),
-    //s_moves_x: [ZERO_10].flat(),
-    //s_moves_y: [ZERO_10].flat(),
-    m_dead: false,
-    s_colors: ['#ffff00', '#000000'],
-  };
-
-  an_enemy = makeEnemy(enemy_x);
+  the_pylons = [pylon_a_1, pylon_a_2];
+  the_enemies = [enemy_1];//, enemy_2];
+  the_holes = [hole_1]; //, hole_2, hole_3, hole_4];
 
 
 
-  var d1 = document.getElementById('an-enemy');
-  d1.innerHTML = an_enemy;
 
+  startItUp(NORMAL_SEGWAYS);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
 
+  gotoLoopState();
 
+  // location_url = new URL(window.location);
+  // loop_state = location_url.searchParams.get("g_loop_state");
+  // console.log("debug_param: " + debug_param);
+  // // g_loop_state = LOOP_0_DESKTOP_START;     //debug_param;
+  // g_loop_state = loop_state;
+  // console.log("g_loop_state: " + loop_state);
 </script>

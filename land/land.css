@@ -1,35 +1,35 @@
-
-
-
 #the-landing {
-   z-index: var(--z-the-landing);
-  width:1024px;
-  height:512px;
-   float:left; 
-   display:block; 
-  position:absolute;
-  margin-left:0px; 
-  margin-top:0px;
+  z-index: var(--z-the-landing);
+  width: 1024px;
+  height: 512px;
+  float: left;
+  display: block;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 #land_nw {
-  float:left; 
+  float: left;
 }
 
 #land_ne {
-  float:left; 
-}
-#land_sw {
-  clear:left;
-  float:left; 
-}
-#land_se {
-  float:left; 
+  float: left;
 }
 
- 
+#land_sw {
+  clear: left;
+  float: left;
+}
+
+#land_se {
+  float: left;
+}
+
+
 .west_line {
-  background-image: url('../images/checker-board.png');
+  /* background-image: url('../images/checker-board.png'); */
+  background-image: var(--checkerboard-image);
   width: 512px;
   position: relative;
   left: 0px;
@@ -38,11 +38,10 @@
 }
 
 .east_line {
-  background-image: url('../images/checker-board.png');
+  /* background-image: url('../images/checker-board.png'); */
+  background-image: var(--checkerboard-image);
   width: 512px;
   position: relative;
   left: 0px;
   height: 1px;
 }
-
-

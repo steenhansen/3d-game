@@ -1,26 +1,4 @@
 
-/*
- if true then debugging 
-  if commented out or false then normal
-
-if (typeof DBG_MISSILE_ADVANCE == 'string') {
-  return the_missile;
-}
-*/
-
-var g_is_debugging = 'unknown';
-function isDebugging() {
-  if (g_is_debugging == 'unknown') {
-    location_url = new URL(window.location);
-    debug_param = location_url.searchParams.get("debug");
-    g_is_debugging = (debug_param == 'true');
-  }
-  return g_is_debugging;
-}
-
-
-
-
 
 
 
@@ -187,10 +165,19 @@ function debugReportFrameTime() {
   missile_pos = `Missile x${m_x}, y${m_y}   carom - ${m_caromed} `;
   debugPrint(missile_pos, 730, 5);
 
-  const m_lifetime = g_missile.m_lifetime;
-  const m_expired = g_missile.m_expired;
+  if ('t_lifetime' in g_missile) {
+    t_lifetime = g_missile.t_lifetime;
+    missile_is_expired = 'false';
+  } else {
+    t_lifetime = '';
+    missile_is_expired = 'true';
 
-  missile_pos = `M liftime:${m_lifetime}   expired - ${m_expired} `;
+  }
+
+
+
+
+  missile_pos = `M liftime:${t_lifetime}   expired - ${missile_is_expired} `;
   debugPrint(missile_pos, 730, 25);
 
 
@@ -200,8 +187,8 @@ function debugReportFrameTime() {
   debugPrint(player_pos, 530, 25);
 
 
-  const c_x = pylon_1a.m_x;
-  const c_y = pylon_1a.m_y;
+  const c_x = pylon_a_1.m_x;
+  const c_y = pylon_a_1.m_y;
   player_pos = `Pylon1a x${c_x}, y${c_y}`;
   debugPrint(player_pos, 530, 45);
 

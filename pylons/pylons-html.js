@@ -18,6 +18,26 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-A-13"></div>
 <div id="pylon-A-14"></div>
 <div id="pylon-A-15"></div>
+<div id="pylon-A-16"></div>
+<div id="pylon-A-17"></div>
+<div id="pylon-A-18"></div>
+<div id="pylon-A-19"></div>
+<div id="pylon-A-20"></div>
+<div id="pylon-A-21"></div>
+<div id="pylon-A-22"></div>
+<div id="pylon-A-23"></div>
+<div id="pylon-A-24"></div>
+<div id="pylon-A-25"></div>
+<div id="pylon-A-26"></div>
+<div id="pylon-A-27"></div>
+<div id="pylon-A-28"></div>
+<div id="pylon-A-29"></div>
+<div id="pylon-A-30"></div>
+<div id="pylon-A-31"></div>
+
+
+
+
 
 <div id="pylon-B-0"></div>
 <div id="pylon-B-1"></div>
@@ -35,6 +55,25 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-B-13"></div>
 <div id="pylon-B-14"></div>
 <div id="pylon-B-15"></div>
+<div id="pylon-B-16"></div>
+<div id="pylon-B-17"></div>
+<div id="pylon-B-18"></div>
+<div id="pylon-B-19"></div>
+<div id="pylon-B-20"></div>
+<div id="pylon-B-21"></div>
+<div id="pylon-B-22"></div>
+<div id="pylon-B-23"></div>
+<div id="pylon-B-24"></div>
+<div id="pylon-B-25"></div>
+<div id="pylon-B-26"></div>
+<div id="pylon-B-27"></div>
+<div id="pylon-B-28"></div>
+<div id="pylon-B-29"></div>
+<div id="pylon-B-30"></div>
+<div id="pylon-B-31"></div>
+
+
+
 
 <div id="pylon-C-0"></div>
 <div id="pylon-C-1"></div>
@@ -52,6 +91,22 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-C-13"></div>
 <div id="pylon-C-14"></div>
 <div id="pylon-C-15"></div>
+<div id="pylon-C-16"></div>
+<div id="pylon-C-17"></div>
+<div id="pylon-C-18"></div>
+<div id="pylon-C-19"></div>
+<div id="pylon-C-20"></div>
+<div id="pylon-C-21"></div>
+<div id="pylon-C-22"></div>
+<div id="pylon-C-23"></div>
+<div id="pylon-C-24"></div>
+<div id="pylon-C-25"></div>
+<div id="pylon-C-26"></div>
+<div id="pylon-C-27"></div>
+<div id="pylon-C-28"></div>
+<div id="pylon-C-29"></div>
+<div id="pylon-C-30"></div>
+<div id="pylon-C-31"></div>
 
 
 
@@ -71,6 +126,22 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-D-13"></div>
 <div id="pylon-D-14"></div>
 <div id="pylon-D-15"></div>
+<div id="pylon-D-16"></div>
+<div id="pylon-D-17"></div>
+<div id="pylon-D-18"></div>
+<div id="pylon-D-19"></div>
+<div id="pylon-D-20"></div>
+<div id="pylon-D-21"></div>
+<div id="pylon-D-22"></div>
+<div id="pylon-D-23"></div>
+<div id="pylon-D-24"></div>
+<div id="pylon-D-25"></div>
+<div id="pylon-D-26"></div>
+<div id="pylon-D-27"></div>
+<div id="pylon-D-28"></div>
+<div id="pylon-D-29"></div>
+<div id="pylon-D-30"></div>
+<div id="pylon-D-31"></div>
 
 
 <div id="pylon-E-0"></div>
@@ -89,6 +160,22 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-E-13"></div>
 <div id="pylon-E-14"></div>
 <div id="pylon-E-15"></div>
+<div id="pylon-E-16"></div>
+<div id="pylon-E-17"></div>
+<div id="pylon-E-18"></div>
+<div id="pylon-E-19"></div>
+<div id="pylon-E-20"></div>
+<div id="pylon-E-21"></div>
+<div id="pylon-E-22"></div>
+<div id="pylon-E-23"></div>
+<div id="pylon-E-24"></div>
+<div id="pylon-E-25"></div>
+<div id="pylon-E-26"></div>
+<div id="pylon-E-27"></div>
+<div id="pylon-E-28"></div>
+<div id="pylon-E-29"></div>
+<div id="pylon-E-30"></div>
+<div id="pylon-E-31"></div>
 
 
 
@@ -108,6 +195,22 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-F-13"></div>
 <div id="pylon-F-14"></div>
 <div id="pylon-F-15"></div>
+<div id="pylon-F-16"></div>
+<div id="pylon-F-17"></div>
+<div id="pylon-F-18"></div>
+<div id="pylon-F-19"></div>
+<div id="pylon-F-20"></div>
+<div id="pylon-F-21"></div>
+<div id="pylon-F-22"></div>
+<div id="pylon-F-23"></div>
+<div id="pylon-F-24"></div>
+<div id="pylon-F-25"></div>
+<div id="pylon-F-26"></div>
+<div id="pylon-F-27"></div>
+<div id="pylon-F-28"></div>
+<div id="pylon-F-29"></div>
+<div id="pylon-F-30"></div>
+<div id="pylon-F-31"></div>
 
 
 
@@ -115,26 +218,6 @@ document.getElementById('pylon-html').innerHTML = `
 
 
 
-// document.getElementById('pylon-html').innerHTML = `
-// <div id="pylon-3a"></div>
-// <div id="pylon-3b"></div>
-// <div id="pylon-3c"></div>
-// <div id="pylon-2a"></div>
-// <div id="pylon-2b"></div>
-// <div id="pylon-1a"></div>
-
-
-// <div id="pylon-4-1"></div>
-// <div id="pylon-4-2"></div>
-// <div id="pylon-4-3"></div>
-// <div id="pylon-4-4"></div>
-// <div id="pylon-4-5"></div>
-// <div id="pylon-4-6"></div>
-// <div id="pylon-4-7"></div>
-// <div id="pylon-4-8"></div>
-// <div id="pylon-4-9"></div>
-
-// `;
 
 
 
@@ -144,11 +227,10 @@ function drawPylons(the_pylons) {
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
     pylonSet(a_pylon);
-    if (a_pylon.m_hit_flash > 0) {
-      a_pylon.m_hit_flash--;
-      a_pylon.do_flash = true;
+    if (a_pylon.t_pylon_hit_flash > 0) {
+      a_pylon.t_pylon_hit_flash--;
     } else {
-      a_pylon.do_flash = false;
+      delete a_pylon.t_pylon_hit_flash;
     }
     changed_pylons[pylon_index] = a_pylon;
 
@@ -156,95 +238,50 @@ function drawPylons(the_pylons) {
   return changed_pylons;
 }
 
-
-function pylonFront(pylon_vlines, gradient_front, front_panel_id, do_outlines, front_color, do_flash, do_twirl, difference_yy) {
+// 88-88
+function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   // qbert 1
-  let front_pylon = pylonPolygon(left_right_tops_bots, gradient_front, front_panel_id, do_outlines, front_color, do_flash, do_twirl, difference_yy);
+  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill);
   return front_pylon;
 }
 
 
-
-function pylonPolygon(a_polygon, twirl_gradient, panel_id, do_outlines, solid_color, do_flash, do_twirl, difference_yy) {
-  // console.log("pylonPolygon difference_yy", difference_yy);
+// 99-99
+function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  if (isMobile() || !do_twirl) {
-    svg_polygon = `<polygon fill="${solid_color}"  id="${panel_id}"
-                      points="${top_left_x},${top_left_y}
-                              ${top_right_x},${top_right_y}
-                              ${bot_right_x},${bot_right_y}
-                              ${bot_left_x},${bot_left_y}      " />`;
-  } else {
-    svg_polygon = `<polygon fill="url(#${twirl_gradient})"  id="${panel_id}"
+  svg_polygon = `<polygon fill="${poly_fill}" id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
 
-    if (do_flash) {
-      //    stroke-width="10px" opacity="0.5"       stroke-opactiy="1"
-      svg_polygon += `<polygon fill="red"  id="${panel_id}" stroke="white"
-     opacity="0.4"    stroke-width="15px" 
+  if (do_flash) {
+    svg_polygon += `<polygon   id="${panel_id}" stroke="white" fill="none"
+         stroke-width="15px" 
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
 
-    } else if (do_outlines) {         // outline_color should always be black??? white??
-
-      outline_width = outlineWidth(difference_yy);
-      // if (difference_yy < 8) {
-      //   outline_width = 6;
-      // } else if (difference_yy < 16) {
-      //   outline_width = 5.5;
-      // } else if (difference_yy < 24) {
-      //   outline_width = 5;
-      // } else if (difference_yy < 32) {
-      //   outline_width = 4.5;
-      // } else if (difference_yy < 40) {
-      //   outline_width = 4;
-      // } else if (difference_yy < 100) {
-      //   outline_width = 3.5;
-      // } else if (difference_yy < 200) {
-      //   outline_width = 3;
-      // } else if (difference_yy < 300) {
-      //   outline_width = 2.5;
-      // } else if (difference_yy < 400) {
-      //   outline_width = 2;
-      // } else if (difference_yy < 500) {
-      //   outline_width = 1.5;
-      // } else if (difference_yy < 600) {
-      //   outline_width = 1;
-      // } else if (difference_yy < 700) {
-      //   outline_width = 0.5;
-      // } else {
-      //   outline_width = 0;
-      // }
-      svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="black"
+  } else if (outline_color) {
+    outline_width = outlineWidth(difference_yy);
+    svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="${outline_color}"
       stroke-width="${outline_width}px"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
 
-    }
-
-
   }
-
-
-
-
   // console.log(svg_polygon);
-
   return svg_polygon;
 }
 
