@@ -1,6 +1,6 @@
 #the-pyramids {
   z-index: var(--z-the-pyramids);
-  background-image: url('../images/black-pyramids.png');
+  background-image: var(--pyramids-image);
   width: 1024px;
   height: 18px;
   position: absolute;
@@ -11,7 +11,7 @@
 
 #fuzzy-saturn {
   z-index: var(--z-the-saturn);
-  background-image: url('../images/cloudy-saturn.png');
+  background-image: var(--saturn-image);
   width: 1024px;
   height: 44px;
   position: absolute;
@@ -105,9 +105,6 @@
   background-size: 256px 256px;
   background-image: var(--cloud-image);
   transform: var(--cloud-skew);
-
-  /* background-image: radial-gradient(#ffffff, var(--sky-color) 75%); 
-  transform: perspective(1536px) rotateX(-85deg); */
 }
 
 #sky-aperature {

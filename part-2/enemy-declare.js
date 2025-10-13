@@ -13,7 +13,7 @@ let enemy_1 = {
   s_id: "enemy-1",
   s_moves_x: [RGHT_100].flat(),
   s_moves_y: [ZERO_10].flat(),
-  s_colors: ['#ffff00', '#000000'],    // enemies never change colors
+  s_colors: ['#ee2288', '#004488'],    // enemies never change colors
   m_move_count: 0,       // m_move_index
   m_x: 900, m_y: 316,
   m_bounced_x_dir: 1,
@@ -30,10 +30,10 @@ let enemy_2 = {
   s_moves_y: [ZERO_10].flat(),
   m_move_count: 0,
   m_x: 6500, m_y: 96,
-  // t_enemy_hit_flash: 0,
+  t_enemy_hit_flash: 0,
   m_bounced_x_dir: 1,
   m_state: ENEMY_0_FLOATING,
-  //t_hover_up: 0,
+  t_hover_up: 0,
   s_colors: ['#FFbb22', '#ffffff'],
 };
 

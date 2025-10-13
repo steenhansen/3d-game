@@ -2,6 +2,11 @@
 
 
 document.getElementById('pylon-html').innerHTML = `
+
+<div id="pylon-EXIT"></div>
+
+
+
 <div id="pylon-A-0"></div>
 <div id="pylon-A-1"></div>
 <div id="pylon-A-2"></div>
@@ -239,32 +244,45 @@ function drawPylons(the_pylons) {
 }
 
 // 88-88
-function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill) {
+function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   // qbert 1
-  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill);
+  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type);
   return front_pylon;
 }
 
 
 // 99-99
-function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill) {
+function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type) {
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  svg_polygon = `<polygon fill="${poly_fill}" id="${panel_id}"
+
+  if (pylon_type == 'is-exit') {
+    // console.log("poly_fill", poly_fill);
+    svg_panel = exitPylon(a_polygon, poly_fill);
+  } else {
+    svg_panel = `<polygon fill="${poly_fill}" id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
+  }
+
+  /* if is-a == is-exit */
+  if (pylon_type == 'is-exit') {
+    panel_fill = '#00ff0099';
+  } else {
+    panel_fill = 'none';
+  }
 
   if (do_flash) {
-    svg_polygon += `<polygon   id="${panel_id}" stroke="white" fill="none"
+    svg_outlines = `<polygon   id="${panel_id}" stroke="white" fill="${panel_fill}"
          stroke-width="15px" 
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
@@ -272,8 +290,8 @@ function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_y
                               ${bot_left_x},${bot_left_y}      " />`;
 
   } else if (outline_color) {
-    outline_width = outlineWidth(difference_yy);
-    svg_polygon += `<polygon fill="none"  id="${panel_id}" stroke="${outline_color}"
+    outline_width = outlineWidth(difference_yy) * 3;
+    svg_outlines = `<polygon fill="${panel_fill}"  id="${panel_id}" stroke="${outline_color}"
       stroke-width="${outline_width}px"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
@@ -281,6 +299,15 @@ function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_y
                               ${bot_left_x},${bot_left_y}      " />`;
 
   }
+
+  //if (pylon_type == 'is-exit') {
+  svg_polygon = svg_outlines + svg_panel;
+  // } else {
+  //   svg_polygon = svg_panel + svg_outlines;
+  // }
+
+
+
   // console.log(svg_polygon);
   return svg_polygon;
 }

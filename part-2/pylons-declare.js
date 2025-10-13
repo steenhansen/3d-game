@@ -22,7 +22,7 @@ function rowPylons(y_coord) {
       m_x: x, m_y: y_coord,
       m_b_side_twirl: 0,
       m_b_front_twirl: 200,
-      //o_outline_color: false,
+      //  o_outline_color: false,
       t_pylon_hit_flash: 0,
 
     };
@@ -32,24 +32,20 @@ function rowPylons(y_coord) {
   return pylon_row;
 }
 
+//85, 170
 
 
 pylon_a_1 = {
   s_isa: "is-pylon",
   s_pylon_name: "pylon-A-1",
-
-
-
-
-  o_outline_color: 'white',
-
+  o_outline_color: '#aaaaaa',  // 0.3333 grey
 
   //  m_x: pylon_1A_START_X, m_y: pylon_1A_START_Y,
   m_x: 500, m_y: 28,
 
-  m_a_front_color: 'red',
-  m_a_left_color: 'white',
-  m_a_right_color: 'blue',
+  m_a_front_color: 'black',  //000000
+  m_a_left_color: 'white',   // ffffff
+  m_a_right_color: '#555555',   // 0.66666 grey
 
   //t_pylon_hit_flash: 0,
 
@@ -58,15 +54,16 @@ pylon_a_1 = {
 pylon_a_2 = {
   s_isa: "is-pylon",
   s_pylon_name: "pylon-A-2",
+  o_outline_color: 'grey',
 
   m_x: 1500, m_y: 28,
 
-  m_b_front_grad_from: 'Lime',
-  m_b_front_grad_to: 'Fuchsia',
+  m_b_front_grad_from: 'black',
+  m_b_front_grad_to: 'white',
   m_b_left_grad_from: 'white',
   m_b_left_grad_to: 'black',
-  m_b_right_grad_from: 'Red',
-  m_b_right_grad_to: 'Yellow',
+  m_b_right_grad_from: 'black',
+  m_b_right_grad_to: 'white',
   m_b_side_twirl: 150,
   m_b_front_twirl: 350,
 

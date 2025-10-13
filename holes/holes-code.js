@@ -78,7 +78,9 @@ function holeDraw(a_hole, g_player) {
     console.log("holeDraw", pylon_id, front_left_x);
   }
 
-  front_pylon = `<polygon fill="black"  id="a-hole-id"
+  // qbert
+  hole_color = a_hole.c_hole_color;
+  front_pylon = `<polygon fill="${hole_color}"  id="a-hole-id"
                       points="${front_left_x},${front_left_y}
                               ${front_right_x},${front_right_y}
                               ${back_right_x},${back_right_y}

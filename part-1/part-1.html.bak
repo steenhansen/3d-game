@@ -123,20 +123,7 @@
 </div>
 
 
-<div id="desktop-dir" class="direction-vars" onclick="clickOnDirectionsSvg(event)">
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+<div id="desktop-dir" class="direction-vars"></div>
 
 <div id="js-after">
   <script type="text/javascript" src="missile/missile-html.js"></script>

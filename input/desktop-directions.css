@@ -30,10 +30,11 @@
     }
 
     #desktop-dir {
+      overflow: clip;
       margin: 0 auto;
       width: 304px;
       height: 241px;
       display: var(--show-directions);
-
-      background-image: url('../images/keys-desktop.svg');
+      cursor: pointer;
+      /* background-image: url('../images/keys-desktop.svg'); */
     }

@@ -48,6 +48,11 @@ function playerHitPylons(g_player, the_pylons) {
     a_pylon = the_pylons[pylon_index];
     has_collided = hasCollided(g_player, a_pylon, COLLISION_SIZES);
     if (has_collided) {
+      if (a_pylon.s_isa == 'is-exit') {
+        console.log("HIT PYLON", a_pylon);
+        //window.location.href = 'part-1/part-1.html?g_loop_state=LOOP_0_DESKTOP_START';
+        window.location.href = a_pylon.s_url_hit;
+      }
       hit_pylon_last_move = true;
       a_pylon.t_pylon_hit_flash = 17;
       g_player.t_recoil_count = RECOIL_COUNTDOWN;

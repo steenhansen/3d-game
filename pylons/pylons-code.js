@@ -79,9 +79,6 @@ function pylonSet(a_pylon) {
 }
 
 function pylonDraw(a_pylon, g_player) {
-
-
-
   a_pylon = twirlSides(a_pylon);
   [the_z_index, difference_y, pylon_relative, x_center_offset, head_on_view] = objectPlacement(a_pylon, g_player);
   pylon_player_ys = [a_pylon.m_y, g_player.m_y];
@@ -97,21 +94,12 @@ function pylonDraw(a_pylon, g_player) {
     left_mid_right_vlines[0][1][1][0] -= 1;    // function panelBotLeftRight(x_offset, difference_y) is 1 too small
   }
   pylon_id = "panel-front-pylon-" + a_pylon.s_pylon_name;
-
-  //let do_outlines = a_pylon.o_outline_color;
-  // let do_outlines = 'o_outline_color' in a_pylon;
-
-
   if ('o_outline_color' in a_pylon) {
     outline_color = a_pylon.o_outline_color;
   } else {
     outline_color = 'none';
   }
-
-
-
   do_flash = 't_pylon_hit_flash' in a_pylon;
-  // qbert 2
   [pylon_y, player_y] = pylon_player_ys;
   if (player_y > pylon_y) {
     difference_yy = player_y - pylon_y;
@@ -119,10 +107,8 @@ function pylonDraw(a_pylon, g_player) {
     dist_pylon_to_zero = g_checkerboard_depth - pylon_y;
     difference_yy = player_y + dist_pylon_to_zero;
   }
-
-
   poly_fill = getFrontFill(a_pylon);
-  front_pylon = pylonFront(left_mid_right_vlines, pylon_id, outline_color, do_flash, difference_yy, poly_fill);
+  front_pylon = pylonFront(left_mid_right_vlines, pylon_id, outline_color, do_flash, difference_yy, poly_fill, a_pylon.s_isa);
   pylon_svg = pylonToSvg(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
 }
@@ -155,25 +141,25 @@ function getFrontFill(a_pylon) {
 
 // 88-88
 function pylonSidePanel(a_pylon, pylon_vlines, difference_yy, poly_fill) {
+  if (a_pylon.s_isa == "is-exit") {
+    return '';  // blank_side_panel='';
+  }
   let [_left_vline, middle_vline, right_vline] = pylon_vlines;
   let [right_front_top, right_front_bot] = middle_vline;
   let [back_right_top, back_right_bot] = right_vline;
   right_top_bot = [right_front_top, back_right_top, right_front_bot, back_right_bot];
   let side_s_pylon_name = 'panel-side-pylon-' + a_pylon.s_pylon_name;
-  //let do_outlines = a_pylon.o_outline_color;
-
   if ('o_outline_color' in a_pylon) {
     outline_color = a_pylon.o_outline_color;
-
   } else {
     outline_color = 'none';
   }
-
   do_flash = 't_pylon_hit_flash' in a_pylon;
+  let side_pylon_svg = pylonPolygon(right_top_bot, side_s_pylon_name, outline_color, do_flash, difference_yy, poly_fill, a_pylon.s_isa);
 
+  //console.log("side_pylon", side_pylon_svg);
 
-  let side_pylon = pylonPolygon(right_top_bot, side_s_pylon_name, outline_color, do_flash, difference_yy, poly_fill);
-  return side_pylon;
+  return side_pylon_svg;
 }
 
 

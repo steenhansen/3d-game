@@ -51,6 +51,16 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlay(g_player, g_enemy_list, g_pylon_list);
 
 
+      // [a, b, c] = loopPlay(g_player, g_enemy_list, g_pylon_list);
+      // g_player = null;
+      // g_enemy_list = null;
+      // g_pylon_list = null;
+
+      // g_player = a;
+      // g_enemy_list = b;
+      // g_pylon_list = c;
+
+
     } else if (g_loop_state == LOOP_7_PLAY_HOLE_A_HIT) {
       [g_player, g_enemy_list, g_pylon_list] = loopPlayHoleHit(g_player, g_enemy_list, g_pylon_list);
     } else if (g_loop_state == LOOP_7_PLAY_HOLE_B_INSIDE) {

@@ -20,7 +20,7 @@ let a_player = {
   //t_fly_amount: 0,  
   // t_jump_amount: 23;
 
-  m_num_cracks: 0   // t_num_cracks = 0;
+  m_num_cracks: 0
 };
 
 
