@@ -1,19 +1,5 @@
 
 
-function spriteDiffY(a_thing, g_player) {
-  let player_y = g_player.m_y;
-  let thing_y = a_thing.m_y;
-
-  if (player_y > thing_y) {
-    difference_y = player_y - thing_y;
-  } else {
-    dist_pylon_to_zero = g_checkerboard_depth - thing_y;
-    difference_y = player_y + dist_pylon_to_zero;
-  }
-  return difference_y;
-}
-
-
 // pylons and enemies
 function spriteFront(pylon_vlines) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
@@ -49,16 +35,32 @@ function spriteCenterXy(a_polygon) {
 
 
 
+function spriteDiffY(a_thing, the_player) {
+  let player_y = the_player.m_y;
+  let thing_y = a_thing.m_y;
+
+  if (player_y > thing_y) {
+    difference_y = player_y - thing_y;
+  } else {
+    checkerboard_depth = g_planet.s_checkerboard_depth;
+    dist_pylon_to_zero = checkerboard_depth - thing_y;
+    difference_y = player_y + dist_pylon_to_zero;
+  }
+  return difference_y;
+}
+
+
 
 
 
 ///////////////   thing_relative  relative_to_player 
-function spritePlace(a_thing, g_player) {
-  let { m_x: player_x } = g_player;
+function spritePlace(a_thing, the_player) {
+  checkerboard_width = g_planet.s_checkerboard_width;
+  let { m_x: player_x } = the_player;
   let { m_x: thing_x } = a_thing;
   if (player_x > thing_x) {
     left_x_dist = player_x - thing_x;
-    right_x_dist = g_checkerboard_width - player_x + thing_x;
+    right_x_dist = checkerboard_width - player_x + thing_x;
     if (left_x_dist > right_x_dist) {
       /*    |-------------------------|
             t0                    p1023    */
@@ -72,7 +74,7 @@ function spritePlace(a_thing, g_player) {
     }
   } else {
     left_x_dist = thing_x - player_x;
-    right_x_dist = g_checkerboard_width - thing_x + player_x;
+    right_x_dist = checkerboard_width - thing_x + player_x;
     if (left_x_dist > right_x_dist) {
       /*    |-------------------------|
             p0                    t1023    */

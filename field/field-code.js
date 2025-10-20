@@ -1,5 +1,15 @@
 
 
+function fieldLeft(travel_speed, diagonal_weight) {
+  for (i = 0; i < travel_speed; i++) {
+    for (j = 0; j < diagonal_weight; j++) {
+      incrementLeft();
+    }
+  }
+}
+
+
+
 
 /*       255  no move?
    [126, -250,         -504,       128],
@@ -50,16 +60,6 @@ function fieldRight(travel_speed, diagonal_weight) {
   }
 }
 
-function fieldLeft(travel_speed, diagonal_weight) {
-  for (i = 0; i < travel_speed; i++) {
-    for (j = 0; j < diagonal_weight; j++) {
-      incrementLeft();
-    }
-  }
-}
-
-
-
 
 
 function initIncrementers() {
@@ -100,8 +100,4 @@ function affixLeftRight() {
     line_element.style = `background-position-x: ${affix_shift}px `;
   }
 }
-
-
-
-
 

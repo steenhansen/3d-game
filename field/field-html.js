@@ -23,7 +23,7 @@ document.getElementById('checkerboard-field').innerHTML = `
   <div class="a_line" id="line18"></div>
   <div class="a_line" id="line19"></div>
 
-  <div class="a_line" id="line20"></div>
+  <div class="a_line" id="line20" ></div>
   <div class="a_line" id="line21"></div>
   <div class="a_line" id="line22"></div>
   <div class="a_line" id="line23"></div>

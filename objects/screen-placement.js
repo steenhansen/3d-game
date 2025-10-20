@@ -10,11 +10,11 @@
 
 
 
-function objectPlacement(an_object, g_player) {
+function objectPlacement(an_object, the_player) {
 
-  difference_y = spriteDiffY(an_object, g_player);
-  let [difference_x, relative_to_player, head_on_view] = spritePlace(an_object, g_player);
-  x_center_offset = thingRelationToPlayer(difference_x, g_player, relative_to_player);
+  difference_y = spriteDiffY(an_object, the_player);
+  let [difference_x, relative_to_player, head_on_view] = spritePlace(an_object, the_player);
+  x_center_offset = thingRelationToPlayer(difference_x, the_player, relative_to_player);
 
   let the_z_index = deriveIndexZ(difference_x, difference_y);
 

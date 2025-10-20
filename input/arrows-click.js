@@ -27,7 +27,8 @@ function flashArrow(direction_name) {
 function arrowClick(the_event, direction_name) {
   the_event.preventDefault();
   flashArrow(direction_name);
-  g_is_drifting = false;
+  //g_is_drifting = false;
+  delete g_planet.t_drift_direction;
 }
 
 
@@ -41,48 +42,48 @@ function addClickEvent(direction_name, clickHandler) {
 }
 
 function stopMoving(evt) {
-  g_move_direction = MOVINGx_NOT;
-  g_drift_countdown = DRIFT_CYCLES;    //177;
+  g_planet.m_move_direction = MOVINGx_NOT;
+  g_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;//  DRIFT_CYCLES;    //177;
 }
 
 function handleNw(evt) {
-  g_move_direction = MOVINGx_NW;
+  g_planet.m_move_direction = MOVINGx_NW;
   arrowClick(evt, "nw-1");
 }
 
 
 function handleN(evt) {
-  g_move_direction = MOVINGx_N;
+  g_planet.m_move_direction = MOVINGx_N;
   arrowClick(evt, "n-1");
 }
 
 function handleNe(evt) {
-  g_move_direction = MOVINGx_NE;
+  g_planet.m_move_direction = MOVINGx_NE;
   arrowClick(evt, "ne-1");
 }
 
 function handleW(evt) {
-  g_move_direction = MOVINGx_W;
+  g_planet.m_move_direction = MOVINGx_W;
   arrowClick(evt, "w-1");
 }
 
 function handleE(evt) {
-  g_move_direction = MOVINGx_E;
+  g_planet.m_move_direction = MOVINGx_E;
   arrowClick(evt, "e-1");
 }
 
 function handleSw(evt) {
-  g_move_direction = MOVINGx_SW;
+  g_planet.m_move_direction = MOVINGx_SW;
   arrowClick(evt, "sw-1");
 }
 
 function handleS(evt) {
-  g_move_direction = MOVINGx_S;
+  g_planet.m_move_direction = MOVINGx_S;
   arrowClick(evt, "s-1");
 }
 
 function handleSe(evt) {
-  g_move_direction = MOVINGx_SE;
+  g_planet.m_move_direction = MOVINGx_SE;
   arrowClick(evt, "se-1");
 }
 

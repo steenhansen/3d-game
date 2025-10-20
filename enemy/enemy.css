@@ -1,10 +1,30 @@
- :root {
+ .enemy-vars {
 
    --enemy-star-edge-width-1: 0;
    --enemy-star-opacity-1: 1;
+   --enemy-star-color-1: yellow;
+   --enemy-ball-color-1: blue;
 
 
+   --enemy-star-edge-width-2: 0;
+   --enemy-star-opacity-2: 1;
+   --enemy-star-color-2: orange;
+   --enemy-ball-color-2: green;
 
+   --enemy-star-edge-width-3: 0;
+   --enemy-star-opacity-3: 1;
+   --enemy-star-color-3: yellow;
+   --enemy-ball-color-3: grey;
+
+   --enemy-star-edge-width-4: 0;
+   --enemy-star-opacity-4: 1;
+   --enemy-star-color-4: yellow;
+   --enemy-ball-color-4: grey;
+
+   --enemy-star-edge-width-5: 0;
+   --enemy-star-opacity-5: 1;
+   --enemy-star-color-5: yellow;
+   --enemy-ball-color-5: grey;
  }
 
 

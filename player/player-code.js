@@ -1,17 +1,21 @@
-function playerRight(travel_speed, diagonal_weight) {
-  g_player.m_x = rightOnBoard(g_player.m_x, travel_speed * diagonal_weight);
+function playerRight(the_player, travel_speed, diagonal_weight) {
+  the_player.m_x = rightOnBoard(the_player.m_x, travel_speed * diagonal_weight);     // qbert
+  return the_player;
 }
 
-function playerLeft(travel_speed, diagonal_weight) {
-  g_player.m_x = leftOnBoard(g_player.m_x, travel_speed * diagonal_weight);
+function playerLeft(the_player, travel_speed, diagonal_weight) {
+  the_player.m_x = leftOnBoard(the_player.m_x, travel_speed * diagonal_weight);
+  return the_player;
 }
 
-function playerForward(travel_speed) {
-  g_player.m_y = forwardOnBoard(g_player.m_y, travel_speed);
+function playerForward(the_player, travel_speed) {
+  the_player.m_y = forwardOnBoard(the_player.m_y, travel_speed);
+  return the_player;
 }
 
-function playerBackward(travel_speed) {
-  g_player.m_y = backwardOnBoard(g_player.m_y, travel_speed);
+function playerBackward(the_player, travel_speed) {
+  the_player.m_y = backwardOnBoard(the_player.m_y, travel_speed);
+  return the_player;
 }
 
 
@@ -25,17 +29,19 @@ function playerBackward(travel_speed) {
 
 
 function backwardOnBoard(y_pos, backward_steps) {
+  checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos -= backward_steps;
   if (y_pos < SCENE_Y_MIN) {
-    y_pos += g_checkerboard_depth;
+    y_pos += checkerboard_depth;
   }
   return y_pos;
 }
 
 function forwardOnBoard(y_pos, forward_steps) {
+  checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos += forward_steps;
-  if (y_pos > g_checkerboard_depth) {
-    y_pos -= g_checkerboard_depth;
+  if (y_pos > checkerboard_depth) {
+    y_pos -= checkerboard_depth;
   }
   return y_pos;
 }
@@ -48,17 +54,18 @@ function forwardOnBoard(y_pos, forward_steps) {
 
 
 function leftOnBoard(x_pos, left_steps) {
+  checkerboard_width = g_planet.s_checkerboard_width;
   x_pos -= left_steps;
   if (x_pos < SCENE_X_MIN) {
-    x_pos += g_checkerboard_width;         //SCENE_X_MAX;
+    x_pos += checkerboard_width;         //SCENE_X_MAX;
   }
   return x_pos;
 }
 
 function rightOnBoard(x_pos, right_steps) {
   x_pos += right_steps;
-  if (x_pos > g_checkerboard_width) {    //} SCENE_X_MAX) {
-    x_pos -= g_checkerboard_width;             //SCENE_X_MAX;
+  if (x_pos > checkerboard_width) {    //} SCENE_X_MAX) {
+    x_pos -= checkerboard_width;             //SCENE_X_MAX;
   }
   return x_pos;
 }
@@ -67,8 +74,8 @@ function rightOnBoard(x_pos, right_steps) {
 
 
 
-function missileLR(a_missile, g_player) {
-  if (a_missile.m_x < g_player.m_x) {
+function missileLR(a_missile, the_player) {
+  if (a_missile.m_x < the_player.m_x) {
     return MISSILE_TO_LEFT;
   } else {
     return MISSILE_TO_RIGHT;
@@ -83,8 +90,8 @@ function missileLR(a_missile, g_player) {
 
 
 
-function thingRelationToPlayer(adjusted_x, g_player, things_position) {
-  player_x = g_player.m_x;
+function thingRelationToPlayer(adjusted_x, the_player, things_position) {
+  player_x = the_player.m_x;
   if (things_position == LEFT_OF_PLAYER) {
     x_center_offset = HALF_VIEW_WIDTH - adjusted_x;
   } else {

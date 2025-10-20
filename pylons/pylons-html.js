@@ -1,11 +1,6 @@
-
-
-
 document.getElementById('pylon-html').innerHTML = `
-
-<div id="pylon-EXIT"></div>
-
-
+<div id="pylon-exit"></div>
+<div id="pylon-start"></div>
 
 <div id="pylon-A-0"></div>
 <div id="pylon-A-1"></div>
@@ -40,10 +35,6 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-A-30"></div>
 <div id="pylon-A-31"></div>
 
-
-
-
-
 <div id="pylon-B-0"></div>
 <div id="pylon-B-1"></div>
 <div id="pylon-B-2"></div>
@@ -76,9 +67,6 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-B-29"></div>
 <div id="pylon-B-30"></div>
 <div id="pylon-B-31"></div>
-
-
-
 
 <div id="pylon-C-0"></div>
 <div id="pylon-C-1"></div>
@@ -113,8 +101,6 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-C-30"></div>
 <div id="pylon-C-31"></div>
 
-
-
 <div id="pylon-D-0"></div>
 <div id="pylon-D-1"></div>
 <div id="pylon-D-2"></div>
@@ -147,7 +133,6 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-D-29"></div>
 <div id="pylon-D-30"></div>
 <div id="pylon-D-31"></div>
-
 
 <div id="pylon-E-0"></div>
 <div id="pylon-E-1"></div>
@@ -182,8 +167,6 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-E-30"></div>
 <div id="pylon-E-31"></div>
 
-
-
 <div id="pylon-F-0"></div>
 <div id="pylon-F-1"></div>
 <div id="pylon-F-2"></div>
@@ -216,22 +199,15 @@ document.getElementById('pylon-html').innerHTML = `
 <div id="pylon-F-29"></div>
 <div id="pylon-F-30"></div>
 <div id="pylon-F-31"></div>
-
-
-
  `;
 
-
-
-
-
-
-function drawPylons(the_pylons) {
+function drawPylons(the_player, the_pylons) {
   changed_pylons = [];
+  // console.log("drawPylons", the_pylons);
   number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
-    pylonSet(a_pylon);
+    pylonSet(the_player, a_pylon);
     if (a_pylon.t_pylon_hit_flash > 0) {
       a_pylon.t_pylon_hit_flash--;
     } else {
@@ -243,75 +219,87 @@ function drawPylons(the_pylons) {
   return changed_pylons;
 }
 
-// 88-88
-function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type) {
+function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type, vert_text, pylon_alive) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  // qbert 1
-  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type);
+  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type, vert_text, pylon_alive);
   return front_pylon;
 }
 
+function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type, vert_text, pylon_alive) {
+  if (pylon_alive) {
+    fill_color = poly_fill;
+  } else {
+    fill_color = 'black';
+  }
+  if (pylon_type == 'is-pylon-sign') {
+    svg_panel = signPylon(a_polygon, vert_text, fill_color);
+  } else {
+    svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
+  }
+  if (do_flash) {
+    svg_outlines = outlineFlash(a_polygon, panel_id);
+  } else if (!pylon_alive && pylon_type == 'is-pylon') {
+    svg_outlines = pylonOutline(a_polygon, panel_id, difference_yy, "grey");
 
-// 99-99
-function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type) {
+  } else if (outline_color) {
+    svg_outlines = pylonOutline(a_polygon, panel_id, difference_yy, outline_color);
+  }
+  svg_polygon = svg_outlines + svg_panel;
+  return svg_polygon;
+}
+
+function pylonOutline(a_polygon, panel_id, difference_yy, outline_color) {
+  outline_width = outlineWidth(difference_yy);
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-
-  if (pylon_type == 'is-exit') {
-    // console.log("poly_fill", poly_fill);
-    svg_panel = exitPylon(a_polygon, poly_fill);
-  } else {
-    svg_panel = `<polygon fill="${poly_fill}" id="${panel_id}"
-                      points="${top_left_x},${top_left_y}
-                              ${top_right_x},${top_right_y}
-                              ${bot_right_x},${bot_right_y}
-                              ${bot_left_x},${bot_left_y}      " />`;
-  }
-
-  /* if is-a == is-exit */
-  if (pylon_type == 'is-exit') {
-    panel_fill = '#00ff0099';
-  } else {
-    panel_fill = 'none';
-  }
-
-  if (do_flash) {
-    svg_outlines = `<polygon   id="${panel_id}" stroke="white" fill="${panel_fill}"
-         stroke-width="15px" 
-                      points="${top_left_x},${top_left_y}
-                              ${top_right_x},${top_right_y}
-                              ${bot_right_x},${bot_right_y}
-                              ${bot_left_x},${bot_left_y}      " />`;
-
-  } else if (outline_color) {
-    outline_width = outlineWidth(difference_yy) * 3;
-    svg_outlines = `<polygon fill="${panel_fill}"  id="${panel_id}" stroke="${outline_color}"
+  svg_outlines = `<polygon fill="none"  id="${panel_id}" stroke="${outline_color}"
       stroke-width="${outline_width}px"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
                               ${bot_left_x},${bot_left_y}      " />`;
-
-  }
-
-  //if (pylon_type == 'is-exit') {
-  svg_polygon = svg_outlines + svg_panel;
-  // } else {
-  //   svg_polygon = svg_panel + svg_outlines;
-  // }
-
-
-
-  // console.log(svg_polygon);
-  return svg_polygon;
+  return svg_outlines;
 }
 
+function outlineFlash(a_polygon, panel_id) {
+  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
+  let [top_left_x, top_left_y] = left_front_top;
+  let [top_right_x, top_right_y] = right_front_top;
+  let [bot_left_x, bot_left_y] = left_front_bot;
+  let [bot_right_x, bot_right_y] = right_front_bot;
+  svg_outlines = `<polygon   id="${panel_id}" stroke="white" fill="none"
+         stroke-width="15px" 
+                      points="${top_left_x},${top_left_y}
+                              ${top_right_x},${top_right_y}
+                              ${bot_right_x},${bot_right_y}
+                              ${bot_left_x},${bot_left_y}      " />`;
+  return svg_outlines;
+}
+
+function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
+  if (pylon_alive) {
+    fill_color = poly_fill;
+  } else {
+    fill_color = 'black';
+  }
+  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
+  let [top_left_x, top_left_y] = left_front_top;
+  let [top_right_x, top_right_y] = right_front_top;
+  let [bot_left_x, bot_left_y] = left_front_bot;
+  let [bot_right_x, bot_right_y] = right_front_bot;
+  svg_panel = `<polygon fill="${fill_color}" id="${panel_id}"
+                      points="${top_left_x},${top_left_y}
+                              ${top_right_x},${top_right_y}
+                              ${bot_right_x},${bot_right_y}
+                              ${bot_left_x},${bot_left_y}      " />`;
+  return svg_panel;
+}
 
 function outlineWidth(difference_yy) {
   if (difference_yy < 8) {
@@ -341,5 +329,6 @@ function outlineWidth(difference_yy) {
   } else {
     outline_width = 0;
   }
-  return outline_width;
+  outline_adjusted = outline_width * PYLON_OUTLINE_ADJUST;
+  return outline_adjusted;
 }

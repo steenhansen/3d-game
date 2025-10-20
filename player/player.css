@@ -1,7 +1,5 @@
-
 :root {
-
   --cracked-glass-display: none;
-  --cracked-glass-opacity:0;
-  --cracked-glass-image:"";
+  --cracked-glass-opacity: 0;
+  --cracked-glass-image: "";
 }

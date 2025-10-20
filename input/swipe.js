@@ -7,8 +7,9 @@ function touchBoxes(the_event) {
   if (is_a_center_box) {
     the_event.preventDefault();
     fullMobile();
-    g_is_drifting = false;
-    g_missile = launchMissile(g_missile);
+    //  g_is_drifting = false;
+    delete g_planet.t_drift_direction;
+    g_missile = launchMissile(g_missile, g_player);
   }
 }
 
@@ -31,7 +32,7 @@ function touchEnd(evt) {
     dif_y = Math.abs(g_touch_y_start - touch_y_end);
     was_a_press = (dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN);
     if (was_a_press) {
-      g_missile = launchMissile(g_missile);
+      g_missile = launchMissile(g_missile, g_player);
     } else {
       dbg_start_swipe_x = g_touch_x_start;
       dbg_start_swipe_y = g_touch_y_start;
@@ -56,23 +57,24 @@ function touchEnd(evt) {
 
 
 function swipeUpJump() {
-  g_loop_state = LOOP_7_PLAY_A_JUMP_START;
+  the_planet.m_planet_state = LOOP_7_PLAY_A_JUMP_START;
   g_swipe_dir = SWIPE_UP;
 }
 
 
 function swipeLeftFly() {
   g_swipe_dir = SWIPE_LEFT;
-  g_loop_state = LOOP_8_AFTER_PLAY;
+  the_planet.m_planet_state = LOOP_8_AFTER_PLAY;
 }
 
 function swipeRightQuit() {
   g_swipe_dir = SWIPE_RIGHT;
-  g_loop_state = LOOP_10_DONE;
+  the_planet.m_planet_state = LOOP_13_DONE;
 }
 
 function swipeDownStop() {
   g_swipe_dir = SWIPE_DOWN;
-  g_is_drifting = false;
+  //g_is_drifting = false;
+  delete g_planet.t_drift_direction;
   stopMoving();
 }

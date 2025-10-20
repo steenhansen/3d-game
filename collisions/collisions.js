@@ -1,16 +1,4 @@
 
-/*
-
-  const field_width = g_checkerboard_width;
-  const room_width = TILE_WIDTH;
-
-  const field_depth = g_checkerboard_depth;
-  const room_depth = 16;
-
-  let COLLISION_SIZES = [field_width, room_width, field_depth, room_depth];
-  collision_2 = hasCollided(a_pylon, the_player, COLLISION_SIZES);
-
-*/
 
 
 function hasCollided(a_thing, an_object, COLLISION_SIZES) {

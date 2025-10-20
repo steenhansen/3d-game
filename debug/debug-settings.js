@@ -212,7 +212,7 @@ function debugReportFrameTime() {
   game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
   debugPrint(game_fps, 430, 25);
 
-  const mobile_screen = getCssVar("--mobile-screen");
+  const mobile_screen = getCssVar("--device-screen");
   debugPrint(mobile_screen, 340, 45);
 
   start_point = [dbg_start_swipe_x, dbg_start_swipe_y];

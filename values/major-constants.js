@@ -1,13 +1,5 @@
 
 
-// //let g_checkerboard_width = 8192;
-// let g_checkerboard_width = 2000;
-
-// //let g_checkerboard_depth = 768;
-// let g_checkerboard_depth = 300;
-
-
-
 let ENEMY_TO_HORIZON_LIFT = 56;
 
 

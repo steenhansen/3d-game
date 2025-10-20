@@ -15,6 +15,8 @@ const ENEMY_1_HIT = 'enemy-hit';     // green missile + green enemy
 const ENEMY_2_LIFTING = 'enemy-lift';
 const ENEMY_3_DEAD = 'enemy-dead';
 const ENEMY_4_HIDDEN = 'enemy-hidden';  // do nothing
+const ENEMY_5_DEAD = 'enemy-dead';
+
 
 const LOOP_0_START = 'LOOP_0_START';
 const LOOP_0_DESKTOP_START = 'LOOP_0_DESKTOP_START';
@@ -39,7 +41,13 @@ const LOOP_7_PLAY_C_JUMP_DOWN = 'LOOP_7_PLAY_C_JUMP_DOWN';
 
 const LOOP_8_AFTER_PLAY = 'LOOP_8_AFTER_PLAY';
 const LOOP_9_FLY = 'LOOP_9_FLY';
-const LOOP_10_DONE = 'LOOP_10_DONE';
+
+const LOOP_10_DEAD_START = 'LOOP_10_DEAD_START';
+
+const LOOP_11_DEAD_FIELD = 'LOOP_11_DEAD_FIELD';
+const LOOP_12_DEAD_SKY = 'LOOP_12_DEAD_SKY';
+
+const LOOP_13_DONE = 'LOOP_13_DONE';
 
 
 

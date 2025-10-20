@@ -1,98 +1,61 @@
 
 
 // only from front
-function playerHitEnemies(g_player, the_enemies) {
+function playerHitEnemies(the_player, the_enemies) {
   changed_enemies = [];
   number_enemies = the_enemies.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = the_enemies[enemy_index];
     enemy_state = an_enemy.m_state;
     if (enemy_state == ENEMY_0_FLOATING) {
-      has_collided = hasCollided(g_player, an_enemy, COLLISION_SIZES);
+      has_collided = hasCollided(the_player, an_enemy, COLLISION_SIZES);
       if (has_collided) {
-        g_player.m_num_cracks++;
-        if (g_player.m_num_ == MAX_CRACKS) {
-          g_taking_off = true;
+        the_player.m_num_cracks++;
+        if (the_player.m_num_ == MAX_CRACKS) {
+          the_player.t_is_dying = true;
         }
       }
     }
   }
-  return g_player;
+  return the_player;
 }
 
 // only from front  ????
-function playerHitHoles(g_player, the_holes) {
+function playerHitHoles(the_player, the_holes) {
   hit_hole_last_move = false;
-  if (!('t_jump_amount' in g_player)) {
+  if (!('t_jump_amount' in the_player)) {
     changed_enemies = [];
     number_holes = the_holes.length;
     for (let hole_index = 0; hole_index < number_holes; hole_index++) {
       a_hole = the_holes[hole_index];
-      has_collided = hasCollided(g_player, a_hole, COLLISION_SIZES);
+      has_collided = hasCollided(the_player, a_hole, COLLISION_SIZES);
       if (has_collided) {
         hit_hole_last_move = true;
-        if (g_player.m_num_cracks == MAX_CRACKS) {
-          g_taking_off = true;
+        if (the_player.m_num_cracks == MAX_CRACKS) {
+          the_player.t_is_dying = true;
         }
       }
     }
   }
-  return [g_player, hit_hole_last_move];
+  return [the_player, hit_hole_last_move];
 }
 
-function playerHitPylons(g_player, the_pylons) {
-  hit_pylon_last_move = false;
+function playerHitPylons(the_player, the_pylons) {
   changed_pylons = [];
   number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
-    has_collided = hasCollided(g_player, a_pylon, COLLISION_SIZES);
+    has_collided = hasCollided(the_player, a_pylon, COLLISION_SIZES);
     if (has_collided) {
-      if (a_pylon.s_isa == 'is-exit') {
-        console.log("HIT PYLON", a_pylon);
-        //window.location.href = 'part-1/part-1.html?g_loop_state=LOOP_0_DESKTOP_START';
-        window.location.href = a_pylon.s_url_hit;
-      }
-      hit_pylon_last_move = true;
-      a_pylon.t_pylon_hit_flash = 17;
-      g_player.t_recoil_count = RECOIL_COUNTDOWN;
-
-      if ('m_a_front_color' in a_pylon) {
-        temp_front = a_pylon.m_a_front_color;
-        a_pylon.m_a_front_color = a_pylon.m_a_left_color;
-        a_pylon.m_a_left_color = a_pylon.m_a_right_color;
-        a_pylon.m_a_right_color = temp_front;
+      if (a_pylon.s_isa == 'is-pylon-sign') {
+        possibleExit(a_pylon);
       } else {
-
-        temp_front_from = a_pylon.m_b_front_grad_from;
-        temp_front_to = a_pylon.m_b_front_grad_to;
-
-
-        a_pylon.m_b_front_grad_from = a_pylon.m_b_left_grad_from;
-        a_pylon.m_b_front_grad_to = a_pylon.m_b_left_grad_to;
-
-
-        a_pylon.m_b_left_grad_from = a_pylon.m_b_right_grad_from;
-        a_pylon.m_b_left_grad_to = a_pylon.m_b_right_grad_to;
-
-
-
-        a_pylon.m_b_right_grad_from = temp_front_from;
-        a_pylon.m_b_right_grad_to = temp_front_to;
-
-
-
+        [the_player, a_pylon] = plainPylon(the_player, a_pylon);
       }
-      new_direction = objectBounced(g_move_direction);
-
-
-      g_player.t_screen_askew = 10;
-      g_move_direction = new_direction;
-
     }
     changed_pylons[pylon_index] = a_pylon;
   }
-  return [g_player, changed_pylons];
+  return [the_player, changed_pylons];
 }
 
 
@@ -144,7 +107,7 @@ function enemiesHitPylons(the_enemies, the_pylons) {
       a_pylon = the_pylons[pylon_index];
       has_collided = hasCollided(an_enemy, a_pylon, COLLISION_SIZES);
       if (has_collided) {
-        a_pylon.t_pylon_hit_flash = HIT_FLASH_PYLON;  // 23;
+        a_pylon.t_pylon_hit_flash = HIT_FLASH_PYLON;
         an_enemy.m_state = ENEMY_1_BOUNCE;
         an_enemy.t_enemy_hit_flash = HIT_FLASH_ENEMY;
         an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon

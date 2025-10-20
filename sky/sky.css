@@ -80,7 +80,7 @@
 
   margin-left: var(--margin-left_px);
   top: 0px;
-  background-image: url('../images/the-sun.png');
+  background-image: var(--sun-image);
   width: 1024px;
   height: 512px;
 
@@ -90,7 +90,7 @@
   animation-iteration-count: infinite;
   animation-duration: 16s;
   animation-name: var(--ani-key-frame);
-  /* animation-name: sun-keyframes;  */
+
 }
 
 

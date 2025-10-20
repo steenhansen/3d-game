@@ -69,7 +69,7 @@ function fixDesktop() {
 
 
   if (document.fullscreenElement != null) {
-    document.exitFullscreen();
+    //  document.exitFullscreen();
   }
 
 }
@@ -186,8 +186,16 @@ function fixMobile2() {
 }
 
 function isMobile() {
-  const mobile_screen = getCssVar("--mobile-screen");
+  const mobile_screen = getCssVar("--device-screen");
   if (mobile_screen == "is-mobile") {
+    return true;
+  }
+  return false;
+}
+
+
+function isFullScreenMobile() {
+  if (document.fullscreenElement) {
     return true;
   }
   return false;

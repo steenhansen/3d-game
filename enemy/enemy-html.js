@@ -1,14 +1,18 @@
 
 ball_start = "-2s";
 
-function makeBall(front_or_all, ball_color, is_dead) {
+const DYING_STAR_COLOR = "black";
+const DYING_BALL_COLOR = 'grey';
+
+
+function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
 
   ani_duration = aniDuration(is_dead);
 
+  alive_dead_color = '--enemy-ball-color-' + enemy_number;
 
   if (is_dead) {
     ani_duration = "1s";
-    //   console.log("DDDDDDDD");
   } else {
     ani_duration = "2s";
   }
@@ -30,7 +34,7 @@ function makeBall(front_or_all, ball_color, is_dead) {
           <circle id="bob" cx=0 cy = 0 r = "50"
                     fill-opacity="${fill_opacity}"
             stroke-width="0" stroke="#000"
-          fill = "${ball_color}" >
+          fill = "var(${alive_dead_color})" >
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" begin="${ball_start}">
                   <mpath href="#${ball_id}" />
               </animateMotion>
@@ -47,27 +51,29 @@ function makeBall(front_or_all, ball_color, is_dead) {
 const DEAD_LOOP = "16s";
 const LIVE_LOOP = "4s";
 
+//  is_dead is never used, this is called once only on create
+// star_color is never used
 
+//  killEnemy() is what changes it to be dead
 function rotatingStar(star_color, is_dead, enemy_number) {
-  //  console.log("DDDDDDDD rotatingStar");
   ani_duration = aniDuration(is_dead);
   rotate_from = 0;
   rotate_to = 359;
   hit_opacity = '--enemy-star-opacity-' + enemy_number;
   hit_edge_prop = '--enemy-star-edge-width-' + enemy_number;
-  // ani_duration = "4s";
+  alive_dead_color = '--enemy-star-color-' + enemy_number;
   rotating_star = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
     <g id="star-spin">
       <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512" 
         dur="${ani_duration}" repeatCount="indefinite" />
-      <path fill="${star_color}" fill-opacity="var(${hit_opacity})" 
+      <path fill="var(${alive_dead_color})" fill-opacity="var(${hit_opacity})" 
       stroke="white" stroke-width="var(${hit_edge_prop})"  stroke-opacity="0.4" 
         d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z" />
     </g>
     <circle cx="128" cy="128" id="sun:circle" r="2" stroke="${star_color}" stroke-width="0.0" fill-opacity="0" />
 `;
-
+  //  console.log("sft", rotating_star);
   return rotating_star;
 }
 
@@ -81,22 +87,29 @@ function aniDuration(is_dead) {
 }
 
 
-// createEnemy to install done once
+// createEnemy to install done once, and once to KILL !
+// function makeEnemyOnce(the_enemy) {
 function makeEnemy(the_enemy) {
-  // console.log("make DDD enemy", the_enemy);
+  // console.log("the_en", the_enemy);
   let enemy_number = the_enemy.s_enemy_number;
   // this is done once, so m_dead is checked at the start of the game, no use here at init
   is_dead = the_enemy.m_dead;
   enemy_id = the_enemy.s_id;
+  // if (the_enemy.m_alive) {
   star_color = the_enemy.s_colors[0];
   ball_color = the_enemy.s_colors[1];
+  //} else {
+  //star_color = "black";
+  // ball_color = "black";
+  //}
+
 
 
   rotating_star = rotatingStar(star_color, is_dead, enemy_number);
 
 
-  ball_all = makeBall('all', ball_color, is_dead);
-  ball_front = makeBall('front', ball_color, is_dead);
+  ball_all = makeBall('all', ball_color, is_dead, enemy_number);
+  ball_front = makeBall('front', ball_color, is_dead, enemy_number);
 
 
   the_y = 128 - the_enemy.t_hover_up; // always overwritten

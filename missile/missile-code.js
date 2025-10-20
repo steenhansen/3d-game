@@ -1,13 +1,13 @@
 
 
-function missileAdvance(the_missile, g_player) {
+function missileAdvance(the_missile, the_player) {
 
   the_missile.m_random++;
   if (the_missile.m_random == 360) {
     the_missile.m_random = 0;
   }
 
-  missileSet(the_missile, g_player);
+  missileSet(the_missile, the_player);
   if (typeof DBG_MISSILE_ADVANCE == 'string') {
     return the_missile;
   }
@@ -37,8 +37,8 @@ function missileAdvance(the_missile, g_player) {
 
 
 
-function launchMissile(the_missile) {
-  let { m_x, m_y } = g_player;
+function launchMissile(the_missile, the_player) {      // qbert
+  let { m_x, m_y } = the_player;
   the_missile.m_x = m_x;
   the_missile.m_y = m_y;
   the_missile.m_x_dir = 0;
@@ -54,14 +54,14 @@ function launchMissile(the_missile) {
 
 
 
-function missileSet(the_missile, g_player) {
+function missileSet(the_missile, the_player) {
 
   const missile_flying = 't_lifetime' in g_missile;
   if (missile_flying) {
     if (typeof DBG_FREEZE_MISSILE != 'string') {
       getRandoms(the_missile);
     }
-    missileDraw(the_missile, g_player);
+    missileDraw(the_missile, the_player);
   } else {
     the_missile.m_x_dir = 0;
     the_missile.m_y_dir = -1;
@@ -207,7 +207,6 @@ function makeList() {
       m_size2 = "";
       if (m_size != '') {
         m_size2 = Math.floor(m_size / 2);
-        //console.log("ms", m_size2);
         m_size += 'px';
       }
       m_color = randomMissileColor([32, 32, 32], [100, 223, 100]);
@@ -290,13 +289,8 @@ function missilePosition(real_id, z_index, the_stats) {
   missile_div = document.getElementById(real_id + '-div');
   missile_div.style.zIndex = z_index;
   missile_x_y = document.getElementById(real_id + '-x-y');
-  // console.log("missilePosition", missile_x_y, center_x);
-
 
   missile_x_y.setAttribute("x", center_x + 256 + 128);           // get shot centered horizontally
-  //missile_x_y.setAttribute("x", center_x);
-  //  if enemy then - ENEMY_TO_HORIZON_LIFT
-  //  missile_x_y.setAttribute("y", center_y - ENEMY_TO_HORIZON_LIFT);
   missile_x_y.setAttribute("y", center_y + 256 + 64);
   missile_scaled = document.getElementById(real_id + '-scaled');
   missile_scaled.style.transform = `scale(${the_scale})`;
@@ -311,12 +305,12 @@ function missilePosition(real_id, z_index, the_stats) {
 ////////////////////////////////////////////////
 
 
-function missileDraw(the_sprite, g_player) {
+function missileDraw(the_sprite, the_player) {
 
-  pylon_player_ys = [the_sprite.m_y, g_player.m_y];
+  pylon_player_ys = [the_sprite.m_y, the_player.m_y];
 
   real_id = the_sprite.s_id;
-  [the_z_index, difference_y, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, g_player);
+  [the_z_index, difference_y, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, the_player);
   if (missile_relative == LEFT_OF_PLAYER) {
 
 

@@ -1,3 +1,24 @@
+
+function incrementLeft() {
+  let bottom_line_count = x_shift_list[closest_width_index];
+  if (bottom_line_count == LEFT_LOOP_OVER || bottom_line_count == IS_RESET_RIGHT) {
+    resetLeft();
+    // recordLefts_dbg(4096, 4096, 4096, 4096);
+  } else {
+    for (let cur_line = 0; cur_line <= num_lines; cur_line++) {
+      let accum_old = overUnder_accums[cur_line];
+      let accum_new = accum_old - cur_line;
+      let accum_underflow = underflowLeft(cur_line, accum_new);
+      /* start debug code */
+      // recordLefts_dbg(cur_line, accum_old, accum_new, accum_underflow);
+      /* end debug code */
+    }
+  }
+}
+
+
+
+
 function recordLefts_dbg(cur_line, old_left, left_sum, adjust_left) {
   if (cur_line == g_record_line_dbg) {
     x_shift_amount = x_shift_list[g_record_line_dbg];
@@ -35,20 +56,3 @@ function underflowLeft(cur_line, accum_new) {
   return accum_new;
 }
 
-
-function incrementLeft() {
-  let bottom_line_count = x_shift_list[closest_width_index];
-  if (bottom_line_count == LEFT_LOOP_OVER || bottom_line_count == IS_RESET_RIGHT) {
-    resetLeft();
-    recordLefts_dbg(4096, 4096, 4096, 4096);
-  } else {
-    for (let cur_line = 0; cur_line <= num_lines; cur_line++) {
-      let accum_old = overUnder_accums[cur_line];
-      let accum_new = accum_old - cur_line;
-      let accum_underflow = underflowLeft(cur_line, accum_new);
-      /* start debug code */
-      recordLefts_dbg(cur_line, accum_old, accum_new, accum_underflow);
-      /* end debug code */
-    }
-  }
-}

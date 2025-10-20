@@ -3,7 +3,7 @@ let COLLISION_SIZES;
 
 const INIT_Y_FLIP_COUNT = 4;
 
-const DRIFT_CYCLES = 256 * 3;       //1024;
+//const DRIFT_CYCLES = 256 * 3;       //1024;
 
 const DEVICE_UNKNOWN = 0;
 const DEVICE_DESKTOP = 1;

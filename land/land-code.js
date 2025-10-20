@@ -8,17 +8,17 @@ const STOP_JUMP_UP_DOWN = 100;
 
 var START_FAST_FLY_COUNT = STOP_FLY_COUNT - 1;
 
-function animateHoleHit(g_player) {
-  g_player.m_num_cracks++;
-  return g_player;
+function animateHoleHit(the_player) {
+  the_player.m_num_cracks++;
+  return the_player;
 }
 
-function animateHoleInside(g_player) {
-  return g_player;
+function animateHoleInside(the_player) {
+  return the_player;
 }
 
-function animateHoleLeave(g_player) {
-  return g_player;
+function animateHoleLeave(the_player) {
+  return the_player;
 }
 
 
@@ -30,48 +30,48 @@ function animateHoleLeave(g_player) {
 
 const JUMP_STEP = 3;
 
-function animateJumpUp(g_player) {
-  g_player.t_jump_amount += JUMP_STEP;
-  if (g_player.t_jump_amount > STOP_JUMP_UP_DOWN) {
-    return [g_player, LOOP_7_PLAY_C_JUMP_DOWN];
+function animateJumpUp(the_player) {
+  the_player.t_jump_amount += JUMP_STEP;
+  if (the_player.t_jump_amount > STOP_JUMP_UP_DOWN) {
+    return [the_player, LOOP_7_PLAY_C_JUMP_DOWN];
   }
-  doFlying(g_player.t_jump_amount);
-  return [g_player, LOOP_7_PLAY_B_JUMP_UP];
+  doFlying(the_player.t_jump_amount);
+  return [the_player, LOOP_7_PLAY_B_JUMP_UP];
 }
 
-function animateJumpDown(g_player) {
-  g_player.t_jump_amount -= JUMP_STEP;
-  if (g_player.t_jump_amount < 1) {
-    delete g_player.t_jump_amount;
-    return [g_player, LOOP_7_PLAY_NORMAL];
+function animateJumpDown(the_player) {
+  the_player.t_jump_amount -= JUMP_STEP;
+  if (the_player.t_jump_amount < 1) {
+    delete the_player.t_jump_amount;
+    return [the_player, LOOP_7_PLAY_NORMAL];
   }
-  doFlying(g_player.t_jump_amount);
-  return [g_player, LOOP_7_PLAY_C_JUMP_DOWN];
+  doFlying(the_player.t_jump_amount);
+  return [the_player, LOOP_7_PLAY_C_JUMP_DOWN];
 }
 
 
 
-function animateFly(fly_speed, g_player) {
+function animateFly(fly_speed, the_player) {
   if (fly_speed == FAST_FLY) {
     doFlying(STOP_FLY_COUNT - 1);
-    delete g_player.t_fly_amount;
-    return [g_player, LOOP_10_DONE];
+    delete the_player.t_fly_amount;
+    return [the_player, LOOP_13_DONE];
   } else if (fly_speed == SLOW_FLY) {
-    g_player.t_fly_amount += FLY_STEP;
-    if (g_player.t_fly_amount > STOP_FLY_COUNT) {
-      delete g_player.t_fly_amount;
-      return [g_player, LOOP_10_DONE];
+    the_player.t_fly_amount += FLY_STEP;
+    if (the_player.t_fly_amount > STOP_FLY_COUNT) {
+      delete the_player.t_fly_amount;
+      return [the_player, LOOP_13_DONE];
     }
-    doFlying(g_player.t_fly_amount);
-    return [g_player, LOOP_9_FLY];
+    doFlying(the_player.t_fly_amount);
+    return [the_player, LOOP_9_FLY];
   } else {
-    g_player.t_fly_amount += 1.5;
-    if (g_player.t_fly_amount > STOP_FLY_COUNT) {
-      delete g_player.t_fly_amount;
-      return [g_player, LOOP_10_DONE];
+    the_player.t_fly_amount += 1.5;
+    if (the_player.t_fly_amount > STOP_FLY_COUNT) {
+      delete the_player.t_fly_amount;
+      return [the_player, LOOP_13_DONE];
     }
-    doFlying(g_player.t_fly_amount);
-    return [g_player, LOOP_9_FLY];
+    doFlying(the_player.t_fly_amount);
+    return [the_player, LOOP_9_FLY];
   }
 }
 
@@ -383,9 +383,8 @@ function resetSections() {
 
   doFlying(0);
   g_taking_off = false;
-  g_move_direction = MOVINGx_NOT;
 
-
+  g_planet.m_move_direction = MOVINGx_NOT;
 
   landingInit();
   initElevator();

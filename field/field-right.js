@@ -25,14 +25,14 @@ function incrementRight() {
   let bottom_line_count = x_shift_list[closest_width_index];
   if (bottom_line_count == RIGHT_LOOP_OVER || bottom_line_count == IS_RESET_LEFT) {
     resetRight();
-    recordLefts_dbg(5096, 5096, 5096, 5096);
+    //recordLefts_dbg(5096, 5096, 5096, 5096);
   } else {
     for (let right_line = 0; right_line <= num_lines; right_line++) {
       let old_right = overUnder_accums[right_line];
       let right_sum = old_right + right_line;
       let accum_overflow = overflowRight(right_line, right_sum);
       /* start debug code */
-      recordRights_dbg(right_line, old_right, right_sum, accum_overflow);
+      // recordRights_dbg(right_line, old_right, right_sum, accum_overflow);
       /* end debug code */
     }
   }

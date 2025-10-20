@@ -41,14 +41,13 @@ function enemyMove(the_enemy) {
 
 
 
-function drawEnemies(the_enemies, g_player) {
+function drawEnemies(the_enemies, the_player) {
   changed_enemies = [];
   number_enemies = the_enemies.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
-    //    console.log("dddlakjsdfdsf", enemy_index);
     an_enemy = the_enemies[enemy_index];
     enemy_name = an_enemy.s_id;
-    changed_enemy = enemyDraw(enemy_name, an_enemy, g_player);
+    changed_enemy = enemyDraw(enemy_name, an_enemy, the_player);
     changed_enemies[enemy_index] = changed_enemy;
   }
   return changed_enemies;
@@ -56,28 +55,24 @@ function drawEnemies(the_enemies, g_player) {
 
 
 
-function enemyDraw(real_id, the_enemy, g_player) {
+function enemyDraw(real_id, the_enemy, the_player) {
   enemy_state = the_enemy.m_state;
   if (enemy_state == ENEMY_0_FLOATING) {
-    //console.log("en  ENEMY_0_FLOATING");
-    enemyPlace(real_id, the_enemy, g_player);
+    enemyPlace(real_id, the_enemy, the_player);
     the_enemy = enemyMove(the_enemy);
   } else if (enemy_state == ENEMY_1_BOUNCE) {
-    // console.log("en  ENEMY_1_BOUNCE");
     setCssEnemyEdge(the_enemy.s_enemy_number, '48px');   //'#ff0000');
     the_enemy = enemyMove(the_enemy);
-    enemyPlace(real_id, the_enemy, g_player);
+    enemyPlace(real_id, the_enemy, the_player);
     the_enemy.t_enemy_hit_flash--;
     if (the_enemy.t_enemy_hit_flash == 0) {
       delete the_enemy.t_enemy_hit_flash;
       setCssEnemyEdge(the_enemy.s_enemy_number, '0px');
-      //   console.log("en  ENEMY_0_FLOATING -------------------------");
-      //setCssEnemyColor(the_enemy.s_enemy_number, '0px'); //, '#ffff00');
       the_enemy.m_state = ENEMY_0_FLOATING;
     }
   } else if (enemy_state == ENEMY_1_HIT) {
     setCssEnemyOpacity(the_enemy.s_enemy_number, 0.3333);
-    enemyPlace(real_id, the_enemy, g_player);
+    enemyPlace(real_id, the_enemy, the_player);
     the_enemy.t_enemy_hit_flash--;
     if (the_enemy.t_enemy_hit_flash == 0) {
       delete the_enemy.t_enemy_hit_flash;
@@ -85,23 +80,21 @@ function enemyDraw(real_id, the_enemy, g_player) {
       the_enemy.m_state = ENEMY_2_LIFTING;
     }
   } else if (enemy_state == ENEMY_2_LIFTING) {
-    // setCssEnemyColor(the_enemy.s_enemy_number, '#aaaa00');
-    enemyPlace(real_id, the_enemy, g_player);
-    // the_enemy.m_state = ENEMY_2_LIFTING;
+    enemyPlace(real_id, the_enemy, the_player);
     the_enemy.t_hover_up = the_enemy.t_hover_up + TRAVEL_SPEED;
     if (the_enemy.t_hover_up > ENEMY_HIDDEN) {
       delete the_enemy.t_hover_up;
-      the_enemy.m_state = ENEMY_3_DEAD;
+      the_enemy.m_state = ENEMY_3_DEAD;  // ENEMY_3_ZOMBIED
     }
-    enemyPlace(real_id, the_enemy, g_player);
-  } else if (enemy_state == ENEMY_3_DEAD) {
-    enemyPlace(real_id, the_enemy, g_player);  // hide it completely
-    the_enemy.m_state = ENEMY_4_HIDDEN;         // do nothing
+    enemyPlace(real_id, the_enemy, the_player);
+  } else if (enemy_state == ENEMY_3_DEAD) {  // ENEMY_3_ZOMBIED
+    enemyPlace(real_id, the_enemy, the_player);  // hide it completely
+    the_enemy.m_state = ENEMY_4_HIDDEN;         // // ENEMY_4_HIDEN_BURIED
+  } else if (enemy_state == ENEMY_5_DEAD) {
+    setCssEnemyEdge(the_enemy.s_enemy_number, '0px');
+    enemyPlace(real_id, the_enemy, the_player);
+
   } else {
-    //  ENEMY_4_HIDDEN  do nothing as enemy is hidden comletely
-    //  console.log("dead enemy", the_enemy);
-    // enemyPlace(real_id, the_enemy, g_player);
-    //the_enemy.m_dead = true;
   }
   return the_enemy;
 }
@@ -132,26 +125,17 @@ function enemyPosition(real_id, z_index, the_stats, hover_up) {
   missile_div.style.zIndex = z_index;
   missile_x_y = document.getElementById(real_id + '-x-y');
   missile_x_y.setAttribute("x", center_x);
-  //  if enemy then - ENEMY_TO_HORIZON_LIFT
-
-
   enemy_lifting_y = center_y - ENEMY_TO_HORIZON_LIFT - hover_up;
   missile_x_y.setAttribute("y", enemy_lifting_y);
-
-
-
   missile_scaled = document.getElementById(real_id + '-scaled');
   missile_scaled.style.transform = `scale(${the_scale})`;
-
-
-
 }
 
 
-function enemyPlace(real_id, the_enemy, g_player) {
-  enemy_player_ys = [the_enemy.m_y, g_player.m_y];
+function enemyPlace(real_id, the_enemy, the_player) {
+  enemy_player_ys = [the_enemy.m_y, the_player.m_y];
   real_id = the_enemy.s_id;
-  [the_z_index, difference_y, enemy_relative, x_center_offset, head_on_view] = objectPlacement(the_enemy, g_player);
+  [the_z_index, difference_y, enemy_relative, x_center_offset, head_on_view] = objectPlacement(the_enemy, the_player);
   if (enemy_relative == LEFT_OF_PLAYER) {
     left_mid_right_vlines = objectLeftSide(x_center_offset, enemy_player_ys, ENEMY_PIXEL_DEPTH);
   } else {
@@ -159,8 +143,9 @@ function enemyPlace(real_id, the_enemy, g_player) {
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
-  //console.log("enemy THE_STATS", real_id, the_stats);
-  if (the_enemy.m_state == ENEMY_3_DEAD) {
+  if (the_enemy.m_state == ENEMY_5_DEAD) {
+
+  } else if (the_enemy.m_state == ENEMY_3_DEAD) {
     hover_up = ENEMY_HIDDEN;
   } else if ("t_hover_up" in the_enemy) {
     hover_up = the_enemy.t_hover_up;
@@ -175,14 +160,6 @@ function enemyPlace(real_id, the_enemy, g_player) {
 
 
 function killEnemy(the_enemy) {
-  // console.log("kiillenemy");
-  // let { s_isa, s_id,
-  //   m_x, m_y,
-  //   m_move_count,
-  //   s_moves_x, s_moves_y,
-  //   m_dead, s_colors
-  // } = the_enemy;
-
   let { s_id, m_x, m_y, s_colors } = the_enemy;
 
   let killed_enemy = {
@@ -194,7 +171,6 @@ function killEnemy(the_enemy) {
     s_moves_x: [], s_moves_y: [],
     m_dead: true,
     s_colors: s_colors,
-    // s_colors: ['green', 'red', 'blue', 'orange'],
   };
   html_killed = makeEnemy(killed_enemy);
 

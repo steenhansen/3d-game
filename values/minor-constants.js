@@ -41,17 +41,15 @@ const MOVINGx_W = 8;
 let PLAYER_START_DIR = MOVINGx_NOT;
 
 
-let WHITE_BLACK_GRADIENT = ["white", "black"];  // ffffff, 000000
-let LIME_FUCHSIA_GRADIENT = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
-let RED_YELLOW_GRADIENT = ["Red", "Yellow"];  //  ff0000,   0000FF
+let PYLON_NUMBER_TWIRLS = 400;
+let PYLON_OUTLINE_ADJUST = 3;
+let PYLON_TEXT_FIGURE = 16;
+let PYLON_HIT_FLASH_COUNT = 17;
 
 
+const HIT_FLASH_PYLON = 23;
 
 
-
-
-
-let NUMBER_TWIRLS = 400;
 let TILE_WIDTH = 256;
 let HALF_VIEW_WIDTH = 512;
 let BOTTOM_FIELD = 512;
@@ -63,11 +61,10 @@ let LEFT_RIGHT_BOUNCE_X_INVERSION = -1;
 
 let HEAD_ON_X_DIFF = TILE_WIDTH / 2;
 let HALF_TILE_WIDTH = TILE_WIDTH / 2;
-const field_width = g_checkerboard_width;
-const room_width = TILE_WIDTH;
 
 
-const room_depth = 16;
+
+const ROOM_DEPTH = 16;
 
 
 let FAST_LAND = 'fast-land';

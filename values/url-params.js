@@ -27,9 +27,7 @@ function mobileDowngrade() {
   if (g_mobile_downgrading == 'unknown') {
     location_url = new URL(window.location);
     mobile_downgrade = location_url.searchParams.get("mobile-downgrade");
-    // console.log("mobile_downgrade", mobile_downgrade);
     g_mobile_downgrading = (mobile_downgrade != 'false');
-    //  console.log("g_mobile_downgrading", g_mobile_downgrading);
   }
   return g_mobile_downgrading;
 }
@@ -39,12 +37,13 @@ function urlParams() {
   mobileDowngrade();
 }
 
-function gotoLoopState() {
-  location_url = new URL(window.location);
-  loop_state = location_url.searchParams.get("g_loop_state");
-  console.log("debug_param: " + debug_param);
-  // g_loop_state = LOOP_0_DESKTOP_START;     //debug_param;
-  g_loop_state = loop_state;
-  console.log("g_loop_state: " + loop_state);
-}
+// function gotoLoopState() {
+//   location_url = new URL(window.location);
+//   loop_state = location_url.searchParams.get("g_l oop_state");
+//   if (loop_state == undefined) {
+//     return LOOP_0_DESKTOP_START;
+//   }
+//   console.log('gogot', loop_state);
+//   return loop_state;
+// }
 
