@@ -1,14 +1,22 @@
 
 
-function dyingCheckerboard() {
-  g_dying_distance++;
-  dying_line = 256 - g_dying_distance;
+function dyingCheckerboard(the_planet) {
+  g_planet.m_dying_distance++;
+
+
+
+  dying_line = 256 - g_planet.m_dying_distance;
+
+  g_field_xs_death[dying_line] = (g_planet.m_dying_distance % 5) - 3;
+
   back_ground = "url('../images/board-death.png')";
   setCssLineBackground(dying_line, "url('../images/board-death.png')");
-  if (g_dying_distance > 256) {
-    return true;
+  if (g_planet.m_dying_distance > 256) {
+    just_died = true;
+  } else {
+    just_died = false;
   }
-  return false;
+  return [the_planet, just_died];
 }
 
 
@@ -20,7 +28,7 @@ function dyingPylons(the_player, pylon_list) {
     a_pylon = pylon_list[pylon_index];
     if (a_pylon.m_alive) {
       difference_y = spriteDiffY(a_pylon, the_player);
-      if (difference_y < g_dying_distance) {
+      if (difference_y < g_planet.m_dying_distance) {
         a_pylon.m_alive = false;
       }
     }
@@ -29,18 +37,14 @@ function dyingPylons(the_player, pylon_list) {
   return changed_pylons;
 }
 
-// const DYING_STAR_COLOR = "black";
-// const DYING_BALL_COLOR = 'grey';
 function dyingEnemies(the_player, enemy_list) {
   changed_enemies = [];
   number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = enemy_list[enemy_index];
-    if (an_enemy.m_state != ENEMY_5_DEAD) {
+    if (an_enemy.m_state == ENEMY_2_LIFTING) {
       difference_y = spriteDiffY(an_enemy, the_player);
-      if (difference_y < g_dying_distance) {
-        // setCssEnemyStarFill(enemy_index + 1, "black");
-        // setCssEnemyBallFill(enemy_index + 1, "grey");
+      if (difference_y < g_planet.m_dying_distance) {
         setCssEnemyStarFill(enemy_index + 1, DYING_STAR_COLOR);
         setCssEnemyBallFill(enemy_index + 1, DYING_BALL_COLOR);
       }

@@ -2,17 +2,24 @@
 
    --enemy-star-edge-width-1: 0;
    --enemy-star-opacity-1: 1;
+   --enemy-star-from-1: 0 512 512;
+   --enemy-star-to-1: 360 512 512;
    --enemy-star-color-1: yellow;
+   /* these are set */
    --enemy-ball-color-1: blue;
 
 
    --enemy-star-edge-width-2: 0;
    --enemy-star-opacity-2: 1;
+   --enemy-star-from-2: 0 512 512;
+   --enemy-star-to-2: 360 512 512;
    --enemy-star-color-2: orange;
    --enemy-ball-color-2: green;
 
    --enemy-star-edge-width-3: 0;
    --enemy-star-opacity-3: 1;
+   --enemy-star-from-3: 0 512 512;
+   --enemy-star-to-3: 360 512 512;
    --enemy-star-color-3: yellow;
    --enemy-ball-color-3: grey;
 
@@ -25,6 +32,8 @@
    --enemy-star-opacity-5: 1;
    --enemy-star-color-5: yellow;
    --enemy-ball-color-5: grey;
+
+
  }
 
 

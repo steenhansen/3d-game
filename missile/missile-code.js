@@ -1,6 +1,21 @@
 
 
 function missileAdvance(the_missile, the_player) {
+  //  console.log("m_phase", the_missile.t_phase);
+  if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
+    the_missile.t_lifetime = 25;
+    if (a_pylon.m_x > the_missile.m_x) {
+      the_missile.m_x_dir = -1;
+      the_missile.m_y_dir = 0;
+    } else {
+      the_missile.m_x_dir = 1;
+      the_missile.m_y_dir = 0;
+    }
+  } else if (the_missile.t_phase == MISSILE_3_SECOND_PYLON_HIT) {
+    delete the_missile.t_lifetime;
+    delete the_missile.t_phase;
+    //the_missile.t_phase == MISSILE_0_SHOT_FORWARD;
+  }
 
   the_missile.m_random++;
   if (the_missile.m_random == 360) {
@@ -15,36 +30,43 @@ function missileAdvance(the_missile, the_player) {
   const missile_flying = 't_lifetime' in g_missile;
 
   if (!missile_flying) {
+    //   console.log("!missile_flying");
     return the_missile;
   } else {
 
+    // console.log("t_lifetime", the_missile.t_lifetime);
     the_missile.t_lifetime--;
     if (the_missile.t_lifetime == 0) {
       delete the_missile.t_lifetime;
+      delete the_missile.t_phase;
     }
 
   }
 
   let { m_x_dir, m_y_dir } = the_missile;
   if (m_x_dir < 0) {
-    the_missile.m_x = leftOnBoard(the_missile.m_x, 12); // 4 * 3);
+    //  console.log("left", the_missile.t_lifetime);
+    the_missile.m_x = leftOnBoard(the_missile.m_x, 12 * 4);
   } else if (m_x_dir > 0) {
-    the_missile.m_x = rightOnBoard(the_missile.m_x, 12);  //4 * 3);
+    //  console.log("left", the_missile.t_lifetime);
+    the_missile.m_x = rightOnBoard(the_missile.m_x, 12 * 4);
+  } else {
+    the_missile.m_y = backwardOnBoard(the_missile.m_y, 8);   //TRAVEL_SPEED * 2);
   }
-  the_missile.m_y = backwardOnBoard(the_missile.m_y, 8);   //TRAVEL_SPEED * 2);
   return the_missile;
 }
 
 
 
 function launchMissile(the_missile, the_player) {      // qbert
+  the_missile.t_phase = MISSILE_0_SHOT_FORWARD;
   let { m_x, m_y } = the_player;
   the_missile.m_x = m_x;
   the_missile.m_y = m_y;
   the_missile.m_x_dir = 0;
   the_missile.m_y_dir = -1;
   the_missile.t_lifetime = MISSILE_LIFETIME;
-  the_missile.m_caromed = false;
+
   return the_missile;
 }
 
@@ -78,7 +100,7 @@ function missileSet(the_missile, the_player) {
 
 function getRandoms(the_missile) {
   missile_area = document.querySelector('.missile-vars');
-  let this_tick = g_missile_states[the_missile.m_random];
+  let this_tick = CACHED_MISSILE_SHAPES[the_missile.m_random];
   if (isMobile()) {
     number_replaced = this_tick.length / 4;
   } else {
@@ -178,7 +200,7 @@ function shuffleArray(array) {
   return array;
 }
 
-function makeList() {
+function makeDiamondsBalls() {
   let out_arr = [];
   for (let i = 0; i < 360; i++) {   // 6 sec == 60fps * 6  
     let in_arr = [];

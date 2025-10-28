@@ -23,14 +23,14 @@ function fieldForwards(travel_speed) {
 
 function incrementBack() {
   y_flip_count += 1;
-  if (y_flip_count > closest_depth_index) {
+  if (y_flip_count > CLOSEST_DEPTH_INDEX) {
     y_flip_count = 0;
   }
 }
 
 function incrementForward() {
   if (y_flip_count == 0) {
-    y_flip_count = closest_depth_index;
+    y_flip_count = CLOSEST_DEPTH_INDEX;
   } else {
     y_flip_count -= 1;
   }

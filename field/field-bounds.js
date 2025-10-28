@@ -39,7 +39,7 @@ LET VANISH_LINE_PERCENT_BY_DEPTH
 
 
 // index, start offset, end offset, flip offset
-let start_stop_flip = [
+const START_STOP_FLIP = [
      [0, 0, -2, 2],
      [1, 0, -4, 3],
      [2, -4, -10, 4],
@@ -336,3 +336,7 @@ let start_stop_flip = [
      // index, max_shift, min_shift, flip offset
 
 ]; // every tick
+
+const NUMBER_LINES = START_STOP_FLIP.length;
+const CLOSEST_WIDTH_INDEX = NUMBER_LINES - 1;
+

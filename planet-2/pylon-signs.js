@@ -10,7 +10,7 @@ exit_pylon = {
   p_sign_text_col: 'lime',
 };
 
-start_pylon = {
+enter_pylon = {
   s_isa: "is-pylon-sign",
   s_pylon_name: "pylon-start",
   s_vert_word: "SHOOT",

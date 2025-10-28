@@ -2,7 +2,7 @@
 
 function fixMobile() {
   if (!document.fullscreenElement) {
-    start_mobile = document.getElementById('start-mobile');
+    start_mobile = document.ById('start-mobile');
     waiting_for_start = true;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     return;
@@ -102,10 +102,8 @@ function fixDevice() {
 
   if (isMobile()) {
     fixMobile();
-    g_device_type = DEVICE_MOBILE;
   } else {
     fixDesktop();
-    g_device_type = DEVICE_DESKTOP;
   }
 
 

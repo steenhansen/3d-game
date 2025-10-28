@@ -194,15 +194,15 @@
 <script>
   console.log("Errors will be printed to console");
 
-  console.log("start_stop_flip = [line#, ]", start_stop_flip[g_record_line_dbg]);
+  console.log("START_STOP_FLIP = [line#, ]", START_STOP_FLIP[dbg_record_line]);
 
 
   //initLeftRight();
   initIncrementers();
 
-  overflow = overUnder_accums[g_record_line_dbg];
-  shift = x_shift_list[g_record_line_dbg];
-  console.log("after resetLeft  overflow:", overflow, "  _ x_shift_list:", shift);
+  overflow = g_field_xs_accums[dbg_record_line];
+  shift = g_field_xs_shift[dbg_record_line];
+  console.log("after resetLeft  overflow:", overflow, "  _ g_field_xs_shift:", shift);
 
   resetSections();
   animateStart();
@@ -234,24 +234,24 @@
     for (let r = 0; r < 1025; r++) {
       initIncrementers();
       incrementRight();
-      an_error = printAnyBoundBreaks_dbg(['a1-onRight', r]);
+      an_error = dbg_printAnyBoundBreaks(['a1-onRight', r]);
       if (an_error) { break; }
       for (let l = 0; l < 1025; l++) {
         incrementLeft();
         j++;
-        an_error = printAnyBoundBreaks_dbg(['a2-onLeft', r, l]);
+        an_error = dbg_printAnyBoundBreaks(['a2-onLeft', r, l]);
         if (an_error) { break; }
       }
     }
     for (let l = 0; l < 1025; l++) {
       initIncrementers();
       incrementLeft();
-      an_error = printAnyBoundBreaks_dbg(['a3', l]);
+      an_error = dbg_printAnyBoundBreaks(['a3', l]);
       if (an_error) { break; }
       for (let r = 0; r < 1025; r++) {
         incrementRight();
         j++;
-        an_error = printAnyBoundBreaks_dbg(['a4-onRight', l, r]);
+        an_error = dbg_printAnyBoundBreaks(['a4-onRight', l, r]);
         if (an_error) { break; }
       }
     }
@@ -268,7 +268,7 @@
     let debug_line = [];
     for (let x = 0; x < 1025; x++) {
       initIncrementers();
-      init_record = overUnder_accums[g_record_line_dbg];
+      init_record = g_field_xs_accums[dbg_record_line];
       debug_line = [];
       for (r = 0; r < x; r++) {
         g_line_history_dbg = {};
@@ -276,7 +276,7 @@
         if (g_line_history_dbg.length !== 0) {
           debug_line.push(g_line_history_dbg);
         }
-        an_error = printAnyBoundBreaks_dbg(['b1-onRight', x, r]);
+        an_error = dbg_printAnyBoundBreaks(['b1-onRight', x, r]);
         if (an_error) {
           break;
         }
@@ -293,7 +293,7 @@
         if (g_line_history_dbg.length !== 0) {
           debug_line.push(g_line_history_dbg);
         }
-        an_error = printAnyBoundBreaks_dbg(['b2-onLeft', x, r, l]);
+        an_error = dbg_printAnyBoundBreaks(['b2-onLeft', x, r, l]);
         if (an_error) {
           break;
         }
@@ -305,7 +305,7 @@
     }
 
     if (an_error) {
-      console.log("line history for line 0 shifts", g_record_line_dbg, debug_line);
+      console.log("line history for line 0 shifts", dbg_record_line, debug_line);
     }
 
 

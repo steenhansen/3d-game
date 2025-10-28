@@ -11,43 +11,6 @@ function fieldLeft(travel_speed, diagonal_weight) {
 
 
 
-/*       255  no move?
-   [126, -250,         -504,       128],
-   [250, -492,         -994,       252],
-  index, start offset, end offset, flip offset
-*/
-function printAnyBoundBreaks_dbg(index_arr) {
-  for (let error_line = 0; error_line <= num_lines; error_line++) {
-    let [_index, reset_right, reset_left, _flip] = start_stop_flip[error_line];
-    cur_shift = x_shift_list[error_line];
-    if (cur_shift > reset_right || cur_shift < reset_left) {
-      if (g_record_line_dbg != error_line) {
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-        console.log(`Not recording error causing line in history: `);
-        console.log(` error_line( ${error_line} ) <> g_record_line_dbg( ${g_record_line_dbg} ) `);
-        console.log(` Change g_record_line_dbg from  ${g_record_line_dbg}  to  ${error_line} in the_globals.js`);
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-        console.log("********************* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ");
-      }
-      console.log("error line:", error_line, "   has a shift of:", cur_shift, "   reset_right:", reset_right, " reset_left:", reset_left, "   index_arr:", index_arr);
-
-
-      console.log("the x_shift of ", cur_shift, " is not in set of [", reset_right, " ... ", reset_left, "] thus error");
-
-      console.log(`x_shift_list[${error_line}]:`, x_shift_list[error_line]);
-      console.log(`start_stop_flip[${error_line}]:`, start_stop_flip[error_line]);
-      return true;
-    }
-  }
-  return false;
-}
-
-
-
-
 
 
 
@@ -63,8 +26,8 @@ function fieldRight(travel_speed, diagonal_weight) {
 
 
 function initIncrementers() {
-  overUnder_accums = Array(256).fill(0);
-  x_shift_list = Array(256).fill(0);
+  g_field_xs_accums = Array(256).fill(0);
+  g_field_xs_shift = Array(256).fill(0);
   if (INIT_RIGHT) {
     resetRight();
   } else {
@@ -87,13 +50,16 @@ function initLeftRight() {
 
 function affixLeftRight() {
   const y_counter = Math.floor(y_flip_count);
-
-  const invert_lines = y_invert_lines[y_counter];
-  for (let affix_line = 0; affix_line <= num_lines; affix_line++) {
+  const invert_lines = Y_INVERT_LILNES[y_counter];
+  for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
     const inverted_x = invert_lines[affix_line];
-    let affix_shift = x_shift_list[affix_line];
+    let affix_shift = g_field_xs_shift[affix_line];
+
+    affix_shift -= g_field_xs_death[affix_line];
+
+
     if (inverted_x == 0) {
-      let [_index, _start, _stop, invert_flip] = start_stop_flip[affix_line];
+      let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
       affix_shift -= invert_flip;
     }
     const line_element = document.getElementById(`line${affix_line}`);
@@ -101,3 +67,67 @@ function affixLeftRight() {
   }
 }
 
+
+
+
+function xyNotInField(out_x, out_y, err_mess) {
+
+  x_min = g_planet.s_playground_x_min;
+  x_max = g_planet.s_playground_x_max;
+
+  x_original = out_x - x_min;
+  max_x_original = x_max - x_min;
+  if (out_x < x_min || out_x > x_max) {
+    x_err = `${err_mess}, X:${x_original} is not in range of 0 < X < ${max_x_original}`;
+    throw new Error(x_err);
+  }
+
+  y_min = g_planet.s_playground_y_min;
+  y_max = g_planet.s_playground_y_max;
+
+  y_original = out_y - y_min;
+  max_y_original = y_max - y_min;
+  if (out_y < y_min || out_y > y_max) {
+    y_err = `${err_mess}, Y:${y_original} is not in range of 0 < Y < ${max_y_original}`;
+
+    throw new Error(y_err);
+  }
+}
+
+
+
+
+
+
+// inside  XY_X_RANGE 
+function xAllowed(player_x) {
+  if (player_x < g_planet.s_playground_x_min || player_x > g_planet.s_playground_x_max) {
+    return false;
+  }
+  return true;
+}
+
+// inside  XY_X_RANGE 
+function yAllowed22(player_y) {
+  if (player_y < g_planet.s_playground_y_min || player_y > g_planet.s_playground_y_max) {
+
+    mess = ` `;
+    console.log("yyyy", player_y, g_planet.s_playground_y_min, g_planet.s_playground_y_max);
+    return false;
+  }
+  return true;
+}
+
+
+function yAllowed(player_y) {
+  if (player_y < g_planet.s_playground_y_min) {
+    dbg_y_too_small = `${player_y}<${g_planet.s_playground_y_min}`;
+    return false;
+  } else if (player_y > g_planet.s_playground_y_max) {
+    dbg_y_too_large = `${player_y}>${g_planet.s_playground_y_max}`;
+    // mess = ` `;
+    //console.log("yyyy", player_y, g_planet.s_playground_y_min, g_planet.s_playground_y_max);
+    return false;
+  }
+  return true;
+}

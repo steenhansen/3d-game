@@ -19,7 +19,7 @@
 
 <div id="the-css">
   <link rel="stylesheet" href="device/device-screens.css" />
-  <link rel="stylesheet" href="values/variables.css" />
+  <link rel="stylesheet" href="variables/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
   <link rel="stylesheet" href="player/player.css" />
   <link rel="stylesheet" href="scene/layout.css" />
@@ -43,6 +43,7 @@
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/major-constants.js"></script>
   <script type="text/javascript" src="holes/holes-code.js"></script>
+  <script type="text/javascript" src="holes/holes-create.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
   <script type="text/javascript" src="field/field-invert.js"></script>
@@ -57,8 +58,8 @@
 
 <div id="js-before">
   <script type="text/javascript" src="enemy/enemy-html.js"></script>
-  <script type="text/javascript" src="variables/major-globals.js"></script>
-  <script type="text/javascript" src="values/css-vars.js"></script>
+
+  <script type="text/javascript" src="variables/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
   <script type="text/javascript" src="objects/screen-placement.js"></script>
@@ -69,6 +70,8 @@
   <script type="text/javascript" src="sky/sky-code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
   <script type="text/javascript" src="scene/vanish-point.js"></script>
+  <script type="text/javascript" src="field/field-debug.js"></script>
+
   <script type="text/javascript" src="field/field-code.js"></script>
   <script type="text/javascript" src="field/field-depth.js"></script>
   <script type="text/javascript" src="field/field-left.js"></script>
@@ -76,7 +79,10 @@
   <script type="text/javascript" src="pylons/pylons-gradients.js"></script>
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
   <script type="text/javascript" src="pylons/pylons-collide.js"></script>
+  <script type="text/javascript" src="pylons/pylons-create.js"></script>
   <script type="text/javascript" src="collisions/player-recoil.js"></script>
+  <script type="text/javascript" src="scene/frames.js"></script>
+
   <script type="text/javascript" src="scene/scene_3d.js"></script>
   <script rel="text/javascript" src="field/field-test.js"></script>
   <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
@@ -169,7 +175,6 @@
   <script type="text/javascript" src="missile/missile-declare.js"></script>
   <script type="text/javascript" src="player/player-declare.js"></script>
   <script type="text/javascript" src="init/checkerboard-field.js"></script>
-  <script type="text/javascript" src="variables/minor-globals.js"></script>
   <script type="text/javascript" src="values/minor-constants.js"></script>
 </div>
 
@@ -215,7 +220,8 @@
 file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
 
 -->
-<link rel="stylesheet" href="planet-1/lines.css" />
+
+
 
 <style>
   :root {
@@ -225,35 +231,40 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
     --saturn-image: url('../planet-1/cloudy-saturn.png');
   }
 </style>
-
+<link rel="stylesheet" href="planet-1/lines.css" />
 <script type="text/javascript" src="planet-1/pylons-declare.js"></script>
 <script type="text/javascript" src="planet-1/enemy-declare.js"></script>
 <script type="text/javascript" src="planet-1/holes-declare.js"></script>
 <script type="text/javascript" src="planet-1/pylon-signs.js"></script>
-<script>
+<script type="text/javascript" src="planet-1/planet-constants.js"></script>
+<script>a;
   urlParams();
 
-  planet_field_width = 8192;
-  planet_field_depth = 768;
-
-  g_planet = initPlanet(planet_field_width, planet_field_depth);
-  //console.log("g_planet", g_planet);
+  XY_FIELD_SIZE = [16384, 2768]; https://open.spotify.com/playlist/29kthVqTzuo8eo81PdpH4t
+  XY_PLAYGROUND = [5000, 1000, 10900, 1600];
+  g_planet = initPlanet(XY_FIELD_SIZE, XY_PLAYGROUND, "planet-4");
 
 
+  XY_PLAYER = [2586, 555];
+  the_player = initPlayer(XY_PLAYGROUND, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
 
+  XY_ENTER = [210, 110];
+  XY_EXIT = [0, 0];
+  start_exit = initSigns(XY_PLAYGROUND, XY_ENTER, XY_EXIT);
 
-  //  g_player = initPlayer(900, 700, MOVINGx_E, MOVINGx_E);
-  the_player = initPlayer(1350, 575, MOVINGx_NOT, MOVINGx_E);
-
-
-  start_exit = [start_pylon, exit_pylon];
-
-
-  new_pylons = makePylons();
+  new_pylons = makePylons(XY_PLAYGROUND);
   the_pylons = start_exit.concat(new_pylons);
 
-  the_enemies = []; //[enemy_1];//, enemy_2];
-  the_holes = makeHoles();   //[hole_1]; //, hole_2, hole_3, hole_4];
+  // the_enemiesO = makeEnemiesOld(XY_PLAYGROUND); //[]; 
+
+  // console.log("Old", the_enemiesO);
+
+
+  the_enemies = makeEnemies(XY_PLAYGROUND); //[]; 
+
+  //console.log("New", the_enemies);
+
+  the_holes = makeHoles(XY_PLAYGROUND);   //[];
 
 
 
@@ -263,6 +274,6 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
     g_planet.m_planet_state = LOOP_0_DESKTOP_START;
   }
 
-  startItUp(FAST_SEGWAYS, the_pylons, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
+  startItUp(NORMAL_SEGWAYS, the_pylons, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
 
 </script>

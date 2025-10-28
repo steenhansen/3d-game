@@ -10,19 +10,19 @@ if (typeof DBG_MISSILE_ADVANCE == 'string') {
 
 
 // file:///c%3A/Users/16043/Documents/GitHub/3ddd/index.html?debug-env=true
-var g_is_debugging = 'unknown';
+//dbg_is_debugging = 'unknown';
 function isDebugging() {
-  if (g_is_debugging == 'unknown') {
+  if (dbg_is_debugging == 'unknown') {
     location_url = new URL(window.location);
     debug_param = location_url.searchParams.get("debug-env");  // debug-env
-    g_is_debugging = (debug_param == 'true');
+    dbg_is_debugging = (debug_param == 'true');
   }
-  return g_is_debugging;
+  return dbg_is_debugging;
 }
 
 
 //  file:///c%3A/Users/16043/Documents/GitHub/3ddd/index.html?mobile-downgrade=false
-var g_mobile_downgrading = 'unknown';
+// g_mobile_downgrading = 'unknown';
 function mobileDowngrade() {
   if (g_mobile_downgrading == 'unknown') {
     location_url = new URL(window.location);
@@ -36,14 +36,4 @@ function urlParams() {
   isDebugging();
   mobileDowngrade();
 }
-
-// function gotoLoopState() {
-//   location_url = new URL(window.location);
-//   loop_state = location_url.searchParams.get("g_l oop_state");
-//   if (loop_state == undefined) {
-//     return LOOP_0_DESKTOP_START;
-//   }
-//   console.log('gogot', loop_state);
-//   return loop_state;
-// }
 

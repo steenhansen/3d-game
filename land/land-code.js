@@ -5,8 +5,8 @@
 
 const STOP_FLY_COUNT = 700;
 const STOP_JUMP_UP_DOWN = 100;
+const JUMP_STEP = 3;
 
-var START_FAST_FLY_COUNT = STOP_FLY_COUNT - 1;
 
 function animateHoleHit(the_player) {
   the_player.m_num_cracks++;
@@ -22,13 +22,7 @@ function animateHoleLeave(the_player) {
 }
 
 
-// function flyingInit() {
-//   lift_amount_f = 0;
-// }
 
-
-
-const JUMP_STEP = 3;
 
 function animateJumpUp(the_player) {
   the_player.t_jump_amount += JUMP_STEP;
@@ -133,20 +127,13 @@ function doFlying(lift_amount_x) {
 
 
 
-
-
-
-
-
-num_lines = 255;
-
 function expandCheckerboard(the_count) {
   let normal_line = `background-position: -${the_count + 1}px -${the_count}px`;
   let flip_line = `background-position: 0px                 -${the_count}px`;
   let flip_count = 0;
   let is_flip = false;
-  for (let cur_line = 0; cur_line < num_lines; cur_line++) {
-    const reverse_vertical = num_lines - cur_line - 1;
+  for (let cur_line = 0; cur_line < NUMBER_LINES; cur_line++) {
+    const reverse_vertical = NUMBER_LINES - cur_line - 1;
     const ne_element = document.getElementById(`ne${reverse_vertical}`);
     const se_element = document.getElementById(`se${cur_line}`);
     const sw_element = document.getElementById(`sw${cur_line}`);
@@ -255,31 +242,6 @@ function landingInit() {
 
 
 
-function animateLanding(land_speed) {
-  if (land_speed == FAST_LAND) {
-    expandCheckerboard(255);
-    return LOOP_4_AFTER_LANDING;
-  } else if (land_speed == SLOW_LAND) {
-    landing_count += 0.25;
-    if (landing_count == num_lines) {
-      return LOOP_4_AFTER_LANDING;
-    } else {
-      int_landing_count = Math.floor(landing_count);
-      expandCheckerboard(int_landing_count);
-      return LOOP_3_LANDING;
-    }
-  } else {
-    landing_count++;
-    if (landing_count == num_lines) {
-      return LOOP_4_AFTER_LANDING;
-    } else {
-      expandCheckerboard(landing_count);
-      return LOOP_3_LANDING;
-    }
-  }
-}
-
-
 
 function initPlay() {
   divVisVisible('desktop-dir');
@@ -328,13 +290,45 @@ function animateElevator(elevator_speed) {
       return LOOP_5_ELEVATOR;
     }
   } else {
-    m_top_playing_game += 2;
-    m_top_the_land += 2;
+    //    m_top_playing_game += 2;        old normal
+    //    m_top_the_land += 2;
+
+    m_top_playing_game += 8;
+    m_top_the_land += 8;
+
     moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
     if (m_top_playing_game == 0) {
       return LOOP_6_AFTER_ELEVATOR;
     } else {
       return LOOP_5_ELEVATOR;
+    }
+  }
+}
+
+
+
+
+function animateLanding(land_speed) {
+  if (land_speed == FAST_LAND) {
+    expandCheckerboard(255);
+    return LOOP_4_AFTER_LANDING;
+  } else if (land_speed == SLOW_LAND) {
+    landing_count += 0.25;
+    if (landing_count == NUMBER_LINES) {
+      return LOOP_4_AFTER_LANDING;
+    } else {
+      int_landing_count = Math.floor(landing_count);
+      expandCheckerboard(int_landing_count);
+      return LOOP_3_LANDING;
+    }
+  } else {
+    //landing_count++;
+    landing_count += 4;   //   qbert normal land == +4new  +1old
+    if (landing_count == NUMBER_LINES) {
+      return LOOP_4_AFTER_LANDING;
+    } else {
+      expandCheckerboard(landing_count);
+      return LOOP_3_LANDING;
     }
   }
 }
@@ -382,9 +376,9 @@ function resetSections() {
 
 
   doFlying(0);
-  g_taking_off = false;
 
-  g_planet.m_move_direction = MOVINGx_NOT;
+
+  g_planet.t_move_direction = MOVINGx_NOT;
 
   landingInit();
   initElevator();

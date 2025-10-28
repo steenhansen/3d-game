@@ -30,7 +30,7 @@ function signPylon(a_polygon, vertical_text, text_color) {
 
 function possibleExit(pylon_sign) {
   if ('o_url_hit' in pylon_sign) {
-    if (g_is_debugging) {
+    if (dbg_is_debugging) {
       next_params = '?debug-env=true';
     } else {
       next_params = '';
@@ -58,8 +58,8 @@ function plainPylon(the_player, a_pylon) {
     a_pylon.p_grad_rght_from = temp_front_from;
     a_pylon.p_grad_rght_to = temp_front_to;
   }
-  new_direction = objectBounced(g_planet.m_move_direction);
-  g_planet.m_move_direction = new_direction;
+  new_direction = objectBounced(g_planet.t_move_direction);
+  g_planet.t_move_direction = new_direction;
   the_player.t_screen_askew = 10;
 
   return [the_player, a_pylon];

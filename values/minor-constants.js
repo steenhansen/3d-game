@@ -1,4 +1,11 @@
 
+
+const MISSILE_LIFETIME = 96;
+
+const NEW_DIRECTION_CHANCE_WHEN_DRIFTING = 1024;
+const DRIFT_START_CHANCE_WHEN_STOPPED = 10;
+
+
 let MISSILE_START_X = 400;
 let MISSILE_START_Y = 168;
 
@@ -16,7 +23,7 @@ let pylon_2B_START_X = 4096 + 256;
 let pylon_2B_START_Y = 384;                    //400;
 
 
-const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+// const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 
 
 
@@ -25,7 +32,6 @@ const ENEMY_PIXEL_DEPTH = 30;
 const MISSILE_PIXEL_DEPTH = 30;
 const HOLE_PIXEL_DEPTH = 50;
 
-const MISSILE_LIFETIME = 96;
 
 
 const MOVINGx_NOT = 0;

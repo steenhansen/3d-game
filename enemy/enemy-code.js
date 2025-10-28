@@ -1,5 +1,27 @@
 
-const ENEMY_HIDDEN = 512;
+// const ENEMY_HIDDEN = 512;
+function showCorrectRotation(enemy_number) {
+  spin_fixed = "star-spin-fixed-" + enemy_number;
+  spin_clockwise = "star-spin-clockwise-" + enemy_number;
+  spin_counter = "star-spin-counter-" + enemy_number;
+  const star_fixed = document.getElementById(spin_fixed);
+  const star_clockwise = document.getElementById(spin_clockwise);
+  const star_counter = document.getElementById(spin_counter);
+  if (x_adjusted_dir < 0) {
+    star_fixed.style.display = 'none';
+    star_clockwise.style.display = 'none';
+    star_counter.style.display = 'block';
+  } else if (x_adjusted_dir > 0) {
+    star_fixed.style.display = 'none';
+    star_clockwise.style.display = 'block';
+    star_counter.style.display = 'none';
+  } else {
+    star_fixed.style.display = 'block';
+    star_clockwise.style.display = 'none';
+    star_counter.style.display = 'none';
+  }
+}
+
 function enemyMove(the_enemy) {
   let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
   if (m_move_count < s_moves_x.length - 1 && m_move_count < s_moves_y.length - 1) {
@@ -22,13 +44,16 @@ function enemyMove(the_enemy) {
 
   y_dir = s_moves_y[m_move_count];
 
+  showCorrectRotation(the_enemy.s_enemy_number);
+
   if (x_adjusted_dir < 0) {
-    //  steps_left = TRAVEL_SPEED * 3;   // matches the player
     the_enemy.m_x = leftOnBoard(m_x, 11);   //   12);  steps_left);
   } else if (x_adjusted_dir > 0) {
-    // steps_right = TRAVEL_SPEED * 3;
     the_enemy.m_x = rightOnBoard(m_x, 11);   //   12);  steps_left);
+  } else {
   }
+
+
 
   if (y_dir < 0) {
     the_enemy.m_y = backwardOnBoard(m_y, 1);
@@ -56,6 +81,10 @@ function drawEnemies(the_enemies, the_player) {
 
 
 function enemyDraw(real_id, the_enemy, the_player) {
+
+
+
+  // console.log("dddddd", the_enemy);
   enemy_state = the_enemy.m_state;
   if (enemy_state == ENEMY_0_FLOATING) {
     enemyPlace(real_id, the_enemy, the_player);
@@ -84,16 +113,11 @@ function enemyDraw(real_id, the_enemy, the_player) {
     the_enemy.t_hover_up = the_enemy.t_hover_up + TRAVEL_SPEED;
     if (the_enemy.t_hover_up > ENEMY_HIDDEN) {
       delete the_enemy.t_hover_up;
-      the_enemy.m_state = ENEMY_3_DEAD;  // ENEMY_3_ZOMBIED
+      the_enemy.m_state = ENEMY_3_ZOMBIE;  // ENEMY_3_ZOMBIED
     }
     enemyPlace(real_id, the_enemy, the_player);
-  } else if (enemy_state == ENEMY_3_DEAD) {  // ENEMY_3_ZOMBIED
-    enemyPlace(real_id, the_enemy, the_player);  // hide it completely
-    the_enemy.m_state = ENEMY_4_HIDDEN;         // // ENEMY_4_HIDEN_BURIED
-  } else if (enemy_state == ENEMY_5_DEAD) {
-    setCssEnemyEdge(the_enemy.s_enemy_number, '0px');
-    enemyPlace(real_id, the_enemy, the_player);
-
+  } else if (enemy_state == ENEMY_3_ZOMBIE) {  // ENEMY_3_ZOMBIED
+    // console.log("ENEMY_3_ZOMBIE", the_enemy);
   } else {
   }
   return the_enemy;
@@ -127,6 +151,7 @@ function enemyPosition(real_id, z_index, the_stats, hover_up) {
   missile_x_y.setAttribute("x", center_x);
   enemy_lifting_y = center_y - ENEMY_TO_HORIZON_LIFT - hover_up;
   missile_x_y.setAttribute("y", enemy_lifting_y);
+  //console.log("ffffffffffff", real_id, center_x);
   missile_scaled = document.getElementById(real_id + '-scaled');
   missile_scaled.style.transform = `scale(${the_scale})`;
 }
@@ -143,9 +168,7 @@ function enemyPlace(real_id, the_enemy, the_player) {
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
-  if (the_enemy.m_state == ENEMY_5_DEAD) {
-
-  } else if (the_enemy.m_state == ENEMY_3_DEAD) {
+  if (the_enemy.m_state == ENEMY_3_ZOMBIE) {
     hover_up = ENEMY_HIDDEN;
   } else if ("t_hover_up" in the_enemy) {
     hover_up = the_enemy.t_hover_up;
@@ -162,22 +185,30 @@ function enemyPlace(real_id, the_enemy, the_player) {
 function killEnemy(the_enemy) {
   let { s_id, m_x, m_y, s_colors } = the_enemy;
 
+  // console.log(" m_x m_y", m_x, m_y);
+
   let killed_enemy = {
     s_isa: "is-enemy",
     m_state: ENEMY_2_LIFTING,
     s_id: s_id,
-    m_x: m_x, m_y: m_y,
+    m_x: m_x, m_y: m_y,    // so can see fly up
+    //m_x: 0,                    // make sure hidden!a   
+    //m_y: 0,
     m_move_count: -1,
     s_moves_x: [], s_moves_y: [],
-    m_dead: true,
+
+    // m_gone: disappear
     s_colors: s_colors,
   };
   html_killed = makeEnemy(killed_enemy);
 
-  container_id = s_id + "-container";
+  enemy_container_id = s_id + "-container";
 
-  document.getElementById(container_id).innerHTML = `
+  document.getElementById(enemy_container_id).innerHTML = `
       ${html_killed}
 `;
+
+
+
   return killed_enemy;
 }

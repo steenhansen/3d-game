@@ -1,5 +1,5 @@
 #touch-boxes {
-   z-index: var(--z-touch-boxes);
+  z-index: var(--z-touch-boxes);
   display: grid;
 
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
@@ -11,6 +11,12 @@
   width: 100%;
   height: 100%;
 
+}
+
+#the-fps {
+  position: absolute;
+  bottom: 0px;
+  opacity: 0.2;
 }
 
 .input-box {

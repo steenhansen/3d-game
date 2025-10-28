@@ -1,7 +1,7 @@
 
 function sceneInit() {
   y_flip_count = INIT_Y_FLIP_COUNT;
-  g_missile_states = makeList();
+  CACHED_MISSILE_SHAPES = makeDiamondsBalls();
   initIncrementers();
   initLeftRight();
   affixLeftRight();

@@ -28,6 +28,7 @@ function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
   } else {
     fill_opacity = "1";
   }
+  //    begin="${ball_start}"
   make_ball = `
   
           <path id="${ball_id}" d="${ball_points} " stroke="${ball_color}" stroke-width="0" fill-opacity="0" />
@@ -35,7 +36,12 @@ function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
                     fill-opacity="${fill_opacity}"
             stroke-width="0" stroke="#000"
           fill = "var(${alive_dead_color})" >
-              <animateMotion repeatCount="indefinite" dur="${ani_duration}" begin="${ball_start}">
+              <animateMotion repeatCount="indefinite" dur="${ani_duration}" 
+              
+                 begin="${enemy_number / 7}s"
+             
+              
+              >
                   <mpath href="#${ball_id}" />
               </animateMotion>
           </circle >
@@ -62,20 +68,42 @@ function rotatingStar(star_color, is_dead, enemy_number) {
   hit_opacity = '--enemy-star-opacity-' + enemy_number;
   hit_edge_prop = '--enemy-star-edge-width-' + enemy_number;
   alive_dead_color = '--enemy-star-color-' + enemy_number;
-  rotating_star = `
+
+  function aRotatingStar(type_id, from_rotate, to_rotate) {
+    star_to_from = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
-    <g id="star-spin">
-      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 512 512" to="360 512 512" 
-        dur="${ani_duration}" repeatCount="indefinite" />
+    <g id="${type_id}">
+      <animateTransform 
+        attributeName="transform" 
+        attributeType="XML"
+         type="rotate"
+           from="${from_rotate}"
+          to="${to_rotate}" 
+          dur="${ani_duration}"
+   begin="${enemy_number / 7}s"
+          repeatCount="indefinite" />
       <path fill="var(${alive_dead_color})" fill-opacity="var(${hit_opacity})" 
       stroke="white" stroke-width="var(${hit_edge_prop})"  stroke-opacity="0.4" 
         d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z" />
     </g>
     <circle cx="128" cy="128" id="sun:circle" r="2" stroke="${star_color}" stroke-width="0.0" fill-opacity="0" />
 `;
-  //  console.log("sft", rotating_star);
+    return star_to_from;
+  }
+
+  star_fixed = aRotatingStar(`star-spin-fixed-${enemy_number}`, "0 512 512", "0 512 512");
+  star_clockwise = aRotatingStar(`star-spin-clockwise-${enemy_number}`, "0 512 512", "360 512 512");
+  star_counter = aRotatingStar(`star-spin-counter-${enemy_number}`, "360 512 512", "0 512 512");
+  rotating_star = star_fixed + star_clockwise + star_counter;
   return rotating_star;
 }
+
+
+
+
+
+
+
 
 function aniDuration(is_dead) {
   if (is_dead) {
@@ -90,10 +118,8 @@ function aniDuration(is_dead) {
 // createEnemy to install done once, and once to KILL !
 // function makeEnemyOnce(the_enemy) {
 function makeEnemy(the_enemy) {
-  // console.log("the_en", the_enemy);
   let enemy_number = the_enemy.s_enemy_number;
-  // this is done once, so m_dead is checked at the start of the game, no use here at init
-  is_dead = the_enemy.m_dead;
+
   enemy_id = the_enemy.s_id;
   // if (the_enemy.m_alive) {
   star_color = the_enemy.s_colors[0];
@@ -102,12 +128,17 @@ function makeEnemy(the_enemy) {
   //star_color = "black";
   // ball_color = "black";
   //}
+  //console.log("daaaaaaaaa", the_enemy);//
+  setCssEnemyStarFill(the_enemy.s_enemy_number, star_color);
+  setCssEnemyBallFill(the_enemy.s_enemy_number, ball_color);
 
-
+  if (the_enemy.m_state == ENEMY_2_LIFTING) {
+    is_dead = true;
+  } else {
+    is_dead = false;
+  }
 
   rotating_star = rotatingStar(star_color, is_dead, enemy_number);
-
-
   ball_all = makeBall('all', ball_color, is_dead, enemy_number);
   ball_front = makeBall('front', ball_color, is_dead, enemy_number);
 

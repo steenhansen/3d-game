@@ -1,6 +1,26 @@
 
 
+function debugPrint(msg_str, x_pos, y_pos) {
+  meas_text = dbg_ctx.measureText(msg_str);
+  dbg_ctx.clearRect(x_pos, y_pos, meas_text.width + 300, dbg_line_height + 3);
+  dbg_ctx.fillStyle = "black";
+  dbg_ctx.fillRect(x_pos, y_pos, meas_text.width + 10, dbg_line_height + 3);
+  dbg_ctx.fillStyle = "white";
+  dbg_ctx.fillText(msg_str, x_pos, y_pos + dbg_line_height);
+  dbg_ctx.stroke();
+}
 
+
+
+function debugFrameTime() {
+  if (isDebugging()) {
+    dbg_start_loop = new Date;
+    var this_frame_time = dbg_start_loop - dbg_last_loop;
+    dbg_frame_time += (this_frame_time - dbg_frame_time) / dbg_filter_strength;
+    dbg_last_loop = dbg_start_loop;
+    game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
+  }
+}
 
 
 
@@ -13,6 +33,9 @@ var dbg_frame_time = 0, dbg_last_loop = new Date, dbg_start_loop;
 var dbg_animation_time;
 
 
+
+var dbg_y_too_large;
+var dbg_y_too_small;
 
 function debugClear() {
   //canvas = document.getElementById("the-draw");          // func
@@ -51,31 +74,13 @@ function debugInit() {
   }
 }
 
-function debugFrameTime() {
-  if (isDebugging()) {
-    dbg_start_loop = new Date;
-    var this_frame_time = dbg_start_loop - dbg_last_loop;
-    dbg_frame_time += (this_frame_time - dbg_frame_time) / dbg_filter_strength;
-    dbg_last_loop = dbg_start_loop;
-  }
-}
+
 
 function debugAnimation() {
   if (isDebugging()) {
     dbg_end_loop = new Date;
     dbg_animation_time = dbg_end_loop - dbg_start_loop;
   }
-}
-
-
-function debugPrint(msg_str, x_pos, y_pos) {
-  meas_text = dbg_ctx.measureText(msg_str);
-
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.fillRect(x_pos, y_pos, meas_text.width + 10, dbg_line_height + 3);
-  dbg_ctx.fillStyle = "white";
-  dbg_ctx.fillText(msg_str, x_pos, y_pos + dbg_line_height);
-  dbg_ctx.stroke();
 }
 
 
@@ -108,7 +113,7 @@ function debugSwipeUp(start_xy, end_xy) {
 }
 
 function debugSwipeDown(start_xy, end_xy) {
-  //g_touch_id_start = 'debugSwipeDown79823432';
+
 
   screen_width = window.screen.width;
   screen_height = window.screen.height;
@@ -142,6 +147,22 @@ function debugSwipeDown(start_xy, end_xy) {
 
 
 function debugReportFrameTime() {
+  debugMissileInfo();
+
+
+  game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
+  debugPrint(game_fps, 430, 25);
+
+  player_y_too_small = `Y too small${dbg_y_too_small}`;
+  debugPrint(player_y_too_small, 330, 433);
+
+
+
+  player_y_too_big = `Y too large ${dbg_y_too_large}`;
+  debugPrint(player_y_too_big, 530, 433);
+
+
+
   // if (dbg_report) {
   const scene_width = getCssVar("--scene-width");
   const scene_height = getCssVar("--scene-height");
@@ -158,38 +179,15 @@ function debugReportFrameTime() {
 
 
 
-  const m_x = g_missile.m_x;
-  const m_y = g_missile.m_y;
-  const m_caromed = g_missile.m_caromed;
-
-  missile_pos = `Missile x${m_x}, y${m_y}   carom - ${m_caromed} `;
-  debugPrint(missile_pos, 730, 5);
-
-  if ('t_lifetime' in g_missile) {
-    t_lifetime = g_missile.t_lifetime;
-    missile_is_expired = 'false';
-  } else {
-    t_lifetime = '';
-    missile_is_expired = 'true';
-
-  }
-
-
-
-
-  missile_pos = `M liftime:${t_lifetime}   expired - ${missile_is_expired} `;
-  debugPrint(missile_pos, 730, 25);
-
-
-  const e_x = enemy_1.m_x;
-  const e_y = enemy_1.m_y;
-  player_pos = `Enemy1 x${e_x}, y${e_y}`;
+  // const e_x = enemy_1.m_x;
+  // const e_y = enemy_1.m_y;
+  player_pos = "no easy enemy_1 variable"; /// `Enemy1 x${e_x}, y${e_y}`;
   debugPrint(player_pos, 530, 25);
 
 
-  const c_x = pylon_a_1.m_x;
-  const c_y = pylon_a_1.m_y;
-  player_pos = `Pylon1a x${c_x}, y${c_y}`;
+  // const c_x = pylon_a_1.m_x;
+  // const c_y = pylon_a_1.m_y;
+  player_pos = "pylon1a";  //`Pylon1a x${c_x}, y${c_y}`;
   debugPrint(player_pos, 530, 45);
 
 
@@ -209,8 +207,7 @@ function debugReportFrameTime() {
 
 
 
-  game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
-  debugPrint(game_fps, 430, 25);
+
 
   const mobile_screen = getCssVar("--device-screen");
   debugPrint(mobile_screen, 340, 45);
@@ -218,12 +215,37 @@ function debugReportFrameTime() {
   start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
   end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
 
-  if (g_swipe_dir == SWIPE_UP) {
+  if (dbg_swipe_dir == SWIPE_UP) {
     debugSwipeUp(start_point, end_point);
-  } else if (g_swipe_dir == SWIPE_DOWN) {
+  } else if (dbg_swipe_dir == SWIPE_DOWN) {
     debugSwipeDown(start_point, end_point);
     //debugSwipe(end_point, start_point);
   }
   //}
+
+}
+
+
+function debugMissileInfo() {
+  const m_x = g_missile.m_x;
+  const m_y = g_missile.m_y;
+  t_lifetime = g_missile.t_lifetime;
+  t_phase = g_missile.t_phase;
+
+  if ('t_lifetime' in g_missile) {
+    missile_pos = `Missile x ${m_x} y ${m_y} `;
+    missile_life = `t_lifetime:${t_lifetime}`;
+    missile_phase = `t_phase ${t_phase}`;
+  } else {
+    missile_pos = `Missile`;
+    missile_life = `t_lifetime:${t_lifetime}`;
+    missile_phase = `t_phase ${t_phase}`;
+  }
+
+  debugPrint(missile_pos, 50, 450);
+
+  debugPrint(missile_life, 50, 470);
+
+  debugPrint(missile_phase, 50, 490);
 
 }

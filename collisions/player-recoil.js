@@ -21,7 +21,7 @@ function doRecoil(the_player) {
     the_player.t_recoil_count--;
     if (the_player.t_recoil_count == 0) {
       delete the_player.t_recoil_count;
-      g_planet.m_move_direction = MOVINGx_NOT;
+      g_planet.t_move_direction = MOVINGx_NOT;
     }
   }
   return the_player;

@@ -1,5 +1,59 @@
 
 
+
+
+/* STATES.JS
+const MISSILE_0_SHOT_FORWARD = 'MISSILE_0_SHOT_FORWARD';
+const MISSILE_1_HITTING = 'MISSILE_1_HITTING';
+const MISSILE_2_STILL_HITTING = 'MISSILE_2_STILL_HITTING';
+const MISSILE_3_CAROM_LEFT_RIGHT = 'MISSILE_3_CAROM_LEFT_RIGHT';
+
+  t_phase: MISSILE_0_SHOT_FORWARD,
+*/
+function missileHitPylons(the_missile, the_pylons) {
+  number_pylons = the_pylons.length;
+  const missile_flying = 't_lifetime' in g_missile;
+  if (!missile_flying || number_pylons == 0) {
+    return [the_missile, the_pylons];
+  }
+  changed_pylons = [];
+  missile_hit_pylon = false;
+  for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
+    a_pylon = the_pylons[pylon_index];
+    has_collided = hasCollided(the_missile, a_pylon, COLLISION_SIZES);
+    if (has_collided) {
+      missile_hit_pylon = true;
+      a_pylon.t_pylon_hit_flash = 13;
+    }
+    changed_pylons[pylon_index] = a_pylon;
+  }
+
+  if (missile_hit_pylon) {
+    // console.log("missile_hit_pylon", the_missile);
+    if (the_missile.t_phase == MISSILE_0_SHOT_FORWARD) {
+      //console.log("MISSILE_0_SHOT_FORWARD");
+      the_missile.t_phase = MISSILE_1_HITTING_PYLON;
+    } else if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
+      // wait for MISSILE_2_AFTER_PYLON_HIT
+    } else if (the_missile.t_phase == MISSILE_2_AFTER_PYLON_HIT) {
+      // console.log("MISSILE_3_SECOND_PYLON_HIT");
+      the_missile.t_phase = MISSILE_3_SECOND_PYLON_HIT;
+    }
+  } else {
+    if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
+      //   console.log("MISSILE_2_AFTER_PYLON_HIT");
+      the_missile.t_phase = MISSILE_2_AFTER_PYLON_HIT;
+    }
+  }
+  return [the_missile, changed_pylons];
+}
+
+
+
+
+
+
+
 // only from front
 function playerHitEnemies(the_player, the_enemies) {
   changed_enemies = [];
@@ -14,6 +68,7 @@ function playerHitEnemies(the_player, the_enemies) {
         if (the_player.m_num_ == MAX_CRACKS) {
           the_player.t_is_dying = true;
         }
+        break;
       }
     }
   }
@@ -22,7 +77,7 @@ function playerHitEnemies(the_player, the_enemies) {
 
 // only from front  ????
 function playerHitHoles(the_player, the_holes) {
-  hit_hole_last_move = false;
+  the_player.m_hit_hole_last_move = false;
   if (!('t_jump_amount' in the_player)) {
     changed_enemies = [];
     number_holes = the_holes.length;
@@ -30,14 +85,15 @@ function playerHitHoles(the_player, the_holes) {
       a_hole = the_holes[hole_index];
       has_collided = hasCollided(the_player, a_hole, COLLISION_SIZES);
       if (has_collided) {
-        hit_hole_last_move = true;
+        the_player.m_hit_hole_last_move = true;
         if (the_player.m_num_cracks == MAX_CRACKS) {
           the_player.t_is_dying = true;
         }
+        break;
       }
     }
   }
-  return [the_player, hit_hole_last_move];
+  return the_player;
 }
 
 function playerHitPylons(the_player, the_pylons) {
@@ -63,32 +119,6 @@ function playerHitPylons(the_player, the_pylons) {
 
 
 
-
-function missileHitPylons(the_missile, the_pylons) {
-  number_pylons = the_pylons.length;
-  const missile_flying = 't_lifetime' in g_missile;
-  if (!missile_flying || number_pylons == 0) {
-    return [the_missile, the_pylons];
-  }
-  changed_pylons = [];
-  for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
-    a_pylon = the_pylons[pylon_index];
-    has_collided = hasCollided(the_missile, a_pylon, COLLISION_SIZES);
-    if (has_collided) {
-      a_pylon.t_pylon_hit_flash = 13;
-      the_missile.m_caromed = true;
-      if (a_pylon.m_x > the_missile.m_x) {
-        the_missile.m_x_dir = -1;
-        the_missile.m_y_dir = 0;
-      } else {
-        the_missile.m_x_dir = 1;
-        the_missile.m_y_dir = 0;
-      }
-    }
-    changed_pylons[pylon_index] = a_pylon;
-  }
-  return [the_missile, changed_pylons];
-}
 
 
 
@@ -169,7 +199,6 @@ function missileHitEnemies(the_missile, the_enemies) {
         an_enemy.m_state = ENEMY_1_HIT;
 
         an_enemy.t_enemy_hit_flash = 10;
-        an_enemy.m_dead = true;
       }
     }
     changed_enemies[enemy_index] = an_enemy;

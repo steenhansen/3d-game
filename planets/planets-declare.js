@@ -1,59 +1,44 @@
 
-// all from major-global save g_hit_hole_last_move
-
-// let a_planet = {
-//   s_isa: "is-planet",
-//   // m_planet_state: LOOP_1_BEGIN,
-//   m_checkerboard_width: 0,
-//   m_checkerboard_depth: 0,
 
 
-//   // t_move_direction: MOVINGx_NE,
-//   // t_drift_direction: MOVINGx_NE,
-//   // t_dying_distance: 0,
-//   // t_is_drifting: true,
-//   // t_taking_off: true,
 
-// };
 
-//g_device_type = DEVICE_MOBILE;
 
-function initPlanet(field_width, field_depth) {
+
+
+
+
+function initPlanet(field_size, playground_box, planet_name) {
+  //console.log("iniPlaynet", field_size);
+  let [field_width, field_depth] = field_size;
+  let [left_x, top_y, right_x, bottom_y] = playground_box;
 
   initCheckerboardField(field_width, field_depth);
-
   let the_planet = {
     s_isa: "is-planet",
-    m_planet_state: "hi-there",
-
+    s_name: planet_name,
     s_checkerboard_width: field_width,
     s_checkerboard_depth: field_depth,
-    m_move_direction: MOVINGx_NE,
+
+
+    s_playground_x_min: left_x,
+
+
+    s_playground_x_max: right_x,
+
+
+    s_playground_y_min: top_y,
 
 
 
-    //    if(  't_drift_direction' in g_planet) {
+    s_playground_y_max: bottom_y,
 
 
-    //   g_is_drifting = false;
-    //   delete g_planet.t_drift_direction;
-    // g_planet.t_drift_direction=true
-    //  g_planet.t_drift_direction=start_drift_dir;
-    //t_drift_direction: MOVINGx_NE,
-
-    //m_drift_countdown=15  !!!!!!!
-
-    // let g_drift_direction = 'set-in-initPlayer'; // MOVINGx_NE;
-
-    // let g_is_drifting = false; /// NO POINT USe in
-
-
-
-
-
-    // t_dying_distance: 0,
-    // t_taking_off: true,
-
+    m_planet_state: LOOP_0_MOBILE_START, //"hi-there",
+    m_dying_distance: 0,
+    // t_move_direction
+    // t_drift_direction
+    // t_drift_countdown
   };
   return the_planet;
 }

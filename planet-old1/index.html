@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+
+
+
+<base href="../">
+
+
+
+
+
+
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+<div id="the-css">
+  <link rel="stylesheet" href="device/device-screens.css" />
+  <link rel="stylesheet" href="variables/variables.css" />
+  <link rel="stylesheet" href="values/z-indexes.css" />
+  <link rel="stylesheet" href="player/player.css" />
+  <link rel="stylesheet" href="scene/layout.css" />
+  <link rel="stylesheet" href="field/field.css" />
+  <link rel="stylesheet" href="pylons/pylons.css" />
+  <link rel="stylesheet" href="holes/holes.css" />
+  <link rel="stylesheet" href="land/land.css" />
+  <link rel="stylesheet" href="enemy/enemy.css" />
+  <link rel="stylesheet" href="missile/missile.css" />
+  <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="missile/missile-vars.css" />
+  <link rel="stylesheet" href="input/arrows.css" />
+  <link rel="stylesheet" href="input/boxes.css" />
+  <link rel="stylesheet" href="input/desktop-directions.css" />
+</div>
+
+<div id="js-constants">
+  <script type="text/javascript" src="values/global-constants.js"></script>
+  <script type="text/javascript" src="values/const-sprites.js"></script>
+  <script type="text/javascript" src="values/debugging.js"></script>
+  <script type="text/javascript" src="values/states.js"></script>
+  <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="holes/holes-code.js"></script>
+  <script type="text/javascript" src="holes/holes-create.js"></script>
+  <script type="text/javascript" src="data/colors.js"></script>
+  <script type="text/javascript" src="field/field-bounds.js"></script>
+  <script type="text/javascript" src="field/field-invert.js"></script>
+  <script type="text/javascript" src="field/field-constants.js"></script>
+  <script type="text/javascript" src="objects/sprite-sizes.js"></script>
+</div>
+
+<div id="the-svgs">
+  <div id='pylons-svg'> </div>
+  <div id='svg-arrows'> </div>
+</div>
+
+<div id="js-before">
+  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+
+  <script type="text/javascript" src="variables/css-vars.js"></script>
+  <script type="text/javascript" src="input/swipe.js"></script>
+  <script type="text/javascript" src="device/orientation.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
+  <script type="text/javascript" src="player/player-code.js"></script>
+  <script type="text/javascript" src="objects/sprites-stuff.js"></script>
+  <script type="text/javascript" src="objects/sprite-lines.js"></script>
+  <script type="text/javascript" src="collisions/collisions.js"></script>
+  <script type="text/javascript" src="sky/sky-code.js"></script>
+  <script type="text/javascript" src="input/desktop-keys.js"></script>
+  <script type="text/javascript" src="scene/vanish-point.js"></script>
+  <script type="text/javascript" src="field/field-debug.js"></script>
+
+  <script type="text/javascript" src="field/field-code.js"></script>
+  <script type="text/javascript" src="field/field-depth.js"></script>
+  <script type="text/javascript" src="field/field-left.js"></script>
+  <script type="text/javascript" src="field/field-right.js"></script>
+  <script type="text/javascript" src="pylons/pylons-gradients.js"></script>
+  <script type="text/javascript" src="pylons/pylons-code.js"></script>
+  <script type="text/javascript" src="pylons/pylons-collide.js"></script>
+  <script type="text/javascript" src="pylons/pylons-create.js"></script>
+  <script type="text/javascript" src="collisions/player-recoil.js"></script>
+  <script type="text/javascript" src="scene/frames.js"></script>
+
+  <script type="text/javascript" src="scene/scene_3d.js"></script>
+  <script rel="text/javascript" src="field/field-test.js"></script>
+  <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
+</div>
+
+
+
+<div id='start-mobile'>
+  <div id='mobile-list'>
+  </div>
+</div>
+
+<div id="the-scene">
+
+  <canvas id="the-draw" width=" 1024" height="512"></canvas>
+
+  <div id="touch-boxes"></div>
+  <div id="arrows-html"></div>
+
+  <div id="playing-game">
+    <div id="star-space">
+      <div id="saturn-space"></div>
+    </div>
+    <div id="cracked-screen"></div>
+    <div id="the-sun" class="sun-vars"></div>
+    <div id="sky-aperature" class="sky-vars">
+      <div id="the-sky"> </div>
+      <div id="the-pyramids"></div>
+      <div id="fuzzy-saturn"></div>
+    </div>
+    <div id="enemy-area" class="enemy-vars"></div>
+    <div id="missile-area" class="missile-vars"></div>
+    <div id="checkerboard-field" class="line-vars"> </div>
+    <div id='pylon-html'> </div>
+    <div id='hole-html'> </div>
+  </div>
+
+  <div id="the-landing">
+    <div id="land_nw"></div>
+    <div id="land_ne"></div>
+    <div id="land_sw"></div>
+    <div id="land_se"></div>
+  </div>
+
+</div>
+
+
+<div id="desktop-dir" class="direction-vars" onclick="clickOnDirectionsSvg(event)">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id="js-after">
+  <script type="text/javascript" src="missile/missile-html.js"></script>
+  <script type="text/javascript" src="missile/missile-code.js"></script>
+  <script type="text/javascript" src="holes/holes-html.js"></script>
+
+  <script type="text/javascript" src="pylons/pylons-html.js"></script>
+  <script type="text/javascript" src="enemy/enemy-code.js"></script>
+  <script type="text/javascript" src="variables/global-objects.js"></script>
+  <script type="text/javascript" src="scene/scene-dying.js"></script>
+  <script type="text/javascript" src="scene/game-loop.js"></script>
+  <script type="text/javascript" src="field/field-html.js"></script>
+  <script type="text/javascript" src="land/land-nw-html.js"></script>
+  <script type="text/javascript" src="land/land-ne-html.js"></script>
+  <script type="text/javascript" src="land/land-sw-html.js"></script>
+  <script type="text/javascript" src="land/land-se-html.js"></script>
+  <script type="text/javascript" src="land/land-code.js"></script>
+  <script type="text/javascript" src="input/arrows-html.js"></script>
+  <script type="text/javascript" src="input/boxes-html.js"></script>
+  <script type="text/javascript" src="input/arrows-svg.js"></script>
+  <script type="text/javascript" src="input/desktop-directions.js"></script>
+  <script type="text/javascript" src="input/arrows-click.js"></script>
+  <script type="text/javascript" src="input/boxes-touch.js"></script>
+  <script type="text/javascript" src="values/url-params.js"></script>
+  <script type="text/javascript" src="debug/debug-vars.js"></script>
+  <script type="text/javascript" src="debug/debug-settings.js"></script>
+  <script type="text/javascript" src="scene/scene-init.js"></script>
+  <script type="text/javascript" src="planets/planets-declare.js"></script>
+  <script type="text/javascript" src="missile/missile-declare.js"></script>
+  <script type="text/javascript" src="player/player-declare.js"></script>
+  <script type="text/javascript" src="init/checkerboard-field.js"></script>
+  <script type="text/javascript" src="values/minor-constants.js"></script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- start part section
+ 
+
+file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
+
+-->
+<link rel="stylesheet" href="planet-1/lines.css" />
+
+<style>
+  :root {
+    --checkerboard-image: url('../planet-1/checker-board.png');
+    --sun-image: url('../planet-1/yellow-sun.png');
+    --pyramids-image: url('../planet-1/black-pyramids.png');
+    --saturn-image: url('../planet-1/cloudy-saturn.png');
+  }
+</style>
+
+<script type="text/javascript" src="planet-1/pylons-declare.js"></script>
+<script type="text/javascript" src="planet-1/enemy-declare.js"></script>
+<script type="text/javascript" src="planet-1/holes-declare.js"></script>
+<script type="text/javascript" src="planet-1/pylon-signs.js"></script>
+<script>
+  urlParams();
+
+  planet_field_width = 8192;
+  planet_field_depth = 768;
+
+  g_planet = initPlanet(planet_field_width, planet_field_depth);
+
+
+
+
+  //  g_player = initPlayer(900, 700, MOVINGx_E, MOVINGx_E);
+  the_player = initPlayer(1350, 575, MOVINGx_NOT, MOVINGx_E);
+
+
+  start_exit = [enter_pylon, exit_pylon];
+
+
+  new_pylons = makePylons();
+  the_pylons = start_exit.concat(new_pylons);
+
+  the_enemies = []; //[enemy_1];//, enemy_2];
+  the_holes = makeHoles();   //[hole_1]; //, hole_2, hole_3, hole_4];
+
+
+
+  if (isMobile()) {
+    g_planet.m_planet_state = LOOP_0_MOBILE_START;
+  } else {
+    g_planet.m_planet_state = LOOP_0_DESKTOP_START;
+  }
+
+  startItUp(FAST_SEGWAYS, the_pylons, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
+
+</script>

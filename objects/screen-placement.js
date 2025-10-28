@@ -36,6 +36,7 @@ function objectRightSide(x_center_offset, pylon_player_ys, pixel_depth) {
 //   pylons3, missiles2, enemies1 NOT holes which uses 4 points
 function objectLeftSide(x_center_offset, pylon_player_ys, pixel_depth) {
   let [left_front_bot, right_front_bot, back_right_bot, _back_left_bot] = panels3BackRight(x_center_offset, pylon_player_ys, pixel_depth);
+  //console.log("objectgLeftSide", left_front_bot);  //objectgLeftSide (2) [NaN, NaN]
   let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, back_right_bot);
   let left_vline = [left_front_top, left_front_bot];
   let middle_vline = [right_front_top, right_front_bot];

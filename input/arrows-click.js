@@ -11,7 +11,8 @@ function flashArrow(direction_name) {
   try {
     the_arrow_style = the_arrow.style;
   } catch (e) {
-    console.log("flashArrow 23456", direction_name, e);
+    arrow_error = `bad::arrow ${direction_name}`;
+    throw new Error(arrow_error);
   }
   the_arrow_style.opacity = '25%';
   setTimeout(() => {
@@ -27,7 +28,6 @@ function flashArrow(direction_name) {
 function arrowClick(the_event, direction_name) {
   the_event.preventDefault();
   flashArrow(direction_name);
-  //g_is_drifting = false;
   delete g_planet.t_drift_direction;
 }
 
@@ -42,48 +42,56 @@ function addClickEvent(direction_name, clickHandler) {
 }
 
 function stopMoving(evt) {
-  g_planet.m_move_direction = MOVINGx_NOT;
-  g_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;//  DRIFT_CYCLES;    //177;
+  delete g_planet.t_move_direction;
+  delete g_planet.t_drift_direction;
+  g_planet.t_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
+}
+
+function initiateMovement(the_direction) {
+  delete g_planet.t_drift_direction;
+  g_planet.t_move_direction = the_direction;
 }
 
 function handleNw(evt) {
-  g_planet.m_move_direction = MOVINGx_NW;
+  initiateMovement(MOVINGx_NW);
   arrowClick(evt, "nw-1");
 }
 
 
+
+
 function handleN(evt) {
-  g_planet.m_move_direction = MOVINGx_N;
+  initiateMovement(MOVINGx_N);
   arrowClick(evt, "n-1");
 }
 
 function handleNe(evt) {
-  g_planet.m_move_direction = MOVINGx_NE;
+  initiateMovement(MOVINGx_NE);
   arrowClick(evt, "ne-1");
 }
 
 function handleW(evt) {
-  g_planet.m_move_direction = MOVINGx_W;
+  initiateMovement(MOVINGx_W);
   arrowClick(evt, "w-1");
 }
 
 function handleE(evt) {
-  g_planet.m_move_direction = MOVINGx_E;
+  initiateMovement(MOVINGx_E);
   arrowClick(evt, "e-1");
 }
 
 function handleSw(evt) {
-  g_planet.m_move_direction = MOVINGx_SW;
+  initiateMovement(MOVINGx_SW);
   arrowClick(evt, "sw-1");
 }
 
 function handleS(evt) {
-  g_planet.m_move_direction = MOVINGx_S;
+  initiateMovement(MOVINGx_S);
   arrowClick(evt, "s-1");
 }
 
 function handleSe(evt) {
-  g_planet.m_move_direction = MOVINGx_SE;
+  initiateMovement(MOVINGx_SE);
   arrowClick(evt, "se-1");
 }
 

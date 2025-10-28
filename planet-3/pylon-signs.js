@@ -2,19 +2,22 @@
 exit_pylon = {
   s_isa: "is-pylon-sign",
   s_pylon_name: "pylon-exit",
-  s_vert_word: "EXIT",
-  o_url_hit: 'planet-2/part-2.html',
+  s_vert_word: "Exit",
+  o_url_hit: 'planet-2/index.html',
   o_outline_color: 'none',
-  m_x: 1000, m_y: 33,
+  m_alive: true,
+  m_x: 1000, m_y: 64,
   p_sign_text_col: 'lime',
 };
 
-start_pylon = {
+
+enter_pylon = {
   s_isa: "is-pylon-sign",
   s_pylon_name: "pylon-start",
-  s_vert_word: "SHOOT",
+  s_vert_word: "JUMP",
   //o_url_hit: '', 
   o_outline_color: 'none',
-  m_x: 1900, m_y: 55,
+  m_alive: true,
+  m_x: 1000, m_y: 550,
   p_sign_text_col: 'white',
 };

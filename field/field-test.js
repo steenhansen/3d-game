@@ -8,7 +8,7 @@ L = 'L';
 R = 'R';
 TEST_ENDED = false;
 
-// TEST_SCENE_MOVES_R = [            // with 64 Rights, x_shift_list[255]==0 and all bad
+// TEST_SCENE_MOVES_R = [            // with 64 Rights, g_field_xs_shift[255]==0 and all bad
 //   //  R, R, R, R,
 //   R, R, R, R,
 //   R, R, R, R, R, R, R, R, R, R,
@@ -18,7 +18,7 @@ TEST_ENDED = false;
 //   R, R, R, R, R, R, R, R, R, R,
 //   R, R, R, R, R, R, R, R, R, R];
 
-// TEST_SCENE_MOVES_L = [            // with 64 Lights, x_shift_list[255]==0 and all bad
+// TEST_SCENE_MOVES_L = [            // with 64 Lights, g_field_xs_shift[255]==0 and all bad
 //   //  L, L, L, L,
 //   L, L, L, L,
 //   L, L, L, L, L, L, L, L, L, L,
@@ -29,7 +29,7 @@ TEST_ENDED = false;
 //   L, L, L, L, L, L, L, L, L, L];
 
 
-TEST_SCENE_MOVES_s = [            // with 64 Rights, x_shift_list[255]==0 and all bad
+TEST_SCENE_MOVES_s = [            // with 64 Rights, g_field_xs_shift[255]==0 and all bad
   R, R, R, R, R, R, R, R,       // pylon_3b = { m_x: -2048, m_y: 512, 
 
   R, R,

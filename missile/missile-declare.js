@@ -33,8 +33,9 @@ let g_missile = {
   m_x: "x-set-at-fire", m_y: "y-set-at-fire",
   m_random: 0,
 
+  //  t_phase: MISSILE_A_NO_SHOT,
 
-  m_caromed: false,
+
 
 
   //t_lifetime: "t_lifetime-set-at-fire",

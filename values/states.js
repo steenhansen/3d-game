@@ -1,24 +1,33 @@
+// m_planet_state  -->     m_status m_situation  m_case  m_mode
+
+// m_modes in missile
+//const MISSILE_A_NO_SHOT = 'MISSILE_A_NO_SHOT';
+const MISSILE_0_SHOT_FORWARD = 'MISSILE_0_SHOT_FORWARD';
+const MISSILE_1_HITTING_PYLON = 'MISSILE_1_HITTING_PYLON';
+const MISSILE_2_AFTER_PYLON_HIT = 'MISSILE_2_AFTER_PYLON_HIT';
+
+const MISSILE_3_SECOND_PYLON_HIT = 'MISSILE_3_SECOND_PYLON_HIT';
 
 
-const PYLON_0_NORMAL = 'pylon-normal';
-const PYLON_1_HIT = 'pylon-hit';    // GREEN EDGES + BRIGHT
-const PYLON_2_BRIGHT = 'pylon-bright';
-const PYLON_3_DIM = 'pylon-dim';
+const PYLON_0_NORMAL = 'PYLON_0_NORMAL';
+const PYLON_1_HIT = 'PYLON_1_HIT';    // GREEN EDGES + BRIGHT
+const PYLON_2_BRIGHT = 'PYLON_2_BRIGHT';
+const PYLON_3_DIM = 'PYLON_3_DIM';
 
 
 
 const ENEMY_0_FLOATING = 'enemy-float';
 const ENEMY_1_BOUNCE = 'enemy-bounce';
 
+// m_state in enemy
+const ENEMY_1_HIT = 'ENEMY_1_HIT';     // green missile + green enemy
+const ENEMY_2_LIFTING = 'ENEMY_2_LIFTING';
 
-const ENEMY_1_HIT = 'enemy-hit';     // green missile + green enemy
-const ENEMY_2_LIFTING = 'enemy-lift';
-const ENEMY_3_DEAD = 'enemy-dead';
-const ENEMY_4_HIDDEN = 'enemy-hidden';  // do nothing
-const ENEMY_5_DEAD = 'enemy-dead';
+const ENEMY_3_ZOMBIE = 'ENEMY_3_ZOMBIE';
 
 
-const LOOP_0_START = 'LOOP_0_START';
+
+
 const LOOP_0_DESKTOP_START = 'LOOP_0_DESKTOP_START';
 const LOOP_0_MOBILE_START = 'LOOP_0_MOBILE_START';
 

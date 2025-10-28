@@ -1,21 +1,51 @@
 function playerRight(the_player, travel_speed, diagonal_weight) {
-  the_player.m_x = rightOnBoard(the_player.m_x, travel_speed * diagonal_weight);     // qbert
-  return the_player;
+  right_x = rightOnBoard(the_player.m_x, travel_speed * diagonal_weight);
+  return right_x;
 }
+
+
+//  rightRollOverBoard()
+function rightOnBoard(x_pos, right_steps) {
+  x_pos += right_steps;
+  if (x_pos > checkerboard_width) {    //} SCENE_X_MAX) {
+    x_pos -= checkerboard_width;             //SCENE_X_MAX;
+  }
+  return x_pos;
+}
+
+
+
+
+
+
+
 
 function playerLeft(the_player, travel_speed, diagonal_weight) {
-  the_player.m_x = leftOnBoard(the_player.m_x, travel_speed * diagonal_weight);
-  return the_player;
+  left_x = leftOnBoard(the_player.m_x, travel_speed * diagonal_weight);
+  return left_x;
 }
 
+// leftRollOverBoard()
+function leftOnBoard(x_pos, left_steps) {
+  checkerboard_width = g_planet.s_checkerboard_width;
+  x_pos -= left_steps;
+  if (x_pos < SCENE_X_MIN) {
+    x_pos += checkerboard_width;         //SCENE_X_MAX;
+  }
+  return x_pos;
+}
+
+
+
+
 function playerForward(the_player, travel_speed) {
-  the_player.m_y = forwardOnBoard(the_player.m_y, travel_speed);
-  return the_player;
+  forward_y = forwardOnBoard(the_player.m_y, travel_speed);
+  return forward_y;
 }
 
 function playerBackward(the_player, travel_speed) {
-  the_player.m_y = backwardOnBoard(the_player.m_y, travel_speed);
-  return the_player;
+  backward_y = backwardOnBoard(the_player.m_y, travel_speed);
+  return backward_y;
 }
 
 
@@ -27,7 +57,7 @@ function playerBackward(the_player, travel_speed) {
 
 
 
-
+// rollOver
 function backwardOnBoard(y_pos, backward_steps) {
   checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos -= backward_steps;
@@ -36,7 +66,7 @@ function backwardOnBoard(y_pos, backward_steps) {
   }
   return y_pos;
 }
-
+// rollOver
 function forwardOnBoard(y_pos, forward_steps) {
   checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos += forward_steps;
@@ -52,23 +82,6 @@ function forwardOnBoard(y_pos, forward_steps) {
 
 
 
-
-function leftOnBoard(x_pos, left_steps) {
-  checkerboard_width = g_planet.s_checkerboard_width;
-  x_pos -= left_steps;
-  if (x_pos < SCENE_X_MIN) {
-    x_pos += checkerboard_width;         //SCENE_X_MAX;
-  }
-  return x_pos;
-}
-
-function rightOnBoard(x_pos, right_steps) {
-  x_pos += right_steps;
-  if (x_pos > checkerboard_width) {    //} SCENE_X_MAX) {
-    x_pos -= checkerboard_width;             //SCENE_X_MAX;
-  }
-  return x_pos;
-}
 
 
 

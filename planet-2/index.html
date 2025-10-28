@@ -19,7 +19,7 @@
 
 <div id="the-css">
   <link rel="stylesheet" href="device/device-screens.css" />
-  <link rel="stylesheet" href="values/variables.css" />
+  <link rel="stylesheet" href="variables/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
   <link rel="stylesheet" href="player/player.css" />
   <link rel="stylesheet" href="scene/layout.css" />
@@ -44,6 +44,7 @@
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/major-constants.js"></script>
   <script type="text/javascript" src="holes/holes-code.js"></script>
+  <script type="text/javascript" src="holes/holes-create.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
   <script type="text/javascript" src="field/field-bounds.js"></script>
   <script type="text/javascript" src="field/field-invert.js"></script>
@@ -58,8 +59,8 @@
 
 <div id="js-before">
   <script type="text/javascript" src="enemy/enemy-html.js"></script>
-  <script type="text/javascript" src="variables/major-globals.js"></script>
-  <script type="text/javascript" src="values/css-vars.js"></script>
+
+  <script type="text/javascript" src="variables/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
   <script type="text/javascript" src="objects/screen-placement.js"></script>
@@ -70,6 +71,8 @@
   <script type="text/javascript" src="sky/sky-code.js"></script>
   <script type="text/javascript" src="input/desktop-keys.js"></script>
   <script type="text/javascript" src="scene/vanish-point.js"></script>
+
+  <script type="text/javascript" src="field/field-debug.js"></script>
   <script type="text/javascript" src="field/field-code.js"></script>
   <script type="text/javascript" src="field/field-depth.js"></script>
   <script type="text/javascript" src="field/field-left.js"></script>
@@ -77,7 +80,9 @@
   <script type="text/javascript" src="pylons/pylons-gradients.js"></script>
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
   <script type="text/javascript" src="pylons/pylons-collide.js"></script>
+  <script type="text/javascript" src="pylons/pylons-create.js"></script>
   <script type="text/javascript" src="collisions/player-recoil.js"></script>
+  <script type="text/javascript" src="scene/frames.js"></script>
   <script type="text/javascript" src="scene/scene_3d.js"></script>
   <script rel="text/javascript" src="field/field-test.js"></script>
   <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
@@ -170,7 +175,7 @@
   <script type="text/javascript" src="missile/missile-declare.js"></script>
   <script type="text/javascript" src="player/player-declare.js"></script>
   <script type="text/javascript" src="init/checkerboard-field.js"></script>
-  <script type="text/javascript" src="variables/minor-globals.js"></script>
+
   <script type="text/javascript" src="values/minor-constants.js"></script>
 </div>
 
@@ -236,7 +241,6 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-2/index.html?debug-env=tru
   planet_field_depth = 768;
 
   g_planet = initPlanet(planet_field_width, planet_field_depth);
-  //console.log("g_planet", g_planet);
 
 
 
@@ -245,7 +249,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-2/index.html?debug-env=tru
 
 
 
-  the_pylons = [start_pylon, exit_pylon, pylon_a_1, pylon_a_2];
+  the_pylons = [enter_pylon, exit_pylon, pylon_a_1, pylon_a_2];
   // the_pylons = [pylon_a_1, pylon_a_2];
 
 
