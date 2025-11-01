@@ -12,7 +12,7 @@ function touchBoxes(the_event) {
     the_event.preventDefault();
     fullMobile();
     delete g_planet.t_drift_direction;
-    g_missile = launchMissile(g_missile, g_player);
+    g_missile = initMissileData(g_missile, g_player);
   }
 }
 
@@ -35,7 +35,7 @@ function touchEnd(evt) {
     dif_y = Math.abs(local_swipe_y_start - touch_y_end);
     was_a_press = (dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN);
     if (was_a_press) {
-      g_missile = launchMissile(g_missile, g_player);
+      g_missile = initMissileData(g_missile, g_player);
     } else {
       dbg_start_swipe_x = local_swipe_x_start;
       dbg_start_swipe_y = local_swipe_y_start;

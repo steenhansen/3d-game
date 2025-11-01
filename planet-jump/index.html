@@ -42,6 +42,8 @@
   <script type="text/javascript" src="values/debugging.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
+
   <script type="text/javascript" src="holes/holes-code.js"></script>
   <script type="text/javascript" src="holes/holes-create.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
@@ -62,7 +64,7 @@
   <script type="text/javascript" src="variables/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
-  <script type="text/javascript" src="objects/screen-placement.js"></script>
+
   <script type="text/javascript" src="player/player-code.js"></script>
   <script type="text/javascript" src="objects/sprites-stuff.js"></script>
   <script type="text/javascript" src="objects/sprite-lines.js"></script>
@@ -220,7 +222,6 @@
 file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
 
 -->
-<link rel="stylesheet" href="planet-1/lines.css" />
 
 <style>
   :root {
@@ -230,34 +231,35 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
     --saturn-image: url('../planet-1/cloudy-saturn.png');
   }
 </style>
-
-<script type="text/javascript" src="planet-1/pylons-declare.js"></script>
-<script type="text/javascript" src="planet-1/enemy-declare.js"></script>
-<script type="text/javascript" src="planet-1/holes-declare.js"></script>
-<script type="text/javascript" src="planet-1/pylon-signs.js"></script>
+<link rel="stylesheet" href="planet-jump/lines.css" />
+<script type="text/javascript" src="planet-jump/pylons-declare.js"></script>
+<script type="text/javascript" src="planet-jump/enemy-declare.js"></script>
+<script type="text/javascript" src="planet-jump/holes-declare.js"></script>
+<script type="text/javascript" src="planet-jump/pylon-signs.js"></script>
+<script type="text/javascript" src="planet-jump/planet-constants.js"></script>
 <script>
   urlParams();
 
-  planet_field_width = 8192;
-  planet_field_depth = 768;
+  PTS_FIELD_SIZE = [3000, 4000]; // 0-> 3000
 
-  g_planet = initPlanet(planet_field_width, planet_field_depth);
-
-
+  PTS_FIELD_BOUNDS = [1000, 1000, 3000, 1500];
+  g_planet = initPlanetBounded(PTS_FIELD_SIZE, PTS_FIELD_BOUNDS);
 
 
-  //  g_player = initPlayer(900, 700, MOVINGx_E, MOVINGx_E);
-  the_player = initPlayer(1350, 575, MOVINGx_NOT, MOVINGx_E);
+  XY_PLAYER = [350, 333];
+  the_player = initPlayer(PTS_FIELD_BOUNDS, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
 
 
-  start_exit = [enter_pylon, exit_pylon];
+  XY_ENTER = [555, 110];
+  XY_EXIT = [777, 0];
+  start_exit = initSigns(PTS_FIELD_BOUNDS, XY_ENTER, XY_EXIT);
 
-
-  new_pylons = makePylons();
+  new_pylons = makePylons(PTS_FIELD_BOUNDS);
   the_pylons = start_exit.concat(new_pylons);
+  //the_pylons = start_exit;
 
-  the_enemies = []; //[enemy_1];//, enemy_2];
-  the_holes = makeHoles();   //[hole_1]; //, hole_2, hole_3, hole_4];
+  the_enemies = makeEnemiesJump(PTS_FIELD_BOUNDS);
+  the_holes = makeHoles(PTS_FIELD_BOUNDS);
 
 
 

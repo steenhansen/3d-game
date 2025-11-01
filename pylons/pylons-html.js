@@ -475,7 +475,6 @@ function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, diffe
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   if (isNaN(left_front_top)) {
-    //console.log("ddddddXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
   }
   let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_type, vert_text, pylon_alive);
   return front_pylon;

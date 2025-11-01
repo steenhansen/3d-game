@@ -40,27 +40,19 @@ function resetPlayer() {
 }
 
 
-function initPlayer(playground_box, xy_player, start_move_dir, start_drift_dir) {
-  let [left_x, top_y, _right_x, _bottom_y] = playground_box;
-  let [x, y] = xy_player;
-  checkerboard_width = g_planet.s_checkerboard_width;
-  checkerboard_depth = g_planet.s_checkerboard_depth;
 
 
-
-
-
-
-  player_init_x = left_x + x;
-  player_init_y = top_y + y;
-
-  xyNotInField(player_init_x, player_init_y, `Offset player coords is out of bounds`);
-
+function initPlayer22(player_in_squares, start_move_dir, start_drift_dir) {
+  err_mess = "initPlayer22()";
+  xy_pixels = originOffset2(player_in_squares, err_mess);
+  player_init_x = xy_pixels[0];
+  player_init_y = xy_pixels[1];
   g_planet.t_move_direction = start_move_dir;
-
-
   g_planet.t_drift_direction = start_drift_dir;
   the_player = resetPlayer();
-  // console.log("the_palyer", the_player);
   return the_player;
 }
+
+
+
+

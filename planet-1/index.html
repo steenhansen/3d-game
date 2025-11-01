@@ -240,31 +240,30 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 <script>
   urlParams();
 
-  XY_FIELD_SIZE = [16384, 2768]; https://open.spotify.com/playlist/29kthVqTzuo8eo81PdpH4t
-  XY_PLAYGROUND = [5000, 1000, 10900, 1600];
-  g_planet = initPlanet(XY_FIELD_SIZE, XY_PLAYGROUND, "planet-4");
+  dbg_print("npot console");
+
+  PTS_FIELD_SIZE = [16384, 2768];
+  PTS_FIELD_BOUNDS = [5000, 1000, 10900, 1600];
+  g_planet = initPlanetBounded(PTS_FIELD_SIZE, PTS_FIELD_BOUNDS);
 
 
   XY_PLAYER = [2586, 555];
-  the_player = initPlayer(XY_PLAYGROUND, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
+  the_player = initPlayer(PTS_FIELD_BOUNDS, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
 
   XY_ENTER = [210, 110];
   XY_EXIT = [0, 0];
-  start_exit = initSigns(XY_PLAYGROUND, XY_ENTER, XY_EXIT);
+  start_exit = initSigns(PTS_FIELD_BOUNDS, XY_ENTER, XY_EXIT);
 
-  new_pylons = makePylons(XY_PLAYGROUND);
+  new_pylons = makePylons(PTS_FIELD_BOUNDS);
   the_pylons = start_exit.concat(new_pylons);
 
-  // the_enemiesO = makeEnemiesOld(XY_PLAYGROUND); //[]; 
-
-  // console.log("Old", the_enemiesO);
 
 
-  the_enemies = makeEnemies(XY_PLAYGROUND); //[]; 
+  the_enemies = makeEnemies789(PTS_FIELD_BOUNDS); //[]; 
 
-  //console.log("New", the_enemies);
 
-  the_holes = makeHoles(XY_PLAYGROUND);   //[];
+
+  the_holes = makeHoles(PTS_FIELD_BOUNDS);   //[];
 
 
 

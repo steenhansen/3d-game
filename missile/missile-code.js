@@ -1,7 +1,6 @@
 
 
 function missileAdvance(the_missile, the_player) {
-  //  console.log("m_phase", the_missile.t_phase);
   if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
     the_missile.t_lifetime = 25;
     if (a_pylon.m_x > the_missile.m_x) {
@@ -14,7 +13,6 @@ function missileAdvance(the_missile, the_player) {
   } else if (the_missile.t_phase == MISSILE_3_SECOND_PYLON_HIT) {
     delete the_missile.t_lifetime;
     delete the_missile.t_phase;
-    //the_missile.t_phase == MISSILE_0_SHOT_FORWARD;
   }
 
   the_missile.m_random++;
@@ -30,11 +28,9 @@ function missileAdvance(the_missile, the_player) {
   const missile_flying = 't_lifetime' in g_missile;
 
   if (!missile_flying) {
-    //   console.log("!missile_flying");
     return the_missile;
   } else {
 
-    // console.log("t_lifetime", the_missile.t_lifetime);
     the_missile.t_lifetime--;
     if (the_missile.t_lifetime == 0) {
       delete the_missile.t_lifetime;
@@ -45,10 +41,8 @@ function missileAdvance(the_missile, the_player) {
 
   let { m_x_dir, m_y_dir } = the_missile;
   if (m_x_dir < 0) {
-    //  console.log("left", the_missile.t_lifetime);
     the_missile.m_x = leftOnBoard(the_missile.m_x, 12 * 4);
   } else if (m_x_dir > 0) {
-    //  console.log("left", the_missile.t_lifetime);
     the_missile.m_x = rightOnBoard(the_missile.m_x, 12 * 4);
   } else {
     the_missile.m_y = backwardOnBoard(the_missile.m_y, 8);   //TRAVEL_SPEED * 2);
@@ -58,7 +52,7 @@ function missileAdvance(the_missile, the_player) {
 
 
 
-function launchMissile(the_missile, the_player) {      // qbert
+function initMissileData(the_missile, the_player) {      // qbert
   the_missile.t_phase = MISSILE_0_SHOT_FORWARD;
   let { m_x, m_y } = the_player;
   the_missile.m_x = m_x;

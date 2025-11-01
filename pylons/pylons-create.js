@@ -9,27 +9,8 @@ PYLON_A = {
 
 
 
-function makePylon_A(pylon_char, pylon_num, x, y) {
-  checkerboard_width = g_planet.s_checkerboard_width;
-  checkerboard_depth = g_planet.s_checkerboard_depth;
-  if (x < 0 || x > checkerboard_width) {
-    err_mess = `Pylon: ${x} x is out of range, max is ${checkerboard_width}`;
-    throw new Error(err_mess);
-  }
-  if (y < 0 || y > checkerboard_depth) {
-    throw new Error("Part-1, y is out of range " + y + checkerboard_depth);
-  }
-  pylon_name = `pylon-${pylon_char}-${pylon_num}`;
-  different_obj = { s_pylon_name: pylon_name, m_x: x, m_y: y };
-  merged_pylon = Object.assign({}, PYLON_A, different_obj);
-  return merged_pylon;
-}
 
-
-
-
-function makePylon_new(playground_box, pylon_num, x, y, o_color) {
-  //console.log("makePylon_new pylon_num", pylon_num, playground_box);
+function initPylonData(playground_box, pylon_num, x, y, o_color) {
   let [left_x, top_y, _right_x, _bottom_y] = playground_box;
   offset_x = left_x + x;
   offset_y = top_y + y;
@@ -52,7 +33,6 @@ function makePylon_new(playground_box, pylon_num, x, y, o_color) {
     merged_pylon.p_bare_left_col = o_color;
     merged_pylon.p_bare_rght_col = o_color;
   }
-  //console.log("22222222222222", merged_pylon);
   return merged_pylon;
 }
 
@@ -91,47 +71,74 @@ function makePylonColored(pylon_char, pylon_num, x, y, color_front, color_sides)
     p_bare_rght_col: color_sides,
   };
   merged_pylon = Object.assign({}, PYLON_colored, different_obj);
-  // console.log('mer', merged_pylon);
   return merged_pylon;
 }
 
 
-function initSigns(playground_box, xy_enter, xy_exit) {
-  let [left_x, top_y, _right_x, _bottom_y] = playground_box;
 
-  let [enter_x, enter_y] = xy_enter;
-  let [exit_x, exit_y] = xy_exit;
 
-  exit_pylon.m_x = left_x + exit_x;
-  exit_pylon.m_y = top_y + exit_y;
-  xyNotInField(exit_pylon.m_x, exit_pylon.m_y, `Offset exit sign coords are out of bounds`);
+function initSign(pylon_id, sign_in_squares, vert_word, text_color) {
+  xy_pixels = originOffset2(sign_in_squares, "ignore_bounds");
 
-  enter_pylon.m_x = left_x + enter_x;
-  enter_pylon.m_y = top_y + enter_y;
-  xyNotInField(enter_pylon.m_x, enter_pylon.m_y, `Offset enter sign coords are out of bounds`);
+  sign_pylon = {
+    s_isa: "is-pylon-sign",
+    s_pylon_name: pylon_id,
+    s_vert_word: vert_word,
+    //o_url_hit: '', 
+    o_outline_color: 'none',
+    m_alive: true,
+    m_x: xy_pixels[0],
+    m_y: xy_pixels[1],
+    p_sign_text_col: text_color,
+  };
+  return sign_pylon;
+}
 
-  return [enter_pylon, exit_pylon];
+function initSignLink(pylon_id, sign_in_squares, vert_word, text_color, url_link) {
+  xy_pixels = originOffset2(sign_in_squares, "ignore_bounds");
+  sign_pylon = initSign(pylon_id, sign_in_squares, vert_word, text_color);
+  sign_pylon.o_url_hit = url_link;
+  return sign_pylon;
 }
 
 
-// exit_pylon = {
-//   s_isa: "is-pylon-sign",
-//   s_pylon_name: "pylon-exit",
-//   s_vert_word: "EXIT",
-//   o_url_hit: 'planet-1/index.html',
-//   o_outline_color: 'none',
-//   m_alive: true,
-//   m_x: 1000, m_y: 33,
-//   p_sign_text_col: 'lime',
-// };
 
-// enter_pylon = {
-//   s_isa: "is-pylon-sign",
-//   s_pylon_name: "pylon-start",
-//   s_vert_word: "SHOOT",
-//   //o_url_hit: '', 
-//   o_outline_color: 'none',
-//   m_alive: true,
-//   m_x: 1900, m_y: 55,
-//   p_sign_text_col: 'white',
-// }; 
+
+
+function initPylonData22(pylon_id, xy_pixels, pylon_color) {
+
+  pylon_name = `pylon-${pylon_id}`;
+
+  a_pylon = {
+    s_isa: "is-pylon",
+    s_pylon_name: pylon_name,
+    //o_url_hit: '', 
+    p_bare_frnt_col: pylon_color,
+    p_bare_left_col: pylon_color,
+    p_bare_rght_col: pylon_color,
+    m_alive: true,
+    m_x: xy_pixels[0],
+    m_y: xy_pixels[1],
+
+  };
+
+
+  return a_pylon;
+}
+
+
+
+function makePylons22(pylons_list, pylon_colors) {
+  declared_pylons = [];
+  num_pylons = pylons_list.length;
+  for (let p_index = 0; p_index < num_pylons; p_index++) {
+    pylon_xy_squares = pylons_list[p_index];
+    color_of_pylon = pylon_colors[p_index];
+    const pylon_id = p_index.toString().padStart(2, '0');
+    xy_pixels = originOffset2(pylon_xy_squares, "ignore_bounds");
+    new_hole = initPylonData22(pylon_id, xy_pixels, color_of_pylon);
+    declared_pylons.push(new_hole);
+  }
+  return declared_pylons;
+
+}

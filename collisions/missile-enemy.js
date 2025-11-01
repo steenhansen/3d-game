@@ -29,19 +29,14 @@ function missileHitPylons(the_missile, the_pylons) {
   }
 
   if (missile_hit_pylon) {
-    // console.log("missile_hit_pylon", the_missile);
     if (the_missile.t_phase == MISSILE_0_SHOT_FORWARD) {
-      //console.log("MISSILE_0_SHOT_FORWARD");
       the_missile.t_phase = MISSILE_1_HITTING_PYLON;
     } else if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
-      // wait for MISSILE_2_AFTER_PYLON_HIT
     } else if (the_missile.t_phase == MISSILE_2_AFTER_PYLON_HIT) {
-      // console.log("MISSILE_3_SECOND_PYLON_HIT");
       the_missile.t_phase = MISSILE_3_SECOND_PYLON_HIT;
     }
   } else {
     if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
-      //   console.log("MISSILE_2_AFTER_PYLON_HIT");
       the_missile.t_phase = MISSILE_2_AFTER_PYLON_HIT;
     }
   }
@@ -118,7 +113,7 @@ function playerHitPylons(the_player, the_pylons) {
 
 
 
-
+const HIT_FLASH_ENEMY = 20;
 
 
 

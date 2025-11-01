@@ -1,4 +1,4 @@
-const HIT_FLASH_ENEMY = 20;
+//const HIT_FLASH_ENEMY = 20;
 
 
 
@@ -44,18 +44,16 @@ function makeEnemy_A(xy_origin, enemy_base) {
   xyNotInField(the_x, the_y, "Not-In-Field makeEnemy_A()");
   the_id = `enemy-${enemy_base.s_enemy_number}`;
   different_obj = { s_id: the_id, m_x: the_x, m_y: the_y };
-  //different_obj = { m_x: the_x, m_y: the_y };
-
 
   enemy_data = Object.assign({}, enemy_base, different_obj);
 
-  html_enemy = makeEnemy(enemy_data);
+  html_enemy = createEnemyHtml(enemy_data);
   enemy_number = enemy_base.s_enemy_number;
   enemy_container_id = `enemy-${enemy_number}-container`;
   document.getElementById('enemy-area').innerHTML += `
        <div id="${enemy_container_id}" >${html_enemy}</div>
    `;
-  //console.log("ddddd", enemy_container_id, enemy_data);
+
   return enemy_data;
 }
 
@@ -63,9 +61,7 @@ function makeEnemy_A(xy_origin, enemy_base) {
 
 
 function makeEnemies1(xy_origin) {
-  //enemy_0 = makeEnemy_A(xy_origin, base_enemy_1);
   enemy_1 = makeEnemy_A(xy_origin, base_enemy_1);
-  //  declared_enemies = [enemy_0, enemy_1];
   declared_enemies = [enemy_1];
   return declared_enemies;
 }
@@ -76,9 +72,3 @@ function makeEnemies(xy_origin) {
   return declared_enemies;
 }
 
-// function makeEnemies(xy_origin) {
-//   enemy_0 = makeEnemy_A(xy_origin, base_enemy_1);
-//   enemy_1 = makeEnemy_A(xy_origin, base_enemy_2);
-//   declared_enemies = [enemy_0, enemy_1];
-//   return declared_enemies;
-// }

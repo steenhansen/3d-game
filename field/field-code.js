@@ -112,7 +112,6 @@ function yAllowed22(player_y) {
   if (player_y < g_planet.s_playground_y_min || player_y > g_planet.s_playground_y_max) {
 
     mess = ` `;
-    console.log("yyyy", player_y, g_planet.s_playground_y_min, g_planet.s_playground_y_max);
     return false;
   }
   return true;
@@ -125,8 +124,6 @@ function yAllowed(player_y) {
     return false;
   } else if (player_y > g_planet.s_playground_y_max) {
     dbg_y_too_large = `${player_y}>${g_planet.s_playground_y_max}`;
-    // mess = ` `;
-    //console.log("yyyy", player_y, g_planet.s_playground_y_min, g_planet.s_playground_y_max);
     return false;
   }
   return true;

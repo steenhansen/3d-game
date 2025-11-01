@@ -98,12 +98,12 @@ let enemy_6 = {
 };
 
 
-html_enemy1 = makeEnemy(enemy_1);
-html_enemy2 = makeEnemy(enemy_2);
-html_enemy3 = makeEnemy(enemy_3);
-html_enemy4 = makeEnemy(enemy_4);
-html_enemy5 = makeEnemy(enemy_5);
-html_enemy6 = makeEnemy(enemy_6);
+html_enemy1 = createEnemyHtml(enemy_1);
+html_enemy2 = createEnemyHtml(enemy_2);
+html_enemy3 = createEnemyHtml(enemy_3);
+html_enemy4 = createEnemyHtml(enemy_4);
+html_enemy5 = createEnemyHtml(enemy_5);
+html_enemy6 = createEnemyHtml(enemy_6);
 
 
 document.getElementById('enemy-area').innerHTML = `

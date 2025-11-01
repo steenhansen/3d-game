@@ -171,38 +171,52 @@ function debugReportFrameTime() {
 
 
 
+  function pixels2squares([xy_pixels]) {
+    [x_pixels, y_pixels] = xy_pixels;
+    x_squares = Math.floor(x_pixels / WIDTH_OF_SQUARE);
+    y_squares = Math.floor(y_pixels / DEPTH_OF_SQUARE);
+    return [x_squares, y_squares];
+  }
 
-  const p_x = g_player.m_x;
-  const p_y = g_player.m_y;
-  player_pos = `Player x${p_x}, y${p_y}`;
-  debugPrint(player_pos, 530, 5);
+
+  const offset_squares_x = Math.floor(g_player.m_x / WIDTH_OF_SQUARE);
+  const offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
+
+  player_pos = `player field [${offset_squares_x}, ${offset_squares_y}]`;
+  debugPrint(player_pos, 50, 0);
+
+  const not_offset_squares_x = offset_squares_x - RELATIVE_ORIGIN[0];
+  const not_offset_squares_y = offset_squares_y - RELATIVE_ORIGIN[1];
+
+  player_pos = `player relative [${not_offset_squares_x}, ${not_offset_squares_y}]`;
+  debugPrint(player_pos, 50, 20);
 
 
 
   // const e_x = enemy_1.m_x;
   // const e_y = enemy_1.m_y;
-  player_pos = "no easy enemy_1 variable"; /// `Enemy1 x${e_x}, y${e_y}`;
-  debugPrint(player_pos, 530, 25);
+  // player_pos = "no easy enemy_1 variable"; /// `Enemy1 x${e_x}, y${e_y}`;
+  // debugPrint(player_pos, 530, 25);
 
 
-  // const c_x = pylon_a_1.m_x;
-  // const c_y = pylon_a_1.m_y;
-  player_pos = "pylon1a";  //`Pylon1a x${c_x}, y${c_y}`;
-  debugPrint(player_pos, 530, 45);
-
-
-
-
-
-  animation_time = dbg_animation_time + " msec";
-  debugPrint(animation_time, 340, 25);
+  // // const c_x = pylon_a_1.m_x;
+  // // const c_y = pylon_a_1.m_y;
+  // player_pos = "pylon1a";  //`Pylon1a x${c_x}, y${c_y}`;
+  // debugPrint(player_pos, 530, 45);
 
 
 
 
 
-  animation_time = dbg_animation_time + " msec";
-  debugPrint(animation_time, 340, 25);
+  // animation_time = dbg_animation_time + " msec";
+  // debugPrint(animation_time, 340, 25);
+
+
+
+
+
+  // animation_time = dbg_animation_time + " msec";
+  // debugPrint(animation_time, 340, 25);
 
 
 

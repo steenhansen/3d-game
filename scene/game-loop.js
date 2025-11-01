@@ -67,7 +67,7 @@ function loopAfterElevator(the_planet) {
 }
 
 function loopPlay(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   if (the_player.m_hit_hole_last_move) {
     loop_state = LOOP_7_PLAY_HOLE_A_HIT;
   } else if ('t_is_dying' in the_player) {
@@ -81,7 +81,7 @@ function loopPlay(the_planet, the_player, enemy_list, g_pylon_list) {
 }
 
 function loopPlayHoleHit(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   the_player = animateHoleHit(the_player);
   the_planet.m_planet_state = LOOP_7_PLAY_HOLE_B_INSIDE;
   collisionShake(the_player);
@@ -90,7 +90,7 @@ function loopPlayHoleHit(the_planet, the_player, enemy_list, g_pylon_list) {
 
 // what if stop inside hole?
 function loopPlayHoleInside(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
 
   the_player = animateHoleInside(the_player);
   if (the_player.m_hit_hole_last_move) {
@@ -103,7 +103,7 @@ function loopPlayHoleInside(the_planet, the_player, enemy_list, g_pylon_list) {
 }
 
 function loopPlayHoleLeave(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   the_player = animateHoleLeave(the_player);
   the_planet.m_planet_state = LOOP_7_PLAY_NORMAL;
   return [the_planet, the_player, enemy_list, pylon_list];
@@ -116,7 +116,7 @@ function loopPlayJumpStart(the_planet, the_player, enemy_list, g_pylon_list) {
 }
 
 function loopPlayJumpUp(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   [the_player, new_state] = animateJumpUp(the_player);
   the_planet.m_planet_state = new_state;
   collisionShake(the_player);
@@ -124,7 +124,7 @@ function loopPlayJumpUp(the_planet, the_player, enemy_list, g_pylon_list) {
 }
 
 function loopPlayJumpDown(the_planet, the_player, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   [the_player, new_state] = animateJumpDown(the_player);
   the_planet.m_planet_state = new_state;
   collisionShake(the_player);
@@ -145,7 +145,7 @@ function loopAfterPlay(the_planet, the_player) {
 }
 
 function loopFly(the_planet, the_player, fly_speed, enemy_list, g_pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, g_pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, g_pylon_list, g_hole_list);
   [the_player, new_state] = animateFly(fly_speed, the_player);
   the_planet.m_planet_state = new_state;
   return [the_planet, the_player, enemy_list, pylon_list];
@@ -156,15 +156,15 @@ function loopDeadStart(the_planet, the_player, enemy_list, pylon_list) {
   setCssVar("--sun-image", "url('../images/grey-sun.png')");
   setCssVar("--pyramids-image", "url('../images/black-pyramids.png')");
   the_planet.m_planet_state = LOOP_11_DEAD_FIELD;
-  zxc = loopDeadField(the_planet, the_player, enemy_list, pylon_list);
-  [the_planet, the_player, enemy_list, pylon_list] = zxc;
+  planet_player_enemies_pylons = loopDeadField(the_planet, the_player, enemy_list, pylon_list);
+  [the_planet, the_player, enemy_list, pylon_list] = planet_player_enemies_pylons;
   return [the_planet, the_player, enemy_list, pylon_list];
 }
 
 
 
 function loopDeadField(the_planet, the_player, enemy_list, pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_player, enemy_list, pylon_list, g_hole_list);
+  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_hole_list);
   pylon_list = dyingPylons(the_player, pylon_list);
   enemy_list = dyingEnemies(the_player, enemy_list);
   [the_planet, just_died] = dyingCheckerboard(the_planet);
@@ -198,8 +198,6 @@ function loopDeadField(the_planet, the_player, enemy_list, pylon_list) {
 
 function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes, the_player, the_planet) {
   initGame();
-
-  //console.log("runGame speeds", land_fly_speeds);
   let [land_speed, elevator_speed, fly_speed] = land_fly_speeds;
   g_pylon_list = the_pylons;
   g_enemy_list = the_enemies;
@@ -209,6 +207,7 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes, the_player
   gameLoop();
 
   function gameLoop(the_time) {
+
     st = Date.now();
     debugFrameTime();
     loop_state = g_planet.m_planet_state;
@@ -261,6 +260,9 @@ function runGame(land_fly_speeds, the_pylons, the_enemies, the_holes, the_player
       loop_error = `bad::loop_state ${loop_state}`;
       throw new Error(loop_error);
     }
+
+    singularPlanetCode('calling-specific-planet-code-exit');
+
     requestAnimationFrame(gameLoop);
     en = Date.now();
     debugAnimation();

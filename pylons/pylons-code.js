@@ -1,4 +1,4 @@
-function pylonToSvg(z_index, front_pylon, side_pylon) {
+function createPylonHtml(z_index, front_pylon, side_pylon) {
   let the_pylon = `<div class="show-pylon" style="z-index:${z_index}; ">
                      <svg viewBox="0 0 1023 511" 
                           preserveAspectRatio="xMinYMin slice">
@@ -44,22 +44,17 @@ function twirlSides(a_pylon) {
 
 //let count_svg = 1;
 function pylonSet(the_player, a_pylon) {
-  //  console.log("ddd", a_pylon);
   svg_pylon = pylonDraw(a_pylon, the_player);
   pylon_id = a_pylon.s_pylon_name;
+
+
   targetDiv = document.getElementById(pylon_id);
+
   if (svg_pylon == null) {
     pylon_error = `bad::pylon is null ${pylon_id}`;
     throw new Error(pylon_error);
   }
-  // if (count_svg == 1) {
-  //console.log("pylonSet ", svg_pylon);
-  // count_svg++;
-  // }
-  //  try {
   targetDiv.innerHTML = svg_pylon;
-  //} catch (e) {
-  // }
 }
 
 function pylonDraw(a_pylon, the_player) {
@@ -85,12 +80,10 @@ function pylonDraw(a_pylon, the_player) {
   [pylon_y, player_y] = pylon_player_ys;
   if (player_y > pylon_y) {
     difference_yy = player_y - pylon_y;
-    //  console.log("pylones-code 111", difference_yy);
   } else {
     checkerboard_depth = g_planet.s_checkerboard_depth;
     dist_pylon_to_zero = checkerboard_depth - pylon_y;
     difference_yy = player_y + dist_pylon_to_zero;
-    //   console.log("pylones-code 222", difference_yy);
   }
   poly_fill = getFrontFill(a_pylon);
   if (a_pylon.s_isa == "is-pylon-sign") {
@@ -99,7 +92,7 @@ function pylonDraw(a_pylon, the_player) {
     vert_text = '';
   }
   front_pylon = pylonFront(left_mid_right_vlines, pylon_id, outline_color, do_flash, difference_yy, poly_fill, a_pylon.s_isa, vert_text, a_pylon.m_alive);
-  pylon_svg = pylonToSvg(the_z_index, front_pylon, side_pylon);
+  pylon_svg = createPylonHtml(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
 }
 
@@ -156,7 +149,6 @@ function pylonOnLeft(a_pylon, x_center_offset, pylon_player_ys, head_on_view) {
     return pylonOnMiddle(x_center_offset, difference_yy);
   } else {
     left_mid_right_vlines = objectLeftSide(x_center_offset, pylon_player_ys, PYLON_PIXEL_DEPTH);
-    //console.log("pylonOnLeft", left_mid_right_vlines);
     left_fill = getLeftFill(a_pylon);
     side_pylon = pylonSidePanel(a_pylon, left_mid_right_vlines, difference_yy, left_fill);
     return [left_mid_right_vlines, side_pylon];

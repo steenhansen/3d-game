@@ -1,6 +1,6 @@
 
-// const ENEMY_HIDDEN = 512;
-function showCorrectRotation(enemy_number) {
+
+function showCorrectRotation(enemy_number, x_adjusted_dir) {
   spin_fixed = "star-spin-fixed-" + enemy_number;
   spin_clockwise = "star-spin-clockwise-" + enemy_number;
   spin_counter = "star-spin-counter-" + enemy_number;
@@ -22,6 +22,7 @@ function showCorrectRotation(enemy_number) {
   }
 }
 
+
 function enemyMove(the_enemy) {
   let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
   if (m_move_count < s_moves_x.length - 1 && m_move_count < s_moves_y.length - 1) {
@@ -42,19 +43,16 @@ function enemyMove(the_enemy) {
   //                    +1(right) x -1(inverted)        -1
   x_adjusted_dir = x_dir * m_bounced_x_dir;
 
+
+
+  showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
   y_dir = s_moves_y[m_move_count];
-
-  showCorrectRotation(the_enemy.s_enemy_number);
-
   if (x_adjusted_dir < 0) {
     the_enemy.m_x = leftOnBoard(m_x, 11);   //   12);  steps_left);
   } else if (x_adjusted_dir > 0) {
     the_enemy.m_x = rightOnBoard(m_x, 11);   //   12);  steps_left);
   } else {
   }
-
-
-
   if (y_dir < 0) {
     the_enemy.m_y = backwardOnBoard(m_y, 1);
   } else if (y_dir > 0) {
@@ -81,16 +79,12 @@ function drawEnemies(the_enemies, the_player) {
 
 
 function enemyDraw(real_id, the_enemy, the_player) {
-
-
-
-  // console.log("dddddd", the_enemy);
   enemy_state = the_enemy.m_state;
   if (enemy_state == ENEMY_0_FLOATING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy = enemyMove(the_enemy);
   } else if (enemy_state == ENEMY_1_BOUNCE) {
-    setCssEnemyEdge(the_enemy.s_enemy_number, '48px');   //'#ff0000');
+    setCssEnemyEdge(the_enemy.s_enemy_number, '48px');
     the_enemy = enemyMove(the_enemy);
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy.t_enemy_hit_flash--;
@@ -111,36 +105,17 @@ function enemyDraw(real_id, the_enemy, the_player) {
   } else if (enemy_state == ENEMY_2_LIFTING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy.t_hover_up = the_enemy.t_hover_up + TRAVEL_SPEED;
+
     if (the_enemy.t_hover_up > ENEMY_HIDDEN) {
       delete the_enemy.t_hover_up;
-      the_enemy.m_state = ENEMY_3_ZOMBIE;  // ENEMY_3_ZOMBIED
+      the_enemy.m_state = ENEMY_3_ZOMBIE;
     }
-    enemyPlace(real_id, the_enemy, the_player);
-  } else if (enemy_state == ENEMY_3_ZOMBIE) {  // ENEMY_3_ZOMBIED
-    // console.log("ENEMY_3_ZOMBIE", the_enemy);
+  } else if (enemy_state == ENEMY_3_ZOMBIE) {
+
   } else {
   }
   return the_enemy;
 }
-
-
-function objectMomentum(the_enemy) {
-  m_x_dir = the_enemy.m_x_dir;
-  if (m_x_dir < 0) {
-    the_enemy.m_x = leftOnBoard(the_enemy.m_x, 4 * 3);
-  } else if (m_x_dir > 0) {
-    the_enemy.m_x = rightOnBoard(the_enemy.m_x, 4 * 3);
-  }
-
-  m_y_dir = the_enemy.m_y_dir;
-  if (m_y_dir < 0) {
-    the_enemy.m_y = backwardOnBoard(the_enemy.m_y, -4);       // why neg?
-  } else if (m_y_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(the_enemy.m_y, 4);
-  }
-}
-
-
 
 
 function enemyPosition(real_id, z_index, the_stats, hover_up) {
@@ -151,7 +126,6 @@ function enemyPosition(real_id, z_index, the_stats, hover_up) {
   missile_x_y.setAttribute("x", center_x);
   enemy_lifting_y = center_y - ENEMY_TO_HORIZON_LIFT - hover_up;
   missile_x_y.setAttribute("y", enemy_lifting_y);
-  //console.log("ffffffffffff", real_id, center_x);
   missile_scaled = document.getElementById(real_id + '-scaled');
   missile_scaled.style.transform = `scale(${the_scale})`;
 }
@@ -183,32 +157,82 @@ function enemyPlace(real_id, the_enemy, the_player) {
 
 
 function killEnemy(the_enemy) {
-  let { s_id, m_x, m_y, s_colors } = the_enemy;
+  the_enemy.m_state = ENEMY_2_LIFTING;
+  return the_enemy;
+}
 
-  // console.log(" m_x m_y", m_x, m_y);
 
-  let killed_enemy = {
+
+function initEnemyData22(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y) {
+
+  the_id = `enemy-${enemy_id}`;
+
+  enemy_obj = {
+    s_enemy_number: enemy_number,
     s_isa: "is-enemy",
-    m_state: ENEMY_2_LIFTING,
-    s_id: s_id,
-    m_x: m_x, m_y: m_y,    // so can see fly up
-    //m_x: 0,                    // make sure hidden!a   
-    //m_y: 0,
-    m_move_count: -1,
-    s_moves_x: [], s_moves_y: [],
-
-    // m_gone: disappear
-    s_colors: s_colors,
+    s_id: the_id,
+    m_x: xy_pixels[0],
+    m_y: xy_pixels[1],
+    s_moves_x: moves_x,
+    s_moves_y: moves_y,
+    s_colors: colors_of_enemy,
+    m_move_count: 0,
+    m_bounced_x_dir: 1,
+    m_state: ENEMY_0_FLOATING,
   };
-  html_killed = makeEnemy(killed_enemy);
+  html_enemy = createEnemyHtml(enemy_obj);
+  enemy_container_id = `enemy-${enemy_number}-container`;
+  document.getElementById('enemy-area').innerHTML += `
+       <div id="${enemy_container_id}" >${html_enemy}</div>
+   `;
+  return enemy_obj;
+}
 
-  enemy_container_id = s_id + "-container";
-
-  document.getElementById(enemy_container_id).innerHTML = `
-      ${html_killed}
-`;
 
 
 
-  return killed_enemy;
+///////////////////
+
+
+// let base_enemy = {
+//   s_enemy_number: 0,
+//   s_moves_x: [ZERO_10].flat(),
+//   s_moves_y: [ZERO_10].flat(),
+//   s_colors: ['#ee2288', '#004488'],    // enemies never change colors
+//   t_units: [3, 2],
+//   m_x: -1,
+//   m_y: -1,
+// };
+
+function makeEnemies22(enemy_list, enemy_colors, enemy_moves_x, enemy_moves_y) {
+  declared_enemies = [];
+  num_enemies = enemy_list.length;
+  for (let e_index = 0; e_index < num_enemies; e_index++) {
+    enemy_xy_squares = enemy_list[e_index];
+    colors_of_enemy = enemy_colors[e_index];
+
+    moves_x = enemy_moves_x[e_index];
+    moves_y = enemy_moves_y[e_index];
+
+
+    const enemy_id = e_index.toString().padStart(2, '0');
+    err_mess = `makeEnemies22(${enemy_id})`;
+    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
+    new_hole = initEnemyData22(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y);
+    declared_enemies.push(new_hole);
+  }
+  return declared_enemies;
+}
+
+
+
+function enemiesAllZombies(enemy_list) {
+  number_enemies = enemy_list.length;
+  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    an_enemy = enemy_list[enemy_index];
+    if (an_enemy.m_state != ENEMY_3_ZOMBIE) {
+      return false;
+    }
+  }
+  return true;
 }

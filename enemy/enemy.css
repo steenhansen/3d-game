@@ -1,63 +1,6 @@
  .enemy-vars {
-
-   --enemy-star-edge-width-1: 0;
-   --enemy-star-opacity-1: 1;
-   --enemy-star-from-1: 0 512 512;
-   --enemy-star-to-1: 360 512 512;
-   --enemy-star-color-1: yellow;
-   /* these are set */
-   --enemy-ball-color-1: blue;
-
-
-   --enemy-star-edge-width-2: 0;
-   --enemy-star-opacity-2: 1;
-   --enemy-star-from-2: 0 512 512;
-   --enemy-star-to-2: 360 512 512;
-   --enemy-star-color-2: orange;
-   --enemy-ball-color-2: green;
-
-   --enemy-star-edge-width-3: 0;
-   --enemy-star-opacity-3: 1;
-   --enemy-star-from-3: 0 512 512;
-   --enemy-star-to-3: 360 512 512;
-   --enemy-star-color-3: yellow;
-   --enemy-ball-color-3: grey;
-
-   --enemy-star-edge-width-4: 0;
-   --enemy-star-opacity-4: 1;
-   --enemy-star-color-4: yellow;
-   --enemy-ball-color-4: grey;
-
-   --enemy-star-edge-width-5: 0;
-   --enemy-star-opacity-5: 1;
-   --enemy-star-color-5: yellow;
-   --enemy-ball-color-5: grey;
-
-
- }
-
-
- /* #enemy-1-scaledX {
-  transform-origin: center;
-}
-
-#enemy-2-scaledX {
-  transform-origin: center;
-} */
-
- .ellipse-path {
-   fill: none;
-   stroke: grey;
-   stroke-width: 0
- }
-
-
- /* this should be my shot */
- #planets {
-   position: absolute;
-   left: var(--my-enemy-x);
-   top: var(--my-enemy-y);
-   z-index: var(--my-enemy-z);
-   height: var(--my-enemy-height);
-   width: var(--my-enemy-width);
+   --enemy-star-edge-width-NBR: 0;
+   --enemy-star-opacity-NBR: 1;
+   --enemy-star-color-NBR: yellow;
+   --enemy-ball-color-NBR: blue;
  }

@@ -147,7 +147,7 @@ function centersOutside(show_center) {
 
 
 
-function makeMissile(missile_id) {
+function createMissileHtml(missile_id) {
   all_lines = the_lines(false);
   all_rings = the_rings(false);
 

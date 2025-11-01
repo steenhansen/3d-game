@@ -192,9 +192,9 @@
 
 
 <script>
-  console.log("Errors will be printed to console");
+  dbg_print("Errors will be printed to console");
 
-  console.log("START_STOP_FLIP = [line#, ]", START_STOP_FLIP[dbg_record_line]);
+  dbg_print("START_STOP_FLIP = [line#, ]", START_STOP_FLIP[dbg_record_line]);
 
 
   //initLeftRight();
@@ -202,7 +202,7 @@
 
   overflow = g_field_xs_accums[dbg_record_line];
   shift = g_field_xs_shift[dbg_record_line];
-  console.log("after resetLeft  overflow:", overflow, "  _ g_field_xs_shift:", shift);
+  dbg_print("after resetLeft  overflow:", overflow, "  _ g_field_xs_shift:", shift);
 
   resetSections();
   animateStart();
@@ -255,7 +255,7 @@
         if (an_error) { break; }
       }
     }
-    console.log("Number rightThenLefts1025 tests", j);
+    dbg_print("Number rightThenLefts1025 tests", j);
   }
 
 
@@ -305,11 +305,11 @@
     }
 
     if (an_error) {
-      console.log("line history for line 0 shifts", dbg_record_line, debug_line);
+      dbg_print("line history for line 0 shifts", dbg_record_line, debug_line);
     }
 
 
-    console.log("Number rightLeftsSteps tests", j);
+    dbg_print("Number rightLeftsSteps tests", j);
   }
 
 </script>

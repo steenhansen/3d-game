@@ -1,4 +1,4 @@
-const HIT_FLASH_ENEMY = 20;
+//const HIT_FLASH_ENEMY = 20;
 
 
 
@@ -37,8 +37,8 @@ let enemy_2 = {
   s_colors: ['#FFbb22', '#ffffff'],
 };
 
-html_enemy1 = makeEnemy(enemy_1);
-html_enemy2 = makeEnemy(enemy_2);
+html_enemy1 = createEnemyHtml(enemy_1);
+html_enemy2 = createEnemyHtml(enemy_2);
 
 
 document.getElementById('enemy-area').innerHTML = `

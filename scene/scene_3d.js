@@ -2,7 +2,6 @@ function sceneRight(the_player, travel_speed, diagonal_weight) {
   new_right_x = playerRight(the_player, travel_speed, diagonal_weight);
   is_allowed = xAllowed(new_right_x);
   if (!is_allowed) {
-    //   console.log("no a");
     return the_player;
   }
   the_player.m_x = new_right_x;
@@ -16,7 +15,6 @@ function sceneLeft(the_player, travel_speed, diagonal_weight) {
   new_left_x = playerLeft(the_player, travel_speed, diagonal_weight);
   is_allowed = xAllowed(new_left_x);
   if (!is_allowed) {
-    // console.log("no b");
     return the_player;
   }
   the_player.m_x = new_left_x;
@@ -31,8 +29,6 @@ function sceneForward(the_player, travel_speed) {
 
   is_allowed = yAllowed(new_forward_y);
   if (!is_allowed) {
-    console.log("no c");
-
     return the_player;
   }
   the_player.m_y = new_forward_y;
@@ -50,8 +46,6 @@ function sceneBackward(the_player, travel_speed) {
 
   is_allowed = yAllowed(new_backward_y);
   if (!is_allowed) {
-    console.log("no d");
-
     return the_player;
   }
   the_player.m_y = new_backward_y;
@@ -66,7 +60,12 @@ function sceneBackward(the_player, travel_speed) {
 const DIAGONAL_NOT = 3;     // NB cannot do square root of 2 for diagonal damping movement because all integers
 const DIAGONAL_DAMPER = 2;
 
-function sceneMove(the_player) {
+function sceneMove(the_player, is_dying) {
+  if (is_dying) {
+    the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
+    the_player = sceneBackward(the_player, travel_speed);   // MOVINGx_NW
+    return the_player;
+  }
   travel_speed = TRAVEL_SPEED;  //4
   if ('t_drift_direction' in g_planet) {
     travel_speed = 1;
@@ -180,14 +179,25 @@ function randomDirection() {
 
 
 
-function animateScene(the_player, enemy_list, pylon_list, hole_list) {
+function animateScene(the_planet, the_player, enemy_list, pylon_list, hole_list) {
   timeFrames();
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_7_PLAY_NORMAL;
   }
   hitCracks(the_player);
   the_player = doRecoil(the_player);
-  the_player = sceneMove(the_player);
+
+
+  planet_state = the_planet.m_planet_state;
+  if (planet_state == LOOP_12_DEAD_SKY || planet_state == LOOP_11_DEAD_FIELD) {
+    is_dying = true;
+  } else {
+    is_dying = false;
+  }
+
+  the_player = sceneMove(the_player, is_dying);
+
+
   plyon_list = drawPylons(the_player, pylon_list);
   g_missile = missileAdvance(g_missile, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
@@ -203,7 +213,6 @@ function animateScene(the_player, enemy_list, pylon_list, hole_list) {
   if (the_fps > 59) {   // want 60
     draw_speed = 'every-frame';
   }
-  //console.log('the_fps', the_fps);
   if (draw_speed == 'every-second-frame') {
     if (draw_time) {
       affixLeftRight();
@@ -215,17 +224,15 @@ function animateScene(the_player, enemy_list, pylon_list, hole_list) {
     affixLeftRight();
   }
 
-  //////
-
-
-  enemy_list = missileHitEnemies(g_missile, enemy_list);
-  [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
-  [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
-  [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
-  the_player = playerHitEnemies(the_player, enemy_list);
-  the_player = playerHitHoles(the_player, hole_list);
-  enemy_list = enemyHitHoles(enemy_list, hole_list);
-
+  if (!is_dying) {
+    enemy_list = missileHitEnemies(g_missile, enemy_list);
+    [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
+    [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
+    [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
+    the_player = playerHitEnemies(the_player, enemy_list);
+    the_player = playerHitHoles(the_player, hole_list);
+    enemy_list = enemyHitHoles(enemy_list, hole_list);
+  }
   return [the_player, enemy_list, pylon_list];
 }
 

@@ -1,21 +1,16 @@
 
-ball_start = "-2s";
 
 const DYING_STAR_COLOR = "black";
 const DYING_BALL_COLOR = 'grey';
 
 
-function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
+function makeBall(front_or_all, ball_color, enemy_number) {
 
-  ani_duration = aniDuration(is_dead);
+  ani_duration = "2s";
 
   alive_dead_color = '--enemy-ball-color-' + enemy_number;
 
-  if (is_dead) {
-    ani_duration = "1s";
-  } else {
-    ani_duration = "2s";
-  }
+
   if (front_or_all === 'front') {
     ball_id = "ellipse-w-e-bottom--ball";
     ball_points = "m 941.29771,511.00632 c -0.4174,65.1159 -192.8997,119.13442 -429.9211,120.65392 -113.8217,0.7296 -222.902,-10.9924 -303.2444,-32.5875 -80.3423,-21.59492 -125.3656,-56.79672 -125.1651,-88.06642 m 1985.62999,-1.6843 c -0.4174,65.1158 -199.1141,113.63182 -436.1355,115.15132 -113.8218,0.7296 -222.902,-10.9924 -303.2444,-32.5874 -80.3423,-21.59512 -125.3656,-51.29422 -125.1652,-82.56392";
@@ -23,17 +18,12 @@ function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
     ball_id = "ellipse-w-e-top--ball";
     ball_points = "m 1210.2657,511.00632 c 0.4174,-65.1159 192.8997,-119.13441 429.9211,-120.65391 113.8217,-0.7296 222.902,10.9924 303.2444,32.58749 80.3423,21.59492 125.3656,56.79672 125.1651,88.06642 m -1985.629895,1.6843 c 0.4173,-65.1158 199.113995,-113.63181 436.135395,-115.15131 113.8218,-0.7296 222.902,10.9924 303.2444,32.58739 80.3423,21.59512 119.15191,49.60992 118.95151,80.87962";
   }
-  if (is_dead) {
-    fill_opacity = "0.4";
-  } else {
-    fill_opacity = "1";
-  }
-  //    begin="${ball_start}"
+
   make_ball = `
   
           <path id="${ball_id}" d="${ball_points} " stroke="${ball_color}" stroke-width="0" fill-opacity="0" />
           <circle id="bob" cx=0 cy = 0 r = "50"
-                    fill-opacity="${fill_opacity}"
+                    fill-opacity="1"
             stroke-width="0" stroke="#000"
           fill = "var(${alive_dead_color})" >
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" 
@@ -46,23 +36,12 @@ function makeBall(front_or_all, ball_color, is_dead, enemy_number) {
               </animateMotion>
           </circle >
 `;
-
   return make_ball;
 }
 
 
-
-
-
-const DEAD_LOOP = "16s";
-const LIVE_LOOP = "4s";
-
-//  is_dead is never used, this is called once only on create
-// star_color is never used
-
-//  killEnemy() is what changes it to be dead
-function rotatingStar(star_color, is_dead, enemy_number) {
-  ani_duration = aniDuration(is_dead);
+function rotatingStar(star_color, enemy_number) {
+  ani_duration = "4s";
   rotate_from = 0;
   rotate_to = 359;
   hit_opacity = '--enemy-star-opacity-' + enemy_number;
@@ -105,52 +84,32 @@ function rotatingStar(star_color, is_dead, enemy_number) {
 
 
 
-function aniDuration(is_dead) {
-  if (is_dead) {
-    ani_duration = DEAD_LOOP;
-  } else {
-    ani_duration = LIVE_LOOP;
-  }
-  return ani_duration;
-}
 
 
-// createEnemy to install done once, and once to KILL !
-// function makeEnemyOnce(the_enemy) {
-function makeEnemy(the_enemy) {
+
+function createEnemyHtml(the_enemy) {
   let enemy_number = the_enemy.s_enemy_number;
 
   enemy_id = the_enemy.s_id;
-  // if (the_enemy.m_alive) {
   star_color = the_enemy.s_colors[0];
   ball_color = the_enemy.s_colors[1];
-  //} else {
-  //star_color = "black";
-  // ball_color = "black";
-  //}
-  //console.log("daaaaaaaaa", the_enemy);//
+
   setCssEnemyStarFill(the_enemy.s_enemy_number, star_color);
   setCssEnemyBallFill(the_enemy.s_enemy_number, ball_color);
 
-  if (the_enemy.m_state == ENEMY_2_LIFTING) {
-    is_dead = true;
-  } else {
-    is_dead = false;
-  }
-
-  rotating_star = rotatingStar(star_color, is_dead, enemy_number);
-  ball_all = makeBall('all', ball_color, is_dead, enemy_number);
-  ball_front = makeBall('front', ball_color, is_dead, enemy_number);
 
 
-  the_y = 128 - the_enemy.t_hover_up; // always overwritten
+  rotating_star = rotatingStar(star_color, enemy_number);
+  ball_all = makeBall('all', ball_color, enemy_number);
+  ball_front = makeBall('front', ball_color, enemy_number);
+
 
   sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;
   the_y = 28;
   let an_enemy = `
     <div class="show-pylon" id="${enemy_id}-div"  style="overflow:clip">
         <svg viewBox="0 0 1023 1023" >
-            <svg id="${enemy_id}-x-y" x="0" y="${the_y}" width="1024" height="1024" class="svg-box">
+            <svg id="${enemy_id}-x-y" x="0" y="0" width="1024" height="1024" class="svg-box">
                 <svg id="${enemy_id}-scaled" style="transform: scale(0.5); transform-origin: center;">
                       ${sprite_background}
                     ${ball_all}

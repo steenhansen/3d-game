@@ -6,6 +6,7 @@ function playerRight(the_player, travel_speed, diagonal_weight) {
 
 //  rightRollOverBoard()
 function rightOnBoard(x_pos, right_steps) {
+  checkerboard_width = g_planet.s_checkerboard_width;
   x_pos += right_steps;
   if (x_pos > checkerboard_width) {    //} SCENE_X_MAX) {
     x_pos -= checkerboard_width;             //SCENE_X_MAX;
@@ -27,6 +28,8 @@ function playerLeft(the_player, travel_speed, diagonal_weight) {
 
 // leftRollOverBoard()
 function leftOnBoard(x_pos, left_steps) {
+
+
   checkerboard_width = g_planet.s_checkerboard_width;
   x_pos -= left_steps;
   if (x_pos < SCENE_X_MIN) {

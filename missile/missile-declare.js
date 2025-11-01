@@ -21,7 +21,7 @@ the_diamonds = [
 
 
 
-html_missile = makeMissile('the-missile');
+html_missile = createMissileHtml('the-missile');
 
 
 document.getElementById('missile-area').innerHTML = `

@@ -1,5 +1,7 @@
 
 
+let BOUNDS_IN_SQUARES;
+
 const HOR_0 = 256 * 0;
 const HOR_1 = 256 * 1;
 const HOR_2 = 256 * 2;
@@ -78,9 +80,12 @@ const VER_Z = 50 * 35;
 
 
 
-
-
-
+let SQS_FIELD_SIZE;
+let PTS_FIELD_SIZE;
+let SQS_FIELD_ORIGIN;
+let PTS_FIELD_ORIGIN;
+let SQS_FIELD_BOUNDS;
+let PTS_FIELD_BOUNDS;
 
 let COLLISION_SIZES;
 
@@ -91,6 +96,9 @@ const INIT_Y_FLIP_COUNT = 4;
 const DEVICE_UNKNOWN = 0;
 const DEVICE_DESKTOP = 1;
 const DEVICE_MOBILE = 2;
+
+// these are pixel move!
+LEFT_5 = [-1, -1, -1, -1, -1];
 
 ZERO_10 = [+0, +0, +0, +0, +0, +0, +0, +0, +0, +0];
 LEFT_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];

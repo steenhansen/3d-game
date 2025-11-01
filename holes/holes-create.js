@@ -1,25 +1,64 @@
 
-HOLE_A = {
-  s_isa: "is-hole",
-  c_hole_color: 'red',
-  c_vert_color: 'black',
-};
 
 
 
+function squareNotInBounds(xy_squares, xy_offset, err_mess) {
+  let [x_square, y_square] = xy_squares;
+  let [x_offset, y_offset] = xy_offset;
+  let [x_min, y_min, x_max, y_max] = BOUNDS_IN_SQUARES;
 
-function makeHole_A(playground_box, hole_num, x, y, o_color) {
-  let [left_x, top_y, _right_x, _bottom_y] = playground_box;
-  offset_x = left_x + x;
-  offset_y = top_y + y;
-  hole_name = `hole-${hole_num}`;
-  xyNotInField(offset_x, offset_y, `Offset hole '${hole_name}' coords are out of bounds`);
 
-  different_obj = { s_hole_name: hole_name, m_x: offset_x, m_y: offset_y };
-  merged_hole = Object.assign({}, HOLE_A, different_obj);
-  if (o_color != undefined) {
-    merged_hole.c_hole_color = o_color;
+  xy_squares = `[${x_square}, ${y_square}]relative => [${x_offset}, ${y_offset}]absolute`;
+
+  if (x_offset < x_min || x_max < x_offset) {
+    x_err = `${xy_squares} is not  ${x_min} < X < ${x_max} => ${err_mess}`;
+    throw new Error(x_err);
   }
-  return merged_hole;
+
+  if (y_offset < y_min || y_max < y_offset) {
+    y_err = `${xy_squares} is not  ${y_min} < Y < ${y_max} => ${err_mess}`;
+    throw new Error(y_err);
+  }
 }
-;
+
+
+function originOffset2(xy_squares, err_or_ignore_bounds) {
+  let [x_square, y_square] = xy_squares;
+  let [x_offset_squares, y_offset_squares] = RELATIVE_ORIGIN;
+  x_offset = x_square + x_offset_squares;
+  y_offset = y_square + y_offset_squares;
+  xy_offset = [x_offset, y_offset];
+  if (err_or_ignore_bounds != "ignore_bounds") {
+    squareNotInBounds(xy_squares, xy_offset, err_mess);
+  }
+  xy_pixels = squares2pixels(xy_offset);
+  return xy_pixels;
+}
+
+
+function initHoleData22(hole_num, xy_pixels, hole_color) {
+  let [x_pixels, y_pixels] = xy_pixels;
+  hole_name = `hole-${hole_num}`;
+  hole_obj = {
+    s_isa: "is-hole",
+    s_hole_name: hole_name,
+    m_x: x_pixels,
+    m_y: y_pixels,
+    s_hole_color: hole_color,
+    c_vert_color: 'black',
+  };
+  return hole_obj;
+}
+
+function makeHoles(hole_color, holes_list) {
+  declared_holes = [];
+  num_holes = holes_list.length;
+  for (let h_index = 0; h_index < num_holes; h_index++) {
+    hole_xy_squares = holes_list[h_index];
+    const hole_id = h_index.toString().padStart(2, '0');
+    xy_pixels = originOffset2(hole_xy_squares, "ignore_bounds");
+    new_hole = initHoleData22(hole_id, xy_pixels, hole_color);
+    declared_holes.push(new_hole);
+  }
+  return declared_holes;
+}

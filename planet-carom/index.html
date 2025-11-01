@@ -42,6 +42,8 @@
   <script type="text/javascript" src="values/debugging.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
+
   <script type="text/javascript" src="holes/holes-code.js"></script>
   <script type="text/javascript" src="holes/holes-create.js"></script>
   <script type="text/javascript" src="data/colors.js"></script>
@@ -62,7 +64,6 @@
   <script type="text/javascript" src="variables/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
-  <script type="text/javascript" src="objects/screen-placement.js"></script>
   <script type="text/javascript" src="player/player-code.js"></script>
   <script type="text/javascript" src="objects/sprites-stuff.js"></script>
   <script type="text/javascript" src="objects/sprite-lines.js"></script>
@@ -153,7 +154,7 @@
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
   <script type="text/javascript" src="enemy/enemy-code.js"></script>
   <script type="text/javascript" src="variables/global-objects.js"></script>
-  <script type="text/javascript" src="scene/scene-dying.js"></script>
+  <script type="text/javascript" src="death/scene-dying.js"></script>
   <script type="text/javascript" src="scene/game-loop.js"></script>
   <script type="text/javascript" src="field/field-html.js"></script>
   <script type="text/javascript" src="land/land-nw-html.js"></script>
@@ -220,65 +221,76 @@
 file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
 
 -->
-<link rel="stylesheet" href="planet-3/lines.css" />
+
+
 
 <style>
   :root {
-    --checkerboard-image: url('../planet-3/checker-board.png');
-    --sun-image: url('../planet-3/yellow-sun.png');
-    --pyramids-image: url('../planet-3/black-pyramids.png');
-    --saturn-image: url('../planet-3/cloudy-saturn.png');
+    --checkerboard-image: url('../planet-carom/checker-board.png');
+    --sun-image: url('../planet-carom/yellow-sun.png');
+    --pyramids-image: url('../planet-carom/black-pyramids.png');
+    --saturn-image: url('../planet-carom/cloudy-saturn.png');
   }
 </style>
-
-<script type="text/javascript" src="planet-3/pylons-declare.js"></script>
-<script type="text/javascript" src="planet-3/enemy-declare.js"></script>
-<script type="text/javascript" src="planet-3/holes-declare.js"></script>
-<script type="text/javascript" src="planet-3/pylon-signs.js"></script>
+<link rel="stylesheet" href="planet-carom/lines.css" />
+<script type="text/javascript" src="planet-carom/planet-constants.js"></script>
 <script>
+  const FIELD_IN_SQUARES = [34, 17];
+  const RELATIVE_ORIGIN = [1, 1];
+  const PLAYER_START = [1, 11];
+
+
+
+
+
+
+
+  g_planet = initInfinitePlanet(FIELD_IN_SQUARES);
+  // g_planet = initBoundedPlanet(FIELD_IN_SQUARES, [27, 2, 40, 16]);
+
+  //console.log("BOUNDS_IN_SQUARES", BOUNDS_IN_SQUARES);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  the_player = initPlayer22(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+
+  holes_0 = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0]];
+  holes_1 = [[0, 1], [1, 1], [2, 1]  /*  */, [4, 1], [5, 1], [6, 1]];
+  holes_2 = [[0, 2], [1, 2] /*                   */, [5, 2], [6, 2]];
+  holes_3 = [[0, 3], [1, 3], [2, 3] /*   */, [4, 3], [5, 3], [6, 3]];
+  holes_4 = [[0, 4], [1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [6, 4]];
+  holes_5 = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5]];
+  holes_6 = [[0, 6], [1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6]];
+  all_holes = [...holes_0, ...holes_1, ...holes_2, ...holes_3, ...holes_4];
+  the_holes = makeHoles("red", all_holes);
+
+  enter_sign = initSign("pylon-start", [0, 7], 'Carom', "white");
+  //  exit_sign = initSignLink("pylon-exit", [5, 7], 'Exit', "red", 'planet-2/index.html');
+  exit_sign = initSignLink("pylon-exit", [5, 7], 'Exit', "red");
+  start_exit_plyons = [enter_sign, exit_sign];
+
+  new_pylons2 = makePylons22([[3, 5], [-3, 2], [8, 2]], ['gray', 'yellow', 'pink']);
+  the_pylons = start_exit_plyons.concat(new_pylons2);
+
+
+  enemy_squares = [[3, 2], [8, 8]];
+  enemy_colors = [['yellow', 'lime'], ['red', 'red']];
+  enemy_moves_x = [[ZERO_10].flat(), [ZERO_10].flat()];
+  enemy_moves_y = [[ZERO_10].flat(), [ZERO_10].flat()];
+  the_enemies = makeEnemies22(enemy_squares, enemy_colors, enemy_moves_x, enemy_moves_y);
+
   urlParams();
-
-  XY_OFFSET_X = 5000;
-  XY_OFFSET_Y = 1000;
-  XY_OFFSETS = [XY_OFFSET_X, XY_OFFSET_Y];
-
-  XY_FIELD_WIDTH = 16384;
-  XY_FIELD_DEPTH = 2768;
-  PTS_FIELD_SIZE = [XY_FIELD_WIDTH, XY_FIELD_DEPTH];
-
-  XY_MIN_X = 5000;      //  XY_OFFSET_X
-  XY_MAX_X = 7200;
-  XY_X_RANGE = [XY_MIN_X, XY_MAX_X];
-
-  XY_MIN_Y = 1000;  // XY_OFFSET_Y
-  XY_MAX_Y = 1600;   /// 1600 -600=1000
-  XY_Y_RANGE = [XY_MIN_Y, XY_MAX_Y];
-
-  g_planet = initPlanetBounded(XY_OFFSETS, PTS_FIELD_SIZE, XY_X_RANGE, XY_Y_RANGE);
-
-
-
-
-
-  // check for min/maxes???????
-  // 1500+5000 == 6500as
-  XY_PLAYER = [1500, 600];   // 600 +1000 =1600
-  the_player = initPlayer(XY_OFFSETS, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
-
-  XY_ENTER = [1000, 550];
-  XY_EXIT = [1000, 64];
-  start_exit = initSigns(XY_OFFSETS, XY_ENTER, XY_EXIT);
-
-  new_pylons = makePylons(XY_OFFSETS);
-  the_pylons = start_exit.concat(new_pylons);
-
-
-  the_enemies = makeEnemies(XY_OFFSETS); //[]; 
-
-
-  the_holes = makeHoles(XY_OFFSETS);   //[];
-
-
 
   if (isMobile()) {
     g_planet.m_planet_state = LOOP_0_MOBILE_START;
