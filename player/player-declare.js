@@ -42,8 +42,8 @@ function resetPlayer() {
 
 
 
-function initPlayer22(player_in_squares, start_move_dir, start_drift_dir) {
-  err_mess = "initPlayer22()";
+function initPlayer(player_in_squares, start_move_dir, start_drift_dir) {
+  err_mess = "initPlayer()";
   xy_pixels = originOffset2(player_in_squares, err_mess);
   player_init_x = xy_pixels[0];
   player_init_y = xy_pixels[1];

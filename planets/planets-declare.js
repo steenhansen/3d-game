@@ -54,31 +54,45 @@ function squares2pixels(width_depth_squares) {
 
 function initBoundedPlanet(field_in_squares, bounds_in_squares) {
   checkBounds(field_in_squares, bounds_in_squares);
+  //let [x_squares, y_squares] = field_in_squares; //[64, 55];
+  FIELD_IN_PIXELS = squares2pixels(field_in_squares);  //  [25600, 2000]
   let [x_left, y_top, x_right, y_bottom] = bounds_in_squares;     //[27, 2, 40, 16]
-  a_planet = initInfinitePlanet(field_in_squares);
-  BOUNDS_IN_SQUARES = bounds_in_squares;
+
+  x_left += RELATIVE_ORIGIN[0];
+  y_top += RELATIVE_ORIGIN[1];
+  x_right += RELATIVE_ORIGIN[0];
+  y_bottom += RELATIVE_ORIGIN[1];
+
+  //a_planet = initInfinitePlanet(field_in_squares);
+  BOUNDS_IN_SQUARES = [x_left, y_top, x_right, y_bottom];   //bounds_in_squares;
+
+
   top_left = squares2pixels([x_left, y_top]);
   bottom_right = squares2pixels([x_right, y_bottom]);
   BOUNDS_IN_PIXELS = [top_left[0], top_left[1], bottom_right[0], bottom_right[1]];
-  return a_planet;
+  bounded_planet = initPlanet(FIELD_IN_PIXELS, BOUNDS_IN_PIXELS);
+  return bounded_planet;
 }
 
 
 
 function initInfinitePlanet(field_in_squares) {
   let [x_squares, y_squares] = field_in_squares; //[64, 55];
+
   FIELD_IN_PIXELS = squares2pixels(field_in_squares);  //  [25600, 2000]
   BOUNDS_IN_SQUARES = [0, 0, x_squares, y_squares];
+
+
   let [x_pixels, y_pixels] = FIELD_IN_PIXELS;
   BOUNDS_IN_PIXELS = [0, 0, x_pixels, y_pixels];
-  free_planet = initPlanetBounded(FIELD_IN_PIXELS, BOUNDS_IN_PIXELS);
+  free_planet = initPlanet(FIELD_IN_PIXELS, BOUNDS_IN_PIXELS);
   return free_planet;
 }
 
 
 
 
-function initPlanetBounded(pixel_field_size, pixel_bounds) {
+function initPlanet(pixel_field_size, pixel_bounds) {
   // [3000, 4000]
   let [field_width, field_depth] = pixel_field_size;
   let [left_x, top_y, right_x, bottom_y] = pixel_bounds;

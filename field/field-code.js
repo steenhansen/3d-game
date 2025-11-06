@@ -54,10 +54,7 @@ function affixLeftRight() {
   for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
     const inverted_x = invert_lines[affix_line];
     let affix_shift = g_field_xs_shift[affix_line];
-
     affix_shift -= g_field_xs_death[affix_line];
-
-
     if (inverted_x == 0) {
       let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
       affix_shift -= invert_flip;

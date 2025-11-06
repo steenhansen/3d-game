@@ -125,7 +125,16 @@ li:not(:last-of-type) {
   background-color: rgba(218, 20, 225, 0)
 }
 
-#pylon-html {
+
+#signs-html {
+  top: 0px;
+  position: absolute;
+  height: 0px;
+  margin-left: var(--margin-left_px);
+}
+
+
+#pylons-html {
   top: 0px;
   position: absolute;
   height: 0px;

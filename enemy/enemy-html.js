@@ -4,7 +4,9 @@ const DYING_STAR_COLOR = "black";
 const DYING_BALL_COLOR = 'grey';
 
 
-function makeBall(front_or_all, ball_color, enemy_number) {
+function makeBall(front_or_all, ball_color, enemy_number, ani_start) {
+
+
 
   ani_duration = "2s";
 
@@ -18,7 +20,7 @@ function makeBall(front_or_all, ball_color, enemy_number) {
     ball_id = "ellipse-w-e-top--ball";
     ball_points = "m 1210.2657,511.00632 c 0.4174,-65.1159 192.8997,-119.13441 429.9211,-120.65391 113.8217,-0.7296 222.902,10.9924 303.2444,32.58749 80.3423,21.59492 125.3656,56.79672 125.1651,88.06642 m -1985.629895,1.6843 c 0.4173,-65.1158 199.113995,-113.63181 436.135395,-115.15131 113.8218,-0.7296 222.902,10.9924 303.2444,32.58739 80.3423,21.59512 119.15191,49.60992 118.95151,80.87962";
   }
-
+  //  begin="${enemy_number / -7}s"  begin="${ani_start}"
   make_ball = `
   
           <path id="${ball_id}" d="${ball_points} " stroke="${ball_color}" stroke-width="0" fill-opacity="0" />
@@ -28,7 +30,7 @@ function makeBall(front_or_all, ball_color, enemy_number) {
           fill = "var(${alive_dead_color})" >
               <animateMotion repeatCount="indefinite" dur="${ani_duration}" 
               
-                 begin="${enemy_number / 7}s"
+                begin="${ani_start}"
              
               
               >
@@ -40,14 +42,15 @@ function makeBall(front_or_all, ball_color, enemy_number) {
 }
 
 
-function rotatingStar(star_color, enemy_number) {
-  ani_duration = "4s";
+function rotatingStar(star_color, enemy_number, r1) {
+  ani_duration = r1 + "s"; //r + "s";   // 4s
   rotate_from = 0;
   rotate_to = 359;
   hit_opacity = '--enemy-star-opacity-' + enemy_number;
   hit_edge_prop = '--enemy-star-edge-width-' + enemy_number;
   alive_dead_color = '--enemy-star-color-' + enemy_number;
 
+  //     begin="${enemy_number / 7}s"      begin="0.1s"
   function aRotatingStar(type_id, from_rotate, to_rotate) {
     star_to_from = `
     <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
@@ -59,7 +62,7 @@ function rotatingStar(star_color, enemy_number) {
            from="${from_rotate}"
           to="${to_rotate}" 
           dur="${ani_duration}"
-   begin="${enemy_number / 7}s"
+   begin="0.1s"
           repeatCount="indefinite" />
       <path fill="var(${alive_dead_color})" fill-opacity="var(${hit_opacity})" 
       stroke="white" stroke-width="var(${hit_edge_prop})"  stroke-opacity="0.4" 
@@ -98,10 +101,31 @@ function createEnemyHtml(the_enemy) {
   setCssEnemyBallFill(the_enemy.s_enemy_number, ball_color);
 
 
+  let r1, r2;
+  // -1  -.1  -.5
+  if (enemy_number == 0) {
+    r1 = "2";       // 1 ok 1.5 ok   2 ok  // 4 too slow
+  } else if (enemy_number == 1) {
+    r1 = "2";
+  } else {
+    r1 = "3";
+  }
 
-  rotating_star = rotatingStar(star_color, enemy_number);
-  ball_all = makeBall('all', ball_color, enemy_number);
-  ball_front = makeBall('front', ball_color, enemy_number);
+  rotating_star = rotatingStar(star_color, enemy_number, r1);
+
+
+  let r = Math.floor(Math.random() * 13);
+  if (enemy_number == 0) {
+    r = "-1s";
+  } else if (enemy_number == 1) {
+    r = "-0.1s";
+  } else {
+    r = "-0.5s";
+  }
+
+
+  ball_all = makeBall('all', ball_color, enemy_number, r);
+  ball_front = makeBall('front', ball_color, enemy_number, r);
 
 
   sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;

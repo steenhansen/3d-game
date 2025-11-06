@@ -2,8 +2,9 @@
 
 function missileAdvance(the_missile, the_player) {
   if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
+    hit_pylon = the_missile.t_hit_pylon;
     the_missile.t_lifetime = 25;
-    if (a_pylon.m_x > the_missile.m_x) {
+    if (hit_pylon.m_x > the_missile.m_x) {
       the_missile.m_x_dir = -1;
       the_missile.m_y_dir = 0;
     } else {
@@ -45,7 +46,7 @@ function missileAdvance(the_missile, the_player) {
   } else if (m_x_dir > 0) {
     the_missile.m_x = rightOnBoard(the_missile.m_x, 12 * 4);
   } else {
-    the_missile.m_y = backwardOnBoard(the_missile.m_y, 8);   //TRAVEL_SPEED * 2);
+    the_missile.m_y = backwardOnBoard(the_missile.m_y, 8 * 2);   //TRAVEL_SPEED * 2);
   }
   return the_missile;
 }

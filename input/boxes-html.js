@@ -58,5 +58,5 @@ document.getElementById('touch-boxes').innerHTML = `
              <div id="s-3" class="input-box"></div> <div id="s-4" class="input-box"></div>
     <div id="se-3" class="input-box"></div>    <div id="se-4" class="input-box"></div>
 
-    <div id='the-fps'>FPS</div>
+    <div id='the-fps'></div>
 `;

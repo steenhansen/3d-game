@@ -1,4 +1,36 @@
+// maybe not worth the effort
+function enemyHitEnemy(the_enemies, the_holes) {
 
+}
+
+
+// maybe not worth the effort
+function enemyHitHoles(the_enemies, the_holes) {
+  number_enemies = the_enemies.length;
+  number_holes = the_holes.length;
+  if (number_enemies == 0 || number_holes == 0) {
+    return the_enemies;
+  }
+  changed_enemies = [];
+  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    an_enemy = the_enemies[enemy_index];
+    enemy_state = an_enemy.m_state;
+    if (enemy_state == ENEMY_0_FLOATING) {
+      for (let hole_index = 0; hole_index < number_holes; hole_index++) {
+        a_hole = the_holes[hole_index];
+        has_collided = hasCollided(an_enemy, a_hole, COLLISION_SIZES);
+        if (has_collided) {
+          an_enemy = killEnemy(an_enemy);
+          an_enemy.m_state = ENEMY_1_HIT;
+
+          an_enemy.t_enemy_hit_flash = 10;
+        }
+      }
+    }
+    changed_enemies[enemy_index] = an_enemy;
+  }
+  return changed_enemies;
+}
 
 
 
@@ -18,12 +50,16 @@ function missileHitPylons(the_missile, the_pylons) {
   }
   changed_pylons = [];
   missile_hit_pylon = false;
+  hit_pylon = 'no-pylon-hit';
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
-    has_collided = hasCollided(the_missile, a_pylon, COLLISION_SIZES);
-    if (has_collided) {
-      missile_hit_pylon = true;
-      a_pylon.t_pylon_hit_flash = 13;
+    if (a_pylon.s_isa == "is-pylon") {
+      has_collided = hasCollided(the_missile, a_pylon, COLLISION_SIZES);
+      if (has_collided) {
+        missile_hit_pylon = true;
+        hit_pylon = a_pylon;
+        a_pylon.t_pylon_hit_flash = 13;
+      }
     }
     changed_pylons[pylon_index] = a_pylon;
   }
@@ -31,6 +67,7 @@ function missileHitPylons(the_missile, the_pylons) {
   if (missile_hit_pylon) {
     if (the_missile.t_phase == MISSILE_0_SHOT_FORWARD) {
       the_missile.t_phase = MISSILE_1_HITTING_PYLON;
+      the_missile.t_hit_pylon = hit_pylon;
     } else if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
     } else if (the_missile.t_phase == MISSILE_2_AFTER_PYLON_HIT) {
       the_missile.t_phase = MISSILE_3_SECOND_PYLON_HIT;
@@ -91,6 +128,23 @@ function playerHitHoles(the_player, the_holes) {
   return the_player;
 }
 
+function playerHitSigns(the_player, the_signs) {
+  changed_signs = [];
+  number_signs = the_signs.length;
+  for (let sign_index = 0; sign_index < number_signs; sign_index++) {
+    a_sign = the_signs[sign_index];
+    if (a_sign.s_sign_name == "sign-exit") {
+      has_collided = hasCollided(the_player, a_sign, COLLISION_SIZES);
+      if (has_collided) {
+        console.log("playerHitSigns", a_sign);
+        possibleExit(a_sign);
+      }
+    }
+    changed_signs[sign_index] = a_sign;
+  }
+  return [the_player, changed_signs];
+}
+
 function playerHitPylons(the_player, the_pylons) {
   changed_pylons = [];
   number_pylons = the_pylons.length;
@@ -98,11 +152,7 @@ function playerHitPylons(the_player, the_pylons) {
     a_pylon = the_pylons[pylon_index];
     has_collided = hasCollided(the_player, a_pylon, COLLISION_SIZES);
     if (has_collided) {
-      if (a_pylon.s_isa == 'is-pylon-sign') {
-        possibleExit(a_pylon);
-      } else {
-        [the_player, a_pylon] = plainPylon(the_player, a_pylon);
-      }
+      [the_player, a_pylon] = plainPylon(the_player, a_pylon);
     }
     changed_pylons[pylon_index] = a_pylon;
   }
@@ -136,6 +186,7 @@ function enemiesHitPylons(the_enemies, the_pylons) {
         an_enemy.m_state = ENEMY_1_BOUNCE;
         an_enemy.t_enemy_hit_flash = HIT_FLASH_ENEMY;
         an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
+        an_enemy.m_bounced_y_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
       }
       changed_pylons[pylon_index] = a_pylon;
     }
@@ -146,36 +197,6 @@ function enemiesHitPylons(the_enemies, the_pylons) {
 
 
 
-
-
-
-
-function enemyHitHoles(the_enemies, the_holes) {
-  number_enemies = the_enemies.length;
-  number_holes = the_holes.length;
-  if (number_enemies == 0 || number_holes == 0) {
-    return the_enemies;
-  }
-  changed_enemies = [];
-  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
-    an_enemy = the_enemies[enemy_index];
-    enemy_state = an_enemy.m_state;
-    if (enemy_state == ENEMY_0_FLOATING) {
-      for (let hole_index = 0; hole_index < number_holes; hole_index++) {
-        a_hole = the_holes[hole_index];
-        has_collided = hasCollided(an_enemy, a_hole, COLLISION_SIZES);
-        if (has_collided) {
-          an_enemy = killEnemy(an_enemy);
-          an_enemy.m_state = ENEMY_1_HIT;
-
-          an_enemy.t_enemy_hit_flash = 10;
-        }
-      }
-    }
-    changed_enemies[enemy_index] = an_enemy;
-  }
-  return changed_enemies;
-}
 
 
 

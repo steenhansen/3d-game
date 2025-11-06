@@ -1,6 +1,7 @@
 // 0-399 
 
 function twirledGradient(gradient_index, first_color, second_color) {
+
   the_gradient = "pylon-gradient" + first_color + second_color + Math.floor(gradient_index);
   return the_gradient;
 }
@@ -109,6 +110,7 @@ lime_fuchsia_gradients = makeGradients(GRAD_LIME_FUCHSIA);
 blue_yellow_gradients = makeGradients(GRAD_BLUE_YELLOW);
 purple_green_gradients = makeGradients(GRAD_PURPLE_GREEN);
 
+red_blue_gradients = makeGradients(GRAD_RED_BLUE);
 gradient_definitions = `
   <svg>
     <defs>
@@ -119,6 +121,7 @@ gradient_definitions = `
        ${lime_fuchsia_gradients}
        ${blue_yellow_gradients}
        ${purple_green_gradients}
+       ${red_blue_gradients}
     </defs>
   </svg>`;
 document.getElementById('pylons-svg').innerHTML = gradient_definitions;

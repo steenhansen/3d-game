@@ -40,3 +40,4 @@ GRAD_RED_CYAN = ["Red", "Cyan"];          //  ff0000,   00FFFF
 GRAD_LIME_FUCHSIA = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
 GRAD_BLUE_YELLOW = ["Blue", "Yellow"];    //  0000ff,   FFFF00
 GRAD_PURPLE_GREEN = ["Purple", "Green"];  //  800080,   008000
+GRAD_RED_BLUE = ["red", "blue"]; 

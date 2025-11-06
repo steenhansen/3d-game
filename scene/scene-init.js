@@ -49,11 +49,23 @@ function resizeOrientEvents() {
 }
 
 
-function startItUp(chosen_segway, the_pylons, the_enemies, the_holes, the_player, the_planet) {
+function startItUp(chosen_segway, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet) {
+
+  urlParams();
+  browserReFocus();
+  if (isMobile()) {
+    g_planet.m_planet_state = LOOP_0_MOBILE_START;
+  } else {
+    g_planet.m_planet_state = LOOP_0_DESKTOP_START;
+  }
+
+  deleteStartLetters(the_signs, ERASE_START_MESSAGE_TIME);
+
+
   land_fly_speeds = chosen_segway;
   addDesktopEvents();
   addMobileEvents();
   turnOnKeys();
   resizeOrientEvents();
-  runGame(land_fly_speeds, the_pylons, the_enemies, the_holes, the_player, the_planet);
+  runGame(land_fly_speeds, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet);
 }

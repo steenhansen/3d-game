@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
+  <link rel="stylesheet" href="signs/signs.css" />
   <link rel="stylesheet" href="holes/holes.css" />
   <link rel="stylesheet" href="land/land.css" />
   <link rel="stylesheet" href="enemy/enemy.css" />
@@ -64,7 +65,6 @@
   <script type="text/javascript" src="variables/css-vars.js"></script>
   <script type="text/javascript" src="input/swipe.js"></script>
   <script type="text/javascript" src="device/orientation.js"></script>
-
   <script type="text/javascript" src="player/player-code.js"></script>
   <script type="text/javascript" src="objects/sprites-stuff.js"></script>
   <script type="text/javascript" src="objects/sprite-lines.js"></script>
@@ -80,6 +80,10 @@
   <script type="text/javascript" src="field/field-right.js"></script>
   <script type="text/javascript" src="pylons/pylons-gradients.js"></script>
   <script type="text/javascript" src="pylons/pylons-code.js"></script>
+
+  <script type="text/javascript" src="signs/signs-code.js"></script>
+
+
   <script type="text/javascript" src="pylons/pylons-collide.js"></script>
   <script type="text/javascript" src="pylons/pylons-create.js"></script>
   <script type="text/javascript" src="collisions/player-recoil.js"></script>
@@ -118,8 +122,9 @@
     <div id="enemy-area" class="enemy-vars"></div>
     <div id="missile-area" class="missile-vars"></div>
     <div id="checkerboard-field" class="line-vars"> </div>
-    <div id='pylon-html'> </div>
-    <div id='hole-html'> </div>
+    <div id='signs-area'> </div>
+    <div id='pylons-area'> </div>
+    <div id='holes-area'> </div>
   </div>
 
   <div id="the-landing">
@@ -153,9 +158,10 @@
   <script type="text/javascript" src="holes/holes-html.js"></script>
 
   <script type="text/javascript" src="pylons/pylons-html.js"></script>
+  <script type="text/javascript" src="signs/signs-html.js"></script>
   <script type="text/javascript" src="enemy/enemy-code.js"></script>
   <script type="text/javascript" src="variables/global-objects.js"></script>
-  <script type="text/javascript" src="scene/scene-dying.js"></script>
+  <script type="text/javascript" src="death/scene-dying.js"></script>
   <script type="text/javascript" src="scene/game-loop.js"></script>
   <script type="text/javascript" src="field/field-html.js"></script>
   <script type="text/javascript" src="land/land-nw-html.js"></script>
@@ -214,8 +220,6 @@
 
 
 
-
-
 <!-- start part section
  
 
@@ -223,52 +227,70 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
 -->
 
+
+
 <style>
   :root {
-    --checkerboard-image: url('../planet-1/checker-board.png');
-    --sun-image: url('../planet-1/yellow-sun.png');
-    --pyramids-image: url('../planet-1/black-pyramids.png');
-    --saturn-image: url('../planet-1/cloudy-saturn.png');
+    --checkerboard-image: url('../planet-1-jump/checker-board.png');
+    --sun-image: url('../planet-1-jump/yellow-sun.png');
+    --pyramids-image: url('../planet-1-jump/black-pyramids.png');
+    --saturn-image: url('../planet-1-jump/cloudy-saturn.png');
   }
 </style>
-<link rel="stylesheet" href="planet-jump/lines.css" />
-<script type="text/javascript" src="planet-jump/pylons-declare.js"></script>
-<script type="text/javascript" src="planet-jump/enemy-declare.js"></script>
-<script type="text/javascript" src="planet-jump/holes-declare.js"></script>
-<script type="text/javascript" src="planet-jump/pylon-signs.js"></script>
-<script type="text/javascript" src="planet-jump/planet-constants.js"></script>
+<link rel="stylesheet" href="planet-1-jump/lines.css" />
+<script type="text/javascript" src="planet-1-jump/planet-constants.js"></script>
 <script>
-  urlParams();
 
-  PTS_FIELD_SIZE = [3000, 4000]; // 0-> 3000
-
-  PTS_FIELD_BOUNDS = [1000, 1000, 3000, 1500];
-  g_planet = initPlanetBounded(PTS_FIELD_SIZE, PTS_FIELD_BOUNDS);
+  //  file:///C:/Users/16043/Documents/GitHub/new_oldsters/oct-20-mon/3qwe%20-%20Copy/planet-1/index.html?debug-env=true
 
 
-  XY_PLAYER = [350, 333];
-  the_player = initPlayer(PTS_FIELD_BOUNDS, XY_PLAYER, MOVINGx_NOT, MOVINGx_E);
+  // file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-1-jump2/index.html?debug-env=true
 
-
-  XY_ENTER = [555, 110];
-  XY_EXIT = [777, 0];
-  start_exit = initSigns(PTS_FIELD_BOUNDS, XY_ENTER, XY_EXIT);
-
-  new_pylons = makePylons(PTS_FIELD_BOUNDS);
-  the_pylons = start_exit.concat(new_pylons);
-  //the_pylons = start_exit;
-
-  the_enemies = makeEnemiesJump(PTS_FIELD_BOUNDS);
-  the_holes = makeHoles(PTS_FIELD_BOUNDS);
+  const FIELD_IN_SQUARES = [20, 40];
+  const RELATIVE_ORIGIN = [0, 10];
+  const PLAYER_START = [5, 11];
 
 
 
-  if (isMobile()) {
-    g_planet.m_planet_state = LOOP_0_MOBILE_START;
-  } else {
-    g_planet.m_planet_state = LOOP_0_DESKTOP_START;
-  }
 
-  startItUp(FAST_SEGWAYS, the_pylons, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
+
+
+
+  // g_planet = initInfinitePlanet(FIELD_IN_SQUARES);
+  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, [0, 1, 20, 11]);
+
+
+
+
+
+
+
+
+  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+
+  z_holes = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5],
+  [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5]];
+
+  the_holes = makeHoles("red", z_holes);
+  //the_holes[0].s_hole_color = "green";
+  //the_holes[19].s_hole_color = "yellow";
+
+
+
+
+  exit_sign = initSignLink("sign-exit", [6, 2], 'Exit', "red", 'planet-2-carom/index.html');
+  sign_0 = initSignLink("sign-00", [0, 7], 'J', "white");
+  sign_1 = initSignLink("sign-01", [1.5, 7], 'u', "white");
+  sign_2 = initSignLink("sign-02", [3, 7], 'm', "white");
+  sign_3 = initSignLink("sign-03", [4.5, 7], 'p', "white");
+  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
+
+
+  the_pylons = [];
+  the_enemies = [];
+
+
+
+  startItUp(FAST_SEGWAYS, the_pylons, the_signs, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
 
 </script>

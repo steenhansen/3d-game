@@ -26,8 +26,13 @@ function originOffset2(xy_squares, err_or_ignore_bounds) {
   let [x_square, y_square] = xy_squares;
   let [x_offset_squares, y_offset_squares] = RELATIVE_ORIGIN;
   x_offset = x_square + x_offset_squares;
+  if (x_offset < 0) {
+
+    x_offset += FIELD_IN_SQUARES[0];
+  }
   y_offset = y_square + y_offset_squares;
   xy_offset = [x_offset, y_offset];
+
   if (err_or_ignore_bounds != "ignore_bounds") {
     squareNotInBounds(xy_squares, xy_offset, err_mess);
   }

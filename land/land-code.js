@@ -8,10 +8,10 @@ const STOP_JUMP_UP_DOWN = 100;
 const JUMP_STEP = 3;
 
 
-function animateHoleHit(the_player) {
-  the_player.m_num_cracks++;
-  return the_player;
-}
+// function animateHoleHit(the_player) {
+//   the_player.m_num_cracks++;
+//   return the_player;
+// }
 
 function animateHoleInside(the_player) {
   return the_player;
@@ -82,10 +82,10 @@ function doFlying(lift_amount_x) {
   height_sky = 2400 + 4 * lift_amount_x;
   the_sky.style.height = `${height_sky}px`;
 
-  const pylon_html = document.getElementById('pylon-html');
+  const pylon_html = document.getElementById('pylons-area');
   pylon_html.style.top = `${lift_amount_x}px`;
 
-  const holes_html = document.getElementById('hole-html');
+  const holes_html = document.getElementById('holes-area');
   holes_html.style.top = `${lift_amount_x}px`;
 
   const enemy_area = document.getElementById('enemy-area');

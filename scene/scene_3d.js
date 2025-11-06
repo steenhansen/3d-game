@@ -179,8 +179,9 @@ function randomDirection() {
 
 
 
-function animateScene(the_planet, the_player, enemy_list, pylon_list, hole_list) {
-  timeFrames();
+function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, hole_list) {
+
+  timeFrames(the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_7_PLAY_NORMAL;
   }
@@ -197,7 +198,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, hole_list)
 
   the_player = sceneMove(the_player, is_dying);
 
-
+  drawSigns(the_player, sign_list);
   plyon_list = drawPylons(the_player, pylon_list);
   g_missile = missileAdvance(g_missile, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
@@ -206,26 +207,58 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, hole_list)
   enemy_list = drawEnemies(enemy_list, the_player);
   hole_list = drawHoles(hole_list, the_player);
 
-  /////
-  if (the_fps < 50) {   // want 60
-    draw_speed = 'every-second-frame';
-  }
-  if (the_fps > 59) {   // want 60
-    draw_speed = 'every-frame';
-  }
-  if (draw_speed == 'every-second-frame') {
-    if (draw_time) {
-      affixLeftRight();
-      draw_time = false;
+
+  if (move_dir !== 0) {
+    if (draw_every_ith_frame == 5) {
+      draw_sec = avg_frame_count % 5;
+      if (draw_sec == 0) {
+        move_dir = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+    } else if (draw_every_ith_frame == 4) {
+      draw_sec = avg_frame_count % 4;
+      if (draw_sec == 0) {
+        move_dir = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+    } else if (draw_every_ith_frame == 3) {
+      draw_sec = avg_frame_count % 3;
+      if (draw_sec == 0) {
+        move_dir = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+
+    } else if (draw_every_ith_frame == 2) {
+      draw_sec = avg_frame_count % 2;
+      if (draw_sec == 0) {
+        move_dir = g_planet.t_move_direction;
+        affixLeftRight();
+      }
     } else {
-      draw_time = true;
+      affixLeftRight();
     }
-  } else {
-    affixLeftRight();
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   if (!is_dying) {
     enemy_list = missileHitEnemies(g_missile, enemy_list);
+
+
+
+    [the_player, sign_list] = playerHitSigns(the_player, sign_list);
+
     [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
     [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
     [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);

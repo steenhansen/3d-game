@@ -1,5 +1,78 @@
 
 
+function enemyMove(the_enemy) {
+  let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir, m_bounced_y_dir, s_speed } = the_enemy;
+  if (m_move_count < s_moves_x.length - 1 && m_move_count < s_moves_y.length - 1) {
+    m_move_count++;
+  } else {
+    m_move_count = 0; // reset to start
+  }
+  x_dir = s_moves_x[m_move_count];
+
+  // not bounced
+  //   x_adjusted_dir = -1(left)  x 1(not inverted)    -1
+  //                     0        x 1(not inverted)     0
+  //                    +1(right) x 1(not inverted)     1 
+
+  // inverted bounced
+  //   x_adjusted_dir = -1(left)  x -1(inverted)        1
+  //                     0        x -1(inverted)        0
+  //                    +1(right) x -1(inverted)        -1
+  x_adjusted_dir = x_dir * m_bounced_x_dir;
+
+
+  showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
+  y_dir = s_moves_y[m_move_count];
+  y_adjusted_dir = y_dir * m_bounced_y_dir;
+  if (x_adjusted_dir < 0) {
+    the_enemy.m_x = leftOnBoard(m_x, 11 * s_speed);
+  } else if (x_adjusted_dir > 0) {
+    the_enemy.m_x = rightOnBoard(m_x, 11 * s_speed);
+  } else {
+  }
+  if (y_adjusted_dir < 0) {
+    the_enemy.m_y = backwardOnBoard(m_y, 1);
+  } else if (y_adjusted_dir > 0) {
+    the_enemy.m_y = forwardOnBoard(m_y, 1);
+  }
+  the_enemy.m_move_count = m_move_count;
+  return the_enemy;
+}
+
+
+// let base_enemy = {
+//   s_enemy_number: 0,
+//   s_moves_x: [ZERO_10].flat(),
+//   s_moves_y: [ZERO_10].flat(),
+//   s_colors: ['#ee2288', '#004488'],    // enemies never change colors
+//   t_units: [3, 2],
+//   m_x: -1,
+//   m_y: -1,
+// };
+
+
+
+function makeEnemies(the_enemies) {
+  declared_enemies = [];
+  num_enemies = the_enemies.length;
+  for (let e_index = 0; e_index < num_enemies; e_index++) {
+    an_enemy = the_enemies[e_index];
+
+    enemy_xy_squares = an_enemy.start_pos;
+    colors_of_enemy = an_enemy.the_colors;
+    moves_x = an_enemy.x_moves.flat();
+    moves_y = an_enemy.y_moves.flat();
+    the_speed = an_enemy.the_speed;
+    const enemy_id = e_index.toString().padStart(2, '0');
+    err_mess = `makeEnemies(${enemy_id})`;
+    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
+    new_enemy = initEnemyData(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed);
+    declared_enemies.push(new_enemy);
+  }
+  return declared_enemies;
+}
+
+
 function showCorrectRotation(enemy_number, x_adjusted_dir) {
   spin_fixed = "star-spin-fixed-" + enemy_number;
   spin_clockwise = "star-spin-clockwise-" + enemy_number;
@@ -20,46 +93,6 @@ function showCorrectRotation(enemy_number, x_adjusted_dir) {
     star_clockwise.style.display = 'none';
     star_counter.style.display = 'none';
   }
-}
-
-
-function enemyMove(the_enemy) {
-  let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir } = the_enemy;
-  if (m_move_count < s_moves_x.length - 1 && m_move_count < s_moves_y.length - 1) {
-    m_move_count++;
-  } else {
-    m_move_count = 0; // reset to start
-  }
-  x_dir = s_moves_x[m_move_count];
-
-  // not bounced
-  //   x_adjusted_dir = -1(left)  x 1(not inverted)    -1
-  //                     0        x 1(not inverted)     0
-  //                    +1(right) x 1(not inverted)     1 
-
-  // inverted bounced
-  //   x_adjusted_dir = -1(left)  x -1(inverted)        1
-  //                     0        x -1(inverted)        0
-  //                    +1(right) x -1(inverted)        -1
-  x_adjusted_dir = x_dir * m_bounced_x_dir;
-
-
-
-  showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
-  y_dir = s_moves_y[m_move_count];
-  if (x_adjusted_dir < 0) {
-    the_enemy.m_x = leftOnBoard(m_x, 11);   //   12);  steps_left);
-  } else if (x_adjusted_dir > 0) {
-    the_enemy.m_x = rightOnBoard(m_x, 11);   //   12);  steps_left);
-  } else {
-  }
-  if (y_dir < 0) {
-    the_enemy.m_y = backwardOnBoard(m_y, 1);
-  } else if (y_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(m_y, 1);
-  }
-  the_enemy.m_move_count = m_move_count;
-  return the_enemy;
 }
 
 
@@ -163,10 +196,10 @@ function killEnemy(the_enemy) {
 
 
 
-function initEnemyData22(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y) {
 
+
+function initEnemyData(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed) {
   the_id = `enemy-${enemy_id}`;
-
   enemy_obj = {
     s_enemy_number: enemy_number,
     s_isa: "is-enemy",
@@ -178,7 +211,9 @@ function initEnemyData22(enemy_number, enemy_id, xy_pixels, colors_of_enemy, mov
     s_colors: colors_of_enemy,
     m_move_count: 0,
     m_bounced_x_dir: 1,
+    m_bounced_y_dir: 1,
     m_state: ENEMY_0_FLOATING,
+    s_speed: the_speed,
   };
   html_enemy = createEnemyHtml(enemy_obj);
   enemy_container_id = `enemy-${enemy_number}-container`;
@@ -190,39 +225,6 @@ function initEnemyData22(enemy_number, enemy_id, xy_pixels, colors_of_enemy, mov
 
 
 
-
-///////////////////
-
-
-// let base_enemy = {
-//   s_enemy_number: 0,
-//   s_moves_x: [ZERO_10].flat(),
-//   s_moves_y: [ZERO_10].flat(),
-//   s_colors: ['#ee2288', '#004488'],    // enemies never change colors
-//   t_units: [3, 2],
-//   m_x: -1,
-//   m_y: -1,
-// };
-
-function makeEnemies22(enemy_list, enemy_colors, enemy_moves_x, enemy_moves_y) {
-  declared_enemies = [];
-  num_enemies = enemy_list.length;
-  for (let e_index = 0; e_index < num_enemies; e_index++) {
-    enemy_xy_squares = enemy_list[e_index];
-    colors_of_enemy = enemy_colors[e_index];
-
-    moves_x = enemy_moves_x[e_index];
-    moves_y = enemy_moves_y[e_index];
-
-
-    const enemy_id = e_index.toString().padStart(2, '0');
-    err_mess = `makeEnemies22(${enemy_id})`;
-    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
-    new_hole = initEnemyData22(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y);
-    declared_enemies.push(new_hole);
-  }
-  return declared_enemies;
-}
 
 
 

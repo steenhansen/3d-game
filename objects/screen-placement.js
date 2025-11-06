@@ -117,3 +117,25 @@ function objectLeftSide(x_center_offset, pylon_player_ys, pixel_depth) {
 
 
 
+function objectFrontRegion(x_center_offset, difference_yy) {
+  let [left_front_bot, right_front_bot, _back_right_bot, _back_left_bot] = panels3Middle(x_center_offset, difference_yy, PYLON_PIXEL_DEPTH);
+  let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, _back_right_bot);
+  let left_vline = [left_front_top, left_front_bot];
+  let middle_vline = [right_front_top, right_front_bot];
+  let _right_vline = [back_right_top, _back_right_bot];
+  left_mid_right_vlines = [left_vline, middle_vline, _right_vline];
+  return left_mid_right_vlines;
+}
+
+
+function objectDepth(pylon_player_ys) {
+  [pylon_y, player_y] = pylon_player_ys;
+  if (player_y > pylon_y) {
+    difference_yy = player_y - pylon_y;
+  } else {
+    checkerboard_depth = g_planet.s_checkerboard_depth;
+    dist_pylon_to_zero = checkerboard_depth - pylon_y;
+    difference_yy = player_y + dist_pylon_to_zero;
+  }
+  return difference_yy;
+}

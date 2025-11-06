@@ -1,5 +1,5 @@
 
-document.getElementById('hole-html').innerHTML = `
+document.getElementById('holes-area').innerHTML = `
   <div id="hole-00"></div>
   <div id="hole-01"></div>
   <div id="hole-02"></div>

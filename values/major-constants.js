@@ -16,9 +16,9 @@ let pylon_1A_START_Y = 300;
 let ENEMY_BIRTH_X = 7000;
 let ENEMY_BIRTH_Y = 300;
 
+const ERASE_START_MESSAGE_TIME = 2000;
 
-
-var draw_time = true;
+//var draw_time = true;
 var draw_speed = 'every-frame';    // 'every-second-frame
 
 

@@ -249,17 +249,17 @@ function debugMissileInfo() {
   if ('t_lifetime' in g_missile) {
     missile_pos = `Missile x ${m_x} y ${m_y} `;
     missile_life = `t_lifetime:${t_lifetime}`;
-    missile_phase = `t_phase ${t_phase}`;
+    //   missile_phase = `t_phase ${t_phase}`;
   } else {
     missile_pos = `Missile`;
     missile_life = `t_lifetime:${t_lifetime}`;
-    missile_phase = `t_phase ${t_phase}`;
+    //  missile_phase = `t_phase ${t_phase}`;
   }
 
   debugPrint(missile_pos, 50, 450);
 
   debugPrint(missile_life, 50, 470);
 
-  debugPrint(missile_phase, 50, 490);
+  //debugPrint(missile_phase, 50, 490);  on top of frame stuff
 
 }
