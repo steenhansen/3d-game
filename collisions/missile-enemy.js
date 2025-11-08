@@ -1,4 +1,59 @@
-// maybe not worth the effort
+
+function playerHitSignsNew(game_state, part_state, the_player, the_signs) {
+
+  number_signs = the_signs.length;
+  for (let sign_index = 0; sign_index < number_signs; sign_index++) {
+    a_sign = the_signs[sign_index];
+    if (a_sign.s_sign_name == "sign-exit") {
+      has_collided = hasCollided(the_player, a_sign, COLLISION_SIZES);
+      if (has_collided) {
+        delete the_player.t_jump_amount;
+        [game_state, part_state] = hitExit(); // 1&2 do not return
+        break;
+      }
+    }
+  }
+  return [game_state, part_state, the_player];
+}
+
+
+
+// why return the signs???
+// function playerHitSigns(the_planet, the_player, the_signs) {
+//   changed_signs = [];
+//   number_signs = the_signs.length;
+//   for (let sign_index = 0; sign_index < number_signs; sign_index++) {
+//     a_sign = the_signs[sign_index];
+//     if (a_sign.s_sign_name == "sign-exit") {
+//       has_collided = hasCollided(the_player, a_sign, COLLISION_SIZES);
+//       if (the_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
+//         if (has_collided) {
+//           the_planet.m_game_state = LOOP_8_AFTER_PLAY;
+//           delete the_player.t_jump_amount;
+//           the_planet = hitExit(the_planet); // may or may not return
+//         }
+//       }
+//     }
+//     changed_signs[sign_index] = a_sign;
+//   }
+//   // if (the_planet.m_game_state != LOOP_7_PLAY_NORMAL) {
+
+
+//   // }
+//   return [the_planet, the_player, changed_signs];
+// }
+
+
+
+
+
+
+
+
+
+
+
+// maybe not worth the effort;
 function enemyHitEnemy(the_enemies, the_holes) {
 
 }
@@ -14,14 +69,14 @@ function enemyHitHoles(the_enemies, the_holes) {
   changed_enemies = [];
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = the_enemies[enemy_index];
-    enemy_state = an_enemy.m_state;
+    enemy_state = an_enemy.m_enemy_state;
     if (enemy_state == ENEMY_0_FLOATING) {
       for (let hole_index = 0; hole_index < number_holes; hole_index++) {
         a_hole = the_holes[hole_index];
         has_collided = hasCollided(an_enemy, a_hole, COLLISION_SIZES);
         if (has_collided) {
           an_enemy = killEnemy(an_enemy);
-          an_enemy.m_state = ENEMY_1_HIT;
+          an_enemy.m_enemy_state = ENEMY_1_HIT;
 
           an_enemy.t_enemy_hit_flash = 10;
         }
@@ -92,7 +147,7 @@ function playerHitEnemies(the_player, the_enemies) {
   number_enemies = the_enemies.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = the_enemies[enemy_index];
-    enemy_state = an_enemy.m_state;
+    enemy_state = an_enemy.m_enemy_state;
     if (enemy_state == ENEMY_0_FLOATING) {
       has_collided = hasCollided(the_player, an_enemy, COLLISION_SIZES);
       if (has_collided) {
@@ -128,22 +183,7 @@ function playerHitHoles(the_player, the_holes) {
   return the_player;
 }
 
-function playerHitSigns(the_player, the_signs) {
-  changed_signs = [];
-  number_signs = the_signs.length;
-  for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-    a_sign = the_signs[sign_index];
-    if (a_sign.s_sign_name == "sign-exit") {
-      has_collided = hasCollided(the_player, a_sign, COLLISION_SIZES);
-      if (has_collided) {
-        console.log("playerHitSigns", a_sign);
-        possibleExit(a_sign);
-      }
-    }
-    changed_signs[sign_index] = a_sign;
-  }
-  return [the_player, changed_signs];
-}
+
 
 function playerHitPylons(the_player, the_pylons) {
   changed_pylons = [];
@@ -183,7 +223,7 @@ function enemiesHitPylons(the_enemies, the_pylons) {
       has_collided = hasCollided(an_enemy, a_pylon, COLLISION_SIZES);
       if (has_collided) {
         a_pylon.t_pylon_hit_flash = HIT_FLASH_PYLON;
-        an_enemy.m_state = ENEMY_1_BOUNCE;
+        an_enemy.m_enemy_state = ENEMY_1_BOUNCE;
         an_enemy.t_enemy_hit_flash = HIT_FLASH_ENEMY;
         an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
         an_enemy.m_bounced_y_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
@@ -207,12 +247,12 @@ function missileHitEnemies(the_missile, the_enemies) {
   number_enemies = the_enemies.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = the_enemies[enemy_index];
-    enemy_state = an_enemy.m_state;
+    enemy_state = an_enemy.m_enemy_state;
     if (enemy_state == ENEMY_0_FLOATING) {
       has_collided = hasCollided(the_missile, an_enemy, COLLISION_SIZES);
       if (has_collided) {
         an_enemy = killEnemy(an_enemy);
-        an_enemy.m_state = ENEMY_1_HIT;
+        an_enemy.m_enemy_state = ENEMY_1_HIT;
 
         an_enemy.t_enemy_hit_flash = 10;
       }

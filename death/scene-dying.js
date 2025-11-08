@@ -49,8 +49,8 @@ function dyingEnemies(the_player, enemy_list) {
 
 }
 
-function loopDeadSky(the_planet, the_player, sign_list, enemy_list, pylon_list) {
-  [the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
-  setCssSkyColor('black');
-  return [the_planet, the_player, enemy_list, pylon_list];
-}
+// function loopDeadSky(the_planet, the_player, sign_list, enemy_list, pylon_list) {
+//   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+//   setCssSkyColor('black');
+//   return [the_planet, the_player, enemy_list, pylon_list];
+// }

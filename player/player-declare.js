@@ -1,5 +1,5 @@
 
-// const RECOIL_COUNTDOWN = 5;   // was 30
+
 const MAX_CRACKS = 3;
 
 let a_player = {
@@ -20,7 +20,7 @@ let a_player = {
 
   //t_fly_amount: 0,  
   // t_jump_amount: 23;
-
+  t_sky_restart: 0,
   m_num_cracks: 0,
 };
 

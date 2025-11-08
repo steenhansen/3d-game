@@ -112,7 +112,7 @@ function drawEnemies(the_enemies, the_player) {
 
 
 function enemyDraw(real_id, the_enemy, the_player) {
-  enemy_state = the_enemy.m_state;
+  enemy_state = the_enemy.m_enemy_state;
   if (enemy_state == ENEMY_0_FLOATING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy = enemyMove(the_enemy);
@@ -124,7 +124,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
     if (the_enemy.t_enemy_hit_flash == 0) {
       delete the_enemy.t_enemy_hit_flash;
       setCssEnemyEdge(the_enemy.s_enemy_number, '0px');
-      the_enemy.m_state = ENEMY_0_FLOATING;
+      the_enemy.m_enemy_state = ENEMY_0_FLOATING;
     }
   } else if (enemy_state == ENEMY_1_HIT) {
     setCssEnemyOpacity(the_enemy.s_enemy_number, 0.3333);
@@ -133,7 +133,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
     if (the_enemy.t_enemy_hit_flash == 0) {
       delete the_enemy.t_enemy_hit_flash;
       the_enemy.t_hover_up = 0;
-      the_enemy.m_state = ENEMY_2_LIFTING;
+      the_enemy.m_enemy_state = ENEMY_2_LIFTING;
     }
   } else if (enemy_state == ENEMY_2_LIFTING) {
     enemyPlace(real_id, the_enemy, the_player);
@@ -141,7 +141,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
 
     if (the_enemy.t_hover_up > ENEMY_HIDDEN) {
       delete the_enemy.t_hover_up;
-      the_enemy.m_state = ENEMY_3_ZOMBIE;
+      the_enemy.m_enemy_state = ENEMY_3_ZOMBIE;
     }
   } else if (enemy_state == ENEMY_3_ZOMBIE) {
 
@@ -175,7 +175,7 @@ function enemyPlace(real_id, the_enemy, the_player) {
   }
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
-  if (the_enemy.m_state == ENEMY_3_ZOMBIE) {
+  if (the_enemy.m_enemy_state == ENEMY_3_ZOMBIE) {
     hover_up = ENEMY_HIDDEN;
   } else if ("t_hover_up" in the_enemy) {
     hover_up = the_enemy.t_hover_up;
@@ -190,7 +190,7 @@ function enemyPlace(real_id, the_enemy, the_player) {
 
 
 function killEnemy(the_enemy) {
-  the_enemy.m_state = ENEMY_2_LIFTING;
+  the_enemy.m_enemy_state = ENEMY_2_LIFTING;
   return the_enemy;
 }
 
@@ -212,7 +212,7 @@ function initEnemyData(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves
     m_move_count: 0,
     m_bounced_x_dir: 1,
     m_bounced_y_dir: 1,
-    m_state: ENEMY_0_FLOATING,
+    m_enemy_state: ENEMY_0_FLOATING,
     s_speed: the_speed,
   };
   html_enemy = createEnemyHtml(enemy_obj);
@@ -232,7 +232,7 @@ function enemiesAllZombies(enemy_list) {
   number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = enemy_list[enemy_index];
-    if (an_enemy.m_state != ENEMY_3_ZOMBIE) {
+    if (an_enemy.m_enemy_state != ENEMY_3_ZOMBIE) {
       return false;
     }
   }

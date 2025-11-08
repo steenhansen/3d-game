@@ -126,7 +126,7 @@ li:not(:last-of-type) {
 }
 
 
-#signs-html {
+#signs-area {
   top: 0px;
   position: absolute;
   height: 0px;
@@ -134,14 +134,14 @@ li:not(:last-of-type) {
 }
 
 
-#pylons-html {
+#pylons-area {
   top: 0px;
   position: absolute;
   height: 0px;
   margin-left: var(--margin-left_px);
 }
 
-#hole-html {
+#holes-area {
   top: 0px;
   position: absolute;
   height: 0px;

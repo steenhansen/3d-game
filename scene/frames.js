@@ -25,6 +25,7 @@ var avg_frame_accum = 0;
 function tiltingReset() {
   the_frame_time = 0;
   the_last_loop = new Date;
+  draw_every_ith_frame = 1;
 }
 
 function accumFPS() {
@@ -46,11 +47,13 @@ function accumFPS() {
   }
 }
 
-function timeFrames(the_player) {
+function timeFrames(the_planet, the_player) {
   if ('t_screen_askew' in the_player) {
     tiltingReset();
-  } else {
+  } else if (the_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
     accumFPS();
+  } else {
+    tiltingReset();
   }
   frameInfoSE();
 }

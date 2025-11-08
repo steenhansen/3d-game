@@ -177,27 +177,30 @@ function randomDirection() {
 }
 
 
+/*
 
+since 
+             return [the_planet, the_player, enemy_list, pylon_list];
+should be 
+function animateScene(the_planet, the_player, enemy_list, pylon_list,                 sign_list, hole_list) {
 
+*/
 function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, hole_list) {
 
-  timeFrames(the_player);
+  timeFrames(the_planet, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return LOOP_7_PLAY_NORMAL;
   }
   hitCracks(the_player);
   the_player = doRecoil(the_player);
 
-
-  planet_state = the_planet.m_planet_state;
+  planet_state = the_planet.m_game_state;
   if (planet_state == LOOP_12_DEAD_SKY || planet_state == LOOP_11_DEAD_FIELD) {
     is_dying = true;
   } else {
     is_dying = false;
   }
-
   the_player = sceneMove(the_player, is_dying);
-
   drawSigns(the_player, sign_list);
   plyon_list = drawPylons(the_player, pylon_list);
   g_missile = missileAdvance(g_missile, the_player);
@@ -257,7 +260,6 @@ function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list,
 
 
 
-    [the_player, sign_list] = playerHitSigns(the_player, sign_list);
 
     [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
     [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
@@ -266,7 +268,7 @@ function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list,
     the_player = playerHitHoles(the_player, hole_list);
     enemy_list = enemyHitHoles(enemy_list, hole_list);
   }
-  return [the_player, enemy_list, pylon_list];
+  return [the_planet, the_player, enemy_list, pylon_list];
 }
 
 
@@ -275,7 +277,7 @@ function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list,
 
 function handleStartMobile(evt) {
   setTimeout(() => {
-    g_planet.m_planet_state = LOOP_1_BEGIN;
+    g_planet.m_game_state = LOOP_1_BEGIN;
 
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";

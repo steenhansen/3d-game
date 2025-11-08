@@ -60,19 +60,24 @@ function touchEnd(evt) {
 
 
 function swipeUpJump() {
-  g_planet.m_planet_state = LOOP_7_PLAY_A_JUMP_START;
-  dbg_swipe_dir = SWIPE_UP;
+
+  if (g_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
+    g_planet.m_game_state = LOOP_7_PLAY_A_JUMP_START;
+    dbg_swipe_dir = SWIPE_UP;
+  }
+
+
 }
 
 
 function swipeLeftFly() {
   dbg_swipe_dir = SWIPE_LEFT;
-  g_planet.m_planet_state = LOOP_8_AFTER_PLAY;
+  g_planet.m_game_state = LOOP_8_AFTER_PLAY;
 }
 
 function swipeRightQuit() {
   dbg_swipe_dir = SWIPE_RIGHT;
-  g_planet.m_planet_state = LOOP_13_DONE;
+  g_planet.m_game_state = LOOP_13_DONE;
 }
 
 function swipeDownStop() {

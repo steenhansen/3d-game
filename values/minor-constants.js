@@ -1,5 +1,8 @@
 
 
+const EXIT_ON_COLOR = 'lime';
+const EXIT_OFF_COLOR = 'red';
+
 const MISSILE_LIFETIME = 96;
 
 const NEW_DIRECTION_CHANCE_WHEN_DRIFTING = 1024;
@@ -96,7 +99,8 @@ const SLOW_SEGWAYS = [SLOW_LAND, SLOW_ELEVATOR, SLOW_FLY];
 
 
 
-const FLY_STEP = 0.5;
+const FLY_STEP_SLOW = 0.5;
+const FLY_STEP_FAST = 5;
 
 
 TEST_SCENE = false;

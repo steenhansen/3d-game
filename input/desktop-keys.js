@@ -63,9 +63,19 @@ function clickOnDirectionsSvg(event) {
   else if (button_click === 'ESCAPE') {
     jumpStartFly();
 
+    /*
+       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+            g_planet.m_part_state = PART_PLAY_22_JUMP_START;
+            direction_name = 'pressed-jump';
+          }
+    
+          */
+
   } else if (button_click === 'SPACE') {
-    g_planet.m_planet_state = LOOP_7_PLAY_A_JUMP_START;
-    direction_name = 'pressed-jump';
+    if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+      g_planet.m_part_state = PART_PLAY_22_JUMP_START;
+      direction_name = 'pressed-jump';
+    }
   } else if (button_click === 'ENTER') {
     g_missile = initMissileData(g_missile, g_player);           /// function !!
     direction_name = 'pressed-fire';
@@ -112,8 +122,14 @@ function readKeys(event) {
       stopMoving();              // should set direction_name = 'pressed-stop';???
       direction_name = 'pressed-stop';
     } else if (JUMP_KEYS.includes(the_key)) {
-      g_planet.m_planet_state = LOOP_7_PLAY_A_JUMP_START;
-      direction_name = 'pressed-jump';
+
+
+      if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+        g_planet.m_part_state = PART_PLAY_22_JUMP_START;
+        direction_name = 'pressed-jump';
+      }
+
+
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = initMissileData(g_missile, g_player);           /// function !!
       direction_name = 'pressed-fire';
