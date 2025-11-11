@@ -2,7 +2,7 @@
 
 function fixMobile() {
   if (!document.fullscreenElement) {
-    start_mobile = document.ById('start-mobile');
+    start_mobile = document.getElementById('start-mobile');
     waiting_for_start = true;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     return;
