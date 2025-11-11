@@ -31,9 +31,11 @@ function enemyMove(the_enemy) {
   } else {
   }
   if (y_adjusted_dir < 0) {
+    //    the_enemy.m_y = backwardOnBoard(m_y, 1);
     the_enemy.m_y = backwardOnBoard(m_y, 1);
   } else if (y_adjusted_dir > 0) {
-    the_enemy.m_y = forwardOnBoard(m_y, 1);
+    //    the_enemy.m_y = forwardOnBoard(m_y, 1);
+    the_enemy.m_y = forwardOnBoard(m_y, 1 * s_speed);
   }
   the_enemy.m_move_count = m_move_count;
   return the_enemy;

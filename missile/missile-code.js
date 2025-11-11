@@ -1,6 +1,7 @@
 
 
 function missileAdvance(the_missile, the_player) {
+
   if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
     hit_pylon = the_missile.t_hit_pylon;
     the_missile.t_lifetime = 25;

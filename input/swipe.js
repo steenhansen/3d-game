@@ -61,8 +61,8 @@ function touchEnd(evt) {
 
 function swipeUpJump() {
 
-  if (g_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
-    g_planet.m_game_state = LOOP_7_PLAY_A_JUMP_START;
+  if (g_planet.m_game_state == PART_PLAY_20_NORMAL) {         //   L_OOP_7_PLAY_NORMAL) {
+    g_planet.m_part_state = PART_PLAY_22_JUMP_START;                   // L_OOP_7_PLAY_A_JUMP_START;
     dbg_swipe_dir = SWIPE_UP;
   }
 
@@ -72,12 +72,12 @@ function swipeUpJump() {
 
 function swipeLeftFly() {
   dbg_swipe_dir = SWIPE_LEFT;
-  g_planet.m_game_state = LOOP_8_AFTER_PLAY;
+  g_planet.m_game_state = GAME_3_DEATH;                  // L_OOP_8_AFTER_PLAY;
 }
 
 function swipeRightQuit() {
   dbg_swipe_dir = SWIPE_RIGHT;
-  g_planet.m_game_state = LOOP_13_DONE;
+  g_planet.m_game_state = GAME_5_DONE;         // L_OOP_13_DONE;
 }
 
 function swipeDownStop() {

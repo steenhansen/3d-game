@@ -31,11 +31,7 @@ function initSign(sign_id, sign_in_squares, vert_word, text_color) {
   return the_sign;
 }
 
-function initSignLink(sign_id, sign_in_squares, vert_word, text_color, url_link) {
-  the_sign = initSign(sign_id, sign_in_squares, vert_word, text_color);
-  the_sign.o_url_hit = url_link;
-  return the_sign;
-}
+
 
 function signDraw(a_sign, the_player) {
   [the_z_index, difference_y, sign_relative, x_center_offset, head_on_view] = objectPlacement(a_sign, the_player);

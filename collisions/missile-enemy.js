@@ -18,31 +18,6 @@ function playerHitSignsNew(game_state, part_state, the_player, the_signs) {
 
 
 
-// why return the signs???
-// function playerHitSigns(the_planet, the_player, the_signs) {
-//   changed_signs = [];
-//   number_signs = the_signs.length;
-//   for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-//     a_sign = the_signs[sign_index];
-//     if (a_sign.s_sign_name == "sign-exit") {
-//       has_collided = hasCollided(the_player, a_sign, COLLISION_SIZES);
-//       if (the_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
-//         if (has_collided) {
-//           the_planet.m_game_state = LOOP_8_AFTER_PLAY;
-//           delete the_player.t_jump_amount;
-//           the_planet = hitExit(the_planet); // may or may not return
-//         }
-//       }
-//     }
-//     changed_signs[sign_index] = a_sign;
-//   }
-//   // if (the_planet.m_game_state != LOOP_7_PLAY_NORMAL) {
-
-
-//   // }
-//   return [the_planet, the_player, changed_signs];
-// }
-
 
 
 

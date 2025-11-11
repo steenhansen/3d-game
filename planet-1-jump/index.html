@@ -172,7 +172,7 @@
   <script type="text/javascript" src="input/arrows-html.js"></script>
   <script type="text/javascript" src="input/boxes-html.js"></script>
   <script type="text/javascript" src="input/arrows-svg.js"></script>
-  <script type="text/javascript" src="input/desktop-directions.js"></script>
+
   <script type="text/javascript" src="input/arrows-click.js"></script>
   <script type="text/javascript" src="input/boxes-touch.js"></script>
   <script type="text/javascript" src="values/url-params.js"></script>
@@ -245,11 +245,14 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
     --saturn-image: url('../planet-1-jump/cloudy-saturn.png');
   }
 </style>
+<script type="text/javascript" src="input/desktop-11-buttons.js"></script>
 <link rel="stylesheet" href="planet-1-jump/lines.css" />
 <script>
 
   const THIS_PLANET = 'planet-1-jump/index.html';
   const NEXT_PLANET = 'planet-2-carom/index.html';
+
+  const ALLOWED_KEYS_FUNC = read11Keys;
 
   function hitExit() {
     window.location.href = NEXT_PLANET;
@@ -293,7 +296,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
 
 
-  exit_sign = initSignLink("sign-exit", [6, 2], 'Exit', EXIT_ON_COLOR, 'planet-2-carom/index.html');
+  exit_sign = initSign("sign-exit", [6, 2], 'Exit', EXIT_ON_COLOR);
   sign_0 = initSign("sign-00", [0, 7], 'J', "white");
   sign_1 = initSign("sign-01", [1.5, 7], 'u', "white");
   sign_2 = initSign("sign-02", [3, 7], 'm', "white");
@@ -306,6 +309,6 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
 
 
-  startItUp(FAST_SEGWAYS, NORMAL_SEGWAYS, the_pylons, the_signs, the_enemies, the_holes, the_player, g_planet);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
+  startItUp(FAST_SEGWAYS, NORMAL_SEGWAYS, the_pylons, the_signs, the_enemies, the_holes, the_player, g_planet, ALLOWED_KEYS_FUNC);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
 
 </script>

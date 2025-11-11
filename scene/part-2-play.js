@@ -1,16 +1,16 @@
-function playPart2(game_state, part_state, the_planet, the_player, sign_list, enemy_list, pylon_list) {
+function playPart2(game_state, part_state, the_planet, the_player, enemy_list, pylon_list) {
   if (part_state == PART_PLAY_20_NORMAL) {
-    zsc = generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
+    zsc = generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list);
     [part_state, the_planet, the_player, enemy_list, pylon_list] = zsc;
   } else if (part_state == PART_PLAY_21_HIT_HOLE) {
-    zxcv = holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
+    zxcv = holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list);
     [game_state, part_state, the_planet, the_player, enemy_list, pylon_list] = zxcv;
   } else if (part_state == PART_PLAY_22_JUMP_START) {
     [part_state, the_player] = jumpStartPlay(the_player);
   } else if (part_state == PART_PLAY_23_JUMP_UP) {
-    [part_state, the_planet, the_player, enemy_list, pylon_list] = jumpUpPlay(the_planet, the_player, enemy_list, pylon_list, sign_list);
+    [part_state, the_planet, the_player, enemy_list, pylon_list] = jumpUpPlay(the_planet, the_player, enemy_list, pylon_list);
   } else if (part_state == PART_PLAY_24_JUMP_DOWN) {
-    [part_state, the_planet, the_player, enemy_list, pylon_list] = jumpDownPlay(the_planet, the_player, enemy_list, pylon_list, sign_list);
+    [part_state, the_planet, the_player, enemy_list, pylon_list] = jumpDownPlay(the_planet, the_player, enemy_list, pylon_list);
   } else {
     dbg_print('playPart2() unknown part_state', part_state);
   }
@@ -22,7 +22,7 @@ function playPart2(game_state, part_state, the_planet, the_player, sign_list, en
   }
 
 
-  the_return = [game_state, part_state, the_planet, the_player, sign_list, enemy_list, pylon_list];
+  the_return = [game_state, part_state, the_planet, the_player, enemy_list, pylon_list];
   return the_return;
 }
 
@@ -32,8 +32,8 @@ function jumpStartFly() {
   g_player.t_fly_amount = 0;
 }
 
-function generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   if (the_player.m_hit_hole_last_move) {
     part_state = PART_PLAY_21_HIT_HOLE;
   }
@@ -42,8 +42,8 @@ function generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list,
 }
 
 
-function holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   game_state = GAME_3_DEATH;
   part_state = PART_DEATH_30_APPEAR;
   the_player = collisionShake(the_player);
@@ -58,18 +58,16 @@ function jumpStartPlay(the_player) {
 
 
 
-function jumpUpPlay(the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function jumpUpPlay(the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   [the_player, part_state] = animateJumpUpNew(the_player);
-  // the_planet.m_part_state = part_state;
   the_player = collisionShake(the_player);
   return [part_state, the_planet, the_player, enemy_list, pylon_list];
 }
 
-function jumpDownPlay(the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function jumpDownPlay(the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   [the_player, part_state] = animateJumpDownNew(the_player);
-  //the_planet.m_part_state = part_state;
   the_player = collisionShake(the_player);
   return [part_state, the_planet, the_player, enemy_list, pylon_list];
 }

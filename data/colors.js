@@ -35,9 +35,46 @@
 
 
 GRAD_WHITE_BLACK = ["white", "black"];    //  ffffff,   000000
-GRAD_RED_YELLOW = ["Red", "Yellow"];      //  ff0000,   FFFF00
 GRAD_RED_CYAN = ["Red", "Cyan"];          //  ff0000,   00FFFF
-GRAD_LIME_FUCHSIA = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
 GRAD_BLUE_YELLOW = ["Blue", "Yellow"];    //  0000ff,   FFFF00
 GRAD_PURPLE_GREEN = ["Purple", "Green"];  //  800080,   008000
-GRAD_RED_BLUE = ["red", "blue"]; 
+GRAD_RED_BLUE = ["red", "blue"];
+
+
+GRAD_LIME_FUCHSIA = ["Lime", "Fuchsia"];  //  00ff00,   FF00FF
+GRAD_RED_YELLOW = ["Red", "Yellow"];      //  ff0000,   FFFF00
+
+
+
+GRAD_RED_BLUE_00 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_01 = ["#ee0000", "#0000ee"];
+GRAD_RED_BLUE_02 = ["#dd0000", "#0000dd"];
+GRAD_RED_BLUE_03 = ["#cc0000", "#0000cc"];
+GRAD_RED_BLUE_04 = ["#bb0000", "#0000bb"];
+GRAD_RED_BLUE_05 = ["#aa0000", "#0000aa"];
+GRAD_RED_BLUE_06 = ["#990000", "#000099"];
+GRAD_RED_BLUE_07 = ["#880000", "#000088"];
+GRAD_RED_BLUE_08 = ["#770000", "#000077"];
+GRAD_RED_BLUE_09 = ["#660000", "#000066"];
+GRAD_RED_BLUE_10 = ["#550000", "#000055"];
+GRAD_RED_BLUE_11 = ["#440000", "#000044"];
+GRAD_RED_BLUE_12 = ["#330000", "#000033"];
+GRAD_RED_BLUE_13 = ["#220000", "#000022"];
+GRAD_RED_BLUE_14 = ["#110000", "#000011"];
+GRAD_RED_BLUE_15 = ["#000000", "#000000"];
+GRAD_RED_BLUE_16 = ["#ff0000", "#1100ff"];
+GRAD_RED_BLUE_17 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_18 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_19 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_20 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_21 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_22 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_23 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_24 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_25 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_26 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_27 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_28 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_29 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_30 = ["#ff0000", "#0000ff"];
+GRAD_RED_BLUE_31 = ["#ff0000", "#0000ff"]; 

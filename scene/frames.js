@@ -44,13 +44,18 @@ function accumFPS() {
     } else {
       draw_every_ith_frame = 5;             // 12fps
     }
+  } else if (the_fps > 50) {
+    if (draw_every_ith_frame > 1) {
+      draw_every_ith_frame--;
+    }
   }
 }
 
 function timeFrames(the_planet, the_player) {
+
   if ('t_screen_askew' in the_player) {
     tiltingReset();
-  } else if (the_planet.m_game_state == LOOP_7_PLAY_NORMAL) {
+  } else if (the_planet.m_game_state == GAME_2_PLAY) {
     accumFPS();
   } else {
     tiltingReset();

@@ -110,7 +110,7 @@ function initPlanet(pixel_field_size, pixel_bounds) {
     s_playground_x_max: right_x,
     s_playground_y_min: top_y,
     s_playground_y_max: bottom_y,
-    m_game_state: LOOP_0_MOBILE_START, //"hi-there",
+    m_game_state: PART_INIT_01_MOBILE,           // L_OOP_0_MOBILE_START, //"hi-there",
     m_dying_distance: 0,
     // t_move_direction
     // t_drift_direction

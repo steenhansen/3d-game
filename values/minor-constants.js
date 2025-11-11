@@ -1,3 +1,8 @@
+const ROOM_DEPTH = 32;   // old ==16
+let TILE_WIDTH = 256;
+
+
+
 
 
 const EXIT_ON_COLOR = 'lime';
@@ -62,7 +67,6 @@ let PYLON_HIT_FLASH_COUNT = 17;
 const HIT_FLASH_PYLON = 23;
 
 
-let TILE_WIDTH = 256;
 let HALF_VIEW_WIDTH = 512;
 let BOTTOM_FIELD = 512;
 let BACK_VANISH_POINT = [511, 256];
@@ -76,7 +80,7 @@ let HALF_TILE_WIDTH = TILE_WIDTH / 2;
 
 
 
-const ROOM_DEPTH = 16;
+
 
 
 let FAST_LAND = 'fast-land';

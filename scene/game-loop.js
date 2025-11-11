@@ -12,7 +12,7 @@ function runGame(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the
   g_hole_list = the_holes;
   g_player = the_player;
   g_planet = the_planet;
-  //  gameLoop();
+
   g_planet.m_game_state = GAME_0_INIT;
 
   if (isMobile()) {
@@ -21,8 +21,10 @@ function runGame(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the
     g_planet.m_part_state = PART_INIT_00_DESKTOP;
   }
   gameLoopNew();
-
+  //hideArrows("arrow-nw");
+  //console.log()
   function gameLoopNew() {
+    debugFrameTime();
     game_state = g_planet.m_game_state;
     part_state = g_planet.m_part_state;
     if (game_state == GAME_0_INIT) {
@@ -30,18 +32,19 @@ function runGame(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the
     } else if (game_state == GAME_1_INTRO) {
       [game_state, part_state] = introPart1(game_state, part_state, land_speed, elevator_speed);
     } else if (game_state == GAME_2_PLAY) {
-      zxc = playPart2(game_state, part_state, g_planet, g_player, g_sign_list, g_enemy_list, g_pylon_list);
-      [game_state, part_state, g_planet, g_player, g_sign_list, g_enemy_list, g_pylon_list] = zxc;
+      zxc = playPart2(game_state, part_state, g_planet, g_player, g_enemy_list, g_pylon_list);
+      [game_state, part_state, g_planet, g_player, g_enemy_list, g_pylon_list] = zxc;
     } else if (game_state == GAME_3_DEATH) {
-      [part_state] = deathPart3(part_state, g_planet, g_player, g_sign_list, g_enemy_list, g_pylon_list);
+      [part_state] = deathPart3(part_state, g_planet, g_player, g_enemy_list, g_pylon_list);
     } else if (game_state == GAME_4_SPACE) {
-      [part_state, g_player] = spacePart4(part_state, g_planet, g_player, g_sign_list, g_enemy_list, g_pylon_list);
+      [part_state, g_player] = spacePart4(part_state, g_planet, g_player, g_enemy_list, g_pylon_list);
     } else {
       dbg_print('gameLoopNew() - unknown game_state', game_state);
     }
     g_planet.m_game_state = game_state;
     g_planet.m_part_state = part_state;
     requestAnimationFrame(gameLoopNew);
+    debugAnimation();
   }
 
 

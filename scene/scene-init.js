@@ -49,26 +49,71 @@ function resizeOrientEvents() {
 }
 
 
-function startItUp(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet) {
-
+function startItUp(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet, readKeyFunc) {
   urlParams();
   browserReFocus();
-  // if (isMobile()) {
-  //   g_planet.m_game_state = LOOP_0_MOBILE_START;
-  // } else {
-  //   g_planet.m_game_state = LOOP_0_DESKTOP_START;
-  // }
-
   deleteStartLetters(the_signs, ERASE_START_MESSAGE_TIME);
-
-
-
-
-
-
   addDesktopEvents();
   addMobileEvents();
-  turnOnKeys();
+  turnOnKeys(readKeyFunc);
+  if (readKeyFunc == read4Keys) {
+    onlyLeftRight();
+  }
+
+
   resizeOrientEvents();
   runGame(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet);
+}
+
+
+
+
+
+function onlyLeftRight() {
+
+  function hideArrows(arrow_id) {
+    document.getElementById(arrow_id).style.visibility = 'hidden';
+  }
+
+
+  hideArrows("arrow-div-nw");
+  hideArrows("arrow-div-n");
+  hideArrows("arrow-div-ne");
+  hideArrows("arrow-div-sw");
+  hideArrows("arrow-div-s");
+  hideArrows("arrow-div-se");
+
+  hideArrows("n-1");
+  hideArrows("n-2");
+  hideArrows("n-3");
+  hideArrows("n-4");
+
+
+  hideArrows("s-1");
+  hideArrows("s-2");
+  hideArrows("s-3");
+  hideArrows("s-4");
+
+
+  hideArrows("nw-1");
+  hideArrows("nw-2");
+  hideArrows("nw-3");
+  hideArrows("nw-4");
+
+  hideArrows("ne-1");
+  hideArrows("ne-2");
+  hideArrows("ne-3");
+  hideArrows("ne-4");
+
+  hideArrows("sw-1");
+  hideArrows("sw-2");
+  hideArrows("sw-3");
+  hideArrows("sw-4");
+
+  hideArrows("se-1");
+  hideArrows("se-2");
+  hideArrows("se-3");
+  hideArrows("se-4");
+
+
 }

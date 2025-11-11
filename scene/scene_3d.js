@@ -1,3 +1,6 @@
+var current_move_direction;
+
+
 function sceneRight(the_player, travel_speed, diagonal_weight) {
   new_right_x = playerRight(the_player, travel_speed, diagonal_weight);
   is_allowed = xAllowed(new_right_x);
@@ -69,29 +72,29 @@ function sceneMove(the_player, is_dying) {
   travel_speed = TRAVEL_SPEED;  //4
   if ('t_drift_direction' in g_planet) {
     travel_speed = 1;
-    move_dir = g_planet.t_drift_direction;
+    current_move_direction = g_planet.t_drift_direction;
   } else {
-    move_dir = g_planet.t_move_direction;
+    current_move_direction = g_planet.t_move_direction;
   }
-  if (move_dir == MOVINGx_NW) {
+  if (current_move_direction == MOVINGx_NW) {
     the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (move_dir == MOVINGx_N) {
+  } else if (current_move_direction == MOVINGx_N) {
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (move_dir == MOVINGx_NE) {
+  } else if (current_move_direction == MOVINGx_NE) {
     the_player = sceneRight(the_player, travel_speed, DIAGONAL_DAMPER);
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (move_dir == MOVINGx_E) {
+  } else if (current_move_direction == MOVINGx_E) {
     the_player = sceneRight(the_player, travel_speed, DIAGONAL_NOT);
-  } else if (move_dir == MOVINGx_SE) {
+  } else if (current_move_direction == MOVINGx_SE) {
     the_player = sceneRight(the_player, travel_speed, DIAGONAL_DAMPER);
     the_player = sceneForward(the_player, travel_speed);
-  } else if (move_dir == MOVINGx_S) {
+  } else if (current_move_direction == MOVINGx_S) {
     the_player = sceneForward(the_player, travel_speed);
-  } else if (move_dir == MOVINGx_SW) {
+  } else if (current_move_direction == MOVINGx_SW) {
     the_player = sceneForward(the_player, travel_speed);
     the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
-  } else if (move_dir == MOVINGx_W) {
+  } else if (current_move_direction == MOVINGx_W) {
     the_player = sceneLeft(the_player, travel_speed, DIAGONAL_NOT);
   } else {
     startDrift();
@@ -176,26 +179,50 @@ function randomDirection() {
   return rand_direction;
 }
 
+function enemiesHitBounds(the_enemies, the_planet) {  // the_pylons
+  number_enemies = the_enemies.length;
+  if (number_enemies == 0) {
+    return the_enemies;
+  }
+  changed_enemies = [];
 
-/*
+  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    an_enemy = the_enemies[enemy_index];
 
-since 
-             return [the_planet, the_player, enemy_list, pylon_list];
-should be 
-function animateScene(the_planet, the_player, enemy_list, pylon_list,                 sign_list, hole_list) {
+    if (an_enemy.m_x < the_planet.s_playground_x_min) {
+      has_collided = true;
+    } else if (the_planet.s_playground_x_max < an_enemy.m_x) {
+      has_collided = true;
+    } else {
+      has_collided = false;
+    }
 
-*/
-function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, hole_list) {
+    if (has_collided) {
+      a_pylon.t_pylon_hit_flash = HIT_FLASH_PYLON;
+      an_enemy.m_enemy_state = ENEMY_1_BOUNCE;
+      an_enemy.t_enemy_hit_flash = HIT_FLASH_ENEMY;
+      an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
+      an_enemy.m_bounced_y_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
+    }
 
+
+    changed_enemies[enemy_index] = an_enemy;
+  }
+  return changed_enemies;
+
+}
+
+
+
+function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list, hole_list) {
   timeFrames(the_planet, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_7_PLAY_NORMAL;
+    return PART_PLAY_20_NORMAL;
   }
   hitCracks(the_player);
   the_player = doRecoil(the_player);
-
   planet_state = the_planet.m_game_state;
-  if (planet_state == LOOP_12_DEAD_SKY || planet_state == LOOP_11_DEAD_FIELD) {
+  if (planet_state == GAME_3_DEATH) {
     is_dying = true;
   } else {
     is_dying = false;
@@ -205,79 +232,62 @@ function animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list,
   plyon_list = drawPylons(the_player, pylon_list);
   g_missile = missileAdvance(g_missile, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
-    return LOOP_7_PLAY_NORMAL;
+    return PART_PLAY_20_NORMAL;
   }
   enemy_list = drawEnemies(enemy_list, the_player);
   hole_list = drawHoles(hole_list, the_player);
-
-
-  if (move_dir !== 0) {
-    if (draw_every_ith_frame == 5) {
-      draw_sec = avg_frame_count % 5;
-      if (draw_sec == 0) {
-        move_dir = g_planet.t_move_direction;
-        affixLeftRight();
-      }
-    } else if (draw_every_ith_frame == 4) {
-      draw_sec = avg_frame_count % 4;
-      if (draw_sec == 0) {
-        move_dir = g_planet.t_move_direction;
-        affixLeftRight();
-      }
-    } else if (draw_every_ith_frame == 3) {
-      draw_sec = avg_frame_count % 3;
-      if (draw_sec == 0) {
-        move_dir = g_planet.t_move_direction;
-        affixLeftRight();
-      }
-
-    } else if (draw_every_ith_frame == 2) {
-      draw_sec = avg_frame_count % 2;
-      if (draw_sec == 0) {
-        move_dir = g_planet.t_move_direction;
-        affixLeftRight();
-      }
-    } else {
-      affixLeftRight();
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  fixFPS();
   if (!is_dying) {
     enemy_list = missileHitEnemies(g_missile, enemy_list);
-
-
-
-
     [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
     [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
     [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
     the_player = playerHitEnemies(the_player, enemy_list);
     the_player = playerHitHoles(the_player, hole_list);
     enemy_list = enemyHitHoles(enemy_list, hole_list);
+    enemy_list = enemiesHitBounds(enemy_list, the_planet);
   }
   return [the_planet, the_player, enemy_list, pylon_list];
 }
 
 
+function fixFPS() {
+  if (current_move_direction !== MOVING_NOT) {
+    if (draw_every_ith_frame == 5) {
+      draw_sec = avg_frame_count % 5;
+      if (draw_sec == 0) {
+        current_move_direction = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+    } else if (draw_every_ith_frame == 4) {
+      draw_sec = avg_frame_count % 4;
+      if (draw_sec == 0) {
+        current_move_direction = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+    } else if (draw_every_ith_frame == 3) {
+      draw_sec = avg_frame_count % 3;
+      if (draw_sec == 0) {
+        current_move_direction = g_planet.t_move_direction;
+        affixLeftRight();
+      }
 
+    } else if (draw_every_ith_frame == 2) {
+      draw_sec = avg_frame_count % 2;
+      if (draw_sec == 0) {
+        current_move_direction = g_planet.t_move_direction;
+        affixLeftRight();
+      }
+    } else {
+      affixLeftRight();
+    }
+  }
+}
 
 
 function handleStartMobile(evt) {
   setTimeout(() => {
-    g_planet.m_game_state = LOOP_1_BEGIN;
+    g_planet.m_game_state = GAME_0_INIT;     //L_OOP_1_BEGIN;
 
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";

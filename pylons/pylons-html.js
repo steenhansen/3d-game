@@ -49,6 +49,93 @@ document.getElementById('pylons-area').innerHTML = `
   <div id="pylon-18"></div>
   <div id="pylon-19"></div>
 
+  <div id="pylon-20"></div>
+  <div id="pylon-21"></div>
+  <div id="pylon-22"></div>
+  <div id="pylon-23"></div>
+  <div id="pylon-24"></div>
+  <div id="pylon-25"></div>
+  <div id="pylon-26"></div>
+  <div id="pylon-27"></div>
+  <div id="pylon-28"></div>
+  <div id="pylon-29"></div>
+
+  <div id="pylon-30"></div>
+  <div id="pylon-31"></div>
+  <div id="pylon-32"></div>
+  <div id="pylon-33"></div>
+  <div id="pylon-34"></div>
+  <div id="pylon-35"></div>
+  <div id="pylon-36"></div>
+  <div id="pylon-37"></div>
+  <div id="pylon-38"></div>
+  <div id="pylon-39"></div>
+
+  <div id="pylon-40"></div>
+  <div id="pylon-41"></div>
+  <div id="pylon-42"></div>
+  <div id="pylon-43"></div>
+  <div id="pylon-44"></div>
+  <div id="pylon-45"></div>
+  <div id="pylon-46"></div>
+  <div id="pylon-47"></div>
+  <div id="pylon-48"></div>
+  <div id="pylon-49"></div>
+
+  <div id="pylon-50"></div>
+  <div id="pylon-51"></div>
+  <div id="pylon-52"></div>
+  <div id="pylon-53"></div>
+  <div id="pylon-54"></div>
+  <div id="pylon-55"></div>
+  <div id="pylon-56"></div>
+  <div id="pylon-57"></div>
+  <div id="pylon-58"></div>
+  <div id="pylon-59"></div>
+
+  <div id="pylon-60"></div>
+  <div id="pylon-61"></div>
+  <div id="pylon-62"></div>
+  <div id="pylon-63"></div>
+  <div id="pylon-64"></div>
+  <div id="pylon-65"></div>
+  <div id="pylon-66"></div>
+  <div id="pylon-67"></div>
+  <div id="pylon-68"></div>
+  <div id="pylon-69"></div>
+
+  <div id="pylon-70"></div>
+  <div id="pylon-71"></div>
+  <div id="pylon-72"></div>
+  <div id="pylon-73"></div>
+  <div id="pylon-74"></div>
+  <div id="pylon-75"></div>
+  <div id="pylon-76"></div>
+  <div id="pylon-77"></div>
+  <div id="pylon-78"></div>
+  <div id="pylon-79"></div>
+
+  <div id="pylon-80"></div>
+  <div id="pylon-81"></div>
+  <div id="pylon-82"></div>
+  <div id="pylon-83"></div>
+  <div id="pylon-84"></div>
+  <div id="pylon-85"></div>
+  <div id="pylon-86"></div>
+  <div id="pylon-87"></div>
+  <div id="pylon-88"></div>
+  <div id="pylon-89"></div>
+
+  <div id="pylon-90"></div>
+  <div id="pylon-91"></div>
+  <div id="pylon-92"></div>
+  <div id="pylon-93"></div>
+  <div id="pylon-94"></div>
+  <div id="pylon-95"></div>
+  <div id="pylon-96"></div>
+  <div id="pylon-97"></div>
+  <div id="pylon-98"></div>
+  <div id="pylon-99"></div>
 
 
  `;

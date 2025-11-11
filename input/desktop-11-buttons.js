@@ -1,3 +1,11 @@
+
+
+var d1 = document.getElementById('desktop-dir');
+
+
+
+
+d1.innerHTML = `
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -31,9 +39,9 @@
      style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
      d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
      id="path1087" /></marker>
-  
 
-  
+
+
 <marker
    style="overflow:visible"
    id="TriangleInL-7"
@@ -107,92 +115,131 @@
      inkscape:locked="false"
      inkscape:color="rgb(0,0,255)" /></sodipodi:namedview>
 
-  
-     
-     
-     
-     
+
+
+
+
+
 
 
 
 
 <g
-   id="g6720"><rect
+   id="g6720">
+
+
+
+   <rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928"
-     width="70.199142"
+
+
+
+     id="SVG-SPACE-BUTTON-RECT"
+
+
+
+     width="72.199142"
      height="29.8116"
-     x="41.801865"
+     x="20.801865"
      y="116.8856" /><g
-     id="g6407"
+     id="Sssssssssssss"
      transform="matrix(0.8,0,0,0.8,4.0448655,8.0997248)"><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1568px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.146628"
        x="46.676228"
        y="168.02911"
-       id="text942-6"
+       id="ssssssss"
        transform="scale(1.0691311,0.93533898)"><tspan
          sodipodi:role="line"
-         id="tspan940-7"
-         x="46.676228"
+
+
+         id="SVG-SPACE-BUTTON-TEXT"
+
+
+         x="23.676228"
          y="168.02911"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1568px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.146628">Space Bar</tspan></text><path
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1568px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.146628">Space Bar</tspan></text>
+
+         <path
        style="fill:none;stroke:#000000;stroke-width:0.640375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL)"
-       d="m 128.40586,155.28874 c 0.0815,-10.25591 -21.76929,-7.57942 -21.60623,2.56992"
-       id="path952"
-       sodipodi:nodetypes="cc" /></g></g><g
-   id="g6754"><rect
+       d="m 105.40586,155.28874 c 0.0815,-10.25591 -21.76929,-7.57942 -21.60623,2.56992"
+       id="SVG-SPACE-BUTTON-IMAGE"
+       sodipodi:nodetypes="cc" /></g></g>
+
+
+
+       <g id="g6754">
+
+
+
+
+
+   <rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-8"
+     id="SVG-ENTER-BUTTON-RECT"
      width="64.712631"
      height="29.819773"
-     x="120.31481"
+     x="100.31481"
      y="116.86732" /><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718"
      x="122.38787"
      y="133.80038"
-     id="text942-6-3"><tspan
+     id="2222222222222"><tspan
        sodipodi:role="line"
-       id="tspan940-7-6"
-       x="122.38787"
+       id="SVG-ENTER-BUTTON-TEXT"
+       x="104.38787"
        y="133.80038"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718">Enter</tspan></text><g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718">Enter</tspan></text>
+
+
+
+
+       <g
      id="g6262"
      transform="matrix(0.72,0,0,0.72,21.21019,20.448584)"><circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.82332;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512"
-       cx="176.0278"
+       id="SVG-ENTER-BUTTON-BALL-1"
+       cx="156.0278"
        cy="154.36072"
        r="2.1600151" /><circle
        style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.64099;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512-8"
-       cx="184.90994"
+       id="SVG-ENTER-BUTTON-BALL-2"
+       cx="164.90994"
        cy="154.37511"
        r="1.9440136" /><circle
        style="opacity:0.6;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.47689;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512-8-5"
-       cx="193.80562"
+       id="SVG-ENTER-BUTTON-BALL-3"
+       cx="173.80562"
        cy="154.34001"
        r="1.7496122" /><circle
        style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.3292;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512-8-5-0"
-       cx="202.54128"
+       id="SVG-ENTER-BUTTON-BALL-4"
+       cx="182.54128"
        cy="154.37511"
        r="1.5746509" /><circle
        style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.19628;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512-8-5-0-1"
-       cx="211.45766"
+       id="SVG-ENTER-BUTTON-BALL-5"
+       cx="191.45766"
        cy="154.36128"
-       r="1.4171858" /><circle
-       style="opacity:0.1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.19628;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path1512-8-5-0-1-8"
-       cx="220.11813"
-       cy="154.35515"
-       r="1.4171858" /></g></g><g
-   id="g6819"><rect
+       r="1.4171858" /></g></g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <g
+   id="323"><rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-9"
+     id="SVG-W-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="80.478928"
@@ -201,20 +248,37 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="89.642685"
      y="29.860897"
-     id="text942-6-1-8-5-7-1"
+     id="12"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-8"
+       id="SVG-W-BUTTON-TEXT"
        x="89.642685"
        y="29.860897"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">W</tspan></text><path
      d="M 102.8711,12.057248 96.32243,6.6000197 89.773754,12.057248 Z m -9.823008,0.545721 v 7.094398 h 6.00295 v -7.094398 z"
      fill="#0000ff"
-     id="path3914-7-3-5"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
-   id="g6833"><rect
+     id="SVG-W-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <g
+   id="AS"><rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-4"
+     id="SVG-X-BUTTON-RECT"
      width="31.745525"
      height="30.428045"
      x="80.478928"
@@ -223,20 +287,24 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="91.021248"
      y="91.050354"
-     id="text942-6-1-8-5-7-7"
+     id="AS"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-83"
+       id="SVG-X-BUTTON-TEXT"
        x="91.021248"
        y="91.050354"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">X</tspan></text><path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">X</tspan></text>
+
+
+
+       <path
      d="m 102.87111,99.211318 -6.548676,5.457232 -6.548681,-5.457232 z m -9.82302,-0.54572 v -7.0944 h 6.002952 v 7.0944 z"
      fill="#0000ff"
-     id="path3914-7-3-1"
+     id="SVG-X-BUTTON-IMAGE"
      style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545722" /></g><g
    id="g6809"><rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5"
+     id="SVG-E-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="119.65765"
@@ -245,20 +313,25 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="121.25177"
      y="29.7931"
-     id="text942-6-1-8-5-7"
+     id="7777"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1"
+       id="SVG-E-BUTTON-TEXT"
        x="121.25177"
        y="29.7931"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">E</tspan></text><path
      d="M 146.70863,15.983577 145.93686,7.4941207 137.4474,6.7223503 Z m -7.33181,-6.5600373 -5.01649,5.0164963 4.24472,4.24473 5.0165,-5.016496 z"
      fill="#0000ff"
-     id="path3914-7-3"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
+     id="SVG-E-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+     <g
    id="g6799"><rect
      style="fill:#ffffff;fill-opacity:1;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-6"
+     id="SVG-D-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="119.81512"
@@ -267,20 +340,23 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="121.3034"
      y="60.461575"
-     id="text942-6-1-8-5-7-0"
+     id="ZZZZZZZZ"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-1"
+       id="SVG-D-BUTTON-TEXT"
        x="121.3034"
        y="60.461575"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">D</tspan></text><path
      d="m 141.66629,62.770003 5.45723,-6.548671 -5.45723,-6.548676 z m -0.54572,-9.823009 h -7.0944 v 6.00295 h 7.0944 z"
      fill="#0000ff"
-     id="path3914-7-3-2"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545701;stroke-miterlimit:4;stroke-dasharray:none" /></g><g
+     id="SVG-D-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545701;stroke-miterlimit:4;stroke-dasharray:none" /></g>
+
+
+     <g
    id="g6793"><rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-7"
+     id="SVG-C-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="119.79942"
@@ -289,20 +365,32 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="122.06161"
      y="91.837631"
-     id="text942-6-1-8-5-7-27"
+     id="WWWWWWWWWWW"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-9"
+       id="SVG-C-BUTTON-TEXT"
        x="122.06161"
        y="91.837631"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">C</tspan></text><path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">C</tspan></text>
+
+
+
+
+
+       <path
      d="m 137.16269,104.52876 8.48946,-0.77177 0.77177,-8.489454 z m 6.56004,-7.331801 -5.01649,-5.016496 -4.24473,4.244726 5.01649,5.016491 z"
      fill="#0000ff"
-     id="path3914-7-3-7"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
-   id="g6853"><rect
+     id="SVG-C-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+     <g
+   id="LKKKKKKKK">
+
+
+
+   <rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-42"
+     id="SVG-A-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="41.520786"
@@ -311,20 +399,25 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="61.074383"
      y="61.01442"
-     id="text942-6-1-8-5-7-2"
+     id="AS"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-834"
+       id="SVG-A-BUTTON-TEXT"
        x="61.074383"
        y="61.01442"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">A</tspan></text><path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">A</tspan></text>
+       <path
      d="m 52.137501,63.410958 -5.457229,-6.548671 5.457229,-6.548676 z m 0.545721,-9.823009 h 7.094397 v 6.00295 h -7.094397 z"
      fill="#0000ff"
-     id="path3914-7-3-15"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
-   id="g6843"><rect
+     id="SVG-A-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+     <g
+   id="12"><rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-2"
+     id="SVG-Q-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="41.448212"
@@ -333,20 +426,35 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="60.278408"
      y="29.211077"
-     id="text942-6-1-8-5-7-5"
+     id="12"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-97"
+       id="SVG-Q-BUTTON-TEXT"
        x="60.278408"
        y="29.211077"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">Q</tspan></text><path
      d="M 55.340506,6.6533971 46.85105,7.4251675 46.07928,15.914623 Z m -6.560037,7.3318029 5.016496,5.016496 4.24473,-4.244726 -5.016496,-5.0164959 z"
      fill="#0000ff"
-     id="path3914-7-3-76"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
-   id="g6863"><rect
+     id="SVG-Q-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+
+
+
+
+
+
+     <g
+   id="4444">
+
+
+
+   <rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-92"
+     id="SVG-Z-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="41.53817"
@@ -355,20 +463,33 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="60.711357"
      y="91.516754"
-     id="text942-6-1-8-5-7-11"
+     id="A"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-6"
+       id="SVG-Z-BUTTON-TEXT"
        x="60.711357"
        y="91.516754"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">Z</tspan></text><path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">Z</tspan></text>
+       <path
      d="m 45.693396,96.098431 0.771771,8.489459 8.489455,0.77177 z m 7.331803,6.560039 5.016496,-5.016498 -4.244726,-4.24473 -5.016496,5.016496 z"
      fill="#0000ff"
-     id="path3914-7-3-18"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g><g
-   id="g6827"><rect
+     id="SVG-Z-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+
+
+
+
+
+
+
+   <g id="AS">
+   <rect
      style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect928-3-5-3-5-6-4"
+     id="SVG-S-BUTTON-RECT"
      width="31.745527"
      height="30.428047"
      x="80.521576"
@@ -377,38 +498,35 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
      x="91.251503"
      y="59.781879"
-     id="text942-6-1-8-5-7-0-9"
+     id="AS"
      transform="scale(1.0247305,0.97586634)"><tspan
        sodipodi:role="line"
-       id="tspan940-7-5-4-4-1-1-6"
+       id="SVG-S-BUTTON-TEXT"
        x="91.251503"
        y="59.781879"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">S</tspan></text></g><rect
-   style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="rect928-3-5-3-5-92-3-0"
-   width="31.745525"
-   height="30.428045"
-   x="2.2433727"
-   y="116.34438" /><text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.112431"
-   x="6.0001693"
-   y="137.69261"
-   id="text942-6-1-3-7"
-   transform="scale(1.0247305,0.97586634)"><tspan
-     sodipodi:role="line"
-     id="tspan940-7-5-6-6"
-     x="6.0001693"
-     y="137.69261"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.112431">Esc</tspan></text><rect
-   style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.949252;stroke-miterlimit:4;stroke-dasharray:none"
-   id="rect1849-4-7"
-   width="4.9902821"
-   height="8.0583515"
-   x="25.101719"
-   y="127.16358" /><circle
-   style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.849602;stroke-miterlimit:4;stroke-dasharray:none"
-   id="path1895-3-0"
-   cx="28.489864"
-   cy="131.54562"
-   r="0.4389911" /></svg>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">S</tspan></text>
+      </g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </svg>
+
+
+
+   
+`;
+
+
+

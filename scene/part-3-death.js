@@ -1,11 +1,11 @@
 
-function deathPart3(part_state, the_planet, the_player, sign_list, enemy_list, pylon_list) {
+function deathPart3(part_state, the_planet, the_player, enemy_list, pylon_list) {
   if (part_state == PART_DEATH_30_APPEAR) {
     [part_state, the_player] = startDeath(the_player);
   } else if (part_state == PART_DEATH_31_FIELD) {
-    [part_state, the_planet, the_player, enemy_list, pylon_list] = fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
+    [part_state, the_planet, the_player, enemy_list, pylon_list] = fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list);
   } else if (part_state == PART_DEATH_32_SKY) {
-    [part_state, the_planet, the_player, enemy_list, pylon_list] = skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
+    [part_state, the_planet, the_player, enemy_list, pylon_list] = skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list);
   } else if (part_state == PART_DEATH_33_RESTART) {
     skyRestart();
   } else {
@@ -27,8 +27,8 @@ function startDeath(the_player) {
   return [part_state, the_player];
 }
 
-function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   pylon_list = dyingPylons(the_player, pylon_list);
   enemy_list = dyingEnemies(the_player, enemy_list);
   [the_planet, just_died] = dyingCheckerboard(the_planet);
@@ -39,8 +39,8 @@ function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list, 
   return [part_state, the_planet, the_player, enemy_list, pylon_list];
 }
 
-function skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, sign_list, enemy_list, pylon_list, g_hole_list);
+function skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   setCssSkyColor('black');
   the_player.t_sky_restart--;
   if (the_player.t_sky_restart == 0) {

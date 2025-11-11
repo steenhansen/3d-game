@@ -8,19 +8,6 @@ const STOP_JUMP_UP_DOWN = 100;
 const JUMP_STEP = 3;
 
 
-// function animateHoleHit(the_player) {
-//   the_player.m_num_cracks++;
-//   return the_player;
-// }
-
-function animateHoleInside(the_player) {
-  return the_player;
-}
-
-function animateHoleLeave(the_player) {
-  return the_player;
-}
-
 function animateJumpUpNew(the_player) {
   the_player.t_jump_amount += JUMP_STEP;
   if (the_player.t_jump_amount > STOP_JUMP_UP_DOWN) {
@@ -43,55 +30,6 @@ function animateJumpDownNew(the_player) {
 }
 
 
-function animateJumpUp(the_player) {
-  the_player.t_jump_amount += JUMP_STEP;
-  if (the_player.t_jump_amount > STOP_JUMP_UP_DOWN) {
-    return [the_player, LOOP_7_PLAY_C_JUMP_DOWN];
-  }
-  doFlying(the_player.t_jump_amount);
-  return [the_player, LOOP_7_PLAY_B_JUMP_UP];
-}
-
-function animateJumpDown(the_player) {
-  the_player.t_jump_amount -= JUMP_STEP;
-  if (the_player.t_jump_amount < 1) {
-    delete the_player.t_jump_amount;
-    return [the_player, LOOP_7_PLAY_NORMAL];
-  }
-  doFlying(the_player.t_jump_amount);
-  return [the_player, LOOP_7_PLAY_C_JUMP_DOWN];
-}
-
-
-
-function animateFly(fly_speed, the_player) {
-  if (fly_speed == FAST_FLY) {
-    doFlying(STOP_FLY_COUNT - 1);
-    delete the_player.t_fly_amount;
-    return [the_player, LOOP_13_DONE];
-  } else if (fly_speed == SLOW_FLY) {
-    the_player.t_fly_amount += FLY_STEP_SLOW;
-    if (the_player.t_fly_amount > STOP_FLY_COUNT) {
-      delete the_player.t_fly_amount;
-      return [the_player, LOOP_13_DONE];
-    }
-    doFlying(the_player.t_fly_amount);
-    return [the_player, LOOP_9_FLY];
-  } else {
-
-    //  if (the_player.t_fly_amount < 50) {
-    the_player.t_fly_amount += FLY_STEP_FAST;  //1.5;
-    // }
-
-
-    if (the_player.t_fly_amount > STOP_FLY_COUNT) {
-      delete the_player.t_fly_amount;
-      return [the_player, LOOP_13_DONE];
-    }
-    doFlying(the_player.t_fly_amount);
-    return [the_player, LOOP_9_FLY];
-  }
-}
 
 
 
@@ -304,34 +242,7 @@ function elevatorInOneStep() {
 }
 
 
-function animateElevator(elevator_speed) {
-  if (elevator_speed == FAST_ELEVATOR) {
-    elevatorInOneStep();
-    return LOOP_6_AFTER_ELEVATOR;
-  } else if (elevator_speed == SLOW_ELEVATOR) {
-    m_top_playing_game += 0.5;
-    m_top_the_land += 0.5;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return LOOP_6_AFTER_ELEVATOR;
-    } else {
-      return LOOP_5_ELEVATOR;
-    }
-  } else {
-    //    m_top_playing_game += 2;        old normal
-    //    m_top_the_land += 2;
 
-    m_top_playing_game += 8;
-    m_top_the_land += 8;
-
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return LOOP_6_AFTER_ELEVATOR;
-    } else {
-      return LOOP_5_ELEVATOR;
-    }
-  }
-}
 
 function animateElevatorNew(elevator_speed) {
   if (elevator_speed == FAST_ELEVATOR) {
@@ -386,32 +297,6 @@ function animateLandingNew(land_speed) {
     }
   }
 }
-
-function animateLanding(land_speed) {
-  if (land_speed == FAST_LAND) {
-    expandCheckerboard(255);
-    return LOOP_4_AFTER_LANDING;
-  } else if (land_speed == SLOW_LAND) {
-    landing_count += 0.25;
-    if (landing_count == NUMBER_LINES) {
-      return LOOP_4_AFTER_LANDING;
-    } else {
-      int_landing_count = Math.floor(landing_count);
-      expandCheckerboard(int_landing_count);
-      return LOOP_3_LANDING;
-    }
-  } else {
-    //landing_count++;
-    landing_count += 4;   //   qbert normal land == +4new  +1old
-    if (landing_count == NUMBER_LINES) {
-      return LOOP_4_AFTER_LANDING;
-    } else {
-      expandCheckerboard(landing_count);
-      return LOOP_3_LANDING;
-    }
-  }
-}
-
 
 
 
