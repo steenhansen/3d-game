@@ -1,7 +1,5 @@
 
-
-
-function hasCollided(a_thing, an_object, COLLISION_SIZES) {
+function hasCollided(a_thing, an_object) {
   let [field_width, room_width, field_depth, room_depth] = COLLISION_SIZES;
   let { m_x: thing_x, m_y: thing_y } = a_thing;
   let { m_x: object_x, m_y: object_y } = an_object;
@@ -14,8 +12,6 @@ function hasCollided(a_thing, an_object, COLLISION_SIZES) {
 }
 
 function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
-
-
   diff_1 = thing_pos - object_pos;
   if (diff_1 < 0) {
     diff_1 += overflow_size;

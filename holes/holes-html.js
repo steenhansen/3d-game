@@ -214,6 +214,20 @@ document.getElementById('holes-area').innerHTML = `
 
   `;
 
+
+function unHideHoles(the_holes) {
+  changed_holes = [];
+  number_holes = the_holes.length;
+  for (let hole_index = 0; hole_index < number_holes; hole_index++) {
+    a_hole = the_holes[hole_index];
+    a_hole.m_hidden = false;
+    changed_holes[hole_index] = a_hole;
+  }
+  return changed_holes;
+}
+
+
+
 function drawHoles(the_holes, the_player) {
   number_pylons = the_holes.length;
   for (let hole_index = 0; hole_index < number_pylons; hole_index++) {

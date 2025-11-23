@@ -1,20 +1,26 @@
-function drawSigns(the_player, the_signs) {
+function drawSigns(the_signs, the_player) {
   number_signs = the_signs.length;
   for (let sign_index = 0; sign_index < number_signs; sign_index++) {
     a_sign = the_signs[sign_index];
-    signSet(the_player, a_sign);
+    signSet(a_sign, the_player);
   }
 }
 
-function signSet(the_player, a_sign) {
-  svg_sign = signDraw(a_sign, the_player);
+function signSet(a_sign, the_player) {
   sign_id = a_sign.s_sign_name;
   targetDiv = document.getElementById(sign_id);
-  if (svg_sign == null) {
-    sign_error = `bad::sign is null ${sign_id}`;
-    throw new Error(sign_error);
+  sign_player_ys = [a_sign.m_y, the_player.m_y];
+  dist_abs_y = distanceAbsY(sign_player_ys);
+  if (dist_abs_y > FARTHEST_VISIBLE_SIGN) {
+    targetDiv.innerHTML = '';
+  } else {
+    svg_sign = signDraw(a_sign, the_player);
+    if (svg_sign == null) {
+      sign_error = `bad::sign is null ${sign_id}`;
+      throw new Error(sign_error);
+    }
+    targetDiv.innerHTML = svg_sign;
   }
-  targetDiv.innerHTML = svg_sign;
 }
 
 function initSign(sign_id, sign_in_squares, vert_word, text_color) {
@@ -26,15 +32,17 @@ function initSign(sign_id, sign_in_squares, vert_word, text_color) {
     m_alive: true,
     m_x: xy_pixels[0],
     m_y: xy_pixels[1],
-    p_sign_text_col: text_color,
+    m_sign_text_col: text_color,
   };
   return the_sign;
 }
 
 
 
+
+
 function signDraw(a_sign, the_player) {
-  [the_z_index, difference_y, sign_relative, x_center_offset, head_on_view] = objectPlacement(a_sign, the_player);
+  [the_z_index, sign_relative, x_center_offset, head_on_view] = objectPlacement(a_sign, the_player);
 
   sign_player_ys = [a_sign.m_y, the_player.m_y];
   if (sign_relative == LEFT_OF_PLAYER) {
@@ -42,7 +50,8 @@ function signDraw(a_sign, the_player) {
   } else {
     left_mid_right_vlines = signOnRight(x_center_offset, sign_player_ys, head_on_view);
   }
-  text_color = a_sign.p_sign_text_col;
+  debugSign(a_sign, left_mid_right_vlines);
+  text_color = a_sign.m_sign_text_col;
   vert_text = a_sign.s_vert_word;
   word_svg = signFront(left_mid_right_vlines, text_color, vert_text);
   sign_svg = createSignHtml(the_z_index, word_svg);
@@ -97,9 +106,9 @@ function createSignHtml(z_index, word_svg) {
 }
 
 function signOnLeft(x_center_offset, sign_player_ys, head_on_view) {
-  difference_yy = objectDepth(sign_player_ys);
+  dist_abs_y = distanceAbsY(sign_player_ys);
   if (head_on_view) {
-    left_mid_right_vlines = objectFrontRegion(x_center_offset, difference_yy);
+    left_mid_right_vlines = objectFrontRegion(x_center_offset, dist_abs_y);
   } else {
     left_mid_right_vlines = objectLeftSide(x_center_offset, sign_player_ys, PYLON_PIXEL_DEPTH);
   }
@@ -107,9 +116,9 @@ function signOnLeft(x_center_offset, sign_player_ys, head_on_view) {
 }
 
 function signOnRight(x_center_offset, sign_player_ys, head_on_view) {
-  difference_yy = objectDepth(sign_player_ys);
+  dist_abs_y = distanceAbsY(sign_player_ys);
   if (head_on_view) {
-    left_mid_right_vlines = objectFrontRegion(x_center_offset, difference_yy);
+    left_mid_right_vlines = objectFrontRegion(x_center_offset, dist_abs_y);
   } else {
     left_mid_right_vlines = objectRightSide(x_center_offset, sign_player_ys, PYLON_PIXEL_DEPTH);
   }

@@ -46,22 +46,17 @@ function checkBounds(field_in_squares, bounds_in_squares) {
 
 function squares2pixels(width_depth_squares) {
   let [x_squares, y_squares] = width_depth_squares;
-  x_pixels = x_squares * WIDTH_OF_SQUARE;
-  y_pixels = y_squares * DEPTH_OF_SQUARE;
+  x_pixels = x_squares * WIDTH_OF_SQUARE; // const WIDTH_OF_SQUARE = 54 256;
+  y_pixels = y_squares * DEPTH_OF_SQUARE;  // const DEPTH_OF_SQUARE = 50;
   xy_size = [x_pixels, y_pixels];
   return xy_size;
 }
 
 function initBoundedPlanet(field_in_squares, bounds_in_squares) {
   checkBounds(field_in_squares, bounds_in_squares);
-  //let [x_squares, y_squares] = field_in_squares; //[64, 55];
   FIELD_IN_PIXELS = squares2pixels(field_in_squares);  //  [25600, 2000]
   let [x_left, y_top, x_right, y_bottom] = bounds_in_squares;     //[27, 2, 40, 16]
 
-  x_left += RELATIVE_ORIGIN[0];
-  y_top += RELATIVE_ORIGIN[1];
-  x_right += RELATIVE_ORIGIN[0];
-  y_bottom += RELATIVE_ORIGIN[1];
 
   //a_planet = initInfinitePlanet(field_in_squares);
   BOUNDS_IN_SQUARES = [x_left, y_top, x_right, y_bottom];   //bounds_in_squares;
@@ -93,14 +88,9 @@ function initInfinitePlanet(field_in_squares) {
 
 
 function initPlanet(pixel_field_size, pixel_bounds) {
-  // [3000, 4000]
   let [field_width, field_depth] = pixel_field_size;
   let [left_x, top_y, right_x, bottom_y] = pixel_bounds;
-  //[1000, 1000, 3000, 1500]; 
-  //  initCheckerboardField(field_width, field_depth);
-  //                              WIDTH_OF_SQUARE=256      ==16???
   COLLISION_SIZES = [field_width, TILE_WIDTH, field_depth, ROOM_DEPTH];
-
 
   let the_planet = {
     s_isa: "is-planet",
@@ -110,11 +100,12 @@ function initPlanet(pixel_field_size, pixel_bounds) {
     s_playground_x_max: right_x,
     s_playground_y_min: top_y,
     s_playground_y_max: bottom_y,
-    m_game_state: PART_INIT_01_MOBILE,           // L_OOP_0_MOBILE_START, //"hi-there",
+    m_game_state: PART_INIT_01_MOBILE,
     m_dying_distance: 0,
-    // t_move_direction
-    // t_drift_direction
-    // t_drift_countdown
+    m_move_direction: MOVINGx_NOT,
+    m_last_direction_key: MOVINGx_NOT,
+    m_drift_direction: MOVINGx_NOT,
+    m_drift_countdown: 0
   };
   return the_planet;
 }

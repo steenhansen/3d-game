@@ -1,0 +1,4 @@
+
+
+
+const FARTHEST_VISIBLE_HOLE = 728;

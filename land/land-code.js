@@ -9,22 +9,22 @@ const JUMP_STEP = 3;
 
 
 function animateJumpUpNew(the_player) {
-  the_player.t_jump_amount += JUMP_STEP;
-  if (the_player.t_jump_amount > STOP_JUMP_UP_DOWN) {
+  the_player.m_jump_amount += JUMP_STEP;
+  if (the_player.m_jump_amount > STOP_JUMP_UP_DOWN) {
 
     return [the_player, PART_PLAY_24_JUMP_DOWN];
   }
-  doFlying(the_player.t_jump_amount);
+  doFlying(the_player.m_jump_amount);
   return [the_player, PART_PLAY_23_JUMP_UP];
 }
 
 function animateJumpDownNew(the_player) {
-  the_player.t_jump_amount -= JUMP_STEP;
-  if (the_player.t_jump_amount < 1) {
-    delete the_player.t_jump_amount;
+  the_player.m_jump_amount -= JUMP_STEP;
+  if (the_player.m_jump_amount < 1) {
+    the_player.m_jump_amount = 0;
     return [the_player, PART_PLAY_20_NORMAL];
   }
-  doFlying(the_player.t_jump_amount);
+  doFlying(the_player.m_jump_amount);
 
   return [the_player, PART_PLAY_24_JUMP_DOWN];
 }
@@ -139,26 +139,6 @@ function flashScrollingArrow(arrow_id) {
 }
 
 
-
-function readyInputArrows() {
-
-
-  stopFlashArrow('arrow-nw');
-  stopFlashArrow('arrow-n');
-  stopFlashArrow('arrow-ne');
-  stopFlashArrow('arrow-e');
-  stopFlashArrow('arrow-se');
-  stopFlashArrow('arrow-s');
-  stopFlashArrow('arrow-sw');
-  stopFlashArrow('arrow-w');
-}
-
-// what is this????
-function stopFlashArrow(arrow_id) {
-  // const stop_arrow = document.getElementById(arrow_id);
-  // let flash_none = `fill: rgb(0 ,0 , 0)`;
-  // stop_arrow.style = flash_none;
-}
 
 
 
@@ -308,18 +288,20 @@ function setLandingScroll(the_pixels) {
 }
 
 function moveCheckerboardOnce(top_playing_game, top_the_land) {
-
   const playing_game = document.getElementById(`playing-game`);
   playing_game.style = `top:${top_playing_game}px`;
   const the_landing = document.getElementById(`the-landing`);
   the_landing.style = `top:${top_the_land}px`;
-  flashScrollingArrow('arrow-nw');
-  flashScrollingArrow('arrow-n');
-  flashScrollingArrow('arrow-ne');
+  if (THE_PLANET != 4) {
+    flashScrollingArrow('arrow-nw');
+    flashScrollingArrow('arrow-n');
+    flashScrollingArrow('arrow-ne');
+    flashScrollingArrow('arrow-se');
+    flashScrollingArrow('arrow-s');
+    flashScrollingArrow('arrow-sw');
+
+  }
   flashScrollingArrow('arrow-e');
-  flashScrollingArrow('arrow-se');
-  flashScrollingArrow('arrow-s');
-  flashScrollingArrow('arrow-sw');
   flashScrollingArrow('arrow-w');
 }
 
@@ -342,7 +324,7 @@ function resetSections() {
   doFlying(0);
 
 
-  g_planet.t_move_direction = MOVINGx_NOT;
+  g_planet.m_move_direction = MOVINGx_NOT;
 
   landingInit();
   initElevator();

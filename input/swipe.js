@@ -11,7 +11,7 @@ function touchBoxes(the_event) {
   if (is_a_center_box) {
     the_event.preventDefault();
     fullMobile();
-    delete g_planet.t_drift_direction;
+    g_planet.m_drift_direction = 0;
     g_missile = initMissileData(g_missile, g_player);
   }
 }
@@ -48,6 +48,7 @@ function touchEnd(evt) {
           swipeRightQuit();
         }
       } else {
+
         if (local_swipe_y_start > touch_y_end) {
           swipeUpJump();
         } else {
@@ -61,8 +62,8 @@ function touchEnd(evt) {
 
 function swipeUpJump() {
 
-  if (g_planet.m_game_state == PART_PLAY_20_NORMAL) {         //   L_OOP_7_PLAY_NORMAL) {
-    g_planet.m_part_state = PART_PLAY_22_JUMP_START;                   // L_OOP_7_PLAY_A_JUMP_START;
+  if (g_planet.m_game_state == GAME_2_PLAY) {
+    g_planet.m_part_state = PART_PLAY_22_JUMP_START;
     dbg_swipe_dir = SWIPE_UP;
   }
 
@@ -72,16 +73,17 @@ function swipeUpJump() {
 
 function swipeLeftFly() {
   dbg_swipe_dir = SWIPE_LEFT;
-  g_planet.m_game_state = GAME_3_DEATH;                  // L_OOP_8_AFTER_PLAY;
+  g_planet.m_game_state = GAME_5_DONE;
 }
 
 function swipeRightQuit() {
   dbg_swipe_dir = SWIPE_RIGHT;
-  g_planet.m_game_state = GAME_5_DONE;         // L_OOP_13_DONE;
+  g_planet.m_game_state = GAME_5_DONE;
 }
 
 function swipeDownStop() {
+
   dbg_swipe_dir = SWIPE_DOWN;
-  delete g_planet.t_drift_direction;
+  g_planet.m_drift_direction = 0;
   stopMoving();
 }

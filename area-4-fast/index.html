@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="variables/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
   <link rel="stylesheet" href="player/player.css" />
+  <link rel="stylesheet" href="planets/planets.css" />
   <link rel="stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
@@ -52,6 +53,10 @@
   <script type="text/javascript" src="field/field-invert.js"></script>
   <script type="text/javascript" src="field/field-constants.js"></script>
   <script type="text/javascript" src="objects/sprite-sizes.js"></script>
+  <script type="text/javascript" src="enemy/enemy-consts.js"></script>
+  <script type="text/javascript" src="pylons/pylons-consts.js"></script>
+  <script type="text/javascript" src="holes/holes-consts.js"></script>
+  <script type="text/javascript" src="signs/signs-consts.js"></script>
 </div>
 
 <div id="the-svgs">
@@ -98,6 +103,9 @@
 
 <div id='start-mobile'>
   <div id='mobile-list'>
+  </div>
+  <div id='mobile-wait'>
+    Waiting for full mobile screen
   </div>
 </div>
 
@@ -190,6 +198,7 @@
   <script type="text/javascript" src="scene/part-2-play.js"></script>
   <script type="text/javascript" src="scene/part-3-death.js"></script>
   <script type="text/javascript" src="scene/part-4-space.js"></script>
+  <script type="text/javascript" src="scene/part-5-done.js"></script>
 
 
 </div>
@@ -228,45 +237,70 @@
 
 
 
-<!-- start part section
- 
 
-file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
+<script type="text/javascript" src="input/desktop-4-buttons.js"></script>
+<link rel="stylesheet" href="area-4-fast/distinct.css" />
 
--->
-
-
-
-<style>
-  :root {
-    --checkerboard-image: url('../planet-1-jump/checker-board.png');
-    --sun-image: url('../planet-1-jump/yellow-sun.png');
-    --pyramids-image: url('../planet-1-jump/black-pyramids.png');
-    --saturn-image: url('../planet-1-jump/cloudy-saturn.png');
-  }
-</style>
-<script type="text/javascript" src="input/desktop-11-buttons.js"></script>
-<link rel="stylesheet" href="planet-1-jump/lines.css" />
 <script>
+  const THE_PLANET = 4;
+  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
 
-  const THIS_PLANET = 'planet-1-jump/index.html';
-  const NEXT_PLANET = 'planet-2-carom/index.html';
-
-  const ALLOWED_KEYS_FUNC = read11Keys;
-
-  function hitExit() {
-    window.location.href = NEXT_PLANET;
-  }
-
-
-  //  file:///C:/Users/16043/Documents/GitHub/new_oldsters/oct-20-mon/3qwe%20-%20Copy/planet-1/index.html?debug-env=true
-
-
-  // file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-1-jump2/index.html?debug-env=true
+  const PARAMS_STR = getParams(window.location);
+  const THIS_PLANET = 'area-4-fast/index.html' + PARAMS_STR;
+  const NEXT_PLANET = 'index.html' + PARAMS_STR;
 
   const FIELD_IN_SQUARES = [20, 40];
-  const RELATIVE_ORIGIN = [0, 10];
-  const PLAYER_START = [5, 11];
+  const PLAYER_START = [5, 35];
+  const PLAYER_BOUNDS = [2, 0, 8, 40];
+  const CURRENT_SEGWAY = FAST_SEGWAYS; //NORMAL_SEGWAYS
+
+  function hitExit() {
+    game_state = GAME_4_SPACE;
+    part_state = PART_SPACE_40_LIFTOFF;
+    return [game_state, part_state];
+  }
+
+  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
+  the_player = initPlayer(PLAYER_START, MOVINGx_N, MOVINGx_N);
+
+
+
+  pylon_holes = [[-4, -30], [-5, -31], [-6, -30]];
+  red_jumps = makeHoles(0, "red", pylon_holes);
+
+  side_holes = [
+    [0, 0], [0, 2], [0, 4], [0, 6], [0, 8],
+    [0, 10], [0, 12], [0, 14], [0, 16], [0, 18],
+    [0, 20], [0, 22], [0, 24], [0, 26], [0, 28],
+    [0, 30], [0, 32], [0, 34], [0, 36], [0, 38],
+
+
+
+
+    [10, 0], [10, 2], [10, 4], [10, 6], [10, 8],
+    [10, 10], [10, 12], [10, 14], [10, 16], [10, 18],
+    [10, 20], [10, 22], [10, 24], [10, 26], [10, 28],
+    [10, 30], [10, 32], [10, 34], [10, 36], [10, 38],];
+
+
+
+  hole_index = red_jumps.length;
+  white_sides = makeHoles(hole_index, "white", side_holes);
+
+
+
+
+  the_holes = [...white_sides, ...red_jumps];
+
+  //  const PLAYER_START = [5, 35];
+
+  exit_sign = initSign("sign-exit", [5, 29], 'Fini', EXIT_OFF_COLOR);
+  sign_0 = initSign("sign-00", [3, 31], 'R', "white");
+  sign_1 = initSign("sign-01", [4.5, 31], 'u', "white");
+  sign_2 = initSign("sign-02", [6, 31], 'n', "white");
+  the_signs = [exit_sign, sign_0, sign_1, sign_2];
+
+  the_pylons = makePylons([[-4, -29], [-6, -29]], [WHITE_BLACK, WHITE_BLACK]);
 
 
 
@@ -274,41 +308,58 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
 
 
-  // g_planet = initInfinitePlanet(FIELD_IN_SQUARES);
-  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, [0, 1, 20, 11]);
+
+  // ball_strat =-2... 0s   
+  // BALL_START_2S = -2s
+  // BALL_START_175S = -1.75s
+  // BALL_START_0S = 0S
+  // 1 =SLOW   4 = FAST_MOVE
+  train_speed = VELOCITY_0,
+
+    train_1 = plainEnemy([5, 0], RED_BLUE_1, ZERO_10, NEAR_10, train_speed, BALL_START_A);
+  train_2 = plainEnemy([5, 1], RED_BLUE_2, ZERO_10, NEAR_10, train_speed, BALL_START_B);
+
+  train_3 = plainEnemy([5, 2], RED_BLUE_3, ZERO_10, NEAR_10, train_speed, BALL_START_C);
+
+  train_4 = plainEnemy([5, 3], RED_BLUE_4, ZERO_10, NEAR_10, train_speed, BALL_START_D);
+
+  train_5 = plainEnemy([5, 4], ORANGE_GREY_1, ZERO_10, NEAR_10, train_speed, BALL_START_E);
+  train_6 = plainEnemy([5, 5], ORANGE_GREY_2, ZERO_10, NEAR_10, train_speed, BALL_START_F);
+  train_7 = plainEnemy([5, 6], ORANGE_GREY_3, ZERO_10, NEAR_10, train_speed, BALL_START_G);
+  train_8 = plainEnemy([5, 7], ORANGE_GREY_4, ZERO_10, NEAR_10, train_speed, BALL_START_H);
+
+  train_9 = plainEnemy([5, 8], LIME_MAGENTA_1, ZERO_10, NEAR_10, train_speed, BALL_START_I);
+  train_10 = plainEnemy([5, 9], LIME_MAGENTA_2, ZERO_10, NEAR_10, train_speed, BALL_START_J);
+  train_11 = plainEnemy([5, 10], LIME_MAGENTA_3, ZERO_10, NEAR_10, train_speed, BALL_START_K);
+  train_12 = plainEnemy([5, 11], LIME_MAGENTA_4, ZERO_10, NEAR_10, train_speed, BALL_START_L);
+
+  train_13 = plainEnemy([5, 12], YELLOW_CYAN_4, ZERO_10, NEAR_10, train_speed, BALL_START_M);
+  train_14 = plainEnemy([5, 13], YELLOW_CYAN_3, ZERO_10, NEAR_10, train_speed, BALL_START_N);
+  train_15 = plainEnemy([5, 14], YELLOW_CYAN_2, ZERO_10, NEAR_10, train_speed, BALL_START_O);
+  train_16 = plainEnemy([5, 15], YELLOW_CYAN_1, ZERO_10, NEAR_10, train_speed, BALL_START_P);
+
+  the_train = [train_1, train_2, train_3, train_4, train_5, train_6, train_7, train_8, train_9, train_10, train_11, train_12, train_13, train_14, train_15, train_16];
+
+  //the_train = [train_1, train_2, train_3, train_4, train_5, train_6, train_7, train_8];
+  //the_train = [train_9, train_10, train_11, train_12, train_13, train_14, train_15, train_16];
+  //the_train = [train_3];
+
+
+
+
+  enemy_0 = plainEnemy([2, 2], RED_BLUE_2, LEFT_10, NEAR_10, 1);
+  enemy_1 = plainEnemy([2, 12], RED_CYAN, LEFT_10, NEAR_10, 2);
+  enemy_2 = plainEnemy([2, 22], BLUE_YELLOW, LEFT_10, NEAR_10, 1);
+  enemy_3 = plainEnemy([2, 32], PURPLE_GREEN, LEFT_10, NEAR_10, 2);
+  //  the_enemies = makeEnemies([enemy_0, enemy_1, enemy_2, enemy_3]);
+  the_enemies = makeEnemies([...the_train, enemy_0, enemy_1, enemy_2, enemy_3]);
+  //the_enemies = makeEnemies([enemy_0]);
 
 
 
 
 
 
-
-
-  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
-
-  z_holes = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5],
-  [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5]];
-
-  the_holes = makeHoles("red", z_holes);
-  //the_holes[0].s_hole_color = "green";
-  //the_holes[19].s_hole_color = "yellow";
-
-
-
-
-  exit_sign = initSign("sign-exit", [6, 2], 'Exit', EXIT_ON_COLOR);
-  sign_0 = initSign("sign-00", [0, 7], 'J', "white");
-  sign_1 = initSign("sign-01", [1.5, 7], 'u', "white");
-  sign_2 = initSign("sign-02", [3, 7], 'm', "white");
-  sign_3 = initSign("sign-03", [4.5, 7], 'p', "white");
-  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
-
-
-  the_pylons = [];
-  the_enemies = [];
-
-
-
-  startItUp(FAST_SEGWAYS, NORMAL_SEGWAYS, the_pylons, the_signs, the_enemies, the_holes, the_player, g_planet, ALLOWED_KEYS_FUNC);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
-
+  startReadKeys(read4Keys);
+  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 </script>

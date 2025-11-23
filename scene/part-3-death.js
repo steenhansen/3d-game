@@ -34,7 +34,7 @@ function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) 
   [the_planet, just_died] = dyingCheckerboard(the_planet);
   if (just_died) {
     part_state = PART_DEATH_32_SKY;
-    the_player.t_sky_restart = 10;
+    the_player.m_sky_restart = 10;
   }
   return [part_state, the_planet, the_player, enemy_list, pylon_list];
 }
@@ -42,8 +42,8 @@ function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) 
 function skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
   setCssSkyColor('black');
-  the_player.t_sky_restart--;
-  if (the_player.t_sky_restart == 0) {
+  the_player.m_sky_restart--;
+  if (the_player.m_sky_restart == 0) {
     part_state = PART_DEATH_33_RESTART;
   }
 

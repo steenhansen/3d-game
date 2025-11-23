@@ -92,6 +92,8 @@ function rotatingStar(star_color, enemy_number, r1) {
 
 function createEnemyHtml(the_enemy) {
   let enemy_number = the_enemy.s_enemy_number;
+  let ball_start = the_enemy.s_ball_start;
+
 
   enemy_id = the_enemy.s_id;
   star_color = the_enemy.s_colors[0];
@@ -114,18 +116,30 @@ function createEnemyHtml(the_enemy) {
   rotating_star = rotatingStar(star_color, enemy_number, r1);
 
 
-  let r = Math.floor(Math.random() * 13);
-  if (enemy_number == 0) {
-    r = "-1s";
-  } else if (enemy_number == 1) {
-    r = "-0.1s";
-  } else {
-    r = "-0.5s";
-  }
+  // let r = Math.floor(Math.random() * 13);   // 2s for the ball 
+  // if (enemy_number == 0) {
+  //   r = "-2s";
+  // } else if (enemy_number == 1) {
+  //   r = "-1.75s";
+  // } else if (enemy_number == 2) {
+  //   r = "-1.5s";
+  // } else if (enemy_number == 3) {
+  //   r = "-1.25s";
+  // } else if (enemy_number == 4) {
+  //   r = "-1s";
+  // } else if (enemy_number == 5) {
+  //   r = "-0.75s";
+  // } else if (enemy_number == 6) {
+  //   r = "-0.5s";
+  // } else if (enemy_number == 7) {
+  //   r = "-0.25s";
+  // } else {
+  //   r = "0s";
+  // }
 
 
-  ball_all = makeBall('all', ball_color, enemy_number, r);
-  ball_front = makeBall('front', ball_color, enemy_number, r);
+  ball_all = makeBall('all', ball_color, enemy_number, ball_start);
+  ball_front = makeBall('front', ball_color, enemy_number, ball_start);
 
 
   sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;

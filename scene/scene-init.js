@@ -49,25 +49,25 @@ function resizeOrientEvents() {
 }
 
 
-function startItUp(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet, readKeyFunc) {
+
+function startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs) {
   urlParams();
   browserReFocus();
-  deleteStartLetters(the_signs, ERASE_START_MESSAGE_TIME);
   addDesktopEvents();
   addMobileEvents();
-  turnOnKeys(readKeyFunc);
-  if (readKeyFunc == read4Keys) {
-    onlyLeftRight();
-  }
-
-
   resizeOrientEvents();
-  runGame(land_speeds, fly_speed, the_pylons, the_signs, the_enemies, the_holes, the_player, the_planet);
+  runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 }
 
 
 
-
+function startReadKeys(readKeyFunc) {
+  turnOnKeys(readKeyFunc);
+  //if (readKeyFunc == read4Keys) {
+  if (THE_PLANET == 4) {
+    onlyLeftRight();
+  }
+}
 
 function onlyLeftRight() {
 
@@ -76,13 +76,21 @@ function onlyLeftRight() {
   }
 
 
-  hideArrows("arrow-div-nw");
-  hideArrows("arrow-div-n");
-  hideArrows("arrow-div-ne");
-  hideArrows("arrow-div-sw");
-  hideArrows("arrow-div-s");
-  hideArrows("arrow-div-se");
 
+  hideArrows("arrow-nw");
+
+  hideArrows("arrow-n");
+  hideArrows("arrow-ne");
+
+
+  hideArrows("arrow-sw");
+
+
+  hideArrows("arrow-s");
+  hideArrows("arrow-se");
+
+
+  // these are touch-boxes
   hideArrows("n-1");
   hideArrows("n-2");
   hideArrows("n-3");

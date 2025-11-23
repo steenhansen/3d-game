@@ -1,4 +1,5 @@
 
+//const START_SCREEN = 'index.html' + PARAMS_STR;
 
 let BOUNDS_IN_SQUARES;
 
@@ -90,12 +91,85 @@ let PTS_FIELD_BOUNDS;
 let COLLISION_SIZES;
 
 const INIT_Y_FLIP_COUNT = 4;
-
+let y_flip_count = INIT_Y_FLIP_COUNT;
 
 
 const DEVICE_UNKNOWN = 0;
 const DEVICE_DESKTOP = 1;
 const DEVICE_MOBILE = 2;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+LEFT_1 = [-1];
+LEFT_2 = [-1, -1];
+LEFT_3 = [-1, -1, -1];
+LEFT_4 = [-1, -1, -1, -1];
+LEFT_5 = [-1, -1, -1, -1, -1];
+LEFT_6 = [-1, -1, -1, -1, -1, -1];
+LEFT_7 = [-1, -1, -1, -1, -1, -1, -1];
+LEFT_8 = [-1, -1, -1, -1, -1, -1, -1, -1];
+LEFT_9 = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+LEFT_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+
+LEFT_11 = [LEFT_1, LEFT_10].flat();
+
+
+RGHT_1 = [+1];
+RGHT_2 = [+1, +1];
+RGHT_3 = [+1, +1, +1];
+RGHT_4 = [+1, +1, +1, +1];
+RGHT_5 = [+1, +1, +1, +1, +1];
+RGHT_6 = [+1, +1, +1, +1, +1, +1];
+RGHT_7 = [+1, +1, +1, +1, +1, +1, +1];
+RGHT_8 = [+1, +1, +1, +1, +1, +1, +1, +1];
+RGHT_9 = [+1, +1, +1, +1, +1, +1, +1, +1, +1];
+RGHT_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+RGHT_bb = [+1, +2, +1, +2, +1, +2, +1, +2, +1, +2];
+
+
+
+RGHT_a = [+1, 0, +1];
+RGHT_b = [0, +1, 0];
+
+
+RGHT_11 = [RGHT_10, RGHT_1].flat();
+RGHT_12 = [RGHT_10, RGHT_2].flat();
+RGHT_13 = [RGHT_10, RGHT_3].flat();
+RGHT_14 = [RGHT_10, RGHT_4].flat();
+RGHT_15 = [RGHT_10, RGHT_5].flat();
+RGHT_16 = [RGHT_10, RGHT_6].flat();
+RGHT_17 = [RGHT_10, RGHT_7].flat();
+RGHT_18 = [RGHT_10, RGHT_8].flat();
+RGHT_19 = [RGHT_10, RGHT_9].flat();
+RGHT_20 = [RGHT_10, RGHT_10].flat();
+
+NEAR_0 = [];
+NEAR_1 = [+1];
+NEAR_2 = [+1, +1];
+NEAR_3 = [+1, +1, +1];
+NEAR_4 = [+1, +1, +1, +1];
+NEAR_5 = [+1, +1, +1, +1, +1];
+NEAR_6 = [+1, +1, +1, +1, +1, +1];
+NEAR_7 = [+1, +1, +1, +1, +1, +1, +1];
+NEAR_8 = [+1, +1, +1, +1, +1, +1, +1, +1];
+NEAR_9 = [+1, +1, +1, +1, +1, +1, +1, +1, +1];
+NEAR_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
+
+NEAR_11 = [NEAR_10, NEAR_1].flat();
+NEAR_12 = [NEAR_10, NEAR_2].flat();
+NEAR_13 = [NEAR_10, NEAR_3].flat();
+NEAR_14 = [NEAR_10, NEAR_4].flat();
+NEAR_15 = [NEAR_10, NEAR_5].flat();
+NEAR_16 = [NEAR_10, NEAR_6].flat();
+NEAR_17 = [NEAR_10, NEAR_7].flat();
+NEAR_18 = [NEAR_10, NEAR_8].flat();
+NEAR_19 = [NEAR_10, NEAR_9].flat();
+NEAR_20 = [NEAR_10, NEAR_10].flat();
+
+THE_NEARS = [NEAR_0, NEAR_1, NEAR_2, NEAR_3, NEAR_4, NEAR_5, NEAR_6, NEAR_7, NEAR_8, NEAR_9,
+  NEAR_10, NEAR_11, NEAR_12, NEAR_13, NEAR_14, NEAR_15, NEAR_16, NEAR_17, NEAR_18, NEAR_19,
+
+];
+
 
 // these are pixel move!
 LEFT_5 = [-1, -1, -1, -1, -1];

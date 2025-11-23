@@ -16,40 +16,25 @@ function spriteCenterXy(a_polygon) {
   let [left_front_top, right_front_top, _left_front_bot, _right_front_bot] = a_polygon;
   let [top_left_x, _top_left_y] = left_front_top;
   let [top_right_x, _top_right_y] = right_front_top;
-  //  let float_center_x = (top_left_x + top_right_x) / 2 - 128;
   let float_center_x = (top_left_x + top_right_x) / 2 - 512;
   let center_x = Math.round(float_center_x);
-
-  // test_y++;
-  // if (test_y == 128) {   // qbert  float up dead enemey
-  //   test_y = 0;
-  // }
-
-  let center_y = -200 - test_y;                                          /// qbert
+  let center_y = -200 - test_y;
   let the_width = Math.abs(top_left_x - top_right_x);
   let the_scale = the_width / 256;
   return [center_x, center_y, the_scale];
 }
 
-
-
-
-
-function spriteDiffY(a_thing, the_player) {
-  let player_y = the_player.m_y;
-  let thing_y = a_thing.m_y;
-
-  if (player_y > thing_y) {
-    difference_y = player_y - thing_y;
+function distanceAbsY(object_player_ys) {
+  let [object_y, player_y] = object_player_ys;
+  if (player_y > object_y) {
+    dist_abs_y = player_y - object_y;
   } else {
     checkerboard_depth = g_planet.s_checkerboard_depth;
-    dist_pylon_to_zero = checkerboard_depth - thing_y;
-    difference_y = player_y + dist_pylon_to_zero;
+    dist_pylon_to_zero = checkerboard_depth - object_y;
+    dist_abs_y = player_y + dist_pylon_to_zero;
   }
-  return difference_y;
+  return dist_abs_y;
 }
-
-
 
 
 

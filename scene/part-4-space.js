@@ -15,18 +15,18 @@ function spacePart4(part_state, the_planet, the_player, enemy_list, pylon_list) 
 }
 
 function spaceLiftoff(the_player) {
-  the_player.t_jump_amount = 0;
+  the_player.m_jump_amount = 0;
   part_state = PART_SPACE_41_CLIMB;
   return [part_state, the_player];
 }
 
 function spaceClimb(the_planet, the_player, enemy_list, pylon_list) {
   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
-  the_player.t_jump_amount += JUMP_STEP;
-  if (the_player.t_jump_amount > STOP_FLY_COUNT) {
+  the_player.m_jump_amount += JUMP_STEP;
+  if (the_player.m_jump_amount > STOP_FLY_COUNT) {
     return [PART_SPACE_42_FINISHED, the_player];
   }
-  doFlying(the_player.t_jump_amount);
+  doFlying(the_player.m_jump_amount);
   return [PART_SPACE_41_CLIMB, the_player];
 }
 

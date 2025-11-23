@@ -156,35 +156,19 @@
 
 
 
-
-<g
-   id="g3"
-   transform="translate(-18.982044,-5.381098)"><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-5-2"
-     cx="34.857201"
-     cy="21.682991"
-     r="12.382947" /><text
-     xml:space="preserve"
-     style="font-size:8.1661px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#ffa500;fill-opacity:1;stroke-width:0.612459"
-     x="34.520908"
-     y="20.878366"
-     id="text12672-3-2-0"><tspan
-       sodipodi:role="line"
-       x="34.520908"
-       y="20.878366"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan12940-0-58">North</tspan><tspan
-       sodipodi:role="line"
-       x="34.520908"
-       y="29.044466"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan2">West</tspan></text><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-2-3-6"
-     cx="34.822853"
-     cy="21.621407"
-     r="15.082639" /></g><rect
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <rect
    style="display:none;opacity:0.526144;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:0.842331;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="rect10157"
    width="10.11192"
@@ -348,7 +332,24 @@
      y="-300.2764"
      rx="4.8587341"
      ry="5.8442125"
-     transform="rotate(90)" /><g
+     transform="rotate(90)" />
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <g
      id="g12533-00-5-1-4-8-5-8"
      transform="matrix(0.99999998,0,0,-0.99999998,44.543033,270.31004)"><text
        xml:space="preserve"
@@ -439,61 +440,27 @@
        x="260.70499"
        y="170.41542"
        style="font-size:8.98275px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan12940-33-0-7-6">Fly</tspan></text></g><g
-   id="g4"
-   transform="translate(-53.240793,-0.63301737)"><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-5-6"
-     cx="192.42705"
-     cy="139.60542"
-     r="12.382947" /><text
-     xml:space="preserve"
-     style="font-size:8.1661px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.612459"
-     x="192.6759"
-     y="139.19087"
-     id="text12672-3-2-3"><tspan
-       sodipodi:role="line"
-       x="192.6759"
-       y="139.19087"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan12940-0-2">South</tspan><tspan
-       sodipodi:role="line"
-       x="192.6759"
-       y="147.35696"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan3">East</tspan></text><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-2-3-4"
-     cx="192.3927"
-     cy="139.54384"
-     r="15.082639" /></g><g
-   id="g5"
-   transform="translate(-6.573496,-1.5045628)"><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-5-5"
-     cx="22.302942"
-     cy="140.41086"
-     r="12.382947" /><text
-     xml:space="preserve"
-     style="font-size:8.1661px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000100;fill-opacity:1;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none"
-     x="22.161695"
-     y="139.6062"
-     id="text12672-3-2-8"><tspan
-       sodipodi:role="line"
-       x="22.161695"
-       y="139.6062"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none"
-       id="tspan12940-0-4">South</tspan><tspan
-       sodipodi:role="line"
-       x="22.161695"
-       y="147.77231"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none"
-       id="tspan4">West</tspan></text><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:1.22492;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-2-3-1"
-     cx="22.268595"
-     cy="140.34927"
-     r="15.082639" /></g><g
+       id="tspan12940-33-0-7-6">Quit</tspan></text></g>
+       
+       
+       
+
+     
+     
+ 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <g
    id="g1"
    transform="matrix(1.0004858,0,0,0.98556856,-23.665703,-2.6887054)"><rect
      style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.22492;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -604,34 +571,16 @@
            id="tspan940-7-5-4-4-1-97-5-2-4-3-4-5-3-2-3-0"
            x="248.72697"
            y="107.56667"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.92542px;line-height:0.55;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#000000;fill-opacity:1;stroke-width:0.129884" /></text></g></g></g><g
-   id="g2"
-   transform="translate(-34.152251,-1.5351495)"><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-5-6-0"
-     cx="173.27663"
-     cy="17.960167"
-     r="12.382947" /><text
-     xml:space="preserve"
-     style="font-size:8.1661px;line-height:1;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.612459"
-     x="173.52548"
-     y="17.5541"
-     id="text12672-3-2-3-3"><tspan
-       sodipodi:role="line"
-       x="173.52548"
-       y="17.5541"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan12940-0-2-6">North</tspan><tspan
-       sodipodi:role="line"
-       x="173.52548"
-       y="25.7202"
-       style="font-size:8.1661px;line-height:1;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
-       id="tspan1">East</tspan></text><circle
-     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path7046-6-6-4-6-6-2-3-4-8"
-     cx="173.24228"
-     cy="17.898582"
-     r="15.082639" /></g><g
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.92542px;line-height:0.55;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#000000;fill-opacity:1;stroke-width:0.129884" /></text></g></g></g>
+           
+           
+           
+
+     
+     
+     
+     
+     <g
    id="g1588"
    transform="matrix(1.0004371,0,0,0.98701225,-77.468135,-19.929793)"><rect
      style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.22492;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

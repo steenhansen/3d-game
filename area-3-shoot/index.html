@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+
+
+
+<base href="../">
+
+
+
+
+
+
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+<div id="the-css">
+  <link rel="stylesheet" href="device/device-screens.css" />
+  <link rel="stylesheet" href="variables/variables.css" />
+  <link rel="stylesheet" href="values/z-indexes.css" />
+  <link rel="stylesheet" href="player/player.css" />
+  <link rel="stylesheet" href="planets/planets.css" />
+  <link rel="stylesheet" href="scene/layout.css" />
+  <link rel="stylesheet" href="field/field.css" />
+  <link rel="stylesheet" href="pylons/pylons.css" />
+  <link rel="stylesheet" href="signs/signs.css" />
+  <link rel="stylesheet" href="holes/holes.css" />
+  <link rel="stylesheet" href="land/land.css" />
+  <link rel="stylesheet" href="enemy/enemy.css" />
+  <link rel="stylesheet" href="missile/missile.css" />
+  <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="missile/missile-vars.css" />
+  <link rel="stylesheet" href="input/arrows.css" />
+  <link rel="stylesheet" href="input/boxes.css" />
+  <link rel="stylesheet" href="input/desktop-directions.css" />
+</div>
+
+<div id="js-constants">
+  <script type="text/javascript" src="values/global-constants.js"></script>
+  <script type="text/javascript" src="values/const-sprites.js"></script>
+  <script type="text/javascript" src="values/debugging.js"></script>
+  <script type="text/javascript" src="values/states.js"></script>
+  <script type="text/javascript" src="values/major-constants.js"></script>
+  <script type="text/javascript" src="objects/screen-placement.js"></script>
+
+  <script type="text/javascript" src="holes/holes-code.js"></script>
+  <script type="text/javascript" src="holes/holes-create.js"></script>
+  <script type="text/javascript" src="data/colors.js"></script>
+  <script type="text/javascript" src="field/field-bounds.js"></script>
+  <script type="text/javascript" src="field/field-invert.js"></script>
+  <script type="text/javascript" src="field/field-constants.js"></script>
+  <script type="text/javascript" src="objects/sprite-sizes.js"></script>
+  <script type="text/javascript" src="enemy/enemy-consts.js"></script>
+  <script type="text/javascript" src="pylons/pylons-consts.js"></script>
+  <script type="text/javascript" src="holes/holes-consts.js"></script>
+  <script type="text/javascript" src="signs/signs-consts.js"></script>
+</div>
+
+<div id="the-svgs">
+  <div id='pylons-svg'> </div>
+  <div id='svg-arrows'> </div>
+</div>
+
+<div id="js-before">
+  <script type="text/javascript" src="enemy/enemy-html.js"></script>
+
+  <script type="text/javascript" src="variables/css-vars.js"></script>
+  <script type="text/javascript" src="input/swipe.js"></script>
+  <script type="text/javascript" src="device/orientation.js"></script>
+  <script type="text/javascript" src="player/player-code.js"></script>
+  <script type="text/javascript" src="objects/sprites-stuff.js"></script>
+  <script type="text/javascript" src="objects/sprite-lines.js"></script>
+  <script type="text/javascript" src="collisions/collisions.js"></script>
+  <script type="text/javascript" src="sky/sky-code.js"></script>
+  <script type="text/javascript" src="input/desktop-keys.js"></script>
+  <script type="text/javascript" src="scene/vanish-point.js"></script>
+  <script type="text/javascript" src="field/field-debug.js"></script>
+
+  <script type="text/javascript" src="field/field-code.js"></script>
+  <script type="text/javascript" src="field/field-depth.js"></script>
+  <script type="text/javascript" src="field/field-left.js"></script>
+  <script type="text/javascript" src="field/field-right.js"></script>
+  <script type="text/javascript" src="pylons/pylons-gradients.js"></script>
+  <script type="text/javascript" src="pylons/pylons-code.js"></script>
+
+  <script type="text/javascript" src="signs/signs-code.js"></script>
+
+
+  <script type="text/javascript" src="pylons/pylons-collide.js"></script>
+  <script type="text/javascript" src="pylons/pylons-create.js"></script>
+  <script type="text/javascript" src="collisions/player-recoil.js"></script>
+  <script type="text/javascript" src="scene/frames.js"></script>
+
+  <script type="text/javascript" src="scene/scene_3d.js"></script>
+  <script rel="text/javascript" src="field/field-test.js"></script>
+  <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
+</div>
+
+
+
+<div id='start-mobile'>
+  <div id='mobile-list'>
+  </div>
+  <div id='mobile-wait'>
+    Waiting for full mobile screen
+  </div>
+</div>
+
+<div id="the-scene">
+
+  <canvas id="the-draw" width=" 1024" height="512"></canvas>
+
+  <div id="touch-boxes"></div>
+  <div id="arrows-html"></div>
+
+  <div id="playing-game">
+    <div id="star-space">
+      <div id="saturn-space"></div>
+    </div>
+    <div id="cracked-screen"></div>
+    <div id="the-sun" class="sun-vars"></div>
+    <div id="sky-aperature" class="sky-vars">
+      <div id="the-sky"> </div>
+      <div id="the-pyramids"></div>
+      <div id="fuzzy-saturn"></div>
+    </div>
+    <div id="enemy-area" class="enemy-vars"></div>
+    <div id="missile-area" class="missile-vars"></div>
+    <div id="checkerboard-field" class="line-vars"> </div>
+    <div id='signs-area'> </div>
+    <div id='pylons-area'> </div>
+    <div id='holes-area'> </div>
+  </div>
+
+  <div id="the-landing">
+    <div id="land_nw"></div>
+    <div id="land_ne"></div>
+    <div id="land_sw"></div>
+    <div id="land_se"></div>
+  </div>
+
+</div>
+
+
+<div id="desktop-dir" class="direction-vars" onclick="clickOnDirectionsSvg(event)">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id="js-after">
+  <script type="text/javascript" src="missile/missile-html.js"></script>
+  <script type="text/javascript" src="missile/missile-code.js"></script>
+  <script type="text/javascript" src="holes/holes-html.js"></script>
+
+  <script type="text/javascript" src="pylons/pylons-html.js"></script>
+  <script type="text/javascript" src="signs/signs-html.js"></script>
+  <script type="text/javascript" src="enemy/enemy-code.js"></script>
+  <script type="text/javascript" src="variables/global-objects.js"></script>
+  <script type="text/javascript" src="death/scene-dying.js"></script>
+  <script type="text/javascript" src="scene/game-loop.js"></script>
+  <script type="text/javascript" src="field/field-html.js"></script>
+  <script type="text/javascript" src="land/land-nw-html.js"></script>
+  <script type="text/javascript" src="land/land-ne-html.js"></script>
+  <script type="text/javascript" src="land/land-sw-html.js"></script>
+  <script type="text/javascript" src="land/land-se-html.js"></script>
+  <script type="text/javascript" src="land/land-code.js"></script>
+  <script type="text/javascript" src="input/arrows-html.js"></script>
+  <script type="text/javascript" src="input/boxes-html.js"></script>
+  <script type="text/javascript" src="input/arrows-svg.js"></script>
+
+  <script type="text/javascript" src="input/arrows-click.js"></script>
+  <script type="text/javascript" src="input/boxes-touch.js"></script>
+  <script type="text/javascript" src="values/url-params.js"></script>
+  <script type="text/javascript" src="debug/debug-vars.js"></script>
+  <script type="text/javascript" src="debug/debug-settings.js"></script>
+  <script type="text/javascript" src="scene/scene-init.js"></script>
+  <script type="text/javascript" src="planets/planets-declare.js"></script>
+  <script type="text/javascript" src="missile/missile-declare.js"></script>
+  <script type="text/javascript" src="player/player-declare.js"></script>
+  <script type="text/javascript" src="init/checkerboard-field.js"></script>
+  <script type="text/javascript" src="values/minor-constants.js"></script>
+
+  <script type="text/javascript" src="scene/part-0-init.js"></script>
+  <script type="text/javascript" src="scene/part-1-intro.js"></script>
+  <script type="text/javascript" src="scene/part-2-play.js"></script>
+  <script type="text/javascript" src="scene/part-3-death.js"></script>
+  <script type="text/javascript" src="scene/part-4-space.js"></script>
+  <script type="text/javascript" src="scene/part-5-done.js"></script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- start part section
+ 
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-env=true
+
+-->
+
+
+
+<script type="text/javascript" src="input/desktop-11-buttons.js"></script>
+<link rel="stylesheet" href="area-3-shoot/distinct.css" />
+
+<script>
+  const THE_PLANET = 3;
+  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
+
+  const PARAMS_STR = getParams(window.location);
+  const THIS_PLANET = 'area-3-shoot/index.html' + PARAMS_STR;
+  const NEXT_PLANET = 'area-4-fast/index.html' + PARAMS_STR;
+  const FIELD_IN_SQUARES = [54, 34];
+  const PLAYER_START = [6, 10];
+  const PLAYER_BOUNDS = [1, 1, 35, 10];
+  const CURRENT_SEGWAY = FAST_SEGWAYS; //NORMAL_SEGWAYS
+
+  function hitExit() {
+    window.location.href = NEXT_PLANET;
+  }
+
+  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
+  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+
+
+  // the holes are outside the bounds !!!!
+
+
+  side_holes = [
+
+    [2, 0], [4, 0], [6, 0], [8, 0],
+    [10, 0], [12, 0], [14, 0], [16, 0], [18, 0],   // back wall
+    [20, 0], [22, 0], [24, 0], [26, 0], [28, 0],
+    [30, 0], [32, 0], [34, 0],
+
+    [0, 0], [0, 2], [0, 4], [0, 6], [0, 8],
+    [0, 10], [0, 12], [0, 14], [0, 16], [0, 18],
+    [0, 20], [0, 22], [0, 24], [0, 26], [0, 28],     // left wall
+    [0, 30],
+
+
+
+
+    [36, 0], [36, 2], [36, 4], [36, 6], [36, 8],
+    [36, 10], [36, 12], [36, 14], [36, 16], [36, 18],  // right wall
+    [36, 20], [36, 22], [36, 24], [36, 26], [36, 28],
+    [36, 30]
+  ];
+
+
+
+  white_sides = makeHoles(0, "white", side_holes);
+
+
+
+  the_holes = [...white_sides];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  exit_sign = initSign("sign-exit", [5, 2], 'Next', EXIT_OFF_COLOR);
+  sign_0 = initSign("sign-00", [0, 7], 'S', "white");
+  sign_1 = initSign("sign-01", [1.5, 7], 'h', "white");
+  sign_2 = initSign("sign-02", [3, 7], 'o', "white");
+  sign_3 = initSign("sign-03", [4.5, 7], 'o', "white");
+  sign_4 = initSign("sign-04", [6, 7], 't', "white");
+  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
+
+  slow_0_back_front_enemy = plainEnemy([18, 3], RED_BLUE, ZERO_10, AWAY_10, 1);
+  slow_1_back_front_enemy = plainEnemy([18, 3], BLUE_RED, ZERO_10, NEAR_10, 1);
+  slow_back_front_2_pylon_points = [[18, 1], [18, 8]];
+  slow_back_front_2_pylon_colors = [RED_BLUE, RED_BLUE];
+
+  fast_0_left_right_enemy = plainEnemy([28, 2], WHITE_BLACK, RGHT_10, ZERO_10, 6);
+  fast_1_left_right_enemy = plainEnemy([28, 2], BLACK_WHITE, LEFT_10, ZERO_10, 6);
+  fast_left_right_2_pylon_points = [[23, 2], [33, 2]];
+  fast_left_right_2_pylon_colors = [WHITE_BLACK, WHITE_BLACK];
+
+  corners_4_pylon_points = [[12, 5], [2, 5], [12, 1], [2, 1]];
+  corners_4_pylon_colors = [LIME_FUCHSIA, RED_YELLOW, RED_YELLOW, LIME_FUCHSIA];
+
+  pylon_points = [...fast_left_right_2_pylon_points, ...corners_4_pylon_points, ...slow_back_front_2_pylon_points];
+  pylon_colors = [...fast_left_right_2_pylon_colors, ...corners_4_pylon_colors, ...slow_back_front_2_pylon_colors];
+
+  the_pylons = makePylons(pylon_points, pylon_colors);
+
+  corner_0_enemy = plainEnemy([7, 3], YELLOW_RED, RGHT_100, AWAY_100, 1);
+  corner_1_enemy = plainEnemy([7, 3], RED_YELLOW, LEFT_100, NEAR_100, 1);
+  corner_2_enemy = plainEnemy([7, 3], LIME_FUCHSIA, LEFT_100, AWAY_100, 2);
+  corner_3_enemy = plainEnemy([7, 3], FUCHSIA_LIME, RGHT_100, NEAR_100, 2);
+
+  corner_enemies = [corner_0_enemy, corner_1_enemy, corner_2_enemy, corner_3_enemy];
+  fast_enemies = [fast_0_left_right_enemy, fast_1_left_right_enemy];
+  slow_enemies = [slow_0_back_front_enemy, slow_1_back_front_enemy];
+
+  the_enemies = makeEnemies([...corner_enemies, ...fast_enemies, ...slow_enemies]);
+
+  startReadKeys(read11Keys);
+  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+</script>

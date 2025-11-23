@@ -140,6 +140,20 @@ document.getElementById('pylons-area').innerHTML = `
 
  `;
 
+
+
+function unHidePylons(the_pylons) {
+  changed_pylons = [];
+  number_pylons = the_pylons.length;
+  for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
+    a_pylon = the_pylons[pylon_index];
+    a_pylon.m_hidden = false;
+    changed_pylons[pylon_index] = a_pylon;
+  }
+  return changed_pylons;
+}
+
+
 function drawPylons(the_player, the_pylons) {
   changed_pylons = [];
 
@@ -147,10 +161,8 @@ function drawPylons(the_player, the_pylons) {
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = the_pylons[pylon_index];
     pylonSet(the_player, a_pylon);
-    if (a_pylon.t_pylon_hit_flash > 0) {
-      a_pylon.t_pylon_hit_flash--;
-    } else {
-      delete a_pylon.t_pylon_hit_flash;
+    if (a_pylon.m_pylon_hit_flash > 0) {
+      a_pylon.m_pylon_hit_flash--;
     }
     changed_pylons[pylon_index] = a_pylon;
 
@@ -158,19 +170,19 @@ function drawPylons(the_player, the_pylons) {
   return changed_pylons;
 }
 
-function pylonFront(pylon_vlines, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_alive) {
+function pylonFront(pylon_vlines, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
   let [left_vline, middle_vline, _right_vline] = pylon_vlines;
   let [left_front_top, left_front_bot] = left_vline;
   let [right_front_top, right_front_bot] = middle_vline;
   left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   if (isNaN(left_front_top)) {
   }
-  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_alive);
+  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive);
 
   return front_pylon;
 }
 
-function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_yy, poly_fill, pylon_alive) {
+function pylonPolygon(a_polygon, panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
   if (pylon_alive) {
     fill_color = poly_fill;
   } else {
@@ -178,38 +190,16 @@ function pylonPolygon(a_polygon, panel_id, outline_color, do_flash, difference_y
   }
   svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
   if (do_flash) {
-    svg_outlines = outlineFlash(a_polygon, panel_id, difference_yy);
-  } else if (!pylon_alive) {
-    svg_outlines = pylonOutline(a_polygon, panel_id, difference_yy, "grey");
-
-  } else if (outline_color) {
-    svg_outlines = pylonOutline(a_polygon, panel_id, difference_yy, outline_color);
+    svg_outlines = outlineFlash(a_polygon, panel_id, dist_abs_y);
+  } else {
+    svg_outlines = '';
   }
   svg_polygon = svg_outlines + svg_panel;
   return svg_polygon;
 }
 
-function pylonOutline(a_polygon, panel_id, difference_yy, outline_color) {
-  outline_width = outlineWidth(difference_yy);
-
-
-
-  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
-  let [top_left_x, top_left_y] = left_front_top;
-  let [top_right_x, top_right_y] = right_front_top;
-  let [bot_left_x, bot_left_y] = left_front_bot;
-  let [bot_right_x, bot_right_y] = right_front_bot;
-  svg_outlines = `<polygon fill="none"  id="${panel_id}" stroke="${outline_color}"
-      stroke-width="${outline_width}px"
-                      points="${top_left_x},${top_left_y}
-                              ${top_right_x},${top_right_y}
-                              ${bot_right_x},${bot_right_y}
-                              ${bot_left_x},${bot_left_y}      " />`;
-  return svg_outlines;
-}
-
-function outlineFlash(a_polygon, panel_id, difference_yy) {
-  outline_width = outlineWidth(difference_yy) - 4;
+function outlineFlash(a_polygon, panel_id, dist_abs_y) {
+  outline_width = outlineWidth(dist_abs_y) - 4;
 
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
@@ -244,30 +234,30 @@ function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
   return svg_panel;
 }
 
-function outlineWidth(difference_yy) {
-  if (difference_yy < 8) {
+function outlineWidth(dist_abs_y) {
+  if (dist_abs_y < 8) {
     outline_width = 6;
-  } else if (difference_yy < 16) {
+  } else if (dist_abs_y < 16) {
     outline_width = 5.5;
-  } else if (difference_yy < 24) {
+  } else if (dist_abs_y < 24) {
     outline_width = 5;
-  } else if (difference_yy < 32) {
+  } else if (dist_abs_y < 32) {
     outline_width = 4.5;
-  } else if (difference_yy < 40) {
+  } else if (dist_abs_y < 40) {
     outline_width = 4;
-  } else if (difference_yy < 100) {
+  } else if (dist_abs_y < 100) {
     outline_width = 3.5;
-  } else if (difference_yy < 200) {
+  } else if (dist_abs_y < 200) {
     outline_width = 3;
-  } else if (difference_yy < 300) {
+  } else if (dist_abs_y < 300) {
     outline_width = 2.5;
-  } else if (difference_yy < 400) {
+  } else if (dist_abs_y < 400) {
     outline_width = 2;
-  } else if (difference_yy < 500) {
+  } else if (dist_abs_y < 500) {
     outline_width = 1.5;
-  } else if (difference_yy < 600) {
+  } else if (dist_abs_y < 600) {
     outline_width = 1;
-  } else if (difference_yy < 700) {
+  } else if (dist_abs_y < 700) {
     outline_width = 0.5;
   } else {
     outline_width = 0;

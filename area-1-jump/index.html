@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="variables/variables.css" />
   <link rel="stylesheet" href="values/z-indexes.css" />
   <link rel="stylesheet" href="player/player.css" />
+  <link rel="stylesheet" href="planets/planets.css" />
   <link rel="stylesheet" href="scene/layout.css" />
   <link rel="stylesheet" href="field/field.css" />
   <link rel="stylesheet" href="pylons/pylons.css" />
@@ -52,6 +53,10 @@
   <script type="text/javascript" src="field/field-invert.js"></script>
   <script type="text/javascript" src="field/field-constants.js"></script>
   <script type="text/javascript" src="objects/sprite-sizes.js"></script>
+  <script type="text/javascript" src="enemy/enemy-consts.js"></script>
+  <script type="text/javascript" src="pylons/pylons-consts.js"></script>
+  <script type="text/javascript" src="holes/holes-consts.js"></script>
+  <script type="text/javascript" src="signs/signs-consts.js"></script>
 </div>
 
 <div id="the-svgs">
@@ -99,6 +104,9 @@
 <div id='start-mobile'>
   <div id='mobile-list'>
   </div>
+  <div id='mobile-wait'>
+    Waiting for full mobile screen
+  </div>
 </div>
 
 <div id="the-scene">
@@ -107,6 +115,7 @@
 
   <div id="touch-boxes"></div>
   <div id="arrows-html"></div>
+
 
   <div id="playing-game">
     <div id="star-space">
@@ -190,10 +199,12 @@
   <script type="text/javascript" src="scene/part-2-play.js"></script>
   <script type="text/javascript" src="scene/part-3-death.js"></script>
   <script type="text/javascript" src="scene/part-4-space.js"></script>
-
+  <script type="text/javascript" src="scene/part-5-done.js"></script>
 
 
 </div>
+
+
 
 
 
@@ -236,91 +247,79 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
 
 
-<style>
-  :root {
-    --checkerboard-image: url('../planet-2-carom/checker-board.png');
-    --sun-image: url('../planet-2-carom/yellow-sun.png');
-    --pyramids-image: url('../planet-2-carom/black-pyramids.png');
-    --saturn-image: url('../planet-2-carom/cloudy-saturn.png');
-  }
-</style>
+
 <script type="text/javascript" src="input/desktop-11-buttons.js"></script>
-
-<link rel="stylesheet" href="planet-2-carom/lines.css" />
+<link rel="stylesheet" href="area-1-jump/distinct.css" />
 <script>
+  const THE_PLANET = 1;
+  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
 
-  const THIS_PLANET = 'planet-2-carom/index.html';
-  const NEXT_PLANET = 'planet-3-shoot/index.html';
-  const ALLOWED_KEYS_FUNC = read11Keys;
+  const PARAMS_STR = getParams(window.location);
+  const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
+  const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
+
+  const FIELD_IN_SQUARES = [20, 40];
+  const PLAYER_START = [7, 11];
+  const PLAYER_BOUNDS = [0, 1, 20, 39];   // 11->39
+  const CURRENT_SEGWAY = FAST_SEGWAYS; //NORMAL_SEGWAYS   FAST_SEGWAYS
 
   function hitExit() {
     window.location.href = NEXT_PLANET;
   }
 
-
-  const FIELD_IN_SQUARES = [34, 17];
-  const RELATIVE_ORIGIN = [1, 1];
-  const PLAYER_START = [1, 11];
-
-
-
-
-
-
-
-  g_planet = initInfinitePlanet(FIELD_IN_SQUARES);
-  // g_planet = initBoundedPlanet(FIELD_IN_SQUARES, [27, 2, 40, 16]);
-
-
-
-
-
-
-
-
+  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
   the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
 
-  holes_0 = [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0]];
-  holes_1 = [[0, 1], [1, 1], [2, 1]  /*  */, [4, 1], [5, 1], [6, 1]];
-  holes_2 = [[0, 2], [1, 2] /*                   */, [5, 2], [6, 2]];
-  holes_3 = [[0, 3], [1, 3], [2, 3] /*   */, [4, 3], [5, 3], [6, 3]];
-  holes_4 = [[0, 4], [1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [6, 4]];
-  holes_5 = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5]];
-  holes_6 = [[0, 6], [1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [6, 6]];
-  all_holes = [...holes_0, ...holes_1, ...holes_2, ...holes_3, ...holes_4];
-  the_holes = makeHoles("red", all_holes);
+  ditch_holes = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5],
+  [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5]];
+
+  red_holes = makeHoles(0, "red", ditch_holes);
 
 
-  exit_sign = initSign("sign-exit", [5, 7], 'Exit', EXIT_OFF_COLOR);
-  sign_0 = initSign("sign-00", [0, 7], 'C', "white");
-  sign_1 = initSign("sign-01", [1.5, 7], 'a', "white");
-  sign_2 = initSign("sign-02", [3, 7], 'r', "white");
-  sign_3 = initSign("sign-03", [4.5, 7], 'o', "white");
-  sign_4 = initSign("sign-04", [6, 7], 'm', "white");
-  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
+  back_holes = [
+    [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
+    [10, 0], [12, 0], [14, 0], [16, 0], [18, 0],
+    // [20, 0], [22, 0], [24, 0], [26, 0], [28, 0],
+    // [30, 0], [32, 0], [34, 0], [36, 0], [38, 0],
+  ];
 
 
 
 
-  the_pylons = makePylons([[3, 5], [-3, 2], [8, 2]],
-    [GRAD_WHITE_BLACK, GRAD_WHITE_BLACK, GRAD_WHITE_BLACK]);
+  hole_index = red_holes.length;
+  white_edge = makeHoles(hole_index, "white", back_holes);
 
+  the_holes = [...white_edge, ...red_holes];
+
+  exit_sign = initSign("sign-exit", [6, 2], 'Next', EXIT_OFF_COLOR);
+
+  sign_0 = initSign("sign-00", [6.375, 7], 'J', "grey");
+
+  sign_1 = initSign("sign-01", [7.5, 7], 'u', "white");
+  sign_2 = initSign("sign-02", [9, 7], 'm', "blue");
+  sign_3 = initSign("sign-03", [10.5, 7], 'p', "green");
+  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
+
+  the_pylons = [];
+  //  the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); //qbert
+
+  //the_enemies = [];
 
 
   enemy_0 = {
-    start_pos: [3, 2],
+    start_pos: [10, 2],
     the_colors: ['yellow', 'lime'],
     x_moves: [ZERO_10],
     y_moves: [ZERO_10],
-    the_speed: 0
+    the_speed: 0,
+    ball_start: '-1s'
   };
-
-
-
   the_enemies = makeEnemies([enemy_0]);
 
 
 
-  startItUp(NORMAL_SEGWAYS, NORMAL_SEGWAYS, the_pylons, the_signs, the_enemies, the_holes, the_player, g_planet, ALLOWED_KEYS_FUNC);  // FAST_SEGWAYS    NORMAL_SEGWAYS      SLOW_SEGWAYS
+
+  startReadKeys(read11Keys);
+  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 
 </script>

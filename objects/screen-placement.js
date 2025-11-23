@@ -80,14 +80,13 @@ function originOffset(xy_units) {
 
 
 function objectPlacement(an_object, the_player) {
-
-  difference_y = spriteDiffY(an_object, the_player);
+  dist_abs_y = distanceAbsY([an_object.m_y, the_player.m_y]);
   let [difference_x, relative_to_player, head_on_view] = spritePlace(an_object, the_player);
   x_center_offset = thingRelationToPlayer(difference_x, the_player, relative_to_player);
 
-  let the_z_index = deriveIndexZ(difference_x, difference_y);
+  let the_z_index = deriveIndexZ(difference_x, dist_abs_y);
 
-  return [the_z_index, difference_y, relative_to_player, x_center_offset, head_on_view];
+  return [the_z_index, relative_to_player, x_center_offset, head_on_view];
 }
 
 
@@ -117,8 +116,8 @@ function objectLeftSide(x_center_offset, pylon_player_ys, pixel_depth) {
 
 
 
-function objectFrontRegion(x_center_offset, difference_yy) {
-  let [left_front_bot, right_front_bot, _back_right_bot, _back_left_bot] = panels3Middle(x_center_offset, difference_yy, PYLON_PIXEL_DEPTH);
+function objectFrontRegion(x_center_offset, dist_abs_y) {
+  let [left_front_bot, right_front_bot, _back_right_bot, _back_left_bot] = panels3Middle(x_center_offset, dist_abs_y, PYLON_PIXEL_DEPTH);
   let [left_front_top, right_front_top, back_right_top] = spriteTops(left_front_bot, right_front_bot, _back_right_bot);
   let left_vline = [left_front_top, left_front_bot];
   let middle_vline = [right_front_top, right_front_bot];
@@ -128,14 +127,3 @@ function objectFrontRegion(x_center_offset, difference_yy) {
 }
 
 
-function objectDepth(pylon_player_ys) {
-  [pylon_y, player_y] = pylon_player_ys;
-  if (player_y > pylon_y) {
-    difference_yy = player_y - pylon_y;
-  } else {
-    checkerboard_depth = g_planet.s_checkerboard_depth;
-    dist_pylon_to_zero = checkerboard_depth - pylon_y;
-    difference_yy = player_y + dist_pylon_to_zero;
-  }
-  return difference_yy;
-}

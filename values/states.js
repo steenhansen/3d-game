@@ -1,12 +1,14 @@
 // m_game_state  -->     m_status m_situation  m_case  m_mode
 
-// m_modes in missile
-//const MISSILE_A_NO_SHOT = 'MISSILE_A_NO_SHOT';
-const MISSILE_0_SHOT_FORWARD = 'MISSILE_0_SHOT_FORWARD';
-const MISSILE_1_HITTING_PYLON = 'MISSILE_1_HITTING_PYLON';
-const MISSILE_2_AFTER_PYLON_HIT = 'MISSILE_2_AFTER_PYLON_HIT';
 
-const MISSILE_3_SECOND_PYLON_HIT = 'MISSILE_3_SECOND_PYLON_HIT';
+const MISSILE_0_NO_SHOT = 'MISSILE_0_NO_SHOT';
+
+
+const MISSILE_1_SHOT_FORWARD = 'MISSILE_1_SHOT_FORWARD';
+const MISSILE_2_HITTING_PYLON = 'MISSILE_2_HITTING_PYLON';
+const MISSILE_3_AFTER_PYLON_HIT = 'MISSILE_3_AFTER_PYLON_HIT';
+
+const MISSILE_4_SECOND_PYLON_HIT = 'MISSILE_4_SECOND_PYLON_HIT';
 
 
 const PYLON_0_NORMAL = 'PYLON_0_NORMAL';
@@ -15,15 +17,19 @@ const PYLON_2_BRIGHT = 'PYLON_2_BRIGHT';
 const PYLON_3_DIM = 'PYLON_3_DIM';
 
 
+//const PLAYER_0_FREE = 'PLAYER_0_FREE';             // player.m_enemy_hit
+//const PLAYER_1_HITTING_ENEMY = 'PLAYER_1_HITTING_ENEMY';
+//const PLAYER_2_AFTER_ENEMY_HIT = 'PLAYER_2_AFTER_ENEMY_HIT';
 
-const ENEMY_0_FLOATING = 'enemy-float';
-const ENEMY_1_BOUNCE = 'enemy-bounce';
 
-// m_enemy_state in enemy
-const ENEMY_1_HIT = 'ENEMY_1_HIT';     // green missile + green enemy
-const ENEMY_2_LIFTING = 'ENEMY_2_LIFTING';
 
-const ENEMY_3_ZOMBIE = 'ENEMY_3_ZOMBIE';
+const ENEMY_0_HUNTING = 'ENEMY_0_HUNTING';
+const ENEMY_1_BOUNCE = 'ENEMY_1_BOUNCE';
+
+const ENEMY_2_HIT = 'ENEMY_2_HIT';     // green missile + green enemy
+const ENEMY_3_LIFTING = 'ENEMY_3_LIFTING';
+
+const ENEMY_4_ZOMBIE = 'ENEMY_4_ZOMBIE';
 
 
 

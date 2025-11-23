@@ -1,4 +1,4 @@
-function playPart2(game_state, part_state, the_planet, the_player, enemy_list, pylon_list) {
+function playPart2(game_state, part_state, the_planet, the_player, enemy_list, pylon_list, hole_list) {
   if (part_state == PART_PLAY_20_NORMAL) {
     zsc = generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list);
     [part_state, the_planet, the_player, enemy_list, pylon_list] = zsc;
@@ -17,19 +17,23 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
 
   all_dead = enemiesAllZombies(enemy_list);
   if (all_dead) {
-    exit_sign.p_sign_text_col = 'lime';
-    [game_state, part_state, the_player] = playerHitSignsNew(game_state, part_state, the_player, the_signs);
+    exit_sign.m_sign_text_col = 'lime';
+    [game_state, part_state, the_player] = playerHitSigns(game_state, part_state, the_player, g_sign_list);
+
+    pylon_list = unHidePylons(pylon_list);
+    hole_list = unHideHoles(hole_list);
+
   }
 
 
-  the_return = [game_state, part_state, the_planet, the_player, enemy_list, pylon_list];
+  the_return = [game_state, part_state, the_planet, the_player, enemy_list, pylon_list, hole_list];
   return the_return;
 }
 
 function jumpStartFly() {
-  g_planet.t_move_direction = MOVINGx_N;
+  g_planet.m_move_direction = MOVINGx_N;
   g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-  g_player.t_fly_amount = 0;
+  g_player.m_fly_amount = 0;
 }
 
 function generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list) {
@@ -51,7 +55,7 @@ function holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list,
 }
 
 function jumpStartPlay(the_player) {
-  the_player.t_jump_amount = 0;
+  the_player.m_jump_amount = 0;
   part_state = PART_PLAY_23_JUMP_UP;
   return [part_state, the_player];
 }

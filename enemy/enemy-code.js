@@ -1,4 +1,71 @@
 
+function plainEnemy(x_y_pos, two_colors, moves_x, moves_y, a_speed, ball_seconds) {
+  if (!ball_seconds) {
+    ball_seconds = '0s';
+  }
+  an_enemy = {
+    start_pos: x_y_pos,
+    the_colors: two_colors,
+    x_moves: moves_x,
+    y_moves: moves_y,
+    the_speed: a_speed,
+    ball_start: ball_seconds
+  };
+  return an_enemy;
+}
+
+
+function makeEnemies(the_enemies) {
+  declared_enemies = [];
+  num_enemies = the_enemies.length;
+  for (let e_index = 0; e_index < num_enemies; e_index++) {
+    an_enemy = the_enemies[e_index];
+    enemy_xy_squares = an_enemy.start_pos;
+    colors_of_enemy = an_enemy.the_colors;
+    moves_x = an_enemy.x_moves.flat();
+    moves_y = an_enemy.y_moves.flat();
+    the_speed = an_enemy.the_speed;
+    ball_start = an_enemy.ball_start;
+    const enemy_id = e_index.toString().padStart(2, '0');
+    err_mess = `makeEnemies(${enemy_id})`;
+    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
+    new_enemy = initEnemyData(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed, ball_start);
+    declared_enemies.push(new_enemy);
+  }
+  return declared_enemies;
+}
+
+
+
+function initEnemyData(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed, ball_start) {
+  the_id = `enemy-${enemy_id}`;
+  enemy_obj = {
+    s_enemy_number: enemy_number,
+    s_isa: "is-enemy",
+    s_id: the_id,
+    m_x: xy_pixels[0],
+    m_y: xy_pixels[1],
+    s_moves_x: moves_x,
+    s_moves_y: moves_y,
+    s_colors: colors_of_enemy,
+    m_move_count: 0,
+    m_bounced_x_dir: 1,
+    m_bounced_y_dir: 1,
+    m_enemy_state: ENEMY_0_HUNTING,
+    s_speed: the_speed,
+    s_ball_start: ball_start
+  };
+  html_enemy = createEnemyHtml(enemy_obj);
+  enemy_container_id = `enemy-${enemy_number}-container`;
+  document.getElementById('enemy-area').innerHTML += `
+       <div id="${enemy_container_id}" >${html_enemy}</div>
+   `;
+  return enemy_obj;
+}
+
+
+
+
 
 function enemyMove(the_enemy) {
   let { m_x, m_y, m_move_count, s_moves_x, s_moves_y, m_bounced_x_dir, m_bounced_y_dir, s_speed } = the_enemy;
@@ -32,7 +99,7 @@ function enemyMove(the_enemy) {
   }
   if (y_adjusted_dir < 0) {
     //    the_enemy.m_y = backwardOnBoard(m_y, 1);
-    the_enemy.m_y = backwardOnBoard(m_y, 1);
+    the_enemy.m_y = backwardOnBoard(m_y, 1 * s_speed);
   } else if (y_adjusted_dir > 0) {
     //    the_enemy.m_y = forwardOnBoard(m_y, 1);
     the_enemy.m_y = forwardOnBoard(m_y, 1 * s_speed);
@@ -53,26 +120,6 @@ function enemyMove(the_enemy) {
 // };
 
 
-
-function makeEnemies(the_enemies) {
-  declared_enemies = [];
-  num_enemies = the_enemies.length;
-  for (let e_index = 0; e_index < num_enemies; e_index++) {
-    an_enemy = the_enemies[e_index];
-
-    enemy_xy_squares = an_enemy.start_pos;
-    colors_of_enemy = an_enemy.the_colors;
-    moves_x = an_enemy.x_moves.flat();
-    moves_y = an_enemy.y_moves.flat();
-    the_speed = an_enemy.the_speed;
-    const enemy_id = e_index.toString().padStart(2, '0');
-    err_mess = `makeEnemies(${enemy_id})`;
-    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
-    new_enemy = initEnemyData(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed);
-    declared_enemies.push(new_enemy);
-  }
-  return declared_enemies;
-}
 
 
 function showCorrectRotation(enemy_number, x_adjusted_dir) {
@@ -115,37 +162,35 @@ function drawEnemies(the_enemies, the_player) {
 
 function enemyDraw(real_id, the_enemy, the_player) {
   enemy_state = the_enemy.m_enemy_state;
-  if (enemy_state == ENEMY_0_FLOATING) {
+  if (enemy_state == ENEMY_0_HUNTING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy = enemyMove(the_enemy);
   } else if (enemy_state == ENEMY_1_BOUNCE) {
     setCssEnemyEdge(the_enemy.s_enemy_number, '48px');
     the_enemy = enemyMove(the_enemy);
     enemyPlace(real_id, the_enemy, the_player);
-    the_enemy.t_enemy_hit_flash--;
-    if (the_enemy.t_enemy_hit_flash == 0) {
-      delete the_enemy.t_enemy_hit_flash;
+    the_enemy.m_enemy_hit_flash--;
+    if (the_enemy.m_enemy_hit_flash == 0) {
       setCssEnemyEdge(the_enemy.s_enemy_number, '0px');
-      the_enemy.m_enemy_state = ENEMY_0_FLOATING;
+      the_enemy.m_enemy_state = ENEMY_0_HUNTING;
     }
-  } else if (enemy_state == ENEMY_1_HIT) {
+  } else if (enemy_state == ENEMY_2_HIT) {
     setCssEnemyOpacity(the_enemy.s_enemy_number, 0.3333);
     enemyPlace(real_id, the_enemy, the_player);
-    the_enemy.t_enemy_hit_flash--;
-    if (the_enemy.t_enemy_hit_flash == 0) {
-      delete the_enemy.t_enemy_hit_flash;
-      the_enemy.t_hover_up = 0;
-      the_enemy.m_enemy_state = ENEMY_2_LIFTING;
+    the_enemy.m_enemy_hit_flash--;
+    if (the_enemy.m_enemy_hit_flash == 0) {
+      the_enemy.m_hover_up = 0;
+      the_enemy.m_enemy_state = ENEMY_3_LIFTING;
     }
-  } else if (enemy_state == ENEMY_2_LIFTING) {
+  } else if (enemy_state == ENEMY_3_LIFTING) {
     enemyPlace(real_id, the_enemy, the_player);
-    the_enemy.t_hover_up = the_enemy.t_hover_up + TRAVEL_SPEED;
+    the_enemy.m_hover_up = the_enemy.m_hover_up + TRAVEL_SPEED;
 
-    if (the_enemy.t_hover_up > ENEMY_HIDDEN) {
-      delete the_enemy.t_hover_up;
-      the_enemy.m_enemy_state = ENEMY_3_ZOMBIE;
+    if (the_enemy.m_hover_up > ENEMY_HIDDEN) {
+      the_enemy.m_hover_up = 0;
+      the_enemy.m_enemy_state = ENEMY_4_ZOMBIE;
     }
-  } else if (enemy_state == ENEMY_3_ZOMBIE) {
+  } else if (enemy_state == ENEMY_4_ZOMBIE) {
 
   } else {
   }
@@ -165,22 +210,36 @@ function enemyPosition(real_id, z_index, the_stats, hover_up) {
   missile_scaled.style.transform = `scale(${the_scale})`;
 }
 
+function enemyTooFarAway(real_id) {
+  missile_x_y = document.getElementById(real_id + '-x-y');
+  missile_x_y.setAttribute("x", HIDE_ENEMY_X);
+}
+
 
 function enemyPlace(real_id, the_enemy, the_player) {
   enemy_player_ys = [the_enemy.m_y, the_player.m_y];
   real_id = the_enemy.s_id;
-  [the_z_index, difference_y, enemy_relative, x_center_offset, head_on_view] = objectPlacement(the_enemy, the_player);
+  dist_abs_y = distanceAbsY(enemy_player_ys);
+  if (dist_abs_y > FARTHEST_VISIBLE_PYLON_Y) {
+    enemyTooFarAway(real_id);
+    return;
+  }
+
+  [the_z_index, enemy_relative, x_center_offset, head_on_view] = objectPlacement(the_enemy, the_player);
   if (enemy_relative == LEFT_OF_PLAYER) {
     left_mid_right_vlines = objectLeftSide(x_center_offset, enemy_player_ys, ENEMY_PIXEL_DEPTH);
   } else {
     left_mid_right_vlines = objectRightSide(x_center_offset, enemy_player_ys, ENEMY_PIXEL_DEPTH);
   }
+
+  debugSign(the_enemy, left_mid_right_vlines);
+
   gradient_front = 'clear-grad';
   the_stats = spriteFront(left_mid_right_vlines);
-  if (the_enemy.m_enemy_state == ENEMY_3_ZOMBIE) {
+  if (the_enemy.m_enemy_state == ENEMY_4_ZOMBIE) {
     hover_up = ENEMY_HIDDEN;
-  } else if ("t_hover_up" in the_enemy) {
-    hover_up = the_enemy.t_hover_up;
+  } else if (the_enemy.m_hover_up > 0) {
+    hover_up = the_enemy.m_hover_up;
   } else {
     hover_up = 0;
   }
@@ -192,38 +251,13 @@ function enemyPlace(real_id, the_enemy, the_player) {
 
 
 function killEnemy(the_enemy) {
-  the_enemy.m_enemy_state = ENEMY_2_LIFTING;
+  the_enemy.m_enemy_state = ENEMY_3_LIFTING;
   return the_enemy;
 }
 
 
 
 
-
-function initEnemyData(enemy_number, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed) {
-  the_id = `enemy-${enemy_id}`;
-  enemy_obj = {
-    s_enemy_number: enemy_number,
-    s_isa: "is-enemy",
-    s_id: the_id,
-    m_x: xy_pixels[0],
-    m_y: xy_pixels[1],
-    s_moves_x: moves_x,
-    s_moves_y: moves_y,
-    s_colors: colors_of_enemy,
-    m_move_count: 0,
-    m_bounced_x_dir: 1,
-    m_bounced_y_dir: 1,
-    m_enemy_state: ENEMY_0_FLOATING,
-    s_speed: the_speed,
-  };
-  html_enemy = createEnemyHtml(enemy_obj);
-  enemy_container_id = `enemy-${enemy_number}-container`;
-  document.getElementById('enemy-area').innerHTML += `
-       <div id="${enemy_container_id}" >${html_enemy}</div>
-   `;
-  return enemy_obj;
-}
 
 
 
@@ -234,7 +268,7 @@ function enemiesAllZombies(enemy_list) {
   number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = enemy_list[enemy_index];
-    if (an_enemy.m_enemy_state != ENEMY_3_ZOMBIE) {
+    if (an_enemy.m_enemy_state != ENEMY_4_ZOMBIE) {
       return false;
     }
   }

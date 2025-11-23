@@ -46,7 +46,7 @@ function boxTouch(the_event, direction_name) {
 
   flashArrow(direction_name);
 
-  delete g_planet.t_drift_direction;
+  g_planet.m_drift_direction = 0;
 }
 
 function addTouchEvent(direction_name, touchHandler) {

@@ -2,6 +2,8 @@
 
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
+<script type="text/javascript" src="values/major-constants.js"></script>
+<script type="text/javascript" src="values/url-params.js"></script>
 
 <style>
   .begin-vars {
@@ -15,8 +17,6 @@
       --mobile-begin: inline;
     }
   }
-
-
 
   #click-to-begin {
     text-align: center;
@@ -35,14 +35,17 @@
   }
 </style>
 
-
+<script>
+  let params_string = getParams(window.location);
+  area_1_addr = 'area-1-jump/index.html' + params_string;
+</script>
 
 <div id='click-to-begin' class="begin-vars">
   <br>
-  <button id="begin-desktop" onclick="  window.location.href = 'planet-1-jump/index.html' " type="button">Begin
+  <button id="begin-desktop" onclick="  window.location.href = area_1_addr " type="button">Begin
     desktop 3D
     game</button>
-  <button id="begin-mobile" onclick=" window.location.href = 'planet-1-jump/index.html'   " type="button">Begin mobile
+  <button id="begin-mobile" onclick=" window.location.href = area_1_addr  " type="button">Begin mobile
     3D
     game</button>
   <br>

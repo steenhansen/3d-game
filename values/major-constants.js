@@ -1,10 +1,13 @@
+// PLAYER_RECOIL_COUNTDOWN
 const RECOIL_COUNTDOWN = 5;   // was 30
 
 
+// PLAYER_TRAVEL_SPEED
 const TRAVEL_SPEED = 8;   //1sluggish  4slow  8normal 16fast  32extreme
 
 
-
+const DEBUG_PARAM_ENV = "debug-env";
+const DEGRADE_PARAM_SCROLL = "degrade-scroll";
 
 
 
@@ -107,7 +110,7 @@ const viewport_middle_y = 512;
 
 let keep_running = true;
 
-let y_flip_count = INIT_Y_FLIP_COUNT;
+//let y_flip_count = INIT_Y_FLIP_COUNT;
 let dist_count = 0;
 let spin_count = 0;
 let slow_count = 0;
@@ -131,8 +134,6 @@ let viewport_x;
 
 
 
-// +510 is on centerline
-// +404 is in square DOES NOT WORK
 
 // disappears
 // at y=1048, left    

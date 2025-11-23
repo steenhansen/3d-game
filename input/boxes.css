@@ -14,9 +14,10 @@
 }
 
 #the-fps {
+  z-index: var(--z-the-fps);
   position: absolute;
-  bottom: 0px;
-  opacity: 0.6;
+  left: 52%;
+  opacity: 1;
 }
 
 .input-box {

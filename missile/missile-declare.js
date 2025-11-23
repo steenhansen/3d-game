@@ -32,15 +32,8 @@ let g_missile = {
   s_id: "the-missile",
   m_x: "x-set-at-fire", m_y: "y-set-at-fire",
   m_random: 0,
-
-  //  t_phase: MISSILE_A_NO_SHOT,
-
-
-
-
-  //t_lifetime: "t_lifetime-set-at-fire",
-
-
+  m_phase: MISSILE_0_NO_SHOT,
+  m_lifetime: 0,
   m_x_dir: 0,
   m_y_dir: -1,   // ALWAYS starts THIS way, but might change left or right on a collision
 };

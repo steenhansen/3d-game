@@ -11,7 +11,16 @@
   width: var(--scene-width);
   height: var(--scene-height);
   position: absolute;
-  display: none;
+
+
+
+
+  /* display: none; */
+  display: block;
+
+
+
+
   width: 100%;
   height: 100%;
   overflow: clip;
@@ -21,7 +30,7 @@
 
 #the-draw {
   z-index: var(--z-the-draw);
-  opacity: 0.50;
+  opacity: 0.950;
   margin-left: var(--margin-left_px);
   top: 0px;
   left: 0px;
@@ -110,6 +119,14 @@
   background-size: contain;
 }
 
+#mobile-wait {
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/mobile-wait.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 li:not(:last-of-type) {
   margin-bottom: 0.5em;

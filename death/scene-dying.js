@@ -23,8 +23,8 @@ function dyingPylons(the_player, pylon_list) {
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
     a_pylon = pylon_list[pylon_index];
     if (a_pylon.m_alive) {
-      difference_y = spriteDiffY(a_pylon, the_player);
-      if (difference_y < g_planet.m_dying_distance) {
+      dist_abs_y = distanceAbsY([a_pylon.m_y, the_player.m_y]);
+      if (dist_abs_y < g_planet.m_dying_distance) {
         a_pylon.m_alive = false;
       }
     }
@@ -38,8 +38,8 @@ function dyingEnemies(the_player, enemy_list) {
   number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     an_enemy = enemy_list[enemy_index];
-    difference_y = spriteDiffY(an_enemy, the_player);
-    if (difference_y < g_planet.m_dying_distance) {
+    dist_abs_y = distanceAbsY([an_enemy.m_y, the_player.m_y]);
+    if (dist_abs_y < g_planet.m_dying_distance) {
       setCssEnemyStarFill(enemy_index, DYING_STAR_COLOR);
       setCssEnemyBallFill(enemy_index, DYING_BALL_COLOR);
     }

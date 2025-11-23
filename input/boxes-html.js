@@ -2,7 +2,8 @@
 document.getElementById('touch-boxes').innerHTML = `
   <div id="nw-1" class="input-box"></div>   <div id="nw-2" class="input-box"></div>
              <div id="n-1" class="input-box"></div> <div id="n-2" class="input-box"></div>
-             <div id="n-3" class="input-box"></div> <div id="n-4" class="input-box"></div>
+             <div id="n-3" class="input-box">
+             </div> <div id="n-4" class="input-box"></div>
     <div id="ne-1" class="input-box"></div>    <div id="ne-2" class="input-box"></div>
 
   <div id="nw-3" class="input-box"></div>   <div id="nw-4" class="input-box"></div>
@@ -58,5 +59,5 @@ document.getElementById('touch-boxes').innerHTML = `
              <div id="s-3" class="input-box"></div> <div id="s-4" class="input-box"></div>
     <div id="se-3" class="input-box"></div>    <div id="se-4" class="input-box"></div>
 
-    <div id='the-fps'></div>
+
 `;

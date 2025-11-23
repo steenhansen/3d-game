@@ -28,7 +28,7 @@ function flashArrow(direction_name) {
 function arrowClick(the_event, direction_name) {
   the_event.preventDefault();
   flashArrow(direction_name);
-  delete g_planet.t_drift_direction;
+  g_planet.m_drift_direction = 0;
 }
 
 
@@ -42,14 +42,14 @@ function addClickEvent(direction_name, clickHandler) {
 }
 
 function stopMoving(evt) {
-  delete g_planet.t_move_direction;
-  delete g_planet.t_drift_direction;
-  g_planet.t_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
+  g_planet.m_move_direction = 0;
+  g_planet.m_drift_direction = 0;
+  g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
 }
 
 function initiateMovement(the_direction) {
-  delete g_planet.t_drift_direction;
-  g_planet.t_move_direction = the_direction;
+  g_planet.m_drift_direction = 0;
+  g_planet.m_move_direction = the_direction;
 }
 
 function handleNw(evt) {

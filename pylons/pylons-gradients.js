@@ -102,15 +102,15 @@ function makeGradients(pylon_colors) {
   return the_res;
 }
 
-white_black_gradients = makeGradients(GRAD_WHITE_BLACK);
-red_yellow_gradients = makeGradients(GRAD_RED_YELLOW);
-red_cyan_gradients = makeGradients(GRAD_RED_CYAN);
+white_black_gradients = makeGradients(WHITE_BLACK);
+red_yellow_gradients = makeGradients(RED_YELLOW);
+red_cyan_gradients = makeGradients(RED_CYAN);
 
-lime_fuchsia_gradients = makeGradients(GRAD_LIME_FUCHSIA);
-blue_yellow_gradients = makeGradients(GRAD_BLUE_YELLOW);
-purple_green_gradients = makeGradients(GRAD_PURPLE_GREEN);
+lime_fuchsia_gradients = makeGradients(LIME_FUCHSIA);
+blue_yellow_gradients = makeGradients(BLUE_YELLOW);
+purple_green_gradients = makeGradients(PURPLE_GREEN);
 
-red_blue_gradients = makeGradients(GRAD_RED_BLUE);
+red_blue_gradients = makeGradients(RED_BLUE);
 gradient_definitions = `
   <svg>
     <defs>

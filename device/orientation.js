@@ -1,14 +1,59 @@
-
-
 function fixMobile() {
-  if (!document.fullscreenElement) {
+  if (document.fullscreenElement == null) {
     start_mobile = document.getElementById('start-mobile');
     waiting_for_start = true;
+    start_mobile_display = document.getElementById('start-mobile').style.display;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     return;
   }
 }
 
+
+
+function handleStartMobile(evt) {
+  hideDiv('mobile-list');
+  unHideDiv('mobile-wait');
+  setTimeout(() => {
+    g_planet.m_game_state = GAME_0_INIT;     //L_OOP_1_BEGIN;
+    start_mobile = document.getElementById('start-mobile');
+    start_mobile.style.display = "none";
+    waiting_for_start = false;
+    fixMobile2();
+  }, "1000");
+  the_scene = document.getElementById('the-scene');
+  try {
+    the_scene.requestFullscreen();
+  } catch {
+    //
+  }
+}
+
+
+function fixMobile2() {
+  start_mobile = document.getElementById('start-mobile');
+  start_mobile.style.display = "none";
+  screen_width = window.screen.width;
+  screen_height = window.screen.height;
+  screen_width_px = screen_width + "px";
+  screen_height_px = screen_height + "px";
+  setCssVar("--scene-width", screen_width_px);
+  setCssVar("--scene-height", screen_height_px);
+}
+
+function isMobile() {
+  const mobile_screen = getCssVar("--device-screen");
+  if (mobile_screen == "is-mobile") {
+    return true;
+  }
+  return false;
+}
+
+function isFullScreenMobile() {
+  if (document.fullscreenElement) {
+    return true;
+  }
+  return false;
+}
 
 function addDesktopEvents() {
   addClickEvent("touch-boxes", touchBoxes);
@@ -58,27 +103,20 @@ function addDesktopEvents() {
   addClickEvent("se-4", handleSe);
 }
 
-
-
 function fixDesktop() {
   start_mobile = document.getElementById('start-mobile');
   start_mobile.style.display = "none";
   setCssVar("--scene-width", "1024px");
   setCssVar("--scene-height", "512px");
-
-
-
   if (document.fullscreenElement != null) {
     //  document.exitFullscreen();
   }
-
 }
 
 
 
 
 function fullMobile() {
-
   if (isMobile()) {
     if (!document.fullscreenElement) {
       the_scene = document.getElementById('the-scene');
@@ -167,34 +205,3 @@ function addMobileEvents() {
 
 }
 
-function fixMobile2() {
-
-  start_mobile = document.getElementById('start-mobile');
-  start_mobile.style.display = "none";
-
-  screen_width = window.screen.width;
-  screen_height = window.screen.height;
-  screen_width_px = screen_width + "px";
-  screen_height_px = screen_height + "px";
-
-
-  setCssVar("--scene-width", screen_width_px);
-  setCssVar("--scene-height", screen_height_px);
-
-}
-
-function isMobile() {
-  const mobile_screen = getCssVar("--device-screen");
-  if (mobile_screen == "is-mobile") {
-    return true;
-  }
-  return false;
-}
-
-
-function isFullScreenMobile() {
-  if (document.fullscreenElement) {
-    return true;
-  }
-  return false;
-}

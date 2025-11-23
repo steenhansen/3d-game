@@ -1,10 +1,12 @@
 
+// const MISSILE_LIFETIME = 25;
+// const MISSILE_GO_LEFT = -1;
+// const MISSILE_GO_RIGHT = 1;
 
 function missileAdvance(the_missile, the_player) {
-
-  if (the_missile.t_phase == MISSILE_1_HITTING_PYLON) {
-    hit_pylon = the_missile.t_hit_pylon;
-    the_missile.t_lifetime = 25;
+  if (the_missile.m_phase == MISSILE_2_HITTING_PYLON) {
+    hit_pylon = the_missile.m_hit_pylon;
+    the_missile.m_lifetime = 25;           //  MISSILE_LIFETIME
     if (hit_pylon.m_x > the_missile.m_x) {
       the_missile.m_x_dir = -1;
       the_missile.m_y_dir = 0;
@@ -12,35 +14,24 @@ function missileAdvance(the_missile, the_player) {
       the_missile.m_x_dir = 1;
       the_missile.m_y_dir = 0;
     }
-  } else if (the_missile.t_phase == MISSILE_3_SECOND_PYLON_HIT) {
-    delete the_missile.t_lifetime;
-    delete the_missile.t_phase;
+  } else if (the_missile.m_phase == MISSILE_4_SECOND_PYLON_HIT) {
+    the_missile.m_lifetime = 0;
+    the_missile.m_phase = 0;
   }
-
   the_missile.m_random++;
   if (the_missile.m_random == 360) {
     the_missile.m_random = 0;
   }
-
   missileSet(the_missile, the_player);
   if (typeof DBG_MISSILE_ADVANCE == 'string') {
     return the_missile;
   }
-
-  const missile_flying = 't_lifetime' in g_missile;
-
+  const missile_flying = g_missile.m_lifetime > 0;
   if (!missile_flying) {
     return the_missile;
   } else {
-
-    the_missile.t_lifetime--;
-    if (the_missile.t_lifetime == 0) {
-      delete the_missile.t_lifetime;
-      delete the_missile.t_phase;
-    }
-
+    the_missile.m_lifetime--;
   }
-
   let { m_x_dir, m_y_dir } = the_missile;
   if (m_x_dir < 0) {
     the_missile.m_x = leftOnBoard(the_missile.m_x, 12 * 4);
@@ -55,13 +46,13 @@ function missileAdvance(the_missile, the_player) {
 
 
 function initMissileData(the_missile, the_player) {      // qbert
-  the_missile.t_phase = MISSILE_0_SHOT_FORWARD;
+  the_missile.m_phase = MISSILE_1_SHOT_FORWARD;
   let { m_x, m_y } = the_player;
   the_missile.m_x = m_x;
   the_missile.m_y = m_y;
   the_missile.m_x_dir = 0;
   the_missile.m_y_dir = -1;
-  the_missile.t_lifetime = MISSILE_LIFETIME;
+  the_missile.m_lifetime = MISSILE_LIFETIME;
 
   return the_missile;
 }
@@ -74,7 +65,7 @@ function initMissileData(the_missile, the_player) {      // qbert
 
 function missileSet(the_missile, the_player) {
 
-  const missile_flying = 't_lifetime' in g_missile;
+  const missile_flying = g_missile.m_lifetime > 0;
   if (missile_flying) {
     if (typeof DBG_FREEZE_MISSILE != 'string') {
       getRandoms(the_missile);
@@ -328,7 +319,7 @@ function missileDraw(the_sprite, the_player) {
   pylon_player_ys = [the_sprite.m_y, the_player.m_y];
 
   real_id = the_sprite.s_id;
-  [the_z_index, difference_y, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, the_player);
+  [the_z_index, missile_relative, x_center_offset, head_on_view] = objectPlacement(the_sprite, the_player);
   if (missile_relative == LEFT_OF_PLAYER) {
 
 

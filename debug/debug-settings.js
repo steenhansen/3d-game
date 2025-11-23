@@ -1,30 +1,132 @@
 
+const DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");
+const DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
+
+const DEBUG_FIRST_COL_X = 370;
+const DEBUG_SECOND_COL_X = 530;
+
+const DEBUG_ROW_0_Y = 0;
+const DEBUG_ROW_1_Y = 30;
+const DEBUG_ROW_2_Y = 60;
+const DEBUG_ROW_3_Y = 90;
+const DEBUG_ROW_4_Y = 120;
+
+const DEBUG_L_R_BLANKS = 25;
+const DEBUG_ABOVE_Y = 10;
 
 function debugPrint(msg_str, x_pos, y_pos) {
-  meas_text = dbg_ctx.measureText(msg_str);
-  dbg_ctx.clearRect(x_pos, y_pos, meas_text.width + 300, dbg_line_height + 3);
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.fillRect(x_pos, y_pos, meas_text.width + 10, dbg_line_height + 3);
-  dbg_ctx.fillStyle = "white";
-  dbg_ctx.fillText(msg_str, x_pos, y_pos + dbg_line_height);
-  dbg_ctx.stroke();
+  const meas_text = DEBUG_CONTEXT.measureText(msg_str);
+  const left_x = x_pos - DEBUG_L_R_BLANKS;
+  const top_y = y_pos - DEBUG_ABOVE_Y;
+  const width_x = meas_text.width + DEBUG_L_R_BLANKS * 2;
+  const bottom_y = DEBUG_LINE_HEIGHT + DEBUG_L_R_BLANKS;
+  DEBUG_CONTEXT.clearRect(left_x, top_y, width_x, bottom_y);
+  DEBUG_CONTEXT.fillStyle = "black";
+  DEBUG_CONTEXT.fillRect(x_pos, y_pos, meas_text.width, DEBUG_LINE_HEIGHT * 2);
+  DEBUG_CONTEXT.fillStyle = "white";
+  DEBUG_CONTEXT.fillText(msg_str, x_pos, y_pos + DEBUG_LINE_HEIGHT + 6);
+  DEBUG_CONTEXT.stroke();
 }
 
+function debugScreenSize() {
+  const scene_width_px = getCssVar("--scene-width");
+  const scene_height_px = getCssVar("--scene-height");
+  const scene_width = parseInt(scene_width_px);
+  const scene_height = parseInt(scene_height_px);
+  const screen_size = 'screen: ' + scene_width + ' ' + scene_height;
+  debugPrint(screen_size, DEBUG_FIRST_COL_X, DEBUG_ROW_0_Y);
+}
 
+function debugFieldSize() {
+  const x_size = FIELD_IN_SQUARES[0];
+  const y_size = FIELD_IN_SQUARES[1];
+  const player_pos = `field: ${x_size} ${y_size}`;
+  debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_1_Y);
+}
 
-function debugFrameTime() {
-  if (isDebugging()) {
-    dbg_start_loop = new Date;
-    var this_frame_time = dbg_start_loop - dbg_last_loop;
-    dbg_frame_time += (this_frame_time - dbg_frame_time) / dbg_filter_strength;
-    dbg_last_loop = dbg_start_loop;
-    game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
+function debugPlayerXy() {
+  const offset_squares_x = Math.floor(g_player.m_x / WIDTH_OF_SQUARE);
+  const offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
+  const player_pos = `player: ${offset_squares_x} ${offset_squares_y}`;
+  debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_2_Y);
+}
+
+function debugPlayerBounds() {
+  if (typeof PLAYER_BOUNDS == 'undefined') {
+    player_pos = `bounds: none`;
+  } else {
+    const x0_bounds = PLAYER_BOUNDS[0];
+    const y0_bounds = PLAYER_BOUNDS[1];
+    const x1_bounds = PLAYER_BOUNDS[2];
+    const y1_bounds = PLAYER_BOUNDS[3];
+    player_pos = `bounds: ${x0_bounds} ${y0_bounds}   ${x1_bounds} ${y1_bounds}`;
+  }
+  debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_3_Y);
+}
+
+function debugDevice() {
+  const mobile_screen = getCssVar("--device-screen");
+  debugPrint(mobile_screen, DEBUG_FIRST_COL_X, DEBUG_ROW_4_Y);
+}
+
+function debugReportFrameTime() {
+  if (!waiting_for_start) {
+    debugMissileInfo();
+    debugScreenSize();
+    debugFieldSize();
+    debugPlayerXy();
+    debugPlayerBounds();
+    debugDevice();
+
+    start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
+    end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
+
+    if (dbg_swipe_dir == SWIPE_UP) {
+      debugSwipeUp(start_point, end_point);
+    } else if (dbg_swipe_dir == SWIPE_DOWN) {
+      debugSwipeDown(start_point, end_point);
+    }
   }
 }
 
 
 
-var dbg_ctx, dbg_line_height;
+
+
+
+
+
+
+
+
+
+
+const ONLY_CLEAR_DEBUG_RECT = "";
+
+function debugSign(an_object, left_mid_right_vlines) {
+  if (isDebugging()) {
+    x_in_squares = an_object.m_x / WIDTH_OF_SQUARE;
+    y_in_squares = an_object.m_y / DEPTH_OF_SQUARE;
+    square_x = Math.round(x_in_squares * 10) / 10;
+    square_y = Math.round(y_in_squares * 10) / 10;
+    init_mess = square_x + ',' + square_y;
+    let [right_side, middle_side, left_side] = left_mid_right_vlines;
+    let [[x_mid_r, y_top], [_x1, y_bot]] = right_side;
+    let [[x_mid_l, _y1], [_x2, _y2]] = middle_side;
+    let [[_x3, _y3], [_x4, _y4]] = left_side;
+    let xx = (x_mid_r + x_mid_l) / 2;
+    let yy = (y_top + y_bot) / 2;
+    if (an_object.s_isa == 'is-sign' && an_object.m_sign_text_col == 'none') {
+      debugPrint(ONLY_CLEAR_DEBUG_RECT, xx, yy);
+    } else {
+      debugPrint(init_mess, xx, yy);
+    }
+  }
+}
+
+
+
+
 
 // https://stackoverflow.com/questions/4787431/how-do-i-check-framerate-in-javascript
 // 1==only last frame,    20==14 frames
@@ -39,38 +141,30 @@ var dbg_y_too_small;
 
 function debugClear() {
   //canvas = document.getElementById("the-draw");          // func
-  //dbg_ctx.clearRect(0, 0, canvas.width, canvas.height);
+  //DEBUG_CONTEXT.clearRect(0, 0, canvas.width, canvas.height);
 
-  // dbg_ctx.closePath(); 
+  // DEBUG_CONTEXT.closePath(); 
   if (isDebugging()) {
 
-    dbg_ctx.beginPath();
-    dbg_ctx.clearRect(0, 0, dbg_ctx.canvas.width, dbg_ctx.canvas.height);
+    DEBUG_CONTEXT.beginPath();
+    //DEBUG_CONTEXT.clearRect(0, 0, DEBUG_CONTEXT.canvas.width, DEBUG_CONTEXT.canvas.height);
   }
 }
 
 
 
 function debugInit() {
-  // var location_url = new URL(window.location);
-  // var debug_param = location_url.searchParams.get("debug");
-  // if (debug_param == 'true') {
   if (isDebugging()) {
+    //   DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");  // func
+    DEBUG_CONTEXT.font = "16px serif";
+    //  DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
 
-    const DBG_MISSILE_ADVANCE = 'stop missile advance';
-    const DBG_DRIFTING = 'stop random drifting';
-    const DBG_FREEZE_MISSILE = 'stop changing missile';
-
-    dbg_ctx = document.getElementById("the-draw").getContext("2d");  // func
-
-    dbg_ctx.font = "16px serif";
-    dbg_line_height = dbg_ctx.measureText('M').width;
-
-    dbg_ctx.lineWidth = 1;
-    dbg_ctx.beginPath();
-    dbg_ctx.moveTo(512, 0);
-    dbg_ctx.lineTo(512, 512);
-    dbg_ctx.stroke();
+    DEBUG_CONTEXT.fillStyle = "black";
+    DEBUG_CONTEXT.lineWidth = 1;
+    DEBUG_CONTEXT.beginPath();
+    DEBUG_CONTEXT.moveTo(512, 0);
+    DEBUG_CONTEXT.lineTo(512, 512);
+    DEBUG_CONTEXT.stroke();
   }
 }
 
@@ -86,9 +180,9 @@ function debugAnimation() {
 
 
 function debugSwipeUp(start_xy, end_xy) {
-  dbg_ctx.beginPath();
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.lineWidth = 5;
+  DEBUG_CONTEXT.beginPath();
+  DEBUG_CONTEXT.fillStyle = "black";
+  DEBUG_CONTEXT.lineWidth = 5;
   //extra = (1024 - 896) / 2;
 
   if (screen_width > screen_height) {
@@ -99,17 +193,17 @@ function debugSwipeUp(start_xy, end_xy) {
 
 
 
-  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.moveTo(start_xy[0] + extra_w, start_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w, end_xy[1]);
 
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] + 10);
+  DEBUG_CONTEXT.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w - 10, end_xy[1] + 10);
 
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] + 10);
+  DEBUG_CONTEXT.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w + 10, end_xy[1] + 10);
 
 
-  dbg_ctx.stroke();
+  DEBUG_CONTEXT.stroke();
 }
 
 function debugSwipeDown(start_xy, end_xy) {
@@ -118,9 +212,9 @@ function debugSwipeDown(start_xy, end_xy) {
   screen_width = window.screen.width;
   screen_height = window.screen.height;
 
-  dbg_ctx.beginPath();
-  dbg_ctx.fillStyle = "black";
-  dbg_ctx.lineWidth = 5;
+  DEBUG_CONTEXT.beginPath();
+  DEBUG_CONTEXT.fillStyle = "black";
+  DEBUG_CONTEXT.lineWidth = 5;
 
   if (screen_width > screen_height) {
     extra_w = (1024 - screen_width) / 2;
@@ -130,136 +224,42 @@ function debugSwipeDown(start_xy, end_xy) {
 
 
 
-  dbg_ctx.moveTo(start_xy[0] + extra_w, start_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.moveTo(start_xy[0] + extra_w, start_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w, end_xy[1]);
 
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w - 10, end_xy[1] - 10);
+  DEBUG_CONTEXT.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w - 10, end_xy[1] - 10);
 
-  dbg_ctx.moveTo(end_xy[0] + extra_w, end_xy[1]);
-  dbg_ctx.lineTo(end_xy[0] + extra_w + 10, end_xy[1] - 10);
+  DEBUG_CONTEXT.moveTo(end_xy[0] + extra_w, end_xy[1]);
+  DEBUG_CONTEXT.lineTo(end_xy[0] + extra_w + 10, end_xy[1] - 10);
 
 
-  dbg_ctx.stroke();
+  DEBUG_CONTEXT.stroke();
 }
 
-
-
-
-function debugReportFrameTime() {
-  debugMissileInfo();
-
-
-  game_fps = (1000 / dbg_frame_time).toFixed(1) + " fps";
-  debugPrint(game_fps, 430, 25);
-
-  player_y_too_small = `Y too small${dbg_y_too_small}`;
-  debugPrint(player_y_too_small, 330, 433);
-
-
-
-  player_y_too_big = `Y too large ${dbg_y_too_large}`;
-  debugPrint(player_y_too_big, 530, 433);
-
-
-
-  // if (dbg_report) {
-  const scene_width = getCssVar("--scene-width");
-  const scene_height = getCssVar("--scene-height");
-  screen_size = `Screen ${scene_width} x${scene_height}`;
-  debugPrint(screen_size, 340, 4);
-
-
-
-  function pixels2squares([xy_pixels]) {
-    [x_pixels, y_pixels] = xy_pixels;
-    x_squares = Math.floor(x_pixels / WIDTH_OF_SQUARE);
-    y_squares = Math.floor(y_pixels / DEPTH_OF_SQUARE);
-    return [x_squares, y_squares];
-  }
-
-
-  const offset_squares_x = Math.floor(g_player.m_x / WIDTH_OF_SQUARE);
-  const offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
-
-  player_pos = `player field [${offset_squares_x}, ${offset_squares_y}]`;
-  debugPrint(player_pos, 50, 0);
-
-  const not_offset_squares_x = offset_squares_x - RELATIVE_ORIGIN[0];
-  const not_offset_squares_y = offset_squares_y - RELATIVE_ORIGIN[1];
-
-  player_pos = `player relative [${not_offset_squares_x}, ${not_offset_squares_y}]`;
-  debugPrint(player_pos, 50, 20);
-
-
-
-  // const e_x = enemy_1.m_x;
-  // const e_y = enemy_1.m_y;
-  // player_pos = "no easy enemy_1 variable"; /// `Enemy1 x${e_x}, y${e_y}`;
-  // debugPrint(player_pos, 530, 25);
-
-
-  // // const c_x = pylon_a_1.m_x;
-  // // const c_y = pylon_a_1.m_y;
-  // player_pos = "pylon1a";  //`Pylon1a x${c_x}, y${c_y}`;
-  // debugPrint(player_pos, 530, 45);
-
-
-
-
-
-  // animation_time = dbg_animation_time + " msec";
-  // debugPrint(animation_time, 340, 25);
-
-
-
-
-
-  // animation_time = dbg_animation_time + " msec";
-  // debugPrint(animation_time, 340, 25);
-
-
-
-
-
-
-  const mobile_screen = getCssVar("--device-screen");
-  debugPrint(mobile_screen, 340, 45);
-
-  start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
-  end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
-
-  if (dbg_swipe_dir == SWIPE_UP) {
-    debugSwipeUp(start_point, end_point);
-  } else if (dbg_swipe_dir == SWIPE_DOWN) {
-    debugSwipeDown(start_point, end_point);
-    //debugSwipe(end_point, start_point);
-  }
-  //}
-
-}
-
-
+let debug_missile_steps = 0;
 function debugMissileInfo() {
-  const m_x = g_missile.m_x;
-  const m_y = g_missile.m_y;
-  t_lifetime = g_missile.t_lifetime;
-  t_phase = g_missile.t_phase;
-
-  if ('t_lifetime' in g_missile) {
-    missile_pos = `Missile x ${m_x} y ${m_y} `;
-    missile_life = `t_lifetime:${t_lifetime}`;
-    //   missile_phase = `t_phase ${t_phase}`;
+  if (g_missile.m_lifetime == 0) {
+    debug_missile_steps = 0;
   } else {
-    missile_pos = `Missile`;
-    missile_life = `t_lifetime:${t_lifetime}`;
-    //  missile_phase = `t_phase ${t_phase}`;
+    if (debug_missile_steps == 0) {
+      DEBUG_CONTEXT.clearRect(DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y, 630, 999);
+      debugPrint("missile", DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y);
+    }
+    debug_missile_steps++;
+
+    let a_carom = '';
+    if (g_missile.m_phase != MISSILE_1_SHOT_FORWARD) {
+      if (g_missile.m_x_dir == 1) {
+        a_carom = 'carom right';
+      } else if (g_missile.m_x_dir == -1) {
+        a_carom = 'carom left';
+      }
+    }
+    const y_pos = (debug_missile_steps + 1) * DEBUG_ROW_1_Y;
+    const offset_squares_x = Math.floor(g_missile.m_x / WIDTH_OF_SQUARE);
+    const offset_squares_y = Math.floor(g_missile.m_y / DEPTH_OF_SQUARE);
+    const player_pos = `${offset_squares_x} ${offset_squares_y} ${a_carom}`;
+    debugPrint(player_pos, DEBUG_SECOND_COL_X, y_pos);
   }
-
-  debugPrint(missile_pos, 50, 450);
-
-  debugPrint(missile_life, 50, 470);
-
-  //debugPrint(missile_phase, 50, 490);  on top of frame stuff
-
 }

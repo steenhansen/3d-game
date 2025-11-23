@@ -1,4 +1,4 @@
-const ROOM_DEPTH = 32;   // old ==16
+const ROOM_DEPTH = 16;   // old ==16
 let TILE_WIDTH = 256;
 
 
@@ -11,7 +11,9 @@ const EXIT_OFF_COLOR = 'red';
 const MISSILE_LIFETIME = 96;
 
 const NEW_DIRECTION_CHANCE_WHEN_DRIFTING = 1024;
-const DRIFT_START_CHANCE_WHEN_STOPPED = 10;
+
+
+const DRIFT_START_CHANCE_WHEN_STOPPED = 100000;     //10;
 
 
 let MISSILE_START_X = 400;

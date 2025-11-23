@@ -1,6 +1,7 @@
 :root {
   --z-start-mobile: 50000000;
   --z-touch-boxes: 30000000;
+  --z-the-fps: 20000000;
   --z-the-draw: 10000000;
   --z-an-arrow: 240;
   --z-the-landing: 210;
