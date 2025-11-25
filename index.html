@@ -4,6 +4,8 @@
 
 <script type="text/javascript" src="values/major-constants.js"></script>
 <script type="text/javascript" src="values/url-params.js"></script>
+<script type="text/javascript" src="variables/global-objects.js"></script>
+<script type="text/javascript" src="variables/css-vars.js"></script>
 
 <style>
   .begin-vars {
@@ -36,8 +38,10 @@
 </style>
 
 <script>
+  // //   index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
   let params_string = getParams(window.location);
   area_1_addr = 'area-1-jump/index.html' + params_string;
+  console.log("ddddd", area_1_addr)
 </script>
 
 <div id='click-to-begin' class="begin-vars">

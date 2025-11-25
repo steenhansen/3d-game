@@ -189,7 +189,7 @@ function pylonPolygon(a_polygon, panel_id, do_flash, dist_abs_y, poly_fill, pylo
     fill_color = 'black';
   }
   svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
-  if (do_flash) {
+  if (do_flash && g_p_graphics_style != P_SIMPLE) {
     svg_outlines = outlineFlash(a_polygon, panel_id, dist_abs_y);
   } else {
     svg_outlines = '';

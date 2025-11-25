@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
   <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="sky/sky-device.css" />
   <link rel="stylesheet" href="missile/missile-vars.css" />
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
@@ -243,7 +244,7 @@
 
 <script>
   const THE_PLANET = 4;
-  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
+
 
   const PARAMS_STR = getParams(window.location);
   const THIS_PLANET = 'area-4-fast/index.html' + PARAMS_STR;
@@ -260,8 +261,9 @@
     return [game_state, part_state];
   }
 
-  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
-  the_player = initPlayer(PLAYER_START, MOVINGx_N, MOVINGx_N);
+
+  the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_N, MOVINGx_N);
+  the_player = initPlayer(PLAYER_START);
 
 
 
@@ -292,12 +294,10 @@
 
   the_holes = [...white_sides, ...red_jumps];
 
-  //  const PLAYER_START = [5, 35];
-
   exit_sign = initSign("sign-exit", [5, 29], 'Fini', EXIT_OFF_COLOR);
-  sign_0 = initSign("sign-00", [3, 31], 'R', "white");
-  sign_1 = initSign("sign-01", [4.5, 31], 'u', "white");
-  sign_2 = initSign("sign-02", [6, 31], 'n', "white");
+  sign_0 = initSign("sign-00", [3, 31], 'R', "#FFFFFF");
+  sign_1 = initSign("sign-01", [4.5, 31], 'u', "#EEEEEE");
+  sign_2 = initSign("sign-02", [6, 31], 'n', "#DDDDDD");
   the_signs = [exit_sign, sign_0, sign_1, sign_2];
 
   the_pylons = makePylons([[-4, -29], [-6, -29]], [WHITE_BLACK, WHITE_BLACK]);
@@ -307,20 +307,11 @@
 
 
 
+  train_speed = VELOCITY_0;
 
-
-  // ball_strat =-2... 0s   
-  // BALL_START_2S = -2s
-  // BALL_START_175S = -1.75s
-  // BALL_START_0S = 0S
-  // 1 =SLOW   4 = FAST_MOVE
-  train_speed = VELOCITY_0,
-
-    train_1 = plainEnemy([5, 0], RED_BLUE_1, ZERO_10, NEAR_10, train_speed, BALL_START_A);
+  train_1 = plainEnemy([5, 0], RED_BLUE_1, ZERO_10, NEAR_10, train_speed, BALL_START_A);
   train_2 = plainEnemy([5, 1], RED_BLUE_2, ZERO_10, NEAR_10, train_speed, BALL_START_B);
-
   train_3 = plainEnemy([5, 2], RED_BLUE_3, ZERO_10, NEAR_10, train_speed, BALL_START_C);
-
   train_4 = plainEnemy([5, 3], RED_BLUE_4, ZERO_10, NEAR_10, train_speed, BALL_START_D);
 
   train_5 = plainEnemy([5, 4], ORANGE_GREY_1, ZERO_10, NEAR_10, train_speed, BALL_START_E);
@@ -340,26 +331,16 @@
 
   the_train = [train_1, train_2, train_3, train_4, train_5, train_6, train_7, train_8, train_9, train_10, train_11, train_12, train_13, train_14, train_15, train_16];
 
-  //the_train = [train_1, train_2, train_3, train_4, train_5, train_6, train_7, train_8];
-  //the_train = [train_9, train_10, train_11, train_12, train_13, train_14, train_15, train_16];
-  //the_train = [train_3];
 
+  enemy_0 = plainEnemy([2, 2], RED_BLUE_2, LEFT_10, NEAR_10, VELOCITY_0);
+  enemy_1 = plainEnemy([2, 12], RED_CYAN, LEFT_10, NEAR_10, VELOCITY_2);
+  enemy_2 = plainEnemy([2, 22], YELLOW_BLUE, LEFT_10, NEAR_10, VELOCITY_3);
+  enemy_3 = plainEnemy([2, 32], PURPLE_GREEN, LEFT_10, NEAR_10, VELOCITY_4);
 
-
-
-  enemy_0 = plainEnemy([2, 2], RED_BLUE_2, LEFT_10, NEAR_10, 1);
-  enemy_1 = plainEnemy([2, 12], RED_CYAN, LEFT_10, NEAR_10, 2);
-  enemy_2 = plainEnemy([2, 22], BLUE_YELLOW, LEFT_10, NEAR_10, 1);
-  enemy_3 = plainEnemy([2, 32], PURPLE_GREEN, LEFT_10, NEAR_10, 2);
-  //  the_enemies = makeEnemies([enemy_0, enemy_1, enemy_2, enemy_3]);
-  the_enemies = makeEnemies([...the_train, enemy_0, enemy_1, enemy_2, enemy_3]);
-  //the_enemies = makeEnemies([enemy_0]);
-
-
-
-
+  //the_enemies = makeEnemies([...the_train, enemy_0, enemy_1, enemy_2, enemy_3]);
+  the_enemies = makeEnemies([enemy_0]);
 
 
   startReadKeys(read4Keys);
-  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 </script>

@@ -104,7 +104,7 @@ function debugReportFrameTime() {
 const ONLY_CLEAR_DEBUG_RECT = "";
 
 function debugSign(an_object, left_mid_right_vlines) {
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
     x_in_squares = an_object.m_x / WIDTH_OF_SQUARE;
     y_in_squares = an_object.m_y / DEPTH_OF_SQUARE;
     square_x = Math.round(x_in_squares * 10) / 10;
@@ -144,7 +144,7 @@ function debugClear() {
   //DEBUG_CONTEXT.clearRect(0, 0, canvas.width, canvas.height);
 
   // DEBUG_CONTEXT.closePath(); 
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
 
     DEBUG_CONTEXT.beginPath();
     //DEBUG_CONTEXT.clearRect(0, 0, DEBUG_CONTEXT.canvas.width, DEBUG_CONTEXT.canvas.height);
@@ -154,7 +154,7 @@ function debugClear() {
 
 
 function debugInit() {
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
     //   DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");  // func
     DEBUG_CONTEXT.font = "16px serif";
     //  DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
@@ -171,7 +171,7 @@ function debugInit() {
 
 
 function debugAnimation() {
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
     dbg_end_loop = new Date;
     dbg_animation_time = dbg_end_loop - dbg_start_loop;
   }

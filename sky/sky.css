@@ -1,4 +1,5 @@
 #the-pyramids {
+  visibility: var(--p-graphics-pyramids);
   z-index: var(--z-the-pyramids);
   background-image: var(--pyramids-image);
   width: 1024px;
@@ -10,6 +11,7 @@
 
 
 #fuzzy-saturn {
+  visibility: var(--p-graphics-saturn);
   z-index: var(--z-the-saturn);
   background-image: var(--saturn-image);
   width: 1024px;
@@ -20,42 +22,6 @@
 }
 
 
-@keyframes sun-keyframes {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.sun-vars {
-  --ani-key-frame: sun-keyframes;
-}
-
-@media (max-width:1023px) {
-  .sun-vars {
-    --ani-key-frame: none;
-  }
-}
-
-.sky-vars {
-  --sky-color: #0000ff;
-
-  --cloud-image: radial-gradient(#ffffff, var(--sky-color) 75%);
-  --cloud-skew: perspective(1536px) rotateX(-85deg);
-}
-
-
-@media (max-width:1023px) {
-  .sky-vars {
-    --sky-color: #0000ff;
-
-    --cloud-image: none;
-    --cloud-skew: none;
-  }
-}
 
 
 #cracked-screen {
@@ -75,7 +41,7 @@
 
 
 #the-sun {
-
+  visibility: var(--p-graphics-sun-visible);
   z-index: var(--z-the-sun);
 
   margin-left: var(--margin-left_px);
@@ -103,8 +69,10 @@
   width: 2048px;
   height: 2400px;
   background-size: 256px 256px;
-  background-image: var(--cloud-image);
-  transform: var(--cloud-skew);
+  /* background-image: var(--cloud-image);
+  transform: var(--cloud-skew); */
+  background-image: var(--p-graphics-sky-image);
+  transform: var(--p-graphics-sky-skew);
 }
 
 #sky-aperature {

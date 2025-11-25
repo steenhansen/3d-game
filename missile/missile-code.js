@@ -54,6 +54,8 @@ function initMissileData(the_missile, the_player) {      // qbert
   the_missile.m_y_dir = -1;
   the_missile.m_lifetime = MISSILE_LIFETIME;
 
+  //getRandoms(the_missile);
+  getRandoms(the_missile);
   return the_missile;
 }
 
@@ -67,7 +69,7 @@ function missileSet(the_missile, the_player) {
 
   const missile_flying = g_missile.m_lifetime > 0;
   if (missile_flying) {
-    if (typeof DBG_FREEZE_MISSILE != 'string') {
+    if (g_p_graphics_style != P_SIMPLE) {
       getRandoms(the_missile);
     }
     missileDraw(the_missile, the_player);
@@ -88,20 +90,22 @@ function missileSet(the_missile, the_player) {
 function getRandoms(the_missile) {
   missile_area = document.querySelector('.missile-vars');
   let this_tick = CACHED_MISSILE_SHAPES[the_missile.m_random];
-  if (isMobile()) {
-    number_replaced = this_tick.length / 4;
-  } else {
-    number_replaced = this_tick.length;
-  }
+  //console.log("rrr", the_missile.m_random);
+  // if (isMobile()) {
+  //   number_replaced = this_tick.length / 4;
+  // } else {
+  number_replaced = this_tick.length;
+  //}
   for (let j = 0; j < number_replaced; j++) {
     let [the_id, the_size, the_color, x_adjust, y_adjust] = this_tick[j];
-
+    // console.log("x_adj", the_id, the_size, the_color, x_adjust, y_adjust);
     if (the_size !== '') {
       let missile_size = "--missile-size-" + the_id;
       missile_area.style.setProperty(missile_size, the_size);
 
       let missile_offset_x = "--missile-offset-x-" + the_id;
       missile_area.style.setProperty(missile_offset_x, x_adjust);
+
 
       let missile_offset_y = "--missile-offset-y-" + the_id;
       missile_area.style.setProperty(missile_offset_y, y_adjust);
@@ -191,6 +195,8 @@ function makeDiamondsBalls() {
   let out_arr = [];
   for (let i = 0; i < 360; i++) {   // 6 sec == 60fps * 6  
     let in_arr = [];
+
+
     for (let j = 0; j < NUM_OUTSIDE_BALLS; j++) {
       outside_missile_id = OUTSIDE_ID_START + j;
       m_size = randomMissileSize(10, 15);
@@ -221,12 +227,17 @@ function makeDiamondsBalls() {
       m_color = randomMissileColor([32, 32, 32], [100, 223, 100]);
       if (m_size !== '' || m_color !== '') {
         a_diamond = the_diamonds[j];
+
         x_adjust = (a_diamond[0] - m_size2) + "px";
         y_adjust = (a_diamond[1] - m_size2) + "px";
+        //   console.log(outside_missile_id, x_adjust, y_adjust);
         t_arr = [outside_missile_id, m_size, m_color, x_adjust, y_adjust];
         in_arr.push(t_arr);
+        //   console.log("t_arr", t_arr);
       }
     }
+
+
     for (let j = 0; j < NUM_CENTER_BALLS; j++) {
       outside_missile_id = CENTER_ID_START + j;
       m_size = randomMissileSize(15, 15);
@@ -239,6 +250,9 @@ function makeDiamondsBalls() {
         in_arr.push(t_arr);
       }
     }
+
+
+
     in_arr = shuffleArray(in_arr);
 
     out_arr.push(in_arr);

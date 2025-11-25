@@ -70,6 +70,7 @@ const DIAGONAL_DAMPER = 2;
 
 function sceneMove(the_player, is_dying) {
   if (is_dying) {
+    console.log("sceneMove() is_dying");
     the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
     the_player = sceneBackward(the_player, travel_speed);   // MOVINGx_NW
     return the_player;
@@ -116,7 +117,7 @@ function sceneMove(the_player, is_dying) {
 
 
 function startDrift() {
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
     return;
   }
   if (g_planet.m_drift_direction > 0) {
@@ -229,11 +230,11 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   return [the_planet, the_player, enemy_list, pylon_list];
 }
 
-let draw_every_22th_frame = 0;
+let draw_every_2nd_l_r_scroll = 0;
 function fixFPS2() {
   if (current_move_direction !== MOVING_NOT) {
-    if (DEGRADE_CHECKERBOARD > 0) {
-      draw_sec = draw_every_22th_frame % DEGRADE_CHECKERBOARD;
+    if (g_p_scroll_quality == P_COURSE) {
+      draw_sec = draw_every_2nd_l_r_scroll % 2;
       if (draw_sec == 0) {
         current_move_direction = g_planet.m_move_direction;
         affixLeftRight();
@@ -244,7 +245,7 @@ function fixFPS2() {
       affixLeftRight();
     }
   }
-  draw_every_22th_frame++;
+  draw_every_2nd_l_r_scroll++;
 }
 
 

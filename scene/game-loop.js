@@ -7,10 +7,10 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
   initGame();
   g_planet = the_planet;
   g_player = the_player;
-  g_enemy_list = the_enemies;
-  g_pylon_list = the_pylons;
-  g_sign_list = the_signs;
-  g_hole_list = the_holes;
+  g_enemies = the_enemies;
+  g_pylons = the_pylons;
+  g_signs = the_signs;
+  g_holes = the_holes;
 
   g_planet.m_game_state = GAME_0_INIT;
 
@@ -32,12 +32,12 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
         deleteStartLetters(the_signs, ERASE_START_MESSAGE_TIME);
       }
     } else if (game_state == GAME_2_PLAY) {
-      zxc = playPart2(game_state, part_state, g_planet, g_player, g_enemy_list, g_pylon_list, g_hole_list);
-      [game_state, part_state, g_planet, g_player, g_enemy_list, g_pylon_list, g_hole_list] = zxc;
+      zxc = playPart2(game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes);
+      [game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes] = zxc;
     } else if (game_state == GAME_3_DEATH) {
-      [part_state] = deathPart3(part_state, g_planet, g_player, g_enemy_list, g_pylon_list);
+      [part_state] = deathPart3(part_state, g_planet, g_player, g_enemies, g_pylons);
     } else if (game_state == GAME_4_SPACE) {
-      [part_state, g_player] = spacePart4(part_state, g_planet, g_player, g_enemy_list, g_pylon_list);
+      [part_state, g_player] = spacePart4(part_state, g_planet, g_player, g_enemies, g_pylons);
     } else if (game_state == GAME_5_DONE) {
       donePart5();
     } else {
@@ -56,13 +56,11 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
 
 
 function turnOnExit(sign_list) {
-  all_dead = enemiesAllZombies(g_enemy_list);
+  all_dead = enemiesAllZombies(g_enemies);
   if (all_dead) {
-    exiting_signs = [...sign_list];
-    exiting_signs[0].m_sign_text_col = EXIT_ON_COLOR;
-
-
-    return exiting_signs;
+    exit_signs = [...sign_list];
+    exit_signs[0].m_sign_text_col = EXIT_ON_COLOR;
+    return exit_signs;
   }
   return sign_list;
 }

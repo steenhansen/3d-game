@@ -41,6 +41,25 @@ function makeBall(front_or_all, ball_color, enemy_number, ani_start) {
   return make_ball;
 }
 
+function staticStar(star_color, enemy_number) {
+  alive_dead_color = '--enemy-star-color-' + enemy_number;
+  type_id = `star-spin-fixed-${enemy_number}`;
+  static_star = `
+    <circle cx="512" cy="512" id="sun:circle" r="256" stroke="${star_color}" stroke-width="0" fill-opacity="0" />
+    <g id="${type_id}">
+     
+      <path fill="var(${alive_dead_color})" 
+      stroke="white"   stroke-opacity="0.4" 
+        d="m 508.91671,254.44059 59.41448,170.89707 180.81736,3.64637 L 605.00944,538.26808 657.39929,711.41732 508.91671,608.08545 360.43414,711.41732 412.82398,538.26808 268.68487,428.98403 449.50223,425.33766 Z" />
+    </g>
+    <circle cx="128" cy="128" id="sun:circle" r="2" stroke="${star_color}" stroke-width="0.0" fill-opacity="0" />
+`;
+
+  return static_star;
+}
+
+
+
 
 function rotatingStar(star_color, enemy_number, r1) {
   ani_duration = r1 + "s"; //r + "s";   // 4s
@@ -113,34 +132,17 @@ function createEnemyHtml(the_enemy) {
     r1 = "3";
   }
 
-  rotating_star = rotatingStar(star_color, enemy_number, r1);
 
-
-  // let r = Math.floor(Math.random() * 13);   // 2s for the ball 
-  // if (enemy_number == 0) {
-  //   r = "-2s";
-  // } else if (enemy_number == 1) {
-  //   r = "-1.75s";
-  // } else if (enemy_number == 2) {
-  //   r = "-1.5s";
-  // } else if (enemy_number == 3) {
-  //   r = "-1.25s";
-  // } else if (enemy_number == 4) {
-  //   r = "-1s";
-  // } else if (enemy_number == 5) {
-  //   r = "-0.75s";
-  // } else if (enemy_number == 6) {
-  //   r = "-0.5s";
-  // } else if (enemy_number == 7) {
-  //   r = "-0.25s";
-  // } else {
-  //   r = "0s";
-  // }
-
-
-  ball_all = makeBall('all', ball_color, enemy_number, ball_start);
-  ball_front = makeBall('front', ball_color, enemy_number, ball_start);
-
+  //console.log("dddd", g_p_graphics_style);
+  if (g_p_graphics_style != P_SIMPLE) {
+    enemy_star = rotatingStar(star_color, enemy_number, r1);
+    ball_all = makeBall('all', ball_color, enemy_number, ball_start);
+    ball_front = makeBall('front', ball_color, enemy_number, ball_start);
+  } else {
+    enemy_star = staticStar(star_color, enemy_number);
+    ball_all = '';
+    ball_front = '';
+  }
 
   sprite_background = '';  //` <rect width="1024" height="1024" fill-opacity="0.33" fill="black" /> `;
   the_y = 28;
@@ -151,7 +153,7 @@ function createEnemyHtml(the_enemy) {
                 <svg id="${enemy_id}-scaled" style="transform: scale(0.5); transform-origin: center;">
                       ${sprite_background}
                     ${ball_all}
-                        ${rotating_star}
+                        ${enemy_star}
                     ${ball_front}
                 </svg>
             </svg>

@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
   <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="sky/sky-device.css" />
   <link rel="stylesheet" href="missile/missile-vars.css" />
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
@@ -252,7 +253,6 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
 
 <script>
   const THE_PLANET = 3;
-  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
 
   const PARAMS_STR = getParams(window.location);
   const THIS_PLANET = 'area-3-shoot/index.html' + PARAMS_STR;
@@ -266,11 +266,11 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
     window.location.href = NEXT_PLANET;
   }
 
-  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
-  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+
+  the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
+  the_player = initPlayer(PLAYER_START);
 
 
-  // the holes are outside the bounds !!!!
 
 
   side_holes = [
@@ -316,17 +316,17 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
 
 
   exit_sign = initSign("sign-exit", [5, 2], 'Next', EXIT_OFF_COLOR);
-  sign_0 = initSign("sign-00", [0, 7], 'S', "white");
-  sign_1 = initSign("sign-01", [1.5, 7], 'h', "white");
-  sign_2 = initSign("sign-02", [3, 7], 'o', "white");
-  sign_3 = initSign("sign-03", [4.5, 7], 'o', "white");
-  sign_4 = initSign("sign-04", [6, 7], 't', "white");
+  sign_0 = initSign("sign-00", [0, 7], 'S', "#FFFFFF");
+  sign_1 = initSign("sign-01", [1.5, 7], 'h', "#EEEEEE");
+  sign_2 = initSign("sign-02", [3, 7], 'o', "#DDDDDD");
+  sign_3 = initSign("sign-03", [4.5, 7], 'o', "#CCCCCC");
+  sign_4 = initSign("sign-04", [6, 7], 't', "#BBBBBB");
   the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
 
-  slow_0_back_front_enemy = plainEnemy([18, 3], RED_BLUE, ZERO_10, AWAY_10, 1);
-  slow_1_back_front_enemy = plainEnemy([18, 3], BLUE_RED, ZERO_10, NEAR_10, 1);
+  slow_0_back_front_enemy = plainEnemy([18, 3], ORANGE_GREY, ZERO_10, AWAY_10, 1);
+  slow_1_back_front_enemy = plainEnemy([18, 3], GREY_ORANGE, ZERO_10, NEAR_10, 1);
   slow_back_front_2_pylon_points = [[18, 1], [18, 8]];
-  slow_back_front_2_pylon_colors = [RED_BLUE, RED_BLUE];
+  slow_back_front_2_pylon_colors = [ORANGE_GREY, GREY_ORANGE];
 
   fast_0_left_right_enemy = plainEnemy([28, 2], WHITE_BLACK, RGHT_10, ZERO_10, 6);
   fast_1_left_right_enemy = plainEnemy([28, 2], BLACK_WHITE, LEFT_10, ZERO_10, 6);
@@ -353,5 +353,5 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
   the_enemies = makeEnemies([...corner_enemies, ...fast_enemies, ...slow_enemies]);
 
   startReadKeys(read11Keys);
-  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 </script>

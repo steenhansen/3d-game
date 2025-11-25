@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
   <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="sky/sky-device.css" />
   <link rel="stylesheet" href="missile/missile-vars.css" />
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
@@ -241,7 +242,6 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 <link rel="stylesheet" href="area-2-carom/distinct.css" />
 <script>
   const THE_PLANET = 2;
-  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
 
   const PARAMS_STR = getParams(window.location);
   const THIS_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
@@ -250,12 +250,15 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
   const PLAYER_START = [1, 11];
   const CURRENT_SEGWAY = FAST_SEGWAYS; //NORMAL_SEGWAYS
 
+  let MOBILE_LOAD_PARAM;
+
   function hitExit() {
     window.location.href = NEXT_PLANET;
   }
 
-  g_planet = initInfinitePlanet(FIELD_IN_SQUARES);
-  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+
+  the_planet = initInfinitePlanet(FIELD_IN_SQUARES, MOVINGx_NOT, MOVINGx_E);
+  the_player = initPlayer(PLAYER_START);
   holes_0 = [[3, 0], [4, 0], [5, 0], [6, 0], [7, 0], [8, 0], [9, 0]];
   holes_1 = [[3, 1], [4, 1], [5, 1]  /*  */, [7, 1], [8, 1], [9, 1]];
   holes_2 = [[3, 2], [4, 2] /*                   */, [8, 2], [9, 2]];
@@ -274,16 +277,14 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
   all_holes = [...holes_0, ...holes_1, ...holes_2, ...holes_3, ...holes_4];
   the_holes = makeHoles(0, "red", all_holes);
 
-  //    exit_sign = initSign("sign-exit", [5, 7], 'Next', EXIT_OFF_COLOR);
   exit_sign = initSign("sign-exit", [8, 7], 'Next', EXIT_OFF_COLOR);
-  sign_0 = initSign("sign-00", [3, 7], 'C', "white");
-  sign_1 = initSign("sign-01", [4.5, 7], 'a', "white");
-  sign_2 = initSign("sign-02", [6, 7], 'r', "white");
-  sign_3 = initSign("sign-03", [7.5, 7], 'o', "white");
-  sign_4 = initSign("sign-04", [9, 7], 'm', "white");
+  sign_0 = initSign("sign-00", [3, 7], 'C', "#FFFFFF");
+  sign_1 = initSign("sign-01", [4.5, 7], 'a', "#EEEEEE");
+  sign_2 = initSign("sign-02", [6, 7], 'r', "#DDDDDD");
+  sign_3 = initSign("sign-03", [7.5, 7], 'o', "#CCCCCC");
+  sign_4 = initSign("sign-04", [9, 7], 'm', "#BBBBBB");
   the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
 
-  //    the_pylons = makePylons([[3, 5], [-3, 2], [8, 2]], [WHITE_BLACK, WHITE_BLACK, WHITE_BLACK]);
   the_pylons = makePylons([[6, 5], [1, 2], [11, 2]], [WHITE_BLACK, WHITE_BLACK, WHITE_BLACK]);
 
   enemy_0 = {
@@ -297,5 +298,5 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
   the_enemies = makeEnemies([enemy_0]);
 
   startReadKeys(read11Keys);
-  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 </script>

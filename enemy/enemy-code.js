@@ -87,8 +87,9 @@ function enemyMove(the_enemy) {
   //                    +1(right) x -1(inverted)        -1
   x_adjusted_dir = x_dir * m_bounced_x_dir;
 
-
-  showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
+  if (g_p_graphics_style != P_SIMPLE) {
+    showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
+  }
   y_dir = s_moves_y[m_move_count];
   y_adjusted_dir = y_dir * m_bounced_y_dir;
   if (x_adjusted_dir < 0) {

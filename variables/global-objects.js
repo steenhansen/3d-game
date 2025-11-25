@@ -1,19 +1,21 @@
 
-
-var g_enemy_list;
-var g_pylon_list;
-var g_hole_list;
-var g_player;
 var g_planet;
+var g_player;
 
+var g_enemies;
+var g_pylons;
+var g_holes;
+var g_signs;
 
 
 
 let dbg_record_line = 128;  // used for debugging checkerboard overflows
 
-let dbg_is_debugging = 'unknown';
+let g_p_environment_type = P_UNKNOWN;
+var g_p_scroll_quality = P_UNKNOWN;
+var g_p_graphics_style = P_UNKNOWN;
+var g_p_display_fps = P_UNKNOWN;
 
-var g_mobile_downgrading = 'unknown';
 
 let CACHED_MISSILE_SHAPES;
 

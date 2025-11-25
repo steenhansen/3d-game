@@ -1,4 +1,20 @@
+#fps-value {
+  z-index: var(--z-fps-value);
+  position: absolute;
+  left: 52%;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 #touch-boxes {
+  opacity: var(--p-graphics-boxes);
   z-index: var(--z-touch-boxes);
   display: grid;
 
@@ -13,12 +29,7 @@
 
 }
 
-#the-fps {
-  z-index: var(--z-the-fps);
-  position: absolute;
-  left: 52%;
-  opacity: 1;
-}
+
 
 .input-box {
   opacity: 0.2;

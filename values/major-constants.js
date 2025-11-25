@@ -5,11 +5,23 @@ const RECOIL_COUNTDOWN = 5;   // was 30
 // PLAYER_TRAVEL_SPEED
 const TRAVEL_SPEED = 8;   //1sluggish  4slow  8normal 16fast  32extreme
 
+const P_UNKNOWN = 'unknown-param';
 
-const DEBUG_PARAM_ENV = "debug-env";
-const DEGRADE_PARAM_SCROLL = "degrade-scroll";
+const P_ENVIROMENT_TYPE = "env-type";
+const P_DEBUG = 'debug';
+const P_NORMAL = 'normal';
 
+const P_SCROLL_QUALITY = "scroll-quality";
+const P_COURSE = 'course';
+const P_FINE = 'fine';
 
+const P_GRAPHICS_STYLE = "graphics-style";
+const P_SIMPLE = 'simple';
+const P_COMPLEX = 'complex';
+
+const P_DISPLAY_FPS = 'display-fps';
+const P_SHOW = 'show';
+const P_HIDE = 'hide';
 
 const PART_INIT_00_DESKTOP = 'PART_INIT_00_DESKTOP';
 const PART_INIT_01_MOBILE = 'PART_INIT_01_MOBILE';

@@ -1,70 +1,111 @@
 
-/*
- if true then debugging 
-  if commented out or false then normal
-
-if (typeof DBG_MISSILE_ADVANCE == 'string') {
-  return the_missile;
-}
-*/
 
 
-// file:///c%3A/Users/16043/Documents/GitHub/3ddd/index.html?debug-env=true
-//dbg_is_debugging = 'unknown';
-function isDebugging() {
-  if (dbg_is_debugging == 'unknown') {
+// ?env-type=debug
+function environmentTypeParam() {
+  if (g_p_environment_type == P_UNKNOWN) {
     location_url = new URL(window.location);
-    debug_param = location_url.searchParams.get(DEBUG_PARAM_ENV);
-    dbg_is_debugging = (debug_param == 'true');
+    debug_param = location_url.searchParams.get(P_ENVIROMENT_TYPE);
+    g_p_environment_type = (debug_param == P_DEBUG);
   }
-  return dbg_is_debugging;
+  setCssVar("--p-environment-type", g_p_environment_type);
+  return g_p_environment_type;
 }
 
-
-//  file:///c%3A/Users/16043/Documents/GitHub/3ddd/index.html?mobile-downgrade=false
-// g_mobile_downgrading = 'unknown';
-function mobileDowngrade() {
-  if (g_mobile_downgrading == 'unknown') {
+// ?scroll-quality=course
+function scrollQualityParam() {
+  if (g_p_scroll_quality == P_UNKNOWN) {
     location_url = new URL(window.location);
-    mobile_downgrade = location_url.searchParams.get("mobile-downgrade");
-    g_mobile_downgrading = (mobile_downgrade != 'false');
+    scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY);
+    if (scroll_quality == P_COURSE) {
+      g_p_scroll_quality = P_COURSE;
+    } else {
+      g_p_scroll_quality = P_FINE;
+    }
   }
-  return g_mobile_downgrading;
 }
+//      ?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
+
+// ?graphics-style=simple
+function graphicsStyleParam() {
+  location_url = new URL(window.location);
+  graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE);
+  if (graphics_style == P_SIMPLE) {
+    setCssVar("--p-graphics-sun-animation", 'none');
+    setCssVar("--p-graphics-sky-image", 'none');
+    setCssVar("--p-graphics-sky-skew", 'none');
+
+    setCssVar("--p-graphics-sun-visible", 'hidden');
+    setCssVar("--p-graphics-saturn", 'hidden');
+    setCssVar("--p-graphics-pyramids", 'hidden');
+
+    setCssVar("--p-graphics-boxes", '0');
+    g_p_graphics_style = P_SIMPLE;
+  } else {
+    g_p_graphics_style = P_COMPLEX;
+  }
+}
+
+// ?display-fps=show
+function displayFpsParam() {
+  if (g_p_display_fps == P_UNKNOWN) {
+    location_url = new URL(window.location);
+    show_fps = location_url.searchParams.get(P_DISPLAY_FPS);
+    if (show_fps == P_SHOW) {
+      g_p_display_fps = P_SHOW;
+    } else {
+      g_p_display_fps = P_HIDE;
+    }
+  }
+}
+
 
 function urlParams() {
-  isDebugging();
-  mobileDowngrade();
+  environmentTypeParam();
+  scrollQualityParam();
+  graphicsStyleParam();
+  displayFpsParam();
 }
 
+//   index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
 function getParams(window_location) {
+  urlParams();
+
   location_url = new URL(window_location);
-  debug_param = location_url.searchParams.get(DEBUG_PARAM_ENV);
-  degrade_param = location_url.searchParams.get(DEGRADE_PARAM_SCROLL);
+  env_type = location_url.searchParams.get(P_ENVIROMENT_TYPE);      // debug/normal
+  scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY); // course/fime
+  graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE); // simple/complex
+  display_fps = location_url.searchParams.get(P_DISPLAY_FPS);       // show/hide
+
   the_params = [];
-  if (debug_param == 'true') {
-    the_params.push(`${DEBUG_PARAM_ENV}=true`);
+  if (env_type == P_DEBUG) {
+    the_params.push(`${P_ENVIROMENT_TYPE}=${P_DEBUG}`);
   }
-  available_degrades = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  if (available_degrades.includes(degrade_param)) {
-    the_params.push(`${DEGRADE_PARAM_SCROLL}=${degrade_param}`);
+
+  if (scroll_quality == P_COURSE) {
+    the_params.push(`${P_SCROLL_QUALITY}=${P_COURSE}`);
+  }
+
+  if (graphics_style == P_SIMPLE) {
+    the_params.push(`${P_GRAPHICS_STYLE}=${P_SIMPLE}`);
+  }
+
+
+  if (display_fps == P_SHOW) {
+    the_params.push(`${P_DISPLAY_FPS}=${P_SHOW}`);
   }
 
   let params_string = "";
   if (the_params.length > 0) {
-
     params_string = "?" + the_params.join("&");
   }
   return params_string;
-
-
-
 }
 
 
 function getDegradeParam(window_location) {
   location_url = new URL(window_location);
-  degrade_param = location_url.searchParams.get(DEGRADE_PARAM_SCROLL);
+  degrade_param = location_url.searchParams.get(P_SCROLL_QUALITY);
   degrade_init = 0;
   if (degrade_param) {
     degrade_int = parseInt(degrade_param);

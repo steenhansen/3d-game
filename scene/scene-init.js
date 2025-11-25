@@ -2,6 +2,7 @@
 function sceneInit() {
   y_flip_count = INIT_Y_FLIP_COUNT;
   CACHED_MISSILE_SHAPES = makeDiamondsBalls();
+  //console.log("x", CACHED_MISSILE_SHAPES);
   initIncrementers();
   initLeftRight();
   affixLeftRight();
@@ -37,7 +38,7 @@ function screenSizeIntoCss(event) {
 
 
 function gameInit() {
-  if (isDebugging()) {
+  if (environmentTypeParam()) {
     setInterval(debugReportFrameTime, 500);
   }
 }
@@ -51,7 +52,7 @@ function resizeOrientEvents() {
 
 
 function startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs) {
-  urlParams();
+
   browserReFocus();
   addDesktopEvents();
   addMobileEvents();

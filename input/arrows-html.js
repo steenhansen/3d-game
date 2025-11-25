@@ -12,7 +12,7 @@ document.getElementById('arrows-html').innerHTML = `
 
     
 
-     <div id='the-fps'>  </div>
+     <div id='fps-value'>  </div>
 
 
     <svg id="arrow-ne" class="an-arrow">

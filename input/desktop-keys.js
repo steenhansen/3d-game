@@ -19,31 +19,34 @@ function read4Keys(event) {
   if (g_player.m_recoil_count == 0) {
     g_planet.m_drift_direction = 0;
     if (E_KEYS.includes(the_key)) {
+      console.log("4 E");
+      g_planet.m_last_direction_key = MOVINGx_NE;
       initiateMovement(MOVINGx_NE);
       flashArrow('e');
       last_4_move = 'NE';
-
     } else if (STOP_KEYS.includes(the_key)) {
+      g_planet.m_last_direction_key = MOVINGx_N;
+      initiateMovement(MOVINGx_N);
+      console.log("4 Stop");
       stopMoving();
-
-      //initiateMovement(MOVINGx_N);
-      //flashArrow('n');
-      //last_4_move = 'N';
     } else if (W_KEYS.includes(the_key)) {
+      console.log("4 W");
+      g_planet.m_last_direction_key = MOVINGx_NW;
       initiateMovement(MOVINGx_NW);
       flashArrow('w');
       last_4_move = 'NW';
     } else if (JUMP_KEYS.includes(the_key)) {
+      console.log("4 J");
       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
         direction_name = 'pressed-jump';
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
+      console.log("4 shoot");
       g_missile = initMissileData(g_missile, g_player);           /// function !!
       direction_name = 'pressed-fire';
-
     } else {
-
+      console.log("4 other");
       if (last_4_move == 'NE') {
         initiateMovement(MOVINGx_NE);
         flashArrow('e');
@@ -134,10 +137,8 @@ function read11Keys(event) {
       g_missile = initMissileData(g_missile, g_player);           /// function !!
       direction_name = 'pressed-fire';
     } else {
-
       stopMoving();              // should set g_is_drinfting = false;
       direction_name = 'pressed-stop';
-
       direction_name = 'unknown-key-dir asd';
     }
   }

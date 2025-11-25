@@ -44,7 +44,9 @@ function pylonSet(the_player, a_pylon) {
 
 
 function pylonDraw(a_pylon, the_player) {
-  a_pylon = twirlSides(a_pylon);
+  if (g_p_graphics_style != P_SIMPLE) {
+    a_pylon = twirlSides(a_pylon);
+  }
   [the_z_index, pylon_relative, x_center_offset, head_on_view] = objectPlacement(a_pylon, the_player);
   pylon_player_ys = [a_pylon.m_y, the_player.m_y];
   if (pylon_relative == LEFT_OF_PLAYER) {
@@ -67,7 +69,7 @@ function pylonDraw(a_pylon, the_player) {
   }
 
 
-  poly_fill = getPylonFill(a_pylon);
+  poly_fill = getPylonFill(a_pylon, 'front');
   front_pylon = pylonFront(left_mid_right_vlines, pylon_id, do_flash, dist_abs_y, poly_fill, a_pylon.m_alive);
   pylon_svg = createPylonHtml(the_z_index, front_pylon, side_pylon);
   return pylon_svg;
@@ -86,7 +88,7 @@ function pylonSidePanel(a_pylon, pylon_vlines, dist_abs_y) {
   let side_s_pylon_name = 'panel-side-pylon-' + a_pylon.s_pylon_name;
 
   do_flash = a_pylon.m_pylon_hit_flash;
-  poly_fill = getPylonFill(a_pylon);
+  poly_fill = getPylonFill(a_pylon, 'side');
   let side_pylon_svg = pylonPolygon(right_top_bot, side_s_pylon_name, do_flash, dist_abs_y, poly_fill, a_pylon.m_alive);
   return side_pylon_svg;
 }
@@ -118,12 +120,23 @@ function pylonOnRight(a_pylon, x_center_offset, pylon_player_ys, head_on_view) {
 }
 
 
-function getPylonFill(a_pylon) {
-  from_color = a_pylon.s_gradient[0];
-  to_color = a_pylon.s_gradient[1];
-  twirl_gradient = twirledGradient(a_pylon.m_grad_side_twirl, from_color, to_color);
-  pylon_fill = `url(#${twirl_gradient}) `;
-  return pylon_fill;
+function getPylonFill(a_pylon, front_or_side) {
+  if (g_p_graphics_style != P_SIMPLE) {
+    from_color = a_pylon.s_gradient[0];
+    to_color = a_pylon.s_gradient[1];
+    twirl_gradient = twirledGradient(a_pylon.m_grad_side_twirl, from_color, to_color);
+    pylon_fill = `url(#${twirl_gradient}) `;
+    return pylon_fill;
+  } else {
+    if (front_or_side == 'front') {
+      simple_color = a_pylon.s_gradient[0];
+
+    } else {
+      simple_color = a_pylon.s_gradient[1];
+
+    }
+    return simple_color;
+  }
 }
 
 

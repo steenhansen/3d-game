@@ -21,7 +21,7 @@ function spaceLiftoff(the_player) {
 }
 
 function spaceClimb(the_planet, the_player, enemy_list, pylon_list) {
-  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_sign_list, g_hole_list);
+  [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
   the_player.m_jump_amount += JUMP_STEP;
   if (the_player.m_jump_amount > STOP_FLY_COUNT) {
     return [PART_SPACE_42_FINISHED, the_player];

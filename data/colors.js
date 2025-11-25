@@ -16,12 +16,17 @@ YELLOW_RED = ["Yellow", "Red"];
 YELLOW_LIME = ['yellow', 'lime'];
 RED_CYAN = ["Red", "Cyan"];
 BLUE_YELLOW = ["Blue", "Yellow"];
+YELLOW_BLUE = ["Yellow", "Blue"];
+
+
 
 PURPLE_GREEN = ["Purple", "Green"];
 RED_____CYAN = ["Red", "Cyan"];
 
 
 
+ORANGE_GREY = ["#ffaa00", "#999999"];
+GREY_ORANGE = ["#999999", "#ffaa00"];
 
 RED_BLUE_1 = ["#ff0000", "#0000ff"];
 RED_BLUE_2 = ["#dd0000", "#0000dd"];

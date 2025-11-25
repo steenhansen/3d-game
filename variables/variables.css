@@ -1,11 +1,10 @@
-
 :root {
 
   --scene-width: 1024px;
   --scene-height: 512px;
-  --margin-left_px:0px;
-  --scene-margin:0 auto;
-  
+  --margin-left_px: 0px;
+  --scene-margin: 0 auto;
+
   --my-shot-x: -1000px;
   --my-shot-y: -1000px;
   --my-shot-width: 100;
@@ -15,8 +14,13 @@
   --test-green: 128;
   --test-blue: 128;
   --collide-shake-angle: 0deg;
+
+  --p-graphics-sun-visible: visible;
+  --p-graphics-sun-animation: sun-keyframes;
+  --p-graphics-sky-image: radial-gradient(#ffffff, #0000ff 75%);
+  --p-graphics-sky-skew: perspective(1536px) rotateX(-85deg);
+
+  --p-graphics-pyramids: visible;
+  --p-graphics-saturn: visible;
+  --p-graphics-boxes: 1;
 }
-
-
-
-

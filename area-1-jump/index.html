@@ -31,7 +31,10 @@
   <link rel="stylesheet" href="land/land.css" />
   <link rel="stylesheet" href="enemy/enemy.css" />
   <link rel="stylesheet" href="missile/missile.css" />
+
   <link rel="stylesheet" href="sky/sky.css" />
+  <link rel="stylesheet" href="sky/sky-device.css" />
+
   <link rel="stylesheet" href="missile/missile-vars.css" />
   <link rel="stylesheet" href="input/arrows.css" />
   <link rel="stylesheet" href="input/boxes.css" />
@@ -241,7 +244,7 @@
 <!-- start part section
  
 
-file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=true
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=true&scroll-quality=course&graphics-style=simple&display-fps=show
 
 -->
 
@@ -252,9 +255,8 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 <link rel="stylesheet" href="area-1-jump/distinct.css" />
 <script>
   const THE_PLANET = 1;
-  const DEGRADE_CHECKERBOARD = getDegradeParam(window.location);
-
   const PARAMS_STR = getParams(window.location);
+
   const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
   const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
 
@@ -267,24 +269,18 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
     window.location.href = NEXT_PLANET;
   }
 
-  g_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS);
-  the_player = initPlayer(PLAYER_START, MOVINGx_NOT, MOVINGx_E);
+  the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
+  the_player = initPlayer(PLAYER_START);
 
   ditch_holes = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5],
   [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5]];
 
   red_holes = makeHoles(0, "red", ditch_holes);
 
-
   back_holes = [
     [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
     [10, 0], [12, 0], [14, 0], [16, 0], [18, 0],
-    // [20, 0], [22, 0], [24, 0], [26, 0], [28, 0],
-    // [30, 0], [32, 0], [34, 0], [36, 0], [38, 0],
   ];
-
-
-
 
   hole_index = red_holes.length;
   white_edge = makeHoles(hole_index, "white", back_holes);
@@ -293,18 +289,17 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
 
   exit_sign = initSign("sign-exit", [6, 2], 'Next', EXIT_OFF_COLOR);
 
-  sign_0 = initSign("sign-00", [6.375, 7], 'J', "grey");
+  sign_0 = initSign("sign-00", [6.375, 7], 'J', "#FFFFFF");
+  sign_1 = initSign("sign-01", [7.5, 7], 'u', "#EEEEEE");
+  sign_2 = initSign("sign-02", [9, 7], 'm', "#DDDDDD");
+  sign_3 = initSign("sign-03", [10.5, 7], 'p', "#CCCCCC");
 
-  sign_1 = initSign("sign-01", [7.5, 7], 'u', "white");
-  sign_2 = initSign("sign-02", [9, 7], 'm', "blue");
-  sign_3 = initSign("sign-03", [10.5, 7], 'p', "green");
+
+
   the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
 
   the_pylons = [];
-  //  the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); //qbert
-
-  //the_enemies = [];
-
+  // the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); 
 
   enemy_0 = {
     start_pos: [10, 2],
@@ -316,10 +311,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3ddd/planet-1/part-1.html?debug-env=tr
   };
   the_enemies = makeEnemies([enemy_0]);
 
-
-
-
   startReadKeys(read11Keys);
-  startItUp(g_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
 
 </script>
