@@ -225,6 +225,7 @@ function elevatorInOneStep() {
 
 
 function animateElevatorNew(elevator_speed) {
+  console.log("elev", elevator_speed);
   if (elevator_speed == FAST_ELEVATOR) {
     elevatorInOneStep();
     return PART_INTRO_13_AFTER_ELEVATOR;
@@ -241,8 +242,8 @@ function animateElevatorNew(elevator_speed) {
     //    m_top_playing_game += 2;        old normal
     //    m_top_the_land += 2;
 
-    m_top_playing_game += 8;
-    m_top_the_land += 8;
+    m_top_playing_game += 4;  //8;
+    m_top_the_land += 4;  //8;
 
     moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
     if (m_top_playing_game == 0) {
@@ -258,7 +259,7 @@ function animateLandingNew(land_speed) {
     expandCheckerboard(255);
     return PART_INTRO_11_AFTER_LANDING;
   } else if (land_speed == SLOW_LAND) {
-    landing_count += 0.25;
+    landing_count += 1; // 0.5;                      //         0.25;
     if (landing_count == NUMBER_LINES) {
       return PART_INTRO_11_AFTER_LANDING;
     } else {
