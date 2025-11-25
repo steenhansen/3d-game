@@ -337,8 +337,8 @@
   enemy_2 = plainEnemy([2, 22], YELLOW_BLUE, LEFT_10, NEAR_10, VELOCITY_3);
   enemy_3 = plainEnemy([2, 32], PURPLE_GREEN, LEFT_10, NEAR_10, VELOCITY_4);
 
-  //the_enemies = makeEnemies([...the_train, enemy_0, enemy_1, enemy_2, enemy_3]);
-  the_enemies = makeEnemies([enemy_0]);
+  the_enemies = makeEnemies([...the_train, enemy_0, enemy_1, enemy_2, enemy_3]);
+  //the_enemies = makeEnemies([enemy_0]);
 
 
   startReadKeys(read4Keys);
