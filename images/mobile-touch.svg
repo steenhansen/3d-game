@@ -355,7 +355,7 @@
      id="text12672-3-2"><tspan
        sodipodi:role="line"
        x="158.8266"
-       y="91.97625"
+       y="90.97625"
        style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
        id="tspan12940-0">Tap</tspan></text>
        
@@ -367,8 +367,8 @@
      y="96.97625"
      id="text12672-3-2"><tspan
        sodipodi:role="line"
-       x="158.8266"
-       y="99.97625"
+       x="157.8266"
+       y="99.57625"
        style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
        id="tspan12940-0">Shoot</tspan></text>
        
@@ -508,7 +508,7 @@
      id="text12672-3-5-8-3-6"><tspan
        sodipodi:role="line"
        x="260.70499"
-       y="170.41542"
+       y="171.41542"
        style="font-size:8.98275px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
        id="tspan12940-33-0-7-6">Restart</tspan></text></g>
        
@@ -536,7 +536,7 @@
      style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.22492;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect1012-6"
      width="17.653564"
-     height="92.619911"
+     height="99.619911"
      x="41.216789"
      y="40.136902"
      rx="6.8214273"
@@ -544,7 +544,7 @@
      style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404040;stroke-width:0.612459;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect1012"
      width="12.574197"
-     height="87.588753"
+     height="94.588753"
      x="43.65947"
      y="42.523895"
      rx="4.8587341"
@@ -556,7 +556,7 @@
      id="text12672-3-5-8-3-6-5"><tspan
         sodipodi:role="line"
         x="49.830246"
-        y="85.246429"
+        y="87.246429"
         style="font-size:8.98275px;line-height:0;letter-spacing:-1.83738px;fill:#a500ff;stroke-width:0.612459"
         id="tspan12940-33-0-7-6-5"
         dx="0 0 0"
@@ -611,7 +611,7 @@
        transform="scale(1.0247305,0.97586634)"><tspan
          sodipodi:role="line"
          id="tspan940-7-5-4-4-1-97-5-2-4-4-4-4-7-3-8"
-         x="236.13666"
+         x="239.13666"
          y="109.46746"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:0.55;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:0.129884"><tspan
            id="tspan12490-10-7-2-2-5-3"
