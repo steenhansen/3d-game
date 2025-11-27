@@ -73,3 +73,6 @@
 [area-4 debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show)
 
 [area-4 degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+
+[instructions](
+https://steenhansen.github.io/3d-game/images/mobile-touch.svg)
