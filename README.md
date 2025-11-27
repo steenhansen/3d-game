@@ -4,6 +4,7 @@
 
 <a name="fast-start"></a>
 
+<a name="s"></a>
 
 
 
@@ -13,16 +14,22 @@
 <img src="./video/right-sweep.webp" width="800">
 
 ## Frames Per Second
-    Galaxy S24 FE - 120
+    Galaxy S24 FE (2024)
+        Chrome 60 to 80 fps
+        Samsung 60 fps
+        Firefox 45 fps
 
-    Galaxy SM-A520 - 20 when degraded
+    Galaxy SM-A520 (2017) 
+        Chrome 6 fps - when degraded
+        Firefox 3 fps - when degraded
+        Samsung does not work
 
-    AMD Ryzen 7 3700X
-        Chrome 60
-        Opera 60
-        Brave 60
-        Edge 60
-        Firefox 50 to 60 when degraded
+    AMD Ryzen 7 3700X (2019)
+        Chrome 60 fps
+        Opera 60 fps
+        Brave 60 fps
+        Edge 60 fps
+        Firefox 50 to 60 - when degraded
 
 
 [Main Screen](https://steenhansen.github.io/3d-game/)

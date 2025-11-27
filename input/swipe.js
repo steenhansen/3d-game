@@ -23,6 +23,7 @@ function touchStart(evt) {
 }
 
 const SWIPE_DISTANCE_MIN = 30;
+const IS_PRESS_NOT_TAP =333;
 
 function touchEnd(evt) {
   let touch_id_end = evt.target.id;
@@ -36,7 +37,7 @@ function touchEnd(evt) {
     if (was_a_press) {
       end_touch = Date.now();
       g_touch_press_time = end_touch - local_start_touch;
-      if (g_touch_press_time>500){
+      if (g_touch_press_time>IS_PRESS_NOT_TAP){
         swipeDownStop();
       }else{
         g_missile = initMissileData(g_missile, g_player);
