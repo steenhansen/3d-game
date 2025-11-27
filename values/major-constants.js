@@ -2,6 +2,8 @@
 const RECOIL_COUNTDOWN = 5;   // was 30
 
 
+const NO_MISSILE_DEPTH_OVERFLOW = 31;
+
 // PLAYER_TRAVEL_SPEED
 const TRAVEL_SPEED = 8;   //1sluggish  4slow  8normal 16fast  32extreme
 

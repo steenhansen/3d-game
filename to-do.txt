@@ -1,0 +1,200 @@
+
+have fini transulcent, too much interference
+
+
+
+
+
+IF LEAVING PLANET, ASKEW==0
+
+no recoil on fast-4
+
+
+
+Galaxy s24 FE    
+
+
+
+objects:
+  m_ = mutable
+  s_ = static
+
+variables:
+  l_ = local to file
+  g_ = global
+
+
+
+
+    s_isa: "is-pylon",
+c_isa: 'is-pylon'
+
+
+
+
+
+
+galaxy z fold 5   344 x 882
+cannot see bottom arrows ?
+
+
+galaxy z fold 5   882 x 344   elevator, start out with not 1024 but a smaller numbert !!!
+
+
+
+
+
+
+
+
+
+death does not go left right
+have a function that does xs and ys
+
+
+
+
+
+planet 4 better
+
+getting stuck
+
+
+
+
+Galaxy z fold 5
+
+let const
+
+
+
+want to show off my phone with no limits
+
+//////////////////////////
+
+debug
+degrade-scroll
+player-pos 18.5, 2.1
+missle launch, collide, kill, dissapear
+
+
+
+bad::hole front-hole-hole-35 NaN
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=true
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html
+?update-checkers=2&debug-env=true
+
+?update-checkers=4&debug-env=true
+
+?debug-env=true                                  fastest
+?degrade-scroll=0&debug-env=true           fastest  
+?degrade-scroll=1&debug-env=true           FireFox+1
+?degrade-scroll=2&debug-env=true   
+
+?degrade-scroll=3&debug-env=true       samsung new
+?degrade-scroll=7&debug-env=true       samsung old
+
+
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/index.html?debug-env=true&degrade-scroll=1
+
+
+after waiting for computer to catch up to click
+change the screen svg, wait for fullscreen...
+
+
+player relative pos
+
+is-desktop
+missile relative
+
+
+
+
+
+about:config
+layout.frame_rate -1 =>0
+
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-3-shoot/index.html
+
+gets stuck on left side totally askew behind the yellow-orange block 
+
+
+
+
+
+
+have drift be slower
+
+
+space and shot don't count as up stoppers
+
+
+stearing 1/2/3 only go when press
+
+so when no buttons, then kill move
+  no 
+
+
+
+const ROOM_DEPTH = 32;   // old ==16
+let TILE_WIDTH = 256;
+
+
+
+
+
+have g_planet only keep track of game/part states nothing else
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-3-shoot/index.html?debug-env=true
+
+
+
+
+
+
+
+
+
+
+
+
+
+planets-> arenas
+
+
+
+
+
+
+
+only left right buttons show for game game
+
+
+game-game
+
+
+wd
+
+
+
+
+
+
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3d-a/index.html?debug=true&res=high
+
+
+file:///c%3A/Users/16043/Documents/GitHub/3d-a/index.html?debug=true&res=low
+
+
+
+
+

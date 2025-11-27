@@ -111,6 +111,7 @@
 
 
 #mobile-list {
+  display:none;
   height: 100%;
   width: 100%;
   background-image: url('../images/mobile-touch.svg');
@@ -120,6 +121,7 @@
 }
 
 #mobile-wait {
+  display:none;
   height: 100%;
   width: 100%;
   background-image: url('../images/mobile-wait.svg');

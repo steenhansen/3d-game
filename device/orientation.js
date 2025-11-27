@@ -4,6 +4,7 @@ function fixMobile() {
     waiting_for_start = true;
     start_mobile_display = document.getElementById('start-mobile').style.display;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
+    unHideDiv('mobile-list');
     return;
   }
 }

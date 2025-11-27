@@ -213,17 +213,13 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   enemy_list = drawEnemies(enemy_list, the_player);
   hole_list = drawHoles(hole_list, the_player);
   fixFPS2();
-  //fixFPS();
   if (!is_dying) {
     enemy_list = missileHitEnemies(g_missile, enemy_list);
     [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
     [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
     [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
     the_player = playerHitEnemies(the_player, enemy_list);
-  //  console.log("111", the_player.m_is_dying)
     the_player = playerHitHoles(the_player, hole_list);
-    //console.log("222", the_player.m_is_dying)
-
     enemy_list = enemiesHitBounds(enemy_list, the_planet);
   }
   return [the_planet, the_player, enemy_list, pylon_list];

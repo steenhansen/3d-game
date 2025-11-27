@@ -252,7 +252,8 @@ function animateElevatorNew() {
 }
 
 function animateLandingNew() {
-  landing_count += 1;
+//  landing_count += 1;
+  landing_count += 4;
   if (landing_count == NUMBER_LINES) {
     return PART_INTRO_11_AFTER_LANDING;
   } else {

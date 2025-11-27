@@ -1,4 +1,5 @@
 
+
 const DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");
 const DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
 
@@ -10,6 +11,7 @@ const DEBUG_ROW_1_Y = 30;
 const DEBUG_ROW_2_Y = 60;
 const DEBUG_ROW_3_Y = 90;
 const DEBUG_ROW_4_Y = 120;
+const DEBUG_ROW_5_Y = 150;
 
 const DEBUG_L_R_BLANKS = 25;
 const DEBUG_ABOVE_Y = 10;
@@ -69,6 +71,13 @@ function debugDevice() {
   debugPrint(mobile_screen, DEBUG_FIRST_COL_X, DEBUG_ROW_4_Y);
 }
 
+function debugTouchTime() {
+  const touch_time = `press time: ${g_touch_press_time} `;
+  debugPrint(touch_time, DEBUG_FIRST_COL_X, DEBUG_ROW_5_Y);
+}
+
+
+
 function debugReportFrameTime() {
   if (!waiting_for_start) {
     debugMissileInfo();
@@ -77,6 +86,7 @@ function debugReportFrameTime() {
     debugPlayerXy();
     debugPlayerBounds();
     debugDevice();
+    debugTouchTime();
 
     start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
     end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
