@@ -16,6 +16,7 @@ function spacePart4(part_state, the_planet, the_player, enemy_list, pylon_list) 
 
 function spaceLiftoff(the_player) {
   the_player.m_jump_amount = 0;
+      the_player = finishShake(the_player);
   part_state = PART_SPACE_41_CLIMB;
   return [part_state, the_player];
 }

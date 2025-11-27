@@ -5,6 +5,7 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
   } else if (part_state == PART_PLAY_21_HIT_HOLE) {
     zxcv = holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list);
     [game_state, part_state, the_planet, the_player, enemy_list, pylon_list] = zxcv;
+    the_player.m_is_dying = true;
   } else if (part_state == PART_PLAY_22_JUMP_START) {
     [part_state, the_player] = jumpStartPlay(the_player);
   } else if (part_state == PART_PLAY_23_JUMP_UP) {
@@ -24,7 +25,6 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
     hole_list = unHideHoles(hole_list);
 
   }
-
 
   the_return = [game_state, part_state, the_planet, the_player, enemy_list, pylon_list, hole_list];
   return the_return;
@@ -48,8 +48,6 @@ function generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list)
 
 function holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list) {
   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
-  game_state = GAME_3_DEATH;
-  part_state = PART_DEATH_30_APPEAR;
   the_player = collisionShake(the_player);
   return [game_state, part_state, the_planet, the_player, enemy_list, pylon_list];
 }

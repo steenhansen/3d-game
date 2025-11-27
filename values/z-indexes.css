@@ -2,6 +2,7 @@
   --z-start-mobile: 50000000;
   --z-touch-boxes: 30000000;
   --z-fps-value: 20000000;
+  --z-arrows-html: 1000000;
   --z-the-draw: 10000000;
   --z-an-arrow: 240;
   --z-the-landing: 210;
@@ -11,7 +12,6 @@
   --z-the-saturn: 170;
   --z-the-pyramids: 160;
   --z-cracked-screen: 150;
-  --z-arrows-html: 140;
   --z-holes-area: not-used;
   --z-pylons-area: 130;
   --z-checkerboard-field: 120;

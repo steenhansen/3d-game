@@ -54,6 +54,7 @@ function initiateMovement(the_direction) {
 
 function handleNw(evt) {
   initiateMovement(MOVINGx_NW);
+  g_planet.m_last_direction_key = MOVINGx_NW;
   arrowClick(evt, "nw-1");
 }
 
@@ -62,36 +63,43 @@ function handleNw(evt) {
 
 function handleN(evt) {
   initiateMovement(MOVINGx_N);
+  g_planet.m_last_direction_key = MOVINGx_N;
   arrowClick(evt, "n-1");
 }
 
 function handleNe(evt) {
   initiateMovement(MOVINGx_NE);
+  g_planet.m_last_direction_key = MOVINGx_NE;
   arrowClick(evt, "ne-1");
 }
 
 function handleW(evt) {
   initiateMovement(MOVINGx_W);
+  g_planet.m_last_direction_key = MOVINGx_W;
   arrowClick(evt, "w-1");
 }
 
 function handleE(evt) {
   initiateMovement(MOVINGx_E);
+  g_planet.m_last_direction_key = MOVINGx_E;
   arrowClick(evt, "e-1");
 }
 
 function handleSw(evt) {
   initiateMovement(MOVINGx_SW);
+  g_planet.m_last_direction_key = MOVINGx_SW;
   arrowClick(evt, "sw-1");
 }
 
 function handleS(evt) {
   initiateMovement(MOVINGx_S);
+  g_planet.m_last_direction_key = MOVINGx_S;
   arrowClick(evt, "s-1");
 }
 
 function handleSe(evt) {
   initiateMovement(MOVINGx_SE);
+  g_planet.m_last_direction_key = MOVINGx_SE;
   arrowClick(evt, "se-1");
 }
 

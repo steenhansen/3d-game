@@ -2,11 +2,9 @@
 function sceneInit() {
   y_flip_count = INIT_Y_FLIP_COUNT;
   CACHED_MISSILE_SHAPES = makeDiamondsBalls();
-  //console.log("x", CACHED_MISSILE_SHAPES);
   initIncrementers();
   initLeftRight();
   affixLeftRight();
-  //hitCracks(0);
 }
 
 function screenSizeIntoCss(event) {

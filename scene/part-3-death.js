@@ -19,6 +19,8 @@ function skyRestart() {
 }
 
 function startDeath(the_player) {
+  setCssSkyColor('grey');
+  the_player = finishShake(the_player);
   the_player.m_num_cracks = MAX_CRACKS;
   setCssVar("--sun-image", "url('../images/grey-sun.png')");
   setCssVar("--pyramids-image", "url('../images/black-pyramids.png')");

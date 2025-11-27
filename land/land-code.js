@@ -1,3 +1,5 @@
+let m_top_playing_game = -512;    // should be var   local_top_playing_game:
+let m_top_the_land = 0;
 
 
 
@@ -73,10 +75,8 @@ function doFlying(lift_amount_x) {
 
 
 
-  //  if (lift_amount_x > 289) {
   if (lift_amount_x > 350) {
     const saturn_space = document.getElementById('star-space');
-    // doStyle('star-space', opacity, `${lift_amount_x}px`); 
     saturn_opacity = (lift_amount_x - 350) / 300;
 
     saturn_space.style.opacity = saturn_opacity;
@@ -202,11 +202,15 @@ function initPlay() {
 }
 
 
-m_top_playing_game = -512;
-m_top_the_land = 0;
 
 function initElevator() {
-  m_top_playing_game = -512;
+  screen_height = window.screen.height;
+  if (screen_height >= 512) {
+    m_top_playing_game = -512;
+  } else {
+    m_top_playing_game = 0 - screen_height;
+  }
+
   m_top_the_land = 0;
 }
 
@@ -223,60 +227,40 @@ function elevatorInOneStep() {
 
 
 
+/*
+  main div is only 412px high so see black space
 
-function animateElevatorNew(elevator_speed) {
-  console.log("elev", elevator_speed);
-  if (elevator_speed == FAST_ELEVATOR) {
-    elevatorInOneStep();
+  thus don't move the bottom checkerboard unti we are past 512-412=100
+
+*/
+function animateElevatorNew() {
+
+  // if (m_top_playing_game > -256) {
+  //   return PART_INTRO_12_ELEVATOR;
+  // }
+
+  m_top_playing_game += 4;  //8;
+  m_top_the_land += 4;  //8;
+
+  moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+  if (m_top_playing_game == 0) {
     return PART_INTRO_13_AFTER_ELEVATOR;
-  } else if (elevator_speed == SLOW_ELEVATOR) {
-    m_top_playing_game += 0.5;
-    m_top_the_land += 0.5;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return PART_INTRO_13_AFTER_ELEVATOR;
-    } else {
-      return PART_INTRO_12_ELEVATOR;
-    }
   } else {
-    //    m_top_playing_game += 2;        old normal
-    //    m_top_the_land += 2;
-
-    m_top_playing_game += 4;  //8;
-    m_top_the_land += 4;  //8;
-
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-    if (m_top_playing_game == 0) {
-      return PART_INTRO_13_AFTER_ELEVATOR;
-    } else {
-      return PART_INTRO_12_ELEVATOR;
-    }
+    return PART_INTRO_12_ELEVATOR;
   }
+  // }
 }
 
-function animateLandingNew(land_speed) {
-  if (land_speed == FAST_LAND) {
-    expandCheckerboard(255);
+function animateLandingNew() {
+  landing_count += 1;
+  if (landing_count == NUMBER_LINES) {
     return PART_INTRO_11_AFTER_LANDING;
-  } else if (land_speed == SLOW_LAND) {
-    landing_count += 1; // 0.5;                      //         0.25;
-    if (landing_count == NUMBER_LINES) {
-      return PART_INTRO_11_AFTER_LANDING;
-    } else {
-      int_landing_count = Math.floor(landing_count);
-      expandCheckerboard(int_landing_count);
-      return PART_INTRO_10_LANDING;
-    }
   } else {
-    //landing_count++;
-    landing_count += 4;   //   qbert normal land == +4new  +1old
-    if (landing_count == NUMBER_LINES) {
-      return PART_INTRO_11_AFTER_LANDING;
-    } else {
-      expandCheckerboard(landing_count);
-      return PART_INTRO_10_LANDING;
-    }
+    int_landing_count = Math.floor(landing_count);
+    expandCheckerboard(int_landing_count);
+    return PART_INTRO_10_LANDING;
   }
+
 }
 
 

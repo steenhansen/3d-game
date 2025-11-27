@@ -260,10 +260,10 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
   const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
   const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
 
-  const FIELD_IN_SQUARES = [20, 40];
+//    const FIELD_IN_SQUARES = [20, 40];
+  const FIELD_IN_SQUARES = [34, 40];
   const PLAYER_START = [7, 11];
-  const PLAYER_BOUNDS = [0, 1, 20, 39];   // 11->39
-  const CURRENT_SEGWAY = SLOW_SEGWAYS; //SLOW_SEGWAYS   FAST_SEGWAYS
+  const PLAYER_BOUNDS = [0, 1, 34, 39];   // 11->39
 
   function hitExit() {
     window.location.href = NEXT_PLANET;
@@ -272,14 +272,29 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
   the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
   the_player = initPlayer(PLAYER_START);
 
-  ditch_holes = [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5],
-  [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5]];
+  ditch_holes = [
+    [0, 5], [1.0625, 5.5], [2.125, 5], [3.1875, 4.5], 
+    [4.25, 5], [5.3125, 5.5],  [6.375, 5], [7.4375, 4.5], 
+    [8.5, 5], [9.5625, 5.5], [10.625, 5], [11.6875, 4.5],
+    [12.75, 5], [13.8125, 5.5], [14.875, 5], [15.9375, 4.5],
+    
+    [17, 5], [18.0625, 5.5], [19.125, 5], [20.1875, 4.5],
+    [21.25, 5], [22.3125, 5.5], [23.375, 5], [24.4375, 4.5],
+    [25.5, 5], [26.5625, 5.5], [27.625, 5], [28.6875, 4.5],
+    [29.75, 5], [30.8125, 5.5], [31.875, 5], [32.9375, 4.5] //, [34, 5]
+    
+    
+    ];
+
 
   red_holes = makeHoles(0, "red", ditch_holes);
 
   back_holes = [
     [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
-    [10, 0], [12, 0], [14, 0], [16, 0], [18, 0],
+    [10, 0], [12, 0], [14, 0], [16, 0], 
+    [18, 0], [20, 0], [22, 0], [24, 0], 
+    [26, 0], [28, 0], [30, 0], [32, 0] //, [34,0] 
+
   ];
 
   hole_index = red_holes.length;

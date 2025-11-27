@@ -70,9 +70,6 @@ const DIAGONAL_DAMPER = 2;
 
 function sceneMove(the_player, is_dying) {
   if (is_dying) {
-    console.log("sceneMove() is_dying");
-    the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
-    the_player = sceneBackward(the_player, travel_speed);   // MOVINGx_NW
     return the_player;
   }
   travel_speed = TRAVEL_SPEED;  //4
@@ -201,7 +198,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   }
   hitCracks(the_player);
   the_player = doRecoil(the_player);
-  if (the_planet.m_game_state == GAME_3_DEATH) {
+  if (the_planet.m_game_state == GAME_3_DEATH) {  // or the_player.m_is_dying  is more better !!!!
     is_dying = true;
   } else {
     is_dying = false;
@@ -223,8 +220,10 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
     [g_missile, pylon_list] = missileHitPylons(g_missile, pylon_list);
     [enemy_list, pylon_list] = enemiesHitPylons(enemy_list, pylon_list);
     the_player = playerHitEnemies(the_player, enemy_list);
+  //  console.log("111", the_player.m_is_dying)
     the_player = playerHitHoles(the_player, hole_list);
-    //enemy_list = enemyHitHoles(enemy_list, hole_list);
+    //console.log("222", the_player.m_is_dying)
+
     enemy_list = enemiesHitBounds(enemy_list, the_planet);
   }
   return [the_planet, the_player, enemy_list, pylon_list];

@@ -253,7 +253,7 @@
   const FIELD_IN_SQUARES = [20, 40];
   const PLAYER_START = [5, 35];
   const PLAYER_BOUNDS = [2, 0, 8, 40];
-  const CURRENT_SEGWAY = FAST_SEGWAYS; //NORMAL_SEGWAYS
+
 
   function hitExit() {
     game_state = GAME_4_SPACE;
@@ -294,7 +294,10 @@
 
   the_holes = [...white_sides, ...red_jumps];
 
-  exit_sign = initSign("sign-exit", [5, 29], 'Fini', EXIT_OFF_COLOR);
+//  exit_sign = initSign("sign-exit", [5, 29], 'Fini', EXIT_OFF_COLOR);
+
+  exit_sign = initSign("sign-exit", [5, 29], 'Fini', "#ff000088");
+
   sign_0 = initSign("sign-00", [3, 31], 'R', "#FFFFFF");
   sign_1 = initSign("sign-01", [4.5, 31], 'u', "#EEEEEE");
   sign_2 = initSign("sign-02", [6, 31], 'n', "#DDDDDD");

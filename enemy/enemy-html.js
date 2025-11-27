@@ -133,7 +133,6 @@ function createEnemyHtml(the_enemy) {
   }
 
 
-  //console.log("dddd", g_p_graphics_style);
   if (g_p_graphics_style != P_SIMPLE) {
     enemy_star = rotatingStar(star_color, enemy_number, r1);
     ball_all = makeBall('all', ball_color, enemy_number, ball_start);

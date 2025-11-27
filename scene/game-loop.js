@@ -28,12 +28,13 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
       [game_state, part_state, g_planet, g_player] = initPart0(game_state, part_state, g_planet, g_player);
     } else if (game_state == GAME_1_INTRO) {
       [game_state, part_state] = introPart1(game_state, part_state);
-      if (part_state == PART_INTRO_13_AFTER_ELEVATOR) {
-        deleteStartLetters(the_signs, ERASE_START_MESSAGE_TIME);
-      }
     } else if (game_state == GAME_2_PLAY) {
       zxc = playPart2(game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes);
       [game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes] = zxc;
+      if (the_player.m_is_dying){
+        game_state = GAME_3_DEATH;
+        part_state = PART_DEATH_30_APPEAR;
+      }
     } else if (game_state == GAME_3_DEATH) {
       [part_state] = deathPart3(part_state, g_planet, g_player, g_enemies, g_pylons);
     } else if (game_state == GAME_4_SPACE) {

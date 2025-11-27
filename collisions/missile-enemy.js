@@ -67,13 +67,10 @@ function playerHitEnemies(the_player, the_enemies) {
     if (enemy_state == ENEMY_0_HUNTING) {
       has_collided = hasCollided(the_player, an_enemy);
       if (has_collided) {
-
         player_touching_enemy = true;
         if (!the_player.m_enemy_hitting) {
-
           the_player.m_enemy_hitting = true;
           the_player.m_num_cracks++;
-
           if (the_player.m_num_cracks == MAX_CRACKS) {
             the_player.m_is_dying = true;
           }

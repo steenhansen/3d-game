@@ -7,13 +7,15 @@ function collisionShake(the_player) {
     askew_int = parseInt(the_player.m_screen_askew);
     askew_deg2 = `${askew_int}deg`;
     setCssVar("--collide-shake-angle", askew_deg2);
-
-
   }
   return the_player;
-
 }
 
+function finishShake(the_player){
+  the_player.m_screen_askew =0;
+  setCssVar("--collide-shake-angle", '0deg');
+  return the_player;
+}
 
 
 function doRecoil(the_player) {

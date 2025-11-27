@@ -84,27 +84,6 @@ let HALF_TILE_WIDTH = TILE_WIDTH / 2;
 
 
 
-
-let FAST_LAND = 'fast-land';
-let FAST_ELEVATOR = 'fast-elevator';
-let FAST_FLY = 'fast-fly';
-
-const FAST_SEGWAYS = [FAST_LAND, FAST_ELEVATOR, FAST_FLY];
-
-let NORMAL_LAND = 'normal-land';
-let NORMAL_ELEVATOR = 'normal-elevator';
-let NORMAL_FLY = 'normal-fly';
-const NORMAL_SEGWAYS = [NORMAL_LAND, NORMAL_ELEVATOR, NORMAL_FLY];
-
-
-let SLOW_LAND = 'slow-land';
-let SLOW_ELEVATOR = 'slow-elevator';
-let SLOW_FLY = 'slow-fly';
-const SLOW_SEGWAYS = [SLOW_LAND, NORMAL_ELEVATOR, SLOW_FLY];
-
-
-
-
 const FLY_STEP_SLOW = 0.5;
 const FLY_STEP_FAST = 5;
 
