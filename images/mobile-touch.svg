@@ -229,28 +229,28 @@
    height="10.724766"
    x="59.960045"
    y="62.933704" /><rect
-   style="display:none;opacity:1;fill:#f34040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="display:none;opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="rect10157-8-4-7-9"
    width="10.11192"
    height="10.724766"
    x="126.74199"
    y="-94.739975"
    transform="rotate(51.738387)" /><rect
-   style="display:none;opacity:1;fill:#f34040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="display:none;opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="rect10157-8-4-7-9-9"
    width="10.11192"
    height="10.724766"
    x="-33.058643"
    y="107.66318"
    transform="matrix(-0.61925312,0.78519142,0.78519142,0.61925312,0,0)" /><rect
-   style="display:none;opacity:1;fill:#f34040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="display:none;opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="rect10157-8-4-7-9-9-8"
    width="10.11192"
    height="10.724766"
    x="25.36821"
    y="212.49347"
    transform="matrix(-0.61925313,0.78519142,0.78519142,0.61925313,0,0)" /><rect
-   style="display:none;opacity:1;fill:#f34040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="display:none;opacity:1;fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#ff4040;stroke-width:0.842333;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="rect10157-8-4-7-9-95"
    width="10.11192"
    height="10.724766"
@@ -310,7 +310,7 @@
    transform="translate(-0.06835831,-2.6684946)"><g
      id="g1101"
      transform="translate(-78.994794,2.7888452)"><circle
-   style="fill:none;fill-opacity:1;stroke:#40ff40;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="path7046-6-6-4-6-6-5"
    cx="158.57774"
    cy="94.465004"
@@ -392,7 +392,7 @@
      id="tspan1049">Shoot</tspan></text>
        
        <circle
-   style="fill:none;fill-opacity:1;stroke:#ff4040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="circle1053"
    cx="159.5434"
    cy="94.403419"
@@ -440,7 +440,7 @@
 -->
    
      <rect
-   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404022;stroke-width:1.29225;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.29225;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-6"
    width="17.586227"
    height="157.51857"
@@ -450,7 +450,7 @@
    ry="6.9527154" />
    
    <rect
-   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#400040;stroke-width:0.608171;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404040;stroke-width:0.608171;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012"
    width="12.580305"
    height="150.22369"
@@ -649,7 +649,7 @@
    x="118.90577"
    y="-31.660469"
    transform="rotate(90)" /><rect
-   style="display:none;opacity:0.999;fill:#c1ce00;fill-opacity:0.236;fill-rule:evenodd;stroke:#e34040;stroke-width:0.0612459;stroke-linejoin:round;stroke-dasharray:none"
+   style="display:none;opacity:0.999;fill:#000000;fill-opacity:0.236;fill-rule:evenodd;stroke:#e34040;stroke-width:0.0612459;stroke-linejoin:round;stroke-dasharray:none"
    id="rect11-5-1"
    width="4.2114058"
    height="19.432631"
@@ -695,7 +695,7 @@
         
         <text
    xml:space="preserve"
-   style="font-size:8.9557px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#ffa500;fill-opacity:1;stroke-width:0.610614"
+   style="font-size:8.9557px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.610614"
    x="78.336433"
    y="-2.9244423"
    id="text12672-3-5-8-3"
@@ -719,7 +719,7 @@
        id="tspan12490-10-5-6-6-1-5-7-1"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
        rotate="0 0 0 0">&gt;</tspan></tspan></text><rect
-   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404000;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404040;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-0-2-8"
    width="12.569398"
    height="100.97645"
@@ -742,7 +742,7 @@
        id="tspan12490-10-5-6-6-1-5-7-1-7"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
        rotate="0 0 0 0">&gt;</tspan></tspan></text><rect
-   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-6-5-1-1"
    width="17.65831"
    height="108.00001"
@@ -751,7 +751,7 @@
    rx="6.8232608"
    ry="6.1733885"
    transform="rotate(90)" /><rect
-   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#404040;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-6-5-1"
    width="17.65831"
    height="108"
@@ -797,7 +797,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6421px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.996127"
        rotate="0 0 0 0"
        id="tspan1338-9">&lt;</tspan></tspan></text><rect
-   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404000;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404040;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-0-2-8-1"
    width="12.569399"
    height="100.97645"
