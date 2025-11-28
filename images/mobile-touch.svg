@@ -14,7 +14,7 @@
    height="270.43185"
    viewBox="0 0 154.84519 154.60409"
    xml:space="preserve"
-   sodipodi:docname="mobile-8-touch.svg"
+   sodipodi:docname="mobile-11-touch.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
    id="metadata108"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -104,14 +104,14 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1920"
-   inkscape:window-height="1027"
+   inkscape:window-width="1280"
+   inkscape:window-height="971"
    id="namedview104"
    showgrid="false"
    inkscape:zoom="2.7337867"
    inkscape:cx="119.81365"
    inkscape:cy="123.73742"
-   inkscape:window-x="1272"
+   inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Capa_1"
@@ -323,13 +323,13 @@
    transform="translate(-30.126823,-4.6334788)" /><text
    xml:space="preserve"
    style="font-size:8.98283px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.612457"
-   x="36.596943"
-   y="77.752602"
+   x="40.785816"
+   y="81.103775"
    id="text14230"
-   transform="scale(1.0000109,0.99998914)"><tspan
+   transform="scale(1.0000109,0.99998912)"><tspan
      sodipodi:role="line"
-     x="36.596943"
-     y="77.752602"
+     x="40.785816"
+     y="81.103775"
      style="font-size:8.98283px;fill:#ff0000;fill-opacity:1;stroke-width:0.612457"
      id="tspan12">Touch Screen to Start</tspan></text>
      
@@ -339,7 +339,7 @@
 <!-- press to stop -->
 <g
    id="g1101"
-   transform="translate(-76.301052,20.554078)"><circle
+   transform="translate(-79.354814,19.027197)"><circle
    style="fill:none;fill-opacity:1;stroke:#40ff40;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="path7046-6-6-4-6-6-5"
    cx="158.57774"
@@ -354,7 +354,7 @@
    id="text12672-3-2"><tspan
      sodipodi:role="line"
      x="158.8266"
-     y="91.97625"
+     y="92.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan12940-0">Press</tspan></text>
        
@@ -387,7 +387,7 @@
 <!-- tap to shoot -->
 <g
    id="g1055"
-   transform="translate(-81.594768,-52.022077)"><circle
+   transform="translate(-80.067887,-48.968315)"><circle
    style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="circle1043"
    cx="159.57774"
@@ -401,7 +401,7 @@
    y="96.97625"
    id="text1047"><tspan
      sodipodi:role="line"
-     x="158.8266"
+     x="159.8266"
      y="92.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan1045">Tap to</tspan></text>
@@ -414,7 +414,7 @@
    y="96.97625"
    id="text1051"><tspan
      sodipodi:role="line"
-     x="158.8266"
+     x="159.8266"
      y="99.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan1049">Shoot</tspan></text>
@@ -448,16 +448,16 @@
    style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-6-5-1"
    width="17.65831"
-   height="105"
+   height="108"
    x="138"
-   y="-134"
+   y="-135"
    rx="6.8232608"
    ry="6.173388"
    transform="rotate(90)" /><rect
    style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#ffcc40;stroke-width:0.610086;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
    id="rect1012-0-2"
    width="12.577577"
-   height="99.968025"
+   height="101.968025"
    x="140.67676"
    y="-132.30692"
    rx="4.8600402"
@@ -539,7 +539,7 @@
      sodipodi:role="line"
      x="13.3"
      y="77.657321"
-     style="font-size:8.91986px;line-height:0;letter-spacing:-1.82452px;fill:#a500ff;stroke-width:0.608171"
+     style="font-size:8.91986px;line-height:0;letter-spacing:-3px;fill:#a500ff;stroke-width:0.608171"
      id="tspan12940-33-0-7-6-5"
      dx="0 0 0"
      dy="0 0 0">Swipe Up to Jump</tspan></text>
