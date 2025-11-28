@@ -10,11 +10,11 @@
    fill="#000000"
    version="1.1"
    id="Capa_1"
-   width="202.8255"
-   height="270.43185"
-   viewBox="0 0 154.84519 154.60409"
+   width="205"
+   height="242"
+   viewBox="0 0 136.23723 124.71379"
    xml:space="preserve"
-   sodipodi:docname="mobile-11-touch.svg"
+   sodipodi:docname="mobile-18-touch.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
    id="metadata108"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -104,14 +104,14 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1280"
-   inkscape:window-height="971"
+   inkscape:window-width="1920"
+   inkscape:window-height="1027"
    id="namedview104"
    showgrid="false"
    inkscape:zoom="2.7337867"
-   inkscape:cx="119.81365"
-   inkscape:cy="123.73742"
-   inkscape:window-x="-8"
+   inkscape:cx="57.934599"
+   inkscape:cy="123.93914"
+   inkscape:window-x="1272"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Capa_1"
@@ -124,14 +124,11 @@
    fit-margin-bottom="0"
    inkscape:showpageshadow="2"
    inkscape:pagecheckerboard="true"
-   inkscape:deskcolor="#d1d1d1"><sodipodi:guide
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:snap-object-midpoints="true"><sodipodi:guide
      position="294.99374,454.5866"
      orientation="0,-1"
      id="guide1376"
-     inkscape:locked="false" /><sodipodi:guide
-     position="80.427889,105.46056"
-     orientation="1,0"
-     id="guide14236"
      inkscape:locked="false" /><sodipodi:guide
      position="89.310161,310.93649"
      orientation="0,-1"
@@ -141,52 +138,23 @@
      orientation="0,-1"
      id="guide1616"
      inkscape:locked="false" /><sodipodi:guide
-     position="178.50179,219.04208"
-     orientation="1,0"
-     id="guide1618"
-     inkscape:locked="false" /><sodipodi:guide
-     position="47.785798,113.11038"
-     orientation="1,0"
-     id="guide1620"
-     inkscape:locked="false" /><sodipodi:guide
      position="200.17074,286.40594"
      orientation="0,-1"
      id="guide1622"
      inkscape:locked="false" /><sodipodi:guide
-     position="87.180221,99.449157"
-     orientation="0,-1"
-     id="guide5"
-     inkscape:locked="false" /><sodipodi:guide
-     position="76.464681,67.918728"
-     orientation="0,-1"
-     id="guide6"
-     inkscape:locked="false" /><sodipodi:guide
-     position="121.85642,124.93592"
-     orientation="0,-1"
-     id="guide7"
-     inkscape:locked="false" /><sodipodi:guide
-     position="35.840453,116.5747"
-     orientation="1,0"
-     id="guide8"
-     inkscape:locked="false" /><sodipodi:guide
-     position="66.485478,37.909666"
-     orientation="0,-1"
-     id="guide9"
-     inkscape:locked="false" /><sodipodi:guide
-     position="119.24705,48.052121"
-     orientation="1,0"
-     id="guide10"
-     inkscape:locked="false" /><sodipodi:guide
-     position="120.29175,123.91098"
+     position="304.46426,181.43505"
      orientation="-0.70710678,-0.70710678"
      id="guide11"
      inkscape:locked="false" /><sodipodi:guide
-     position="66.48548,136.67232"
-     orientation="0,-1"
-     id="guide1158" /><sodipodi:guide
-     position="21.394651,51.219622"
+     position="24.971043,83.810175"
      orientation="1,0"
-     id="guide2820" /></sodipodi:namedview>
+     id="guide4142" /><sodipodi:guide
+     position="134.39471,84.462893"
+     orientation="1,0"
+     id="guide4144" /><sodipodi:guide
+     position="79.680167,141.26427"
+     orientation="1,0"
+     id="guide4191" /></sodipodi:namedview>
 
   
      
@@ -320,16 +288,16 @@
    xml:space="preserve"
    id="text14034"
    style="font-size:24.4984px;line-height:1.05;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;white-space:pre;shape-inside:url(#rect14036);display:inline;"
-   transform="translate(-30.126823,-4.6334788)" /><text
+   transform="translate(-30.126823,-0.64604769)" /><text
    xml:space="preserve"
    style="font-size:8.98283px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.612457"
-   x="40.785816"
-   y="81.103775"
+   x="36.250957"
+   y="66.249313"
    id="text14230"
-   transform="scale(1.0000109,0.99998912)"><tspan
+   transform="scale(1.0000109,0.99998911)"><tspan
      sodipodi:role="line"
-     x="40.785816"
-     y="81.103775"
+     x="36.250957"
+     y="66.249313"
      style="font-size:8.98283px;fill:#ff0000;fill-opacity:1;stroke-width:0.612457"
      id="tspan12">Touch Screen to Start</tspan></text>
      
@@ -338,8 +306,10 @@
 
 <!-- press to stop -->
 <g
-   id="g1101"
-   transform="translate(-79.354814,19.027197)"><circle
+   id="g4221"
+   transform="translate(-0.06835831,-2.6684946)"><g
+     id="g1101"
+     transform="translate(-78.994794,2.7888452)"><circle
    style="fill:none;fill-opacity:1;stroke:#40ff40;stroke-width:1.22128;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="path7046-6-6-4-6-6-5"
    cx="158.57774"
@@ -354,7 +324,7 @@
    id="text12672-3-2"><tspan
      sodipodi:role="line"
      x="158.8266"
-     y="92.97625"
+     y="91.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan12940-0">Press</tspan></text>
        
@@ -377,7 +347,7 @@
    cx="158.5434"
    cy="94.403419"
    r="15.082639" />
-</g>
+</g></g>
 
 
 
@@ -386,8 +356,10 @@
      
 <!-- tap to shoot -->
 <g
-   id="g1055"
-   transform="translate(-80.067887,-48.968315)"><circle
+   id="g4212"
+   transform="translate(-0.35528531,0.86699118)"><g
+     id="g1055"
+     transform="translate(-79.707867,-63.545771)"><circle
    style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:0.612459;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
    id="circle1043"
    cx="159.57774"
@@ -402,7 +374,7 @@
    id="text1047"><tspan
      sodipodi:role="line"
      x="159.8266"
-     y="92.97625"
+     y="93.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan1045">Tap to</tspan></text>
        
@@ -415,7 +387,7 @@
    id="text1051"><tspan
      sodipodi:role="line"
      x="159.8266"
-     y="99.97625"
+     y="102.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan1049">Shoot</tspan></text>
        
@@ -425,7 +397,7 @@
    cx="159.5434"
    cy="94.403419"
    r="15.082639" />
-</g>
+</g></g>
      
      
 
@@ -444,49 +416,7 @@
    
      
      
-     <rect
-   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="rect1012-6-5-1"
-   width="17.65831"
-   height="108"
-   x="138"
-   y="-135"
-   rx="6.8232608"
-   ry="6.173388"
-   transform="rotate(90)" /><rect
-   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#ffcc40;stroke-width:0.610086;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="rect1012-0-2"
-   width="12.577577"
-   height="101.968025"
-   x="140.67676"
-   y="-132.30692"
-   rx="4.8600402"
-   ry="5.7974582"
-   transform="rotate(90)" /><text
-   xml:space="preserve"
-   style="font-size:8.94795px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.610086"
-   x="82.651237"
-   y="150.02228"
-   id="text12672-3-5-8-3-6"
-   transform="scale(0.99585803,1.0041592)"><tspan
-     sodipodi:role="line"
-     x="82.651237"
-     y="150.02228"
-     style="font-size:8.94795px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.610086"
-     id="tspan12940-33-0-7-6">Swipe Left to Restart</tspan></text><text
-   xml:space="preserve"
-   transform="scale(1.0204861,0.97992515)"
-   id="text1342"
-   x="-266.10321"
-   y="-23.507439"
-   style="font-size:11.9535px;stroke-width:0.996126"><tspan
-     x="32.870583"
-     y="155.26472"
-     id="tspan1340"
-     style="stroke-width:0.996126"><tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6421px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.996126"
-       rotate="0 0 0 0"
-       id="tspan1338">&lt;</tspan></tspan></text>
+     
        
        
        
@@ -514,8 +444,8 @@
    id="rect1012-6"
    width="17.586227"
    height="157.51857"
-   x="5.2938414"
-   y="-1.2249175"
+   x="3.8084226"
+   y="-15.802376"
    rx="6.7954082"
    ry="6.9527154" />
    
@@ -524,32 +454,29 @@
    id="rect1012"
    width="12.580305"
    height="150.22369"
-   x="7.6997528"
-   y="2.2311487"
+   x="6.214334"
+   y="-12.346308"
    rx="4.8610945"
    ry="5.7598724" />
    
    <text
    xml:space="preserve"
    style="font-size:8.91986px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:-1.82452px;word-spacing:0px;writing-mode:tb-rl;direction:ltr;text-orientation:upright;text-anchor:middle;stroke-width:0.608171"
-   x="13.891474"
-   y="70.616081"
+   x="12.417171"
+   y="55.928719"
    id="text12672-3-5-8-3-6-5"
-   transform="scale(1.0075394,0.99251701)">
-   
-<!-- to get this svg to look ok on mobile      letter-spacing:-4px;   -->
- <tspan
-     sodipodi:role="line"
-     x="13.3"
-     y="77.657321"
-     style="font-size:8.91986px;line-height:0;letter-spacing:-4px;fill:#a500ff;stroke-width:0.608171"
-     id="tspan12940-33-0-7-6-5"
-     dx="0 0 0"
-     dy="0 0 0">Swipe Up to Jump</tspan></text>
+   transform="scale(1.0075394,0.99251701)">    <!-- to get this svg to look ok on mobile      letter-spacing:-4px;   -->  <tspan
+   sodipodi:role="line"
+   x="11.589554"
+   y="64.756335"
+   style="font-size:8.91986px;line-height:0;letter-spacing:-4px;fill:#a500ff;stroke-width:0.608171"
+   id="tspan12940-33-0-7-6-5"
+   dx="0 0 0"
+   dy="0 0 0">Swipe Up to Jump</tspan></text>
      
      <g
    id="g12533-00-2-0-7-9-3"
-   transform="matrix(0,0.98556856,-1.0004858,0,116.15562,-226.35586)"><text
+   transform="matrix(0,0.98556856,-1.0004858,0,114.6702,-240.93333)"><text
    xml:space="preserve"
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:0.129884"
    x="229.13666"
@@ -583,55 +510,12 @@
 -->
    
         
-        <text
-   xml:space="preserve"
-   style="font-size:8.9557px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#ffa500;fill-opacity:1;stroke-width:0.610614"
-   x="78.709557"
-   y="11.142622"
-   id="text12672-3-5-8-3"
-   transform="scale(0.99677981,1.0032306)"><tspan
-     sodipodi:role="line"
-     x="78.709557"
-     y="11.142622"
-     style="font-size:8.9557px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.610614"
-     id="tspan12940-33-0-7">Swipe Right to Quit</tspan></text><text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
-   x="115.78824"
-   y="13.513153"
-   id="text942-6-1-8-5-7-5-4-3-9-3-0-4-3-9-0-9-1"
-   transform="scale(1.0214307,0.97901894)"><tspan
-     sodipodi:role="line"
-     id="tspan940-7-5-4-4-1-97-5-2-4-4-3-5-5-3-1-4-4"
-     x="115.78824"
-     y="13.513153"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0.55;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"><tspan
-       id="tspan12490-10-5-6-6-1-5-7-1"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
-       rotate="0 0 0 0">&gt;</tspan></tspan></text>
+        
        
        
-       <rect
-   style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ff40;stroke-width:1.22123;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="rect1012-6-5-1-7"
-   width="17.657253"
-   height="105"
-   x="-0.46588543"
-   y="-134"
-   rx="6.8228531"
-   ry="6.1844511"
-   transform="rotate(90)" />
+       
    
-   <rect
-   style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404000;stroke-width:0.610614;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="rect1012-0-2-8"
-   width="12.576825"
-   height="98.505959"
-   x="1.977312"
-   y="-131"
-   rx="4.8597498"
-   ry="5.807848"
-   transform="rotate(90)" />
+   
    
    
    
@@ -639,7 +523,7 @@
    
    <g
    id="g12533-00-5-1-4-8-5-8-0"
-   transform="matrix(-0.99377765,0,0,-1.000209,347.37439,128.7155)"><g
+   transform="matrix(-0.99377765,0,0,-1.000209,347.37439,132.70292)"><g
      id="g12521-1-42-0-0-5-72-9-5"
      transform="translate(0.11204789,0.22409577)"><text
        xml:space="preserve"
@@ -665,7 +549,7 @@
          y="107.56667"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.92542px;line-height:0.55;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#000000;fill-opacity:1;stroke-width:0.129884" /></text></g></g><g
    id="g12533-00-2-0-7-9-3-8-2-8"
-   transform="matrix(-0.99377765,0,0,-1.000209,292.36147,128.7155)"><g
+   transform="matrix(-0.99377765,0,0,-1.000209,292.36147,132.70292)"><g
      id="g12521-1-4-0-5-8-1-5-6-4"
      transform="translate(0.11204789,0.22409577)"><text
        xml:space="preserve"
@@ -773,7 +657,7 @@
    y="-30.789898"
    transform="rotate(90)" /><g
    id="g12533-00-2-0-7-9-3-5"
-   transform="matrix(0,0.98556853,-1.0004858,0,116.16787,-100.96789)">
+   transform="matrix(0,0.98556853,-1.0004858,0,114.68245,-115.54536)">
    
    
    <text
@@ -782,7 +666,10 @@
    x="229.13666"
    y="109.46746"
    id="text942-6-1-8-5-7-5-4-3-9-3-4-4-3-0-3-9"
-   transform="scale(1.0247305,0.97586634)"><tspan
+   transform="scale(1.0247305,0.97586634)">
+   
+   <!-- swipe up to jump bottom up arrow -->
+   <tspan
      sodipodi:role="line"
      id="tspan940-7-5-4-4-1-97-5-2-4-4-4-4-7-3-8-1"
      x="242.13666"
@@ -806,31 +693,119 @@
         
         
         
-        <text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
-   x="32.529804"
-   y="12.744428"
-   id="text942-6-1-8-5-7-5-4-3-9-3-0-4-3-9-0-9-1-7"
-   transform="scale(1.0214307,0.97901894)"><tspan
-     sodipodi:role="line"
-     id="tspan940-7-5-4-4-1-97-5-2-4-4-3-5-5-3-1-4-4-0"
-     x="32.529804"
-     y="12.744428"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0.55;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"><tspan
-       id="tspan12490-10-5-6-6-1-5-7-1-7"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
-       rotate="0 0 0 0">&gt;</tspan></tspan></text><text
-   xml:space="preserve"
-   transform="scale(1.0204861,0.97992516)"
-   id="text1342-6"
-   x="-176.38664"
-   y="-23.121761"
-   style="font-size:11.9535px;stroke-width:0.996127"><tspan
-     x="122.58724"
-     y="155.65039"
-     id="tspan1340-9"
-     style="stroke-width:0.996127"><tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6421px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.996127"
-       rotate="0 0 0 0"
-       id="tspan1338-9">&lt;</tspan></tspan></text></svg>
+        <g
+   id="g4203"
+   transform="translate(-0.21564484)"><text
+     xml:space="preserve"
+     style="font-size:8.9557px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#ffa500;fill-opacity:1;stroke-width:0.610614"
+     x="77.219337"
+     y="-2.9244423"
+     id="text12672-3-5-8-3"
+     transform="scale(0.99677981,1.0032306)"><tspan
+       sodipodi:role="line"
+       x="77.219337"
+       y="-2.9244423"
+       style="font-size:8.9557px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.610614"
+       id="tspan12940-33-0-7">Swipe Right to Quit</tspan></text><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
+     x="114.33398"
+     y="-0.90137941"
+     id="text942-6-1-8-5-7-5-4-3-9-3-0-4-3-9-0-9-1"
+     transform="scale(1.0214307,0.97901894)"><tspan
+       sodipodi:role="line"
+       id="tspan940-7-5-4-4-1-97-5-2-4-4-3-5-5-3-1-4-4"
+       x="114.33398"
+       y="-0.90137941"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0.55;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"><tspan
+         id="tspan12490-10-5-6-6-1-5-7-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
+         rotate="0 0 0 0">&gt;</tspan></tspan></text><rect
+     style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404000;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1012-0-2-8"
+     width="12.569398"
+     height="100.97645"
+     x="-11.93161"
+     y="-130.35118"
+     rx="4.8568802"
+     ry="5.9535065"
+     transform="rotate(90)" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
+     x="31.075552"
+     y="-1.4668316"
+     id="text942-6-1-8-5-7-5-4-3-9-3-0-4-3-9-0-9-1-7"
+     transform="scale(1.0214307,0.97901894)"><tspan
+       sodipodi:role="line"
+       id="tspan940-7-5-4-4-1-97-5-2-4-4-3-5-5-3-1-4-4-0"
+       x="31.075552"
+       y="-1.4668316"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.89854px;line-height:0.55;font-family:Arial;-inkscape-font-specification:Arial;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"><tspan
+         id="tspan12490-10-5-6-6-1-5-7-1-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6547px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.129493"
+         rotate="0 0 0 0">&gt;</tspan></tspan></text><rect
+     style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1012-6-5-1-1"
+     width="17.65831"
+     height="108.00001"
+     x="-14.404867"
+     y="-133.73024"
+     rx="6.8232608"
+     ry="6.1733885"
+     transform="rotate(90)" /></g><g
+   id="g4233"><rect
+     style="opacity:0.999;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#40ccff;stroke-width:1.22017;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1012-6-5-1"
+     width="17.65831"
+     height="108"
+     x="123.42255"
+     y="-133.51459"
+     rx="6.8232608"
+     ry="6.173388"
+     transform="rotate(90)" /><text
+     xml:space="preserve"
+     style="font-size:8.94795px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.610086"
+     x="81.159637"
+     y="135.04175"
+     id="text12672-3-5-8-3-6"
+     transform="scale(0.99585803,1.0041592)"><tspan
+       sodipodi:role="line"
+       x="81.159637"
+       y="135.04175"
+       style="font-size:8.94795px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.610086"
+       id="tspan12940-33-0-7-6">Swipe Left to Restart</tspan></text><text
+     xml:space="preserve"
+     transform="scale(1.0204861,0.97992515)"
+     id="text1342"
+     x="-267.94949"
+     y="-38.79052"
+     style="font-size:11.9535px;stroke-width:0.996126"><tspan
+       x="31.024313"
+       y="139.98164"
+       id="tspan1340"
+       style="stroke-width:0.996126"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6421px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.996126"
+         rotate="0 0 0 0"
+         id="tspan1338">&lt;</tspan></tspan></text><text
+     xml:space="preserve"
+     transform="scale(1.0204861,0.97992516)"
+     id="text1342-6"
+     x="-178.68863"
+     y="-37.997852"
+     style="font-size:11.9535px;stroke-width:0.996127"><tspan
+       x="120.28525"
+       y="140.77429"
+       id="tspan1340-9"
+       style="stroke-width:0.996127"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6421px;line-height:0.55;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#a500ff;fill-opacity:1;stroke-width:0.996127"
+         rotate="0 0 0 0"
+         id="tspan1338-9">&lt;</tspan></tspan></text><rect
+     style="opacity:0.999;fill:none;fill-rule:evenodd;stroke:#404000;stroke-width:0.618041;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1012-0-2-8-1"
+     width="12.569399"
+     height="100.97645"
+     x="126.02041"
+     y="-129.73007"
+     rx="4.8568802"
+     ry="5.9535065"
+     transform="rotate(90)" /></g></svg>
