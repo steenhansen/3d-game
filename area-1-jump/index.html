@@ -260,9 +260,9 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
   const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
   const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
 
-//    const FIELD_IN_SQUARES = [20, 40];
+  //    const FIELD_IN_SQUARES = [20, 40];
   const FIELD_IN_SQUARES = [34, 40];
-  const PLAYER_START = [7, 11];
+  const PLAYER_START = [7, 30];
   const PLAYER_BOUNDS = [0, 1, 34, 39];   // 11->39
 
   function hitExit() {
@@ -270,67 +270,78 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
   }
 
   //////////////////////
-function runTheGame(){
-  the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
-  the_player = initPlayer(PLAYER_START);
+  function runTheGame() {
+    the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
+    the_player = initPlayer(PLAYER_START);
 
-  ditch_holes = [
-    [0, 5], [1.0625, 5.5], [2.125, 5], [3.1875, 4.5], 
-    [4.25, 5], [5.3125, 5.5],  [6.375, 5], [7.4375, 4.5], 
-    [8.5, 5], [9.5625, 5.5], [10.625, 5], [11.6875, 4.5],
-    [12.75, 5], [13.8125, 5.5], [14.875, 5], [15.9375, 4.5],
-    
-    [17, 5], [18.0625, 5.5], [19.125, 5], [20.1875, 4.5],
-    [21.25, 5], [22.3125, 5.5], [23.375, 5], [24.4375, 4.5],
-    [25.5, 5], [26.5625, 5.5], [27.625, 5], [28.6875, 4.5],
-    [29.75, 5], [30.8125, 5.5], [31.875, 5], [32.9375, 4.5] //, [34, 5]
-    
-    
+    const ditch_line = 25;
+
+    const back_one = ditch_line - 0.5;
+
+    const forward_one = ditch_line + 0.5;
+
+
+
+    ditch_holes = [
+      [0, ditch_line], [1.0625, forward_one], [2.125, ditch_line], [3.1875, back_one],
+      [4.25, ditch_line], [5.3125, forward_one], [6.375, ditch_line], [7.4375, back_one],
+      [8.5, ditch_line], [9.5625, forward_one], [10.625, ditch_line], [11.6875, back_one],
+      [12.75, ditch_line], [13.8125, forward_one], [14.875, ditch_line], [15.9375, back_one],
+
+      [17, ditch_line], [18.0625, forward_one], [19.125, ditch_line], [20.1875, back_one],
+      [21.25, ditch_line], [22.3125, forward_one], [23.375, ditch_line], [24.4375, back_one],
+      [25.5, ditch_line], [26.5625, forward_one], [27.625, ditch_line], [28.6875, back_one],
+      [29.75, ditch_line], [30.8125, forward_one], [31.875, ditch_line], [32.9375, back_one] //, [34, ditch_line]
+
+
     ];
 
 
-  red_holes = makeHoles(0, "red", ditch_holes);
-
-  back_holes = [
-    [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
-    [10, 0], [12, 0], [14, 0], [16, 0], 
-    [18, 0], [20, 0], [22, 0], [24, 0], 
-    [26, 0], [28, 0], [30, 0], [32, 0] //, [34,0] 
-
-  ];
-
-  hole_index = red_holes.length;
-  white_edge = makeHoles(hole_index, "white", back_holes);
-
-  the_holes = [...white_edge, ...red_holes];
-
-  exit_sign = initSign("sign-exit", [6, 2], 'Next', EXIT_OFF_COLOR);
-
-  sign_0 = initSign("sign-00", [6.375, 7], 'J', "#FFFFFF");
-  sign_1 = initSign("sign-01", [7.5, 7], 'u', "#EEEEEE");
-  sign_2 = initSign("sign-02", [9, 7], 'm', "#DDDDDD");
-  sign_3 = initSign("sign-03", [10.5, 7], 'p', "#CCCCCC");
 
 
 
-  the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
+    red_holes = makeHoles(0, "red", ditch_holes);
 
-  the_pylons = [];
-  // the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); 
+    back_holes = [
+      [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
+      [10, 0], [12, 0], [14, 0], [16, 0],
+      [18, 0], [20, 0], [22, 0], [24, 0],
+      [26, 0], [28, 0], [30, 0], [32, 0] //, [34,0] 
 
-  enemy_0 = {
-    start_pos: [10, 2],
-    the_colors: ['purple', 'cyan'],
-    x_moves: [ZERO_10],
-    y_moves: [ZERO_10],
-    the_speed: 0,
-    ball_start: '-1s'
-  };
-  the_enemies = makeEnemies([enemy_0]);
+    ];
 
-  startReadKeys(read11Keys);
-  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
-}
+    hole_index = red_holes.length;
+    white_edge = makeHoles(hole_index, "white", back_holes);
+
+    the_holes = [...white_edge, ...red_holes];
+
+    exit_sign = initSign("sign-exit", [6, 17], 'Next', EXIT_OFF_COLOR);
+
+    sign_0 = initSign("sign-00", [6.375, 7], 'J', "#FFFFFF");
+    sign_1 = initSign("sign-01", [7.5, 7], 'u', "#EEEEEE");
+    sign_2 = initSign("sign-02", [9, 7], 'm', "#DDDDDD");
+    sign_3 = initSign("sign-03", [10.5, 7], 'p', "#CCCCCC");
+
+
+
+    the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3];
+
+    the_pylons = [];
+    // the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); 
+
+    enemy_0 = {
+      start_pos: [10, 19],
+      the_colors: ['purple', 'cyan'],
+      x_moves: [ZERO_10],
+      y_moves: [ZERO_10],
+      the_speed: 0,
+      ball_start: '-1s'
+    };
+    the_enemies = makeEnemies([enemy_0]);
+
+    startReadKeys(read11Keys);
+    startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  }
 
   runTheGame();
 </script>

@@ -232,12 +232,12 @@ function fixFPS2() {
       draw_sec = draw_every_2nd_l_r_scroll % 2;
       if (draw_sec == 0) {
         current_move_direction = g_planet.m_move_direction;
-        affixLeftRight();
+        affixLeftRight(the_player.m_is_dying);
       } else {
         // don't move the checkerboard squares
       }
     } else {
-      affixLeftRight();
+      affixLeftRight(the_player.m_is_dying);
     }
   }
   draw_every_2nd_l_r_scroll++;

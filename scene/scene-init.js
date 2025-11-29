@@ -4,7 +4,8 @@ function sceneInit() {
   CACHED_MISSILE_SHAPES = makeDiamondsBalls();
   initIncrementers();
   initLeftRight();
-  affixLeftRight();
+  const is_dying = false;
+  affixLeftRight(is_dying);
 }
 
 function screenSizeIntoCss(event) {

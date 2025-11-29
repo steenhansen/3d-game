@@ -20,24 +20,37 @@
     }
   }
 
-  #click-to-begin {
-    text-align: center;
-    background: url('video/git-size.webp') no-repeat center;
-    height: 166px;
-  }
-
   #begin-desktop {
-    margin-top: 46px;
+    padding: 20px;
     display: var(--desktop-begin);
   }
 
   #begin-mobile {
-    margin-top: 46px;
+    padding: 20px;
     display: var(--mobile-begin);
   }
 
   #git-hub {
     text-align: center;
+
+  }
+
+  html {
+    min-height: 100%;
+    background-image: url('video/git-size.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 91vh;
+
 
   }
 </style>
@@ -46,25 +59,22 @@
   // //   index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
   let params_string = getParams(window.location);
   area_1_addr = 'area-1-jump/index.html' + params_string;
-  ("ddddd", area_1_addr)
 </script>
 
-<div id='click-to-begin' class="begin-vars">
-  <br>
-  <button id="begin-desktop" onclick="  window.location.href = area_1_addr " type="button">Begin
-    desktop 3D
-    game</button>
-  <button id="begin-mobile" onclick=" window.location.href = area_1_addr  " type="button">Begin mobile
-    3D
-    game</button>
+
+<div class="center-screen">
 
 
 
-</div>
+  <div class="begin-vars">
+    <br>
+    <button id="begin-desktop" onclick="  window.location.href = area_1_addr " type="button">Begin
+      Desktop 3D
+      Game</button>
+    <button id="begin-mobile" onclick=" window.location.href = area_1_addr  " type="button">Begin Mobile
+      3D
+      Game</button>
 
-<br>
-
-<div id="git-hub">
-  <a href="https://github.com/steenhansen/3d-game#fast-start">GitHub</a>
+  </div>
 
 </div>

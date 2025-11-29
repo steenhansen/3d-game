@@ -47,25 +47,35 @@ function initLeftRight() {
 }
 
 
-
-function affixLeftRight() {
+function affixLeftRight(is_dying) {
   const y_counter = Math.floor(y_flip_count);
   const invert_lines = Y_INVERT_LILNES[y_counter];
-  for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
-    const inverted_x = invert_lines[affix_line];
-    let affix_shift = g_field_xs_shift[affix_line];
-    affix_shift -= g_field_xs_death[affix_line];
-    if (inverted_x == 0) {
-      let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
-      affix_shift -= invert_flip;
+  if (is_dying) {
+    for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
+      const inverted_x = invert_lines[affix_line];
+      let affix_shift = g_field_xs_shift[affix_line];
+      affix_shift -= g_field_xs_death[affix_line];
+      if (inverted_x == 0) {
+        let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
+        affix_shift -= invert_flip;
+      }
+      const line_element = document.getElementById(`line${affix_line}`);
+      line_element.style = `background-position-x: ${affix_shift}px `;
     }
-    const line_element = document.getElementById(`line${affix_line}`);
-    line_element.style = `background-position-x: ${affix_shift}px `;
+  } else {
+    for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
+      const inverted_x = invert_lines[affix_line];
+      let affix_shift = g_field_xs_shift[affix_line];
+      // affix_shift -= g_field_xs_death[affix_line];
+      if (inverted_x == 0) {
+        let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
+        affix_shift -= invert_flip;
+      }
+      const line_element = document.getElementById(`line${affix_line}`);
+      line_element.style = `background-position-x: ${affix_shift}px `;
+    }
   }
 }
-
-
-
 
 function xyNotInField(out_x, out_y, err_mess) {
 
