@@ -269,6 +269,8 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
     window.location.href = NEXT_PLANET;
   }
 
+  //////////////////////
+function runTheGame(){
   the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
   the_player = initPlayer(PLAYER_START);
 
@@ -318,7 +320,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
 
   enemy_0 = {
     start_pos: [10, 2],
-    the_colors: ['yellow', 'lime'],
+    the_colors: ['purple', 'cyan'],
     x_moves: [ZERO_10],
     y_moves: [ZERO_10],
     the_speed: 0,
@@ -328,5 +330,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=
 
   startReadKeys(read11Keys);
   startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+}
 
+  runTheGame();
 </script>

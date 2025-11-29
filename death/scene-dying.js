@@ -49,3 +49,11 @@ function dyingEnemies(the_player, enemy_list) {
 
 }
 
+function reAnimateScreen() {
+  g_field_xs_shift = Array(256).fill(0);
+  g_field_xs_death = Array(256).fill(0);
+  const cur_checkerboard_img = getCssVar("--checkerboard-image");
+  for (i = 0; i < 256; i++) {
+    setCssLineBackground(i, cur_checkerboard_img);  // delete grey checkerboard
+  }
+}

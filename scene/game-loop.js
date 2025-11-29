@@ -27,8 +27,10 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
     if (game_state == GAME_0_INIT) {
       [game_state, part_state, g_planet, g_player] = initPart0(game_state, part_state, g_planet, g_player);
     } else if (game_state == GAME_1_INTRO) {
+  //    console.log('in 1 intro');
       [game_state, part_state] = introPart1(game_state, part_state);
     } else if (game_state == GAME_2_PLAY) {
+    //  console.log("in 2 ");
       zxc = playPart2(game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes);
       [game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_holes] = zxc;
       if (the_player.m_is_dying){
@@ -44,8 +46,9 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the
     } else {
       dbg_print('gameLoopNew() - unknown game_state', game_state);
     }
-    g_planet.m_game_state = game_state;
-    g_planet.m_part_state = part_state;
+      g_planet.m_game_state = game_state;
+      g_planet.m_part_state = part_state;
+    
     requestAnimationFrame(gameLoopNew);
     debugAnimation();
   }

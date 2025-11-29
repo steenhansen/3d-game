@@ -39,7 +39,6 @@ function afterInit(the_planet, the_player) {
   setCssVar("--cracked-glass-display", "none");
   the_player = resetPlayer();
   fixDevice();
-  hideDiv('playing-game');
   initLanding();
   return [the_planet, the_player];
 }

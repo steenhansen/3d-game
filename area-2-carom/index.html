@@ -260,7 +260,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-2-carom/index.html?env-type=
     window.location.href = NEXT_PLANET;
   }
 
-
+function runTheGame(){
   the_planet = initInfinitePlanet(FIELD_IN_SQUARES, MOVINGx_NOT, MOVINGx_E);
   the_player = initPlayer(PLAYER_START);
 
@@ -301,7 +301,7 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-2-carom/index.html?env-type=
 
   enemy_0 = {
     start_pos: [6, 2],
-    the_colors: ['yellow', 'lime'],
+    the_colors: ['yellow', 'black'],
     x_moves: [ZERO_10],
     y_moves: [ZERO_10],
     the_speed: 0,
@@ -310,5 +310,12 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-2-carom/index.html?env-type=
   the_enemies = makeEnemies([enemy_0]);
 
   startReadKeys(read11Keys);
-  startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  
+
+    startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+}
+
+  runTheGame();
+  
+  
 </script>

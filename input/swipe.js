@@ -1,3 +1,5 @@
+//  mobile-swipeDownStop.js
+
 let local_swipe_x_start = 0;
 let local_swipe_y_start = 0;
 let local_start_touch = '';
@@ -23,7 +25,7 @@ function touchStart(evt) {
 }
 
 const SWIPE_DISTANCE_MIN = 30;
-const IS_PRESS_NOT_TAP =333;
+const IS_PRESS_NOT_TAP = 333;
 
 function touchEnd(evt) {
   let touch_id_end = evt.target.id;
@@ -37,9 +39,9 @@ function touchEnd(evt) {
     if (was_a_press) {
       end_touch = Date.now();
       g_touch_press_time = end_touch - local_start_touch;
-      if (g_touch_press_time>IS_PRESS_NOT_TAP){
+      if (g_touch_press_time > IS_PRESS_NOT_TAP) {
         swipeDownStop();
-      }else{
+      } else {
         g_missile = initMissileData(g_missile, g_player);
       }
     } else {
@@ -49,7 +51,7 @@ function touchEnd(evt) {
       dbg_end_swipe_y = touch_y_end;
       if (dif_x > dif_y) {
         if (local_swipe_x_start > touch_x_end) {
-          swipeLeftFly();
+          swipeLeftRestart();
         } else {
           swipeRightQuit();
         }
@@ -72,10 +74,7 @@ function swipeUpJump() {
 }
 
 
-function swipeLeftFly() {
-  dbg_swipe_dir = SWIPE_LEFT;
-  g_planet.m_game_state = GAME_5_DONE;
-}
+
 
 function swipeRightQuit() {
   dbg_swipe_dir = SWIPE_RIGHT;
@@ -86,4 +85,9 @@ function swipeDownStop() {
   dbg_swipe_dir = SWIPE_DOWN;
   g_planet.m_drift_direction = 0;
   stopMoving();
+}
+
+function swipeLeftRestart() {
+  reAnimateScreen();
+  runTheGame();
 }

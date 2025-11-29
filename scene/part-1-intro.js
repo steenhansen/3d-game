@@ -43,7 +43,7 @@ function elevatorInto() {
 function afterElevatorIntro() {
   initPlay();
   // hide landing from really tall phones    iPhone SE 375 x 667
-  const playing_game = document.getElementById(`the-landing`);
-  playing_game.style = `display:none`;
+  const the_landing = document.getElementById(`the-landing`);
+  the_landing.style = `display:none`;
   tiltingReset();
 }

@@ -11,18 +11,22 @@ function twirledGradient(gradient_index, first_color, second_color) {
 // 0-100       
 function wDownWest2bUpEast(gradient_index, west_y, east_y, first_color, second_color) {
   gradient_id = twirledGradient(gradient_index, first_color, second_color);
-
+    // first_color = first_color+"80";
+   // second_color = second_color+"80";
   the_bw = `
       <linearGradient id="${gradient_id}" x1="0%" y1="${west_y}%" x2="100%" y2="${east_y}%">
           <stop offset="0" stop-color="${first_color}" />
           <stop offset="1" stop-color="${second_color}" stop-opacity="1" />
       </linearGradient> \n`;
+
   return the_bw;
 }
 
 // 100 - 200
 function wRightSouth2bLeftNorth(gradient_index, south_x, north_x, first_color, second_color) {
   gradient_id = twirledGradient(gradient_index, first_color, second_color);
+    //first_color = first_color+"80";
+   // second_color = second_color+"80";
   the_bw = `
       <linearGradient id="${gradient_id}" x1="${south_x}%" y1="100%" x2="${north_x}%" y2="0%">
           <stop offset="0" stop-color="${first_color}" />
@@ -34,6 +38,8 @@ function wRightSouth2bLeftNorth(gradient_index, south_x, north_x, first_color, s
 // 200-300
 function wUpEast2bDownWest(gradient_index, east_y, west_y, first_color, second_color) {
   gradient_id = twirledGradient(gradient_index, first_color, second_color);
+  //  first_color = first_color+"80";
+  //  second_color = second_color+"80";
   the_bw = `
       <linearGradient id="${gradient_id}" x1="100%" y1="${east_y}%" x2="0%" y2="${west_y}%">
           <stop offset="0" stop-color="${first_color}" />
@@ -46,6 +52,8 @@ function wUpEast2bDownWest(gradient_index, east_y, west_y, first_color, second_c
 // 300 - 400
 function wLeftNorth2bRightSouth(gradient_index, north_x, south_x, first_color, second_color) {
   gradient_id = twirledGradient(gradient_index, first_color, second_color);
+    //    first_color = first_color+"80";
+   // second_color = second_color+"80";
   the_bw = `
       <linearGradient id="${gradient_id}" x1="${north_x}%" y1="0%" x2="${south_x}%" y2="100%">
           <stop offset="0" stop-color="${first_color}" />
@@ -102,6 +110,9 @@ function makeGradients(pylon_colors) {
   return the_res;
 }
 
+orange_grey_gradients = makeGradients(ORANGE_GREY_FOG);
+
+
 white_black_gradients = makeGradients(WHITE_BLACK);
 red_yellow_gradients = makeGradients(RED_YELLOW);
 red_cyan_gradients = makeGradients(RED_CYAN);
@@ -114,6 +125,7 @@ red_blue_gradients = makeGradients(RED_BLUE);
 gradient_definitions = `
   <svg>
     <defs>
+    ${orange_grey_gradients}
       ${white_black_gradients}
       ${lime_fuchsia_gradients}
       ${red_yellow_gradients}

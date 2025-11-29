@@ -261,6 +261,7 @@
     return [game_state, part_state];
   }
 
+  function runTheGame(){
 
   the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_N, MOVINGx_N);
   the_player = initPlayer(PLAYER_START);
@@ -346,4 +347,8 @@
 
   startReadKeys(read4Keys);
   startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+    }
+
+  runTheGame();
+
 </script>

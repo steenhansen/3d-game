@@ -35,7 +35,7 @@ function pylonSet(the_player, a_pylon) {
     pylon_error = `bad::pylon is null ${pylon_id}`;
     throw new Error(pylon_error);
   }
-  if (a_pylon.m_hidden) {    // qbert
+  if (a_pylon.m_hidden) {
     targetDiv.innerHTML = '';
   } else {
     targetDiv.innerHTML = svg_pylon;

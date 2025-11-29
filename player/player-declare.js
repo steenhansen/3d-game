@@ -26,6 +26,7 @@ function resetPlayer() {
   the_player.m_x = player_init_x;
   the_player.m_y = player_init_y;
   the_player.m_num_cracks = 0;
+  the_player.m_is_dying = false;
   return the_player;
 }
 

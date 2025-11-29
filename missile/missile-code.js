@@ -45,7 +45,7 @@ function missileAdvance(the_missile, the_player) {
 
 
 
-function initMissileData(the_missile, the_player) {      // qbert
+function initMissileData(the_missile, the_player) {
   the_missile.m_phase = MISSILE_1_SHOT_FORWARD;
   let { m_x, m_y } = the_player;
   the_missile.m_x = m_x;
@@ -53,8 +53,6 @@ function initMissileData(the_missile, the_player) {      // qbert
   the_missile.m_x_dir = 0;
   the_missile.m_y_dir = -1;
   the_missile.m_lifetime = MISSILE_LIFETIME;
-
-  //getRandoms(the_missile);
   getRandoms(the_missile);
   return the_missile;
 }

@@ -3,6 +3,13 @@ let m_top_the_land = 0;
 
 
 
+function elevatorInOneStep() {
+  while (m_top_playing_game !== 0) {
+    m_top_playing_game += 2;
+    m_top_the_land += 2;
+    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+  }
+}
 
 
 const STOP_FLY_COUNT = 700;
@@ -217,13 +224,6 @@ function initElevator() {
 
 
 
-function elevatorInOneStep() {
-  while (m_top_playing_game !== 0) {
-    m_top_playing_game += 2;
-    m_top_the_land += 2;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-  }
-}
 
 
 
@@ -243,7 +243,7 @@ function animateElevatorNew() {
   m_top_the_land += 4;  //8;
 
   moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-  if (m_top_playing_game == 0) {
+  if (m_top_playing_game >= 0) {
     return PART_INTRO_13_AFTER_ELEVATOR;
   } else {
     return PART_INTRO_12_ELEVATOR;
@@ -254,7 +254,7 @@ function animateElevatorNew() {
 function animateLandingNew() {
 //  landing_count += 1;
   landing_count += 4;
-  if (landing_count == NUMBER_LINES) {
+  if (landing_count >= NUMBER_LINES) {
     return PART_INTRO_11_AFTER_LANDING;
   } else {
     int_landing_count = Math.floor(landing_count);

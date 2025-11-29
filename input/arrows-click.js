@@ -74,14 +74,26 @@ function handleNe(evt) {
 }
 
 function handleW(evt) {
-  initiateMovement(MOVINGx_W);
-  g_planet.m_last_direction_key = MOVINGx_W;
+
+  if (THE_PLANET == 4) {
+    initiateMovement(MOVINGx_NW);
+    g_planet.m_last_direction_key = MOVINGx_NW;
+  } else {
+
+    initiateMovement(MOVINGx_W);
+    g_planet.m_last_direction_key = MOVINGx_W;
+  }
   arrowClick(evt, "w-1");
 }
 
 function handleE(evt) {
-  initiateMovement(MOVINGx_E);
-  g_planet.m_last_direction_key = MOVINGx_E;
+  if (THE_PLANET == 4) {
+    initiateMovement(MOVINGx_NE);
+    g_planet.m_last_direction_key = MOVINGx_NE;
+  } else {
+    initiateMovement(MOVINGx_E);
+    g_planet.m_last_direction_key = MOVINGx_E;
+  }
   arrowClick(evt, "e-1");
 }
 

@@ -23,7 +23,8 @@ YELLOW_BLUE = ["Yellow", "Blue"];
 PURPLE_GREEN = ["Purple", "Green"];
 RED_____CYAN = ["Red", "Cyan"];
 
-
+ORANGE_GREY_FOG = ["#ffaa00dd", "#999999dd"];
+GREY_ORANGE_FOG = ["#999999dd", "#ffaa00dd"];
 
 ORANGE_GREY = ["#ffaa00", "#999999"];
 GREY_ORANGE = ["#999999", "#ffaa00"];
