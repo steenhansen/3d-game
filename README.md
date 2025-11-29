@@ -4,7 +4,7 @@
 
 <a name="s"></a>
 
-<a name="s"></a>
+
 
 
 
@@ -12,6 +12,8 @@
 ## This is a 3D vanilla JavaScript game.
 
 <img src="./video/right-sweep.webp" width="800">
+
+[Play Game](https://steenhansen.github.io/3d-game/)
 
 ## Frames Per Second
     Galaxy S24 FE (2024)
@@ -32,47 +34,52 @@
         Firefox 50 to 60 - when degraded
 
 
-[Main Screen](https://steenhansen.github.io/3d-game/)
+## Mobile Controls
+    Swipe Up to Jump
+    Swipe Right to Quit
+    Swipe Left to Restart
+
+    Tap to Shoot
+    Press to Stop
+
+<img src="./images/mobile-touch.svg" width="200">
+
 
 <br>
 
-[area-1](https://steenhansen.github.io/3d-game/area-1-jump/index.html)
+## Area 1
+    Playfield bounded front and back. Must jump the red ditch.
 
-[area-1 fps](https://steenhansen.github.io/3d-game/area-1-jump/index.html?display-fps=show)
+<img src="./images-md/area-1.png" width="400">
 
-[area-1 debug](https://steenhansen.github.io/3d-game/area-1-jump/index.html?env-type=debug&display-fps=show)
-
-[area-1 degraded](https://steenhansen.github.io/3d-game/area-1-jump/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
-
-<br>
-
-[area-2](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show)
-
-[area-2 fps](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show)
-
-[area-2 debug](https://steenhansen.github.io/3d-game/area-2-carom/index.html?env-type=debug&display-fps=show)
-
-[area-2 degraded](https://steenhansen.github.io/3d-game/area-2-carom/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[plain](https://steenhansen.github.io/3d-game/area-1-jump/index.html), [fps](https://steenhansen.github.io/3d-game/area-1-jump/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-1-jump/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-1-jump/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
 <br>
 
-[area-3](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show)
+## Area 2
+    Playfield has no bounds front and back. Must carom shoot off of pylon.
 
-[area-3 fps](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show)
+<img src="./images-md/area-2.png" width="400">
 
-[area-3 debug](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?env-type=debug&display-fps=show)
-
-[area-3 degraded](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[plain](https://steenhansen.github.io/3d-game/area-2-carom/index.html), [fps](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-2-carom/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-2-carom/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
 <br>
 
-[area-4](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show)
+## Area 3
+    Playfield bounded on all sides. Must shoot all enemies.
 
-[area-4 fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show)
+<img src="./images-md/area-3.png" width="400">
 
-[area-4 debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show)
+[plain](https://steenhansen.github.io/3d-game/area-3-shoot/index.html), [fps](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
-[area-4 degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+<br>
 
-[instructions](
-https://steenhansen.github.io/3d-game/images/mobile-touch.svg)
+## Area 4
+    Playfield bounded on left and right. Must shoot all enemies, and then jump to finish.
+
+<img src="./images-md/area-4.png" width="400">
+
+[plain](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+
+
+

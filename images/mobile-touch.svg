@@ -434,6 +434,8 @@
 
     to get this svg to look ok on mobile 
          letter-spacing:-4px;  is too small
+
+         letter-spacing:-3px; is just ok in Chrome, overlapping chars in Firefox
     
     -->  <tspan
    sodipodi:role="line"
