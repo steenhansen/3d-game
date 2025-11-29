@@ -429,12 +429,17 @@
    x="12.417171"
    y="54.589554"
    id="text12672-3-5-8-3-6-5"
-   transform="scale(1.0075394,0.99251701)">    <!--
-    to get this svg to look ok on mobile      letter-spacing:-4px;   -->  <tspan
+   transform="scale(1.0075394,0.99251701)">
+    <!--
+
+    to get this svg to look ok on mobile 
+         letter-spacing:-4px;  is too small
+    
+    -->  <tspan
    sodipodi:role="line"
    x="12.50228719"
    y="62.078006"
-   style="font-size:8.91986px;line-height:0;letter-spacing:-4px;fill:#a500ff;stroke-width:0.608171"
+   style="font-size:8.91986px;line-height:0;letter-spacing:-3px;fill:#a500ff;stroke-width:0.608171"
    id="tspan12940-33-0-7-6-5"
    dx="0 0 0"
    dy="0 0 0">Swipe Up to Jump</tspan></text>
