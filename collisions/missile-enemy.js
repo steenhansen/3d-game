@@ -7,7 +7,7 @@ function playerHitSigns(game_state, part_state, the_player, the_signs) {
       has_collided = hasCollided(the_player, a_sign);
       if (has_collided) {
         the_player.m_jump_amount = 0;
-        [game_state, part_state] = hitExit(); // 1&2 do not return
+        [game_state, part_state] = action_hitExit(); // 1&2 do not return
         break;
       }
     }

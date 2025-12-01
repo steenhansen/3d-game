@@ -43,6 +43,7 @@ function setCssEnemyBallFill(enemy_number, new_value) {
 function setCssSkyColor(new_color) {
   enemy_vars = document.querySelector('.sky-vars');
   enemy_vars.style.setProperty('--sky-color', new_color);
+  setCssVar("--p-graphics-sky-image", ' radial-gradient(#000000, #ff0000 75%)');
 }
 
 

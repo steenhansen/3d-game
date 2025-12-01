@@ -16,17 +16,17 @@
 [Play Game](https://steenhansen.github.io/3d-game/)
 
 ## Frames Per Second
-    Galaxy S24 FE (2024)
+    Galaxy S24 FE (2024) Mobile
         Chrome 60 to 80 fps
         Samsung 60 fps
         Firefox 45 fps
 
-    Galaxy SM-A520 (2017) 
+    Galaxy SM-A520 (2017) Mobile
         Chrome 6 fps - when degraded
         Firefox 3 fps - when degraded
         Samsung does not work
 
-    AMD Ryzen 7 3700X (2019)
+    AMD Ryzen 7 3700X (2019) Desktop
         Chrome 60 fps
         Opera 60 fps
         Brave 60 fps
@@ -42,7 +42,7 @@
     Tap to Shoot
     Press to Stop
 
-<img src="./images/mobile-touch.svg" width="200">
+<img src="./images-md/git-mobile-touch.svg" width="200">
 
 
 <br>
@@ -52,7 +52,7 @@
 
 <img src="./images-md/area-1.png" width="400">
 
-[plain](https://steenhansen.github.io/3d-game/area-1-jump/index.html), [fps](https://steenhansen.github.io/3d-game/area-1-jump/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-1-jump/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-1-jump/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[normal](https://steenhansen.github.io/3d-game/area-1-jump/index.html), [fps](https://steenhansen.github.io/3d-game/area-1-jump/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-1-jump/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-1-jump/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
 <br>
 
@@ -61,7 +61,7 @@
 
 <img src="./images-md/area-2.png" width="400">
 
-[plain](https://steenhansen.github.io/3d-game/area-2-carom/index.html), [fps](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-2-carom/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-2-carom/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[normal](https://steenhansen.github.io/3d-game/area-2-carom/index.html), [fps](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-2-carom/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-2-carom/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
 <br>
 
@@ -70,7 +70,7 @@
 
 <img src="./images-md/area-3.png" width="400">
 
-[plain](https://steenhansen.github.io/3d-game/area-3-shoot/index.html), [fps](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[normal](https://steenhansen.github.io/3d-game/area-3-shoot/index.html), [fps](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
 <br>
 
@@ -79,7 +79,13 @@
 
 <img src="./images-md/area-4.png" width="400">
 
-[plain](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
+[normal](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
+
+
+
+## Death
+
+<img src="./images-md/death.png" width="400">
 
 

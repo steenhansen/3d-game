@@ -6,7 +6,8 @@ function dyingCheckerboard(the_planet) {
   the_divs = [31, 29, 23, 19, 17, 13, 11, 7, 3];
   a_div_ind = Math.trunc(g_planet.m_dying_distance / 32);
   a_div = the_divs[a_div_ind];
-  g_field_xs_death[dying_line] = (g_planet.m_dying_distance % a_div);
+  jagged_offset = (g_planet.m_dying_distance % a_div);
+  g_field_xs_death[dying_line] = jagged_offset;
   back_ground = "url('../images/board-death.png')";
   setCssLineBackground(dying_line, "url('../images/board-death.png')");
   if (g_planet.m_dying_distance > 256) {
@@ -51,7 +52,6 @@ function dyingEnemies(the_player, enemy_list) {
 
 function reAnimateScreen() {
   g_field_xs_shift = Array(256).fill(0);
-  g_field_xs_death = Array(256).fill(0);
   const cur_checkerboard_img = getCssVar("--checkerboard-image");
   for (i = 0; i < 256; i++) {
     setCssLineBackground(i, cur_checkerboard_img);  // delete grey checkerboard

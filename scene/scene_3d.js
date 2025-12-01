@@ -212,7 +212,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   }
   enemy_list = drawEnemies(enemy_list, the_player);
   hole_list = drawHoles(hole_list, the_player);
-  fixFPS2();
+  fixFPS3(is_dying);
   if (!is_dying) {
     enemy_list = missileHitEnemies(g_missile, enemy_list);
     [the_player, pylon_list] = playerHitPylons(the_player, pylon_list);
@@ -226,8 +226,10 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
 }
 
 let draw_every_2nd_l_r_scroll = 0;
-function fixFPS2() {
-  if (current_move_direction !== MOVING_NOT) {
+
+function fixFPS3(is_dying) {
+  const is_moving = current_move_direction !== MOVING_NOT;
+  if (is_dying || is_moving) {
     if (g_p_scroll_quality == P_COURSE) {
       draw_sec = draw_every_2nd_l_r_scroll % 2;
       if (draw_sec == 0) {

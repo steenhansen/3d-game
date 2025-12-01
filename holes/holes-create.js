@@ -26,7 +26,7 @@ function squareNotInBounds(xy_squares, xy_offset, err_mess) {
 
 function initHoleData22(hole_num, xy_pixels, hole_color, hole_hidden) {
   let [x_pixels, y_pixels] = xy_pixels;
-  hole_name = `hole-${hole_num}`;
+  const hole_name = `hole-${hole_num}`;
   if (x_pixels < 0 && y_pixels < 0) {
     x_pixels = Math.abs(x_pixels);
     y_pixels = Math.abs(y_pixels);

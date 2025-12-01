@@ -12,6 +12,7 @@ const DEBUG_ROW_2_Y = 60;
 const DEBUG_ROW_3_Y = 90;
 const DEBUG_ROW_4_Y = 120;
 const DEBUG_ROW_5_Y = 150;
+const DEBUG_ROW_6_Y = 180;
 
 const DEBUG_L_R_BLANKS = 25;
 const DEBUG_ABOVE_Y = 10;
@@ -78,6 +79,13 @@ function debugTouchTime() {
 
 
 
+
+function debugEnemiesLeft() {
+  const alive_enemies = enemiesAlive(g_enemies);
+  const show_alive = `enemies alive: ${alive_enemies} `;
+  debugPrint(show_alive, DEBUG_FIRST_COL_X, DEBUG_ROW_6_Y);
+}
+
 function debugReportFrameTime() {
   if (!waiting_for_start) {
     debugMissileInfo();
@@ -87,6 +95,7 @@ function debugReportFrameTime() {
     debugPlayerBounds();
     debugDevice();
     debugTouchTime();
+    debugEnemiesLeft();
 
     start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
     end_point = [dbg_end_swipe_x, dbg_end_swipe_y];

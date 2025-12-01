@@ -44,6 +44,16 @@ function checkBounds(field_in_squares, bounds_in_squares) {
   }
 }
 
+// function ySquares2pixels(y_squares) {
+//   y_pixels = y_squares * DEPTH_OF_SQUARE;  // const DEPTH_OF_SQUARE = 50;
+//   return y_pixels;
+// }
+
+// function xSquares2pixels(x_squares) {
+//   x_pixels = x_squares * WIDTH_OF_SQUARE; // const WIDTH_OF_SQUARE = 54 256;
+//   return x_pixels;
+// }
+
 function squares2pixels(width_depth_squares) {
   let [x_squares, y_squares] = width_depth_squares;
   x_pixels = x_squares * WIDTH_OF_SQUARE; // const WIDTH_OF_SQUARE = 54 256;

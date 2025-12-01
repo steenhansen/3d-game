@@ -275,3 +275,16 @@ function enemiesAllZombies(enemy_list) {
   }
   return true;
 }
+
+
+function enemiesAlive(enemy_list) {
+  let number_alive = 0;
+  number_enemies = enemy_list.length;
+  for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
+    an_enemy = enemy_list[enemy_index];
+    if (an_enemy.m_enemy_state != ENEMY_4_ZOMBIE) {
+      number_alive++;
+    }
+  }
+  return number_alive;
+}

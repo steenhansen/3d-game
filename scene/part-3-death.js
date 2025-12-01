@@ -19,7 +19,7 @@ function skyRestart() {
 }
 
 function startDeath(the_player) {
-  setCssSkyColor('grey');
+  setCssSkyColor('red');
   the_player = finishShake(the_player);
   the_player.m_num_cracks = MAX_CRACKS;
   setCssVar("--sun-image", "url('../images/grey-sun.png')");
@@ -29,6 +29,7 @@ function startDeath(the_player) {
 }
 
 function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
+  setCssSkyColor('pink');
   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
   pylon_list = dyingPylons(the_player, pylon_list);
   enemy_list = dyingEnemies(the_player, enemy_list);

@@ -54,13 +54,13 @@ function affixLeftRight(is_dying) {
     for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
       const inverted_x = invert_lines[affix_line];
       let affix_shift = g_field_xs_shift[affix_line];
-      affix_shift -= g_field_xs_death[affix_line];
+      affix_jagged = affix_shift + g_field_xs_death[affix_line];
       if (inverted_x == 0) {
         let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
-        affix_shift -= invert_flip;
+        affix_jagged -= invert_flip;
       }
       const line_element = document.getElementById(`line${affix_line}`);
-      line_element.style = `background-position-x: ${affix_shift}px `;
+      line_element.style = `background-position-x: ${affix_jagged}px `;
     }
   } else {
     for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {

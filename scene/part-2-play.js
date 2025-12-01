@@ -18,12 +18,7 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
 
   all_dead = enemiesAllZombies(enemy_list);
   if (all_dead) {
-    exit_sign.m_sign_text_col = 'lime';
     [game_state, part_state, the_player] = playerHitSigns(game_state, part_state, the_player, g_signs);
-
-    pylon_list = unHidePylons(pylon_list);
-    hole_list = unHideHoles(hole_list);
-
   }
 
   the_return = [game_state, part_state, the_planet, the_player, enemy_list, pylon_list, hole_list];

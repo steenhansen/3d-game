@@ -265,8 +265,16 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
   const PLAYER_START = [6, 10];
   const PLAYER_BOUNDS = [1, 1, 35, 10];
 
+  function action_checkForOccurance() {
+    all_dead = enemiesAllZombies(g_enemies);
+    if (all_dead) {
+      g_exit_sign.m_sign_text_col = EXIT_ON_COLOR;
+    }
+  }
 
-  function hitExit() {
+
+
+  function action_hitExit() {
     window.location.href = NEXT_PLANET;
   }
 
@@ -320,13 +328,13 @@ file:///c%3A/Users/16043/Documents/GitHub/3qwe/planet-4-shoot/index.html?debug-e
 
 
 
-    exit_sign = initSign("sign-exit", [5, 2], 'Next', EXIT_OFF_COLOR);
+    g_exit_sign = initSign("sign-exit", [5, 2], 'Next', EXIT_OFF_COLOR);
     sign_0 = initSign("sign-00", [0, 7], 'S', "#FFFFFF");
     sign_1 = initSign("sign-01", [1.5, 7], 'h', "#EEEEEE");
     sign_2 = initSign("sign-02", [3, 7], 'o', "#DDDDDD");
     sign_3 = initSign("sign-03", [4.5, 7], 'o', "#CCCCCC");
     sign_4 = initSign("sign-04", [6, 7], 't', "#BBBBBB");
-    the_signs = [exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
+    the_signs = [g_exit_sign, sign_0, sign_1, sign_2, sign_3, sign_4];
 
     slow_0_back_front_enemy = plainEnemy([18, 3], ORANGE_GREY_FOG, ZERO_10, AWAY_10, 1);
     slow_1_back_front_enemy = plainEnemy([18, 3], GREY_ORANGE_FOG, ZERO_10, NEAR_10, 1);
