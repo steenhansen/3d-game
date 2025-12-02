@@ -1,10 +1,10 @@
 
 function hasCollided(a_thing, an_object) {
-  let [field_width, room_width, field_depth, room_depth] = COLLISION_SIZES;
-  let { m_x: thing_x, m_y: thing_y } = a_thing;
-  let { m_x: object_x, m_y: object_y } = an_object;
-  x_collided = collideOverflow(thing_x, object_x, field_width, room_width);
-  y_collided = collideOverflow(thing_y, object_y, field_depth, room_depth);
+  const [field_width, room_width, field_depth, room_depth] = COLLISION_SIZES;
+  const { m_x: thing_x, m_y: thing_y } = a_thing;
+  const { m_x: object_x, m_y: object_y } = an_object;
+  const x_collided = collideOverflow(thing_x, object_x, field_width, room_width);
+  const y_collided = collideOverflow(thing_y, object_y, field_depth, room_depth);
   if (x_collided && y_collided) {
     return true;
   }
@@ -12,11 +12,11 @@ function hasCollided(a_thing, an_object) {
 }
 
 function collideOverflow(thing_pos, object_pos, overflow_size, min_space) {
-  diff_1 = thing_pos - object_pos;
+  let diff_1 = thing_pos - object_pos;
   if (diff_1 < 0) {
     diff_1 += overflow_size;
   }
-  diff_2 = object_pos - thing_pos;
+  let diff_2 = object_pos - thing_pos;
   if (diff_2 < 0) {
     diff_2 += overflow_size;
   }

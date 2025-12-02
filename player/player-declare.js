@@ -17,14 +17,14 @@ let a_player = {
 
 
 
-var player_init_x = 0;
-var player_init_y = 0;
+let f_player_init_x = 0;
+let f_player_init_y = 0;
 
 
 function resetPlayer() {
   the_player = a_player;
-  the_player.m_x = player_init_x;
-  the_player.m_y = player_init_y;
+  the_player.m_x = f_player_init_x;
+  the_player.m_y = f_player_init_y;
   the_player.m_num_cracks = 0;
   the_player.m_is_dying = false;
   return the_player;
@@ -32,9 +32,9 @@ function resetPlayer() {
 
 function initPlayer(player_in_squares) {
   err_mess = "initPlayer()";
-  xy_pixels = originOffset2(player_in_squares, err_mess);
-  player_init_x = xy_pixels[0];
-  player_init_y = xy_pixels[1];
+  xy_pixels = originOffset(player_in_squares, err_mess);
+  f_player_init_x = xy_pixels[0];
+  f_player_init_y = xy_pixels[1];
   the_player = resetPlayer();
   return the_player;
 }

@@ -4,7 +4,7 @@ let local_swipe_x_start = 0;
 let local_swipe_y_start = 0;
 let local_start_touch = '';
 
-var g_touch_press_time = 0;
+
 
 
 function touchBoxes(the_event) {
@@ -89,5 +89,5 @@ function swipeDownStop() {
 
 function swipeLeftRestart() {
   reAnimateScreen();
-  runTheGame();
+  action_runGame();
 }

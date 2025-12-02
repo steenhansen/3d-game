@@ -42,7 +42,7 @@
     Tap to Shoot
     Press to Stop
 
-<img src="./images-md/git-mobile-touch.svg" width="200">
+<img src="./markdown/git-mobile-touch.svg" width="200">
 
 
 <br>
@@ -50,7 +50,7 @@
 ## Area 1
     Playfield bounded front and back. Must jump the red ditch.
 
-<img src="./images-md/area-1.png" width="400">
+<img src="./markdown/area-1.png" width="400">
 
 [normal](https://steenhansen.github.io/3d-game/area-1-jump/index.html), [fps](https://steenhansen.github.io/3d-game/area-1-jump/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-1-jump/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-1-jump/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
@@ -59,7 +59,7 @@
 ## Area 2
     Playfield has no bounds front and back. Must carom shoot off of pylon.
 
-<img src="./images-md/area-2.png" width="400">
+<img src="./markdown/area-2.png" width="400">
 
 [normal](https://steenhansen.github.io/3d-game/area-2-carom/index.html), [fps](https://steenhansen.github.io/3d-game/area-2-carom/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-2-carom/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-2-carom/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
@@ -68,7 +68,7 @@
 ## Area 3
     Playfield bounded on all sides. Must shoot all enemies.
 
-<img src="./images-md/area-3.png" width="400">
+<img src="./markdown/area-3.png" width="400">
 
 [normal](https://steenhansen.github.io/3d-game/area-3-shoot/index.html), [fps](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-3-shoot/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
@@ -77,7 +77,7 @@
 ## Area 4
     Playfield bounded on left and right. Must shoot all enemies, and then jump to finish.
 
-<img src="./images-md/area-4.png" width="400">
+<img src="./markdown/area-4.png" width="400">
 
 [normal](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
@@ -86,6 +86,6 @@
 
 ## Death
 
-<img src="./images-md/death.png" width="400">
+<img src="./markdown/death.png" width="400">
 
 

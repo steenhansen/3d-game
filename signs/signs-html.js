@@ -19,12 +19,12 @@ document.getElementById('signs-area').innerHTML = `
 
 
 
-function deleteStartLetters(the_signs, milli_wait) {
+function deleteStartLetters(g_signs, milli_wait) {
 
   function hideStartLetters() {
-    number_signs = the_signs.length;
+    number_signs = g_signs.length;
     for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-      a_sign = the_signs[sign_index];
+      a_sign = g_signs[sign_index];
       if (a_sign.s_sign_name != "sign-exit") {
         a_sign.m_sign_text_col = 'none';
       }

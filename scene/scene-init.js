@@ -50,20 +50,19 @@ function resizeOrientEvents() {
 
 
 
-function startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs) {
+function startItUp(the_planet, the_player, the_enemies, the_pylons, the_signs, the_holes) {
 
   browserReFocus();
   addDesktopEvents();
   addMobileEvents();
   resizeOrientEvents();
-  runGame(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
+  runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the_holes);
 }
 
 
 
 function startReadKeys(readKeyFunc) {
   turnOnKeys(readKeyFunc);
-  //if (readKeyFunc == read4Keys) {
   if (THE_PLANET == 4) {
     onlyLeftRight();
   }
@@ -75,20 +74,12 @@ function onlyLeftRight() {
     document.getElementById(arrow_id).style.visibility = 'hidden';
   }
 
-
-
   hideArrows("arrow-nw");
-
   hideArrows("arrow-n");
   hideArrows("arrow-ne");
-
-
   hideArrows("arrow-sw");
-
-
   hideArrows("arrow-s");
   hideArrows("arrow-se");
-
 
   // these are touch-boxes
   hideArrows("n-1");

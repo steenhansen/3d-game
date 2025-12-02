@@ -12,7 +12,7 @@ SVG-ESCAPE-BUTTON-TEXT
 
 */
 
-var last_4_move = 'NE';
+let f_last_4_move = 'NE';
 
 function read4Keys(event) {
   const the_key = event.key;
@@ -22,7 +22,7 @@ function read4Keys(event) {
       g_planet.m_last_direction_key = MOVINGx_NE;
       initiateMovement(MOVINGx_NE);
       flashArrow('e');
-      last_4_move = 'NE';
+      f_last_4_move = 'NE';
     } else if (STOP_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_N;
       initiateMovement(MOVINGx_N);
@@ -31,7 +31,7 @@ function read4Keys(event) {
       g_planet.m_last_direction_key = MOVINGx_NW;
       initiateMovement(MOVINGx_NW);
       flashArrow('w');
-      last_4_move = 'NW';
+      f_last_4_move = 'NW';
     } else if (JUMP_KEYS.includes(the_key)) {
       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
@@ -41,13 +41,13 @@ function read4Keys(event) {
       g_missile = initMissileData(g_missile, g_player);           /// function !!
       direction_name = 'pressed-fire';
     } else {
-      if (last_4_move == 'NE') {
+      if (f_last_4_move == 'NE') {
         initiateMovement(MOVINGx_NE);
         flashArrow('e');
-      } else if (last_4_move == "N") {
+      } else if (f_last_4_move == "N") {
         initiateMovement(MOVINGx_N);
         flashArrow('n');
-      } else if (last_4_move == "NW") {
+      } else if (f_last_4_move == "NW") {
         initiateMovement(MOVINGx_NW);
         flashArrow('w');
       }
@@ -80,8 +80,6 @@ const W_KEYS = ['A', 'a', "ArrowLeft", '4'];
 const JUMP_KEYS = [' '];
 const SHOOT_KEYS = ['Enter'];
 const STOP_KEYS = ['S', 's', 'Clear', '5'];
-
-var last_direction_key = -1;
 
 function read11Keys(event) {
   const the_key = event.key;

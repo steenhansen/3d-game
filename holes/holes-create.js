@@ -24,7 +24,7 @@ function squareNotInBounds(xy_squares, xy_offset, err_mess) {
 
 
 
-function initHoleData22(hole_num, xy_pixels, hole_color, hole_hidden) {
+function initHoleData(hole_num, xy_pixels, hole_color, hole_hidden) {
   let [x_pixels, y_pixels] = xy_pixels;
   const hole_name = `hole-${hole_num}`;
   if (x_pixels < 0 && y_pixels < 0) {
@@ -65,14 +65,14 @@ function makeHoles(hole_index, hole_color, holes_list) {
 
     const the_hole_number = hole_index + h_index;
     const hole_id = the_hole_number.toString().padStart(2, '0');
-    xy_pixels = originOffset2(hole_xy_squares, "ignore_bounds");
-    new_hole = initHoleData22(hole_id, xy_pixels, hole_color, hole_hidden);
+    xy_pixels = originOffset(hole_xy_squares, "ignore_bounds");
+    new_hole = initHoleData(hole_id, xy_pixels, hole_color, hole_hidden);
     declared_holes.push(new_hole);
   }
   return declared_holes;
 }
 
-function originOffset2(xy_squares, err_or_ignore_bounds) {
+function originOffset(xy_squares, err_or_ignore_bounds) {
   let [x_square, y_square] = xy_squares;
   x_square = Math.abs(x_square);
   y_square = Math.abs(y_square);

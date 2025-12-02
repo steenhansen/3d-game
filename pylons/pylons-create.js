@@ -65,7 +65,7 @@ function makePylons(pylons_list, pylon_gradients) {
 
     gradient_of_pylon = pylon_gradients[p_index];
     const pylon_id = p_index.toString().padStart(2, '0');
-    xy_pixels = originOffset2(pylon_xy_squares, "ignore_bounds");
+    xy_pixels = originOffset(pylon_xy_squares, "ignore_bounds");
 
     new_pylon = initPylonData(pylon_id, xy_pixels, gradient_of_pylon, pylon_hidden);
     declared_pylons.push(new_pylon);
@@ -81,7 +81,7 @@ function makePylonsSame(pylons_list, pylon_gradient) {
   for (let p_index = 0; p_index < num_pylons; p_index++) {
     pylon_xy_squares = pylons_list[p_index];
     const pylon_id = p_index.toString().padStart(2, '0');
-    xy_pixels = originOffset2(pylon_xy_squares, "ignore_bounds");
+    xy_pixels = originOffset(pylon_xy_squares, "ignore_bounds");
 
     new_pylon = initPylonData(pylon_id, xy_pixels, pylon_gradient);
     declared_pylons.push(new_pylon);

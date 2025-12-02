@@ -1,14 +1,15 @@
-var current_move_direction;
+const L_DIAGONAL_NOT = 3;     // NB cannot do square root of 2 for diagonal damping movement because all integers
+const L_DIAGONAL_DAMPER = 2;
 
+let f_cur_move_dir;
 
-
-
+let f_draw_every_2nd_l_r_scroll = 0;
 
 
 
 function sceneRight(the_player, travel_speed, diagonal_weight) {
-  new_right_x = playerRight(the_player, travel_speed, diagonal_weight);
-  is_allowed = xAllowed(new_right_x);
+  const new_right_x = playerRight(the_player, travel_speed, diagonal_weight);
+  const is_allowed = xAllowed(new_right_x);
   if (!is_allowed) {
     return the_player;
   }
@@ -18,10 +19,9 @@ function sceneRight(the_player, travel_speed, diagonal_weight) {
   return the_player;
 }
 
-
 function sceneLeft(the_player, travel_speed, diagonal_weight) {
-  new_left_x = playerLeft(the_player, travel_speed, diagonal_weight);
-  is_allowed = xAllowed(new_left_x);
+  const new_left_x = playerLeft(the_player, travel_speed, diagonal_weight);
+  const is_allowed = xAllowed(new_left_x);
   if (!is_allowed) {
     return the_player;
   }
@@ -32,32 +32,24 @@ function sceneLeft(the_player, travel_speed, diagonal_weight) {
 }
 
 function sceneForward(the_player, travel_speed) {
-  new_forward_y = playerForward(the_player, travel_speed);
-
-
-  is_allowed = yAllowed(new_forward_y);
+  const new_forward_y = playerForward(the_player, travel_speed);
+  const is_allowed = yAllowed(new_forward_y);
   if (!is_allowed) {
     return the_player;
   }
   the_player.m_y = new_forward_y;
-
-
   fieldForwards(travel_speed);
   moveSky(travel_speed, 'forward');
   return the_player;
 }
 
 function sceneBackward(the_player, travel_speed) {
-  new_backward_y = playerBackward(the_player, travel_speed);
-
-
-
-  is_allowed = yAllowed(new_backward_y);
+  const new_backward_y = playerBackward(the_player, travel_speed);
+  const is_allowed = yAllowed(new_backward_y);
   if (!is_allowed) {
     return the_player;
   }
   the_player.m_y = new_backward_y;
-
   fieldBackwards(travel_speed);
   moveSky(travel_speed, 'backward');
   return the_player;
@@ -65,60 +57,54 @@ function sceneBackward(the_player, travel_speed) {
 
 
 
-const DIAGONAL_NOT = 3;     // NB cannot do square root of 2 for diagonal damping movement because all integers
-const DIAGONAL_DAMPER = 2;
-
 function sceneMove(the_player, is_dying) {
   if (is_dying) {
     return the_player;
   }
-  travel_speed = TRAVEL_SPEED;  //4
+  let travel_speed = PLAYER_TRAVEL_SPEED;  //4
   if (g_planet.m_drift_direction > 0) {
     travel_speed = 1;
-    current_move_direction = g_planet.m_drift_direction;
+    f_cur_move_dir = g_planet.m_drift_direction;
   } else {
-    planet_part = g_planet.m_part_state;
+    const planet_part = g_planet.m_part_state;
     if (planet_part == PART_PLAY_23_JUMP_UP || planet_part == PART_PLAY_24_JUMP_DOWN) {
-      current_move_direction = g_planet.m_last_direction_key;
+      f_cur_move_dir = g_planet.m_last_direction_key;
     } else {
-      current_move_direction = g_planet.m_move_direction;
+      f_cur_move_dir = g_planet.m_move_direction;
     }
   }
-
-  if (current_move_direction == MOVINGx_NW) {
-    the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
+  if (f_cur_move_dir == MOVINGx_NW) {
+    the_player = sceneLeft(the_player, travel_speed, L_DIAGONAL_DAMPER);
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (current_move_direction == MOVINGx_N) {
+  } else if (f_cur_move_dir == MOVINGx_N) {
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (current_move_direction == MOVINGx_NE) {
-    the_player = sceneRight(the_player, travel_speed, DIAGONAL_DAMPER);
+  } else if (f_cur_move_dir == MOVINGx_NE) {
+    the_player = sceneRight(the_player, travel_speed, L_DIAGONAL_DAMPER);
     the_player = sceneBackward(the_player, travel_speed);
-  } else if (current_move_direction == MOVINGx_E) {
-    the_player = sceneRight(the_player, travel_speed, DIAGONAL_NOT);
-  } else if (current_move_direction == MOVINGx_SE) {
-    the_player = sceneRight(the_player, travel_speed, DIAGONAL_DAMPER);
+  } else if (f_cur_move_dir == MOVINGx_E) {
+    the_player = sceneRight(the_player, travel_speed, L_DIAGONAL_NOT);
+  } else if (f_cur_move_dir == MOVINGx_SE) {
+    the_player = sceneRight(the_player, travel_speed, L_DIAGONAL_DAMPER);
     the_player = sceneForward(the_player, travel_speed);
-  } else if (current_move_direction == MOVINGx_S) {
+  } else if (f_cur_move_dir == MOVINGx_S) {
     the_player = sceneForward(the_player, travel_speed);
-  } else if (current_move_direction == MOVINGx_SW) {
+  } else if (f_cur_move_dir == MOVINGx_SW) {
     the_player = sceneForward(the_player, travel_speed);
-    the_player = sceneLeft(the_player, travel_speed, DIAGONAL_DAMPER);
-  } else if (current_move_direction == MOVINGx_W) {
-    the_player = sceneLeft(the_player, travel_speed, DIAGONAL_NOT);
+    the_player = sceneLeft(the_player, travel_speed, L_DIAGONAL_DAMPER);
+  } else if (f_cur_move_dir == MOVINGx_W) {
+    the_player = sceneLeft(the_player, travel_speed, L_DIAGONAL_NOT);
   } else {
     startDrift();
-
   }
   return the_player;
 }
-
 
 function startDrift() {
   if (environmentTypeParam()) {
     return;
   }
   if (g_planet.m_drift_direction > 0) {
-    let rand_dir = Math.floor(Math.random() * NEW_DIRECTION_CHANCE_WHEN_DRIFTING);
+    const rand_dir = Math.floor(Math.random() * NEW_DIRECTION_CHANCE_WHEN_DRIFTING);
     if (rand_dir == 1) {
       rand_drift_direction = randomDirection();
       g_planet.m_drift_direction = rand_drift_direction;
@@ -131,32 +117,17 @@ function startDrift() {
     if (g_planet.m_drift_countdown < 0) {
       g_planet.m_move_direction = 0;
       g_planet.m_drift_direction = randomDirection();
-      g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;       //177;
+      g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
     }
   }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-let waiting_for_start = true;
-
 function rightClick(the_event) {
   the_event.preventDefault();
   return false;
 }
-
 
 function wheelScroll(the_event) {
   the_event.preventDefault();
@@ -164,18 +135,13 @@ function wheelScroll(the_event) {
   return false;
 }
 
-
-
-
 function sceneStop() {
   moveSky('stop');
 }
 
-
-
 function randomDirection() {
-  let rand_dir = Math.floor(Math.random() * 4);
-
+  const rand_dir = Math.floor(Math.random() * 4);
+  let rand_direction;
   if (rand_dir == 0) {
     rand_direction = MOVINGx_NW;
   } else if (rand_dir == 1) {
@@ -188,9 +154,6 @@ function randomDirection() {
   return rand_direction;
 }
 
-
-
-
 function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list, hole_list) {
   timeFrames(the_planet, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
@@ -198,6 +161,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   }
   hitCracks(the_player);
   the_player = doRecoil(the_player);
+  let is_dying;
   if (the_planet.m_game_state == GAME_3_DEATH) {  // or the_player.m_is_dying  is more better !!!!
     is_dying = true;
   } else {
@@ -206,7 +170,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   the_player = sceneMove(the_player, is_dying);
   drawSigns(sign_list, the_player);
   plyon_list = drawPylons(the_player, pylon_list);
-  g_missile = missileAdvance(g_missile, the_player);
+  g_missile = missileAdvance(g_missile, the_player);   //  pass in g_missile as the_missile NOOOOOOOOO
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return PART_PLAY_20_NORMAL;
   }
@@ -225,15 +189,15 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   return [the_planet, the_player, enemy_list, pylon_list];
 }
 
-let draw_every_2nd_l_r_scroll = 0;
+
 
 function fixFPS3(is_dying) {
-  const is_moving = current_move_direction !== MOVING_NOT;
+  const is_moving = f_cur_move_dir !== MOVING_NOT;
   if (is_dying || is_moving) {
     if (g_p_scroll_quality == P_COURSE) {
-      draw_sec = draw_every_2nd_l_r_scroll % 2;
+      const draw_sec = f_draw_every_2nd_l_r_scroll % 2;
       if (draw_sec == 0) {
-        current_move_direction = g_planet.m_move_direction;
+        f_cur_move_dir = g_planet.m_move_direction;
         affixLeftRight(the_player.m_is_dying);
       } else {
         // don't move the checkerboard squares
@@ -242,22 +206,20 @@ function fixFPS3(is_dying) {
       affixLeftRight(the_player.m_is_dying);
     }
   }
-  draw_every_2nd_l_r_scroll++;
+  f_draw_every_2nd_l_r_scroll++;
 }
-
-
 
 //  MAX_CRACKS
 function hitCracks(the_player) {
-  number_cracks = the_player.m_num_cracks;
+  const number_cracks = the_player.m_num_cracks;
   if (number_cracks == 0 || the_player.m_is_dying) {
     setCssVar("--cracked-glass-display", "none");
   } else {
     if (number_cracks > MAX_CRACKS) {
       number_cracks = MAX_CRACKS;
     }
-    glass_opacity = 0.2;  //number_cracks / 6;
-    cracked_image = `url('../images/cracks-${number_cracks}.png`;
+    const glass_opacity = 0.2;
+    const cracked_image = `url('../images/cracks-${number_cracks}.png`;
     setCssVar("--cracked-glass-display", "block");
     setCssVar("--cracked-glass-opacity", glass_opacity);
     setCssVar("--cracked-glass-image", cracked_image);

@@ -1,11 +1,11 @@
-
+const L_FARTHEST_VISIBLE_HOLE = 728;
 
 function holeSet(a_hole, the_player) {
   hole_id = a_hole.s_hole_name;
   targetDiv = document.getElementById(hole_id);
   hole_player_ys = [a_hole.m_y, the_player.m_y];
   dist_abs_y = distanceAbsY(hole_player_ys);
-  if (a_hole.m_hidden || dist_abs_y > FARTHEST_VISIBLE_HOLE) {
+  if (a_hole.m_hidden || dist_abs_y > L_FARTHEST_VISIBLE_HOLE) {
     targetDiv.innerHTML = '';
   } else {
     svg_hole = createHoleHtml(a_hole, the_player);

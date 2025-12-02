@@ -1,4 +1,8 @@
 
+let dbg_loop_time = 0;
+
+
+
 
 const DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");
 const DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
@@ -13,6 +17,7 @@ const DEBUG_ROW_3_Y = 90;
 const DEBUG_ROW_4_Y = 120;
 const DEBUG_ROW_5_Y = 150;
 const DEBUG_ROW_6_Y = 180;
+const DEBUG_ROW_7_Y = 210;
 
 const DEBUG_L_R_BLANKS = 25;
 const DEBUG_ABOVE_Y = 10;
@@ -86,8 +91,13 @@ function debugEnemiesLeft() {
   debugPrint(show_alive, DEBUG_FIRST_COL_X, DEBUG_ROW_6_Y);
 }
 
+function debugLoopTime() {
+  const show_loop_time = `animate msec: ${dbg_loop_time} `;
+  debugPrint(show_loop_time, DEBUG_FIRST_COL_X, DEBUG_ROW_7_Y);
+}
+
 function debugReportFrameTime() {
-  if (!waiting_for_start) {
+  if (!g_waiting_for_start) {
     debugMissileInfo();
     debugScreenSize();
     debugFieldSize();
@@ -96,6 +106,7 @@ function debugReportFrameTime() {
     debugDevice();
     debugTouchTime();
     debugEnemiesLeft();
+    debugLoopTime();
 
     start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
     end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
@@ -150,13 +161,10 @@ function debugSign(an_object, left_mid_right_vlines) {
 // https://stackoverflow.com/questions/4787431/how-do-i-check-framerate-in-javascript
 // 1==only last frame,    20==14 frames
 const dbg_filter_strength = 20;
-var dbg_frame_time = 0, dbg_last_loop = new Date, dbg_start_loop;
-var dbg_animation_time;
+let dbg_start_loop;
 
 
 
-var dbg_y_too_large;
-var dbg_y_too_small;
 
 function debugClear() {
   //canvas = document.getElementById("the-draw");          // func
@@ -189,10 +197,10 @@ function debugInit() {
 
 
 
-function debugAnimation() {
+function debugAnimation(loop_time) {
+  dbg_loop_time = Math.round(loop_time);
   if (environmentTypeParam()) {
     dbg_end_loop = new Date;
-    dbg_animation_time = dbg_end_loop - dbg_start_loop;
   }
 }
 

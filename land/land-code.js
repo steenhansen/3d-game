@@ -1,46 +1,45 @@
-let m_top_playing_game = -512;    // should be var   local_top_playing_game:
-let m_top_the_land = 0;
+
+let f_landing_count = 0;
+let f_top_playing_game = -512;
+let f_top_the_land = 0;
+
+
+
+const L_STOP_JUMP_UP_DOWN = 100;
+
+
+
+
+
 
 
 
 function elevatorInOneStep() {
-  while (m_top_playing_game !== 0) {
-    m_top_playing_game += 2;
-    m_top_the_land += 2;
-    moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
+  while (f_top_playing_game !== 0) {
+    f_top_playing_game += 2;
+    f_top_the_land += 2;
+    moveCheckerboardOnce(f_top_playing_game, f_top_the_land);
   }
 }
 
-
-const STOP_FLY_COUNT = 700;
-const STOP_JUMP_UP_DOWN = 100;
-const JUMP_STEP = 3;
-
-
-function animateJumpUpNew(the_player) {
+function animateJumpUp(the_player) {
   the_player.m_jump_amount += JUMP_STEP;
-  if (the_player.m_jump_amount > STOP_JUMP_UP_DOWN) {
-
+  if (the_player.m_jump_amount > L_STOP_JUMP_UP_DOWN) {
     return [the_player, PART_PLAY_24_JUMP_DOWN];
   }
   doFlying(the_player.m_jump_amount);
   return [the_player, PART_PLAY_23_JUMP_UP];
 }
 
-function animateJumpDownNew(the_player) {
+function animateJumpDown(the_player) {
   the_player.m_jump_amount -= JUMP_STEP;
   if (the_player.m_jump_amount < 1) {
     the_player.m_jump_amount = 0;
     return [the_player, PART_PLAY_20_NORMAL];
   }
   doFlying(the_player.m_jump_amount);
-
   return [the_player, PART_PLAY_24_JUMP_DOWN];
 }
-
-
-
-
 
 function doFlying(lift_amount_x) {
   const sky_aperature = document.getElementById('sky-aperature');
@@ -78,27 +77,12 @@ function doFlying(lift_amount_x) {
   saturn_x = lift_amount_x - 200;
 
   saturn_planet.style.left = `${saturn_x}px`;
-
-
-
-
   if (lift_amount_x > 350) {
     const saturn_space = document.getElementById('star-space');
     saturn_opacity = (lift_amount_x - 350) / 300;
-
     saturn_space.style.opacity = saturn_opacity;
   }
-
-
-
 }
-
-
-
-
-
-
-
 
 function expandCheckerboard(the_count) {
   let normal_line = `background-position: -${the_count + 1}px -${the_count}px`;
@@ -130,11 +114,6 @@ function expandCheckerboard(the_count) {
   }
 }
 
-
-
-
-
-
 function flashScrollingArrow(arrow_id) {
   let r = Math.floor(Math.random() * 255);
   let g = Math.floor(Math.random() * 255);
@@ -145,16 +124,6 @@ function flashScrollingArrow(arrow_id) {
   an_arrow.style = flash_grey;
 }
 
-
-
-
-
-
-
-
-
-
-
 function divVisVisible(hide_id) {
   let hide_div = document.getElementById(hide_id);
   hide_div.style.visibility = 'visible';
@@ -164,8 +133,6 @@ function divVisHidden(unhide_id) {
   let hide_div = document.getElementById(unhide_id);
   hide_div.style.visibility = 'hidden';
 }
-
-
 
 //  divDispNone
 function hideDiv(hide_id) {
@@ -180,93 +147,45 @@ function unHideDiv(unhide_id) {
 }
 
 function initLanding() {
-  // hideDiv('click-to-begin');
   hideDiv('start-mobile');
   unHideDiv('the-scene');
 }
 
-
-var landing_count = 0;
-
 function landingInit() {
-  landing_count = 0;
+  f_landing_count = 0;
   setLandingScroll(0);
 }
 
-
-
-
 function initPlay() {
   divVisVisible('desktop-dir');
-  // unHideDiv('start-mobile');
-
   if (isMobile()) {
     fixMobile();
   } else {
     fixDesktop();
   }
-  //fixMobile();
 }
-
-
 
 function initElevator() {
   screen_height = window.screen.height;
   if (screen_height >= 512) {
-    m_top_playing_game = -512;
+    f_top_playing_game = -512;
   } else {
-    m_top_playing_game = 0 - screen_height;
+    f_top_playing_game = 0 - screen_height;
   }
 
-  m_top_the_land = 0;
+  f_top_the_land = 0;
 }
 
-
-
-
-
-
-
-/*
-  main div is only 412px high so see black space
-
-  thus don't move the bottom checkerboard unti we are past 512-412=100
-
-*/
-function animateElevatorNew() {
-
-  // if (m_top_playing_game > -256) {
-  //   return PART_INTRO_12_ELEVATOR;
-  // }
-
-  m_top_playing_game += 4;  //8;
-  m_top_the_land += 4;  //8;
-
-  moveCheckerboardOnce(m_top_playing_game, m_top_the_land);
-  if (m_top_playing_game >= 0) {
+function animateElevator() {
+  f_top_playing_game += 4;
+  f_top_the_land += 4;
+  moveCheckerboardOnce(f_top_playing_game, f_top_the_land);
+  if (f_top_playing_game >= 0) {
     return PART_INTRO_13_AFTER_ELEVATOR;
   } else {
     return PART_INTRO_12_ELEVATOR;
   }
-  // }
 }
-
-function animateLandingNew() {
-//  landing_count += 1;
-  landing_count += 4;
-  if (landing_count >= NUMBER_LINES) {
-    return PART_INTRO_11_AFTER_LANDING;
-  } else {
-    int_landing_count = Math.floor(landing_count);
-    expandCheckerboard(int_landing_count);
-    return PART_INTRO_10_LANDING;
-  }
-
-}
-
-
-
-
 
 function setLandingScroll(the_pixels) {
   const playing_game = document.getElementById(`the-landing`);
@@ -296,24 +215,22 @@ function animateStart() {
   saturn_space.style.opacity = 0;
 }
 
-
 function resetSections() {
   hideDiv('the-scene');
   divVisHidden('desktop-dir');
-  // unHideDiv('click-to-begin');
-
-
-  //hideDiv('start-mobile');
-
-
-
   doFlying(0);
-
-
   g_planet.m_move_direction = MOVINGx_NOT;
-
   landingInit();
   initElevator();
+}
 
-
+function animateLanding() {
+  f_landing_count += 4;
+  if (f_landing_count >= NUMBER_LINES) {
+    expandCheckerboard(f_landing_count - 1);
+    return PART_INTRO_11_AFTER_LANDING;
+  } else {
+    expandCheckerboard(f_landing_count);
+    return PART_INTRO_10_LANDING;
+  }
 }

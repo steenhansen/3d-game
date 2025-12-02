@@ -1,4 +1,4 @@
-function checkBounds(field_in_squares, bounds_in_squares) {
+function checkBounds(field_in_squares, bounds_as_squares) {
   let [x_squares, y_squares] = field_in_squares;
 
   if (x_squares < 0) {
@@ -11,7 +11,7 @@ function checkBounds(field_in_squares, bounds_in_squares) {
     throw new Error(b_err);
   }
 
-  let [x_left, y_top, x_right, y_bottom] = bounds_in_squares;
+  let [x_left, y_top, x_right, y_bottom] = bounds_as_squares;
 
   if (x_right < x_left) {
     b_err = `initBoundedPlanet() x_left bound:${x_left} larger than x-right bound:${x_right}`;
@@ -62,12 +62,12 @@ function squares2pixels(width_depth_squares) {
   return xy_size;
 }
 
-function initBoundedPlanet(field_in_squares, bounds_in_squares, start_move_dir, start_drift_dir) {
-  checkBounds(field_in_squares, bounds_in_squares);
+function initBoundedPlanet(field_in_squares, bounds_as_squares, start_move_dir, start_drift_dir) {
+  checkBounds(field_in_squares, bounds_as_squares);
   FIELD_IN_PIXELS = squares2pixels(field_in_squares);  //  [25600, 2000]
-  let [x_left, y_top, x_right, y_bottom] = bounds_in_squares;     //[27, 2, 40, 16]
+  let [x_left, y_top, x_right, y_bottom] = bounds_as_squares;     //[27, 2, 40, 16]
   //a_planet = initInfinitePlanet(field_in_squares);
-  BOUNDS_IN_SQUARES = [x_left, y_top, x_right, y_bottom];   //bounds_in_squares;
+  BOUNDS_IN_SQUARES = [x_left, y_top, x_right, y_bottom];   //bounds_as_squares;
   top_left = squares2pixels([x_left, y_top]);
   bottom_right = squares2pixels([x_right, y_bottom]);
   BOUNDS_IN_PIXELS = [top_left[0], top_left[1], bottom_right[0], bottom_right[1]];

@@ -1,7 +1,7 @@
 function drawSigns(the_signs, the_player) {
-  number_signs = the_signs.length;
+  const number_signs = the_signs.length;
   for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-    a_sign = the_signs[sign_index];
+    const a_sign = the_signs[sign_index];
     signSet(a_sign, the_player);
   }
 }
@@ -24,7 +24,7 @@ function signSet(a_sign, the_player) {
 }
 
 function initSign(sign_id, sign_in_squares, vert_word, text_color) {
-  xy_pixels = originOffset2(sign_in_squares, "ignore_bounds");
+  xy_pixels = originOffset(sign_in_squares, "ignore_bounds");
   the_sign = {
     s_isa: "is-sign",
     s_sign_name: sign_id,

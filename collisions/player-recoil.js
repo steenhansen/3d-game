@@ -4,19 +4,18 @@
 function collisionShake(the_player) {
   if (the_player.m_screen_askew > 0) {
     the_player.m_screen_askew--;
-    askew_int = parseInt(the_player.m_screen_askew);
-    askew_deg2 = `${askew_int}deg`;
-    setCssVar("--collide-shake-angle", askew_deg2);
+    const askew_int = parseInt(the_player.m_screen_askew);
+    const askew_deg = `${askew_int}deg`;
+    setCssVar("--collide-shake-angle", askew_deg);
   }
   return the_player;
 }
 
-function finishShake(the_player){
-  the_player.m_screen_askew =0;
+function finishShake(the_player) {
+  the_player.m_screen_askew = 0;
   setCssVar("--collide-shake-angle", '0deg');
   return the_player;
 }
-
 
 function doRecoil(the_player) {
   if (the_player.m_recoil_count > 0) {

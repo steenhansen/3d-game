@@ -1,7 +1,5 @@
 
-//const START_SCREEN = 'index.html' + PARAMS_STR;
-
-let BOUNDS_IN_SQUARES;
+const JUMP_STEP = 3;
 
 const HOR_0 = 256 * 0;
 const HOR_1 = 256 * 1;
@@ -81,17 +79,13 @@ const VER_Z = 50 * 35;
 
 
 
-let SQS_FIELD_SIZE;
-let PTS_FIELD_SIZE;
-let SQS_FIELD_ORIGIN;
-let PTS_FIELD_ORIGIN;
-let SQS_FIELD_BOUNDS;
-let PTS_FIELD_BOUNDS;
 
-let COLLISION_SIZES;
 
-const INIT_Y_FLIP_COUNT = 4;
-let y_flip_count = INIT_Y_FLIP_COUNT;
+
+
+
+
+
 
 
 const DEVICE_UNKNOWN = 0;

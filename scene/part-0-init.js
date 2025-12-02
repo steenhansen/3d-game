@@ -3,10 +3,10 @@ function initPart0(game_state, part_state, g_planet, g_player) {
   if (part_state == PART_INIT_00_DESKTOP) {
     g_planet = desktopInit(g_planet);
     part_state = PART_INIT_02_AFTER_BEGIN;
-    waiting_for_start = false;
+    g_waiting_for_start = false;
   } else if (part_state == PART_INIT_01_MOBILE) {
     g_planet = mobileInit(g_planet);
-    if (!waiting_for_start) {
+    if (!g_waiting_for_start) {
       part_state = PART_INIT_02_AFTER_BEGIN;
     }
   } else if (part_state == PART_INIT_02_AFTER_BEGIN) {
@@ -20,14 +20,12 @@ function initPart0(game_state, part_state, g_planet, g_player) {
 }
 
 function desktopInit(the_planet) {
-  // desktop specific code here
   return the_planet;
 }
 
 function mobileInit(the_planet) {
   unHideDiv('start-mobile');
   fixMobile();
-  //fixMobile2();
   return the_planet;
 }
 

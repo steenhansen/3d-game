@@ -1,7 +1,7 @@
 function fixMobile() {
   if (document.fullscreenElement == null) {
     start_mobile = document.getElementById('start-mobile');
-    waiting_for_start = true;
+    g_waiting_for_start = true;
     start_mobile_display = document.getElementById('start-mobile').style.display;
     start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
     unHideDiv('mobile-list');
@@ -18,8 +18,8 @@ function handleStartMobile(evt) {
     g_planet.m_game_state = GAME_0_INIT;     //L_OOP_1_BEGIN;
     start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";
-    waiting_for_start = false;
-    fixMobile2();
+    g_waiting_for_start = false;
+    fixMobile();
   }, "1000");
   the_scene = document.getElementById('the-scene');
   try {
@@ -30,7 +30,7 @@ function handleStartMobile(evt) {
 }
 
 
-function fixMobile2() {
+function fixMobile() {
   start_mobile = document.getElementById('start-mobile');
   start_mobile.style.display = "none";
   screen_width = window.screen.width;

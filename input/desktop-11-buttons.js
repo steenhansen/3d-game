@@ -1,6 +1,6 @@
 
 
-var d1 = document.getElementById('desktop-dir');
+let d1 = document.getElementById('desktop-dir');
 
 
 

@@ -1,4 +1,4 @@
-var dbg_print = function () {
+let dbg_print = function () {
   (console).log.apply(console, arguments);
 };
 
@@ -38,10 +38,6 @@ function dbg_printAnyBoundBreaks(index_arr) {
   return false;
 }
 
-
-function dbg_print() {
-
-}
 
 
 function dbg_recordLefts(cur_line, old_left, left_sum, adjust_left) {

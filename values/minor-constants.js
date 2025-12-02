@@ -7,6 +7,7 @@ let TILE_WIDTH = 256;
 
 const EXIT_ON_COLOR = 'lime';
 const EXIT_OFF_COLOR = 'red';
+const EXIT_OFF_TRANSLUCENT = "#ff000088";
 
 const MISSILE_LIFETIME = 96;
 
@@ -33,7 +34,7 @@ let pylon_2B_START_X = 4096 + 256;
 let pylon_2B_START_Y = 384;                    //400;
 
 
-// const TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+// const PLAYER_TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
 
 
 

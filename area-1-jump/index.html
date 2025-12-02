@@ -58,7 +58,6 @@
   <script type="text/javascript" src="objects/sprite-sizes.js"></script>
   <script type="text/javascript" src="enemy/enemy-consts.js"></script>
   <script type="text/javascript" src="pylons/pylons-consts.js"></script>
-  <script type="text/javascript" src="holes/holes-consts.js"></script>
   <script type="text/javascript" src="signs/signs-consts.js"></script>
 </div>
 
@@ -243,117 +242,14 @@
 
 <!-- start part section
  
-
-file:///c%3A/Users/16043/Documents/GitHub/3qwe/area-1-jump/index.html?debug-env=true&scroll-quality=course&graphics-style=simple&display-fps=show
+index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
 
 -->
 
-
-
-
 <script type="text/javascript" src="input/desktop-11-buttons.js"></script>
+<script type="text/javascript" src="area-1-jump/explicit.js"></script>
 <link rel="stylesheet" href="area-1-jump/distinct.css" />
+
 <script>
-  const THE_PLANET = 1;
-  const PARAMS_STR = getParams(window.location);
-
-  const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
-  const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
-
-  //    const FIELD_IN_SQUARES = [20, 40];
-  const FIELD_IN_SQUARES = [34, 40];
-  const PLAYER_START = [7, 30];
-  const PLAYER_BOUNDS = [0, 1, 34, 39];   // 11->39
-
-  function action_checkForOccurance() {
-    const offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
-    if (offset_squares_y < 25) {
-      g_holes = hideHoles(g_holes);
-    }
-
-    all_dead = enemiesAllZombies(g_enemies);
-    if (all_dead) {
-      g_exit_sign.m_sign_text_col = EXIT_ON_COLOR;
-    }
-  }
-
-  function action_hitExit() {
-    window.location.href = NEXT_PLANET;
-  }
-
-  //////////////////////
-  function runTheGame() {
-    the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
-    the_player = initPlayer(PLAYER_START);
-
-    const ditch_line = 25;
-
-    const back_one = ditch_line - 0.5;
-
-    const forward_one = ditch_line + 0.5;
-
-
-
-    ditch_holes = [
-      [0, ditch_line], [1.0625, forward_one], [2.125, ditch_line], [3.1875, back_one],
-      [4.25, ditch_line], [5.3125, forward_one], [6.375, ditch_line], [7.4375, back_one],
-      [8.5, ditch_line], [9.5625, forward_one], [10.625, ditch_line], [11.6875, back_one],
-      [12.75, ditch_line], [13.8125, forward_one], [14.875, ditch_line], [15.9375, back_one],
-
-      [17, ditch_line], [18.0625, forward_one], [19.125, ditch_line], [20.1875, back_one],
-      [21.25, ditch_line], [22.3125, forward_one], [23.375, ditch_line], [24.4375, back_one],
-      [25.5, ditch_line], [26.5625, forward_one], [27.625, ditch_line], [28.6875, back_one],
-      [29.75, ditch_line], [30.8125, forward_one], [31.875, ditch_line], [32.9375, back_one] //, [34, ditch_line]
-
-
-    ];
-
-
-
-
-
-    red_holes = makeHoles(0, "red", ditch_holes);
-
-    back_holes = [
-      [0, 0], [2, 0], [4, 0], [6, 0], [8, 0],
-      [10, 0], [12, 0], [14, 0], [16, 0],
-      [18, 0], [20, 0], [22, 0], [24, 0],
-      [26, 0], [28, 0], [30, 0], [32, 0] //, [34,0] 
-
-    ];
-
-    hole_index = red_holes.length;
-    white_edge = makeHoles(hole_index, "white", back_holes);
-
-    the_holes = [...white_edge, ...red_holes];
-
-    g_exit_sign = initSign("sign-exit", [6, 17], 'Next', EXIT_OFF_COLOR);
-
-    sign_0 = initSign("sign-00", [6.375, 7], 'J', "#FFFFFF");
-    sign_1 = initSign("sign-01", [7.5, 7], 'u', "#EEEEEE");
-    sign_2 = initSign("sign-02", [9, 7], 'm', "#DDDDDD");
-    sign_3 = initSign("sign-03", [10.5, 7], 'p', "#CCCCCC");
-
-
-
-    the_signs = [g_exit_sign, sign_0, sign_1, sign_2, sign_3];
-
-    the_pylons = [];
-    // the_pylons = makePylons([[24, 7]], [WHITE_BLACK]); 
-
-    enemy_0 = {
-      start_pos: [10, 19],
-      the_colors: ['purple', 'cyan'],
-      x_moves: [ZERO_10],
-      y_moves: [ZERO_10],
-      the_speed: 0,
-      ball_start: '-1s'
-    };
-    the_enemies = makeEnemies([enemy_0]);
-
-    startReadKeys(read11Keys);
-    startItUp(the_planet, the_player, the_enemies, the_pylons, the_holes, the_signs);
-  }
-
-  runTheGame();
+  action_runGame();
 </script>

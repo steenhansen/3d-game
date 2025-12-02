@@ -1,11 +1,10 @@
-// PLAYER_RECOIL_COUNTDOWN
-const RECOIL_COUNTDOWN = 5;   // was 30
+
+const PLAYER_RECOIL_COUNTDOWN = 5;   // was 30
 
 
 const NO_MISSILE_DEPTH_OVERFLOW = 31;
 
-// PLAYER_TRAVEL_SPEED
-const TRAVEL_SPEED = 8;   //1sluggish  4slow  8normal 16fast  32extreme
+const PLAYER_TRAVEL_SPEED = 8;   //1sluggish  4slow  8normal 16fast  32extreme
 
 const P_UNKNOWN = 'unknown-param';
 
@@ -76,9 +75,6 @@ let ENEMY_BIRTH_Y = 300;
 
 const ERASE_START_MESSAGE_TIME = 2000;
 
-//var draw_time = true;
-var draw_speed = 'every-frame';    // 'every-second-frame
-
 
 const MOVING_NOT = 0;
 
@@ -95,7 +91,6 @@ const area_width_half = 16 * 1048;               //16768
 let player_x = area_width_half;
 
 let player_y = 512; //+ 512;           // 512+512=1048
-var the_key = MOVING_NOT;
 
 const numDrawings = 90;
 
@@ -120,11 +115,10 @@ const viewport_middle_y = 512;
 
 
 
-// const INIT_Y_FLIP_COUNT = 4;
 
 let keep_running = true;
 
-//let y_flip_count = INIT_Y_FLIP_COUNT;
+
 let dist_count = 0;
 let spin_count = 0;
 let slow_count = 0;
@@ -167,8 +161,8 @@ let viewport_x;
 
 
 /*
-steps_left = x_dir * -1 * TRAVEL_SPEED * 3;   // matches the player
-steps_left = x_dir * -1 * TRAVEL_SPEED * 6;   // twice matches the player
+steps_left = x_dir * -1 * PLAYER_TRAVEL_SPEED * 3;   // matches the player
+steps_left = x_dir * -1 * PLAYER_TRAVEL_SPEED * 6;   // twice matches the player
 
 
 travel_speed = 1;

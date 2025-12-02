@@ -215,12 +215,14 @@ document.getElementById('holes-area').innerHTML = `
   `;
 
 
-function hideHoles(the_holes) {
+function hideHoles(the_holes, the_color) {
   changed_holes = [];
   number_holes = the_holes.length;
   for (let hole_index = 0; hole_index < number_holes; hole_index++) {
     a_hole = the_holes[hole_index];
-    a_hole.m_hidden = true;
+    if (a_hole.s_hole_color == the_color) {
+      a_hole.m_hidden = true;
+    }
     changed_holes[hole_index] = a_hole;
   }
   return changed_holes;

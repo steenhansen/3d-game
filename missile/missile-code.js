@@ -38,7 +38,7 @@ function missileAdvance(the_missile, the_player) {
   } else if (m_x_dir > 0) {
     the_missile.m_x = rightOnBoard(the_missile.m_x, 12 * 4);
   } else {
-    the_missile.m_y = backwardOnBoard(the_missile.m_y, 8 * 2);   //TRAVEL_SPEED * 2);
+    the_missile.m_y = backwardOnBoard(the_missile.m_y, 8 * 2);   //PLAYER_TRAVEL_SPEED * 2);
   }
   return the_missile;
 }

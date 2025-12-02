@@ -28,7 +28,7 @@ function makeEnemies(the_enemies) {
     ball_start = an_enemy.ball_start;
     const enemy_id = e_index.toString().padStart(2, '0');
     err_mess = `makeEnemies(${enemy_id})`;
-    xy_pixels = originOffset2(enemy_xy_squares, err_mess);
+    xy_pixels = originOffset(enemy_xy_squares, err_mess);
     new_enemy = initEnemyData(e_index, enemy_id, xy_pixels, colors_of_enemy, moves_x, moves_y, the_speed, ball_start);
     declared_enemies.push(new_enemy);
   }
@@ -185,7 +185,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
     }
   } else if (enemy_state == ENEMY_3_LIFTING) {
     enemyPlace(real_id, the_enemy, the_player);
-    the_enemy.m_hover_up = the_enemy.m_hover_up + TRAVEL_SPEED;
+    the_enemy.m_hover_up = the_enemy.m_hover_up + PLAYER_TRAVEL_SPEED;
 
     if (the_enemy.m_hover_up > ENEMY_HIDDEN) {
       the_enemy.m_hover_up = 0;

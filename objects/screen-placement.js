@@ -26,53 +26,6 @@ function xyNotInSquares(out_x, out_y, err_mess) {
 
 
 
-// this is do hole[10,33] can be checked 
-//  origin_x + x 
-//        10   1     1>0 and 0<15   
-function originOffsetNEW(xy_squares) {
-  let [x_sq, y_sq] = xy_squares;  // 6,4
-
-  //   SQS_FIELD_SIZE  64, 55
-  let [x_org_sq, y_org_sq] = SQS_FIELD_ORIGIN;    // 31,5 
-
-  x_offset_sq = x_org_sq + x_sq;
-  y_offset_sq = y_org_sq + y_sq;
-
-  let [left_bounds_sq, top_bounds_sq, right_bounds_sq, bot_bounds_sq] = SQS_FIELD_BOUNDS; // 31,5,64,55
-
-  if (x_offset_sq < left_bounds_sq || right_bounds_sq < x_offset_sq) {
-    x_err = `${err_mess}, X:${x_offset_sq} is not in range of ${left_bounds_sq} < X < ${right_bounds_sq}`;
-    throw new Error(x_err);
-  }
-
-
-  if (y_offset_sq < top_bounds_sq || bot_bounds_sq < y_offset_sq) {
-    y_err = `${err_mess}, Y:${y_offset_sq} is not in range of ${top_bounds_sq} < Y < ${bot_bounds_sq}`;
-    throw new Error(y_err);
-  }
-
-  /////////////
-
-  let [org_x, org_y] = PTS_FIELD_ORIGIN;
-  offset_x = org_x + x_offset_sq * WIDTH_OF_SPRITE;
-  offset_y = org_y + x_offset_sq * HOLE_PIXEL_DEPTH;
-
-  //xyNotInField(offset_x, offset_y, `Offset hole '${hole_name}' coords are out of bounds`);
-  xy_points = [offset_x, offset_y];
-  return xy_points;
-}
-
-
-function originOffset(xy_units) {
-  let [x_coord, y_coord] = xy_units;
-  let [org_x, org_y] = PTS_FIELD_ORIGIN;
-  offset_x = org_x + x_coord * WIDTH_OF_SPRITE;
-  offset_y = org_y + y_coord * HOLE_PIXEL_DEPTH;
-  return [offset_x, offset_y];
-}
-
-
-
 
 
 

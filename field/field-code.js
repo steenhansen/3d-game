@@ -115,14 +115,6 @@ function xAllowed(player_x) {
 }
 
 // inside  XY_X_RANGE 
-function yAllowed22(player_y) {
-  if (player_y < g_planet.s_playground_y_min || player_y > g_planet.s_playground_y_max) {
-
-    mess = ` `;
-    return false;
-  }
-  return true;
-}
 
 
 function yAllowed(player_y) {
