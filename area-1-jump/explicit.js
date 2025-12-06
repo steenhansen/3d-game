@@ -70,7 +70,7 @@ function action_runGame() {
     const the_pylons = [];
 
     const enemy_0 = {
-        start_pos: [10, 19],
+        start_pos: [10, 16],
         the_colors: ['purple', 'cyan'],
         x_moves: [ZERO_10],
         y_moves: [ZERO_10],

@@ -1,17 +1,4 @@
 
-
-/*
-
-KEYS
-TOUCHES
-CLICKS
-
-SVG-ESCAPE-BUTTON-RECT
-
-SVG-ESCAPE-BUTTON-TEXT
-
-*/
-
 let f_last_4_move = 'NE';
 
 function read4Keys(event) {
@@ -35,11 +22,9 @@ function read4Keys(event) {
     } else if (JUMP_KEYS.includes(the_key)) {
       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-        direction_name = 'pressed-jump';
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = initMissileData(g_missile, g_player);           /// function !!
-      direction_name = 'pressed-fire';
     } else {
       if (f_last_4_move == 'NE') {
         initiateMovement(MOVINGx_NE);
@@ -51,11 +36,10 @@ function read4Keys(event) {
         initiateMovement(MOVINGx_NW);
         flashArrow('w');
       }
-      direction_name = 'read4Keys() unknown-key-dir asd';
+      //direction_name = 'read4Keys() unknown-key-dir asd';
     }
   }
 }
-
 
 function readKeyUp(event) {
   const the_key = event.key;
@@ -65,8 +49,6 @@ function readKeyUp(event) {
     stopMoving();
   }
 }
-
-
 
 const NW_KEYS = ['Q', 'q', "Home", '7'];
 const N_KEYS = ['W', 'w', "ArrowUp", '8'];
@@ -118,20 +100,15 @@ function read11Keys(event) {
       initiateMovement(MOVINGx_W);
       flashArrow('w');
     } else if (STOP_KEYS.includes(the_key)) {
-      stopMoving();              // should set direction_name = 'pressed-stop';???
-      direction_name = 'pressed-stop';
+      stopMoving();
     } else if (JUMP_KEYS.includes(the_key)) {
       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-        direction_name = 'pressed-jump';
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = initMissileData(g_missile, g_player);           /// function !!
-      direction_name = 'pressed-fire';
     } else {
-      stopMoving();              // should set g_is_drinfting = false;
-      direction_name = 'pressed-stop';
-      direction_name = 'unknown-key-dir asd';
+      stopMoving();
     }
   }
 }
@@ -141,15 +118,11 @@ function turnOnKeys(readKeyFunc) {
   document.addEventListener('keyup', readKeyUp, { passive: false });
 }
 
-
-
 function clickOnDirectionsSvg(event) {
-  svg_target = event.target.id;
-
+  const svg_target = event.target.id;
   const svg_parts = svg_target.split("-");
-
-  svg_id_prefix = svg_parts[0] + '-' + svg_parts[1];
-  button_click = svg_parts[1];
+  const svg_id_prefix = svg_parts[0] + '-' + svg_parts[1];
+  const button_click = svg_parts[1];
   if (svg_id_prefix === 'SVG-Q') {   //  Q=> svg_Q
     initiateMovement(MOVINGx_NW);
     flashArrow('nw');
@@ -164,9 +137,7 @@ function clickOnDirectionsSvg(event) {
     flashArrow('w');
   } else if (svg_id_prefix === 'SVG-S') {
     g_planet.m_drift_direction = 0;
-
-    stopMoving();              // should set g_is_drinfting = false;
-    direction_name = 'pressed-stop';
+    stopMoving();
   } else if (svg_id_prefix === 'SVG-D') {
     initiateMovement(MOVINGx_E);
     flashArrow('e');
@@ -179,30 +150,15 @@ function clickOnDirectionsSvg(event) {
   } else if (svg_id_prefix === 'SVG-C') {
     initiateMovement(MOVINGx_SE);
     flashArrow('se');
-  }
-
-  else if (svg_id_prefix === 'SVG-ESCAPE') {
+  } else if (svg_id_prefix === 'SVG-ESCAPE') {
     jumpStartFly();
-
-    /*
-       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
-            g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-            direction_name = 'pressed-jump';
-          }
-    
-          */
-
   } else if (svg_id_prefix === 'SVG-SPACE') {
     if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
       g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-      direction_name = 'pressed-jump';
     }
   } else if (svg_id_prefix === 'SVG-ENTER') {
     g_missile = initMissileData(g_missile, g_player);           /// function !!
-    direction_name = 'pressed-fire';
   } else {
-
+    //
   }
-
-
 }

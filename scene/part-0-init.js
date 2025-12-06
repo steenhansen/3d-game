@@ -25,7 +25,7 @@ function desktopInit(the_planet) {
 
 function mobileInit(the_planet) {
   unHideDiv('start-mobile');
-  fixMobile();
+  fixMobileTouch();
   return the_planet;
 }
 

@@ -4,15 +4,11 @@ let local_swipe_x_start = 0;
 let local_swipe_y_start = 0;
 let local_start_touch = '';
 
-
-
-
 function touchBoxes(the_event) {
-  event_id = the_event.target.id;
+  const event_id = the_event.target.id;
   const is_a_center_box = event_id.startsWith("center-box");
   if (is_a_center_box) {
     the_event.preventDefault();
-    fullMobile();
     g_planet.m_drift_direction = 0;
     g_missile = initMissileData(g_missile, g_player);
   }
@@ -31,13 +27,13 @@ function touchEnd(evt) {
   let touch_id_end = evt.target.id;
   const is_a_center_box = touch_id_end.startsWith("center-box");
   if (is_a_center_box) {
-    touch_x_end = evt.changedTouches[0].clientX;
-    touch_y_end = evt.changedTouches[0].clientY;
-    dif_x = Math.abs(local_swipe_x_start - touch_x_end);
-    dif_y = Math.abs(local_swipe_y_start - touch_y_end);
-    was_a_press = (dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN);
+    const touch_x_end = evt.changedTouches[0].clientX;
+    const touch_y_end = evt.changedTouches[0].clientY;
+    const dif_x = Math.abs(local_swipe_x_start - touch_x_end);
+    const dif_y = Math.abs(local_swipe_y_start - touch_y_end);
+    const was_a_press = (dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN);
     if (was_a_press) {
-      end_touch = Date.now();
+      const end_touch = Date.now();
       g_touch_press_time = end_touch - local_start_touch;
       if (g_touch_press_time > IS_PRESS_NOT_TAP) {
         swipeDownStop();
@@ -72,9 +68,6 @@ function swipeUpJump() {
     dbg_swipe_dir = SWIPE_UP;
   }
 }
-
-
-
 
 function swipeRightQuit() {
   dbg_swipe_dir = SWIPE_RIGHT;

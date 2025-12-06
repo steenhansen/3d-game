@@ -3,8 +3,9 @@
 
 
 function the_lines(show_lines) {
+  let all_lines;
   if (show_lines) {
-    stroke_width = 2;
+    const stroke_width = 2;
     all_lines = `
   <line x1="0" y1="0" x2="256" y2="255" stroke="green" stroke-width="${stroke_width}" />
   <line x1="0" y1="256" x2="256" y2="0" stroke="green" stroke-width="${stroke_width}" />
@@ -34,8 +35,9 @@ function the_lines(show_lines) {
 }
 
 function the_rings(show_rings) {
+  let all_rings;
   if (show_rings) {
-    stroke_width = 2;
+    const stroke_width = 2;
     all_rings = `
   <circle cx=128 cy=128 r="108" stroke="white" fill-opacity="0" stroke-width="${stroke_width}" />
   <circle cx=128 cy=128 r="88" stroke="white" fill-opacity="0" stroke-width="${stroke_width}" />
@@ -52,6 +54,7 @@ function the_rings(show_rings) {
 
 
 function centers_inside(show_center) {
+  let all_centers;
   if (show_center) {
     all_centers = `
   <text x=100 y=128 text-anchor="middle" dy=".3em">+</text>
@@ -71,6 +74,7 @@ function centers_inside(show_center) {
 
 
 function centers_middle(show_center) {
+  let all_centers;
   if (show_center) {
     all_centers = `
   <text x=60 y=128 text-anchor="middle" dy=".3em">+</text>
@@ -98,6 +102,7 @@ function centers_middle(show_center) {
 
 
 function centersOutside(show_center) {
+  let all_centers;
   if (show_center) {
     all_centers = `
   <text x=20 y=128 text-anchor="middle" dy=".3em">+</text>
@@ -148,14 +153,14 @@ function centersOutside(show_center) {
 
 
 function createMissileHtml(missile_id) {
-  all_lines = the_lines(false);
-  all_rings = the_rings(false);
+  const all_lines = the_lines(false);
+  const all_rings = the_rings(false);
 
-  inside_centers = centers_inside(false);
-  middle_centers = centers_middle(false);
-  centers_outside = centersOutside(false);
+  const inside_centers = centers_inside(false);
+  const middle_centers = centers_middle(false);
+  const centers_outside = centersOutside(false);
 
-  outside_circles = `<circle id="missile-100" cx=20 cy=128 r=20 fill-opacity="1.0" />
+  const outside_circles = `<circle id="missile-100" cx=20 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-101" cx=22 cy=108 r=20 fill-opacity="1.0" />
   <circle id="missile-102" cx=28 cy=88 r=20 fill-opacity="1.0" />
   <circle id="missile-103" cx=38 cy=69 r=20 fill-opacity="1.0" />
@@ -187,13 +192,8 @@ function createMissileHtml(missile_id) {
   <circle id="missile-129" cx=38 cy=188 r=20 fill-opacity="1.0" />
   <circle id="missile-130" cx=28 cy=170 r=20 fill-opacity="1.0" />
   <circle id="missile-131" cx=22 cy=150 r=20 fill-opacity="1.0" />`;
-  //  outside_circles = '';
 
-
-
-
-
-  middle_diamonds = ` 
+  const middle_diamonds = ` 
         <rect  id="missile-diamond-200" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
         <rect  id="missile-diamond-201" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
         <rect  id="missile-diamond-202" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
@@ -209,15 +209,9 @@ function createMissileHtml(missile_id) {
         <rect  id="missile-diamond-212" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
         <rect  id="missile-diamond-213" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
         <rect  id="missile-diamond-214" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
-        <rect  id="missile-diamond-215" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>
+        <rect  id="missile-diamond-215" class="diamond-missile" x="600" y="628" width="0" height="0" fill="grey"/>`;
 
-
-      
-
-  `;
-
-
-  inside_circles = `
+  const inside_circles = `
    <circle id="missile-300" cx=100 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-301" cx=108 cy=108 r=20 fill-opacity="1.0" />
   <circle id="missile-302" cx=128 cy=101 r=20 fill-opacity="1.0" />
@@ -225,46 +219,25 @@ function createMissileHtml(missile_id) {
   <circle id="missile-304" cx=156 cy=128 r=20 fill-opacity="1.0" />
   <circle id="missile-305" cx=148 cy=148 r=20 fill-opacity="1.0" />
   <circle id="missile-306" cx=128 cy=155 r=20 fill-opacity="1.0" />
-  <circle id="missile-307" cx=108 cy=148 r=20 fill-opacity="1.0" />
- `;
-  _inside_circles = ``;
-  /*
-   make diamonds by a rotation from a square, have circles with static r, and
-   like diamonds/squares grow/shrink with scale the circles. 
-  */
-
-  diamond_width = 20;
-  half_diamond = diamond_width / 2;
-  d_0_xy = [90, 118];
-  d_0_off = [d_0_xy[0] + half_diamond, d_0_xy[1] + half_diamond];
-
-  inside_circlesX = `  
-    <rect class="a-diamond" id="diamond-300"  x="${d_0_xy[0]}" y="${d_0_xy[1]}" 
-       style="transform-origin:${d_0_off[0]}px   ${d_0_off[1]}px;      " />
-  <circle id="missile-301" cx=108 cy=108 r=10 fill-opacity="1.0" />
-   `;
-
-  //   <g id="diamond-1" transform="translate(80 107) scale(0.5)">
-  //      <polygon  id="missile-diamond-300" points="0 40,40 80,80 40,40 0" style=" fill: blue;"/>
-  //   </g> 
+  <circle id="missile-307" cx=108 cy=148 r=20 fill-opacity="1.0" /> `;
 
   let a_missile = `
-  <div class="show-pylon" id="${missile_id}-div">
-      <svg viewBox="0 0 1023 511">
-          <svg id="${missile_id}-x-y" x="333" y="128" width="256" height="256"  class="svg-box">
-              <svg id="${missile_id}-scaled" style="transform: scale(0.9973)">
-                  ${all_lines}
-                  ${all_rings}
-                      ${outside_circles}
-                      ${centers_outside}
-                          ${middle_diamonds}
-                          ${middle_centers}
-                              ${inside_circles}
-                              ${inside_centers}
-              </svg>
-          </svg>
-      </svg>
-  </div>`;
+    <div class="show-pylon" id="${missile_id}-div">
+        <svg viewBox="0 0 1023 511">
+            <svg id="${missile_id}-x-y" x="333" y="128" width="256" height="256"  class="svg-box">
+                <svg id="${missile_id}-scaled" style="transform: scale(0.9973)">
+                    ${all_lines}
+                    ${all_rings}
+                        ${outside_circles}
+                        ${centers_outside}
+                            ${middle_diamonds}
+                            ${middle_centers}
+                                ${inside_circles}
+                                ${inside_centers}
+                </svg>
+            </svg>
+        </svg>
+    </div>`;
   return a_missile;
 }
 

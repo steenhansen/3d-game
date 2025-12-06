@@ -11,11 +11,12 @@ function collisionShake(the_player) {
   return the_player;
 }
 
-function finishShake(the_player) {
-  the_player.m_screen_askew = 0;
+function finishShake(the_player){
+  the_player.m_screen_askew =0;
   setCssVar("--collide-shake-angle", '0deg');
   return the_player;
 }
+
 
 function doRecoil(the_player) {
   if (the_player.m_recoil_count > 0) {

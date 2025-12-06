@@ -1,7 +1,4 @@
 document.getElementById('pylons-area').innerHTML = `
-
-
-
   <div id="pylon-00"></div>
   <div id="pylon-01"></div>
   <div id="pylon-02"></div>
@@ -143,10 +140,10 @@ document.getElementById('pylons-area').innerHTML = `
 
 
 function unHidePylons(the_pylons) {
-  changed_pylons = [];
-  number_pylons = the_pylons.length;
+  let changed_pylons = [];
+  const number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
-    a_pylon = the_pylons[pylon_index];
+    let a_pylon = the_pylons[pylon_index];
     a_pylon.m_hidden = false;
     changed_pylons[pylon_index] = a_pylon;
   }
@@ -155,11 +152,10 @@ function unHidePylons(the_pylons) {
 
 
 function drawPylons(the_player, the_pylons) {
-  changed_pylons = [];
-
-  number_pylons = the_pylons.length;
+  let changed_pylons = [];
+  const number_pylons = the_pylons.length;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
-    a_pylon = the_pylons[pylon_index];
+    let a_pylon = the_pylons[pylon_index];
     pylonSet(the_player, a_pylon);
     if (a_pylon.m_pylon_hit_flash > 0) {
       a_pylon.m_pylon_hit_flash--;
@@ -171,42 +167,40 @@ function drawPylons(the_player, the_pylons) {
 }
 
 function pylonFront(pylon_vlines, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
-  let [left_vline, middle_vline, _right_vline] = pylon_vlines;
-  let [left_front_top, left_front_bot] = left_vline;
-  let [right_front_top, right_front_bot] = middle_vline;
-  left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  if (isNaN(left_front_top)) {
-  }
+  const [left_vline, middle_vline, _right_vline] = pylon_vlines;
+  const [left_front_top, left_front_bot] = left_vline;
+  const [right_front_top, right_front_bot] = middle_vline;
+  const left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
   let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive);
-
   return front_pylon;
 }
 
 function pylonPolygon(a_polygon, panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
+  let fill_color;
   if (pylon_alive) {
     fill_color = poly_fill;
   } else {
     fill_color = 'black';
   }
-  svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
+  const svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
+  let svg_outlines;
   if (do_flash && g_p_graphics_style != P_SIMPLE) {
     svg_outlines = outlineFlash(a_polygon, panel_id, dist_abs_y);
   } else {
     svg_outlines = '';
   }
-  svg_polygon = svg_outlines + svg_panel;
+  const svg_polygon = svg_outlines + svg_panel;
   return svg_polygon;
 }
 
 function outlineFlash(a_polygon, panel_id, dist_abs_y) {
-  outline_width = outlineWidth(dist_abs_y) - 4;
-
+  const outline_width = outlineWidth(dist_abs_y) - 4;
   let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  svg_outlines = `<polygon   id="${panel_id}" stroke="white" fill="none"
+  const svg_outlines = `<polygon   id="${panel_id}" stroke="white" fill="none"
          stroke-width="${outline_width}px" 
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
@@ -216,6 +210,7 @@ function outlineFlash(a_polygon, panel_id, dist_abs_y) {
 }
 
 function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
+  let fill_color;
   if (pylon_alive) {
     fill_color = poly_fill;
   } else {
@@ -226,7 +221,7 @@ function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
   let [bot_right_x, bot_right_y] = right_front_bot;
-  svg_panel = `<polygon fill="${fill_color}" id="${panel_id}"
+  const svg_panel = `<polygon fill="${fill_color}" id="${panel_id}"
                       points="${top_left_x},${top_left_y}
                               ${top_right_x},${top_right_y}
                               ${bot_right_x},${bot_right_y}
@@ -235,6 +230,7 @@ function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
 }
 
 function outlineWidth(dist_abs_y) {
+  let outline_width;
   if (dist_abs_y < 8) {
     outline_width = 6;
   } else if (dist_abs_y < 16) {
@@ -262,6 +258,6 @@ function outlineWidth(dist_abs_y) {
   } else {
     outline_width = 0;
   }
-  outline_adjusted = outline_width * PYLON_OUTLINE_ADJUST;
+  const outline_adjusted = outline_width * PYLON_OUTLINE_ADJUST;
   return outline_adjusted;
 }

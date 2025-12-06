@@ -11,14 +11,14 @@ function spacePart4(part_state, the_planet, the_player, enemy_list, pylon_list) 
   } else {
     dbg_print('spacePart4() unknown part_state', part_state);
   }
-  the_return = [part_state, the_player];
+  const the_return = [part_state, the_player];
   return the_return;
 }
 
 function spaceLiftoff(the_player) {
   the_player.m_jump_amount = 0;
   the_player = finishShake(the_player);
-  part_state = PART_SPACE_41_CLIMB;
+  const part_state = PART_SPACE_41_CLIMB;
   return [part_state, the_player];
 }
 

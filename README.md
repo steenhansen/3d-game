@@ -89,3 +89,11 @@
 <img src="./markdown/death.png" width="400">
 
 
+## Desktop Firefox
+Cannot have multiple windows open with game, even one game is taxing.
+
+Other browsers are fine with four visible games, albeit with high 50% cpu usage.
+
+
+
+

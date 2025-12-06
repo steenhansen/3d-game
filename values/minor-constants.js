@@ -2,7 +2,7 @@ const ROOM_DEPTH = 16;   // old ==16
 let TILE_WIDTH = 256;
 
 
-
+const SVG_ARROWS_COLOR = 'grey';
 
 
 const EXIT_ON_COLOR = 'lime';
@@ -72,7 +72,7 @@ const HIT_FLASH_PYLON = 23;
 
 let HALF_VIEW_WIDTH = 512;
 let BOTTOM_FIELD = 512;
-let BACK_VANISH_POINT = [511, 256];
+let BACK_VANISH_POINT = [511, DEPTH_LINES];
 let LEFT_RIGHT_BOUNCE_X_INVERSION = -1;
 
 
@@ -89,9 +89,7 @@ const FLY_STEP_SLOW = 0.5;
 const FLY_STEP_FAST = 5;
 
 
-TEST_SCENE = false;
-
-TESTING_STOPPED = false;
+//TESTING_STOPPED = false;
 
 
 

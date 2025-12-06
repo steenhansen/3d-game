@@ -1,6 +1,6 @@
 
 function hasCollided(a_thing, an_object) {
-  const [field_width, room_width, field_depth, room_depth] = COLLISION_SIZES;
+  const [field_width, room_width, field_depth, room_depth] = g_collison_sizes;
   const { m_x: thing_x, m_y: thing_y } = a_thing;
   const { m_x: object_x, m_y: object_y } = an_object;
   const x_collided = collideOverflow(thing_x, object_x, field_width, room_width);

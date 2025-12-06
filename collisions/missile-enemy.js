@@ -1,5 +1,7 @@
 const L_HIT_FLASH_ENEMY = 20;
 
+
+
 function playerHitSigns(game_state, part_state, the_player, the_signs) {
   const number_signs = the_signs.length;
   for (let sign_index = 0; sign_index < number_signs; sign_index++) {
@@ -40,11 +42,14 @@ function missileHitPylons(the_missile, the_pylons) {
     }
     changed_pylons[pylon_index] = a_pylon;
   }
+
   if (missile_hit_pylon) {
+
     if (the_missile.m_phase == MISSILE_1_SHOT_FORWARD) {
       the_missile.m_phase = MISSILE_2_HITTING_PYLON;
       the_missile.m_hit_pylon = hit_pylon;
     } else if (the_missile.m_phase == MISSILE_2_HITTING_PYLON) {
+      //
     } else if (the_missile.m_phase == MISSILE_3_AFTER_PYLON_HIT) {
       the_missile.m_phase = MISSILE_4_SECOND_PYLON_HIT;
     }
@@ -84,6 +89,7 @@ function playerHitEnemies(the_player, the_enemies) {
 }
 
 function playerHitHoles(the_player, the_holes) {
+
   the_player.m_hit_hole_last_move = false;
   if (the_player.m_jump_amount == 0) {
     const number_holes = the_holes.length;
@@ -104,6 +110,13 @@ function playerHitHoles(the_player, the_holes) {
   return the_player;
 }
 
+
+
+
+
+
+
+
 function playerHitPylons(the_player, the_pylons) {
   let changed_pylons = [];
   const number_pylons = the_pylons.length;
@@ -119,6 +132,12 @@ function playerHitPylons(the_player, the_pylons) {
   }
   return [the_player, changed_pylons];
 }
+
+
+
+
+
+
 
 function enemiesHitPylons(the_enemies, the_pylons) {
   const number_enemies = the_enemies.length;
@@ -147,6 +166,13 @@ function enemiesHitPylons(the_enemies, the_pylons) {
   return [changed_enemies, changed_pylons];
 }
 
+
+
+
+
+
+
+
 function missileHitEnemies(the_missile, the_enemies) {
   let changed_enemies = [];
   const number_enemies = the_enemies.length;
@@ -158,6 +184,7 @@ function missileHitEnemies(the_missile, the_enemies) {
       if (has_collided) {
         an_enemy = killEnemy(an_enemy);
         an_enemy.m_enemy_state = ENEMY_2_HIT;
+
         an_enemy.m_enemy_hit_flash = 10;
       }
     }
@@ -165,6 +192,8 @@ function missileHitEnemies(the_missile, the_enemies) {
   }
   return changed_enemies;
 }
+
+
 
 function enemiesHitBounds(the_enemies, the_planet) {  // the_pylons
   const number_enemies = the_enemies.length;
@@ -182,11 +211,14 @@ function enemiesHitBounds(the_enemies, the_planet) {  // the_pylons
     } else {
       has_collided = false;
     }
+
     if (has_collided) {
       an_enemy.m_enemy_state = ENEMY_1_BOUNCE;
       an_enemy.m_enemy_hit_flash = L_HIT_FLASH_ENEMY;
       an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION;  //flip x directions if hit pylon
     }
+
+
     changed_enemies[enemy_index] = an_enemy;
   }
   return changed_enemies;

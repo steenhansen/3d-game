@@ -1,39 +1,26 @@
-
-
 const ARROW_FLASH_TIME = 200;
 
 
 function flashArrow(direction_name) {
   const directions_4 = direction_name.split("-");
   const pure_direction = directions_4[0];
-
   const the_arrow = document.getElementById("arrow-" + pure_direction);
+  let the_arrow_style;
   try {
     the_arrow_style = the_arrow.style;
   } catch (e) {
-    arrow_error = `bad::arrow ${direction_name}`;
+    const arrow_error = `bad::arrow ${direction_name}`;
     throw new Error(arrow_error);
   }
   the_arrow_style.opacity = '25%';
-  setTimeout(() => {
-    the_arrow_style.opacity = '100%';
-  }, ARROW_FLASH_TIME);
+  setTimeout(() => { the_arrow_style.opacity = '100%'; }, ARROW_FLASH_TIME);
 }
-
-
-
-
-
 
 function arrowClick(the_event, direction_name) {
   the_event.preventDefault();
   flashArrow(direction_name);
   g_planet.m_drift_direction = 0;
 }
-
-
-
-
 
 function addClickEvent(direction_name, clickHandler) {
   const div_name = direction_name;

@@ -1,7 +1,7 @@
 
 document.getElementById('checkerboard-field').innerHTML = `
 
- <div class="a_line" id="line0"></div>
+  <div class="a_line" id="line0"></div>
   <div class="a_line" id="line1"></div>
   <div class="a_line" id="line2"></div>
   <div class="a_line" id="line3"></div>

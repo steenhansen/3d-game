@@ -4,8 +4,8 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
     let variable_list = generalPlay(part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
     [part_state, the_planet, the_player, enemy_list, pylon_list] = variable_list;
   } else if (part_state == PART_PLAY_21_HIT_HOLE) {
-    zxcv = holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
-    [game_state, part_state, the_planet, the_player, enemy_list, pylon_list] = zxcv;
+    const transfer_obj = holeHitPlay(game_state, part_state, the_planet, the_player, enemy_list, pylon_list, sign_list);
+    [game_state, part_state, the_planet, the_player, enemy_list, pylon_list] = transfer_obj;
     the_player.m_is_dying = true;
   } else if (part_state == PART_PLAY_22_JUMP_START) {
     [part_state, the_player] = jumpStartPlay(the_player);

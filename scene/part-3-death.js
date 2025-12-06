@@ -19,6 +19,7 @@ function skyRestart() {
 }
 
 function startDeath(the_player) {
+  makeNudges();
   setCssSkyColor('red');
   the_player = finishShake(the_player);
   the_player.m_num_cracks = MAX_CRACKS;
@@ -33,10 +34,11 @@ function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) 
   [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
   pylon_list = dyingPylons(the_player, pylon_list);
   enemy_list = dyingEnemies(the_player, enemy_list);
+  let just_died;
   [the_planet, just_died] = dyingCheckerboard(the_planet);
   if (just_died) {
     part_state = PART_DEATH_32_SKY;
-    the_player.m_sky_restart = 10;
+    the_player.m_sky_restart = SKY_RESTART_COUNTER;
   }
   return [part_state, the_planet, the_player, enemy_list, pylon_list];
 }

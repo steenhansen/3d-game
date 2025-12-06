@@ -24,7 +24,7 @@ function signSet(a_sign, the_player) {
 }
 
 function initSign(sign_id, sign_in_squares, vert_word, text_color) {
-  xy_pixels = originOffset(sign_in_squares, "ignore_bounds");
+  xy_pixels = originOffset(sign_in_squares, IGNORE_BOUNDS);
   the_sign = {
     s_isa: "is-sign",
     s_sign_name: sign_id,

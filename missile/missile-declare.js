@@ -1,6 +1,6 @@
 
 
-the_diamonds = [
+const g_the_diamonds = [
   [60, 128],
   [65, 104],
   [80, 80],
@@ -21,7 +21,7 @@ the_diamonds = [
 
 
 
-html_missile = createMissileHtml('the-missile');
+const html_missile = createMissileHtml('the-missile');
 
 
 document.getElementById('missile-area').innerHTML = `

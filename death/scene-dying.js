@@ -1,16 +1,19 @@
 
 
+const L_MATCH_DEATH_TO_DISTANCE = 1.5;
+
 function dyingCheckerboard(the_planet) {
   g_planet.m_dying_distance++;
-  dying_line = 256 - g_planet.m_dying_distance;
-  the_divs = [31, 29, 23, 19, 17, 13, 11, 7, 3];
-  a_div_ind = Math.trunc(g_planet.m_dying_distance / 32);
-  a_div = the_divs[a_div_ind];
-  jagged_offset = (g_planet.m_dying_distance % a_div);
+  const dying_line = DEPTH_LINES - g_planet.m_dying_distance;
+  const the_dividers = [31, 29, 23, 19, 17, 13, 11, 7, 3];
+  const a_div_ind = Math.trunc(g_planet.m_dying_distance / 32);
+  const a_div = the_dividers[a_div_ind];
+  const jagged_offset = (g_planet.m_dying_distance % a_div);
   g_field_xs_death[dying_line] = jagged_offset;
-  back_ground = "url('../images/board-death.png')";
-  setCssLineBackground(dying_line, "url('../images/board-death.png')");
-  if (g_planet.m_dying_distance > 256) {
+  const death_background = "url('../images/board-death.png')";
+  setCssLineBackground(dying_line, death_background);
+  let just_died;
+  if (g_planet.m_dying_distance > DEPTH_LINES) {
     just_died = true;
   } else {
     just_died = false;
@@ -19,13 +22,14 @@ function dyingCheckerboard(the_planet) {
 }
 
 function dyingPylons(the_player, pylon_list) {
-  changed_pylons = [];
-  number_pylons = pylon_list.length;
+  let changed_pylons = [];
+  const number_pylons = pylon_list.length;
+  const crawling_dist = g_planet.m_dying_distance * L_MATCH_DEATH_TO_DISTANCE;
   for (let pylon_index = 0; pylon_index < number_pylons; pylon_index++) {
-    a_pylon = pylon_list[pylon_index];
+    const a_pylon = pylon_list[pylon_index];
     if (a_pylon.m_alive) {
-      dist_abs_y = distanceAbsY([a_pylon.m_y, the_player.m_y]);
-      if (dist_abs_y < g_planet.m_dying_distance) {
+      const dist_abs_y = distanceAbsY([a_pylon.m_y, the_player.m_y]);
+      if (dist_abs_y < crawling_dist) {
         a_pylon.m_alive = false;
       }
     }
@@ -35,12 +39,13 @@ function dyingPylons(the_player, pylon_list) {
 }
 
 function dyingEnemies(the_player, enemy_list) {
-  changed_enemies = [];
-  number_enemies = enemy_list.length;
+  let changed_enemies = [];
+  const number_enemies = enemy_list.length;
+  const crawling_dist = g_planet.m_dying_distance * L_MATCH_DEATH_TO_DISTANCE;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
-    an_enemy = enemy_list[enemy_index];
-    dist_abs_y = distanceAbsY([an_enemy.m_y, the_player.m_y]);
-    if (dist_abs_y < g_planet.m_dying_distance) {
+    const an_enemy = enemy_list[enemy_index];
+    const dist_abs_y = distanceAbsY([an_enemy.m_y, the_player.m_y]);
+    if (dist_abs_y < crawling_dist) {
       setCssEnemyStarFill(enemy_index, DYING_STAR_COLOR);
       setCssEnemyBallFill(enemy_index, DYING_BALL_COLOR);
     }
@@ -51,9 +56,9 @@ function dyingEnemies(the_player, enemy_list) {
 }
 
 function reAnimateScreen() {
-  g_field_xs_shift = Array(256).fill(0);
+  g_field_xs_shift = Array(DEPTH_LINES).fill(0);
   const cur_checkerboard_img = getCssVar("--checkerboard-image");
-  for (i = 0; i < 256; i++) {
+  for (let i = 0; i < DEPTH_LINES; i++) {
     setCssLineBackground(i, cur_checkerboard_img);  // delete grey checkerboard
   }
 }

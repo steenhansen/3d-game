@@ -1,9 +1,8 @@
 
 
-let d1 = document.getElementById('desktop-dir');
+let desk_directions_4 = document.getElementById('desktop-dir');
 
-
-d1.innerHTML = `
+desk_directions_4.innerHTML = `
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg

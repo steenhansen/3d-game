@@ -1,4 +1,4 @@
-function fixMobile() {
+function fixMobileTouch() {
   if (document.fullscreenElement == null) {
     start_mobile = document.getElementById('start-mobile');
     g_waiting_for_start = true;
@@ -16,12 +16,12 @@ function handleStartMobile(evt) {
   unHideDiv('mobile-wait');
   setTimeout(() => {
     g_planet.m_game_state = GAME_0_INIT;     //L_OOP_1_BEGIN;
-    start_mobile = document.getElementById('start-mobile');
+    let start_mobile = document.getElementById('start-mobile');
     start_mobile.style.display = "none";
     g_waiting_for_start = false;
-    fixMobile();
+    screenFixMobile();
   }, "1000");
-  the_scene = document.getElementById('the-scene');
+  let the_scene = document.getElementById('the-scene');
   try {
     the_scene.requestFullscreen();
   } catch {
@@ -30,13 +30,13 @@ function handleStartMobile(evt) {
 }
 
 
-function fixMobile() {
-  start_mobile = document.getElementById('start-mobile');
+function screenFixMobile() {
+  let start_mobile = document.getElementById('start-mobile');
   start_mobile.style.display = "none";
-  screen_width = window.screen.width;
-  screen_height = window.screen.height;
-  screen_width_px = screen_width + "px";
-  screen_height_px = screen_height + "px";
+  let screen_width = window.screen.width;
+  let screen_height = window.screen.height;
+  let screen_width_px = screen_width + "px";
+  let screen_height_px = screen_height + "px";
   setCssVar("--scene-width", screen_width_px);
   setCssVar("--scene-height", screen_height_px);
 }
@@ -105,42 +105,42 @@ function addDesktopEvents() {
 }
 
 function fixDesktop() {
-  start_mobile = document.getElementById('start-mobile');
+  let start_mobile = document.getElementById('start-mobile');
   start_mobile.style.display = "none";
   setCssVar("--scene-width", "1024px");
   setCssVar("--scene-height", "512px");
-  if (document.fullscreenElement != null) {
-    //  document.exitFullscreen();
-  }
+  // if (document.fullscreenElement != null) {
+  //   //  document.exitFullscreen();
+  // }
 }
 
 
 
 
-function fullMobile() {
-  if (isMobile()) {
-    if (!document.fullscreenElement) {
-      the_scene = document.getElementById('the-scene');
-    }
-  }
-}
+// function fullMobile() {
+//   if (isMobile()) {
+//     if (!document.fullscreenElement) {
+//       the_scene = document.getElementById('the-scene');
+//     }
+//   }
+// }
 
 
 
-function touchMoveHandler(the_event) {
-  //
-}
+// function touchMoveHandler(the_event) {
+//   //
+// }
 
 
-function touchMove(the_event) {
+// function touchMove(the_event) {
 
-}
+// }
 
 
 function fixDevice() {
 
   if (isMobile()) {
-    fixMobile();
+    fixMobileTouch();
   } else {
     fixDesktop();
   }

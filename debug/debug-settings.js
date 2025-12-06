@@ -60,6 +60,7 @@ function debugPlayerXy() {
 }
 
 function debugPlayerBounds() {
+  let player_pos;
   if (typeof PLAYER_BOUNDS == 'undefined') {
     player_pos = `bounds: none`;
   } else {
@@ -108,8 +109,8 @@ function debugReportFrameTime() {
     debugEnemiesLeft();
     debugLoopTime();
 
-    start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
-    end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
+    const start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
+    const end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
 
     if (dbg_swipe_dir == SWIPE_UP) {
       debugSwipeUp(start_point, end_point);

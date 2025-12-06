@@ -1,6 +1,6 @@
 
 function sceneInit() {
-  y_flip_count = INIT_Y_FLIP_COUNT;
+  g_y_flip_count = INIT_Y_FLIP_COUNT;
   CACHED_MISSILE_SHAPES = makeDiamondsBalls();
   initIncrementers();
   initLeftRight();

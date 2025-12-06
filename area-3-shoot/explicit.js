@@ -40,7 +40,7 @@ function action_runGame() {
         [36, 30]
     ];
 
-    const white_sides = makeHoles(0, "white", side_holes);
+    const white_sides = makeHoles(0, "green", side_holes);
     const the_holes = [...white_sides];
 
     g_exit_sign = initSign("sign-exit", [5, 2], 'Next', EXIT_OFF_COLOR);

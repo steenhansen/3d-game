@@ -19,8 +19,8 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the
   function gameLoop() {
     const start_loop = performance.now();
     action_checkForOccurance();
-    game_state = g_planet.m_game_state;
-    part_state = g_planet.m_part_state;
+    let game_state = g_planet.m_game_state;
+    let part_state = g_planet.m_part_state;
     if (game_state == GAME_0_INIT) {
       [game_state, part_state, g_planet, g_player] = initPart0(game_state, part_state, g_planet, g_player);
     } else if (game_state == GAME_1_INTRO) {

@@ -106,7 +106,7 @@ function startDrift() {
   if (g_planet.m_drift_direction > 0) {
     const rand_dir = Math.floor(Math.random() * NEW_DIRECTION_CHANCE_WHEN_DRIFTING);
     if (rand_dir == 1) {
-      rand_drift_direction = randomDirection();
+      const rand_drift_direction = randomDirection();
       g_planet.m_drift_direction = rand_drift_direction;
     }
   } else {
@@ -162,7 +162,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   hitCracks(the_player);
   the_player = doRecoil(the_player);
   let is_dying;
-  if (the_planet.m_game_state == GAME_3_DEATH) {  // or the_player.m_is_dying  is more better !!!!
+  if (the_planet.m_game_state == GAME_3_DEATH) {
     is_dying = true;
   } else {
     is_dying = false;
@@ -170,7 +170,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
   the_player = sceneMove(the_player, is_dying);
   drawSigns(sign_list, the_player);
   plyon_list = drawPylons(the_player, pylon_list);
-  g_missile = missileAdvance(g_missile, the_player);   //  pass in g_missile as the_missile NOOOOOOOOO
+  g_missile = missileAdvance(g_missile, the_player);
   if (typeof DBG_FREEZE_MISSILE == 'string') {
     return PART_PLAY_20_NORMAL;
   }

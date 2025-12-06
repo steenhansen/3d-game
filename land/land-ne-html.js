@@ -4,9 +4,6 @@
 document.getElementById('land_ne').innerHTML = `
  
 
-
-
-
     <div class="east_line" id="ne0"></div>
     <div class="east_line" id="ne1"></div>
     <div class="east_line" id="ne2"></div>

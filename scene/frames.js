@@ -42,10 +42,9 @@ function timeFrames(the_planet, the_player) {
 
 function frameInfoSE() {
   if (g_p_display_fps == P_SHOW) {
-    round_fps = Math.round(f_the_fps);
-    the_scene = document.getElementById('fps-value');
-    average_frames = " fps " + round_fps;
-    average_frames += " " + g_p_scroll_quality;
+    const round_fps = Math.round(f_the_fps);
+    let the_scene = document.getElementById('fps-value');
+    const average_frames = " fps " + round_fps + " " + g_p_scroll_quality;
     the_scene.innerHTML = average_frames;
   }
 }

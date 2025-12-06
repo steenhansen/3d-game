@@ -5,7 +5,7 @@ function incrementLeft() {
     resetLeft();
     // dbg_recordLefts(4096, 4096, 4096, 4096);
   } else {
-    for (let cur_line = 0; cur_line <= NUMBER_LINES; cur_line++) {
+    for (let cur_line = 0; cur_line < NUMBER_LINES; cur_line++) {
       let accum_old = g_field_xs_accums[cur_line];
       let accum_new = accum_old - cur_line;
       let accum_underflow = underflowLeft(cur_line, accum_new);
@@ -15,10 +15,6 @@ function incrementLeft() {
     }
   }
 }
-
-
-
-
 
 function resetLeft() {
   for (let cur_line = 0; cur_line < NUMBER_LINES; cur_line++) {

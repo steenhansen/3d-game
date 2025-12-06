@@ -27,7 +27,7 @@ function introPart1(game_state, part_state, g_signs) {
 }
 
 function landingIntro() {
-  part_state = animateLanding();
+  const part_state = animateLanding();
   return part_state;
 }
 
@@ -36,7 +36,7 @@ function afterLandingIntro() {
 }
 
 function elevatorInto() {
-  part_state = animateElevator();
+  const part_state = animateElevator();
   return part_state;
 }
 

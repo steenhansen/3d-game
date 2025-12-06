@@ -1,18 +1,7 @@
-
 let f_landing_count = 0;
 let f_top_playing_game = -512;
 let f_top_the_land = 0;
-
-
-
 const L_STOP_JUMP_UP_DOWN = 100;
-
-
-
-
-
-
-
 
 function elevatorInOneStep() {
   while (f_top_playing_game !== 0) {
@@ -43,13 +32,13 @@ function animateJumpDown(the_player) {
 
 function doFlying(lift_amount_x) {
   const sky_aperature = document.getElementById('sky-aperature');
-  sky_height = 256 + lift_amount_x;
+  const sky_height = 256 + lift_amount_x;
   sky_aperature.style.height = `${sky_height}px`;
 
   const the_sky = document.getElementById('the-sky');
-  margin_top = -1000 - lift_amount_x;
+  const margin_top = -1000 - lift_amount_x;
   the_sky.marginTop = `${margin_top}px`;
-  height_sky = 2400 + 4 * lift_amount_x;
+  const height_sky = 2400 + 4 * lift_amount_x;
   the_sky.style.height = `${height_sky}px`;
 
   const signs_html = document.getElementById('signs-area');
@@ -57,7 +46,6 @@ function doFlying(lift_amount_x) {
 
   const pylon_html = document.getElementById('pylons-area');
   pylon_html.style.top = `${lift_amount_x}px`;
-
 
   const holes_html = document.getElementById('holes-area');
   holes_html.style.top = `${lift_amount_x}px`;
@@ -71,15 +59,12 @@ function doFlying(lift_amount_x) {
   const missile_area = document.getElementById('missile-area');
   missile_area.style.top = `${lift_amount_x}px`;
 
-
   const saturn_planet = document.getElementById('saturn-space');
-
-  saturn_x = lift_amount_x - 200;
-
+  const saturn_x = lift_amount_x - 200;
   saturn_planet.style.left = `${saturn_x}px`;
   if (lift_amount_x > 350) {
     const saturn_space = document.getElementById('star-space');
-    saturn_opacity = (lift_amount_x - 350) / 300;
+    const saturn_opacity = (lift_amount_x - 350) / 300;
     saturn_space.style.opacity = saturn_opacity;
   }
 }
@@ -159,14 +144,14 @@ function landingInit() {
 function initPlay() {
   divVisVisible('desktop-dir');
   if (isMobile()) {
-    fixMobile();
+    fixMobileTouch();
   } else {
     fixDesktop();
   }
 }
 
 function initElevator() {
-  screen_height = window.screen.height;
+  const screen_height = window.screen.height;
   if (screen_height >= 512) {
     f_top_playing_game = -512;
   } else {

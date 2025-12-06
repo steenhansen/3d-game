@@ -1,6 +1,15 @@
 
+const IGNORE_BOUNDS = "IGNORE_BOUNDS";
+
+const SKY_RESTART_COUNTER = 30;
+
 const PLAYER_RECOIL_COUNTDOWN = 5;   // was 30
 
+const INVISIBLE_COLOR = `rgb(1, 2, 3, 0)`;
+
+const SPRITE_CENTER_Y = -200;
+
+const DEPTH_LINES = 256;
 
 const NO_MISSILE_DEPTH_OVERFLOW = 31;
 

@@ -59,7 +59,7 @@ function action_runGame() {
 
     const enemy_0 = {
         start_pos: [6, 2],
-        the_colors: ['yellow', 'black'],
+        the_colors: ['yellow', 'purple'],
         x_moves: [ZERO_10],
         y_moves: [ZERO_10],
         the_speed: 0,
