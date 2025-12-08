@@ -1,14 +1,5 @@
-/* Asuz Zenbook + Ipad Air are the problems */
-
-
-
-
-
-
-
 .an-arrow {
   --arrow-margin: 16px;
-
   width: 24px;
   height: 24px;
   opacity: 0.4;
@@ -16,13 +7,9 @@
   z-index: var(--z-an-arrow);
 }
 
-
-
-
 #arrows-html {
   z-index: var(--z-arrows-html);
   display: grid;
-
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 30% 40% 30%;
 
@@ -30,23 +17,7 @@
   height: 100%;
 
   position: absolute;
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #arrow-nw {
   transform: rotate(-45deg);
@@ -66,7 +37,6 @@
   margin-top: var(--arrow-margin);
 }
 
-
 #arrow-w {
   transform: rotate(270deg);
   left: 0px;
@@ -78,11 +48,8 @@
   transform: rotate(90deg);
   margin-left: auto;
   margin-right: var(--arrow-margin);
-  top: 35%
+  top: 35%;
 }
-
-
-
 
 #arrow-sw {
   transform: rotate(225deg);
@@ -97,7 +64,6 @@
   margin-top: auto;
   margin-bottom: var(--arrow-margin);
 }
-
 
 #arrow-se {
   transform: rotate(135deg);

@@ -10,7 +10,7 @@ let dbg_print = function () {
   index, start offset, end offset, flip offset
 */
 function dbg_printAnyBoundBreaks(index_arr) {
-  for (let error_line = 0; error_line <= NUMBER_LINES; error_line++) {
+  for (let error_line = 0; error_line < NUMBER_LINES; error_line++) {
     let [_index, reset_right, reset_left, _flip] = START_STOP_FLIP[error_line];
     const cur_shift = g_field_xs_shift[error_line];
     if (cur_shift > reset_right || cur_shift < reset_left) {

@@ -1,4 +1,4 @@
-document.getElementById('signs-area').innerHTML = `
+document.getElementById("signs-area").innerHTML = `
 <div id="sign-exit"></div>
 
 
@@ -17,16 +17,13 @@ document.getElementById('signs-area').innerHTML = `
   
  `;
 
-
-
 function deleteStartLetters(g_signs, milli_wait) {
-
   function hideStartLetters() {
-    number_signs = g_signs.length;
+    const number_signs = g_signs.length;
     for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-      a_sign = g_signs[sign_index];
+      let a_sign = g_signs[sign_index];
       if (a_sign.s_sign_name != "sign-exit") {
-        a_sign.m_sign_text_col = 'none';
+        a_sign.m_sign_text_col = "none";
       }
     }
   }

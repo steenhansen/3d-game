@@ -9,7 +9,6 @@
   opacity: 0.8;
 }
 
-
 #fuzzy-saturn {
   visibility: var(--p-graphics-saturn);
   z-index: var(--z-the-saturn);
@@ -20,9 +19,6 @@
   bottom: 64px;
   opacity: 0.3;
 }
-
-
-
 
 #cracked-screen {
   display: var(--cracked-glass-display);
@@ -35,10 +31,7 @@
 
   position: absolute;
   opacity: var(--cracked-glass-opacity);
-
 }
-
-
 
 #the-sun {
   visibility: var(--p-graphics-sun-visible);
@@ -56,10 +49,7 @@
   animation-iteration-count: infinite;
   animation-duration: 16s;
   animation-name: var(--ani-key-frame);
-
 }
-
-
 
 #the-sky {
   display: nXone;

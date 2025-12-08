@@ -1,21 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 
+<base href="../" />
 
-
-
-<base href="../">
-
-
-
-
-
-
-
-
-
-
-
-<link rel="icon" type="image/x-icon" href="images/favicon.png">
+<link rel="icon" type="image/x-icon" href="images/favicon.png" />
 
 <div id="the-css">
   <link rel="stylesheet" href="device/device-screens.css" />
@@ -42,7 +29,6 @@
 <div id="js-constants">
   <script type="text/javascript" src="values/global-constants.js"></script>
   <script type="text/javascript" src="values/const-sprites.js"></script>
-  <script type="text/javascript" src="values/debugging.js"></script>
   <script type="text/javascript" src="values/states.js"></script>
   <script type="text/javascript" src="values/major-constants.js"></script>
   <script type="text/javascript" src="objects/screen-placement.js"></script>
@@ -60,8 +46,8 @@
 </div>
 
 <div id="the-svgs">
-  <div id='pylons-svg'> </div>
-  <div id='svg-arrows'> </div>
+  <div id="pylons-svg"></div>
+  <div id="svg-arrows"></div>
 </div>
 
 <div id="js-before">
@@ -88,7 +74,6 @@
 
   <script type="text/javascript" src="signs/signs-code.js"></script>
 
-
   <script type="text/javascript" src="pylons/pylons-collide.js"></script>
   <script type="text/javascript" src="pylons/pylons-create.js"></script>
   <script type="text/javascript" src="collisions/player-recoil.js"></script>
@@ -98,18 +83,12 @@
   <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
 </div>
 
-
-
-<div id='start-mobile'>
-  <div id='mobile-list'>
-  </div>
-  <div id='mobile-wait'>
-    Waiting for full mobile screen
-  </div>
+<div id="start-mobile">
+  <div id="mobile-list"></div>
+  <div id="mobile-wait">Waiting for full mobile screen</div>
 </div>
 
 <div id="the-scene">
-
   <canvas id="the-draw" width=" 1024" height="512"></canvas>
 
   <div id="touch-boxes"></div>
@@ -122,16 +101,16 @@
     <div id="cracked-screen"></div>
     <div id="the-sun" class="sun-vars"></div>
     <div id="sky-aperature" class="sky-vars">
-      <div id="the-sky"> </div>
+      <div id="the-sky"></div>
       <div id="the-pyramids"></div>
       <div id="fuzzy-saturn"></div>
     </div>
     <div id="enemy-area" class="enemy-vars"></div>
     <div id="missile-area" class="missile-vars"></div>
-    <div id="checkerboard-field" class="line-vars"> </div>
-    <div id='signs-area'> </div>
-    <div id='pylons-area'> </div>
-    <div id='holes-area'> </div>
+    <div id="checkerboard-field" class="line-vars"></div>
+    <div id="signs-area"></div>
+    <div id="pylons-area"></div>
+    <div id="holes-area"></div>
   </div>
 
   <div id="the-landing">
@@ -140,24 +119,13 @@
     <div id="land_sw"></div>
     <div id="land_se"></div>
   </div>
-
 </div>
 
-
-<div id="desktop-dir" class="direction-vars" onclick="clickOnDirectionsSvg(event)">
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+<div
+  id="desktop-dir"
+  class="direction-vars"
+  onclick="clickOnDirectionsSvg(event)"
+></div>
 
 <div id="js-after">
   <script type="text/javascript" src="missile/missile-html.js"></script>
@@ -179,7 +147,6 @@
   <script type="text/javascript" src="input/arrows-html.js"></script>
   <script type="text/javascript" src="input/boxes-html.js"></script>
 
-
   <script type="text/javascript" src="input/arrows-click.js"></script>
   <script type="text/javascript" src="input/boxes-touch.js"></script>
   <script type="text/javascript" src="values/url-params.js"></script>
@@ -200,33 +167,7 @@
   <script type="text/javascript" src="scene/part-5-done.js"></script>
 
   <script type="text/javascript" src="input/arrows-svg.js"></script>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- start part section
  
@@ -236,22 +177,10 @@
 
 -->
 
-
-
-
-
-
-
-
-
-
 <script type="text/javascript" src="input/desktop-4-buttons.js"></script>
 <script type="text/javascript" src="area-4-fast/explicit.js"></script>
 <link rel="stylesheet" href="area-4-fast/distinct.css" />
 
 <script>
-
-
   action_runGame();
-
 </script>

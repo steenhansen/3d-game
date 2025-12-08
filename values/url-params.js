@@ -1,12 +1,9 @@
-
-
-
 // ?env-type=debug
 function environmentTypeParam() {
   if (g_p_environment_type == P_UNKNOWN) {
-    location_url = new URL(window.location);
-    debug_param = location_url.searchParams.get(P_ENVIROMENT_TYPE);
-    g_p_environment_type = (debug_param == P_DEBUG);
+    const location_url = new URL(window.location);
+    const debug_param = location_url.searchParams.get(P_ENVIROMENT_TYPE);
+    g_p_environment_type = debug_param == P_DEBUG;
   }
   setCssVar("--p-environment-type", g_p_environment_type);
   return g_p_environment_type;
@@ -15,8 +12,8 @@ function environmentTypeParam() {
 // ?scroll-quality=course
 function scrollQualityParam() {
   if (g_p_scroll_quality == P_UNKNOWN) {
-    location_url = new URL(window.location);
-    scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY);
+    const location_url = new URL(window.location);
+    const scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY);
     if (scroll_quality == P_COURSE) {
       g_p_scroll_quality = P_COURSE;
     } else {
@@ -28,18 +25,16 @@ function scrollQualityParam() {
 
 // ?graphics-style=simple
 function graphicsStyleParam() {
-  location_url = new URL(window.location);
-  graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE);
+  const location_url = new URL(window.location);
+  const graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE);
   if (graphics_style == P_SIMPLE) {
-    setCssVar("--p-graphics-sun-animation", 'none');
-    setCssVar("--p-graphics-sky-image", 'none');
-    setCssVar("--p-graphics-sky-skew", 'none');
-
-    setCssVar("--p-graphics-sun-visible", 'hidden');
-    setCssVar("--p-graphics-saturn", 'hidden');
-    setCssVar("--p-graphics-pyramids", 'hidden');
-
-    setCssVar("--p-graphics-boxes", '0');
+    setCssVar("--p-graphics-sun-animation", "none");
+    setCssVar("--p-graphics-sky-image", "none");
+    setCssVar("--p-graphics-sky-skew", "none");
+    setCssVar("--p-graphics-sun-visible", "hidden");
+    setCssVar("--p-graphics-saturn", "hidden");
+    setCssVar("--p-graphics-pyramids", "hidden");
+    setCssVar("--p-graphics-boxes", "0");
     g_p_graphics_style = P_SIMPLE;
   } else {
     g_p_graphics_style = P_COMPLEX;
@@ -49,8 +44,8 @@ function graphicsStyleParam() {
 // ?display-fps=show
 function displayFpsParam() {
   if (g_p_display_fps == P_UNKNOWN) {
-    location_url = new URL(window.location);
-    show_fps = location_url.searchParams.get(P_DISPLAY_FPS);
+    const location_url = new URL(window.location);
+    const show_fps = location_url.searchParams.get(P_DISPLAY_FPS);
     if (show_fps == P_SHOW) {
       g_p_display_fps = P_SHOW;
     } else {
@@ -58,7 +53,6 @@ function displayFpsParam() {
     }
   }
 }
-
 
 function urlParams() {
   environmentTypeParam();
@@ -68,16 +62,20 @@ function urlParams() {
 }
 
 //   index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
+
 function getParams(window_location) {
   urlParams();
 
-  location_url = new URL(window_location);
-  env_type = location_url.searchParams.get(P_ENVIROMENT_TYPE);      // debug/normal
-  scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY); // course/fime
-  graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE); // simple/complex
-  display_fps = location_url.searchParams.get(P_DISPLAY_FPS);       // show/hide
+  const location_url = new URL(window_location);
+  const env_type = location_url.searchParams.get(P_ENVIROMENT_TYPE); // debug/normal
+  const scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY); // course/fime
+  const graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE); // simple/complex
+  const display_fps = location_url.searchParams.get(P_DISPLAY_FPS); // show/hide
 
-  the_params = [];
+  const watch_line = location_url.searchParams.get(P_WATCH_LINE); // disregard/255
+  const check_field = location_url.searchParams.get(P_CHECK_FIELD); // overlook/notice
+
+  let the_params = [];
   if (env_type == P_DEBUG) {
     the_params.push(`${P_ENVIROMENT_TYPE}=${P_DEBUG}`);
   }
@@ -90,9 +88,16 @@ function getParams(window_location) {
     the_params.push(`${P_GRAPHICS_STYLE}=${P_SIMPLE}`);
   }
 
-
   if (display_fps == P_SHOW) {
     the_params.push(`${P_DISPLAY_FPS}=${P_SHOW}`);
+  }
+
+  if (watch_line != P_DISREGARD) {
+    the_params.push(`${P_WATCH_LINE}=${watch_line}`);
+  }
+
+  if (check_field == P_NOTICE) {
+    the_params.push(`${P_CHECK_FIELD}=${P_NOTICE}`);
   }
 
   let params_string = "";
@@ -102,14 +107,33 @@ function getParams(window_location) {
   return params_string;
 }
 
-
-function getDegradeParam(window_location) {
-  location_url = new URL(window_location);
-  degrade_param = location_url.searchParams.get(P_SCROLL_QUALITY);
-  degrade_init = 0;
-  if (degrade_param) {
-    degrade_int = parseInt(degrade_param);
-    degrade_init += degrade_int;
+// ?watch-line=255
+function watchLineParam() {
+  if (g_p_watch_line == P_UNKNOWN) {
+    const location_url = new URL(window.location);
+    const watch_line = location_url.searchParams.get(P_WATCH_LINE);
+    if (watch_line == P_DISREGARD) {
+      g_p_watch_line = P_DISREGARD;
+    } else {
+      const watch_int = parseInt(watch_line);
+      if (watch_int >= 0 && watch_int < DEPTH_LINES) {
+        g_p_watch_line = watch_int;
+      } else {
+        g_p_watch_line = P_DISREGARD;
+      }
+    }
   }
-  return degrade_init;
+}
+
+// ?check-field=notice
+function checkField() {
+  if (g_p_check_field == P_UNKNOWN) {
+    const location_url = new URL(window.location);
+    const check_field = location_url.searchParams.get(P_CHECK_FIELD);
+    if (check_field == P_NOTICE) {
+      g_p_check_field = P_NOTICE;
+    } else {
+      g_p_check_field = P_OVERLOOK;
+    }
+  }
 }

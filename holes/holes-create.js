@@ -14,7 +14,13 @@ function squareNotInBounds(xy_squares, xy_offset, err_mess) {
   }
 }
 
-function initHoleData(hole_num, xy_pixels, hole_color, hole_hidden) {
+function initHoleData(
+  hole_num,
+  xy_pixels,
+  hole_color,
+  hole_hidden,
+  vert_color,
+) {
   let [x_pixels, y_pixels] = xy_pixels;
   const hole_name = `hole-${hole_num}`;
   if (x_pixels < 0 && y_pixels < 0) {
@@ -27,13 +33,17 @@ function initHoleData(hole_num, xy_pixels, hole_color, hole_hidden) {
     m_x: x_pixels,
     m_y: y_pixels,
     s_hole_color: hole_color,
-    c_vert_color: 'black',
-    m_hidden: hole_hidden
+
+    c_vert_color: vert_color,
+    m_hidden: hole_hidden,
   };
   return hole_obj;
 }
 
-function makeHoles(hole_index, hole_color, holes_list) {
+function makeHoles(hole_index, hole_color, holes_list, vert_color) {
+  if (typeof vert_color == "undefined") {
+    vert_color = "black";
+  }
   let declared_holes = [];
   const num_holes = holes_list.length;
   for (let h_index = 0; h_index < num_holes; h_index++) {
@@ -54,9 +64,15 @@ function makeHoles(hole_index, hole_color, holes_list) {
     }
     const hole_xy_squares = [x_square, y_square];
     const the_hole_number = hole_index + h_index;
-    const hole_id = the_hole_number.toString().padStart(2, '0');
+    const hole_id = the_hole_number.toString().padStart(2, "0");
     const xy_pixels = originOffset(hole_xy_squares, IGNORE_BOUNDS);
-    const new_hole = initHoleData(hole_id, xy_pixels, hole_color, hole_hidden);
+    const new_hole = initHoleData(
+      hole_id,
+      xy_pixels,
+      hole_color,
+      hole_hidden,
+      vert_color,
+    );
     declared_holes.push(new_hole);
   }
   return declared_holes;

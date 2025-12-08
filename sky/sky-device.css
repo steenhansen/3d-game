@@ -2,15 +2,9 @@
   --ani-key-frame: var(--p-graphics-sun-animation);
 }
 
-
-
 .sky-vars {
   --sky-color: #0000ff;
 }
-
-
-
-
 
 @keyframes sun-keyframes {
   0% {

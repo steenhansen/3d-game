@@ -53,7 +53,7 @@ function action_runGame() {
 
     const slow_0_back_front_enemy = plainEnemy([18, 3], ORANGE_GREY_FOG, ZERO_10, AWAY_10, 1);
     const slow_1_back_front_enemy = plainEnemy([18, 3], GREY_ORANGE_FOG, ZERO_10, NEAR_10, 1);
-    const slow_back_front_2_pylon_points = [[18, 2], [18, 7]];
+    const slow_back_front_2_pylon_points = [[18, 0], [18, 7]];
     const slow_back_front_2_pylon_colors = [ORANGE_GREY_FOG, ORANGE_GREY_FOG];
 
     const fast_0_left_right_enemy = plainEnemy([28, 2], WHITE_BLACK, RGHT_10, ZERO_10, 6);

@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<link rel="icon" type="image/x-icon" href="images/favicon.png">
+<link rel="icon" type="image/x-icon" href="images/favicon.png" />
 
 <script type="text/javascript" src="values/major-constants.js"></script>
 <script type="text/javascript" src="values/url-params.js"></script>
@@ -13,7 +13,7 @@
     --mobile-begin: none;
   }
 
-  @media (max-width:1023px) {
+  @media (max-width: 1023px) {
     .begin-vars {
       --desktop-begin: none;
       --mobile-begin: inline;
@@ -34,7 +34,7 @@
 
   html {
     min-height: 100%;
-    background-image: url('video/git-size.webp');
+    background-image: url("video/git-size.webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -54,19 +54,19 @@
   //  index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
   function beginGame() {
     let params_string = getParams(window.location);
-    area_1_addr = 'area-1-jump/index.html' + params_string;
+    area_1_addr = "area-1-jump/index.html" + params_string;
     window.location.href = area_1_addr;
   }
 </script>
 
 <div class="center-screen">
   <div class="begin-vars">
-    <br>
-    <button id="begin-desktop" onclick="beginGame()" type="button">Begin
-      Desktop 3D
-      Game</button>
-    <button id="begin-mobile" onclick="beginGame()" type="button">Begin Mobile
-      3D
-      Game</button>
+    <br />
+    <button id="begin-desktop" onclick="beginGame()" type="button">
+      Begin Desktop 3D Game
+    </button>
+    <button id="begin-mobile" onclick="beginGame()" type="button">
+      Begin Mobile 3D Game
+    </button>
   </div>
 </div>

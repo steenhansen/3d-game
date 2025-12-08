@@ -1,4 +1,3 @@
-
 const JUMP_STEP = 3;
 
 const HOR_0 = 256 * 0;
@@ -38,8 +37,6 @@ const HOR_X = 256 * 33;
 const HOR_Y = 256 * 34;
 const HOR_Z = 256 * 35;
 
-
-
 const VER_0 = 50 * 0;
 const VER_1 = 50 * 1;
 const VER_2 = 50 * 2;
@@ -77,17 +74,6 @@ const VER_X = 50 * 33;
 const VER_Y = 50 * 34;
 const VER_Z = 50 * 35;
 
-
-
-
-
-
-
-
-
-
-
-
 const DEVICE_UNKNOWN = 0;
 const DEVICE_DESKTOP = 1;
 const DEVICE_MOBILE = 2;
@@ -106,7 +92,6 @@ LEFT_10 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 
 LEFT_11 = [LEFT_1, LEFT_10].flat();
 
-
 RGHT_1 = [+1];
 RGHT_2 = [+1, +1];
 RGHT_3 = [+1, +1, +1];
@@ -119,11 +104,8 @@ RGHT_9 = [+1, +1, +1, +1, +1, +1, +1, +1, +1];
 RGHT_10 = [+1, +1, +1, +1, +1, +1, +1, +1, +1, +1];
 RGHT_bb = [+1, +2, +1, +2, +1, +2, +1, +2, +1, +2];
 
-
-
 RGHT_a = [+1, 0, +1];
 RGHT_b = [0, +1, 0];
-
 
 RGHT_11 = [RGHT_10, RGHT_1].flat();
 RGHT_12 = [RGHT_10, RGHT_2].flat();
@@ -159,11 +141,28 @@ NEAR_18 = [NEAR_10, NEAR_8].flat();
 NEAR_19 = [NEAR_10, NEAR_9].flat();
 NEAR_20 = [NEAR_10, NEAR_10].flat();
 
-THE_NEARS = [NEAR_0, NEAR_1, NEAR_2, NEAR_3, NEAR_4, NEAR_5, NEAR_6, NEAR_7, NEAR_8, NEAR_9,
-  NEAR_10, NEAR_11, NEAR_12, NEAR_13, NEAR_14, NEAR_15, NEAR_16, NEAR_17, NEAR_18, NEAR_19,
-
+THE_NEARS = [
+  NEAR_0,
+  NEAR_1,
+  NEAR_2,
+  NEAR_3,
+  NEAR_4,
+  NEAR_5,
+  NEAR_6,
+  NEAR_7,
+  NEAR_8,
+  NEAR_9,
+  NEAR_10,
+  NEAR_11,
+  NEAR_12,
+  NEAR_13,
+  NEAR_14,
+  NEAR_15,
+  NEAR_16,
+  NEAR_17,
+  NEAR_18,
+  NEAR_19,
 ];
-
 
 // these are pixel move!
 LEFT_5 = [-1, -1, -1, -1, -1];
@@ -195,14 +194,8 @@ NEAR_200 = [NEAR_100, NEAR_100].flat();
 ZERO_50 = [ZERO_10, ZERO_10, ZERO_10, ZERO_10, ZERO_10].flat();
 ZERO_100 = [ZERO_50, ZERO_50].flat();
 
-
-
-
 AWAY_500 = [AWAY_100, AWAY_100, AWAY_100, AWAY_100, AWAY_100].flat();
 
-
 NEAR_500 = [NEAR_100, NEAR_100, NEAR_100, NEAR_100, NEAR_100].flat();
-
-
 
 ZERO_500 = [ZERO_100, ZERO_100, ZERO_100, ZERO_100, ZERO_100].flat();

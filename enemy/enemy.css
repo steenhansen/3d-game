@@ -1,6 +1,6 @@
- .enemy-vars {
-   --enemy-star-edge-width-NBR: 0;
-   --enemy-star-opacity-NBR: 1;
-   --enemy-star-color-NBR: yellow;
-   --enemy-ball-color-NBR: blue;
- }
+.enemy-vars {
+  --enemy-star-edge-width-NBR: 0;
+  --enemy-star-opacity-NBR: 1;
+  --enemy-star-color-NBR: yellow;
+  --enemy-ball-color-NBR: blue;
+}
