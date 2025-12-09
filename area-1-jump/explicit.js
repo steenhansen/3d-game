@@ -9,11 +9,14 @@ const PLAYER_START = [7, 30];
 const PLAYER_BOUNDS = [0, 18, 34, 31];
 
 const DITCH_LINE = 25;
+const DITCH_COLOR = "black";
+
+const MISSILE_LIFETIME = 50;
 
 function action_checkForOccurance() {
   const player_offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
   if (player_offset_squares_y < DITCH_LINE) {
-    g_holes = hideHoles(g_holes, "red");
+    g_holes = hideHoles(g_holes, DITCH_COLOR);
   }
   const all_dead = enemiesAllZombies(g_enemies);
   if (all_dead) {
@@ -74,7 +77,7 @@ function action_runGame() {
     [32.9375, back_one],
   ];
 
-  const red_holes = makeHoles(0, "black", ditch_holes, "white");
+  const red_holes = makeHoles(0, DITCH_COLOR, ditch_holes, "white");
 
   const back_holes = [
     [0, 17],

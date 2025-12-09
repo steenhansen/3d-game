@@ -36,16 +36,6 @@ const P_DISPLAY_FPS = "display-fps";
 const P_SHOW = "show";
 const P_HIDE = "hide";
 
-// index.html?watch-line=0
-const P_WATCH_LINE = "watch-line";
-const P_DISREGARD = "disregard";
-const P_SHOW_LINE = "255";
-
-// index.html?check-field=notice
-const P_CHECK_FIELD = "check-field";
-const P_OVERLOOK = "overlook"; // overlook
-const P_NOTICE = "notice"; // notice
-
 const PART_INIT_00_DESKTOP = "PART_INIT_00_DESKTOP";
 const PART_INIT_01_MOBILE = "PART_INIT_01_MOBILE";
 const PART_INIT_02_AFTER_BEGIN = "PART_INIT_02_AFTER_BEGIN";

@@ -10,7 +10,6 @@ function missileHitEnemies(the_missile, the_enemies) {
       const has_collided = hasCollided(the_missile, an_enemy);
       if (has_collided) {
         if (the_missile.m_lifetime > 0) {
-          console.log("YES", the_missile.m_lifetime);
           an_enemy = killEnemy(an_enemy);
           an_enemy.m_enemy_state = ENEMY_2_HIT;
           an_enemy.m_enemy_hit_flash = 10;

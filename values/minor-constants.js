@@ -7,15 +7,12 @@ const EXIT_ON_COLOR = "lime";
 const EXIT_OFF_COLOR = "red";
 const EXIT_OFF_TRANSLUCENT = "#ff000088";
 
-const MISSILE_LIFETIME = 25;
 const MISSILE_LR_SPEED = 48;
 const MISSILE_FOR_SPEED = 16;
 
 const NEW_DIRECTION_CHANCE_WHEN_DRIFTING = 1024;
 
-const DRIFT_START_CHANCE_WHEN_STOPPED = 10; //10;
-
-// const PLAYER_TRAVEL_SPEED = 4;   //1sluggish  4slow  8normal 16fast  32extreme
+const DRIFT_START_CHANCE_WHEN_STOPPED = 10;
 
 const PYLON_PIXEL_DEPTH = 30;
 const ENEMY_PIXEL_DEPTH = 30;

@@ -1,13 +1,4 @@
-
-
-
-
 <a name="s"></a>
-
-
-
-
-
 
 ## This is a 3D vanilla JavaScript game.
 
@@ -16,25 +7,28 @@
 [Play Game](https://steenhansen.github.io/3d-game/)
 
 ## Frames Per Second
-    Galaxy S24 FE (2024) Mobile
-        Chrome 60 to 80 fps
-        Samsung 60 fps
-        Firefox 45 fps
 
-    Galaxy SM-A520 (2017) Mobile
-        Chrome 6 fps - when degraded
-        Firefox 3 fps - when degraded
-        Samsung does not work
+    Mobile
+        Galaxy S24 FE (2024) Mobile
+            Chrome 60 to 80 fps
+            Samsung 60 fps
+            Firefox 45 fps
 
-    AMD Ryzen 7 3700X (2019) Desktop
-        Chrome 60 fps
-        Opera 60 fps
-        Brave 60 fps
-        Edge 60 fps
-        Firefox 50 to 60 - when degraded
+        Galaxy SM-A520 (2017) Mobile
+            Chrome 6 fps - when degraded
+            Firefox 3 fps - when degraded
+            Samsung does not work
 
+    Desktop
+        AMD Ryzen 7 3700X (2019) Desktop
+            Chrome 60 fps
+            Opera 60 fps
+            Brave 60 fps
+            Edge 60 fps
+            Firefox 50 to 60 - when degraded
 
 ## Mobile Controls
+
     Swipe Up to Jump
     Swipe Right to Quit
     Swipe Left to Restart
@@ -44,11 +38,11 @@
 
 <img src="./markdown/git-mobile-touch.svg" width="200">
 
-
 <br>
 
 ## Area 1
-    Playfield bounded front and back. Must jump the red ditch.
+
+    Playfield bounded front and back. Must jump the black ditch.
 
 <img src="./markdown/area-1.png" width="400">
 
@@ -57,6 +51,7 @@
 <br>
 
 ## Area 2
+
     Playfield has no bounds front and back. Must carom shoot off of pylon.
 
 <img src="./markdown/area-2.png" width="400">
@@ -66,6 +61,7 @@
 <br>
 
 ## Area 3
+
     Playfield bounded on all sides. Must shoot all enemies.
 
 <img src="./markdown/area-3.png" width="400">
@@ -75,25 +71,15 @@
 <br>
 
 ## Area 4
+
     Playfield bounded on left and right. Must shoot all enemies, and then jump to finish.
 
 <img src="./markdown/area-4.png" width="400">
 
 [normal](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
-
-
-
-## Death
-
-<img src="./markdown/death.png" width="400">
-
-
 ## Desktop Firefox
+
 Cannot have multiple windows open with game, even one game is taxing.
 
 Other browsers are fine with four visible games, albeit with high 50% cpu usage.
-
-
-
-

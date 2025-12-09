@@ -44,38 +44,62 @@ function checkBounds(field_in_squares, bounds_as_squares) {
   }
 }
 
-
 function squares2pixels(width_depth_squares) {
   let [x_squares, y_squares] = width_depth_squares;
-  const x_pixels = x_squares * WIDTH_OF_SQUARE; // const WIDTH_OF_SQUARE = 54 256;
-  const y_pixels = y_squares * DEPTH_OF_SQUARE;  // const DEPTH_OF_SQUARE = 50;
+  const x_pixels = x_squares * WIDTH_OF_SQUARE;
+  const y_pixels = y_squares * DEPTH_OF_SQUARE;
   const xy_size = [x_pixels, y_pixels];
   return xy_size;
 }
 
-function initBoundedPlanet(field_in_squares, bounds_as_squares, start_move_dir, start_drift_dir) {
+function initBoundedPlanet(
+  field_in_squares,
+  bounds_as_squares,
+  start_move_dir,
+  start_drift_dir,
+) {
   checkBounds(field_in_squares, bounds_as_squares);
-  g_field_in_pixels = squares2pixels(field_in_squares);  //  [25600, 2000]
-  let [x_left, y_top, x_right, y_bottom] = bounds_as_squares;     //[27, 2, 40, 16]
-  g_bounds_in_squares = [x_left, y_top, x_right, y_bottom];   //bounds_as_squares;
+  g_field_in_pixels = squares2pixels(field_in_squares);
+  let [x_left, y_top, x_right, y_bottom] = bounds_as_squares;
+  g_bounds_in_squares = [x_left, y_top, x_right, y_bottom];
   const top_left = squares2pixels([x_left, y_top]);
   const bottom_right = squares2pixels([x_right, y_bottom]);
-  g_bounds_in_pixels = [top_left[0], top_left[1], bottom_right[0], bottom_right[1]];
-  const bounded_planet = initPlanet(g_field_in_pixels, g_bounds_in_pixels, start_move_dir, start_drift_dir);
+  g_bounds_in_pixels = [
+    top_left[0],
+    top_left[1],
+    bottom_right[0],
+    bottom_right[1],
+  ];
+  const bounded_planet = initPlanet(
+    g_field_in_pixels,
+    g_bounds_in_pixels,
+    start_move_dir,
+    start_drift_dir,
+  );
   return bounded_planet;
 }
 
 function initInfinitePlanet(field_in_squares, start_move_dir, start_drift_dir) {
-  let [x_squares, y_squares] = field_in_squares; //[64, 55];
-  g_field_in_pixels = squares2pixels(field_in_squares);  //  [25600, 2000]
+  let [x_squares, y_squares] = field_in_squares;
+  g_field_in_pixels = squares2pixels(field_in_squares);
   g_bounds_in_squares = [0, 0, x_squares, y_squares];
   let [x_pixels, y_pixels] = g_field_in_pixels;
   g_bounds_in_pixels = [0, 0, x_pixels, y_pixels];
-  const free_planet = initPlanet(g_field_in_pixels, g_bounds_in_pixels, start_move_dir, start_drift_dir);
+  const free_planet = initPlanet(
+    g_field_in_pixels,
+    g_bounds_in_pixels,
+    start_move_dir,
+    start_drift_dir,
+  );
   return free_planet;
 }
 
-function initPlanet(pixel_field_size, pixel_bounds, start_move_dir, start_drift_dir) {
+function initPlanet(
+  pixel_field_size,
+  pixel_bounds,
+  start_move_dir,
+  start_drift_dir,
+) {
   let [field_width, field_depth] = pixel_field_size;
   let [left_x, top_y, right_x, bottom_y] = pixel_bounds;
   g_collison_sizes = [field_width, TILE_WIDTH, field_depth, ROOM_DEPTH];
@@ -93,7 +117,7 @@ function initPlanet(pixel_field_size, pixel_bounds, start_move_dir, start_drift_
     m_move_direction: start_move_dir,
     m_last_direction_key: MOVINGx_NOT,
     m_drift_direction: start_drift_dir,
-    m_drift_countdown: 0
+    m_drift_countdown: 0,
   };
   return the_planet;
 }

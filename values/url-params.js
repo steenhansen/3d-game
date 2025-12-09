@@ -72,9 +72,6 @@ function getParams(window_location) {
   const graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE); // simple/complex
   const display_fps = location_url.searchParams.get(P_DISPLAY_FPS); // show/hide
 
-  const watch_line = location_url.searchParams.get(P_WATCH_LINE); // disregard/255
-  const check_field = location_url.searchParams.get(P_CHECK_FIELD); // overlook/notice
-
   let the_params = [];
   if (env_type == P_DEBUG) {
     the_params.push(`${P_ENVIROMENT_TYPE}=${P_DEBUG}`);
@@ -92,48 +89,9 @@ function getParams(window_location) {
     the_params.push(`${P_DISPLAY_FPS}=${P_SHOW}`);
   }
 
-  if (watch_line != P_DISREGARD) {
-    the_params.push(`${P_WATCH_LINE}=${watch_line}`);
-  }
-
-  if (check_field == P_NOTICE) {
-    the_params.push(`${P_CHECK_FIELD}=${P_NOTICE}`);
-  }
-
   let params_string = "";
   if (the_params.length > 0) {
     params_string = "?" + the_params.join("&");
   }
   return params_string;
-}
-
-// ?watch-line=255
-function watchLineParam() {
-  if (g_p_watch_line == P_UNKNOWN) {
-    const location_url = new URL(window.location);
-    const watch_line = location_url.searchParams.get(P_WATCH_LINE);
-    if (watch_line == P_DISREGARD) {
-      g_p_watch_line = P_DISREGARD;
-    } else {
-      const watch_int = parseInt(watch_line);
-      if (watch_int >= 0 && watch_int < DEPTH_LINES) {
-        g_p_watch_line = watch_int;
-      } else {
-        g_p_watch_line = P_DISREGARD;
-      }
-    }
-  }
-}
-
-// ?check-field=notice
-function checkField() {
-  if (g_p_check_field == P_UNKNOWN) {
-    const location_url = new URL(window.location);
-    const check_field = location_url.searchParams.get(P_CHECK_FIELD);
-    if (check_field == P_NOTICE) {
-      g_p_check_field = P_NOTICE;
-    } else {
-      g_p_check_field = P_OVERLOOK;
-    }
-  }
 }
