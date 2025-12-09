@@ -6,26 +6,29 @@
 
 [Play Game](https://steenhansen.github.io/3d-game/)
 
-## Frames Per Second
+## Mobile Frames Per Second
 
-    Mobile
-        Galaxy S24 FE (2024) Mobile
-            Chrome 60 to 80 fps
-            Samsung 60 fps
-            Firefox 45 fps
+    Galaxy S24 FE (2024)
+        Chrome 60 to 80 fps
+        Samsung 60 fps
+        Firefox 45 fps
 
-        Galaxy SM-A520 (2017) Mobile
-            Chrome 6 fps - when degraded
-            Firefox 3 fps - when degraded
-            Samsung does not work
+    Galaxy SM-A520 (2017)
+        Chrome 6 fps - when degraded
+        Firefox 3 fps - when degraded
+        Samsung does not work
 
-    Desktop
-        AMD Ryzen 7 3700X (2019) Desktop
-            Chrome 60 fps
-            Opera 60 fps
-            Brave 60 fps
-            Edge 60 fps
-            Firefox 50 to 60 - when degraded
+## Desktop Frames Per Second
+
+    AMD Ryzen 7 3700X (2019)
+        Chrome 60 fps
+        Opera 60 fps
+        Brave 60 fps
+        Edge 60 fps
+        Firefox 50 to 60 - when degraded
+
+    Intel i5-2500 (2011)
+        Edge 25 fps - when degraded
 
 ## Mobile Controls
 
@@ -52,7 +55,7 @@
 
 ## Area 2
 
-    Playfield has no bounds front and back. Must carom shoot off of pylon.
+    Playfield has no bounds front and back. Must carom shot off of pylon.
 
 <img src="./markdown/area-2.png" width="400">
 

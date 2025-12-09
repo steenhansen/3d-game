@@ -1,8 +1,14 @@
-
-
-let desk_directions_4 = document.getElementById('desktop-dir');
+let desk_directions_4 = document.getElementById("desktop-dir");
 
 desk_directions_4.innerHTML = `
+
+
+
+
+
+
+
+
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
@@ -20,7 +26,7 @@ desk_directions_4.innerHTML = `
    height="800px"
    viewBox="0 0 489.967 489.967"
    xml:space="preserve"
-   sodipodi:docname="keys-desktop-00.svg"
+   sodipodi:docname="keys-desktop13.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
    id="metadata108"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -62,24 +68,7 @@ desk_directions_4.innerHTML = `
      transform="scale(-0.8)"
      style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
      d="M 5.77,0 -2.88,5 V -5 Z"
-     id="path1087-6" /></marker>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       </defs><sodipodi:namedview
+     id="path1087-6" /></marker></defs><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -92,9 +81,9 @@ desk_directions_4.innerHTML = `
    inkscape:window-height="1027"
    id="namedview104"
    showgrid="false"
-   inkscape:zoom="1.7727627"
-   inkscape:cx="76.982591"
-   inkscape:cy="223.35905"
+   inkscape:zoom="16.376699"
+   inkscape:cx="24.173425"
+   inkscape:cy="213.58907"
    inkscape:window-x="1272"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
@@ -139,167 +128,95 @@ desk_directions_4.innerHTML = `
 
 
 
-<rect
-   style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="SVG-SPACE-BUTTON-RECT"
-   width="72.199142"
-   height="29.8116"
-   x="20.801865"
-   y="40.940735" /><text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.117302"
-   x="21.647181"
-   y="61.887943"
-   id="ssssssss"
-   transform="scale(1.0691311,0.93533898)"><tspan
-     sodipodi:role="line"
-     id="SVG-SPACE-BUTTON-TEXT"
-     x="21.647181"
-     y="61.887943"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.117302">Space Bar</tspan></text><path
-   style="fill:none;stroke:#000000;stroke-width:0.5123;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL)"
-   d="m 87.144631,56.385854 c 0.0652,-8.204728 -17.415432,-6.063536 -17.284984,2.055936"
-   id="SVG-SPACE-BUTTON-IMAGE"
-   sodipodi:nodetypes="cc" />
+<g id="g6720">
+   <rect
+     style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="SVG-SPACE-BUTTON-RECT"
+     width="72.199142"
+     height="29.8116"
+     x="20.801865"
+     y="40.8856" /><g
+     id="Sssssssssssss"
+     transform="matrix(0.8,0,0,0.8,4.0448655,8.0997248)"><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1568px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.146628"
+       x="46.676228"
+       y="168.02911"
+       id="ssssssss"
+       transform="scale(1.0691311,0.93533898)"><tspan
+         sodipodi:role="line"
+
+
+         id="SVG-SPACE-BUTTON-TEXT"
+
+
+         x="23.676228"
+         y="66.02911"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.1568px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.146628">Space Bar</tspan></text>
+
+         <path
+       style="fill:none;stroke:#000000;stroke-width:0.640375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleInL)"
+       d="m 105.40586,59.28874 c 0.0815,-10.25591 -21.76929,-7.57942 -21.60623,2.56992"
+       id="SVG-SPACE-BUTTON-IMAGE"
+       sodipodi:nodetypes="cc" /></g>
+       
+       
+       
+       </g>
 
 
 
-       <rect
-   style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="SVG-ENTER-BUTTON-RECT"
-   width="64.712631"
-   height="29.819773"
-   x="100.31481"
-   y="40.922455" /><text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718"
-   x="104.01414"
-   y="57.855522"
-   id="2222222222222"><tspan
-     sodipodi:role="line"
-     id="SVG-ENTER-BUTTON-TEXT"
-     x="104.01414"
-     y="57.855522"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718">Enter</tspan></text><g
-   id="g6262"
-   transform="matrix(0.72,0,0,0.72,21.21019,-55.496279)"><circle
-     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.82332;stroke-miterlimit:4;stroke-dasharray:none"
-     id="SVG-ENTER-BUTTON-BALL-1"
-     cx="156.0278"
-     cy="154.36072"
-     r="2.1600151" /><circle
-     style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.64099;stroke-miterlimit:4;stroke-dasharray:none"
-     id="SVG-ENTER-BUTTON-BALL-2"
-     cx="164.90994"
-     cy="154.37511"
-     r="1.9440136" /><circle
-     style="opacity:0.6;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.47689;stroke-miterlimit:4;stroke-dasharray:none"
-     id="SVG-ENTER-BUTTON-BALL-3"
-     cx="173.80562"
-     cy="154.34001"
-     r="1.7496122" /><circle
-     style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.3292;stroke-miterlimit:4;stroke-dasharray:none"
-     id="SVG-ENTER-BUTTON-BALL-4"
-     cx="182.54128"
-     cy="154.37511"
-     r="1.5746509" /><circle
-     style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.19628;stroke-miterlimit:4;stroke-dasharray:none"
-     id="SVG-ENTER-BUTTON-BALL-5"
-     cx="191.45766"
-     cy="154.36128"
-     r="1.4171858" /></g>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <g
-   id="g6799"
-   transform="translate(0,-37.972431)"><rect
-     style="fill:#ffffff;fill-opacity:1;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="SVG-D-BUTTON-RECT"
-     width="31.745527"
-     height="30.428047"
-     x="119.81512"
-     y="41.098587" /><text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
-     x="121.3034"
-     y="60.461575"
-     id="ZZZZZZZZ"
-     transform="scale(1.0247305,0.97586634)"><tspan
-       sodipodi:role="line"
-       id="SVG-D-BUTTON-TEXT"
-       x="121.3034"
-       y="60.461575"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">D</tspan></text><path
-     d="m 141.66629,62.770003 5.45723,-6.548671 -5.45723,-6.548676 z m -0.54572,-9.823009 h -7.0944 v 6.00295 h 7.0944 z"
-     fill="#0000ff"
-     id="SVG-D-BUTTON-IMAGE"
-     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545701;stroke-miterlimit:4;stroke-dasharray:none" /></g>
-
-
-
-
-     <g
-   id="LKKKKKKKK"
-   transform="translate(0,-37.972431)">
-
-
+<g id="g6754">
 
    <rect
-   style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   id="SVG-A-BUTTON-RECT"
-   width="31.745527"
-   height="30.428047"
-   x="41.520786"
-   y="40.940163" /><text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
-   x="61.074383"
-   y="61.01442"
-   id="text985"
-   transform="scale(1.0247305,0.97586634)"><tspan
-     sodipodi:role="line"
-     id="SVG-A-BUTTON-TEXT"
-     x="61.074383"
-     y="61.01442"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">A</tspan></text>
-       <path
-   d="m 52.137501,63.410958 -5.457229,-6.548671 5.457229,-6.548676 z m 0.545721,-9.823009 h 7.094397 v 6.00295 h -7.094397 z"
-   fill="#0000ff"
-   id="SVG-A-BUTTON-IMAGE"
-   style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+     style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.34402;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="SVG-ENTER-BUTTON-RECT"
+     width="64.712631"
+     height="29.819773"
+     x="100.31481"
+     y="40.86732" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718"
+     x="122.38787"
+     y="133.80038"
+     id="2222222222222"><tspan
+       sodipodi:role="line"
+       id="SVG-ENTER-BUTTON-TEXT"
+       x="104.38787"
+       y="57.80038"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92544px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.109718">Enter</tspan></text>
+
+
+
+
+       <g
+     id="g6262"
+     transform="matrix(0.72,0,0,0.72,21.21019,20.448584)"><circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.82332;stroke-miterlimit:4;stroke-dasharray:none"
+       id="SVG-ENTER-BUTTON-BALL-1"
+       cx="156.0278"
+       cy="47.36072"
+       r="2.1600151" /><circle
+       style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.64099;stroke-miterlimit:4;stroke-dasharray:none"
+       id="SVG-ENTER-BUTTON-BALL-2"
+       cx="164.90994"
+        cy="47.36072"
+       r="1.9440136" /><circle
+       style="opacity:0.6;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.47689;stroke-miterlimit:4;stroke-dasharray:none"
+       id="SVG-ENTER-BUTTON-BALL-3"
+       cx="173.80562"
+         cy="47.36072"
+       r="1.7496122" /><circle
+       style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.3292;stroke-miterlimit:4;stroke-dasharray:none"
+       id="SVG-ENTER-BUTTON-BALL-4"
+       cx="182.54128"
+    cy="47.36072"
+       r="1.5746509" /><circle
+       style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.19628;stroke-miterlimit:4;stroke-dasharray:none"
+       id="SVG-ENTER-BUTTON-BALL-5"
+       cx="191.45766"
+    cy="47.36072"
+       r="1.4171858" /></g></g>
 
 
 
@@ -309,6 +226,105 @@ desk_directions_4.innerHTML = `
 
 
 
+
+
+
+
+       <g
+   id="323"><rect
+     style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="SVG-W-BUTTON-RECT"
+     width="31.745527"
+     height="30.428047"
+     x="80.478928"
+     y="2.8089933" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
+     x="89.642685"
+     y="29.860897"
+     id="12"
+     transform="scale(1.0247305,0.97586634)"><tspan
+       sodipodi:role="line"
+       id="SVG-W-BUTTON-TEXT"
+       x="89.642685"
+       y="29.860897"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">W</tspan></text><path
+     d="M 102.8711,12.057248 96.32243,6.6000197 89.773754,12.057248 Z m -9.823008,0.545721 v 7.094398 h 6.00295 v -7.094398 z"
+     fill="#0000ff"
+     id="SVG-W-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     <g
+   id="g6809"><rect
+     style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="SVG-E-BUTTON-RECT"
+     width="31.745527"
+     height="30.428047"
+     x="119.65765"
+     y="2.7846112" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
+     x="121.25177"
+     y="29.7931"
+     id="7777"
+     transform="scale(1.0247305,0.97586634)"><tspan
+       sodipodi:role="line"
+       id="SVG-E-BUTTON-TEXT"
+       x="121.25177"
+       y="29.7931"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">E</tspan></text><path
+     d="M 146.70863,15.983577 145.93686,7.4941207 137.4474,6.7223503 Z m -7.33181,-6.5600373 -5.01649,5.0164963 4.24472,4.24473 5.0165,-5.016496 z"
+     fill="#0000ff"
+     id="SVG-E-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
+
+
+
+
+
+ 
+
+  
+
+
+
+     <g
+   id="12"><rect
+     style="fill:#ffffff;stroke:#c0c0c0;stroke-width:3.00806;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="SVG-Q-BUTTON-RECT"
+     width="31.745527"
+     height="30.428047"
+     x="41.448212"
+     y="2.7275813" /><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884"
+     x="60.278408"
+     y="29.211077"
+     id="12"
+     transform="scale(1.0247305,0.97586634)"><tspan
+       sodipodi:role="line"
+       id="SVG-Q-BUTTON-TEXT"
+       x="60.278408"
+       y="29.211077"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.92542px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.129884">Q</tspan></text><path
+     d="M 55.340506,6.6533971 46.85105,7.4251675 46.07928,15.914623 Z m -6.560037,7.3318029 5.016496,5.016496 4.24473,-4.244726 -5.016496,-5.0164959 z"
+     fill="#0000ff"
+     id="SVG-Q-BUTTON-IMAGE"
+     style="fill:#c0c0c0;fill-opacity:1;stroke-width:0.545721" /></g>
 
 
 
@@ -343,5 +359,11 @@ desk_directions_4.innerHTML = `
 
 
    </svg>
-`;
 
+
+
+
+
+
+
+`;

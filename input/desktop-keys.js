@@ -1,42 +1,41 @@
-
-let f_last_4_move = 'NE';
+let f_last_4_move = "NE";
 
 function read4Keys(event) {
   const the_key = event.key;
   if (g_player.m_recoil_count == 0) {
     g_planet.m_drift_direction = 0;
-    if (E_KEYS.includes(the_key)) {
+    if (NE_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NE;
       initiateMovement(MOVINGx_NE);
-      flashArrow('e');
-      f_last_4_move = 'NE';
-    } else if (STOP_KEYS.includes(the_key)) {
+      flashArrow("ne");
+      f_last_4_move = "NE";
+    } else if (N_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_N;
       initiateMovement(MOVINGx_N);
-      stopMoving();
-    } else if (W_KEYS.includes(the_key)) {
+      flashArrow("n");
+      f_last_4_move = "N";
+    } else if (NW_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NW;
       initiateMovement(MOVINGx_NW);
-      flashArrow('w');
-      f_last_4_move = 'NW';
+      flashArrow("nw");
+      f_last_4_move = "NW";
     } else if (JUMP_KEYS.includes(the_key)) {
       if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
-      g_missile = initMissileData(g_missile, g_player);           /// function !!
+      g_missile = initMissileData(g_missile, g_player);
     } else {
-      if (f_last_4_move == 'NE') {
+      if (f_last_4_move == "NE") {
         initiateMovement(MOVINGx_NE);
-        flashArrow('e');
+        flashArrow("e");
       } else if (f_last_4_move == "N") {
         initiateMovement(MOVINGx_N);
-        flashArrow('n');
+        flashArrow("n");
       } else if (f_last_4_move == "NW") {
         initiateMovement(MOVINGx_NW);
-        flashArrow('w');
+        flashArrow("w");
       }
-      //direction_name = 'read4Keys() unknown-key-dir asd';
     }
   }
 }
@@ -50,18 +49,18 @@ function readKeyUp(event) {
   }
 }
 
-const NW_KEYS = ['Q', 'q', "Home", '7'];
-const N_KEYS = ['W', 'w', "ArrowUp", '8'];
-const NE_KEYS = ['E', 'e', "PageUp", '9'];
-const E_KEYS = ['D', 'd', "ArrowRight", '6'];
-const SE_KEYS = ['C', 'c', "PageDown", '3'];
-const S_KEYS = ['X', 'x', "ArrowDown", '2'];
-const SW_KEYS = ['Z', 'z', "End", '1'];
-const W_KEYS = ['A', 'a', "ArrowLeft", '4'];
+const NW_KEYS = ["Q", "q", "Home", "7"];
+const N_KEYS = ["W", "w", "ArrowUp", "8"];
+const NE_KEYS = ["E", "e", "PageUp", "9"];
+const E_KEYS = ["D", "d", "ArrowRight", "6"];
+const SE_KEYS = ["C", "c", "PageDown", "3"];
+const S_KEYS = ["X", "x", "ArrowDown", "2"];
+const SW_KEYS = ["Z", "z", "End", "1"];
+const W_KEYS = ["A", "a", "ArrowLeft", "4"];
 
-const JUMP_KEYS = [' '];
-const SHOOT_KEYS = ['Enter'];
-const STOP_KEYS = ['S', 's', 'Clear', '5'];
+const JUMP_KEYS = [" "];
+const SHOOT_KEYS = ["Enter"];
+const STOP_KEYS = ["S", "s", "Clear", "5"];
 
 function read11Keys(event) {
   const the_key = event.key;
@@ -70,35 +69,35 @@ function read11Keys(event) {
     if (NW_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NW;
       initiateMovement(MOVINGx_NW);
-      flashArrow('nw');
+      flashArrow("nw");
     } else if (N_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_N;
       initiateMovement(MOVINGx_N);
-      flashArrow('n');
+      flashArrow("n");
     } else if (NE_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NE;
       initiateMovement(MOVINGx_NE);
-      flashArrow('ne');
+      flashArrow("ne");
     } else if (E_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_E;
       initiateMovement(MOVINGx_E);
-      flashArrow('e');
+      flashArrow("e");
     } else if (SE_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_SE;
       initiateMovement(MOVINGx_SE);
-      flashArrow('se');
+      flashArrow("se");
     } else if (S_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_S;
       initiateMovement(MOVINGx_S);
-      flashArrow('s');
+      flashArrow("s");
     } else if (SW_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_SW;
       initiateMovement(MOVINGx_SW);
-      flashArrow('sw');
+      flashArrow("sw");
     } else if (W_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_W;
       initiateMovement(MOVINGx_W);
-      flashArrow('w');
+      flashArrow("w");
     } else if (STOP_KEYS.includes(the_key)) {
       stopMoving();
     } else if (JUMP_KEYS.includes(the_key)) {
@@ -106,7 +105,7 @@ function read11Keys(event) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
-      g_missile = initMissileData(g_missile, g_player);           /// function !!
+      g_missile = initMissileData(g_missile, g_player); /// function !!
     } else {
       stopMoving();
     }
@@ -114,50 +113,51 @@ function read11Keys(event) {
 }
 
 function turnOnKeys(readKeyFunc) {
-  document.addEventListener('keydown', readKeyFunc, { passive: false });
-  document.addEventListener('keyup', readKeyUp, { passive: false });
+  document.addEventListener("keydown", readKeyFunc, { passive: false });
+  document.addEventListener("keyup", readKeyUp, { passive: false });
 }
 
 function clickOnDirectionsSvg(event) {
   const svg_target = event.target.id;
   const svg_parts = svg_target.split("-");
-  const svg_id_prefix = svg_parts[0] + '-' + svg_parts[1];
+  const svg_id_prefix = svg_parts[0] + "-" + svg_parts[1];
   const button_click = svg_parts[1];
-  if (svg_id_prefix === 'SVG-Q') {   //  Q=> svg_Q
+  if (svg_id_prefix === "SVG-Q") {
+    //  Q=> svg_Q
     initiateMovement(MOVINGx_NW);
-    flashArrow('nw');
-  } else if (svg_id_prefix === 'SVG-W') {
+    flashArrow("nw");
+  } else if (svg_id_prefix === "SVG-W") {
     initiateMovement(MOVINGx_N);
-    flashArrow('n');
-  } else if (svg_id_prefix === 'SVG-E') {
+    flashArrow("n");
+  } else if (svg_id_prefix === "SVG-E") {
     initiateMovement(MOVINGx_NE);
-    flashArrow('ne');
-  } else if (svg_id_prefix === 'SVG-A') {
+    flashArrow("ne");
+  } else if (svg_id_prefix === "SVG-A") {
     initiateMovement(MOVINGx_W);
-    flashArrow('w');
-  } else if (svg_id_prefix === 'SVG-S') {
+    flashArrow("w");
+  } else if (svg_id_prefix === "SVG-S") {
     g_planet.m_drift_direction = 0;
     stopMoving();
-  } else if (svg_id_prefix === 'SVG-D') {
+  } else if (svg_id_prefix === "SVG-D") {
     initiateMovement(MOVINGx_E);
-    flashArrow('e');
-  } else if (svg_id_prefix === 'SVG-Z') {
+    flashArrow("e");
+  } else if (svg_id_prefix === "SVG-Z") {
     initiateMovement(MOVINGx_SW);
-    flashArrow('sw');
-  } else if (svg_id_prefix === 'SVG-X') {
+    flashArrow("sw");
+  } else if (svg_id_prefix === "SVG-X") {
     initiateMovement(MOVINGx_S);
-    flashArrow('s');
-  } else if (svg_id_prefix === 'SVG-C') {
+    flashArrow("s");
+  } else if (svg_id_prefix === "SVG-C") {
     initiateMovement(MOVINGx_SE);
-    flashArrow('se');
-  } else if (svg_id_prefix === 'SVG-ESCAPE') {
+    flashArrow("se");
+  } else if (svg_id_prefix === "SVG-ESCAPE") {
     jumpStartFly();
-  } else if (svg_id_prefix === 'SVG-SPACE') {
+  } else if (svg_id_prefix === "SVG-SPACE") {
     if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
       g_planet.m_part_state = PART_PLAY_22_JUMP_START;
     }
-  } else if (svg_id_prefix === 'SVG-ENTER') {
-    g_missile = initMissileData(g_missile, g_player);           /// function !!
+  } else if (svg_id_prefix === "SVG-ENTER") {
+    g_missile = initMissileData(g_missile, g_player); /// function !!
   } else {
     //
   }
