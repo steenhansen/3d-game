@@ -1,8 +1,6 @@
-//  mobile-swipeDownStop.js
-
 let local_swipe_x_start = 0;
 let local_swipe_y_start = 0;
-let local_start_touch = '';
+let local_start_touch = "";
 
 function touchBoxes(the_event) {
   const event_id = the_event.target.id;
@@ -21,7 +19,6 @@ function touchStart(evt) {
 }
 
 const SWIPE_DISTANCE_MIN = 30;
-const IS_PRESS_NOT_TAP = 333;
 
 function touchEnd(evt) {
   let touch_id_end = evt.target.id;
@@ -31,15 +28,15 @@ function touchEnd(evt) {
     const touch_y_end = evt.changedTouches[0].clientY;
     const dif_x = Math.abs(local_swipe_x_start - touch_x_end);
     const dif_y = Math.abs(local_swipe_y_start - touch_y_end);
-    const was_a_press = (dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN);
+    const was_a_press =
+      dif_x < SWIPE_DISTANCE_MIN && dif_y < SWIPE_DISTANCE_MIN;
     if (was_a_press) {
+      g_missile = initMissileData(g_missile, g_player);
+      swipeDownStop();
+      // const IS_PRESS_NOT_TAP = 333;
       const end_touch = Date.now();
       g_touch_press_time = end_touch - local_start_touch;
-      if (g_touch_press_time > IS_PRESS_NOT_TAP) {
-        swipeDownStop();
-      } else {
-        g_missile = initMissileData(g_missile, g_player);
-      }
+      // const is_pressed = g_touch_press_time > IS_PRESS_NOT_TAP;
     } else {
       dbg_start_swipe_x = local_swipe_x_start;
       dbg_start_swipe_y = local_swipe_y_start;

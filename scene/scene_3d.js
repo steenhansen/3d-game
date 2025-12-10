@@ -57,7 +57,7 @@ function sceneMove(the_player, is_dying) {
   if (is_dying) {
     return the_player;
   }
-  let travel_speed = PLAYER_TRAVEL_SPEED; //4
+  let travel_speed = PLAYER_TRAVEL_SPEED;
   if (g_planet.m_drift_direction > 0) {
     travel_speed = 1;
     f_cur_move_dir = g_planet.m_drift_direction;
@@ -213,7 +213,6 @@ function fixFPS3(is_dying) {
   f_draw_every_2nd_l_r_scroll++;
 }
 
-//  MAX_CRACKS
 function hitCracks(the_player) {
   let number_cracks = the_player.m_num_cracks;
   if (number_cracks == 0 || the_player.m_is_dying) {

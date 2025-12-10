@@ -1,4 +1,4 @@
-document.getElementById('pylons-area').innerHTML = `
+document.getElementById("pylons-area").innerHTML = `
   <div id="pylon-00"></div>
   <div id="pylon-01"></div>
   <div id="pylon-02"></div>
@@ -137,8 +137,6 @@ document.getElementById('pylons-area').innerHTML = `
 
  `;
 
-
-
 function unHidePylons(the_pylons) {
   let changed_pylons = [];
   const number_pylons = the_pylons.length;
@@ -150,7 +148,6 @@ function unHidePylons(the_pylons) {
   return changed_pylons;
 }
 
-
 function drawPylons(the_player, the_pylons) {
   let changed_pylons = [];
   const number_pylons = the_pylons.length;
@@ -161,33 +158,58 @@ function drawPylons(the_player, the_pylons) {
       a_pylon.m_pylon_hit_flash--;
     }
     changed_pylons[pylon_index] = a_pylon;
-
   }
   return changed_pylons;
 }
 
-function pylonFront(pylon_vlines, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
+function pylonFront(
+  pylon_vlines,
+  front_panel_id,
+  do_flash,
+  dist_abs_y,
+  poly_fill,
+  pylon_alive,
+) {
   const [left_vline, middle_vline, _right_vline] = pylon_vlines;
   const [left_front_top, left_front_bot] = left_vline;
   const [right_front_top, right_front_bot] = middle_vline;
-  const left_right_tops_bots = [left_front_top, right_front_top, left_front_bot, right_front_bot];
-  let front_pylon = pylonPolygon(left_right_tops_bots, front_panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive);
+  const left_right_tops_bots = [
+    left_front_top,
+    right_front_top,
+    left_front_bot,
+    right_front_bot,
+  ];
+  let front_pylon = pylonPolygon(
+    left_right_tops_bots,
+    front_panel_id,
+    do_flash,
+    dist_abs_y,
+    poly_fill,
+    pylon_alive,
+  );
   return front_pylon;
 }
 
-function pylonPolygon(a_polygon, panel_id, do_flash, dist_abs_y, poly_fill, pylon_alive) {
+function pylonPolygon(
+  a_polygon,
+  panel_id,
+  do_flash,
+  dist_abs_y,
+  poly_fill,
+  pylon_alive,
+) {
   let fill_color;
   if (pylon_alive) {
     fill_color = poly_fill;
   } else {
-    fill_color = 'black';
+    fill_color = "black";
   }
   const svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
   let svg_outlines;
   if (do_flash && g_p_graphics_style != P_SIMPLE) {
     svg_outlines = outlineFlash(a_polygon, panel_id, dist_abs_y);
   } else {
-    svg_outlines = '';
+    svg_outlines = "";
   }
   const svg_polygon = svg_outlines + svg_panel;
   return svg_polygon;
@@ -195,7 +217,8 @@ function pylonPolygon(a_polygon, panel_id, do_flash, dist_abs_y, poly_fill, pylo
 
 function outlineFlash(a_polygon, panel_id, dist_abs_y) {
   const outline_width = outlineWidth(dist_abs_y) - 4;
-  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
+  let [left_front_top, right_front_top, left_front_bot, right_front_bot] =
+    a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;
@@ -214,9 +237,10 @@ function pylonSide(a_polygon, poly_fill, panel_id, pylon_alive) {
   if (pylon_alive) {
     fill_color = poly_fill;
   } else {
-    fill_color = 'black';
+    fill_color = "black";
   }
-  let [left_front_top, right_front_top, left_front_bot, right_front_bot] = a_polygon;
+  let [left_front_top, right_front_top, left_front_bot, right_front_bot] =
+    a_polygon;
   let [top_left_x, top_left_y] = left_front_top;
   let [top_right_x, top_right_y] = right_front_top;
   let [bot_left_x, bot_left_y] = left_front_bot;

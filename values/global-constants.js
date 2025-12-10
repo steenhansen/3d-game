@@ -164,7 +164,6 @@ THE_NEARS = [
   NEAR_19,
 ];
 
-// these are pixel move!
 LEFT_5 = [-1, -1, -1, -1, -1];
 
 ZERO_10 = [+0, +0, +0, +0, +0, +0, +0, +0, +0, +0];
@@ -180,8 +179,6 @@ LEFT_200 = [LEFT_100, LEFT_100].flat();
 RGHT_50 = [RGHT_10, RGHT_10, RGHT_10, RGHT_10, RGHT_10].flat();
 RGHT_100 = [RGHT_50, RGHT_50].flat();
 RGHT_200 = [RGHT_100, RGHT_100].flat();
-
-//  LEFT_100  RGHT_100  AWAY_100   NEAR_100
 
 AWAY_50 = [AWAY_10, AWAY_10, AWAY_10, AWAY_10, AWAY_10].flat();
 AWAY_100 = [AWAY_50, AWAY_50].flat();

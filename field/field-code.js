@@ -108,15 +108,16 @@ function xyNotInField(out_x, out_y, err_mess) {
   }
 }
 
-// inside  XY_X_RANGE 
 function xAllowed(player_x) {
-  if (player_x < g_planet.s_playground_x_min || player_x > g_planet.s_playground_x_max) {
+  if (
+    player_x < g_planet.s_playground_x_min ||
+    player_x > g_planet.s_playground_x_max
+  ) {
     return false;
   }
   return true;
 }
 
-// inside  XY_X_RANGE 
 function yAllowed(player_y) {
   if (player_y < g_planet.s_playground_y_min) {
     dbg_y_too_small = `${player_y}<${g_planet.s_playground_y_min}`;

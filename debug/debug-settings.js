@@ -118,11 +118,11 @@ const ONLY_CLEAR_DEBUG_RECT = "";
 
 function debugSign(an_object, left_mid_right_vlines) {
   if (environmentTypeParam()) {
-    x_in_squares = an_object.m_x / WIDTH_OF_SQUARE;
-    y_in_squares = an_object.m_y / DEPTH_OF_SQUARE;
-    square_x = Math.round(x_in_squares * 10) / 10;
-    square_y = Math.round(y_in_squares * 10) / 10;
-    init_mess = square_x + "," + square_y;
+    const x_in_squares = an_object.m_x / WIDTH_OF_SQUARE;
+    const y_in_squares = an_object.m_y / DEPTH_OF_SQUARE;
+    const square_x = Math.round(x_in_squares * 10) / 10;
+    const square_y = Math.round(y_in_squares * 10) / 10;
+    const init_mess = square_x + "," + square_y;
     let [right_side, middle_side, left_side] = left_mid_right_vlines;
     let [[x_mid_r, y_top], [_x1, y_bot]] = right_side;
     let [[x_mid_l, _y1], [_x2, _y2]] = middle_side;
@@ -138,27 +138,12 @@ function debugSign(an_object, left_mid_right_vlines) {
 }
 
 // https://stackoverflow.com/questions/4787431/how-do-i-check-framerate-in-javascript
-// 1==only last frame,    20==14 frames
 const dbg_filter_strength = 20;
 let dbg_start_loop;
 
-function debugClear() {
-  //canvas = document.getElementById("the-draw");          // func
-  //DEBUG_CONTEXT.clearRect(0, 0, canvas.width, canvas.height);
-
-  // DEBUG_CONTEXT.closePath();
-  if (environmentTypeParam()) {
-    DEBUG_CONTEXT.beginPath();
-    //DEBUG_CONTEXT.clearRect(0, 0, DEBUG_CONTEXT.canvas.width, DEBUG_CONTEXT.canvas.height);
-  }
-}
-
 function debugInit() {
   if (environmentTypeParam()) {
-    //   DEBUG_CONTEXT = document.getElementById("the-draw").getContext("2d");  // func
     DEBUG_CONTEXT.font = "16px serif";
-    //  DEBUG_LINE_HEIGHT = DEBUG_CONTEXT.measureText('M').width;
-
     DEBUG_CONTEXT.fillStyle = "black";
     DEBUG_CONTEXT.lineWidth = 1;
     DEBUG_CONTEXT.beginPath();
@@ -176,11 +161,12 @@ function debugAnimation(loop_time) {
 }
 
 function debugSwipeUp(start_xy, end_xy) {
+  const screen_width = window.screen.width;
+  const screen_height = window.screen.height;
   DEBUG_CONTEXT.beginPath();
   DEBUG_CONTEXT.fillStyle = "black";
   DEBUG_CONTEXT.lineWidth = 5;
-  //extra = (1024 - 896) / 2;
-
+  let extra_w;
   if (screen_width > screen_height) {
     extra_w = (1024 - screen_width) / 2;
   } else {
@@ -200,13 +186,13 @@ function debugSwipeUp(start_xy, end_xy) {
 }
 
 function debugSwipeDown(start_xy, end_xy) {
-  screen_width = window.screen.width;
-  screen_height = window.screen.height;
+  const screen_width = window.screen.width;
+  const screen_height = window.screen.height;
 
   DEBUG_CONTEXT.beginPath();
   DEBUG_CONTEXT.fillStyle = "black";
   DEBUG_CONTEXT.lineWidth = 5;
-
+  let extra_w;
   if (screen_width > screen_height) {
     extra_w = (1024 - screen_width) / 2;
   } else {

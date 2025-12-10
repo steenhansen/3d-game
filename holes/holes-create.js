@@ -56,12 +56,6 @@ function makeHoles(hole_index, hole_color, holes_list, vert_color) {
     }
     x_square = Math.abs(x_square);
     y_square = Math.abs(y_square);
-    if (x_square > FIELD_IN_SQUARES[0]) {
-      //
-    }
-    if (y_square > FIELD_IN_SQUARES[1]) {
-      //
-    }
     const hole_xy_squares = [x_square, y_square];
     const the_hole_number = hole_index + h_index;
     const hole_id = the_hole_number.toString().padStart(2, "0");

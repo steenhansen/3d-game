@@ -3,12 +3,11 @@ function playerRight(the_player, travel_speed, diagonal_weight) {
   return right_x;
 }
 
-//  rightRollOverBoard()
 function rightOnBoard(x_pos, right_steps) {
   const checkerboard_width = g_planet.s_checkerboard_width;
   x_pos += right_steps;
-  if (x_pos > checkerboard_width) {    //} SCENE_X_MAX) {
-    x_pos -= checkerboard_width;             //SCENE_X_MAX;
+  if (x_pos > checkerboard_width) {
+    x_pos -= checkerboard_width;
   }
   return x_pos;
 }
@@ -18,12 +17,11 @@ function playerLeft(the_player, travel_speed, diagonal_weight) {
   return left_x;
 }
 
-// leftRollOverBoard()
 function leftOnBoard(x_pos, left_steps) {
   const checkerboard_width = g_planet.s_checkerboard_width;
   x_pos -= left_steps;
   if (x_pos < SCENE_X_MIN) {
-    x_pos += checkerboard_width;         //SCENE_X_MAX;
+    x_pos += checkerboard_width;
   }
   return x_pos;
 }
@@ -38,7 +36,6 @@ function playerBackward(the_player, travel_speed) {
   return backward_y;
 }
 
-// rollOver
 function backwardOnBoard(y_pos, backward_steps) {
   const checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos -= backward_steps;
@@ -48,7 +45,6 @@ function backwardOnBoard(y_pos, backward_steps) {
   return y_pos;
 }
 
-// rollOver
 function forwardOnBoard(y_pos, forward_steps) {
   const checkerboard_depth = g_planet.s_checkerboard_depth;
   y_pos += forward_steps;
@@ -76,7 +72,6 @@ function thingRelationToPlayer(adjusted_x, the_player, things_position) {
   return x_center_offset;
 }
 
-
 function objectBounced(move_direction) {
   let new_direction;
   if (move_direction == MOVINGx_NW) {
@@ -99,5 +94,4 @@ function objectBounced(move_direction) {
     new_direction = move_direction;
   }
   return new_direction;
-
 }

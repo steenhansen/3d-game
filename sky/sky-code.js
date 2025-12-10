@@ -23,8 +23,6 @@ function moveSky(travel_speed, sky_direction) {
     if (local_sky_y <= 0) {
       local_sky_y = 256;
     }
-  } else {
-    //
   }
   elem.style.transform = `perspective(1536px) rotateX(-85deg) translateX(${local_sky_x}px) translateY(${local_sky_y}px) `;
 }

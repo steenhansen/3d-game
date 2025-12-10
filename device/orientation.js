@@ -1,27 +1,26 @@
 function fixMobileTouch() {
   if (document.fullscreenElement == null) {
-    start_mobile = document.getElementById('start-mobile');
+    let start_mobile = document.getElementById("start-mobile");
     g_waiting_for_start = true;
-    start_mobile_display = document.getElementById('start-mobile').style.display;
-    start_mobile.addEventListener("touchend", handleStartMobile, { passive: false });
-    unHideDiv('mobile-list');
+    start_mobile.addEventListener("touchend", handleStartMobile, {
+      passive: false,
+    });
+    unHideDiv("mobile-list");
     return;
   }
 }
 
-
-
-function handleStartMobile(evt) {
-  hideDiv('mobile-list');
-  unHideDiv('mobile-wait');
+function handleStartMobile(_evt) {
+  hideDiv("mobile-list");
+  unHideDiv("mobile-wait");
   setTimeout(() => {
-    g_planet.m_game_state = GAME_0_INIT;     //L_OOP_1_BEGIN;
-    let start_mobile = document.getElementById('start-mobile');
+    g_planet.m_game_state = GAME_0_INIT;
+    let start_mobile = document.getElementById("start-mobile");
     start_mobile.style.display = "none";
     g_waiting_for_start = false;
     screenFixMobile();
   }, "1000");
-  let the_scene = document.getElementById('the-scene');
+  let the_scene = document.getElementById("the-scene");
   try {
     the_scene.requestFullscreen();
   } catch {
@@ -29,9 +28,8 @@ function handleStartMobile(evt) {
   }
 }
 
-
 function screenFixMobile() {
-  let start_mobile = document.getElementById('start-mobile');
+  let start_mobile = document.getElementById("start-mobile");
   start_mobile.style.display = "none";
   let screen_width = window.screen.width;
   let screen_height = window.screen.height;
@@ -80,8 +78,8 @@ function addDesktopEvents() {
   addClickEvent("w-4", handleW);
 
   const the_scene = document.getElementById("the-scene");
-  the_scene.addEventListener('contextmenu', rightClick, false);
-  document.addEventListener('wheel', wheelScroll, { passive: false });
+  the_scene.addEventListener("contextmenu", rightClick, false);
+  document.addEventListener("wheel", wheelScroll, { passive: false });
 
   addClickEvent("e-1", handleE);
   addClickEvent("e-2", handleE);
@@ -105,57 +103,21 @@ function addDesktopEvents() {
 }
 
 function fixDesktop() {
-  let start_mobile = document.getElementById('start-mobile');
+  let start_mobile = document.getElementById("start-mobile");
   start_mobile.style.display = "none";
   setCssVar("--scene-width", "1024px");
   setCssVar("--scene-height", "512px");
-  // if (document.fullscreenElement != null) {
-  //   //  document.exitFullscreen();
-  // }
 }
 
-
-
-
-// function fullMobile() {
-//   if (isMobile()) {
-//     if (!document.fullscreenElement) {
-//       the_scene = document.getElementById('the-scene');
-//     }
-//   }
-// }
-
-
-
-// function touchMoveHandler(the_event) {
-//   //
-// }
-
-
-// function touchMove(the_event) {
-
-// }
-
-
 function fixDevice() {
-
   if (isMobile()) {
     fixMobileTouch();
   } else {
     fixDesktop();
   }
-
-
-
 }
 
-
-
-
-
-
 function addMobileEvents() {
-
   addTouchEvent("nw-1", touchNw);
   addTouchEvent("nw-2", touchNw);
   addTouchEvent("nw-3", touchNw);
@@ -176,13 +138,10 @@ function addMobileEvents() {
   addTouchEvent("w-3", touchW);
   addTouchEvent("w-4", touchW);
 
-
-
-
   const touch_boxes = document.getElementById("touch-boxes");
-  //  removeEventListener 
-  touch_boxes.addEventListener('touchstart', touchStart, { passive: false });
-  touch_boxes.addEventListener('touchend', touchEnd, { passive: false });
+  //  removeEventListener ?
+  touch_boxes.addEventListener("touchstart", touchStart, { passive: false });
+  touch_boxes.addEventListener("touchend", touchEnd, { passive: false });
 
   addTouchEvent("e-1", touchE);
   addTouchEvent("e-2", touchE);
@@ -203,6 +162,4 @@ function addMobileEvents() {
   addTouchEvent("se-2", touchSe);
   addTouchEvent("se-3", touchSe);
   addTouchEvent("se-4", touchSe);
-
 }
-

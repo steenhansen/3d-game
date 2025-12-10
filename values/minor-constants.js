@@ -1,4 +1,4 @@
-const ROOM_DEPTH = 16; // old ==16
+const ROOM_DEPTH = 16;
 const TILE_WIDTH = 256;
 
 const SVG_ARROWS_COLOR = "grey";
@@ -51,13 +51,5 @@ let LEFT_RIGHT_BOUNCE_X_INVERSION = -1;
 let HEAD_ON_X_DIFF = TILE_WIDTH / 2;
 let HALF_TILE_WIDTH = TILE_WIDTH / 2;
 
-const FLY_STEP_SLOW = 0.5;
-const FLY_STEP_FAST = 5;
-
 let SCENE_X_MIN = 0;
 let SCENE_Y_MIN = 0;
-
-let LEFT_X_LOW = "LEFT_X_LOW";
-let RIGHT_X_HIGH = "RIGHT_X_HIGH";
-
-let DRAW_AT_LEAST_ONCE = true;

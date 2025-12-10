@@ -31,39 +31,39 @@ function animateJumpDown(the_player) {
 }
 
 function doFlying(lift_amount_x) {
-  const sky_aperature = document.getElementById('sky-aperature');
+  const sky_aperature = document.getElementById("sky-aperature");
   const sky_height = 256 + lift_amount_x;
   sky_aperature.style.height = `${sky_height}px`;
 
-  const the_sky = document.getElementById('the-sky');
+  const the_sky = document.getElementById("the-sky");
   const margin_top = -1000 - lift_amount_x;
   the_sky.marginTop = `${margin_top}px`;
   const height_sky = 2400 + 4 * lift_amount_x;
   the_sky.style.height = `${height_sky}px`;
 
-  const signs_html = document.getElementById('signs-area');
+  const signs_html = document.getElementById("signs-area");
   signs_html.style.top = `${lift_amount_x}px`;
 
-  const pylon_html = document.getElementById('pylons-area');
+  const pylon_html = document.getElementById("pylons-area");
   pylon_html.style.top = `${lift_amount_x}px`;
 
-  const holes_html = document.getElementById('holes-area');
+  const holes_html = document.getElementById("holes-area");
   holes_html.style.top = `${lift_amount_x}px`;
 
-  const enemy_area = document.getElementById('enemy-area');
+  const enemy_area = document.getElementById("enemy-area");
   enemy_area.style.top = `${lift_amount_x}px`;
 
-  const the_sun = document.getElementById('the-sun');
+  const the_sun = document.getElementById("the-sun");
   the_sun.style.top = `${lift_amount_x}px`;
 
-  const missile_area = document.getElementById('missile-area');
+  const missile_area = document.getElementById("missile-area");
   missile_area.style.top = `${lift_amount_x}px`;
 
-  const saturn_planet = document.getElementById('saturn-space');
+  const saturn_planet = document.getElementById("saturn-space");
   const saturn_x = lift_amount_x - 200;
   saturn_planet.style.left = `${saturn_x}px`;
   if (lift_amount_x > 350) {
-    const saturn_space = document.getElementById('star-space');
+    const saturn_space = document.getElementById("star-space");
     const saturn_opacity = (lift_amount_x - 350) / 300;
     saturn_space.style.opacity = saturn_opacity;
   }
@@ -111,29 +111,27 @@ function flashScrollingArrow(arrow_id) {
 
 function divVisVisible(hide_id) {
   let hide_div = document.getElementById(hide_id);
-  hide_div.style.visibility = 'visible';
+  hide_div.style.visibility = "visible";
 }
 
 function divVisHidden(unhide_id) {
   let hide_div = document.getElementById(unhide_id);
-  hide_div.style.visibility = 'hidden';
+  hide_div.style.visibility = "hidden";
 }
 
-//  divDispNone
 function hideDiv(hide_id) {
   let hide_div = document.getElementById(hide_id);
-  hide_div.style.display = 'none';
+  hide_div.style.display = "none";
 }
 
-// divDispHide
 function unHideDiv(unhide_id) {
   let hide_div = document.getElementById(unhide_id);
-  hide_div.style.display = 'block';
+  hide_div.style.display = "block";
 }
 
 function initLanding() {
-  hideDiv('start-mobile');
-  unHideDiv('the-scene');
+  hideDiv("start-mobile");
+  unHideDiv("the-scene");
 }
 
 function landingInit() {
@@ -142,7 +140,7 @@ function landingInit() {
 }
 
 function initPlay() {
-  divVisVisible('desktop-dir');
+  divVisVisible("desktop-dir");
   if (isMobile()) {
     fixMobileTouch();
   } else {
@@ -183,26 +181,25 @@ function moveCheckerboardOnce(top_playing_game, top_the_land) {
   const the_landing = document.getElementById(`the-landing`);
   the_landing.style = `top:${top_the_land}px`;
   if (THE_PLANET != 4) {
-    flashScrollingArrow('arrow-nw');
-    flashScrollingArrow('arrow-n');
-    flashScrollingArrow('arrow-ne');
-    flashScrollingArrow('arrow-se');
-    flashScrollingArrow('arrow-s');
-    flashScrollingArrow('arrow-sw');
-
+    flashScrollingArrow("arrow-se");
+    flashScrollingArrow("arrow-s");
+    flashScrollingArrow("arrow-sw");
+    flashScrollingArrow("arrow-e");
+    flashScrollingArrow("arrow-w");
   }
-  flashScrollingArrow('arrow-e');
-  flashScrollingArrow('arrow-w');
+  flashScrollingArrow("arrow-nw");
+  flashScrollingArrow("arrow-n");
+  flashScrollingArrow("arrow-ne");
 }
 
 function animateStart() {
-  const saturn_space = document.getElementById('star-space');
+  const saturn_space = document.getElementById("star-space");
   saturn_space.style.opacity = 0;
 }
 
 function resetSections() {
-  hideDiv('the-scene');
-  divVisHidden('desktop-dir');
+  hideDiv("the-scene");
+  divVisHidden("desktop-dir");
   doFlying(0);
   g_planet.m_move_direction = MOVINGx_NOT;
   landingInit();

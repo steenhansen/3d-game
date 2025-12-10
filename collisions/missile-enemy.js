@@ -29,7 +29,7 @@ function playerHitSigns(game_state, part_state, the_player, the_signs) {
       const has_collided = hasCollided(the_player, a_sign);
       if (has_collided) {
         the_player.m_jump_amount = 0;
-        [game_state, part_state] = action_hitExit(); // 1&2 do not return
+        [game_state, part_state] = action_hitExit();
         break;
       }
     }
@@ -169,7 +169,6 @@ function enemiesHitPylons(the_enemies, the_pylons) {
 }
 
 function enemiesHitBounds(the_enemies, the_planet) {
-  // the_pylons
   const number_enemies = the_enemies.length;
   if (number_enemies == 0) {
     return the_enemies;
@@ -185,13 +184,11 @@ function enemiesHitBounds(the_enemies, the_planet) {
     } else {
       has_collided = false;
     }
-
     if (has_collided) {
       an_enemy.m_enemy_state = ENEMY_1_BOUNCE;
       an_enemy.m_enemy_hit_flash = L_HIT_FLASH_ENEMY;
       an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION; //flip x directions if hit pylon
     }
-
     changed_enemies[enemy_index] = an_enemy;
   }
   return changed_enemies;

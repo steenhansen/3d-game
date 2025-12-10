@@ -6,8 +6,6 @@ const NUM_OUTSIDE_BALLS = 32;
 const NUM_MIDDLE_BALLS = 16;
 const NUM_CENTER_BALLS = 8;
 
-const NUM_TOTAL_BALLS = NUM_OUTSIDE_BALLS + NUM_MIDDLE_BALLS + NUM_CENTER_BALLS;
-
 function missileAdvance(the_missile, the_player) {
   if (the_missile.m_phase == MISSILE_2_HITTING_PYLON) {
     const hit_pylon = the_missile.m_hit_pylon;
@@ -117,7 +115,6 @@ function randomMissileSize(start_size, max_rand) {
   return NOT_PART_OF_MISSILE;
 }
 
-//function randomMissileColor([32, 0, 0], [244, 0, 0]) {
 function randomMissileColor(rgb_ranges, rgb_bases) {
   let [red_range, green_range, blue_range] = rgb_ranges;
   let [red_base, green_base, blue_base] = rgb_bases;
@@ -209,7 +206,6 @@ function innermostOfShot() {
 function makeDiamondsBalls() {
   let out_arr = [];
   for (let i = 0; i < 360; i++) {
-    // 6 sec == 60fps * 6
     let outside_arr = outsideOfShot();
     let diamond_arr = middleDiamondShot();
     let innermost_arr = innermostOfShot();

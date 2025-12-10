@@ -15,8 +15,6 @@ let g_p_environment_type = P_UNKNOWN;
 let g_p_scroll_quality = P_UNKNOWN;
 let g_p_graphics_style = P_UNKNOWN;
 let g_p_display_fps = P_UNKNOWN;
-let g_p_watch_line = P_UNKNOWN;
-let g_p_check_field = P_UNKNOWN;
 
 let g_touch_press_time = 0;
 let g_waiting_for_start = true;
@@ -32,8 +30,6 @@ let g_field_xs_accums = Array(DEPTH_LINES).fill(0);
 let g_field_xs_nudges = Array(DEPTH_LINES).fill(0);
 
 let g_field_in_pixels;
-
-///////////
 
 let dbg_record_line = 128; // used for debugging checkerboard overflows
 let dbg_y_too_large;

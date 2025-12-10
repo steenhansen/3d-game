@@ -7,7 +7,7 @@ function sceneInit() {
   affixLeftRight(is_dying);
 }
 
-function screenSizeIntoCss(event) {
+function screenSizeIntoCss(_event) {
   initDebugVars();
   const screen_width = window.screen.width;
   const screen_height = window.screen.height;
@@ -21,12 +21,12 @@ function screenSizeIntoCss(event) {
     const mobile_margin = (1024 - screen_width) / 2;
     const mobile_margin_px = `-${mobile_margin}px`;
     setCssVar("--margin-left_px", mobile_margin_px);
-    setCssVar("--scene-margin", "0 0 0 ${mobile_margin_px}"); // top/right/bottom=0 left=213px
+    setCssVar("--scene-margin", `0 0 0 ${mobile_margin_px}`);
   } else {
     setCssVar("--device-screen", "is-desktop");
     setCssVar("--margin-left_px", "0px");
 
-    setCssVar("--scene-margin", "0 auto"); // top/bottom =0      left/right= auto
+    setCssVar("--scene-margin", "0 auto");
     setCssVar("--scene-width", "1024px");
     setCssVar("--scene-height", "512px");
   }
@@ -77,33 +77,27 @@ function onlyLeftRight() {
     document.getElementById(arrow_id).style.visibility = "hidden";
   }
 
-  hideArrows("arrow-nw");
-  hideArrows("arrow-n");
-  hideArrows("arrow-ne");
+  hideArrows("arrow-w");
+  hideArrows("arrow-e");
+
   hideArrows("arrow-sw");
   hideArrows("arrow-s");
   hideArrows("arrow-se");
-
-  // these are touch-boxes
-  hideArrows("n-1");
-  hideArrows("n-2");
-  hideArrows("n-3");
-  hideArrows("n-4");
 
   hideArrows("s-1");
   hideArrows("s-2");
   hideArrows("s-3");
   hideArrows("s-4");
 
-  hideArrows("nw-1");
-  hideArrows("nw-2");
-  hideArrows("nw-3");
-  hideArrows("nw-4");
+  hideArrows("e-1");
+  hideArrows("e-2");
+  hideArrows("e-3");
+  hideArrows("e-4");
 
-  hideArrows("ne-1");
-  hideArrows("ne-2");
-  hideArrows("ne-3");
-  hideArrows("ne-4");
+  hideArrows("w-1");
+  hideArrows("w-2");
+  hideArrows("w-3");
+  hideArrows("w-4");
 
   hideArrows("sw-1");
   hideArrows("sw-2");

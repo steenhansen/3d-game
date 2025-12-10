@@ -59,8 +59,6 @@
   width: 2048px;
   height: 2400px;
   background-size: 256px 256px;
-  /* background-image: var(--cloud-image);
-  transform: var(--cloud-skew); */
   background-image: var(--p-graphics-sky-image);
   transform: var(--p-graphics-sky-skew);
 }

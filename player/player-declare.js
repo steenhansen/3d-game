@@ -5,8 +5,8 @@ const INIT_PLAYER = {
   m_is_dying: false,
   m_recoil_count: 0,
   m_hit_hole_last_move: false,
-  m_x: PLAYER_START_X,
-  m_y: PLAYER_START_Y,
+  m_x: 1400,
+  m_y: 766,
   m_screen_askew: 0,
   m_fly_amount: 0,
   m_jump_amount: 0,
@@ -14,12 +14,8 @@ const INIT_PLAYER = {
   m_num_cracks: 0,
 };
 
-
-
-
 let f_player_init_x = 0;
 let f_player_init_y = 0;
-
 
 function resetPlayer() {
   the_player = INIT_PLAYER;
@@ -38,9 +34,3 @@ function initPlayer(player_in_squares) {
   const the_player = resetPlayer();
   return the_player;
 }
-
-
-
-
-
-

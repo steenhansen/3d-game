@@ -1,7 +1,7 @@
 const L_FRAME_FILTER_STRENGTH = 20;
 
 let f_the_fps = 0; // more better name and location?
-let f_draw_every_ith_frame = 1; // 1,2,3,4,5 to try to get 60fps
+let f_draw_every_ith_frame; // 1,2,3,4,5 to try to get 60fps
 let f_the_frame_time = 0;
 let f_the_last_loop = new Date();
 let f_the_start_loop;

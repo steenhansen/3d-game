@@ -1,4 +1,3 @@
-
 function initPart0(game_state, part_state, g_planet, g_player) {
   if (part_state == PART_INIT_00_DESKTOP) {
     g_planet = desktopInit(g_planet);
@@ -14,7 +13,7 @@ function initPart0(game_state, part_state, g_planet, g_player) {
     game_state = GAME_1_INTRO;
     part_state = PART_INTRO_10_LANDING;
   } else {
-    dbg_print('initPart0() unknown part_state', part_state);
+    dbg_print("initPart0() unknown part_state", part_state);
   }
   return [game_state, part_state, g_planet, g_player];
 }
@@ -24,7 +23,7 @@ function desktopInit(the_planet) {
 }
 
 function mobileInit(the_planet) {
-  unHideDiv('start-mobile');
+  unHideDiv("start-mobile");
   fixMobileTouch();
   return the_planet;
 }
@@ -32,7 +31,6 @@ function mobileInit(the_planet) {
 function afterInit(the_planet, the_player) {
   animateStart();
   initDebugVars();
-  debugClear();
   dbg_report = true;
   setCssVar("--cracked-glass-display", "none");
   the_player = resetPlayer();

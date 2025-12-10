@@ -276,7 +276,7 @@ function action_runGame() {
     VELOCITY_4,
   );
 
-  //  const the_enemies = [];
+  //const the_enemies = [];
   const the_enemies = makeEnemies([
     ...the_train,
     enemy_0,

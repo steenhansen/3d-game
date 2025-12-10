@@ -2,7 +2,7 @@ const IGNORE_BOUNDS = "IGNORE_BOUNDS";
 
 const SKY_RESTART_COUNTER = 30;
 
-const PLAYER_RECOIL_COUNTDOWN = 5; // was 30
+const PLAYER_RECOIL_COUNTDOWN = 5;
 
 const INVISIBLE_COLOR = `rgb(1, 2, 3, 0)`;
 
@@ -74,52 +74,11 @@ let MIDDLE_OF_PLAYER = "MIDDLE_OF_PLAYER";
 let ENEMY_TO_HORIZON_LIFT = 56;
 
 const ENEMY_HIDDEN = 512;
-let PLAYER_START_X = 1400; //4216; // 3960 hit on right side
-let PLAYER_START_Y = 766; // NB qubert   goto right for errors
-
-let pylon_1A_START_X = 4000;
-let pylon_1A_START_Y = 300;
-
-let ENEMY_BIRTH_X = 7000;
-let ENEMY_BIRTH_Y = 300;
 
 const ERASE_START_MESSAGE_TIME = 2000;
-
 const MOVING_NOT = 0;
-
-const MOVING_BACKWARDS = 1;
-const MOVING_RIGHT = 2;
-const MOVING_FORWARD = 3;
-const MOVING_LEFT = 4;
-const MOVING_STOP = 5;
-
-let sprite_half_x = 128;
 const area_width_half = 16 * 1048; //16768
 
 let player_x = area_width_half;
 
-let player_y = 512; //+ 512;           // 512+512=1048
-
-const numDrawings = 90;
-
-const area_width = 2 * area_width_half; // 33536
-const viewport_middle_x = area_width_half - 512; // 16256
-
-const area_height_half = 512;
-const area_height = 1024;
-const viewport_middle_y = 512;
-
-let keep_running = true;
-
-let dist_count = 0;
-let spin_count = 0;
-let slow_count = 0;
-
-let LAST_SPIN_INDEX = 255;
-
-let wait_sprite = 0;
-let sprite_offset = 0;
-let sprite_width = 256;
-
-let sprite_parallaxed_x;
-let viewport_x;
+let player_y = 512;

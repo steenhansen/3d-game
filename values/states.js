@@ -15,8 +15,6 @@ const ENEMY_2_HIT = "ENEMY_2_HIT";
 const ENEMY_3_LIFTING = "ENEMY_3_LIFTING";
 const ENEMY_4_ZOMBIE = "ENEMY_4_ZOMBIE";
 
-const LOOP_DEBUG_STOP = "loop-none-debugging";
-
 const SWIPE_UP = "swip-up";
 const SWIPE_DOWN = "swip-down";
 const SWIPE_RIGHT = "swip-right";

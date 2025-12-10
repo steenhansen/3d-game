@@ -8,7 +8,7 @@ const FIELD_IN_SQUARES = [34, 32];
 const PLAYER_START = [7, 30];
 const PLAYER_BOUNDS = [0, 18, 34, 31];
 
-const DITCH_LINE = 25;
+const DITCH_LINE = 23;
 const DITCH_COLOR = "black";
 
 const MISSILE_LIFETIME = 50;
