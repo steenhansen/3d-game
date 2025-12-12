@@ -63,9 +63,6 @@ function onlyLeftRight() {
         document.getElementById(arrow_id).style.visibility = 'hidden';
     }
 
-    hideArrows('arrow-w');
-    hideArrows('arrow-e');
-
     hideArrows('arrow-sw');
     hideArrows('arrow-s');
     hideArrows('arrow-se');
@@ -74,16 +71,6 @@ function onlyLeftRight() {
     hideArrows('s-2');
     hideArrows('s-3');
     hideArrows('s-4');
-
-    hideArrows('e-1');
-    hideArrows('e-2');
-    hideArrows('e-3');
-    hideArrows('e-4');
-
-    hideArrows('w-1');
-    hideArrows('w-2');
-    hideArrows('w-3');
-    hideArrows('w-4');
 
     hideArrows('sw-1');
     hideArrows('sw-2');
