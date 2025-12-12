@@ -18,12 +18,12 @@ let f_player_init_x = 0;
 let f_player_init_y = 0;
 
 function resetPlayer() {
-  the_player = INIT_PLAYER;
-  the_player.m_x = f_player_init_x;
-  the_player.m_y = f_player_init_y;
-  the_player.m_num_cracks = 0;
-  the_player.m_is_dying = false;
-  return the_player;
+  let a_player = INIT_PLAYER;
+  a_player.m_x = f_player_init_x;
+  a_player.m_y = f_player_init_y;
+  a_player.m_num_cracks = 0;
+  a_player.m_is_dying = false;
+  return a_player;
 }
 
 function initPlayer(player_in_squares) {
@@ -31,6 +31,6 @@ function initPlayer(player_in_squares) {
   const xy_pixels = originOffset(player_in_squares, err_mess);
   f_player_init_x = xy_pixels[0];
   f_player_init_y = xy_pixels[1];
-  const the_player = resetPlayer();
-  return the_player;
+  const new_player = resetPlayer();
+  return new_player;
 }
