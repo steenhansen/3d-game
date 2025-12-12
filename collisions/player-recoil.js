@@ -18,7 +18,7 @@ function finishShake(the_player) {
 function doRecoil(the_player) {
   if (the_player.m_recoil_count > 0) {
     the_player.m_recoil_count--;
-    if (the_player.m_recoil_count == 0) {
+    if (the_player.m_recoil_count === 0) {
       g_planet.m_move_direction = MOVINGx_NOT;
     }
   }

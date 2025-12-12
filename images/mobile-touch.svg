@@ -302,7 +302,7 @@
      id="tspan12">Touch Screen to Start</tspan></text>
 
 
-
+  <!-- press to stop -->
 <g
    id="g4221"
    transform="translate(-0.06835831,-2.6684946)"><g
@@ -321,8 +321,8 @@
    y="96.97625"
    id="text12672-3-2"><tspan
      sodipodi:role="line"
-     x="158.8266"
-     y="91.97625"
+     x="157.8266"
+     y="90.97625"
      style="font-size:8.16612px;text-align:center;text-anchor:middle;fill:#a500ff;fill-opacity:1;stroke-width:0.612459"
      id="tspan12940-0">Tap</tspan></text>
        

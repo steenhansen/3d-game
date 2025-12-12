@@ -15,7 +15,7 @@ function signSet(a_sign, the_player) {
     sign_div.innerHTML = "";
   } else {
     const svg_sign = signDraw(a_sign, the_player);
-    if (svg_sign == null) {
+    if (svg_sign === null) {
       const sign_error = `bad::sign is null ${sign_id}`;
       throw new Error(sign_error);
     }
@@ -42,7 +42,7 @@ function signDraw(a_sign, the_player) {
     objectPlacement(a_sign, the_player);
   const sign_player_ys = [a_sign.m_y, the_player.m_y];
   let left_mid_right_vlines;
-  if (sign_relative == LEFT_OF_PLAYER) {
+  if (sign_relative === LEFT_OF_PLAYER) {
     left_mid_right_vlines = signOnLeft(
       x_center_offset,
       sign_player_ys,

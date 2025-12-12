@@ -1,140 +1,140 @@
 #start-mobile {
-  z-index: var(--z-start-mobile);
-  width: var(--scene-width);
-  height: var(--scene-height);
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: clip;
+    z-index: var(--z-start-mobile);
+    width: var(--scene-width);
+    height: var(--scene-height);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: clip;
 }
 
 #the-draw {
-  z-index: var(--z-the-draw);
-  opacity: 0.95;
-  margin-left: var(--margin-left_px);
-  top: 0px;
-  left: 0px;
-  position: absolute;
+    z-index: var(--z-the-draw);
+    opacity: 0.95;
+    margin-left: var(--margin-left_px);
+    top: 0px;
+    left: 0px;
+    position: absolute;
 }
 
 #playing-game {
-  width: var(--scene-width);
-  height: var(--scene-height);
-  bottom: 512px;
-  position: absolute;
-  background-color: rgb(23, 23, 23, 0.92);
-  overflow: hidden;
+    width: var(--scene-width);
+    height: var(--scene-height);
+    bottom: 512px;
+    position: absolute;
+    background-color: rgb(23, 23, 23, 0.92);
+    overflow: hidden;
 }
 
 #the-scene {
-  display: none;
-  margin: 0 auto;
-  width: var(--scene-width);
-  height: var(--scene-height);
-  position: relative;
-  background-color: rgb(23, 23, 23, 0.92);
-  overflow: hidden;
-  transform: rotate(var(--collide-shake-angle));
+    display: none;
+    margin: 0 auto;
+    width: var(--scene-width);
+    height: var(--scene-height);
+    position: relative;
+    background-color: rgb(23, 23, 23, 0.92);
+    overflow: hidden;
+    transform: rotate(var(--collide-shake-angle));
 }
 
 #svg-arrows {
-  display: none;
+    display: none;
 }
 
 #star-space {
-  z-index: var(--z-star-space);
-  background: url("../images/plain-stars.png") no-repeat center;
-  width: 1024px;
-  height: 512px;
-  position: absolute;
-  opacity: 0;
+    z-index: var(--z-star-space);
+    background: url('../images/plain-stars.png') no-repeat center;
+    width: 1024px;
+    height: 512px;
+    position: absolute;
+    opacity: 0;
 }
 
 #saturn-space {
-  z-index: var(--z-saturn-space);
-  background: url("../images/plain-saturn.png") no-repeat center;
-  width: 1024px;
-  height: 512px;
-  left: 0px;
-  position: absolute;
-  opacity: 1;
+    z-index: var(--z-saturn-space);
+    background: url('../images/plain-saturn.png') no-repeat center;
+    width: 1024px;
+    height: 512px;
+    left: 0px;
+    position: absolute;
+    opacity: 1;
 }
 
 #mobile-list {
-  display: none;
-  height: 100%;
-  width: 100%;
-  background-image: url("../images/mobile-touch.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/mobile-touch.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #mobile-wait {
-  display: none;
-  height: 100%;
-  width: 100%;
-  background-image: url("../images/mobile-wait.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/mobile-wait.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 li:not(:last-of-type) {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 #enemy-area {
-  position: absolute;
-  top: 0px;
-  height: 0px;
-  margin-left: var(--margin-left_px);
-  background-color: rgba(218, 20, 225, 0);
+    position: absolute;
+    top: 0px;
+    height: 0px;
+    margin-left: var(--margin-left_px);
+    background-color: rgba(218, 20, 225, 0);
 }
 
 #signs-area {
-  top: 0px;
-  position: absolute;
-  height: 0px;
-  margin-left: var(--margin-left_px);
+    top: 0px;
+    position: absolute;
+    height: 0px;
+    margin-left: var(--margin-left_px);
 }
 
 #pylons-area {
-  top: 0px;
-  position: absolute;
-  height: 0px;
-  margin-left: var(--margin-left_px);
+    top: 0px;
+    position: absolute;
+    height: 0px;
+    margin-left: var(--margin-left_px);
 }
 
 #holes-area {
-  top: 0px;
-  position: absolute;
-  height: 0px;
-  margin-left: var(--margin-left_px);
+    top: 0px;
+    position: absolute;
+    height: 0px;
+    margin-left: var(--margin-left_px);
 }
 
 #missile-area {
-  position: absolute;
-  top: 0px;
-  height: 0px;
-  margin-left: var(--margin-left_px);
+    position: absolute;
+    top: 0px;
+    height: 0px;
+    margin-left: var(--margin-left_px);
 }
 
 #enemy-planets {
-  height: 0px;
+    height: 0px;
 }
 
 #missile-flames {
-  height: 0px;
+    height: 0px;
 }
 
 #pylons-svg {
-  position: absolute;
-  left: -333px;
-  height: 0px;
+    position: absolute;
+    left: -333px;
+    height: 0px;
 }
 
 body {
-  margin: 0px;
+    margin: 0px;
 }

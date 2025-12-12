@@ -41,7 +41,7 @@ function initHoleData(
 }
 
 function makeHoles(hole_index, hole_color, holes_list, vert_color) {
-  if (typeof vert_color == "undefined") {
+  if (typeof vert_color === "undefined") {
     vert_color = "black";
   }
   let declared_holes = [];
@@ -83,7 +83,7 @@ function originOffset(xy_squares, err_or_ignore_bounds) {
     y_square += FIELD_IN_SQUARES[1];
   }
   const xy_offset = [x_square, y_square];
-  if (err_or_ignore_bounds != IGNORE_BOUNDS) {
+  if (err_or_ignore_bounds !== IGNORE_BOUNDS) {
     squareNotInBounds(xy_squares, xy_offset, err_or_ignore_bounds);
   }
   const xy_pixels = squares2pixels(xy_offset);

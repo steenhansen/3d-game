@@ -87,16 +87,16 @@ function createEnemyHtml(the_enemy) {
   setCssEnemyBallFill(the_enemy.s_enemy_number, ball_color);
 
   let rotate_sec;
-  if (enemy_number == 0) {
+  if (enemy_number === 0) {
     rotate_sec = "2"; // 1 ok 1.5 ok   2 ok  // 4 too slow
-  } else if (enemy_number == 1) {
+  } else if (enemy_number === 1) {
     rotate_sec = "2";
   } else {
     rotate_sec = "3";
   }
 
   let enemy_star, ball_all, ball_front;
-  if (g_p_graphics_style != P_SIMPLE) {
+  if (g_p_graphics_style !== P_SIMPLE) {
     enemy_star = rotatingStar(star_color, enemy_number, rotate_sec);
     ball_all = makeBall("all", ball_color, enemy_number, ball_start);
     ball_front = makeBall("front", ball_color, enemy_number, ball_start);

@@ -1,6 +1,5 @@
 const ARROW_FLASH_TIME = 200;
 
-
 function flashArrow(direction_name) {
   const directions_4 = direction_name.split("-");
   const pure_direction = directions_4[0];
@@ -12,8 +11,10 @@ function flashArrow(direction_name) {
     const arrow_error = `bad::arrow ${direction_name}`;
     throw new Error(arrow_error);
   }
-  the_arrow_style.opacity = '25%';
-  setTimeout(() => { the_arrow_style.opacity = '100%'; }, ARROW_FLASH_TIME);
+  the_arrow_style.opacity = "25%";
+  setTimeout(() => {
+    the_arrow_style.opacity = "100%";
+  }, ARROW_FLASH_TIME);
 }
 
 function arrowClick(the_event, direction_name) {
@@ -45,9 +46,6 @@ function handleNw(evt) {
   arrowClick(evt, "nw-1");
 }
 
-
-
-
 function handleN(evt) {
   initiateMovement(MOVINGx_N);
   g_planet.m_last_direction_key = MOVINGx_N;
@@ -61,12 +59,10 @@ function handleNe(evt) {
 }
 
 function handleW(evt) {
-
-  if (THE_PLANET == 4) {
+  if (THE_PLANET === 4) {
     initiateMovement(MOVINGx_NW);
     g_planet.m_last_direction_key = MOVINGx_NW;
   } else {
-
     initiateMovement(MOVINGx_W);
     g_planet.m_last_direction_key = MOVINGx_W;
   }
@@ -74,7 +70,7 @@ function handleW(evt) {
 }
 
 function handleE(evt) {
-  if (THE_PLANET == 4) {
+  if (THE_PLANET === 4) {
     initiateMovement(MOVINGx_NE);
     g_planet.m_last_direction_key = MOVINGx_NE;
   } else {
@@ -101,6 +97,3 @@ function handleSe(evt) {
   g_planet.m_last_direction_key = MOVINGx_SE;
   arrowClick(evt, "se-1");
 }
-
-
-

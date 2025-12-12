@@ -81,6 +81,14 @@
 
 [normal](https://steenhansen.github.io/3d-game/area-4-fast/index.html), [fps](https://steenhansen.github.io/3d-game/area-4-fast/index.html?display-fps=show), [debug](https://steenhansen.github.io/3d-game/area-4-fast/index.html?env-type=debug&display-fps=show), [degraded](https://steenhansen.github.io/3d-game/area-4-fast/index.html?scroll-quality=course&graphics-style=simple&display-fps=show)
 
+## Death
+
+    Area 3 death.
+
+<img src="./markdown/death-3.png" width="400">
+
+<br>
+
 ## Desktop Firefox
 
 Cannot have multiple windows open with game, even one game is taxing.

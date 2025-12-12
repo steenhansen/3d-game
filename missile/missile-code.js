@@ -7,7 +7,7 @@ const NUM_MIDDLE_BALLS = 16;
 const NUM_CENTER_BALLS = 8;
 
 function missileAdvance(the_missile, the_player) {
-  if (the_missile.m_phase == MISSILE_2_HITTING_PYLON) {
+  if (the_missile.m_phase === MISSILE_2_HITTING_PYLON) {
     const hit_pylon = the_missile.m_hit_pylon;
     the_missile.m_lifetime = MISSILE_LIFETIME;
     if (hit_pylon.m_x > the_missile.m_x) {
@@ -17,16 +17,16 @@ function missileAdvance(the_missile, the_player) {
       the_missile.m_x_dir = 1;
       the_missile.m_y_dir = 0;
     }
-  } else if (the_missile.m_phase == MISSILE_4_SECOND_PYLON_HIT) {
+  } else if (the_missile.m_phase === MISSILE_4_SECOND_PYLON_HIT) {
     the_missile.m_lifetime = 0;
     the_missile.m_phase = 0;
   }
   the_missile.m_random++;
-  if (the_missile.m_random == 360) {
+  if (the_missile.m_random === 360) {
     the_missile.m_random = 0;
   }
   missileSet(the_missile, the_player);
-  if (typeof DBG_MISSILE_ADVANCE == "string") {
+  if (typeof DBG_MISSILE_ADVANCE === "string") {
     return the_missile;
   }
   const missile_flying = g_missile.m_lifetime > 0;
@@ -61,7 +61,7 @@ function initMissileData(the_missile, the_player) {
 function missileSet(the_missile, the_player) {
   const missile_flying = g_missile.m_lifetime > 0;
   if (missile_flying) {
-    if (g_p_graphics_style != P_SIMPLE) {
+    if (g_p_graphics_style !== P_SIMPLE) {
       getRandoms(the_missile);
     }
     missileDraw(the_missile, the_player);
@@ -98,7 +98,7 @@ function getRandoms(the_missile) {
 const NOT_PART_OF_MISSILE = "";
 function randomPxSizedMissile(start_size, max_rand) {
   const size_or_blank = randomMissileSize(start_size, max_rand);
-  if (size_or_blank == "") {
+  if (size_or_blank === "") {
     return NOT_PART_OF_MISSILE;
   } else {
     const circle_px = size_or_blank + "px";
@@ -108,7 +108,7 @@ function randomPxSizedMissile(start_size, max_rand) {
 
 function randomMissileSize(start_size, max_rand) {
   const zero_to_six = Math.floor(Math.random() * 7);
-  if (zero_to_six == 0) {
+  if (zero_to_six === 0) {
     const circle_size = Math.floor(Math.random() * max_rand) + start_size;
     return circle_size;
   }
@@ -119,11 +119,11 @@ function randomMissileColor(rgb_ranges, rgb_bases) {
   let [red_range, green_range, blue_range] = rgb_ranges;
   let [red_base, green_base, blue_base] = rgb_bases;
   let non_zero_change = Math.floor(Math.random() * 8);
-  if (non_zero_change == 0) {
+  if (non_zero_change === 0) {
     return "";
   } else {
     let none_zero_hide = Math.floor(Math.random() * 3);
-    if (none_zero_hide == 0) {
+    if (none_zero_hide === 0) {
       return `rgb(1,2,3,0)`;
     }
     const red_col = Math.floor(Math.random() * red_range) + red_base;
@@ -162,7 +162,7 @@ function middleDiamondShot() {
     const outside_missile_id = MIDDLE_ID_START + j;
     let middle_diamond_size = randomMissileSize(11, 33);
     let square_to_diamond = "";
-    if (middle_diamond_size != "") {
+    if (middle_diamond_size !== "") {
       square_to_diamond = Math.floor(middle_diamond_size / 2);
       middle_diamond_size += "px";
     }
@@ -253,7 +253,7 @@ function missileDraw(the_sprite, the_player) {
   const [the_z_index, missile_relative, x_center_offset, head_on_view] =
     objectPlacement(the_sprite, the_player);
   let left_mid_right_vlines;
-  if (missile_relative == LEFT_OF_PLAYER) {
+  if (missile_relative === LEFT_OF_PLAYER) {
     left_mid_right_vlines = objectLeftSide(
       x_center_offset,
       pylon_player_ys,

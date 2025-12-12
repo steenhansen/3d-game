@@ -206,7 +206,7 @@ function pylonPolygon(
   }
   const svg_panel = pylonSide(a_polygon, fill_color, panel_id, pylon_alive);
   let svg_outlines;
-  if (do_flash && g_p_graphics_style != P_SIMPLE) {
+  if (do_flash && g_p_graphics_style !== P_SIMPLE) {
     svg_outlines = outlineFlash(a_polygon, panel_id, dist_abs_y);
   } else {
     svg_outlines = "";

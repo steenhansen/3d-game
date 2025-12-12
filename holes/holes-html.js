@@ -1,5 +1,4 @@
-
-document.getElementById('holes-area').innerHTML = `
+document.getElementById("holes-area").innerHTML = `
   <div id="hole-00"></div>
   <div id="hole-01"></div>
   <div id="hole-02"></div>
@@ -214,13 +213,12 @@ document.getElementById('holes-area').innerHTML = `
 
   `;
 
-
 function hideHoles(the_holes, the_color) {
   let changed_holes = [];
   const number_holes = the_holes.length;
   for (let hole_index = 0; hole_index < number_holes; hole_index++) {
     let a_hole = the_holes[hole_index];
-    if (a_hole.s_hole_color == the_color) {
+    if (a_hole.s_hole_color === the_color) {
       a_hole.m_hidden = true;
     }
     changed_holes[hole_index] = a_hole;
@@ -247,5 +245,3 @@ function drawHoles(the_holes, the_player) {
   }
   return the_holes;
 }
-
-

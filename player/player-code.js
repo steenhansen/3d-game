@@ -64,7 +64,7 @@ function missileLR(a_missile, the_player) {
 
 function thingRelationToPlayer(adjusted_x, the_player, things_position) {
   let x_center_offset;
-  if (things_position == LEFT_OF_PLAYER) {
+  if (things_position === LEFT_OF_PLAYER) {
     x_center_offset = HALF_VIEW_WIDTH - adjusted_x;
   } else {
     x_center_offset = HALF_VIEW_WIDTH + adjusted_x;
@@ -74,21 +74,21 @@ function thingRelationToPlayer(adjusted_x, the_player, things_position) {
 
 function objectBounced(move_direction) {
   let new_direction;
-  if (move_direction == MOVINGx_NW) {
+  if (move_direction === MOVINGx_NW) {
     new_direction = MOVINGx_SE;
-  } else if (move_direction == MOVINGx_N) {
+  } else if (move_direction === MOVINGx_N) {
     new_direction = MOVINGx_S;
-  } else if (move_direction == MOVINGx_NE) {
+  } else if (move_direction === MOVINGx_NE) {
     new_direction = MOVINGx_SW;
-  } else if (move_direction == MOVINGx_E) {
+  } else if (move_direction === MOVINGx_E) {
     new_direction = MOVINGx_W;
-  } else if (move_direction == MOVINGx_SE) {
+  } else if (move_direction === MOVINGx_SE) {
     new_direction = MOVINGx_NW;
-  } else if (move_direction == MOVINGx_S) {
+  } else if (move_direction === MOVINGx_S) {
     new_direction = MOVINGx_N;
-  } else if (move_direction == MOVINGx_SW) {
+  } else if (move_direction === MOVINGx_SW) {
     new_direction = MOVINGx_NE;
-  } else if (move_direction == MOVINGx_W) {
+  } else if (move_direction === MOVINGx_W) {
     new_direction = MOVINGx_E;
   } else {
     new_direction = move_direction;

@@ -37,7 +37,7 @@ function accumFPS() {
 function timeFrames(the_planet, the_player) {
   if (the_player.m_screen_askew > 0) {
     tiltingReset();
-  } else if (the_planet.m_game_state == GAME_2_PLAY) {
+  } else if (the_planet.m_game_state === GAME_2_PLAY) {
     accumFPS();
   } else {
     tiltingReset();
@@ -46,7 +46,7 @@ function timeFrames(the_planet, the_player) {
 }
 
 function frameInfoSE() {
-  if (g_p_display_fps == P_SHOW) {
+  if (g_p_display_fps === P_SHOW) {
     const round_fps = Math.round(f_the_fps);
     let the_scene = document.getElementById("fps-value");
     const average_frames = " fps " + round_fps + " " + g_p_scroll_quality;

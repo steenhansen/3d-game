@@ -1,7 +1,9 @@
-
 function incrementLeft() {
   let bottom_line_count = g_field_xs_shift[CLOSEST_WIDTH_INDEX];
-  if (bottom_line_count == LEFT_LOOP_OVER || bottom_line_count == IS_RESET_RIGHT) {
+  if (
+    bottom_line_count === LEFT_LOOP_OVER ||
+    bottom_line_count === IS_RESET_RIGHT
+  ) {
     resetLeft();
     // dbg_recordLefts(4096, 4096, 4096, 4096);
   } else {
@@ -29,11 +31,10 @@ function underflowLeft(cur_line, accum_new) {
     accum_new = accum_new + NUMBER_LINES;
     g_field_xs_shift[cur_line]++;
     let [_index, max_shift, min_shift, _flip] = START_STOP_FLIP[cur_line];
-    if (g_field_xs_shift[cur_line] == max_shift) {
+    if (g_field_xs_shift[cur_line] === max_shift) {
       g_field_xs_shift[cur_line] = min_shift;
     }
   }
   g_field_xs_accums[cur_line] = accum_new;
   return accum_new;
 }
-

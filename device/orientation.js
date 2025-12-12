@@ -1,5 +1,5 @@
 function fixMobileTouch() {
-  if (document.fullscreenElement == null) {
+  if (document.fullscreenElement === null) {
     let start_mobile = document.getElementById("start-mobile");
     g_waiting_for_start = true;
     start_mobile.addEventListener("touchend", handleStartMobile, {
@@ -41,7 +41,7 @@ function screenFixMobile() {
 
 function isMobile() {
   const mobile_screen = getCssVar("--device-screen");
-  if (mobile_screen == "is-mobile") {
+  if (mobile_screen === "is-mobile") {
     return true;
   }
   return false;

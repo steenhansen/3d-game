@@ -92,7 +92,7 @@ function expandCheckerboard(the_count) {
       nw_element.style = flip_line;
     }
     flip_count++;
-    if (flip_count == the_count) {
+    if (flip_count === the_count) {
       flip_count = 0;
       is_flip = !is_flip;
     }
@@ -180,7 +180,7 @@ function moveCheckerboardOnce(top_playing_game, top_the_land) {
   playing_game.style = `top:${top_playing_game}px`;
   const the_landing = document.getElementById(`the-landing`);
   the_landing.style = `top:${top_the_land}px`;
-  if (THE_PLANET != 4) {
+  if (THE_PLANET !== 4) {
     flashScrollingArrow("arrow-se");
     flashScrollingArrow("arrow-s");
     flashScrollingArrow("arrow-sw");

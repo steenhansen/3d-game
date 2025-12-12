@@ -114,7 +114,7 @@ function enemyMove(the_enemy) {
   //                    +1(right) x -1(inverted)        -1
   const x_adjusted_dir = x_dir * m_bounced_x_dir;
 
-  if (g_p_graphics_style != P_SIMPLE) {
+  if (g_p_graphics_style !== P_SIMPLE) {
     showCorrectRotation(the_enemy.s_enemy_number, x_adjusted_dir);
   }
   const y_dir = s_moves_y[m_move_count];
@@ -171,27 +171,27 @@ function drawEnemies(the_enemies, the_player) {
 
 function enemyDraw(real_id, the_enemy, the_player) {
   const enemy_state = the_enemy.m_enemy_state;
-  if (enemy_state == ENEMY_0_HUNTING) {
+  if (enemy_state === ENEMY_0_HUNTING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy = enemyMove(the_enemy);
-  } else if (enemy_state == ENEMY_1_BOUNCE) {
+  } else if (enemy_state === ENEMY_1_BOUNCE) {
     setCssEnemyEdge(the_enemy.s_enemy_number, "48px");
     the_enemy = enemyMove(the_enemy);
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy.m_enemy_hit_flash--;
-    if (the_enemy.m_enemy_hit_flash == 0) {
+    if (the_enemy.m_enemy_hit_flash === 0) {
       setCssEnemyEdge(the_enemy.s_enemy_number, "0px");
       the_enemy.m_enemy_state = ENEMY_0_HUNTING;
     }
-  } else if (enemy_state == ENEMY_2_HIT) {
+  } else if (enemy_state === ENEMY_2_HIT) {
     setCssEnemyOpacity(the_enemy.s_enemy_number, 0.3333);
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy.m_enemy_hit_flash--;
-    if (the_enemy.m_enemy_hit_flash == 0) {
+    if (the_enemy.m_enemy_hit_flash === 0) {
       the_enemy.m_hover_up = 0;
       the_enemy.m_enemy_state = ENEMY_3_LIFTING;
     }
-  } else if (enemy_state == ENEMY_3_LIFTING) {
+  } else if (enemy_state === ENEMY_3_LIFTING) {
     enemyPlace(real_id, the_enemy, the_player);
     the_enemy.m_hover_up = the_enemy.m_hover_up + PLAYER_TRAVEL_SPEED;
 
@@ -199,7 +199,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
       the_enemy.m_hover_up = 0;
       the_enemy.m_enemy_state = ENEMY_4_ZOMBIE;
     }
-  } else if (enemy_state == ENEMY_4_ZOMBIE) {
+  } else if (enemy_state === ENEMY_4_ZOMBIE) {
     //
   }
   return the_enemy;
@@ -234,7 +234,7 @@ function enemyPlace(real_id, the_enemy, the_player) {
   let [the_z_index, enemy_relative, x_center_offset, _head_on_view] =
     objectPlacement(the_enemy, the_player);
   let left_mid_right_vlines;
-  if (enemy_relative == LEFT_OF_PLAYER) {
+  if (enemy_relative === LEFT_OF_PLAYER) {
     left_mid_right_vlines = objectLeftSide(
       x_center_offset,
       enemy_player_ys,
@@ -250,7 +250,7 @@ function enemyPlace(real_id, the_enemy, the_player) {
   debugSign(the_enemy, left_mid_right_vlines);
   const the_stats = spriteFront(left_mid_right_vlines);
   let hover_up;
-  if (the_enemy.m_enemy_state == ENEMY_4_ZOMBIE) {
+  if (the_enemy.m_enemy_state === ENEMY_4_ZOMBIE) {
     hover_up = ENEMY_HIDDEN;
   } else if (the_enemy.m_hover_up > 0) {
     hover_up = the_enemy.m_hover_up;
@@ -269,7 +269,7 @@ function enemiesAllZombies(enemy_list) {
   const number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     const an_enemy = enemy_list[enemy_index];
-    if (an_enemy.m_enemy_state != ENEMY_4_ZOMBIE) {
+    if (an_enemy.m_enemy_state !== ENEMY_4_ZOMBIE) {
       return false;
     }
   }
@@ -281,7 +281,7 @@ function enemiesAlive(enemy_list) {
   const number_enemies = enemy_list.length;
   for (let enemy_index = 0; enemy_index < number_enemies; enemy_index++) {
     const an_enemy = enemy_list[enemy_index];
-    if (an_enemy.m_enemy_state != ENEMY_4_ZOMBIE) {
+    if (an_enemy.m_enemy_state !== ENEMY_4_ZOMBIE) {
       number_alive++;
     }
   }

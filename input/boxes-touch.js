@@ -1,4 +1,3 @@
-
 function touchNw(evt) {
   initiateMovement(MOVINGx_NW);
   g_planet.m_last_direction_key = MOVINGx_NW;
@@ -47,7 +46,7 @@ function touchSe(evt) {
   boxTouch(evt, "se-1");
 }
 
-function boxTouch(the_event, direction_name) {
+function boxTouch(_evt, direction_name) {
   flashArrow(direction_name);
   g_planet.m_drift_direction = 0;
 }

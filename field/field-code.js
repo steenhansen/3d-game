@@ -3,7 +3,7 @@ function makeNudges() {
   while (affix_line < NUMBER_LINES) {
     let r = Math.floor(Math.random() * 2);
     let direction;
-    if (r == 0) {
+    if (r === 0) {
       direction = -1;
     } else {
       direction = 1;
@@ -12,7 +12,7 @@ function makeNudges() {
     for (let i = 0; i < length_direction; i++) {
       g_field_xs_nudges[affix_line] = direction;
       affix_line++;
-      if (affix_line == NUMBER_LINES) {
+      if (affix_line === NUMBER_LINES) {
         break;
       }
     }
@@ -22,9 +22,9 @@ function makeNudges() {
 function pushDeathNudges() {
   for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
     let death_nudge = g_field_xs_death[affix_line];
-    if (death_nudge != 0) {
+    if (death_nudge !== 0) {
       const left_right = g_field_xs_nudges[affix_line];
-      if (left_right == 1) {
+      if (left_right === 1) {
         g_field_xs_shift[affix_line]++;
       } else {
         g_field_xs_shift[affix_line]--;
@@ -43,7 +43,7 @@ function affixLeftRight(is_dying) {
   for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
     const inverted_x = invert_lines[affix_line];
     let affix_shift = g_field_xs_shift[affix_line];
-    if (inverted_x == 0) {
+    if (inverted_x === 0) {
       let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
       affix_shift -= invert_flip;
     }

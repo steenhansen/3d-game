@@ -1,26 +1,26 @@
-function fieldBackwards (travel_speed) {
+function fieldBackwards(travel_speed) {
   for (let i = 0; i < travel_speed; i++) {
-    incrementForward()
+    incrementForward();
   }
 }
 
-function fieldForwards (travel_speed) {
+function fieldForwards(travel_speed) {
   for (let i = 0; i < travel_speed; i++) {
-    incrementBack()
+    incrementBack();
   }
 }
 
-function incrementBack () {
-  g_y_flip_count += 1
+function incrementBack() {
+  g_y_flip_count += 1;
   if (g_y_flip_count > CLOSEST_DEPTH_INDEX) {
-    g_y_flip_count = 0
+    g_y_flip_count = 0;
   }
 }
 
-function incrementForward () {
-  if (g_y_flip_count == 0) {
-    g_y_flip_count = CLOSEST_DEPTH_INDEX
+function incrementForward() {
+  if (g_y_flip_count === 0) {
+    g_y_flip_count = CLOSEST_DEPTH_INDEX;
   } else {
-    g_y_flip_count -= 1
+    g_y_flip_count -= 1;
   }
 }

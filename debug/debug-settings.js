@@ -57,7 +57,7 @@ function debugPlayerXy() {
 
 function debugPlayerBounds() {
   let player_pos;
-  if (typeof PLAYER_BOUNDS == "undefined") {
+  if (typeof PLAYER_BOUNDS === "undefined") {
     player_pos = `bounds: none`;
   } else {
     const x0_bounds = PLAYER_BOUNDS[0];
@@ -106,9 +106,9 @@ function debugReportFrameTime() {
     const start_point = [dbg_start_swipe_x, dbg_start_swipe_y];
     const end_point = [dbg_end_swipe_x, dbg_end_swipe_y];
 
-    if (dbg_swipe_dir == SWIPE_UP) {
+    if (dbg_swipe_dir === SWIPE_UP) {
       debugSwipeUp(start_point, end_point);
-    } else if (dbg_swipe_dir == SWIPE_DOWN) {
+    } else if (dbg_swipe_dir === SWIPE_DOWN) {
       debugSwipeDown(start_point, end_point);
     }
   }
@@ -129,7 +129,7 @@ function debugSign(an_object, left_mid_right_vlines) {
     let [[_x3, _y3], [_x4, _y4]] = left_side;
     let xx = (x_mid_r + x_mid_l) / 2;
     let yy = (y_top + y_bot) / 2;
-    if (an_object.s_isa == "is-sign" && an_object.m_sign_text_col == "none") {
+    if (an_object.s_isa === "is-sign" && an_object.m_sign_text_col === "none") {
       debugPrint(ONLY_CLEAR_DEBUG_RECT, xx, yy);
     } else {
       debugPrint(init_mess, xx, yy);
@@ -213,20 +213,20 @@ function debugSwipeDown(start_xy, end_xy) {
 
 let debug_missile_steps = 0;
 function debugMissileInfo() {
-  if (g_missile.m_lifetime == 0) {
+  if (g_missile.m_lifetime === 0) {
     debug_missile_steps = 0;
   } else {
-    if (debug_missile_steps == 0) {
+    if (debug_missile_steps === 0) {
       DEBUG_CONTEXT.clearRect(DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y, 630, 999);
       debugPrint("missile", DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y);
     }
     debug_missile_steps++;
 
     let a_carom = "";
-    if (g_missile.m_phase != MISSILE_1_SHOT_FORWARD) {
-      if (g_missile.m_x_dir == 1) {
+    if (g_missile.m_phase !== MISSILE_1_SHOT_FORWARD) {
+      if (g_missile.m_x_dir === 1) {
         a_carom = "carom right";
-      } else if (g_missile.m_x_dir == -1) {
+      } else if (g_missile.m_x_dir === -1) {
         a_carom = "carom left";
       }
     }

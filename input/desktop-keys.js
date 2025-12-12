@@ -2,7 +2,7 @@ let f_last_4_move = "NE";
 
 function read4Keys(event) {
   const the_key = event.key;
-  if (g_player.m_recoil_count == 0) {
+  if (g_player.m_recoil_count === 0) {
     g_planet.m_drift_direction = 0;
     if (NE_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NE;
@@ -20,19 +20,19 @@ function read4Keys(event) {
       flashArrow("nw");
       f_last_4_move = "NW";
     } else if (JUMP_KEYS.includes(the_key)) {
-      if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+      if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
       g_missile = initMissileData(g_missile, g_player);
     } else {
-      if (f_last_4_move == "NE") {
+      if (f_last_4_move === "NE") {
         initiateMovement(MOVINGx_NE);
         flashArrow("e");
-      } else if (f_last_4_move == "N") {
+      } else if (f_last_4_move === "N") {
         initiateMovement(MOVINGx_N);
         flashArrow("n");
-      } else if (f_last_4_move == "NW") {
+      } else if (f_last_4_move === "NW") {
         initiateMovement(MOVINGx_NW);
         flashArrow("w");
       }
@@ -44,7 +44,7 @@ function readKeyUp(event) {
   const the_key = event.key;
   if (JUMP_KEYS.includes(the_key) || SHOOT_KEYS.includes(the_key)) {
     //
-  } else if (THE_PLANET != 4) {
+  } else if (THE_PLANET !== 4) {
     stopMoving();
   }
 }
@@ -64,7 +64,7 @@ const STOP_KEYS = ["S", "s", "Clear", "5"];
 
 function read11Keys(event) {
   const the_key = event.key;
-  if (g_player.m_recoil_count == 0) {
+  if (g_player.m_recoil_count === 0) {
     g_planet.m_drift_direction = 0;
     if (NW_KEYS.includes(the_key)) {
       g_planet.m_last_direction_key = MOVINGx_NW;
@@ -101,7 +101,7 @@ function read11Keys(event) {
     } else if (STOP_KEYS.includes(the_key)) {
       stopMoving();
     } else if (JUMP_KEYS.includes(the_key)) {
-      if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+      if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
         g_planet.m_part_state = PART_PLAY_22_JUMP_START;
       }
     } else if (SHOOT_KEYS.includes(the_key)) {
@@ -152,7 +152,7 @@ function clickOnDirectionsSvg(event) {
   } else if (svg_id_prefix === "SVG-ESCAPE") {
     jumpStartFly();
   } else if (svg_id_prefix === "SVG-SPACE") {
-    if (g_planet.m_part_state == PART_PLAY_20_NORMAL) {
+    if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
       g_planet.m_part_state = PART_PLAY_22_JUMP_START;
     }
   } else if (svg_id_prefix === "SVG-ENTER") {
