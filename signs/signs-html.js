@@ -18,15 +18,15 @@ document.getElementById("signs-area").innerHTML = `
  `;
 
 function deleteStartLetters(g_signs, milli_wait) {
-  function hideStartLetters() {
-    const number_signs = g_signs.length;
-    for (let sign_index = 0; sign_index < number_signs; sign_index++) {
-      let a_sign = g_signs[sign_index];
-      if (a_sign.s_sign_name !== "sign-exit") {
-        a_sign.m_sign_text_col = "none";
-      }
+    function hideStartLetters() {
+        const number_signs = g_signs.length;
+        for (let sign_index = 0; sign_index < number_signs; sign_index++) {
+            let a_sign = g_signs[sign_index];
+            if (a_sign.s_sign_name !== "sign-exit") {
+                a_sign.m_sign_text_col = "none";
+            }
+        }
     }
-  }
 
-  setTimeout(hideStartLetters, milli_wait);
+    setTimeout(hideStartLetters, milli_wait);
 }

@@ -13,7 +13,7 @@ function playPart2(game_state, part_state, the_planet, the_player, enemy_list, p
     } else if (part_state === PART_PLAY_24_JUMP_DOWN) {
         [part_state, the_planet, the_player, enemy_list, pylon_list] = jumpDownPlay(the_planet, the_player, enemy_list, pylon_list, sign_list);
     } else {
-        dbg_print('playPart2() unknown part_state', part_state);
+        dbg_print("playPart2() unknown part_state", part_state);
     }
 
     const all_dead = enemiesAllZombies(enemy_list);

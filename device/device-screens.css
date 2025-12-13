@@ -1,9 +1,9 @@
 :root {
-  --device-screen: is-desktop;
+    --device-screen: is-desktop;
 }
 
 @media (max-width: 1023px) {
-  :root {
-    --device-screen: is-mobile;
-  }
+    :root {
+        --device-screen: is-mobile;
+    }
 }

@@ -5,7 +5,7 @@ function environmentTypeParam() {
         const debug_param = location_url.searchParams.get(P_ENVIROMENT_TYPE);
         g_p_environment_type = debug_param === P_DEBUG;
     }
-    setCssVar('--p-environment-type', g_p_environment_type);
+    setCssVar("--p-environment-type", g_p_environment_type);
     return g_p_environment_type;
 }
 
@@ -28,13 +28,13 @@ function graphicsStyleParam() {
     const location_url = new URL(window.location);
     const graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE);
     if (graphics_style === P_SIMPLE) {
-        setCssVar('--p-graphics-sun-animation', 'none');
-        setCssVar('--p-graphics-sky-image', 'none');
-        setCssVar('--p-graphics-sky-skew', 'none');
-        setCssVar('--p-graphics-sun-visible', 'hidden');
-        setCssVar('--p-graphics-saturn', 'hidden');
-        setCssVar('--p-graphics-pyramids', 'hidden');
-        setCssVar('--p-graphics-boxes', '0');
+        setCssVar("--p-graphics-sun-animation", "none");
+        setCssVar("--p-graphics-sky-image", "none");
+        setCssVar("--p-graphics-sky-skew", "none");
+        setCssVar("--p-graphics-sun-visible", "hidden");
+        setCssVar("--p-graphics-saturn", "hidden");
+        setCssVar("--p-graphics-pyramids", "hidden");
+        setCssVar("--p-graphics-boxes", "0");
         g_p_graphics_style = P_SIMPLE;
     } else {
         g_p_graphics_style = P_COMPLEX;
@@ -89,9 +89,9 @@ function getParams(window_location) {
         the_params.push(`${P_DISPLAY_FPS}=${P_SHOW}`);
     }
 
-    let params_string = '';
+    let params_string = "";
     if (the_params.length > 0) {
-        params_string = '?' + the_params.join('&');
+        params_string = "?" + the_params.join("&");
     }
     return params_string;
 }

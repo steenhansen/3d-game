@@ -20,7 +20,7 @@ function introPart1(game_state, part_state, g_signs) {
         game_state = GAME_2_PLAY;
         part_state = PART_PLAY_20_NORMAL;
     } else {
-        dbg_print('introPart1() unknown part_state', part_state);
+        dbg_print("introPart1() unknown part_state", part_state);
     }
     return [game_state, part_state, g_signs];
 }

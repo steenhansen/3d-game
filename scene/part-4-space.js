@@ -8,7 +8,7 @@ function spacePart4(part_state, the_planet, the_player, enemy_list, pylon_list) 
     } else if (part_state === PART_SPACE_42_FINISHED) {
         spaceFinished();
     } else {
-        dbg_print('spacePart4() unknown part_state', part_state);
+        dbg_print("spacePart4() unknown part_state", part_state);
     }
     const the_return = [part_state, the_player];
     return the_return;

@@ -8,7 +8,7 @@ function deathPart3(part_state, the_planet, the_player, enemy_list, pylon_list) 
     } else if (part_state === PART_DEATH_33_RESTART) {
         skyRestart();
     } else {
-        dbg_print('deathPart3() unknown part_state', part_state);
+        dbg_print("deathPart3() unknown part_state", part_state);
     }
     return [part_state];
 }
@@ -19,17 +19,17 @@ function skyRestart() {
 
 function startDeath(the_player) {
     makeNudges();
-    setCssSkyColor('red');
+    setCssSkyColor("red");
     the_player = finishShake(the_player);
     the_player.m_num_cracks = MAX_CRACKS;
-    setCssVar('--sun-image', "url('../images/grey-sun.png')");
-    setCssVar('--pyramids-image', "url('../images/black-pyramids.png')");
+    setCssVar("--sun-image", "url('../images/grey-sun.png')");
+    setCssVar("--pyramids-image", "url('../images/black-pyramids.png')");
     const part_state = PART_DEATH_31_FIELD;
     return [part_state, the_player];
 }
 
 function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
-    setCssSkyColor('pink');
+    setCssSkyColor("pink");
     [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
     pylon_list = dyingPylons(the_player, pylon_list);
     enemy_list = dyingEnemies(the_player, enemy_list);
@@ -44,7 +44,7 @@ function fieldDeath(part_state, the_planet, the_player, enemy_list, pylon_list) 
 
 function skyDeath(part_state, the_planet, the_player, enemy_list, pylon_list) {
     [the_planet, the_player, enemy_list, pylon_list] = animateScene(the_planet, the_player, enemy_list, pylon_list, g_signs, g_holes);
-    setCssSkyColor('black');
+    setCssSkyColor("black");
     the_player.m_sky_restart--;
     if (the_player.m_sky_restart === 0) {
         part_state = PART_DEATH_33_RESTART;

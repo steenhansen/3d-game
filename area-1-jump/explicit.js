@@ -1,15 +1,15 @@
 const THE_PLANET = 1;
 const PARAMS_STR = getParams(window.location);
 
-const THIS_PLANET = 'area-1-jump/index.html' + PARAMS_STR;
-const NEXT_PLANET = 'area-2-carom/index.html' + PARAMS_STR;
+const THIS_PLANET = "area-1-jump/index.html" + PARAMS_STR;
+const NEXT_PLANET = "area-2-carom/index.html" + PARAMS_STR;
 
 const FIELD_IN_SQUARES = [34, 32];
 const PLAYER_START = [7, 30];
 const PLAYER_BOUNDS = [0, 18, 34, 31];
 
 const DITCH_LINE = 23;
-const DITCH_COLOR = 'black';
+const DITCH_COLOR = "black";
 
 const MISSILE_LIFETIME = 50;
 
@@ -72,7 +72,7 @@ function action_runGame() {
         [32.9375, back_one]
     ];
 
-    const red_holes = makeHoles(0, DITCH_COLOR, ditch_holes, 'white');
+    const red_holes = makeHoles(0, DITCH_COLOR, ditch_holes, "white");
 
     const back_holes = [
         [0, 17],
@@ -95,16 +95,16 @@ function action_runGame() {
     ];
 
     const hole_index = red_holes.length;
-    const white_edge = makeHoles(hole_index, 'white', back_holes);
+    const white_edge = makeHoles(hole_index, "white", back_holes);
 
     const the_holes = [...white_edge, ...red_holes];
 
-    g_exit_sign = initSign('sign-exit', [6, 20], 'Next', EXIT_OFF_COLOR);
+    g_exit_sign = initSign("sign-exit", [6, 20], "Next", EXIT_OFF_COLOR);
 
-    const sign_0 = initSign('sign-00', [6.375, 27], 'J', '#FFFFFF');
-    const sign_1 = initSign('sign-01', [7.5, 27], 'u', '#EEEEEE');
-    const sign_2 = initSign('sign-02', [9, 27], 'm', '#DDDDDD');
-    const sign_3 = initSign('sign-03', [10.5, 27], 'p', '#CCCCCC');
+    const sign_0 = initSign("sign-00", [6.375, 27], "J", "#FFFFFF");
+    const sign_1 = initSign("sign-01", [7.5, 27], "u", "#EEEEEE");
+    const sign_2 = initSign("sign-02", [9, 27], "m", "#DDDDDD");
+    const sign_3 = initSign("sign-03", [10.5, 27], "p", "#CCCCCC");
 
     const the_signs = [g_exit_sign, sign_0, sign_1, sign_2, sign_3];
 
@@ -112,11 +112,11 @@ function action_runGame() {
 
     const enemy_0 = {
         start_pos: [10, 16],
-        the_colors: ['green', 'black'],
+        the_colors: ["green", "black"],
         x_moves: [ZERO_10],
         y_moves: [ZERO_10],
         the_speed: 0,
-        ball_start: '-1s'
+        ball_start: "-1s"
     };
     const the_enemies = makeEnemies([enemy_0]);
 

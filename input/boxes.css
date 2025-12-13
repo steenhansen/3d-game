@@ -36,7 +36,7 @@
 }
 
 #nw-4 {
-    background: url('../images/the-curve-nw.png') no-repeat top left;
+    background: url("../images/the-curve-nw.png") no-repeat top left;
 }
 
 #n-1 {
@@ -65,7 +65,7 @@
 }
 
 #ne-3 {
-    background: url('../images/the-curve-ne.png') no-repeat top right;
+    background: url("../images/the-curve-ne.png") no-repeat top right;
 }
 
 #ne-4 {
@@ -111,7 +111,7 @@
 }
 
 #sw-2 {
-    background: url('../images/the-curve-sw.png') no-repeat bottom left;
+    background: url("../images/the-curve-sw.png") no-repeat bottom left;
 }
 
 #sw-3 {
@@ -140,7 +140,7 @@
 }
 
 #se-1 {
-    background: url('../images/the-curve-se.png') no-repeat bottom right;
+    background: url("../images/the-curve-se.png") no-repeat bottom right;
 }
 
 #se-2 {

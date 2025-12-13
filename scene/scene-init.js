@@ -11,24 +11,24 @@ function screenSizeIntoCss(_event) {
     initDebugVars();
     const screen_width = window.screen.width;
     const screen_height = window.screen.height;
-    const screen_width_px = screen_width + 'px';
-    const screen_height_px = screen_height + 'px';
-    setCssVar('--scene-width', screen_width_px);
-    setCssVar('--scene-height', screen_height_px);
+    const screen_width_px = screen_width + "px";
+    const screen_height_px = screen_height + "px";
+    setCssVar("--scene-width", screen_width_px);
+    setCssVar("--scene-height", screen_height_px);
 
     if (screen_width < 1024) {
-        setCssVar('--device-screen', 'is-mobile');
+        setCssVar("--device-screen", "is-mobile");
         const mobile_margin = (1024 - screen_width) / 2;
         const mobile_margin_px = `-${mobile_margin}px`;
-        setCssVar('--margin-left_px', mobile_margin_px);
-        setCssVar('--scene-margin', `0 0 0 ${mobile_margin_px}`);
+        setCssVar("--margin-left_px", mobile_margin_px);
+        setCssVar("--scene-margin", `0 0 0 ${mobile_margin_px}`);
     } else {
-        setCssVar('--device-screen', 'is-desktop');
-        setCssVar('--margin-left_px', '0px');
+        setCssVar("--device-screen", "is-desktop");
+        setCssVar("--margin-left_px", "0px");
 
-        setCssVar('--scene-margin', '0 auto');
-        setCssVar('--scene-width', '1024px');
-        setCssVar('--scene-height', '512px');
+        setCssVar("--scene-margin", "0 auto");
+        setCssVar("--scene-width", "1024px");
+        setCssVar("--scene-height", "512px");
     }
 }
 
@@ -39,8 +39,8 @@ function gameInit() {
 }
 
 function resizeOrientEvents() {
-    window.addEventListener('orientationchange', screenSizeIntoCss, true);
-    window.addEventListener('resize', screenSizeIntoCss, true);
+    window.addEventListener("orientationchange", screenSizeIntoCss, true);
+    window.addEventListener("resize", screenSizeIntoCss, true);
 }
 
 function startItUp(the_planet, the_player, the_enemies, the_pylons, the_signs, the_holes) {
@@ -60,25 +60,25 @@ function startReadKeys(readKeyFunc) {
 
 function onlyLeftRight() {
     function hideArrows(arrow_id) {
-        document.getElementById(arrow_id).style.visibility = 'hidden';
+        document.getElementById(arrow_id).style.visibility = "hidden";
     }
 
-    hideArrows('arrow-sw');
-    hideArrows('arrow-s');
-    hideArrows('arrow-se');
+    hideArrows("arrow-sw");
+    hideArrows("arrow-s");
+    hideArrows("arrow-se");
 
-    hideArrows('s-1');
-    hideArrows('s-2');
-    hideArrows('s-3');
-    hideArrows('s-4');
+    hideArrows("s-1");
+    hideArrows("s-2");
+    hideArrows("s-3");
+    hideArrows("s-4");
 
-    hideArrows('sw-1');
-    hideArrows('sw-2');
-    hideArrows('sw-3');
-    hideArrows('sw-4');
+    hideArrows("sw-1");
+    hideArrows("sw-2");
+    hideArrows("sw-3");
+    hideArrows("sw-4");
 
-    hideArrows('se-1');
-    hideArrows('se-2');
-    hideArrows('se-3');
-    hideArrows('se-4');
+    hideArrows("se-1");
+    hideArrows("se-2");
+    hideArrows("se-3");
+    hideArrows("se-4");
 }

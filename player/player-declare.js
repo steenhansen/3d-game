@@ -1,36 +1,36 @@
 const MAX_CRACKS = 3;
 
 const INIT_PLAYER = {
-  s_isa: "is-player",
-  m_is_dying: false,
-  m_recoil_count: 0,
-  m_hit_hole_last_move: false,
-  m_x: 1400,
-  m_y: 766,
-  m_screen_askew: 0,
-  m_fly_amount: 0,
-  m_jump_amount: 0,
-  m_sky_restart: 0,
-  m_num_cracks: 0,
+    s_isa: "is-player",
+    m_is_dying: false,
+    m_recoil_count: 0,
+    m_hit_hole_last_move: false,
+    m_x: 1400,
+    m_y: 766,
+    m_screen_askew: 0,
+    m_fly_amount: 0,
+    m_jump_amount: 0,
+    m_sky_restart: 0,
+    m_num_cracks: 0
 };
 
 let f_player_init_x = 0;
 let f_player_init_y = 0;
 
 function resetPlayer() {
-  let a_player = INIT_PLAYER;
-  a_player.m_x = f_player_init_x;
-  a_player.m_y = f_player_init_y;
-  a_player.m_num_cracks = 0;
-  a_player.m_is_dying = false;
-  return a_player;
+    let a_player = INIT_PLAYER;
+    a_player.m_x = f_player_init_x;
+    a_player.m_y = f_player_init_y;
+    a_player.m_num_cracks = 0;
+    a_player.m_is_dying = false;
+    return a_player;
 }
 
 function initPlayer(player_in_squares) {
-  const err_mess = "initPlayer()";
-  const xy_pixels = originOffset(player_in_squares, err_mess);
-  f_player_init_x = xy_pixels[0];
-  f_player_init_y = xy_pixels[1];
-  const new_player = resetPlayer();
-  return new_player;
+    const err_mess = "initPlayer()";
+    const xy_pixels = originOffset(player_in_squares, err_mess);
+    f_player_init_x = xy_pixels[0];
+    f_player_init_y = xy_pixels[1];
+    const new_player = resetPlayer();
+    return new_player;
 }

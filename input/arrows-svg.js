@@ -1,7 +1,4 @@
-
-
-
-document.getElementById('svg-arrows').innerHTML = `
+document.getElementById("svg-arrows").innerHTML = `
   <svg>
       <defs>
           <g id="the-arrow">

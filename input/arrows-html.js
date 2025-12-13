@@ -1,6 +1,4 @@
-
-
-document.getElementById('arrows-html').innerHTML = `
+document.getElementById("arrows-html").innerHTML = `
    <svg id="arrow-nw" class="an-arrow" >
       <use href="#the-arrow" />
     </svg>

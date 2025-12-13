@@ -1,7 +1,4 @@
-
-
-
-document.getElementById('land_se').innerHTML = `
+document.getElementById("land_se").innerHTML = `
  
 
     <div class="east_line" id="se0"></div>

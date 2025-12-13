@@ -1,7 +1,4 @@
-
-
-
-document.getElementById('land_nw').innerHTML = `
+document.getElementById("land_nw").innerHTML = `
 
     <div class="west_line" id="nw0"></div>
     <div class="west_line" id="nw1"></div>

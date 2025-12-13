@@ -39,7 +39,7 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the
         } else if (game_state === GAME_5_DONE) {
             donePart5();
         } else {
-            dbg_print('gameLoop() - unknown game_state', game_state);
+            dbg_print("gameLoop() - unknown game_state", game_state);
         }
         g_planet.m_game_state = game_state;
         g_planet.m_part_state = part_state;
@@ -53,7 +53,7 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the
 function loopDone() {
     resetSections();
     sceneInit();
-    window.location.href = 'index.html';
+    window.location.href = "index.html";
 }
 
 function initGame() {

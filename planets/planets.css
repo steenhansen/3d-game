@@ -1,5 +1,5 @@
-  :root {
-    --sun-image: url('../images/yellow-sun.png');
-    --pyramids-image: url('../images/black-pyramids.png');
-    --saturn-image: url('../images/cloudy-saturn.png');
-  }
+:root {
+    --sun-image: url("../images/yellow-sun.png");
+    --pyramids-image: url("../images/black-pyramids.png");
+    --saturn-image: url("../images/cloudy-saturn.png");
+}

@@ -1,546 +1,499 @@
 /* :root{ */
 
 .missile-vars {
-
-  --missile-fill-100: rgb(0, 0, 0);
-  --missile-fill-101: rgb(255, 16, 16);
-  --missile-fill-102: rgb(255, 32, 32);
-  --missile-fill-103: rgb(255, 48, 48);
-  --missile-fill-104: rgb(255, 64, 64);
-  --missile-fill-105: rgb(255, 80, 80);
-  --missile-fill-106: rgb(255, 96, 96);
-  --missile-fill-107: rgb(255, 112, 112);
-  --missile-fill-108: rgb(255, 128, 128);
-  --missile-fill-109: rgb(255, 144, 144);
-  --missile-fill-110: rgb(255, 160, 160);
-  --missile-fill-111: rgb(255, 176, 176);
-  --missile-fill-112: rgb(255, 192, 192);
-  --missile-fill-113: rgb(255, 208, 208);
-  --missile-fill-114: rgb(255, 224, 224);
-  --missile-fill-115: rgb(255, 240, 240);
-  --missile-fill-116: rgb(255, 255, 255);
-  --missile-fill-117: rgb(255, 255, 0);
-  --missile-fill-118: rgb(255, 255, 16);
-  --missile-fill-119: rgb(255, 100, 20);
-  --missile-fill-120: rgb(255, 100, 20);
-  --missile-fill-121: rgb(255, 100, 20);
-  --missile-fill-122: rgb(255, 100, 20);
-  --missile-fill-123: rgb(255, 100, 20);
-  --missile-fill-124: rgb(255, 100, 20);
-  --missile-fill-125: rgb(255, 100, 20);
-  --missile-fill-126: rgb(255, 100, 20);
-  --missile-fill-127: rgb(255, 100, 20);
-  --missile-fill-128: rgb(255, 100, 20);
-  --missile-fill-129: rgb(255, 100, 20);
-  --missile-fill-130: rgb(255, 100, 20);
-  --missile-fill-131: rgb(255, 100, 20);
-
-
-  --missile-fill-200: rgb(255, 0, 0);
-  --missile-fill-201: rgb(255, 16, 16);
-  --missile-fill-202: rgb(255, 32, 32);
-  --missile-fill-203: rgb(255, 48, 48);
-  --missile-fill-204: rgb(255, 64, 64);
-  --missile-fill-205: rgb(255, 80, 80);
-  --missile-fill-206: rgb(255, 96, 96);
-  --missile-fill-207: rgb(255, 112, 112);
-  --missile-fill-208: rgb(255, 128, 128);
-  --missile-fill-209: rgb(255, 144, 144);
-  --missile-fill-210: rgb(255, 160, 160);
-  --missile-fill-211: rgb(255, 176, 176);
-  --missile-fill-212: rgb(255, 192, 192);
-  --missile-fill-213: rgb(255, 208, 208);
-  --missile-fill-214: rgb(255, 224, 224);
-  --missile-fill-215: rgb(255, 240, 240);
-
-  --missile-fill-300: rgb(255, 0, 0);
-  --missile-fill-301: rgb(255, 16, 16);
-  --missile-fill-302: rgb(255, 32, 32);
-  --missile-fill-303: rgb(255, 48, 48);
-  --missile-fill-304: rgb(255, 64, 64);
-  --missile-fill-305: rgb(255, 80, 80);
-  --missile-fill-306: rgb(255, 96, 96);
-  --missile-fill-307: rgb(255, 112, 112);
-
-
-
-
-
-
-  --missile-size-100: 5px;
-  --missile-size-101: 6px;
-  --missile-size-102: 7px;
-  --missile-size-103: 8px;
-  --missile-size-104: 9px;
-  --missile-size-105: 10px;
-  --missile-size-106: 11px;
-  --missile-size-107: 12px;
-  --missile-size-108: 13px;
-  --missile-size-109: 14px;
-  --missile-size-110: 15px;
-  --missile-size-111: 16px;
-  --missile-size-112: 17px;
-  --missile-size-113: 18px;
-  --missile-size-114: 19px;
-  --missile-size-115: 20px;
-  --missile-size-116: 1px;
-  --missile-size-117: 2px;
-  --missile-size-118: 3px;
-  --missile-size-119: 4px;
-  --missile-size-120: 5px;
-  --missile-size-121: 6px;
-  --missile-size-122: 7px;
-  --missile-size-123: 8px;
-  --missile-size-124: 9px;
-  --missile-size-125: 10px;
-  --missile-size-126: 11px;
-  --missile-size-127: 12px;
-  --missile-size-128: 13px;
-  --missile-size-129: 14px;
-  --missile-size-130: 15px;
-  --missile-size-131: 16px;
-
-
-  --missile-size-200: 12px;
-  --missile-size-200: 5px;
-  --missile-size-201: 6px;
-  --missile-size-202: 7px;
-  --missile-size-203: 8px;
-  --missile-size-204: 9px;
-  --missile-size-205: 10px;
-  --missile-size-206: 11px;
-  --missile-size-207: 12px;
-  --missile-size-208: 13px;
-  --missile-size-209: 14px;
-  --missile-size-210: 15px;
-  --missile-size-211: 16px;
-  --missile-size-212: 17px;
-  --missile-size-213: 18px;
-  --missile-size-214: 19px;
-  --missile-size-215: 20px;
-
-
-  --missile-size-300: 5px;
-  --missile-size-301: 6px;
-  --missile-size-302: 7px;
-  --missile-size-303: 8px;
-  --missile-size-304: 9px;
-  --missile-size-305: 10px;
-  --missile-size-306: 11px;
-  --missile-size-307: 12px;
-
-  --missile-offset-x-200: 128px;
-  --missile-offset-x-201: 128px;
-  --missile-offset-x-202: 128px;
-  --missile-offset-x-203: 128px;
-  --missile-offset-x-204: 128px;
-  --missile-offset-x-205: 128px;
-  --missile-offset-x-206: 128px;
-  --missile-offset-x-207: 128px;
-  --missile-offset-x-208: 128px;
-  --missile-offset-x-209: 128px;
-  --missile-offset-x-210: 128px;
-  --missile-offset-x-211: 128px;
-  --missile-offset-x-212: 128px;
-  --missile-offset-x-213: 128px;
-  --missile-offset-x-214: 128px;
-  --missile-offset-x-215: 128px;
-
-
-  --missile-offset-y-200: 128px;
-  --missile-offset-y-201: 128px;
-  --missile-offset-y-202: 128px;
-  --missile-offset-y-203: 128px;
-  --missile-offset-y-204: 128px;
-  --missile-offset-y-205: 128px;
-  --missile-offset-y-206: 128px;
-  --missile-offset-y-207: 128px;
-  --missile-offset-y-208: 128px;
-  --missile-offset-y-209: 128px;
-  --missile-offset-y-210: 128px;
-  --missile-offset-y-211: 128px;
-  --missile-offset-y-212: 128px;
-  --missile-offset-y-213: 128px;
-  --missile-offset-y-214: 128px;
-  --missile-offset-y-215: 128px;
-
-
-  #missile-100 {
-    fill: var(--missile-fill-100);
-    r: var(--missile-size-100);
-  }
-
-  #missile-101 {
-    fill: var(--missile-fill-101);
-    r: var(--missile-size-101);
-  }
-
-  #missile-102 {
-    fill: var(--missile-fill-102);
-    r: var(--missile-size-102);
-  }
-
-  #missile-103 {
-    fill: var(--missile-fill-103);
-    r: var(--missile-size-103);
-  }
-
-  #missile-104 {
-    fill: var(--missile-fill-104);
-    r: var(--missile-size-104);
-  }
-
-  #missile-105 {
-    fill: var(--missile-fill-105);
-    r: var(--missile-size-105);
-  }
-
-  #missile-106 {
-    fill: var(--missile-fill-106);
-    r: var(--missile-size-106);
-
-
-  }
-
-  #missile-107 {
-    fill: var(--missile-fill-107);
-    r: var(--missile-size-107);
-
-  }
-
-  #missile-108 {
-    fill: var(--missile-fill-108);
-    r: var(--missile-size-108);
-
-  }
-
-  #missile-109 {
-    fill: var(--missile-fill-109);
-    r: var(--missile-size-109);
-
-  }
-
-  #missile-110 {
-    fill: var(--missile-fill-110);
-    r: var(--missile-size-110);
-  }
-
-  #missile-111 {
-    fill: var(--missile-fill-111);
-    r: var(--missile-size-111);
-  }
-
-  #missile-112 {
-    fill: var(--missile-fill-112);
-    r: var(--missile-size-112);
-
-  }
-
-  #missile-113 {
-    fill: var(--missile-fill-113);
-    r: var(--missile-size-113);
-  }
-
-  #missile-114 {
-    fill: var(--missile-fill-114);
-    r: var(--missile-size-114);
-  }
-
-  #missile-115 {
-    fill: var(--missile-fill-115);
-    r: var(--missile-size-115);
-  }
-
-  #missile-116 {
-    fill: var(--missile-fill-116);
-    r: var(--missile-size-116);
-  }
-
-  #missile-117 {
-    fill: var(--missile-fill-117);
-    r: var(--missile-size-117);
-  }
-
-  #missile-118 {
-    fill: var(--missile-fill-118);
-    r: var(--missile-size-118);
-  }
-
-  #missile-119 {
-    fill: var(--missile-fill-119);
-    r: var(--missile-size-119);
-  }
-
-
-
-  #missile-120 {
-    fill: var(--missile-fill-120);
-    r: var(--missile-size-120);
-  }
-
-  #missile-121 {
-    fill: var(--missile-fill-121);
-    r: var(--missile-size-121);
-  }
-
-  #missile-122 {
-    fill: var(--missile-fill-122);
-    r: var(--missile-size-122);
-  }
-
-  #missile-123 {
-    fill: var(--missile-fill-123);
-    r: var(--missile-size-123);
-  }
-
-  #missile-124 {
-    fill: var(--missile-fill-124);
-    r: var(--missile-size-124);
-  }
-
-  #missile-125 {
-    fill: var(--missile-fill-125);
-    r: var(--missile-size-125);
-  }
-
-  #missile-126 {
-    fill: var(--missile-fill-126);
-    r: var(--missile-size-126);
-  }
-
-  #missile-127 {
-    fill: var(--missile-fill-127);
-    r: var(--missile-size-127);
-  }
-
-  #missile-128 {
-    fill: var(--missile-fill-128);
-    r: var(--missile-size-128);
-  }
-
-  #missile-129 {
-    fill: var(--missile-fill-129);
-    r: var(--missile-size-129);
-  }
-
-  #missile-130 {
-    fill: var(--missile-fill-130);
-    r: var(--missile-size-130);
-  }
-
-  #missile-131 {
-    fill: var(--missile-fill-131);
-    r: var(--missile-size-131);
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*                   */
-
-
-  .diamond-missile {
-    transform-box: fill-box;
-    transform-origin: center center;
-    transform: rotate(45deg);
-  }
-
-  /*  
+    --missile-fill-100: rgb(0, 0, 0);
+    --missile-fill-101: rgb(255, 16, 16);
+    --missile-fill-102: rgb(255, 32, 32);
+    --missile-fill-103: rgb(255, 48, 48);
+    --missile-fill-104: rgb(255, 64, 64);
+    --missile-fill-105: rgb(255, 80, 80);
+    --missile-fill-106: rgb(255, 96, 96);
+    --missile-fill-107: rgb(255, 112, 112);
+    --missile-fill-108: rgb(255, 128, 128);
+    --missile-fill-109: rgb(255, 144, 144);
+    --missile-fill-110: rgb(255, 160, 160);
+    --missile-fill-111: rgb(255, 176, 176);
+    --missile-fill-112: rgb(255, 192, 192);
+    --missile-fill-113: rgb(255, 208, 208);
+    --missile-fill-114: rgb(255, 224, 224);
+    --missile-fill-115: rgb(255, 240, 240);
+    --missile-fill-116: rgb(255, 255, 255);
+    --missile-fill-117: rgb(255, 255, 0);
+    --missile-fill-118: rgb(255, 255, 16);
+    --missile-fill-119: rgb(255, 100, 20);
+    --missile-fill-120: rgb(255, 100, 20);
+    --missile-fill-121: rgb(255, 100, 20);
+    --missile-fill-122: rgb(255, 100, 20);
+    --missile-fill-123: rgb(255, 100, 20);
+    --missile-fill-124: rgb(255, 100, 20);
+    --missile-fill-125: rgb(255, 100, 20);
+    --missile-fill-126: rgb(255, 100, 20);
+    --missile-fill-127: rgb(255, 100, 20);
+    --missile-fill-128: rgb(255, 100, 20);
+    --missile-fill-129: rgb(255, 100, 20);
+    --missile-fill-130: rgb(255, 100, 20);
+    --missile-fill-131: rgb(255, 100, 20);
+
+    --missile-fill-200: rgb(255, 0, 0);
+    --missile-fill-201: rgb(255, 16, 16);
+    --missile-fill-202: rgb(255, 32, 32);
+    --missile-fill-203: rgb(255, 48, 48);
+    --missile-fill-204: rgb(255, 64, 64);
+    --missile-fill-205: rgb(255, 80, 80);
+    --missile-fill-206: rgb(255, 96, 96);
+    --missile-fill-207: rgb(255, 112, 112);
+    --missile-fill-208: rgb(255, 128, 128);
+    --missile-fill-209: rgb(255, 144, 144);
+    --missile-fill-210: rgb(255, 160, 160);
+    --missile-fill-211: rgb(255, 176, 176);
+    --missile-fill-212: rgb(255, 192, 192);
+    --missile-fill-213: rgb(255, 208, 208);
+    --missile-fill-214: rgb(255, 224, 224);
+    --missile-fill-215: rgb(255, 240, 240);
+
+    --missile-fill-300: rgb(255, 0, 0);
+    --missile-fill-301: rgb(255, 16, 16);
+    --missile-fill-302: rgb(255, 32, 32);
+    --missile-fill-303: rgb(255, 48, 48);
+    --missile-fill-304: rgb(255, 64, 64);
+    --missile-fill-305: rgb(255, 80, 80);
+    --missile-fill-306: rgb(255, 96, 96);
+    --missile-fill-307: rgb(255, 112, 112);
+
+    --missile-size-100: 5px;
+    --missile-size-101: 6px;
+    --missile-size-102: 7px;
+    --missile-size-103: 8px;
+    --missile-size-104: 9px;
+    --missile-size-105: 10px;
+    --missile-size-106: 11px;
+    --missile-size-107: 12px;
+    --missile-size-108: 13px;
+    --missile-size-109: 14px;
+    --missile-size-110: 15px;
+    --missile-size-111: 16px;
+    --missile-size-112: 17px;
+    --missile-size-113: 18px;
+    --missile-size-114: 19px;
+    --missile-size-115: 20px;
+    --missile-size-116: 1px;
+    --missile-size-117: 2px;
+    --missile-size-118: 3px;
+    --missile-size-119: 4px;
+    --missile-size-120: 5px;
+    --missile-size-121: 6px;
+    --missile-size-122: 7px;
+    --missile-size-123: 8px;
+    --missile-size-124: 9px;
+    --missile-size-125: 10px;
+    --missile-size-126: 11px;
+    --missile-size-127: 12px;
+    --missile-size-128: 13px;
+    --missile-size-129: 14px;
+    --missile-size-130: 15px;
+    --missile-size-131: 16px;
+
+    --missile-size-200: 12px;
+    --missile-size-200: 5px;
+    --missile-size-201: 6px;
+    --missile-size-202: 7px;
+    --missile-size-203: 8px;
+    --missile-size-204: 9px;
+    --missile-size-205: 10px;
+    --missile-size-206: 11px;
+    --missile-size-207: 12px;
+    --missile-size-208: 13px;
+    --missile-size-209: 14px;
+    --missile-size-210: 15px;
+    --missile-size-211: 16px;
+    --missile-size-212: 17px;
+    --missile-size-213: 18px;
+    --missile-size-214: 19px;
+    --missile-size-215: 20px;
+
+    --missile-size-300: 5px;
+    --missile-size-301: 6px;
+    --missile-size-302: 7px;
+    --missile-size-303: 8px;
+    --missile-size-304: 9px;
+    --missile-size-305: 10px;
+    --missile-size-306: 11px;
+    --missile-size-307: 12px;
+
+    --missile-offset-x-200: 128px;
+    --missile-offset-x-201: 128px;
+    --missile-offset-x-202: 128px;
+    --missile-offset-x-203: 128px;
+    --missile-offset-x-204: 128px;
+    --missile-offset-x-205: 128px;
+    --missile-offset-x-206: 128px;
+    --missile-offset-x-207: 128px;
+    --missile-offset-x-208: 128px;
+    --missile-offset-x-209: 128px;
+    --missile-offset-x-210: 128px;
+    --missile-offset-x-211: 128px;
+    --missile-offset-x-212: 128px;
+    --missile-offset-x-213: 128px;
+    --missile-offset-x-214: 128px;
+    --missile-offset-x-215: 128px;
+
+    --missile-offset-y-200: 128px;
+    --missile-offset-y-201: 128px;
+    --missile-offset-y-202: 128px;
+    --missile-offset-y-203: 128px;
+    --missile-offset-y-204: 128px;
+    --missile-offset-y-205: 128px;
+    --missile-offset-y-206: 128px;
+    --missile-offset-y-207: 128px;
+    --missile-offset-y-208: 128px;
+    --missile-offset-y-209: 128px;
+    --missile-offset-y-210: 128px;
+    --missile-offset-y-211: 128px;
+    --missile-offset-y-212: 128px;
+    --missile-offset-y-213: 128px;
+    --missile-offset-y-214: 128px;
+    --missile-offset-y-215: 128px;
+
+    #missile-100 {
+        fill: var(--missile-fill-100);
+        r: var(--missile-size-100);
+    }
+
+    #missile-101 {
+        fill: var(--missile-fill-101);
+        r: var(--missile-size-101);
+    }
+
+    #missile-102 {
+        fill: var(--missile-fill-102);
+        r: var(--missile-size-102);
+    }
+
+    #missile-103 {
+        fill: var(--missile-fill-103);
+        r: var(--missile-size-103);
+    }
+
+    #missile-104 {
+        fill: var(--missile-fill-104);
+        r: var(--missile-size-104);
+    }
+
+    #missile-105 {
+        fill: var(--missile-fill-105);
+        r: var(--missile-size-105);
+    }
+
+    #missile-106 {
+        fill: var(--missile-fill-106);
+        r: var(--missile-size-106);
+    }
+
+    #missile-107 {
+        fill: var(--missile-fill-107);
+        r: var(--missile-size-107);
+    }
+
+    #missile-108 {
+        fill: var(--missile-fill-108);
+        r: var(--missile-size-108);
+    }
+
+    #missile-109 {
+        fill: var(--missile-fill-109);
+        r: var(--missile-size-109);
+    }
+
+    #missile-110 {
+        fill: var(--missile-fill-110);
+        r: var(--missile-size-110);
+    }
+
+    #missile-111 {
+        fill: var(--missile-fill-111);
+        r: var(--missile-size-111);
+    }
+
+    #missile-112 {
+        fill: var(--missile-fill-112);
+        r: var(--missile-size-112);
+    }
+
+    #missile-113 {
+        fill: var(--missile-fill-113);
+        r: var(--missile-size-113);
+    }
+
+    #missile-114 {
+        fill: var(--missile-fill-114);
+        r: var(--missile-size-114);
+    }
+
+    #missile-115 {
+        fill: var(--missile-fill-115);
+        r: var(--missile-size-115);
+    }
+
+    #missile-116 {
+        fill: var(--missile-fill-116);
+        r: var(--missile-size-116);
+    }
+
+    #missile-117 {
+        fill: var(--missile-fill-117);
+        r: var(--missile-size-117);
+    }
+
+    #missile-118 {
+        fill: var(--missile-fill-118);
+        r: var(--missile-size-118);
+    }
+
+    #missile-119 {
+        fill: var(--missile-fill-119);
+        r: var(--missile-size-119);
+    }
+
+    #missile-120 {
+        fill: var(--missile-fill-120);
+        r: var(--missile-size-120);
+    }
+
+    #missile-121 {
+        fill: var(--missile-fill-121);
+        r: var(--missile-size-121);
+    }
+
+    #missile-122 {
+        fill: var(--missile-fill-122);
+        r: var(--missile-size-122);
+    }
+
+    #missile-123 {
+        fill: var(--missile-fill-123);
+        r: var(--missile-size-123);
+    }
+
+    #missile-124 {
+        fill: var(--missile-fill-124);
+        r: var(--missile-size-124);
+    }
+
+    #missile-125 {
+        fill: var(--missile-fill-125);
+        r: var(--missile-size-125);
+    }
+
+    #missile-126 {
+        fill: var(--missile-fill-126);
+        r: var(--missile-size-126);
+    }
+
+    #missile-127 {
+        fill: var(--missile-fill-127);
+        r: var(--missile-size-127);
+    }
+
+    #missile-128 {
+        fill: var(--missile-fill-128);
+        r: var(--missile-size-128);
+    }
+
+    #missile-129 {
+        fill: var(--missile-fill-129);
+        r: var(--missile-size-129);
+    }
+
+    #missile-130 {
+        fill: var(--missile-fill-130);
+        r: var(--missile-size-130);
+    }
+
+    #missile-131 {
+        fill: var(--missile-fill-131);
+        r: var(--missile-size-131);
+    }
+
+    /*                   */
+
+    .diamond-missile {
+        transform-box: fill-box;
+        transform-origin: center center;
+        transform: rotate(45deg);
+    }
+
+    /*  
 https://bugzilla.mozilla.org/show_bug.cgi?id=1317354
 
 
 https://css-tricks.com/solving-last-item-problem-circular-distribution-partially-overlapping-items/
 
 */
-  #missile-diamond-200 {
-    width: var(--missile-size-200);
-    height: var(--missile-size-200);
-    fill: var(--missile-fill-200);
-    x: var(--missile-offset-x-200);
-    y: var(--missile-offset-y-200);
-  }
+    #missile-diamond-200 {
+        width: var(--missile-size-200);
+        height: var(--missile-size-200);
+        fill: var(--missile-fill-200);
+        x: var(--missile-offset-x-200);
+        y: var(--missile-offset-y-200);
+    }
 
-  #missile-diamond-201 {
-    width: var(--missile-size-201);
-    height: var(--missile-size-201);
-    fill: var(--missile-fill-201);
-    x: var(--missile-offset-x-201);
-    y: var(--missile-offset-y-201);
-  }
+    #missile-diamond-201 {
+        width: var(--missile-size-201);
+        height: var(--missile-size-201);
+        fill: var(--missile-fill-201);
+        x: var(--missile-offset-x-201);
+        y: var(--missile-offset-y-201);
+    }
 
-  #missile-diamond-202 {
-    width: var(--missile-size-202);
-    height: var(--missile-size-202);
-    fill: var(--missile-fill-202);
-    x: var(--missile-offset-x-202);
-    y: var(--missile-offset-y-202);
-  }
+    #missile-diamond-202 {
+        width: var(--missile-size-202);
+        height: var(--missile-size-202);
+        fill: var(--missile-fill-202);
+        x: var(--missile-offset-x-202);
+        y: var(--missile-offset-y-202);
+    }
 
-  #missile-diamond-203 {
-    width: var(--missile-size-203);
-    height: var(--missile-size-203);
-    fill: var(--missile-fill-203);
-    x: var(--missile-offset-x-203);
-    y: var(--missile-offset-y-203);
-  }
+    #missile-diamond-203 {
+        width: var(--missile-size-203);
+        height: var(--missile-size-203);
+        fill: var(--missile-fill-203);
+        x: var(--missile-offset-x-203);
+        y: var(--missile-offset-y-203);
+    }
 
-  #missile-diamond-204 {
-    width: var(--missile-size-204);
-    height: var(--missile-size-204);
-    fill: var(--missile-fill-204);
-    x: var(--missile-offset-x-204);
-    y: var(--missile-offset-y-204);
-    ;
-  }
+    #missile-diamond-204 {
+        width: var(--missile-size-204);
+        height: var(--missile-size-204);
+        fill: var(--missile-fill-204);
+        x: var(--missile-offset-x-204);
+        y: var(--missile-offset-y-204);
+    }
 
-  #missile-diamond-205 {
-    width: var(--missile-size-205);
-    height: var(--missile-size-205);
-    fill: var(--missile-fill-205);
-    x: var(--missile-offset-x-205);
-    y: var(--missile-offset-y-205);
-  }
+    #missile-diamond-205 {
+        width: var(--missile-size-205);
+        height: var(--missile-size-205);
+        fill: var(--missile-fill-205);
+        x: var(--missile-offset-x-205);
+        y: var(--missile-offset-y-205);
+    }
 
-  #missile-diamond-206 {
-    width: var(--missile-size-206);
-    height: var(--missile-size-206);
-    fill: var(--missile-fill-206);
-    x: var(--missile-offset-x-206);
-    y: var(--missile-offset-y-206);
-  }
+    #missile-diamond-206 {
+        width: var(--missile-size-206);
+        height: var(--missile-size-206);
+        fill: var(--missile-fill-206);
+        x: var(--missile-offset-x-206);
+        y: var(--missile-offset-y-206);
+    }
 
-  #missile-diamond-207 {
-    width: var(--missile-size-207);
-    height: var(--missile-size-207);
-    fill: var(--missile-fill-207);
-    x: var(--missile-offset-x-207);
-    y: var(--missile-offset-y-207);
-  }
+    #missile-diamond-207 {
+        width: var(--missile-size-207);
+        height: var(--missile-size-207);
+        fill: var(--missile-fill-207);
+        x: var(--missile-offset-x-207);
+        y: var(--missile-offset-y-207);
+    }
 
-  #missile-diamond-208 {
-    width: var(--missile-size-208);
-    height: var(--missile-size-208);
-    fill: var(--missile-fill-208);
-    x: var(--missile-offset-x-208);
-    y: var(--missile-offset-y-208);
-  }
+    #missile-diamond-208 {
+        width: var(--missile-size-208);
+        height: var(--missile-size-208);
+        fill: var(--missile-fill-208);
+        x: var(--missile-offset-x-208);
+        y: var(--missile-offset-y-208);
+    }
 
-  #missile-diamond-209 {
-    width: var(--missile-size-209);
-    height: var(--missile-size-209);
-    fill: var(--missile-fill-209);
-    x: var(--missile-offset-x-209);
-    y: var(--missile-offset-y-209);
-  }
+    #missile-diamond-209 {
+        width: var(--missile-size-209);
+        height: var(--missile-size-209);
+        fill: var(--missile-fill-209);
+        x: var(--missile-offset-x-209);
+        y: var(--missile-offset-y-209);
+    }
 
-  #missile-diamond-210 {
-    width: var(--missile-size-210);
-    height: var(--missile-size-210);
-    fill: var(--missile-fill-210);
-    x: var(--missile-offset-x-210);
-    y: var(--missile-offset-y-210);
-  }
+    #missile-diamond-210 {
+        width: var(--missile-size-210);
+        height: var(--missile-size-210);
+        fill: var(--missile-fill-210);
+        x: var(--missile-offset-x-210);
+        y: var(--missile-offset-y-210);
+    }
 
-  #missile-diamond-211 {
-    width: var(--missile-size-211);
-    height: var(--missile-size-211);
-    fill: var(--missile-fill-211);
-    x: var(--missile-offset-x-211);
-    y: var(--missile-offset-y-211);
-  }
+    #missile-diamond-211 {
+        width: var(--missile-size-211);
+        height: var(--missile-size-211);
+        fill: var(--missile-fill-211);
+        x: var(--missile-offset-x-211);
+        y: var(--missile-offset-y-211);
+    }
 
-  #missile-diamond-212 {
-    width: var(--missile-size-212);
-    height: var(--missile-size-212);
-    fill: var(--missile-fill-212);
-    x: var(--missile-offset-x-212);
-    y: var(--missile-offset-y-212);
-  }
+    #missile-diamond-212 {
+        width: var(--missile-size-212);
+        height: var(--missile-size-212);
+        fill: var(--missile-fill-212);
+        x: var(--missile-offset-x-212);
+        y: var(--missile-offset-y-212);
+    }
 
-  #missile-diamond-213 {
-    width: var(--missile-size-213);
-    height: var(--missile-size-213);
-    fill: var(--missile-fill-213);
-    x: var(--missile-offset-x-213);
-    y: var(--missile-offset-y-213);
-  }
+    #missile-diamond-213 {
+        width: var(--missile-size-213);
+        height: var(--missile-size-213);
+        fill: var(--missile-fill-213);
+        x: var(--missile-offset-x-213);
+        y: var(--missile-offset-y-213);
+    }
 
-  #missile-diamond-214 {
-    width: var(--missile-size-214);
-    height: var(--missile-size-214);
-    fill: var(--missile-fill-214);
-    x: var(--missile-offset-x-214);
-    y: var(--missile-offset-y-214);
-  }
+    #missile-diamond-214 {
+        width: var(--missile-size-214);
+        height: var(--missile-size-214);
+        fill: var(--missile-fill-214);
+        x: var(--missile-offset-x-214);
+        y: var(--missile-offset-y-214);
+    }
 
-  #missile-diamond-215 {
-    width: var(--missile-size-215);
-    height: var(--missile-size-215);
-    fill: var(--missile-fill-215);
-    x: var(--missile-offset-x-215);
-    y: var(--missile-offset-y-215);
-  }
+    #missile-diamond-215 {
+        width: var(--missile-size-215);
+        height: var(--missile-size-215);
+        fill: var(--missile-fill-215);
+        x: var(--missile-offset-x-215);
+        y: var(--missile-offset-y-215);
+    }
 
+    #missile-300 {
+        fill: var(--missile-fill-300);
+        r: var(--missile-size-300);
+    }
 
+    #missile-301 {
+        fill: var(--missile-fill-301);
+        r: var(--missile-size-301);
+    }
 
+    #missile-302 {
+        fill: var(--missile-fill-302);
+        r: var(--missile-size-302);
+    }
 
+    #missile-303 {
+        fill: var(--missile-fill-303);
+        r: var(--missile-size-303);
+    }
 
-  #missile-300 {
-    fill: var(--missile-fill-300);
-    r: var(--missile-size-300);
-  }
+    #missile-304 {
+        fill: var(--missile-fill-304);
+        r: var(--missile-size-304);
+    }
 
-  #missile-301 {
-    fill: var(--missile-fill-301);
-    r: var(--missile-size-301);
-  }
+    #missile-305 {
+        display: var(--missile-display-305);
+        fill: var(--missile-fill-305);
+    }
 
-  #missile-302 {
-    fill: var(--missile-fill-302);
-    r: var(--missile-size-302);
-  }
+    #missile-306 {
+        fill: var(--missile-fill-306);
+        r: var(--missile-size-306);
+    }
 
-  #missile-303 {
-    fill: var(--missile-fill-303);
-    r: var(--missile-size-303);
-  }
-
-  #missile-304 {
-    fill: var(--missile-fill-304);
-    r: var(--missile-size-304);
-  }
-
-  #missile-305 {
-    display: var(--missile-display-305);
-    fill: var(--missile-fill-305);
-  }
-
-  #missile-306 {
-    fill: var(--missile-fill-306);
-    r: var(--missile-size-306);
-  }
-
-  #missile-307 {
-    fill: var(--missile-fill-307);
-    r: var(--missile-size-307);
-  }
-
-
-
+    #missile-307 {
+        fill: var(--missile-fill-307);
+        r: var(--missile-size-307);
+    }
 }

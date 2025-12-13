@@ -13,7 +13,7 @@ function sceneRight(the_player, travel_speed, diagonal_weight) {
     }
     the_player.m_x = new_right_x;
     fieldRight(travel_speed, diagonal_weight);
-    moveSky(travel_speed, 'right');
+    moveSky(travel_speed, "right");
     return the_player;
 }
 
@@ -25,7 +25,7 @@ function sceneLeft(the_player, travel_speed, diagonal_weight) {
     }
     the_player.m_x = new_left_x;
     fieldLeft(travel_speed, diagonal_weight);
-    moveSky(travel_speed, 'left');
+    moveSky(travel_speed, "left");
     return the_player;
 }
 
@@ -37,7 +37,7 @@ function sceneForward(the_player, travel_speed) {
     }
     the_player.m_y = new_forward_y;
     fieldForwards(travel_speed);
-    moveSky(travel_speed, 'forward');
+    moveSky(travel_speed, "forward");
     return the_player;
 }
 
@@ -49,7 +49,7 @@ function sceneBackward(the_player, travel_speed) {
     }
     the_player.m_y = new_backward_y;
     fieldBackwards(travel_speed);
-    moveSky(travel_speed, 'backward');
+    moveSky(travel_speed, "backward");
     return the_player;
 }
 
@@ -130,7 +130,7 @@ function wheelScroll(the_event) {
 }
 
 function sceneStop() {
-    moveSky('stop');
+    moveSky("stop");
 }
 
 function randomDirection() {
@@ -150,7 +150,7 @@ function randomDirection() {
 
 function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list, hole_list) {
     timeFrames(the_planet, the_player);
-    if (typeof DBG_FREEZE_MISSILE === 'string') {
+    if (typeof DBG_FREEZE_MISSILE === "string") {
         return PART_PLAY_20_NORMAL;
     }
     hitCracks(the_player);
@@ -165,7 +165,7 @@ function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list,
     drawSigns(sign_list, the_player);
     let new_plyon_list = drawPylons(the_player, pylon_list);
     g_missile = missileAdvance(g_missile, the_player);
-    if (typeof DBG_FREEZE_MISSILE === 'string') {
+    if (typeof DBG_FREEZE_MISSILE === "string") {
         return PART_PLAY_20_NORMAL;
     }
     enemy_list = drawEnemies(enemy_list, the_player);
@@ -204,15 +204,15 @@ function fixFPS3(is_dying, the_player) {
 function hitCracks(the_player) {
     let number_cracks = the_player.m_num_cracks;
     if (number_cracks === 0 || the_player.m_is_dying) {
-        setCssVar('--cracked-glass-display', 'none');
+        setCssVar("--cracked-glass-display", "none");
     } else {
         if (number_cracks > MAX_CRACKS) {
             number_cracks = MAX_CRACKS;
         }
         const glass_opacity = 0.2;
         const cracked_image = `url('../images/cracks-${number_cracks}.png`;
-        setCssVar('--cracked-glass-display', 'block');
-        setCssVar('--cracked-glass-opacity', glass_opacity);
-        setCssVar('--cracked-glass-image', cracked_image);
+        setCssVar("--cracked-glass-display", "block");
+        setCssVar("--cracked-glass-opacity", glass_opacity);
+        setCssVar("--cracked-glass-image", cracked_image);
     }
 }

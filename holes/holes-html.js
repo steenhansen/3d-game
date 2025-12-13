@@ -214,34 +214,34 @@ document.getElementById("holes-area").innerHTML = `
   `;
 
 function hideHoles(the_holes, the_color) {
-  let changed_holes = [];
-  const number_holes = the_holes.length;
-  for (let hole_index = 0; hole_index < number_holes; hole_index++) {
-    let a_hole = the_holes[hole_index];
-    if (a_hole.s_hole_color === the_color) {
-      a_hole.m_hidden = true;
+    let changed_holes = [];
+    const number_holes = the_holes.length;
+    for (let hole_index = 0; hole_index < number_holes; hole_index++) {
+        let a_hole = the_holes[hole_index];
+        if (a_hole.s_hole_color === the_color) {
+            a_hole.m_hidden = true;
+        }
+        changed_holes[hole_index] = a_hole;
     }
-    changed_holes[hole_index] = a_hole;
-  }
-  return changed_holes;
+    return changed_holes;
 }
 
 function unHideHoles(the_holes) {
-  let changed_holes = [];
-  const number_holes = the_holes.length;
-  for (let hole_index = 0; hole_index < number_holes; hole_index++) {
-    let a_hole = the_holes[hole_index];
-    a_hole.m_hidden = false;
-    changed_holes[hole_index] = a_hole;
-  }
-  return changed_holes;
+    let changed_holes = [];
+    const number_holes = the_holes.length;
+    for (let hole_index = 0; hole_index < number_holes; hole_index++) {
+        let a_hole = the_holes[hole_index];
+        a_hole.m_hidden = false;
+        changed_holes[hole_index] = a_hole;
+    }
+    return changed_holes;
 }
 
 function drawHoles(the_holes, the_player) {
-  const number_pylons = the_holes.length;
-  for (let hole_index = 0; hole_index < number_pylons; hole_index++) {
-    const a_hole = the_holes[hole_index];
-    holeSet(a_hole, the_player);
-  }
-  return the_holes;
+    const number_pylons = the_holes.length;
+    for (let hole_index = 0; hole_index < number_pylons; hole_index++) {
+        const a_hole = the_holes[hole_index];
+        holeSet(a_hole, the_player);
+    }
+    return the_holes;
 }

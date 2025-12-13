@@ -1,5 +1,4 @@
-
-document.getElementById('touch-boxes').innerHTML = `
+document.getElementById("touch-boxes").innerHTML = `
   <div id="nw-1" class="input-box"></div>   <div id="nw-2" class="input-box"></div>
              <div id="n-1" class="input-box"></div> <div id="n-2" class="input-box"></div>
              <div id="n-3" class="input-box">

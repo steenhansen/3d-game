@@ -1,9 +1,4 @@
-
-
-let desk_directions_11 = document.getElementById('desktop-dir');
-
-
-
+let desk_directions_11 = document.getElementById("desktop-dir");
 
 desk_directions_11.innerHTML = `
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -527,6 +522,3 @@ desk_directions_11.innerHTML = `
 
    
 `;
-
-
-

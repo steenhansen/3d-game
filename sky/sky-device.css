@@ -1,17 +1,17 @@
 .sun-vars {
-  --ani-key-frame: var(--p-graphics-sun-animation);
+    --ani-key-frame: var(--p-graphics-sun-animation);
 }
 
 .sky-vars {
-  --sky-color: #0000ff;
+    --sky-color: #0000ff;
 }
 
 @keyframes sun-keyframes {
-  0% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
 
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }

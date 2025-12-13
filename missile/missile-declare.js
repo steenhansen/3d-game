@@ -17,16 +17,16 @@ const g_the_diamonds = [
     [65, 154]
 ];
 
-const html_missile = createMissileHtml('the-missile');
+const html_missile = createMissileHtml("the-missile");
 
-document.getElementById('missile-area').innerHTML = `
+document.getElementById("missile-area").innerHTML = `
 <div id="single-missile" >${html_missile}</div>`;
 
 let g_missile = {
-    s_isa: 'is-missile',
-    s_id: 'the-missile',
-    m_x: 'x-set-at-fire',
-    m_y: 'y-set-at-fire',
+    s_isa: "is-missile",
+    s_id: "the-missile",
+    m_x: "x-set-at-fire",
+    m_y: "y-set-at-fire",
     m_random: 0,
     m_phase: MISSILE_0_NO_SHOT,
     m_lifetime: 0,

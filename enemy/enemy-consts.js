@@ -1,25 +1,24 @@
-const BALL_START_A = '-2.0s';
-const BALL_START_B = '-1.9s';
-const BALL_START_C = '-1.8s';
-const BALL_START_D = '-1.7s';
-const BALL_START_E = '-1.6s';
-const BALL_START_F = '-1.5s';
-const BALL_START_G = '-1.4s';
-const BALL_START_H = '-1.3s';
-const BALL_START_I = '-1.2s';
-const BALL_START_J = '-1.1s';
-const BALL_START_K = '-1.0s';
-const BALL_START_L = '-0.9s';
-const BALL_START_M = '-0.8s';
-const BALL_START_N = '-0.7s';
-const BALL_START_O = '-0.6s';
-const BALL_START_P = '-0.5s';
-const BALL_START_Q = '-0.4s';
-const BALL_START_R = '-0.3s';
-const BALL_START_S = '-0.2s';
-const BALL_START_T = '-0.1s';
-const BALL_START_U = '-0.0s';
-
+const BALL_START_A = "-2.0s";
+const BALL_START_B = "-1.9s";
+const BALL_START_C = "-1.8s";
+const BALL_START_D = "-1.7s";
+const BALL_START_E = "-1.6s";
+const BALL_START_F = "-1.5s";
+const BALL_START_G = "-1.4s";
+const BALL_START_H = "-1.3s";
+const BALL_START_I = "-1.2s";
+const BALL_START_J = "-1.1s";
+const BALL_START_K = "-1.0s";
+const BALL_START_L = "-0.9s";
+const BALL_START_M = "-0.8s";
+const BALL_START_N = "-0.7s";
+const BALL_START_O = "-0.6s";
+const BALL_START_P = "-0.5s";
+const BALL_START_Q = "-0.4s";
+const BALL_START_R = "-0.3s";
+const BALL_START_S = "-0.2s";
+const BALL_START_T = "-0.1s";
+const BALL_START_U = "-0.0s";
 
 const VELOCITY_0 = 0;
 const VELOCITY_1 = 1;
@@ -32,9 +31,4 @@ const VELOCITY_7 = 7;
 const VELOCITY_8 = 8;
 const VELOCITY_9 = 9;
 
-const HIDE_ENEMY_X = -1024;    // -512 AND 512 are 1/2 visible at edges
-
-
-
-
-
+const HIDE_ENEMY_X = -1024; // -512 AND 512 are 1/2 visible at edges

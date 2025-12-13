@@ -80,7 +80,7 @@ function initPlanet(pixel_field_size, pixel_bounds, start_move_dir, start_drift_
     g_collison_sizes = [field_width, TILE_WIDTH, field_depth, ROOM_DEPTH];
 
     let the_planet = {
-        s_isa: 'is-planet',
+        s_isa: "is-planet",
         s_checkerboard_width: field_width,
         s_checkerboard_depth: field_depth,
         s_playground_x_min: left_x,

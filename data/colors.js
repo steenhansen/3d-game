@@ -1,6 +1,3 @@
-
-
-
 const WHITE_BLACK = ["white", "black"];
 const BLACK_WHITE = ["black", "white"];
 
@@ -13,12 +10,10 @@ const FUCHSIA_LIME = ["Fuchsia", "Lime"];
 const RED_YELLOW = ["Red", "Yellow"];
 const YELLOW_RED = ["Yellow", "Red"];
 
-const YELLOW_LIME = ['yellow', 'lime'];
+const YELLOW_LIME = ["yellow", "lime"];
 const RED_CYAN = ["Red", "Cyan"];
 const BLUE_YELLOW = ["Blue", "Yellow"];
 const YELLOW_BLUE = ["Yellow", "Blue"];
-
-
 
 const PURPLE_GREEN = ["Purple", "Green"];
 const RED_____CYAN = ["Red", "Cyan"];
@@ -39,12 +34,10 @@ const ORANGE_GREY_2 = ["#dd8800", "#dddddd"];
 const ORANGE_GREY_3 = ["#aa6600", "#bbbbbb"];
 const ORANGE_GREY_4 = ["#994400", "#999999"];
 
-
 const LIME_MAGENTA_1 = ["#00ff00", "#ff00ff"];
 const LIME_MAGENTA_2 = ["#00dd00", "#dd00dd"];
 const LIME_MAGENTA_3 = ["#00bb00", "#bb00bb"];
 const LIME_MAGENTA_4 = ["#009900", "#990099"];
-
 
 const YELLOW_CYAN_1 = ["#ffff00", "#00ffff"];
 const YELLOW_CYAN_2 = ["#dddd00", "#00dddd"];

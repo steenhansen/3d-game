@@ -8,65 +8,61 @@
 <script type="text/javascript" src="variables/css-vars.js"></script>
 
 <style>
-  .begin-vars {
-    --desktop-begin: inline;
-    --mobile-begin: none;
-  }
-
-  @media (max-width: 1023px) {
     .begin-vars {
-      --desktop-begin: none;
-      --mobile-begin: inline;
+        --desktop-begin: inline;
+        --mobile-begin: none;
     }
-  }
 
-  #begin-desktop {
-    padding: 20px;
-    font-size: xxx-large;
-    display: var(--desktop-begin);
-  }
+    @media (max-width: 1023px) {
+        .begin-vars {
+            --desktop-begin: none;
+            --mobile-begin: inline;
+        }
+    }
 
-  #begin-mobile {
-    padding: 20px;
-    font-size: xxx-large;
-    display: var(--mobile-begin);
-  }
+    #begin-desktop {
+        padding: 20px;
+        font-size: xxx-large;
+        display: var(--desktop-begin);
+    }
 
-  html {
-    min-height: 100%;
-    background-image: url("video/git-size.webp");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+    #begin-mobile {
+        padding: 20px;
+        font-size: xxx-large;
+        display: var(--mobile-begin);
+    }
 
-  .center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 91vh;
-  }
+    html {
+        min-height: 100%;
+        background-image: url("video/git-size.webp");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .center-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 91vh;
+    }
 </style>
 
 <script>
-  //  index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
-  function beginGame() {
-    let params_string = getParams(window.location);
-    area_1_addr = "area-1-jump/index.html" + params_string;
-    window.location.href = area_1_addr;
-  }
+    //  index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
+    function beginGame() {
+        let params_string = getParams(window.location);
+        area_1_addr = "area-1-jump/index.html" + params_string;
+        window.location.href = area_1_addr;
+    }
 </script>
 
 <div class="center-screen">
-  <div class="begin-vars">
-    <br />
-    <button id="begin-desktop" onclick="beginGame()" type="button">
-      Begin Desktop 3D Game
-    </button>
-    <button id="begin-mobile" onclick="beginGame()" type="button">
-      Begin Mobile 3D Game
-    </button>
-  </div>
+    <div class="begin-vars">
+        <br />
+        <button id="begin-desktop" onclick="beginGame()" type="button">Begin Desktop 3D Game</button>
+        <button id="begin-mobile" onclick="beginGame()" type="button">Begin Mobile 3D Game</button>
+    </div>
 </div>

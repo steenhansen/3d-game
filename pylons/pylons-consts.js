@@ -1,5 +1,1 @@
 const FARTHEST_VISIBLE_PYLON_Y = 728;
-
-
-
-

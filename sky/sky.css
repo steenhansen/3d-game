@@ -1,74 +1,74 @@
 #the-pyramids {
-  visibility: var(--p-graphics-pyramids);
-  z-index: var(--z-the-pyramids);
-  background-image: var(--pyramids-image);
-  width: 1024px;
-  height: 18px;
-  position: absolute;
-  bottom: 0;
-  opacity: 0.8;
+    visibility: var(--p-graphics-pyramids);
+    z-index: var(--z-the-pyramids);
+    background-image: var(--pyramids-image);
+    width: 1024px;
+    height: 18px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.8;
 }
 
 #fuzzy-saturn {
-  visibility: var(--p-graphics-saturn);
-  z-index: var(--z-the-saturn);
-  background-image: var(--saturn-image);
-  width: 1024px;
-  height: 44px;
-  position: absolute;
-  bottom: 64px;
-  opacity: 0.3;
+    visibility: var(--p-graphics-saturn);
+    z-index: var(--z-the-saturn);
+    background-image: var(--saturn-image);
+    width: 1024px;
+    height: 44px;
+    position: absolute;
+    bottom: 64px;
+    opacity: 0.3;
 }
 
 #cracked-screen {
-  display: var(--cracked-glass-display);
-  z-index: var(--z-cracked-screen);
-  margin-left: var(--margin-left_px);
-  top: 0px;
-  background-image: var(--cracked-glass-image);
-  width: 1024px;
-  height: 512px;
+    display: var(--cracked-glass-display);
+    z-index: var(--z-cracked-screen);
+    margin-left: var(--margin-left_px);
+    top: 0px;
+    background-image: var(--cracked-glass-image);
+    width: 1024px;
+    height: 512px;
 
-  position: absolute;
-  opacity: var(--cracked-glass-opacity);
+    position: absolute;
+    opacity: var(--cracked-glass-opacity);
 }
 
 #the-sun {
-  visibility: var(--p-graphics-sun-visible);
-  z-index: var(--z-the-sun);
+    visibility: var(--p-graphics-sun-visible);
+    z-index: var(--z-the-sun);
 
-  margin-left: var(--margin-left_px);
-  top: 0px;
-  background-image: var(--sun-image);
-  width: 1024px;
-  height: 512px;
+    margin-left: var(--margin-left_px);
+    top: 0px;
+    background-image: var(--sun-image);
+    width: 1024px;
+    height: 512px;
 
-  position: absolute;
-  opacity: 0.4;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 16s;
-  animation-name: var(--ani-key-frame);
+    position: absolute;
+    opacity: 0.4;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-name: var(--ani-key-frame);
 }
 
 #the-sky {
-  display: nXone;
-  position: relative;
-  margin-top: -1000px;
-  margin-left: -555px;
-  width: 2048px;
-  height: 2400px;
-  background-size: 256px 256px;
-  background-image: var(--p-graphics-sky-image);
-  transform: var(--p-graphics-sky-skew);
+    display: nXone;
+    position: relative;
+    margin-top: -1000px;
+    margin-left: -555px;
+    width: 2048px;
+    height: 2400px;
+    background-size: 256px 256px;
+    background-image: var(--p-graphics-sky-image);
+    transform: var(--p-graphics-sky-skew);
 }
 
 #sky-aperature {
-  z-index: var(--z-sky-aperature);
-  width: 1024px;
-  height: 256px;
-  background-color: var(--sky-color);
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: relative;
+    z-index: var(--z-sky-aperature);
+    width: 1024px;
+    height: 256px;
+    background-color: var(--sky-color);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
 }
