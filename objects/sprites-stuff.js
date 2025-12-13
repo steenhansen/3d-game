@@ -12,7 +12,7 @@ function spriteCenterXy(a_polygon) {
     let [left_front_top, right_front_top, _left_front_bot, _right_front_bot] = a_polygon;
     let [top_left_x, _top_left_y] = left_front_top;
     let [top_right_x, _top_right_y] = right_front_top;
-    let float_center_x = (top_left_x + top_right_x) / 2 - 512;
+    let float_center_x = (top_left_x + top_right_x) / 2 - HALF_VIEW_WIDTH;
     let center_x = Math.round(float_center_x);
     let center_y = SPRITE_CENTER_Y;
     let the_width = Math.abs(top_left_x - top_right_x);

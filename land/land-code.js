@@ -32,7 +32,7 @@ function animateJumpDown(the_player) {
 
 function doFlying(lift_amount_x) {
     const sky_aperature = document.getElementById("sky-aperature");
-    const sky_height = 256 + lift_amount_x;
+    const sky_height = SKY_START_BOUNCE + lift_amount_x;
     sky_aperature.style.height = `${sky_height}px`;
 
     const the_sky = document.getElementById("the-sky");
@@ -105,7 +105,7 @@ function flashScrollingArrow(arrow_id) {
     let b = Math.floor(Math.random() * 255);
     const an_arrow = document.getElementById(arrow_id);
     let rgb = `rgb(${r}, ${g}, ${b})`;
-    let flash_grey = `fill: ${rgb}; opacity:100%`;
+    let flash_grey = `fill: ${rgb}; opacity:${ARROWS_OPACITY_NORMAL}`;
     an_arrow.style = flash_grey;
 }
 
@@ -206,8 +206,9 @@ function resetSections() {
     initElevator();
 }
 
+const LANDING_SPEED = 4;
 function animateLanding() {
-    f_landing_count += 4;
+    f_landing_count += LANDING_SPEED;
     if (f_landing_count >= NUMBER_LINES) {
         expandCheckerboard(f_landing_count - 1);
         return PART_INTRO_11_AFTER_LANDING;

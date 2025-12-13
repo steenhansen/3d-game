@@ -1,3 +1,27 @@
+const MS_OUTSIDE_START_INDEX = 100;
+const MS_OUTSIDE_END_INDEX = 131;
+const MS_OUTSIDE_NUM_BALLS = 32;
+const MS_OUTSIDE_FROM_COLOR = [128, 0, 0];
+const MS_OUTSIDE_TO_COLOR = [255 - 128, 0, 0];
+const MS_OUTSIDE_SMALL = 8;
+const MS_OUTSIDE_LARGE = 15;
+
+const MS_DIAMONDS_START_INDEX = 200;
+const MS_DIAMONDS_END_INDEX = 215;
+const MS_DIAMONDS_NUM_MIDDLE = 16;
+const MS_DIAMONDS_FROM_COLOR = [32, 32, 32];
+const MS_DIAMONDS_TO_COLOR = [100, 223, 100];
+const MS_DIAMONDS_SMALL = 11;
+const MS_DIAMONDS_LARGE = 33;
+
+const MS_INSIDE_START_INDEX = 300;
+const MS_INSIDE_END_INDEX = 307;
+const MS_INSIDE_NUM_BALLS = 8;
+const MS_INSIDE_FROM_COLOR = [128, 128, 0];
+const MS_INSIDE_TO_COLOR = [255 - 128, 255 - 128, 0];
+const MS_INSIDE_SMALL = 15;
+const MS_INSIDE_LARGE = 20;
+
 function the_lines(show_lines) {
     let all_lines;
     if (show_lines) {

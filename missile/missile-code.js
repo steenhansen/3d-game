@@ -1,28 +1,20 @@
-const OUTSIDE_ID_START = 100;
-const MIDDLE_ID_START = 200;
-const CENTER_ID_START = 300;
-
-const NUM_OUTSIDE_BALLS = 32;
-const NUM_MIDDLE_BALLS = 16;
-const NUM_CENTER_BALLS = 8;
-
 function missileAdvance(the_missile, the_player) {
     if (the_missile.m_phase === MISSILE_2_HITTING_PYLON) {
         const hit_pylon = the_missile.m_hit_pylon;
         the_missile.m_lifetime = MISSILE_LIFETIME;
         if (hit_pylon.m_x > the_missile.m_x) {
-            the_missile.m_x_dir = -1;
-            the_missile.m_y_dir = 0;
+            the_missile.m_x_dir = LEFT_MISSILE_X;
+            the_missile.m_y_dir = SIDEWAYS_MISSILE_Y;
         } else {
-            the_missile.m_x_dir = 1;
-            the_missile.m_y_dir = 0;
+            the_missile.m_x_dir = RIGHT_MISSILE_X;
+            the_missile.m_y_dir = SIDEWAYS_MISSILE_Y;
         }
     } else if (the_missile.m_phase === MISSILE_4_SECOND_PYLON_HIT) {
         the_missile.m_lifetime = 0;
         the_missile.m_phase = 0;
     }
     the_missile.m_random++;
-    if (the_missile.m_random === 360) {
+    if (the_missile.m_random === RANDOM_MISSILE_BUFFER_SIZE) {
         the_missile.m_random = 0;
     }
     missileSet(the_missile, the_player);
@@ -51,8 +43,8 @@ function initMissileData(the_missile, the_player) {
     let { m_x, m_y } = the_player;
     the_missile.m_x = m_x;
     the_missile.m_y = m_y;
-    the_missile.m_x_dir = 0;
-    the_missile.m_y_dir = -1;
+    the_missile.m_x_dir = NORMAL_MISSILE_X;
+    the_missile.m_y_dir = NORMAL_MISSILE_Y_DIR;
     the_missile.m_lifetime = MISSILE_LIFETIME;
     getRandoms(the_missile);
     return the_missile;
@@ -66,8 +58,8 @@ function missileSet(the_missile, the_player) {
         }
         missileDraw(the_missile, the_player);
     } else {
-        the_missile.m_x_dir = 0;
-        the_missile.m_y_dir = -1;
+        the_missile.m_x_dir = NORMAL_MISSILE_X;
+        the_missile.m_y_dir = NORMAL_MISSILE_Y_DIR;
         setFillNone();
     }
 }
@@ -144,10 +136,10 @@ function shuffleArray(array) {
 
 function outsideOfShot() {
     let outside_arr = [];
-    for (let j = 0; j < NUM_OUTSIDE_BALLS; j++) {
-        const outside_missile_id = OUTSIDE_ID_START + j;
-        let outside_ball_size = randomPxSizedMissile(10, 15);
-        const m_color = randomMissileColor([128, 0, 0], [255 - 128, 0, 0]);
+    for (let j = 0; j < MS_OUTSIDE_NUM_BALLS; j++) {
+        const outside_missile_id = MS_OUTSIDE_START_INDEX + j;
+        let outside_ball_size = randomPxSizedMissile(MS_OUTSIDE_SMALL, MS_OUTSIDE_LARGE);
+        const m_color = randomMissileColor(MS_OUTSIDE_FROM_COLOR, MS_OUTSIDE_TO_COLOR);
         if (outside_ball_size !== "" || m_color !== "") {
             const diamond_arr = [outside_missile_id, outside_ball_size, m_color];
             outside_arr.push(diamond_arr);
@@ -158,15 +150,15 @@ function outsideOfShot() {
 
 function middleDiamondShot() {
     let diamond_arr = [];
-    for (let j = 0; j < NUM_MIDDLE_BALLS; j++) {
-        const outside_missile_id = MIDDLE_ID_START + j;
-        let middle_diamond_size = randomMissileSize(11, 33);
+    for (let j = 0; j < MS_DIAMONDS_NUM_MIDDLE; j++) {
+        const outside_missile_id = MS_DIAMONDS_START_INDEX + j;
+        let middle_diamond_size = randomMissileSize(MS_DIAMONDS_SMALL, MS_DIAMONDS_LARGE);
         let square_to_diamond = "";
         if (middle_diamond_size !== "") {
             square_to_diamond = Math.floor(middle_diamond_size / 2);
             middle_diamond_size += "px";
         }
-        let m_color = randomMissileColor([32, 32, 32], [100, 223, 100]);
+        let m_color = randomMissileColor(MS_DIAMONDS_FROM_COLOR, MS_DIAMONDS_TO_COLOR);
         if (middle_diamond_size !== "" || m_color !== "") {
             const a_diamond = g_the_diamonds[j];
             const x_diamond_offest = a_diamond[0] - square_to_diamond;
@@ -182,10 +174,10 @@ function middleDiamondShot() {
 
 function innermostOfShot() {
     let innermost_arr = [];
-    for (let j = 0; j < NUM_CENTER_BALLS; j++) {
-        const outside_missile_id = CENTER_ID_START + j;
-        let innermost_ball_size = randomPxSizedMissile(15, 15);
-        const m_color = randomMissileColor([128, 128, 0], [255 - 128, 255 - 128, 0]);
+    for (let j = 0; j < MS_INSIDE_NUM_BALLS; j++) {
+        const outside_missile_id = MS_INSIDE_START_INDEX + j;
+        let innermost_ball_size = randomPxSizedMissile(MS_INSIDE_SMALL, MS_INSIDE_LARGE);
+        const m_color = randomMissileColor(MS_INSIDE_FROM_COLOR, MS_INSIDE_TO_COLOR);
         if (innermost_ball_size !== "" || m_color !== "") {
             const t_arr = [outside_missile_id, innermost_ball_size, m_color];
             innermost_arr.push(t_arr);
@@ -196,7 +188,7 @@ function innermostOfShot() {
 
 function makeDiamondsBalls() {
     let out_arr = [];
-    for (let i = 0; i < 360; i++) {
+    for (let i = 0; i < RANDOM_MISSILE_BUFFER_SIZE; i++) {
         let outside_arr = outsideOfShot();
         let diamond_arr = middleDiamondShot();
         let innermost_arr = innermostOfShot();
@@ -214,13 +206,13 @@ function hideMissileBalls(missile_id) {
 }
 
 function setFillNone() {
-    for (let i = 100; i < 132; i++) {
+    for (let i = MS_OUTSIDE_START_INDEX; i <= MS_OUTSIDE_END_INDEX; i++) {
         hideMissileBalls(i);
     }
-    for (let i = 200; i < 216; i++) {
+    for (let i = MS_DIAMONDS_START_INDEX; i <= MS_DIAMONDS_END_INDEX; i++) {
         hideMissileBalls(i);
     }
-    for (let i = 300; i < 308; i++) {
+    for (let i = MS_INSIDE_START_INDEX; i <= MS_INSIDE_END_INDEX; i++) {
         hideMissileBalls(i);
     }
 }
@@ -230,8 +222,8 @@ function missilePosition(real_id, z_index, the_stats) {
     let missile_div = document.getElementById(real_id + "-div");
     missile_div.style.zIndex = z_index;
     let missile_x_y = document.getElementById(real_id + "-x-y");
-    const middle_x = center_x + 256 + 128;
-    const middle_y = center_y + 256 + 64;
+    const middle_x = center_x + CENTER_MISSILE_X;
+    const middle_y = center_y + CENTER_MISSILE_Y;
     missile_x_y.setAttribute("x", middle_x);
     missile_x_y.setAttribute("y", middle_y);
     let missile_scaled = document.getElementById(real_id + "-scaled");

@@ -83,9 +83,9 @@ function enemyMove(the_enemy) {
     const y_dir = s_moves_y[m_move_count];
     const y_adjusted_dir = y_dir * m_bounced_y_dir;
     if (x_adjusted_dir < 0) {
-        the_enemy.m_x = leftOnBoard(m_x, 11 * s_speed);
+        the_enemy.m_x = leftOnBoard(m_x, ENEMY_MOVE_BOOST * s_speed);
     } else if (x_adjusted_dir > 0) {
-        the_enemy.m_x = rightOnBoard(m_x, 11 * s_speed);
+        the_enemy.m_x = rightOnBoard(m_x, ENEMY_MOVE_BOOST * s_speed);
     } else {
         //
     }
@@ -147,7 +147,7 @@ function enemyDraw(real_id, the_enemy, the_player) {
             the_enemy.m_enemy_state = ENEMY_0_HUNTING;
         }
     } else if (enemy_state === ENEMY_2_HIT) {
-        setCssEnemyOpacity(the_enemy.s_enemy_number, 0.3333);
+        setCssEnemyOpacity(the_enemy.s_enemy_number, SHOT_ENEMY_OPACITY);
         enemyPlace(real_id, the_enemy, the_player);
         the_enemy.m_enemy_hit_flash--;
         if (the_enemy.m_enemy_hit_flash === 0) {

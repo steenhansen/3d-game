@@ -13,6 +13,17 @@ export default defineConfig([
         files: ["**/*.js"],
         languageOptions: { sourceType: "script" },
         rules: {
+            "no-magic-numbers": [
+                "error",
+                {
+                    detectObjects: true,
+                    enforceConst: true,
+                    ignore: [0, 1, 4, 100, 200, 300, 400],
+                    ignoreArrayIndexes: true,
+                    ignoreDefaultValues: true,
+                    ignoreClassFieldInitialValues: true
+                }
+            ],
             eqeqeq: "error",
             "no-unused-vars": [
                 "error",

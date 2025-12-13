@@ -53,7 +53,7 @@
 <script>
     //  index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
     function beginGame() {
-        let params_string = getParams(window.location);
+        const params_string = getParams(window.location);
         area_1_addr = "area-1-jump/index.html" + params_string;
         window.location.href = area_1_addr;
     }

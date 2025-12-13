@@ -17,6 +17,14 @@ const g_the_diamonds = [
     [65, 154]
 ];
 
+const NORMAL_MISSILE_Y_DIR = -1;
+const LEFT_MISSILE_X = -1;
+const RIGHT_MISSILE_X = 1;
+const SIDEWAYS_MISSILE_Y = 0;
+const NORMAL_MISSILE_X = 0;
+
+const RANDOM_MISSILE_BUFFER_SIZE = 360;
+
 const html_missile = createMissileHtml("the-missile");
 
 document.getElementById("missile-area").innerHTML = `
@@ -31,5 +39,5 @@ let g_missile = {
     m_phase: MISSILE_0_NO_SHOT,
     m_lifetime: 0,
     m_x_dir: 0,
-    m_y_dir: -1 // ALWAYS starts THIS way, but might change left or right on a collision
+    m_y_dir: NORMAL_MISSILE_Y_DIR // ALWAYS starts THIS way, but might change left or right on a collision
 };

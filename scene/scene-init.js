@@ -16,9 +16,9 @@ function screenSizeIntoCss(_event) {
     setCssVar("--scene-width", screen_width_px);
     setCssVar("--scene-height", screen_height_px);
 
-    if (screen_width < 1024) {
+    if (screen_width < MOBILE_SMALLER) {
         setCssVar("--device-screen", "is-mobile");
-        const mobile_margin = (1024 - screen_width) / 2;
+        const mobile_margin = (MOBILE_SMALLER - screen_width) / 2;
         const mobile_margin_px = `-${mobile_margin}px`;
         setCssVar("--margin-left_px", mobile_margin_px);
         setCssVar("--scene-margin", `0 0 0 ${mobile_margin_px}`);

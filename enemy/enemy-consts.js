@@ -32,3 +32,7 @@ const VELOCITY_8 = 8;
 const VELOCITY_9 = 9;
 
 const HIDE_ENEMY_X = -1024; // -512 AND 512 are 1/2 visible at edges
+
+const SHOT_ENEMY_OPACITY = 0.3333;
+
+const ENEMY_MOVE_BOOST = 11;

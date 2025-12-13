@@ -11,9 +11,9 @@ function flashArrow(direction_name) {
         const arrow_error = `bad::arrow ${direction_name}`;
         throw new Error(arrow_error);
     }
-    the_arrow_style.opacity = "25%";
+    the_arrow_style.opacity = "100%";
     setTimeout(() => {
-        the_arrow_style.opacity = "100%";
+        the_arrow_style.opacity = ARROWS_OPACITY_NORMAL;
     }, ARROW_FLASH_TIME);
 }
 

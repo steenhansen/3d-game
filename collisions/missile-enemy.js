@@ -12,7 +12,7 @@ function missileHitEnemies(the_missile, the_enemies) {
                 if (the_missile.m_lifetime > 0) {
                     an_enemy = killEnemy(an_enemy);
                     an_enemy.m_enemy_state = ENEMY_2_HIT;
-                    an_enemy.m_enemy_hit_flash = 10;
+                    an_enemy.m_enemy_hit_flash = MISSILE_HIT_EMEMY_FLASH;
                 }
             }
         }
@@ -54,7 +54,7 @@ function missileHitPylons(the_missile, the_pylons) {
                 if (has_collided) {
                     missile_hit_pylon = true;
                     hit_pylon = a_pylon;
-                    a_pylon.m_pylon_hit_flash = 13;
+                    a_pylon.m_pylon_hit_flash = MISSILE_HIT_PYLON_FLASH;
                 }
             }
         }
@@ -155,7 +155,7 @@ function enemiesHitPylons(the_enemies, the_pylons) {
             let a_pylon = the_pylons[pylon_index];
             const has_collided = hasCollided(an_enemy, a_pylon);
             if (has_collided) {
-                a_pylon.m_pylon_hit_flash = HIT_FLASH_PYLON;
+                a_pylon.m_pylon_hit_flash = ENEMY_HIT_PYLON_FLASH;
                 an_enemy.m_enemy_state = ENEMY_1_BOUNCE;
                 an_enemy.m_enemy_hit_flash = L_HIT_FLASH_ENEMY;
                 an_enemy.m_bounced_x_dir *= LEFT_RIGHT_BOUNCE_X_INVERSION; //flip x directions if hit pylon

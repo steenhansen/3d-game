@@ -2,7 +2,7 @@
     --arrow-margin: 16px;
     width: 24px;
     height: 24px;
-    opacity: 0.4;
+    opacity: 0.9995;
     position: relative;
     z-index: var(--z-an-arrow);
 }
