@@ -37,7 +37,7 @@
     Swipe Left to Restart
 
     Tap to Shoot
-    Press to Stop
+    Tap to Stop
 
 <img src="./markdown/git-mobile-touch.svg" width="200">
 
@@ -55,7 +55,7 @@
 
 ## Area 2
 
-    Playfield has no bounds front and back. Must carom shot off of pylon.
+    Playfield has no bounds, is infinite. Must carom shot off of pylon.
 
 <img src="./markdown/area-2.png" width="400">
 
@@ -89,8 +89,8 @@
 
 <br>
 
-## Desktop Firefox
+## Firefox
 
-Cannot have multiple windows open with game, even one game is taxing.
+Updates the horizontal lines on the checkerboard playfield slowly.
 
-Other browsers are fine with four visible games, albeit with high 50% cpu usage.
+One Firefox browser is taxing while other browsers are fine with four distinct visible games, albeit with high 50% cpu usage.
