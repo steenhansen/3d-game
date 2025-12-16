@@ -93,4 +93,4 @@
 
 Updates the horizontal lines on the checkerboard playfield slowly.
 
-One Firefox browser is taxing while other browsers are fine with four distinct visible games, albeit with high 50% cpu usage.
+Two visible Firefox games cause issues while other browsers are fine with four distinct visible games.

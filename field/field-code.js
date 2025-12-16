@@ -33,7 +33,7 @@ function pushDeathNudges() {
     }
 }
 
-// caching line elements, and/or css variables didn't help Firefox speed up
+// caching line elements, and/or using css variables didn't help Firefox speed up
 function affixLeftRight(is_dying) {
     const y_counter = Math.floor(g_y_flip_count);
     const invert_lines = Y_INVERT_LILNES[y_counter];
@@ -47,9 +47,12 @@ function affixLeftRight(is_dying) {
             let [_index, _start, _stop, invert_flip] = START_STOP_FLIP[affix_line];
             affix_shift -= invert_flip;
         }
-        const line_name = `line${affix_line}`;
-        const line_element = document.getElementById(line_name);
-        line_element.style = `background-position-x: ${affix_shift}px `;
+        const trunc_affix_shift = Math.trunc(affix_shift);
+        if (trunc_affix_shift !== g_prev_trunc_line_shifts[affix_line]) {
+            let line_element = g_line_elem_cache[affix_line];
+            line_element.style.backgroundPositionX = `${trunc_affix_shift}px`;
+            g_prev_trunc_line_shifts[affix_line] = trunc_affix_shift;
+        }
     }
 }
 
@@ -80,6 +83,12 @@ function initIncrementers() {
 }
 
 function initLeftRight() {
+    for (let affix_line = 0; affix_line < NUMBER_LINES; affix_line++) {
+        const line_name = `line${affix_line}`;
+        const line_element = document.getElementById(line_name);
+        g_line_elem_cache[affix_line] = line_element;
+    }
+
     initIncrementers();
 
     incrementForward();
