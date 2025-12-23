@@ -1,5 +1,8 @@
 <a name="s"></a>
 
+opera crashes on speech input.
+Brave hangs
+
 ## This is a 3D vanilla JavaScript game.
 
 <img src="./video/right-sweep.webp" width="800">

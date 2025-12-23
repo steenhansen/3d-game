@@ -1,4 +1,5 @@
 document.getElementById("arrows-html").innerHTML = `
+
    <svg id="arrow-nw" class="an-arrow" >
       <use href="#the-arrow" />
     </svg>
@@ -6,8 +7,6 @@ document.getElementById("arrows-html").innerHTML = `
     <svg id="arrow-n" class="an-arrow">
       <use href="#the-arrow" />
     </svg>
-
-    <div id='fps-value'>  </div>
 
     <svg id="arrow-ne" class="an-arrow">
       <use href="#the-arrow" />

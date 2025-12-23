@@ -4,6 +4,24 @@
     left: 52%;
     opacity: 1;
     color: white;
+    top: 30px;
+}
+
+#speech-box {
+    z-index: var(--z-fps-value);
+    margin: 0 auto;
+}
+
+#speech-value {
+    margin-left: 4px;
+    width: 64px;
+    float: right;
+}
+
+#speech-microphone {
+    display: none;
+    margin-top: 4px;
+    height: 16px;
 }
 
 #touch-boxes {

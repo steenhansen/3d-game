@@ -36,6 +36,12 @@ const P_DISPLAY_FPS = "display-fps";
 const P_SHOW = "show";
 const P_HIDE = "hide";
 
+// index.html?speak-input=talk
+const P_SPEAK_INPUT = "speak-input";
+const P_TALK = "talk";
+const P_SILENT = "silent";
+const P_GARBLED = "garbled";
+
 const PART_INIT_00_DESKTOP = "PART_INIT_00_DESKTOP";
 const PART_INIT_01_MOBILE = "PART_INIT_01_MOBILE";
 const PART_INIT_02_AFTER_BEGIN = "PART_INIT_02_AFTER_BEGIN";

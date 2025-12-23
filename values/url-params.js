@@ -21,7 +21,7 @@ function scrollQualityParam() {
         }
     }
 }
-//      ?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
+//      ?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show&speak-input=talk
 
 // ?graphics-style=simple
 function graphicsStyleParam() {
@@ -54,11 +54,25 @@ function displayFpsParam() {
     }
 }
 
+// ?speak-input=talk
+function speakInputParam() {
+    if (g_p_speak_input === P_UNKNOWN) {
+        const location_url = new URL(window.location);
+        const talk_input = location_url.searchParams.get(P_SPEAK_INPUT);
+        if (talk_input === P_TALK) {
+            g_p_speak_input = P_TALK;
+        } else {
+            g_p_speak_input = P_SILENT;
+        }
+    }
+}
+
 function urlParams() {
     environmentTypeParam();
     scrollQualityParam();
     graphicsStyleParam();
     displayFpsParam();
+    speakInputParam();
 }
 
 //   index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
@@ -71,6 +85,7 @@ function getParams(window_location) {
     const scroll_quality = location_url.searchParams.get(P_SCROLL_QUALITY); // course/fime
     const graphics_style = location_url.searchParams.get(P_GRAPHICS_STYLE); // simple/complex
     const display_fps = location_url.searchParams.get(P_DISPLAY_FPS); // show/hide
+    const speak_input = location_url.searchParams.get(P_SPEAK_INPUT); // talk/silent
 
     let the_params = [];
     if (env_type === P_DEBUG) {
@@ -87,6 +102,10 @@ function getParams(window_location) {
 
     if (display_fps === P_SHOW) {
         the_params.push(`${P_DISPLAY_FPS}=${P_SHOW}`);
+    }
+
+    if (speak_input === P_TALK) {
+        the_params.push(`${P_SPEAK_INPUT}=${P_TALK}`);
     }
 
     let params_string = "";

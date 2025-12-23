@@ -1,0 +1,16 @@
+#speech-download {
+    /* margin: 0 auto; */
+}
+
+#speech-allow {
+    display: none;
+    /* z-index: var(--z-speech);
+    position: relative; */
+}
+
+#speech-buttons {
+    display: none;
+    position: absolute;
+    margin: 36px;
+    z-index: var(--z-speech);
+}

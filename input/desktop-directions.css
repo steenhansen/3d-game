@@ -21,6 +21,7 @@
 }
 
 #desktop-dir {
+    visibility: hidden;
     overflow: clip;
     margin: 0 auto;
     width: 304px;

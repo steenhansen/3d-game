@@ -4,9 +4,13 @@ const PARAMS_STR = getParams(window.location);
 const THIS_PLANET = "area-1-jump/index.html" + PARAMS_STR;
 const NEXT_PLANET = "area-2-carom/index.html" + PARAMS_STR;
 
-const FIELD_IN_SQUARES = [34, 32];
-const PLAYER_START = [7, 30];
-const PLAYER_BOUNDS = [0, 18, 34, 31];
+// const FIELD_IN_SQUARES = [34, 32];
+// const PLAYER_START = [7, 30];
+// const PLAYER_BOUNDS = [0, 18, 34, 31];
+
+const FIELD_IN_SQUARES = [34, 42];
+const PLAYER_START = [7, 40];
+const PLAYER_BOUNDS = [0, 18, 34, 41];
 
 const DITCH_LINE = 23;
 const DITCH_COLOR = "black";

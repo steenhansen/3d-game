@@ -1,0 +1,268 @@
+//  https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+
+//   index.html?speak-input=talk
+
+//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show&speak-input=talk
+
+//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?speak-input=talk
+
+const SPEAK_LEFT = "left";
+const SPEAK_LEFT_CAP = "Left";
+
+const SPEAK_RIGHT = "right";
+const SPEAK_RIGHT_CAP = "Right";
+
+const SPEAK_FORWARD = "forward";
+const SPEAK_FORWARD_CAP = "Forward";
+
+const SPEAK_FORWARDS = "forwards";
+const SPEAK_FORWARDS_CAP = "Forwards";
+
+const SPEAK_BACK = "back";
+const SPEAK_BACK_CAP = "Back";
+
+const SPEAK_BACKWARD = "backward";
+const SPEAK_BACKWARD_CAP = "Backward";
+
+const SPEAK_BACKWARDS = "backwards";
+const SPEAK_BACKWARDS_CAP = "Backwards";
+
+const SPEAK_JUMP = "jump";
+const SPEAK_JUMP_CAP = "Jump";
+
+const SPEAK_STOP = "stop";
+const SPEAK_STOP_CAP = "Stop";
+
+const SPEAK_SHOOT = "shoot";
+const SPEAK_SHOOT_CAP = "Shoot";
+
+const ALLOWED_COMMANDS = [
+    SPEAK_LEFT,
+    SPEAK_RIGHT,
+    SPEAK_FORWARD,
+    SPEAK_FORWARDS,
+    SPEAK_BACK,
+    SPEAK_BACKWARD,
+    SPEAK_BACKWARDS,
+    SPEAK_JUMP,
+    SPEAK_STOP,
+    SPEAK_SHOOT
+];
+
+const USA_ENGLISH = "en-US";
+const PROCESS_LOCAL = true;
+const CONTINUOUS_INTERPRET = true;
+const PHRASE_BOOST = 10;
+
+const SPEECH_US_LOCAL = { langs: [USA_ENGLISH], processLocally: PROCESS_LOCAL };
+
+function speechInfo(the_word, word_is_valid) {
+    let the_scene = document.getElementById("speech-value");
+    the_scene.innerHTML = the_word;
+    if (word_is_valid) {
+        the_scene.style.color = "white";
+    } else {
+        the_scene.style.color = "red";
+    }
+}
+
+// https://webaudio.github.io/web-speech-api/#examples-recognition
+
+function speechInBrowser() {
+    const speech_recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    // Firefox fails here
+    return speech_recognition;
+}
+
+function loadSpeechBtn() {
+    const speech_buttons = document.querySelector("#speech-buttons");
+    speech_buttons.style.display = "block";
+    const speech_download = document.querySelector("#speech-download");
+    speech_download.onclick = () => speechDownload();
+}
+
+// https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
+const promiseTimeout = (prom, time) => Promise.race([prom, new Promise((_r, rej) => setTimeout(rej, time))]);
+
+const tryInstallSpeech = async (speech_recognition) => {
+    await speech_recognition
+        .install(SPEECH_US_LOCAL) /* must be done in an event */
+        .then((install_result) => speechInstalled(install_result));
+};
+
+const SPEECH_INSTALLED = "speech-installed";
+const SPEECH_INSTAL_TIMEOUT = "speech-not-installed";
+const SPEECH_TIMEOUT = 4000;
+
+async function someFunction(speech_recognition) {
+    let result = await promiseTimeout(tryInstallSpeech(speech_recognition), SPEECH_TIMEOUT)
+        .then((_res) => SPEECH_INSTALLED)
+        .catch((_err) => SPEECH_INSTAL_TIMEOUT);
+    return result;
+}
+
+function speechDownload() {
+    let speech_recognition = speechInBrowser();
+    speech_recognition
+        .available(SPEECH_US_LOCAL) // Opera crashes here
+        .then(async (download_result) => {
+            if (download_result === "unavailable") {
+                const speech_download = document.querySelector("#speech-download");
+                speech_download.style.display = "none";
+                g_p_speak_input = P_GARBLED; // IE fails here
+                action_runGame();
+            } else if (download_result === "available") {
+                g_p_speak_input = P_GARBLED; // should never happen
+            } else {
+                const install_result = await someFunction(speech_recognition);
+                if (install_result === SPEECH_INSTAL_TIMEOUT) {
+                    const speech_download = document.querySelector("#speech-download");
+                    speech_download.style.display = "none";
+                    action_runGame();
+                }
+            }
+        })
+        .catch((err) => console.log(err));
+}
+
+function speechInstalled(install_result) {
+    if (install_result) {
+        const speech_download = document.querySelector("#speech-download");
+        speech_download.disabled = true;
+        const speach_allow = document.querySelector("#speech-allow");
+        speach_allow.style.display = "block";
+        speach_allow.onclick = () => speechAllowed();
+    } else {
+        g_p_speak_input = P_GARBLED; // should never happen
+    }
+}
+
+function speechAllowed() {
+    const speech_download = document.querySelector("#speech-download");
+    speech_download.style.display = "none";
+    const speach_allow = document.querySelector("#speech-allow");
+    speach_allow.style.display = "none";
+
+    const speach_microphone = document.querySelector("#speech-microphone");
+    speach_microphone.style.display = "inline";
+
+    const speech_recognition = speechInBrowser();
+    speech_recognition
+        .available(SPEECH_US_LOCAL) /* */
+        .then((allow_result) => speechStart(allow_result));
+}
+
+function speechStart(allow_result) {
+    if (allow_result === "unavailable") {
+        g_p_speak_input = P_GARBLED; // should never happen
+    } else if (allow_result === "available") {
+        const speech_download = document.querySelector("#speech-allow");
+        speech_download.disabled = true;
+        let speech_recog = makeRecognition();
+        speech_recog.start();
+        speech_recog.onresult = (event) => speechInputs(event);
+        action_runGame();
+    } else {
+        g_p_speak_input = P_GARBLED; // should never happen
+    }
+}
+
+function makeRecognition() {
+    let speech_recog = new SpeechRecognition();
+    speech_recog.processLocally = PROCESS_LOCAL;
+    speech_recog.continuous = CONTINUOUS_INTERPRET;
+    speech_recog.lang = USA_ENGLISH;
+    speech_recog.interimResults = true;
+    speech_recog.maxAlternatives = 1;
+    speech_recog.phrases = usefulWords();
+    return speech_recog;
+}
+
+function endingWord(speech_event) {
+    const event_results = speech_event.results;
+    const speak_len = event_results.length;
+    const last_sound = event_results[speak_len - 1];
+    const a_sentence = last_sound[0].transcript;
+    const lower_words = a_sentence.toLowerCase();
+    const word_list = lower_words.split(" ");
+    const last_word = word_list[word_list.length - 1];
+    return last_word;
+}
+
+let f_last_speech_index = 0;
+
+function firstTryGood(speech_event, the_word) {
+    const event_results = speech_event.results;
+    const speak_index = event_results.length;
+    const first_try = f_last_speech_index !== speak_index;
+    const first_attempt_good = ALLOWED_COMMANDS.includes(the_word) && first_try;
+    return first_attempt_good;
+}
+
+function speechInputs(speech_event) {
+    const the_word = endingWord(speech_event);
+    const first_attempt_good = firstTryGood(speech_event, the_word);
+    f_last_speech_index++;
+    if (first_attempt_good) {
+        if (the_word === SPEAK_LEFT) {
+            touchW(speech_event);
+        } else if (the_word === SPEAK_RIGHT) {
+            touchE(speech_event);
+        } else if (the_word === SPEAK_FORWARD || the_word === SPEAK_FORWARDS) {
+            touchN(speech_event);
+        } else if (the_word === SPEAK_BACK || the_word === SPEAK_BACKWARD || the_word === SPEAK_BACKWARDS) {
+            touchS(speech_event);
+        } else if (the_word === SPEAK_JUMP) {
+            if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
+                g_planet.m_part_state = PART_PLAY_22_JUMP_START;
+            }
+        } else if (the_word === SPEAK_STOP) {
+            g_planet.m_drift_direction = 0;
+            stopMoving();
+        } else if (the_word === SPEAK_SHOOT) {
+            g_missile = initMissileData(g_missile, g_player);
+        }
+        speechInfo(the_word, true);
+    } else {
+        const got_invalid_word = !ALLOWED_COMMANDS.includes(the_word);
+        if (got_invalid_word) {
+            speechInfo(the_word, false);
+        }
+    }
+}
+
+function usefulWords() {
+    const phraseData = [
+        { phrase: SPEAK_LEFT, boost: PHRASE_BOOST },
+        { phrase: SPEAK_LEFT_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_RIGHT, boost: PHRASE_BOOST },
+        { phrase: SPEAK_RIGHT_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_FORWARD, boost: PHRASE_BOOST },
+        { phrase: SPEAK_FORWARD_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_FORWARDS, boost: PHRASE_BOOST },
+        { phrase: SPEAK_FORWARDS_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_BACK, boost: PHRASE_BOOST },
+        { phrase: SPEAK_BACK_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_BACKWARD, boost: PHRASE_BOOST },
+        { phrase: SPEAK_BACKWARD_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_BACKWARDS, boost: PHRASE_BOOST },
+        { phrase: SPEAK_BACKWARDS_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_JUMP, boost: PHRASE_BOOST },
+        { phrase: SPEAK_JUMP_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_STOP, boost: PHRASE_BOOST },
+        { phrase: SPEAK_STOP_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_SHOOT, boost: PHRASE_BOOST },
+        { phrase: SPEAK_SHOOT_CAP, boost: PHRASE_BOOST }
+    ];
+    const phrase_objects = phraseData.map((p) => new SpeechRecognitionPhrase(p.phrase, p.boost));
+    return phrase_objects;
+}

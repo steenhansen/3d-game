@@ -14,6 +14,7 @@ const DEBUG_ROW_4_Y = 120;
 const DEBUG_ROW_5_Y = 150;
 const DEBUG_ROW_6_Y = 180;
 const DEBUG_ROW_7_Y = 210;
+const DEBUG_ROW_8_Y = 240;
 
 const DEBUG_L_R_BLANKS = 25;
 const DEBUG_ABOVE_Y = 10;
@@ -38,21 +39,21 @@ function debugScreenSize() {
     const scene_width = parseInt(scene_width_px);
     const scene_height = parseInt(scene_height_px);
     const screen_size = "screen: " + scene_width + " " + scene_height;
-    debugPrint(screen_size, DEBUG_FIRST_COL_X, DEBUG_ROW_0_Y);
+    debugPrint(screen_size, DEBUG_FIRST_COL_X, DEBUG_ROW_1_Y);
 }
 
 function debugFieldSize() {
     const x_size = FIELD_IN_SQUARES[0];
     const y_size = FIELD_IN_SQUARES[1];
     const player_pos = `field: ${x_size} ${y_size}`;
-    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_1_Y);
+    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_2_Y);
 }
 
 function debugPlayerXy() {
     const offset_squares_x = Math.floor(g_player.m_x / WIDTH_OF_SQUARE);
     const offset_squares_y = Math.floor(g_player.m_y / DEPTH_OF_SQUARE);
     const player_pos = `player: ${offset_squares_x} ${offset_squares_y}`;
-    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_2_Y);
+    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_3_Y);
 }
 
 function debugPlayerBounds() {
@@ -66,28 +67,28 @@ function debugPlayerBounds() {
         const y1_bounds = PLAYER_BOUNDS[3];
         player_pos = `bounds: ${x0_bounds} ${y0_bounds}   ${x1_bounds} ${y1_bounds}`;
     }
-    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_3_Y);
+    debugPrint(player_pos, DEBUG_FIRST_COL_X, DEBUG_ROW_4_Y);
 }
 
 function debugDevice() {
     const mobile_screen = getCssVar("--device-screen");
-    debugPrint(mobile_screen, DEBUG_FIRST_COL_X, DEBUG_ROW_4_Y);
+    debugPrint(mobile_screen, DEBUG_FIRST_COL_X, DEBUG_ROW_5_Y);
 }
 
 function debugTouchTime() {
     const touch_time = `press time: ${g_touch_press_time} `;
-    debugPrint(touch_time, DEBUG_FIRST_COL_X, DEBUG_ROW_5_Y);
+    debugPrint(touch_time, DEBUG_FIRST_COL_X, DEBUG_ROW_6_Y);
 }
 
 function debugEnemiesLeft() {
     const alive_enemies = enemiesAlive(g_enemies);
     const show_alive = `enemies alive: ${alive_enemies} `;
-    debugPrint(show_alive, DEBUG_FIRST_COL_X, DEBUG_ROW_6_Y);
+    debugPrint(show_alive, DEBUG_FIRST_COL_X, DEBUG_ROW_7_Y);
 }
 
 function debugLoopTime() {
     const show_loop_time = `animate msec: ${dbg_loop_time} `;
-    debugPrint(show_loop_time, DEBUG_FIRST_COL_X, DEBUG_ROW_7_Y);
+    debugPrint(show_loop_time, DEBUG_FIRST_COL_X, DEBUG_ROW_8_Y);
 }
 
 function debugReportFrameTime() {
@@ -216,8 +217,8 @@ function debugMissileInfo() {
         debug_missile_steps = 0;
     } else {
         if (debug_missile_steps === 0) {
-            DEBUG_CONTEXT.clearRect(DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y, 630, 999);
-            debugPrint("missile", DEBUG_SECOND_COL_X, DEBUG_ROW_1_Y);
+            DEBUG_CONTEXT.clearRect(DEBUG_SECOND_COL_X, DEBUG_ROW_2_Y, 630, 999);
+            debugPrint("missile", DEBUG_SECOND_COL_X, DEBUG_ROW_2_Y);
         }
         debug_missile_steps++;
 
@@ -229,7 +230,7 @@ function debugMissileInfo() {
                 a_carom = "carom left";
             }
         }
-        const y_pos = (debug_missile_steps + 1) * DEBUG_ROW_1_Y;
+        const y_pos = (debug_missile_steps + 2) * DEBUG_ROW_1_Y;
         const offset_squares_x = Math.floor(g_missile.m_x / WIDTH_OF_SQUARE);
         const offset_squares_y = Math.floor(g_missile.m_y / DEPTH_OF_SQUARE);
         const player_pos = `${offset_squares_x} ${offset_squares_y} ${a_carom}`;

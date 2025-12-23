@@ -18,6 +18,7 @@ let g_p_environment_type = P_UNKNOWN;
 let g_p_scroll_quality = P_UNKNOWN;
 let g_p_graphics_style = P_UNKNOWN;
 let g_p_display_fps = P_UNKNOWN;
+let g_p_speak_input = P_UNKNOWN;
 
 let g_touch_press_time = 0;
 let g_waiting_for_start = true;

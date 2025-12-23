@@ -48,6 +48,7 @@ function startItUp(the_planet, the_player, the_enemies, the_pylons, the_signs, t
     addDesktopEvents();
     addMobileEvents();
     resizeOrientEvents();
+    //speachInputInit();
     runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the_holes);
 }
 

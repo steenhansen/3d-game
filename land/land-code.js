@@ -131,7 +131,9 @@ function unHideDiv(unhide_id) {
 
 function initLanding() {
     hideDiv("start-mobile");
-    unHideDiv("the-scene");
+    let hide_div = document.getElementById("the-scene");
+    hide_div.style.display = "flex";
+    //    unHideDiv("the-scene");
 }
 
 function landingInit() {

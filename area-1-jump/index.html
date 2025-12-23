@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="input/arrows.css" />
     <link rel="stylesheet" href="input/boxes.css" />
     <link rel="stylesheet" href="input/desktop-directions.css" />
+    <link rel="stylesheet" href="speech/speak.css" />
 </div>
 
 <div id="js-constants">
@@ -83,6 +84,8 @@
 
     <script type="text/javascript" src="scene/scene_3d.js"></script>
     <script rel="text/javascript" src="collisions/missile-enemy.js"></script>
+
+    <script rel="text/javascript" src="speech/speak-input.js"></script>
 </div>
 
 <div id="start-mobile">
@@ -90,7 +93,18 @@
     <div id="mobile-wait">Waiting for full mobile screen</div>
 </div>
 
+<div id="speech-buttons">
+    <button id="speech-download">Download Speech Module From Google</button>
+    <button id="speech-allow">Allow Microphone use</button>
+</div>
+
 <div id="the-scene">
+    <div id="speech-box">
+        <img id="speech-microphone" src="./images/white-microphone.png" />
+        <div id="speech-value"></div>
+    </div>
+
+    <div id="fps-value"></div>
     <canvas id="the-draw" width=" 1024" height="512"></canvas>
 
     <div id="touch-boxes"></div>
@@ -178,5 +192,9 @@ index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fp
 <link rel="stylesheet" href="area-1-jump/distinct.css" />
 
 <script>
-    action_runGame();
+    if (g_p_speak_input === P_TALK && speechInBrowser()) {
+        loadSpeechBtn();
+    } else {
+        action_runGame();
+    }
 </script>
