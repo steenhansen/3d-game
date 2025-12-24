@@ -4,6 +4,8 @@ const PARAMS_STR = getParams(window.location);
 const THIS_PLANET = "area-2-carom/index.html" + PARAMS_STR;
 const NEXT_PLANET = "area-3-shoot/index.html" + PARAMS_STR;
 
+const INITIAL_DRIFT_DIR = MOVINGx_E;
+
 const FIELD_IN_SQUARES = [34, NO_MISSILE_DEPTH_OVERFLOW];
 const PLAYER_START = [1, 11];
 
@@ -20,9 +22,10 @@ function action_hitExit() {
     window.location.href = NEXT_PLANET;
 }
 
-function action_runGame() {
+function action_runGame(game_start_type) {
+    g_game_start_type = game_start_type;
     startReadKeys(read11Keys);
-    const the_planet = initInfinitePlanet(FIELD_IN_SQUARES, MOVINGx_NOT, MOVINGx_E);
+    const the_planet = initInfinitePlanet(FIELD_IN_SQUARES, MOVINGx_NOT, INITIAL_DRIFT_DIR);
     const the_player = initPlayer(PLAYER_START);
 
     const holes_0 = [

@@ -1,5 +1,7 @@
 function introPart1(game_state, part_state, g_signs) {
-    if (THE_PLANET !== 1) {
+    // qbert if a restart then skip intro
+
+    if (THE_PLANET !== 1 || g_game_start_type === RESTARTING_GAME) {
         elevatorInOneStep();
         deleteStartLetters(g_signs, ERASE_START_MESSAGE_TIME);
         game_state = GAME_2_PLAY;

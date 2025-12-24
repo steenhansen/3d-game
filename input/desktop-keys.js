@@ -20,9 +20,7 @@ function read4Keys(event) {
             flashArrow("nw");
             f_last_4_move = "NW";
         } else if (JUMP_KEYS.includes(the_key)) {
-            if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
-                g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-            }
+            g_planet = possibleJump(g_planet);
         } else if (SHOOT_KEYS.includes(the_key)) {
             g_missile = initMissileData(g_missile, g_player);
         } else {
@@ -101,9 +99,7 @@ function read11Keys(event) {
         } else if (STOP_KEYS.includes(the_key)) {
             stopMoving();
         } else if (JUMP_KEYS.includes(the_key)) {
-            if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
-                g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-            }
+            g_planet = possibleJump(g_planet);
         } else if (SHOOT_KEYS.includes(the_key)) {
             g_missile = initMissileData(g_missile, g_player);
         } else {
@@ -148,12 +144,8 @@ function clickOnDirectionsSvg(event) {
     } else if (svg_id_prefix === "SVG-C") {
         initiateMovement(MOVINGx_SE);
         flashArrow("se");
-    } else if (svg_id_prefix === "SVG-ESCAPE") {
-        jumpStartFly();
     } else if (svg_id_prefix === "SVG-SPACE") {
-        if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
-            g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-        }
+        g_planet = possibleJump(g_planet);
     } else if (svg_id_prefix === "SVG-ENTER") {
         g_missile = initMissileData(g_missile, g_player);
     }

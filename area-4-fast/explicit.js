@@ -4,6 +4,8 @@ const PARAMS_STR = getParams(window.location);
 const THIS_PLANET = "area-4-fast/index.html" + PARAMS_STR;
 const NEXT_PLANET = "index.html" + PARAMS_STR;
 
+const INITIAL_DRIFT_DIR = MOVINGx_N;
+
 const FIELD_IN_SQUARES = [20, 40];
 const PLAYER_START = [5, 38];
 const PLAYER_BOUNDS = [2, 0, 8, 40];
@@ -25,9 +27,10 @@ function action_hitExit() {
     return [game_state, part_state];
 }
 
-function action_runGame() {
+function action_runGame(game_start_type) {
+    g_game_start_type = game_start_type;
     startReadKeys(read4Keys);
-    const the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_N, MOVINGx_N);
+    const the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_N, INITIAL_DRIFT_DIR);
     const the_player = initPlayer(PLAYER_START);
 
     const guard_holes = [

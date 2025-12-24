@@ -89,6 +89,6 @@ function swipeDownStop() {
 }
 
 function swipeLeftRestart() {
-    reAnimateScreen();
-    action_runGame();
+    //  reAnimateScreen();
+    action_runGame(RESTARTING_GAME);
 }

@@ -45,3 +45,8 @@ function setCssLineBackground(line_number, new_image) {
     let enemy_vars = document.querySelector(".line-vars");
     enemy_vars.style.setProperty(css_var_name, new_image);
 }
+
+function setCssDisplay(elem_id, display_setting) {
+    const an_elem = document.querySelector(elem_id);
+    an_elem.style.display = display_setting;
+}

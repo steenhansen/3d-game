@@ -4,9 +4,7 @@ const PARAMS_STR = getParams(window.location);
 const THIS_PLANET = "area-1-jump/index.html" + PARAMS_STR;
 const NEXT_PLANET = "area-2-carom/index.html" + PARAMS_STR;
 
-// const FIELD_IN_SQUARES = [34, 32];
-// const PLAYER_START = [7, 30];
-// const PLAYER_BOUNDS = [0, 18, 34, 31];
+const INITIAL_DRIFT_DIR = MOVINGx_NE;
 
 const FIELD_IN_SQUARES = [34, 42];
 const PLAYER_START = [7, 40];
@@ -32,9 +30,12 @@ function action_hitExit() {
     window.location.href = NEXT_PLANET;
 }
 
-function action_runGame() {
+function action_runGame(game_start_type) {
+    g_game_start_type = game_start_type;
     startReadKeys(read11Keys);
-    const the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, MOVINGx_E);
+
+    const the_planet = initBoundedPlanet(FIELD_IN_SQUARES, PLAYER_BOUNDS, MOVINGx_NOT, INITIAL_DRIFT_DIR);
+
     const the_player = initPlayer(PLAYER_START);
 
     const back_one = DITCH_LINE - 0.5;

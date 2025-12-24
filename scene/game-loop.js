@@ -24,7 +24,7 @@ function runGame(the_planet, the_player, the_enemies, the_pylons, the_signs, the
         if (game_state === GAME_0_INIT) {
             [game_state, part_state, g_planet, g_player] = initPart0(game_state, part_state, g_planet, g_player);
         } else if (game_state === GAME_1_INTRO) {
-            [game_state, part_state, g_signs] = introPart1(game_state, part_state, g_signs);
+            [game_state, part_state, g_signs] = introPart1(game_state, part_state, g_signs); // qbert if a restart then skip intro
         } else if (game_state === GAME_2_PLAY) {
             const variable_list = playPart2(game_state, part_state, g_planet, g_player, g_enemies, g_pylons, g_signs);
             [game_state, part_state, g_planet, g_player, g_enemies, g_pylons] = variable_list;

@@ -1,3 +1,6 @@
+const NORMAL_GAME_START = "normal-game-start";
+const RESTARTING_GAME = "restarting-game";
+
 const IGNORE_BOUNDS = "IGNORE_BOUNDS";
 
 const SKY_RESTART_COUNTER = 30;

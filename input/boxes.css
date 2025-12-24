@@ -8,6 +8,7 @@
 }
 
 #speech-box {
+    display: none;
     z-index: var(--z-fps-value);
     margin: 0 auto;
 }
@@ -18,7 +19,19 @@
     float: right;
 }
 
-#speech-microphone {
+#microphone-ok {
+    display: inline;
+    margin-top: 4px;
+    height: 16px;
+}
+
+#microphone-not-supported {
+    display: none;
+    margin-top: 4px;
+    height: 16px;
+}
+
+#microphone-not-allowed {
     display: none;
     margin-top: 4px;
     height: 16px;

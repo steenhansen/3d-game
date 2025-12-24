@@ -36,6 +36,15 @@ const SPEAK_STOP_CAP = "Stop";
 const SPEAK_SHOOT = "shoot";
 const SPEAK_SHOOT_CAP = "Shoot";
 
+const SPEAK_QUIT = "quit";
+const SPEAK_QUIT_CAP = "Quit";
+
+const SPEAK_QUICK = "quick";
+const SPEAK_QUICK_CAP = "Quick";
+
+const SPEAK_RESTART = "restart";
+const SPEAK_RESTART_CAP = "Restart";
+
 const ALLOWED_COMMANDS = [
     SPEAK_LEFT,
     SPEAK_RIGHT,
@@ -46,7 +55,10 @@ const ALLOWED_COMMANDS = [
     SPEAK_BACKWARDS,
     SPEAK_JUMP,
     SPEAK_STOP,
-    SPEAK_SHOOT
+    SPEAK_SHOOT,
+    SPEAK_QUIT,
+    SPEAK_QUICK,
+    SPEAK_RESTART
 ];
 
 const USA_ENGLISH = "en-US";
@@ -54,29 +66,29 @@ const PROCESS_LOCAL = true;
 const CONTINUOUS_INTERPRET = true;
 const PHRASE_BOOST = 10;
 
+const INVALID_TEXT_COLOR = "red";
+const VALID_TEXT_COLOR = "white";
+
 const SPEECH_US_LOCAL = { langs: [USA_ENGLISH], processLocally: PROCESS_LOCAL };
 
-function speechInfo(the_word, word_is_valid) {
+function speechInfo(the_word, word_color) {
     let the_scene = document.getElementById("speech-value");
     the_scene.innerHTML = the_word;
-    if (word_is_valid) {
-        the_scene.style.color = "white";
-    } else {
-        the_scene.style.color = "red";
-    }
+    the_scene.style.color = word_color;
 }
 
 // https://webaudio.github.io/web-speech-api/#examples-recognition
 
 function speechInBrowser() {
     const speech_recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    // Firefox fails here
+    if (!speech_recognition) {
+        unsupportedMicAttempt("Firefox");
+    }
     return speech_recognition;
 }
 
 function loadSpeechBtn() {
-    const speech_buttons = document.querySelector("#speech-buttons");
-    speech_buttons.style.display = "block";
+    setCssDisplay("#speech-buttons", "block");
     const speech_download = document.querySelector("#speech-download");
     speech_download.onclick = () => speechDownload();
 }
@@ -107,18 +119,18 @@ function speechDownload() {
         .available(SPEECH_US_LOCAL) // Opera crashes here
         .then(async (download_result) => {
             if (download_result === "unavailable") {
-                const speech_download = document.querySelector("#speech-download");
-                speech_download.style.display = "none";
-                g_p_speak_input = P_GARBLED; // IE fails here
-                action_runGame();
+                unsupportedMicAttempt("Edge");
+                g_p_speak_input = P_GARBLED;
+                action_runGame(NORMAL_GAME_START);
             } else if (download_result === "available") {
-                g_p_speak_input = P_GARBLED; // should never happen
+                unsupportedMicAttempt("unknown browser");
+                g_p_speak_input = P_GARBLED;
             } else {
                 const install_result = await someFunction(speech_recognition);
                 if (install_result === SPEECH_INSTAL_TIMEOUT) {
-                    const speech_download = document.querySelector("#speech-download");
-                    speech_download.style.display = "none";
-                    action_runGame();
+                    setCssDisplay("#speech-buttons", "none");
+                    unsupportedMicAttempt("Brave");
+                    action_runGame(NORMAL_GAME_START);
                 }
             }
         })
@@ -129,42 +141,53 @@ function speechInstalled(install_result) {
     if (install_result) {
         const speech_download = document.querySelector("#speech-download");
         speech_download.disabled = true;
+        setCssDisplay("#speech-allow", "block");
         const speach_allow = document.querySelector("#speech-allow");
-        speach_allow.style.display = "block";
         speach_allow.onclick = () => speechAllowed();
     } else {
-        g_p_speak_input = P_GARBLED; // should never happen
+        unsupportedMicAttempt("unknown browser");
+        g_p_speak_input = P_GARBLED;
     }
 }
 
 function speechAllowed() {
-    const speech_download = document.querySelector("#speech-download");
-    speech_download.style.display = "none";
-    const speach_allow = document.querySelector("#speech-allow");
-    speach_allow.style.display = "none";
-
-    const speach_microphone = document.querySelector("#speech-microphone");
-    speach_microphone.style.display = "inline";
-
+    setCssDisplay("#speech-buttons", "none");
     const speech_recognition = speechInBrowser();
     speech_recognition
         .available(SPEECH_US_LOCAL) /* */
         .then((allow_result) => speechStart(allow_result));
 }
 
+function unsupportedMicAttempt(failed_browser) {
+    console.log(failed_browser, "does not support Web Speech, only Chrome.");
+    setCssDisplay("#speech-box", "block");
+    setCssDisplay("#microphone-ok", "none");
+    setCssDisplay("#microphone-not-supported", "inline");
+    setCssDisplay("#microphone-not-allowed", "none");
+}
+
 function speechStart(allow_result) {
     if (allow_result === "unavailable") {
-        g_p_speak_input = P_GARBLED; // should never happen
+        unsupportedMicAttempt("unknown browser");
+        g_p_speak_input = P_GARBLED;
     } else if (allow_result === "available") {
         const speech_download = document.querySelector("#speech-allow");
         speech_download.disabled = true;
         let speech_recog = makeRecognition();
         speech_recog.start();
+        speech_recog.onerror = (event) => didNotGiveAuthorization(event);
         speech_recog.onresult = (event) => speechInputs(event);
-        action_runGame();
+        setCssDisplay("#speech-box", "block");
+        action_runGame(NORMAL_GAME_START);
     } else {
-        g_p_speak_input = P_GARBLED; // should never happen
+        unsupportedMicAttempt("unknown browser");
+        g_p_speak_input = P_GARBLED;
     }
+}
+
+function didNotGiveAuthorization(_event) {
+    setCssDisplay("#microphone-ok", "none");
+    setCssDisplay("#microphone-not-allowed", "inline");
 }
 
 function makeRecognition() {
@@ -213,20 +236,24 @@ function speechInputs(speech_event) {
         } else if (the_word === SPEAK_BACK || the_word === SPEAK_BACKWARD || the_word === SPEAK_BACKWARDS) {
             touchS(speech_event);
         } else if (the_word === SPEAK_JUMP) {
-            if (g_planet.m_part_state === PART_PLAY_20_NORMAL) {
-                g_planet.m_part_state = PART_PLAY_22_JUMP_START;
-            }
+            g_planet = possibleJump(g_planet);
         } else if (the_word === SPEAK_STOP) {
             g_planet.m_drift_direction = 0;
             stopMoving();
         } else if (the_word === SPEAK_SHOOT) {
             g_missile = initMissileData(g_missile, g_player);
+        } else if (the_word === SPEAK_QUIT || the_word === SPEAK_QUICK) {
+            g_planet.m_game_state = GAME_5_DONE;
+        } else if (the_word === SPEAK_RESTART) {
+            // reAnimateScreen();
+
+            action_runGame(RESTARTING_GAME);
         }
-        speechInfo(the_word, true);
+        speechInfo(the_word, VALID_TEXT_COLOR);
     } else {
         const got_invalid_word = !ALLOWED_COMMANDS.includes(the_word);
         if (got_invalid_word) {
-            speechInfo(the_word, false);
+            speechInfo(the_word, INVALID_TEXT_COLOR);
         }
     }
 }
@@ -261,7 +288,16 @@ function usefulWords() {
         { phrase: SPEAK_STOP_CAP, boost: PHRASE_BOOST },
 
         { phrase: SPEAK_SHOOT, boost: PHRASE_BOOST },
-        { phrase: SPEAK_SHOOT_CAP, boost: PHRASE_BOOST }
+        { phrase: SPEAK_SHOOT_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_QUIT, boost: PHRASE_BOOST },
+        { phrase: SPEAK_QUIT_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_QUICK, boost: PHRASE_BOOST },
+        { phrase: SPEAK_QUICK_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_RESTART, boost: PHRASE_BOOST },
+        { phrase: SPEAK_RESTART_CAP, boost: PHRASE_BOOST }
     ];
     const phrase_objects = phraseData.map((p) => new SpeechRecognitionPhrase(p.phrase, p.boost));
     return phrase_objects;

@@ -94,13 +94,15 @@
 </div>
 
 <div id="speech-buttons">
-    <button id="speech-download">Download Speech Module From Google</button>
-    <button id="speech-allow">Allow Microphone use</button>
+    <button id="speech-download">Download speech module From Google - in Chrome browser</button>
+    <button id="speech-allow">Allow microphone use - in Chrome browser</button>
 </div>
 
 <div id="the-scene">
     <div id="speech-box">
-        <img id="speech-microphone" src="./images/white-microphone.png" />
+        <img id="microphone-ok" src="./images/white-microphone.png" />
+        <img id="microphone-not-supported" src="./images/black-microphone.png" />
+        <img id="microphone-not-allowed" src="./images/red-microphone.png" />
         <div id="speech-value"></div>
     </div>
 
@@ -183,7 +185,7 @@
 
 <!-- start part section
  
-index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show
+index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show&speak-input=talk
 
 -->
 
@@ -195,6 +197,6 @@ index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fp
     if (g_p_speak_input === P_TALK && speechInBrowser()) {
         loadSpeechBtn();
     } else {
-        action_runGame();
+        action_runGame(NORMAL_GAME_START);
     }
 </script>

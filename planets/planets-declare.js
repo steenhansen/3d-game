@@ -96,3 +96,10 @@ function initPlanet(pixel_field_size, pixel_bounds, start_move_dir, start_drift_
     };
     return the_planet;
 }
+
+function possibleJump(the_planet) {
+    if (the_planet.m_part_state === PART_PLAY_20_NORMAL) {
+        the_planet.m_part_state = PART_PLAY_22_JUMP_START;
+    }
+    return the_planet;
+}

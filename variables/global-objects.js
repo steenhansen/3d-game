@@ -5,6 +5,8 @@ var g_pylons;
 var g_signs;
 var g_holes;
 
+var g_game_start_type = NORMAL_GAME_START;
+
 var g_prev_trunc_line_shifts = Array(DEPTH_LINES).fill(-123456789);
 var g_line_elem_cache = [];
 
