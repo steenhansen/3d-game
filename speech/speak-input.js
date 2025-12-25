@@ -100,11 +100,13 @@ function loadSpeechBtn() {
     speech_download.onclick = () => speechDownload();
 }
 
+//  https://steenhansen.github.io/3d-game/area-1-jump/index.html?speak-input=talk
 function speechDownload() {
     let speech_recognition = speechInBrowser();
     speech_recognition
         .available(SPEECH_US_LOCAL) // Opera crashes here
         .then((download_result) => {
+            console.log("download_result", download_result, speech_recognition);
             if (download_result === "unavailable") {
                 unsupportedMicAttempt("Edge2");
                 g_p_speak_input = P_GARBLED;
