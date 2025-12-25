@@ -107,7 +107,7 @@ function speechDownload() {
         .available(SPEECH_US_LOCAL) // Opera crashes here
         .then((download_result) => {
             console.log("download_result", download_result, speech_recognition);
-            if (download_result === "unavailable") {
+            if (download_result === "Xunavailable") {
                 unsupportedMicAttempt("Edge2");
                 g_p_speak_input = P_GARBLED;
                 action_runGame(NORMAL_GAME_START);
