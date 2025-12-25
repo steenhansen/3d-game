@@ -7,6 +7,7 @@ function loadSpeechBtn() {
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
     recognition.onresult = speechInputs;
+    recognition.onend = speechEnd;
 
     setCssDisplay("#speech-buttons", "block");
     const speech_download = document.querySelector("#speech-download");
@@ -21,6 +22,10 @@ function speechDownload22() {
     setCssDisplay("#speech-buttons", "none");
     setCssDisplay("#speech-box", "block");
     action_runGame(NORMAL_GAME_START);
+}
+
+function speechEnd() {
+    recognition.start();
 }
 
 //  https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
@@ -242,21 +247,23 @@ function endingWord(speech_event) {
     return last_word;
 }
 
-let f_last_speech_index = 0;
+// let f_last_speech_index = 0;
 
-function firstTryGood(speech_event, the_word) {
-    const event_results = speech_event.results;
-    const speak_index = event_results.length;
-    const first_try = f_last_speech_index !== speak_index;
-    const first_attempt_good = ALLOWED_COMMANDS.includes(the_word) && first_try;
-    return first_attempt_good;
-}
+// function firstTryGood(speech_event, the_word) {
+//     const event_results = speech_event.results;
+//     const speak_index = event_results.length;
+//     const first_try = f_last_speech_index !== speak_index;
+//     const first_attempt_good = ALLOWED_COMMANDS.includes(the_word) && first_try;
+//     return first_attempt_good;
+// }
 
 function speechInputs(speech_event) {
     const the_word = endingWord(speech_event);
-    const first_attempt_good = firstTryGood(speech_event, the_word);
-    f_last_speech_index++;
-    if (first_attempt_good) {
+    console.log("the_word", the_word);
+    //    const first_attempt_good = firstTryGood(speech_event, the_word);
+    const is_command = ALLOWED_COMMANDS.includes(the_word);
+    // f_last_speech_index++;
+    if (is_command) {
         if (the_word === SPEAK_LEFT) {
             touchW(speech_event);
         } else if (the_word === SPEAK_RIGHT) {
