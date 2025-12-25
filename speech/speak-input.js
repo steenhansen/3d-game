@@ -110,8 +110,10 @@ function speechDownload() {
                 g_p_speak_input = P_GARBLED;
                 action_runGame(NORMAL_GAME_START);
             } else if (download_result === "available") {
-                unsupportedMicAttempt("unknown browser");
-                g_p_speak_input = P_GARBLED;
+                // unsupportedMicAttempt("unknown browser");
+                // g_p_speak_input = P_GARBLED;
+                console.log("alerady installed in other tab??");
+                speechInstalled(true); // speach already installed and running...
             } else {
                 const install_result = waitForSpeechInstall(speech_recognition);
                 if (install_result === SPEECH_INSTAL_TIMEOUT) {
