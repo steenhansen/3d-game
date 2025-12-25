@@ -106,7 +106,7 @@ function speechDownload() {
         .available(SPEECH_US_LOCAL) // Opera crashes here
         .then((download_result) => {
             if (download_result === "unavailable") {
-                unsupportedMicAttempt("Edge");
+                unsupportedMicAttempt("Edge2");
                 g_p_speak_input = P_GARBLED;
                 action_runGame(NORMAL_GAME_START);
             } else if (download_result === "available") {
@@ -140,6 +140,7 @@ const tryInstallSpeech = async (speech_recognition) => {
 };
 
 function speechInstalled(install_result) {
+    console.log("speechInstalled", install_result);
     if (install_result) {
         const speech_download = document.querySelector("#speech-download");
         speech_download.disabled = true;
