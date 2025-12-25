@@ -2,7 +2,7 @@ var recognition;
 
 function loadSpeechBtn() {
     recognition = new SpeechRecognition();
-    recognition.continuous = false;
+    recognition.continuous = true;
     recognition.lang = "en-US";
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -18,7 +18,6 @@ function loadSpeechBtn() {
 //  https://steenhansen.github.io/3d-game/area-1-jump/index.html?speak-input=talk
 function speechDownload22() {
     recognition.start();
-    console.log("Ready to receive a color command.");
     setCssDisplay("#speech-buttons", "none");
     setCssDisplay("#speech-box", "block");
     action_runGame(NORMAL_GAME_START);
@@ -26,6 +25,7 @@ function speechDownload22() {
 
 function speechEnd() {
     recognition.start();
+    console.log("JUST ENDING.");
 }
 
 //  https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
@@ -41,6 +41,9 @@ const SPEAK_LEFT_CAP = "Left";
 
 const SPEAK_RIGHT = "right";
 const SPEAK_RIGHT_CAP = "Right";
+
+const SPEAK_REICH = "reich";
+const SPEAK_REICH_CAP = "Reich";
 
 const SPEAK_FORWARD = "forward";
 const SPEAK_FORWARD_CAP = "Forward";
@@ -244,7 +247,8 @@ function endingWord(speech_event) {
     const lower_words = a_sentence.toLowerCase();
     const word_list = lower_words.split(" ");
     const last_word = word_list[word_list.length - 1];
-    return last_word;
+    const word_no_periods = last_word.replace(/\./g, "");
+    return word_no_periods;
 }
 
 // let f_last_speech_index = 0;
@@ -266,7 +270,7 @@ function speechInputs(speech_event) {
     if (is_command) {
         if (the_word === SPEAK_LEFT) {
             touchW(speech_event);
-        } else if (the_word === SPEAK_RIGHT) {
+        } else if (the_word === SPEAK_RIGHT || the_word === SPEAK_REICH) {
             touchE(speech_event);
         } else if (the_word === SPEAK_FORWARD || the_word === SPEAK_FORWARDS) {
             touchN(speech_event);
@@ -299,6 +303,9 @@ function usefulWords() {
 
         { phrase: SPEAK_RIGHT, boost: PHRASE_BOOST },
         { phrase: SPEAK_RIGHT_CAP, boost: PHRASE_BOOST },
+
+        { phrase: SPEAK_REICH, boost: PHRASE_BOOST },
+        { phrase: SPEAK_REICH_CAP, boost: PHRASE_BOOST },
 
         { phrase: SPEAK_FORWARD, boost: PHRASE_BOOST },
         { phrase: SPEAK_FORWARD_CAP, boost: PHRASE_BOOST },
