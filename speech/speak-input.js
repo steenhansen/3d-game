@@ -1,3 +1,28 @@
+var recognition;
+
+function loadSpeechBtn() {
+    recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = speechInputs;
+
+    setCssDisplay("#speech-buttons", "block");
+    const speech_download = document.querySelector("#speech-download");
+    speech_download.onclick = () => speechDownload22();
+}
+
+//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?speak-input=talk
+//  https://steenhansen.github.io/3d-game/area-1-jump/index.html?speak-input=talk
+function speechDownload22() {
+    recognition.start();
+    console.log("Ready to receive a color command.");
+    setCssDisplay("#speech-buttons", "none");
+    setCssDisplay("#speech-box", "block");
+    action_runGame(NORMAL_GAME_START);
+}
+
 //  https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
 
 //   index.html?speak-input=talk
@@ -94,7 +119,7 @@ function speechInBrowser() {
     return speech_recognition;
 }
 
-function loadSpeechBtn() {
+function loadSpeechBtnOLD() {
     setCssDisplay("#speech-buttons", "block");
     const speech_download = document.querySelector("#speech-download");
     speech_download.onclick = () => speechDownload();
