@@ -96,9 +96,9 @@ Brave hangs
 
 <img src="./markdown/web-speech.png" width="400">
 
-Only the Chrome browser supports the Web Speech API. Firefox/Edge/Brave do not support the Speech API, Opera crashes if attempted. Useful for playing on a phone.
+Only the Chrome browser supports the Web Speech API. Firefox/Edge/Brave do not support the Speech API while Opera crashes if attempted. Useful for playing on a phone.
 
-The commands are "Left", "right", "forward", "backwards", "jump", "stop", "shoot", and "quit".
+The commands are "Left", "right", "forward", "backwards", "jump", "stop", "shoot", "quit", and "restart".
 
 [Chrome Only](https://steenhansen.github.io/3d-game/area-4-fast/index.html?speak-input=talk)
 

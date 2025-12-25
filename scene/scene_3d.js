@@ -89,33 +89,8 @@ function sceneMove(the_player, is_dying) {
         the_player = sceneLeft(the_player, travel_speed, L_DIAGONAL_DAMPER);
     } else if (f_cur_move_dir === MOVINGx_W) {
         the_player = sceneLeft(the_player, travel_speed, L_DIAGONAL_NOT);
-    } else {
-        startDrift();
     }
     return the_player;
-}
-
-function startDrift() {
-    if (environmentTypeParam()) {
-        return;
-    }
-    if (g_planet.m_drift_direction > 0) {
-        const rand_dir = Math.floor(Math.random() * NEW_DIRECTION_CHANCE_WHEN_DRIFTING);
-        if (rand_dir === 1) {
-            const rand_drift_direction = randomDirection();
-            g_planet.m_drift_direction = rand_drift_direction;
-        }
-    } else {
-        if (g_planet.m_drift_countdown === 0) {
-            g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
-        }
-        g_planet.m_drift_countdown--;
-        if (g_planet.m_drift_countdown < 0) {
-            g_planet.m_move_direction = 0;
-            g_planet.m_drift_direction = randomDirection();
-            g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
-        }
-    }
 }
 
 function rightClick(the_event) {
@@ -131,21 +106,6 @@ function wheelScroll(the_event) {
 
 function sceneStop() {
     moveSky("stop");
-}
-
-function randomDirection() {
-    const rand_dir = Math.floor(Math.random() * 4);
-    let rand_direction;
-    if (rand_dir === 0) {
-        rand_direction = MOVINGx_NW;
-    } else if (rand_dir === 1) {
-        rand_direction = MOVINGx_NE;
-    } else if (rand_dir === 2) {
-        rand_direction = MOVINGx_SE;
-    } else {
-        rand_direction = MOVINGx_SW;
-    }
-    return rand_direction;
 }
 
 function animateScene(the_planet, the_player, enemy_list, pylon_list, sign_list, hole_list) {

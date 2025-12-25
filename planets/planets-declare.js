@@ -91,8 +91,7 @@ function initPlanet(pixel_field_size, pixel_bounds, start_move_dir, start_drift_
         m_dying_distance: 0,
         m_move_direction: start_move_dir,
         m_last_direction_key: MOVINGx_NOT,
-        m_drift_direction: start_drift_dir,
-        m_drift_countdown: 0
+        m_drift_direction: start_drift_dir
     };
     return the_planet;
 }

@@ -32,7 +32,6 @@ function addClickEvent(direction_name, clickHandler) {
 function stopMoving(evt) {
     g_planet.m_move_direction = 0;
     g_planet.m_drift_direction = 0;
-    g_planet.m_drift_countdown = DRIFT_START_CHANCE_WHEN_STOPPED;
 }
 
 function initiateMovement(the_direction) {

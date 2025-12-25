@@ -1,0 +1,4 @@
+
+no vpn
+
+C:\Users\16043>adb devices

@@ -1,4 +1,5 @@
+on chrome phone
 
+got
 
-
-
+Edge does not support Web Speech, only Chrome

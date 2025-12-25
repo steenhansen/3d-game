@@ -71,6 +71,13 @@ const VALID_TEXT_COLOR = "white";
 
 const SPEECH_US_LOCAL = { langs: [USA_ENGLISH], processLocally: PROCESS_LOCAL };
 
+const SPEECH_INSTALLED = "speech-installed";
+const SPEECH_INSTAL_TIMEOUT = "speech-not-installed";
+const SPEECH_TIMEOUT = 4000;
+
+// https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
+const promiseTimeout = (prom, time) => Promise.race([prom, new Promise((_r, rej) => setTimeout(rej, time))]);
+
 function speechInfo(the_word, word_color) {
     let the_scene = document.getElementById("speech-value");
     the_scene.innerHTML = the_word;
@@ -93,31 +100,11 @@ function loadSpeechBtn() {
     speech_download.onclick = () => speechDownload();
 }
 
-// https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
-const promiseTimeout = (prom, time) => Promise.race([prom, new Promise((_r, rej) => setTimeout(rej, time))]);
-
-const tryInstallSpeech = async (speech_recognition) => {
-    await speech_recognition
-        .install(SPEECH_US_LOCAL) /* must be done in an event */
-        .then((install_result) => speechInstalled(install_result));
-};
-
-const SPEECH_INSTALLED = "speech-installed";
-const SPEECH_INSTAL_TIMEOUT = "speech-not-installed";
-const SPEECH_TIMEOUT = 4000;
-
-async function someFunction(speech_recognition) {
-    let result = await promiseTimeout(tryInstallSpeech(speech_recognition), SPEECH_TIMEOUT)
-        .then((_res) => SPEECH_INSTALLED)
-        .catch((_err) => SPEECH_INSTAL_TIMEOUT);
-    return result;
-}
-
 function speechDownload() {
     let speech_recognition = speechInBrowser();
     speech_recognition
         .available(SPEECH_US_LOCAL) // Opera crashes here
-        .then(async (download_result) => {
+        .then((download_result) => {
             if (download_result === "unavailable") {
                 unsupportedMicAttempt("Edge");
                 g_p_speak_input = P_GARBLED;
@@ -126,7 +113,7 @@ function speechDownload() {
                 unsupportedMicAttempt("unknown browser");
                 g_p_speak_input = P_GARBLED;
             } else {
-                const install_result = await someFunction(speech_recognition);
+                const install_result = waitForSpeechInstall(speech_recognition);
                 if (install_result === SPEECH_INSTAL_TIMEOUT) {
                     setCssDisplay("#speech-buttons", "none");
                     unsupportedMicAttempt("Brave");
@@ -136,6 +123,19 @@ function speechDownload() {
         })
         .catch((err) => console.log(err));
 }
+
+async function waitForSpeechInstall(speech_recognition) {
+    let result = await promiseTimeout(tryInstallSpeech(speech_recognition), SPEECH_TIMEOUT)
+        .then((_res) => SPEECH_INSTALLED)
+        .catch((_err) => SPEECH_INSTAL_TIMEOUT);
+    return result;
+}
+
+const tryInstallSpeech = async (speech_recognition) => {
+    await speech_recognition
+        .install(SPEECH_US_LOCAL) /* must be done in an event */
+        .then((install_result) => speechInstalled(install_result));
+};
 
 function speechInstalled(install_result) {
     if (install_result) {
@@ -238,15 +238,12 @@ function speechInputs(speech_event) {
         } else if (the_word === SPEAK_JUMP) {
             g_planet = possibleJump(g_planet);
         } else if (the_word === SPEAK_STOP) {
-            g_planet.m_drift_direction = 0;
             stopMoving();
         } else if (the_word === SPEAK_SHOOT) {
             g_missile = initMissileData(g_missile, g_player);
         } else if (the_word === SPEAK_QUIT || the_word === SPEAK_QUICK) {
             g_planet.m_game_state = GAME_5_DONE;
         } else if (the_word === SPEAK_RESTART) {
-            // reAnimateScreen();
-
             action_runGame(RESTARTING_GAME);
         }
         speechInfo(the_word, VALID_TEXT_COLOR);
