@@ -1,40 +1,35 @@
-var recognition;
+var speech_recognition;
 
 function loadSpeechBtn() {
-    recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.lang = "en-US";
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-    recognition.onresult = speechInputs;
-    recognition.onend = speechEnd;
-
+    speech_recognition = new SpeechRecognition();
+    speech_recognition.continuous = true;
+    speech_recognition.lang = "en-US";
+    speech_recognition.interimResults = false;
+    speech_recognition.maxAlternatives = 1;
+    speech_recognition.onresult = speechInputs;
+    speech_recognition.onend = speechEnd;
+    speech_recognition.onerror = speechError;
     setCssDisplay("#speech-buttons", "block");
     const speech_download = document.querySelector("#speech-download");
-    speech_download.onclick = () => speechDownload22();
+    speech_download.onclick = speechStart;
 }
 
-//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?speak-input=talk
-//  https://steenhansen.github.io/3d-game/area-1-jump/index.html?speak-input=talk
-function speechDownload22() {
-    recognition.start();
+function speechError() {
+    setCssDisplay("#microphone-ok", "none");
+    setCssDisplay("#microphone-not-supported", "none");
+    setCssDisplay("#microphone-not-allowed", "inline");
+}
+
+function speechStart() {
+    speech_recognition.start();
     setCssDisplay("#speech-buttons", "none");
     setCssDisplay("#speech-box", "block");
     action_runGame(NORMAL_GAME_START);
 }
 
 function speechEnd() {
-    recognition.start();
-    console.log("JUST ENDING.");
+    speech_recognition.start();
 }
-
-//  https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
-
-//   index.html?speak-input=talk
-
-//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?env-type=debug&scroll-quality=course&graphics-style=simple&display-fps=show&speak-input=talk
-
-//  file:///c%3A/Users/16043/Documents/GitHub/old/area-1-jump/index.html?speak-input=talk
 
 const SPEAK_LEFT = "left";
 const SPEAK_LEFT_CAP = "Left";
@@ -93,23 +88,9 @@ const ALLOWED_COMMANDS = [
     SPEAK_QUICK,
     SPEAK_RESTART
 ];
-
-const USA_ENGLISH = "en-US";
-const PROCESS_LOCAL = true;
-const CONTINUOUS_INTERPRET = true;
 const PHRASE_BOOST = 10;
-
 const INVALID_TEXT_COLOR = "red";
 const VALID_TEXT_COLOR = "white";
-
-const SPEECH_US_LOCAL = { langs: [USA_ENGLISH], processLocally: PROCESS_LOCAL };
-
-const SPEECH_INSTALLED = "speech-installed";
-const SPEECH_INSTAL_TIMEOUT = "speech-not-installed";
-const SPEECH_TIMEOUT = 4000;
-
-// https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
-const promiseTimeout = (prom, time) => Promise.race([prom, new Promise((_r, rej) => setTimeout(rej, time))]);
 
 function speechInfo(the_word, word_color) {
     let the_scene = document.getElementById("speech-value");
@@ -117,83 +98,12 @@ function speechInfo(the_word, word_color) {
     the_scene.style.color = word_color;
 }
 
-// https://webaudio.github.io/web-speech-api/#examples-recognition
-
 function speechInBrowser() {
-    const speech_recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!speech_recognition) {
+    const window_speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!window_speech) {
         unsupportedMicAttempt("Firefox");
     }
-    return speech_recognition;
-}
-
-function loadSpeechBtnOLD() {
-    setCssDisplay("#speech-buttons", "block");
-    const speech_download = document.querySelector("#speech-download");
-    speech_download.onclick = () => speechDownload();
-}
-
-//  https://steenhansen.github.io/3d-game/area-1-jump/index.html?speak-input=talk
-function speechDownload() {
-    let speech_recognition = speechInBrowser();
-    speech_recognition
-        .available(SPEECH_US_LOCAL) // Opera crashes here
-        .then((download_result) => {
-            console.log("download_result", download_result, speech_recognition);
-            if (download_result === "Xunavailable") {
-                unsupportedMicAttempt("Edge2");
-                g_p_speak_input = P_GARBLED;
-                action_runGame(NORMAL_GAME_START);
-            } else if (download_result === "available") {
-                // unsupportedMicAttempt("unknown browser");
-                // g_p_speak_input = P_GARBLED;
-                console.log("alerady installed in other tab??");
-                speechInstalled(true); // speach already installed and running...
-            } else {
-                const install_result = waitForSpeechInstall(speech_recognition);
-                if (install_result === SPEECH_INSTAL_TIMEOUT) {
-                    setCssDisplay("#speech-buttons", "none");
-                    unsupportedMicAttempt("Brave");
-                    action_runGame(NORMAL_GAME_START);
-                }
-            }
-        })
-        .catch((err) => console.log(err));
-}
-
-async function waitForSpeechInstall(speech_recognition) {
-    let result = await promiseTimeout(tryInstallSpeech(speech_recognition), SPEECH_TIMEOUT)
-        .then((_res) => SPEECH_INSTALLED)
-        .catch((_err) => SPEECH_INSTAL_TIMEOUT);
-    return result;
-}
-
-const tryInstallSpeech = async (speech_recognition) => {
-    await speech_recognition
-        .install(SPEECH_US_LOCAL) /* must be done in an event */
-        .then((install_result) => speechInstalled(install_result));
-};
-
-function speechInstalled(install_result) {
-    console.log("speechInstalled", install_result);
-    if (install_result) {
-        const speech_download = document.querySelector("#speech-download");
-        speech_download.disabled = true;
-        setCssDisplay("#speech-allow", "block");
-        const speach_allow = document.querySelector("#speech-allow");
-        speach_allow.onclick = () => speechAllowed();
-    } else {
-        unsupportedMicAttempt("unknown browser");
-        g_p_speak_input = P_GARBLED;
-    }
-}
-
-function speechAllowed() {
-    setCssDisplay("#speech-buttons", "none");
-    const speech_recognition = speechInBrowser();
-    speech_recognition
-        .available(SPEECH_US_LOCAL) /* */
-        .then((allow_result) => speechStart(allow_result));
+    return window_speech;
 }
 
 function unsupportedMicAttempt(failed_browser) {
@@ -202,41 +112,6 @@ function unsupportedMicAttempt(failed_browser) {
     setCssDisplay("#microphone-ok", "none");
     setCssDisplay("#microphone-not-supported", "inline");
     setCssDisplay("#microphone-not-allowed", "none");
-}
-
-function speechStart(allow_result) {
-    if (allow_result === "unavailable") {
-        unsupportedMicAttempt("unknown browser");
-        g_p_speak_input = P_GARBLED;
-    } else if (allow_result === "available") {
-        const speech_download = document.querySelector("#speech-allow");
-        speech_download.disabled = true;
-        let speech_recog = makeRecognition();
-        speech_recog.start();
-        speech_recog.onerror = (event) => didNotGiveAuthorization(event);
-        speech_recog.onresult = (event) => speechInputs(event);
-        setCssDisplay("#speech-box", "block");
-        action_runGame(NORMAL_GAME_START);
-    } else {
-        unsupportedMicAttempt("unknown browser");
-        g_p_speak_input = P_GARBLED;
-    }
-}
-
-function didNotGiveAuthorization(_event) {
-    setCssDisplay("#microphone-ok", "none");
-    setCssDisplay("#microphone-not-allowed", "inline");
-}
-
-function makeRecognition() {
-    let speech_recog = new SpeechRecognition();
-    speech_recog.processLocally = PROCESS_LOCAL;
-    speech_recog.continuous = CONTINUOUS_INTERPRET;
-    speech_recog.lang = USA_ENGLISH;
-    speech_recog.interimResults = true;
-    speech_recog.maxAlternatives = 1;
-    speech_recog.phrases = usefulWords();
-    return speech_recog;
 }
 
 function endingWord(speech_event) {
@@ -251,22 +126,9 @@ function endingWord(speech_event) {
     return word_no_periods;
 }
 
-// let f_last_speech_index = 0;
-
-// function firstTryGood(speech_event, the_word) {
-//     const event_results = speech_event.results;
-//     const speak_index = event_results.length;
-//     const first_try = f_last_speech_index !== speak_index;
-//     const first_attempt_good = ALLOWED_COMMANDS.includes(the_word) && first_try;
-//     return first_attempt_good;
-// }
-
 function speechInputs(speech_event) {
     const the_word = endingWord(speech_event);
-    console.log("the_word", the_word);
-    //    const first_attempt_good = firstTryGood(speech_event, the_word);
     const is_command = ALLOWED_COMMANDS.includes(the_word);
-    // f_last_speech_index++;
     if (is_command) {
         if (the_word === SPEAK_LEFT) {
             touchW(speech_event);
