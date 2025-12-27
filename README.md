@@ -1,8 +1,5 @@
 <a name="s"></a>
 
-opera crashes on speech input.
-Brave hangs
-
 ## This is a 3D vanilla JavaScript game.
 
 <img src="./video/right-sweep.webp" width="800">
@@ -96,11 +93,13 @@ Brave hangs
 
 <img src="./markdown/web-speech.png" width="400">
 
-Only the Chrome browser supports the Web Speech API. Firefox/Edge/Brave do not support the Speech API while Opera crashes if attempted. Useful for playing on a phone.
+Only Chrome and Edge browsers support the Web Speech API.
 
 The commands are "Left", "right", "forward", "backwards", "jump", "stop", "shoot", "quit", and "restart".
 
-[Chrome Only](https://steenhansen.github.io/3d-game/area-4-fast/index.html?speak-input=talk)
+On mobile there is a non-stop intermitant chime as the browser automatically turns off speech recognition, causing the program to re-start recognition.
+
+[Chrome and Edge Only](https://steenhansen.github.io/3d-game/index.html?speak-input=talk)
 
 ## Firefox
 
