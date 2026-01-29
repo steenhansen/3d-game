@@ -1,6 +1,6 @@
 <a name="s"></a>
 
-## This is a 3D vanilla JavaScript game.
+## This is a 3D vanilla JavaScript game without any WebGL.
 
 <img src="./video/right-sweep.webp" width="800">
 
